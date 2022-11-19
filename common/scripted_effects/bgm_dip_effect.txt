@@ -1,0 +1,60 @@
+bgm_annex = {
+	ROOT = {
+		inherit = FROM
+	}
+	set_country_flag = demand_annex
+	if = {
+		limit = {
+			FROM = {
+				NOT = {
+					tech_difference = -3
+				}
+			}
+		}
+		country_event = {
+			id = BGM_DIPLOMACY.26
+			days = 9125 #25 yrs
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = {
+				tech_difference = -3
+				NOT = {
+					tech_difference = -6
+				}
+			}
+		}
+		country_event = {
+			id = BGM_DIPLOMACY.26
+			days = 3650 #10 yrs
+		}
+	}
+	else_if = {
+		limit = { 
+			FROM = {
+				tech_difference = -6
+			}
+		}
+		country_event = {
+			id = BGM_DIPLOMACY.26
+			days = 1825 #5 yrs
+		}
+	}
+	else_if = {
+		limit = { 
+			FROM = {
+				capital_scope = {
+					continent = africa
+				}
+			}
+			has_global_flag = africa_scrambled
+		}
+		country_event = {
+			id = BGM_DIPLOMACY.26
+			days = 913 #2.5 yrs
+		}
+		#clr_country_flag = bgm_annex
+	}
+}
+

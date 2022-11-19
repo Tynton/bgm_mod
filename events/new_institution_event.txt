@@ -1,0 +1,986 @@
+namespace = new_institution_events
+
+country_event = {
+	id = new_institution_events.100
+	title = new_institution_events.1.t
+	desc = new_institution_events.100.d
+	picture = GLOBAL_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.1.a
+		custom_tooltip = new_institution_events.1.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = new_institution_events.101
+	title = new_institution_events.1.t
+	desc = new_institution_events.101.d
+	picture = GLOBAL_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.1.a
+		custom_tooltip = new_institution_events.1.a.tt
+	}
+}
+
+#Global Imperialism
+country_event = {
+	id = new_institution_events.2
+	title = new_institution_events.2.t
+	desc = new_institution_events.2.d
+	picture = GLOBAL_eventPicture
+
+	is_triggered_only = yes
+	
+	major = yes
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.2.a
+		add_adm_power = 75
+		add_dip_power = 75
+		add_mil_power = 75
+		add_prestige = 35
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_medium_effect = yes
+		}
+		custom_tooltip = new_institution_events.2.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_global_imperialism"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					knows_country = ROOT
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = new_institution_events.200 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { knows_country = ROOT }
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = new_institution_events.201 }
+			}
+		}
+	}
+}
+country_event = {
+	id = new_institution_events.200
+	title = new_institution_events.2.t
+	desc = new_institution_events.200.d
+	picture = GLOBAL_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.2.a
+		#custom_tooltip = new_institution_events.2.a.tt
+	}
+}
+
+country_event = {
+	id = new_institution_events.201
+	title = new_institution_events.2.t
+	desc = new_institution_events.200.d
+	picture = GLOBAL_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.2.a
+		#custom_tooltip = new_institution_events.2.a.tt
+	}
+}
+
+
+#Industrialization
+country_event = {
+	id = new_institution_events.3
+	title = new_institution_events.3.t
+	desc = new_institution_events.3.d
+	picture = INDUSTRY_eventPicture
+	is_triggered_only = yes
+	
+	major = yes
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.3.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 10
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_medium_effect = yes
+		}
+		custom_tooltip = new_institution_events.3.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_industrialization"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					knows_country = ROOT
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = new_institution_events.300 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { knows_country = ROOT }
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = new_institution_events.301 }
+			}
+		}
+	}
+}
+country_event = {
+	id = new_institution_events.300
+	title = new_institution_events.3.t
+	desc = new_institution_events.300.d
+	picture = INDUSTRY_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.3.a
+		custom_tooltip = new_institution_events.3.a.tt
+	}
+}
+
+country_event = {
+	id = new_institution_events.301
+	title = new_institution_events.4.t
+	desc = new_institution_events.300.d
+	picture = NATIONAL_INSTITUTION_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.300.a
+		custom_tooltip = new_institution_events.4.a.tt
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = revolutions_year_start
+				}
+			}
+			country_event = {
+				id = westeurope.9
+			}
+		}
+	}
+}
+
+
+#Nationalism Institution
+country_event = {
+	id = new_institution_events.4
+	title = new_institution_events.4.t
+	desc = new_institution_events.4.d
+	picture = NATIONAL_INSTITUTION_eventPicture
+	is_triggered_only = yes
+	
+	major = yes
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.4.a
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+		add_prestige = 40
+		country_event = {
+			id = westeurope.9
+		}
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_medium_effect = yes
+		}
+		custom_tooltip = new_institution_events.4.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_nationalism_institution"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					knows_country = ROOT
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = new_institution_events.400 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { knows_country = ROOT }
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = new_institution_events.401 }
+			}
+		}
+		
+		hidden_effect = {
+			###########################GERMANY
+		
+		every_province = {
+			limit = {
+				continent = europe
+				culture = hannoverian
+			}
+			add_core = WES
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = hessian
+			}
+			add_core = HES
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = saxon
+			}
+			add_core = SAX
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = prussian
+			}
+			add_core = PRU
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = lower_saxon
+			}
+			add_core = HAN
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = franconian
+			}
+			add_core = FKN
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = swabian
+			}
+			add_core = SWA
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = bavarian
+			}
+			add_core = BAV
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = austrian
+			}
+			add_core = HAB
+		}
+		
+		###########################FRANCE
+		
+		every_province = {
+			limit = {
+				continent = europe
+				culture = normand
+			}
+			add_core = NRM
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = wallonian
+			}
+			add_core = HAI
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = gascon
+			}
+			add_core = GUY
+			add_core = PRO
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = occitain
+			}
+			add_core = PRO
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = breton
+			}
+			add_core = BRI
+		}
+		
+		###########################ITALY
+		
+		every_province = {
+			limit = {
+				continent = europe
+				culture = lombard
+			}
+			add_core = MLO
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = tuscan
+			}
+			add_core = TUS
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = sardinian
+			}
+			add_core = SAR
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = romagnan
+			}
+			add_core = FER
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = ligurian
+			}
+			add_core = GEN
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = venetian
+			}
+			add_core = VEN
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = dalmatian
+			}
+			add_core = DAL
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = piedmontese
+			}
+			add_core = SAV
+		}
+		
+		#most of the other ones already seem to exist by this point so moving on
+		###########################SPAIN
+		
+		every_province = {
+			limit = {
+				continent = europe
+				culture = castillian
+			}
+			add_core = CAS
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = leonese
+			}
+			add_core = LON
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = aragonese
+			}
+			add_core = ARA
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = galician
+			}
+			add_core = GAL
+		}
+		
+		###########################CENTRAL EASTERN EUROPE
+		
+		every_province = {
+			limit = {
+				continent = europe
+				culture = czech
+			}
+			add_core = CZE
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = byelorussian
+			}
+			add_core = BLR
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = polish
+			}
+			add_core = POL
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = schlesian
+			}
+			add_core = SIL
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = schlesian
+			}
+			add_core = SIL
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = slovak
+			}
+			add_core = SLV
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = hungarian
+			}
+			add_core = HUN
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = romanian
+			}
+			add_core = WAL
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = transylvanian
+			}
+			add_core = TRA
+		}
+		
+		every_province = {
+			limit = {
+				continent = europe
+				culture = lithuanian
+			}
+			add_core = LIT
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = latvian
+			}
+			add_core = LVA
+		}
+		every_province = {
+			limit = {
+				continent = europe
+				culture = estonian
+			}
+			add_core = EST
+		}
+		
+		###########################
+		}
+	}
+}
+country_event = {
+	id = new_institution_events.400
+	title = new_institution_events.4.t
+	desc = new_institution_events.400.d
+	picture = NATIONAL_INSTITUTION_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.400.a
+		custom_tooltip = new_institution_events.4.a.tt
+	}
+}
+
+country_event = {
+	id = new_institution_events.401
+	title = new_institution_events.4.t
+	desc = new_institution_events.400.d
+	picture = NATIONAL_INSTITUTION_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.400.a
+		custom_tooltip = new_institution_events.4.a.tt
+	}
+}
+
+#Compulsory Education
+country_event = {
+	id = new_institution_events.5
+	title = new_institution_events.5.t
+	desc = new_institution_events.5.d
+	picture = EDUCATION_INSTITUTION_eventPicture
+	is_triggered_only = yes
+	
+	major = yes
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.5.a
+		add_adm_power = 125
+		add_dip_power = 125
+		add_mil_power = 125
+		add_prestige = 20
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_medium_effect = yes
+		}
+		custom_tooltip = new_institution_events.51.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_public_education"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					knows_country = ROOT
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = new_institution_events.500 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { knows_country = ROOT }
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = new_institution_events.501 }
+			}
+		}
+	}
+}
+country_event = {
+	id = new_institution_events.500
+	title = new_institution_events.5.t
+	desc = new_institution_events.51.d
+	picture = EDUCATION_INSTITUTION_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.5.a
+		custom_tooltip = new_institution_events.51.a.tt
+	}
+}
+
+country_event = {
+	id = new_institution_events.501
+	title = new_institution_events.5.t
+	desc = new_institution_events.500.d
+	picture = EDUCATION_INSTITUTION_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.5.a
+		custom_tooltip = new_institution_events.51.a.tt
+	}
+}
+
+
+#Electrification
+country_event = {
+	id = new_institution_events.6
+	title = new_institution_events.6.t
+	desc = new_institution_events.6.d
+	picture = ELECTRICITY_eventPicture
+	is_triggered_only = yes
+	
+	major = yes
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.6.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 30
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_medium_effect = yes
+		}
+		custom_tooltip = new_institution_events.6.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_electrification"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					knows_country = ROOT
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = new_institution_events.600 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { knows_country = ROOT }
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = new_institution_events.601 }
+			}
+		}
+	}
+}
+country_event = {
+	id = new_institution_events.600
+	title = new_institution_events.6.t
+	desc = new_institution_events.600.d
+	picture = ELECTRICITY_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.6.a
+		custom_tooltip = new_institution_events.6.a.tt
+	}
+}
+
+country_event = {
+	id = new_institution_events.601
+	title = new_institution_events.6.t
+	desc = new_institution_events.600.d
+	picture = ELECTRICITY_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.6.a
+		custom_tooltip = new_institution_events.6.a.tt
+	}
+}
+
+
+#Mass Media
+country_event = {
+	id = new_institution_events.7
+	title = new_institution_events.7.t
+	desc = new_institution_events.7.d
+	picture = RADIO_TV_eventPicture
+	is_triggered_only = yes
+	
+	major = yes
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.7.a
+		add_adm_power = 150
+		add_dip_power = 150
+		add_mil_power = 150
+		add_prestige = 40
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_medium_effect = yes
+		}
+		custom_tooltip = new_institution_events.7.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_mass_media"
+				duration = -1
+			}
+			change_trade_goods = cinema
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					knows_country = ROOT
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = new_institution_events.700 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { knows_country = ROOT }
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = new_institution_events.701 }
+			}
+		}
+	}
+}
+country_event = {
+	id = new_institution_events.700
+	title = new_institution_events.7.t
+	desc = new_institution_events.700.d
+	picture = RADIO_TV_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = institution_events.7.a
+		custom_tooltip = institution_events.7.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = new_institution_events.701
+	title = new_institution_events.7.t
+	desc = new_institution_events.700.d
+	picture = RADIO_TV_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.7.a
+		custom_tooltip = new_institution_events.7.a.tt
+	}
+}
+
+#Informational Infrastructure
+country_event = {
+	id = new_institution_events.8
+	title = new_institution_events.8.t
+	desc = new_institution_events.8.d
+	picture = RADIO_TV_eventPicture
+	is_triggered_only = yes
+	
+	major = yes
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.8.a
+		add_adm_power = 150
+		add_dip_power = 150
+		add_mil_power = 150
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_medium_effect = yes
+		}
+		custom_tooltip = new_institution_events.8.a.tt
+		FROM = {
+			add_permanent_province_modifier = {
+				name = "birthplace_of_computer_infrastructure"
+				duration = -1
+			}
+			change_trade_goods = electronics
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = no
+					knows_country = ROOT
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = new_institution_events.800 }
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { knows_country = ROOT }
+					NOT = { tag = ROOT }
+				}
+				country_event = { id = new_institution_events.801 }
+			}
+		}
+	}
+}
+country_event = {
+	id = new_institution_events.800
+	title = new_institution_events.8.t
+	desc = new_institution_events.800.d
+	picture = RADIO_TV_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.8.a
+		custom_tooltip = new_institution_events.8.a.tt
+	}
+}
+
+#Far away travellers...
+country_event = {
+	id = new_institution_events.801
+	title = new_institution_events.8.t
+	desc = new_institution_events.801.d
+	picture = RADIO_TV_eventPicture
+
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes			#
+	}
+
+	option = {
+		name = new_institution_events.8.a
+		custom_tooltip = new_institution_events.8.a.tt
+	}
+}

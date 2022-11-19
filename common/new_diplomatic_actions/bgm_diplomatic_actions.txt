@@ -1,0 +1,1861 @@
+establish_union =  {
+	category = influence
+	require_acceptance = no
+	is_visible = {
+		FROM = {
+			government = monarchy
+		}
+	}
+	is_allowed = {
+		government = monarchy
+		FROM = {
+			is_subject_of = ROOT
+			OR = {
+				is_subject_of_type = vassal
+				is_subject_of_type = client_vassal
+			}
+			government = monarchy
+			NOT = {
+				total_development = 200
+			}
+		}
+	}
+	ai_acceptance = {
+		add_entry = {
+			name = MIL_POWER
+			limit = {
+				FROM = {
+					army_strength = {
+						who = ROOT
+						value = 0.35
+					}
+				}
+			}
+		}
+	}
+	on_accept = {
+		add_stability = -2
+		create_union = FROM
+		FROM = {
+			add_liberty_desire = 50
+			add_stability = -1
+		}
+	}
+	ai_will_do = {
+		always = no
+	}
+}
+
+non_aggression_pact =  {
+	category = alliance
+	require_acceptance = yes
+	is_visible = {
+		adm_tech = 41
+	}
+	is_allowed = {
+		ROOT = {
+			adm_tech = 41
+		}
+		FROM = {
+			adm_tech = 41
+		}
+	}
+	ai_acceptance = {
+		add_entry = {
+			name = THREATENED
+			export_to_variable = { which = ai_value value = trigger_value:army_size }
+			export_to_variable = { which = their_army value = trigger_value:army_size who = FROM }
+			multiply_variable = { which = their_army value = 0.8 }
+			subtract_variable = { which = ai_value which = their_army }
+			#if = {
+				limit = {
+					NOT = { check_variable = { which = ai_value value = 0 } }
+				}
+				multiply_variable = { which = ai_value value = 1.5 }
+			#}
+		}
+		
+		add_entry = {
+			name = OPINION
+			export_to_variable = { which = ai_value value = opinion who = FROM with = ROOT } 
+			multiply_variable = { which = ai_value value = 0.25 }
+		}
+		
+		add_entry = {
+			name = IS_RIVAL
+			#if = {
+				limit = {
+					FROM = {
+						is_rival = ROOT
+					}
+				}
+				export_to_variable = { which = ai_value value = -1000 }
+			#}
+		}
+	}
+	on_accept = {
+		FROM = {
+			add_truce_with = ROOT
+		}
+		add_truce_with = FROM
+	}
+	ai_will_do = {
+		ai_attitude = {
+			who = FROM
+			attitude = attitude_threatened
+		}
+		FROM = {
+			has_discovered = ROOT
+		}
+		ROOT = {
+			has_discovered = FROM
+		}
+	}
+}
+
+plot_kidnap_heir =  {
+	category = covert
+	require_acceptance = no
+	is_visible = {
+		FROM = {
+			government = monarchy
+		}
+	}
+	is_allowed = {
+		government = monarchy
+		FROM = {
+			OR = {
+				government = monarchy
+				government = theocracy
+			}
+			has_heir = yes
+			custom_trigger_tooltip = {
+				tooltip = abduction_placeholder
+				NOT = {
+					OR = {
+						has_country_flag = abduction_scheme
+						is_subject_of_type = personal_union
+					}
+				}
+			}
+		}
+		has_spy_network_in = {
+			who = FROM
+			value = 75
+		}
+		
+	}
+	ai_acceptance = {
+	}
+	on_accept = {
+		add_spy_network_in = {
+			who = FROM
+			value = -75
+		}
+		FROM = {
+			set_country_flag = abduction_scheme
+			country_event = {
+				id = BGM_DIPLOMACY.16
+				days = 2920 #2920
+				random = 1500 #1500
+			}
+		}
+	}
+	ai_will_do = {
+		OR = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_rivalry
+			}
+			army_strength = {
+				who = FROM
+				value = 1.25
+			}
+		}
+	}
+}
+
+plot_murder_ruler =  {
+	category = covert
+	require_acceptance = no
+	is_visible = {
+		always = yes
+	}
+	is_allowed = {
+		has_spy_network_in = {
+			who = FROM
+			value = 75
+		}
+		custom_trigger_tooltip = {
+			tooltip = murder_placeholder
+			FROM = {
+				NOT = {
+					OR = {
+						has_country_flag = murder_scheme
+						is_subject_of_type = personal_union
+					}
+				}
+			}
+		}
+	}
+	ai_acceptance = {
+	}
+	on_accept = {
+		add_spy_network_in = {
+			who = FROM
+			value = -75
+		}
+		FROM = {
+			set_country_flag = murder_scheme
+			country_event = {
+				id = BGM_DIPLOMACY.17
+				days = 2920 #2920
+				random = 1500 #1500
+			}
+		}
+	}
+	ai_will_do = {
+		OR = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_rivalry
+			}
+			army_strength = {
+				who = FROM
+				value = 1.25
+			}
+		}
+	}
+}
+
+intimidate_dynasty =  {
+	category = great_powers
+	require_acceptance = yes
+	is_visible = {
+		government = monarchy
+		is_great_power = yes
+	}
+	is_allowed = {
+		ROOT = {
+			government = monarchy
+			is_great_power = yes
+			NOT = {
+				truce_with = FROM
+			}
+		}
+		FROM = {
+			government = monarchy
+			marriage_with = ROOT
+			has_heir = no
+			is_great_power = no
+			NOT = {
+				truce_with = ROOT
+			}
+		}
+	}
+	ai_acceptance = {
+		add_entry = {
+			name = THREATENED
+			export_to_variable = { which = ai_value value = trigger_value:army_size }
+			export_to_variable = { which = their_army value = trigger_value:army_size who = FROM }
+			multiply_variable = { which = their_army value = 1.25 }
+			subtract_variable = { which = ai_value which = their_army }
+			#if = {
+				limit = {
+					NOT = { check_variable = { which = ai_value value = 0 } }
+				}
+				multiply_variable = { which = ai_value value = 1.5 }
+			#}
+		}
+		
+		add_entry = {
+			name = OPINION
+			export_to_variable = { which = ai_value value = opinion who = FROM with = ROOT } 
+			multiply_variable = { which = ai_value value = 0.5 }
+		}
+
+		add_entry = {
+			name = OTHER_WITH_DYNASTY
+			limit = {
+				any_country = {
+					NOT = { tag = FROM }
+					dynasty = FROM
+				}
+			}
+			export_to_variable = { which = ai_value value = -1000 }
+		}
+		
+		add_entry = {
+			name = IS_RIVAL
+			#if = {
+				limit = {
+					FROM = {
+						is_rival = ROOT
+					}
+				}
+				export_to_variable = { which = ai_value value = -1000 }
+			#}
+		}
+	}
+	on_decline = {
+		add_casus_belli = {
+			target = FROM
+			type = cb_restore_personal_union
+			months = 60
+		}
+		add_prestige = -25
+    }
+	on_accept = {
+
+		set_ruler_flag = invited_dynasty
+
+		FROM = {
+			define_heir = {
+				dynasty = ROOT
+				claim = 25
+			}
+			add_truce_with = ROOT
+			add_opinion = {
+				who = ROOT
+				modifier = intimidated_into_dynasty
+			}
+			add_prestige = -25
+		}
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
+		
+		every_neighbor_country = {
+			add_trust = {
+				who = ROOT
+				value = -5
+			}
+		}
+		add_truce_with = FROM
+	}
+	ai_will_do = {
+		OR = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_domineering
+			}
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_hostile
+			}
+		}
+	}
+}
+
+invite_dynasty =  {
+	category = dynasty
+	require_acceptance = yes
+	is_visible = {
+		government = monarchy
+	}
+	is_allowed = {
+		ROOT = {
+			government = monarchy
+			has_heir = no
+			NOT = {
+				dynasty = FROM
+			}
+			adm_tech = 4
+			marriage_with = FROM
+			OR = {
+				NOT = { 
+					tag = ENG
+				}
+				AND = {
+					tag = ENG
+					has_country_flag = had_war_of_the_roses
+					NOT = { has_disaster = war_of_the_roses }
+				}
+			}
+		}
+		FROM = {
+			government = monarchy
+			regency_council = no
+			has_consort_regency = no
+			marriage_with = ROOT
+			#NOT = {
+			#	prestige = ROOT
+			#}
+		}
+	}
+	ai_acceptance = {
+		add_entry = {
+			name = OPINION
+			export_to_variable = { which = ai_value value = opinion who = FROM with = ROOT } 
+			multiply_variable = { which = ai_value value = 0.5 }
+		}
+		
+		add_entry = {
+			name = IS_RIVAL
+			#if = {
+				limit = {
+					FROM = {
+						is_rival = ROOT
+					}
+				}
+				export_to_variable = { which = ai_value value = -1000 }
+			#}
+		}
+
+		add_entry = {
+			name = OTHER_WITH_DYNASTY
+			limit = {
+				any_country = {
+					NOT = { tag = FROM }
+					dynasty = FROM
+				}
+			}
+			export_to_variable = { which = ai_value value = 1000 }
+		}
+	}
+	on_accept = {
+
+		set_ruler_flag = invited_dynasty
+
+		define_heir = {
+			dynasty = FROM
+			religion = FROM
+			culture = FROM
+			claim = 25
+			change_adm = 0
+			change_mil = 0
+			change_dip = 0
+			
+			max_random_adm = 5
+			max_random_dip = 5
+			max_random_mil = 5
+		}
+		FROM = {
+			add_truce_with = ROOT
+			add_prestige = 25
+		}
+		add_prestige = -25
+		every_country = {
+			limit = {
+				marriage_with = ROOT
+				NOT = { tag = FROM }
+				NOT = { tag = ROOT }
+			}
+			#add_truce_with = ROOT
+			country_event = {
+				id = BGM_DYNASTIC.18
+			}
+		}
+		add_truce_with = FROM
+	}
+	ai_will_do = {
+		#ai_attitude = {
+		#	who = FROM
+		#	attitude = attitude_threatened
+		#}
+		FROM = {
+			has_opinion = {
+				who = ROOT
+				value = 100
+			}
+		}
+		is_great_power = no
+		any_country = {
+			NOT = {
+				tag = FROM
+			}
+			dynasty = FROM
+		}
+		dynasty_is_alone = yes
+		from_root_invite_dynasty = no
+	}
+}
+
+gift_adm_power =  {
+	category = influence
+	require_acceptance = no
+	is_visible = {
+		FROM = {
+			is_subject_of = ROOT
+		}
+	}
+	is_allowed = {
+		adm_power = 200
+		FROM = {
+			is_subject_of = ROOT
+		}
+	}
+	ai_acceptance = {
+	}
+	on_accept = {
+		add_adm_power = -200
+		FROM = {
+			add_liberty_desire = -10
+			add_adm_power = 200
+		}
+	}
+	ai_will_do = {
+		always = no
+	}
+}
+
+gift_mil_power =  {
+	category = influence
+	require_acceptance = no
+	is_visible = {
+		FROM = {
+			is_subject_of = ROOT
+		}
+	}
+	is_allowed = {
+		mil_power = 200
+		FROM = {
+			is_subject_of = ROOT
+		}
+	}
+	ai_acceptance = {
+	}
+	on_accept = {
+		add_mil_power = -200
+		FROM = {
+			add_liberty_desire = -10
+			add_mil_power = 200
+		}
+	}
+	ai_will_do = {
+		always = no
+	}
+}
+
+enforce_exco_lift =  {
+	category = papacy
+	require_acceptance = no
+	is_visible = {
+		PAP = {
+			is_subject_of = ROOT
+		}
+	}
+	is_allowed = {
+		PAP = {
+			is_subject_of = ROOT
+		}
+		ROOT = {
+			is_excommunicated = yes
+		}
+	}
+	ai_acceptance = {
+	}
+	on_accept = {
+		excommunicate = ROOT
+	}
+	ai_will_do = {
+		always = no
+	}
+}
+
+########################################################################
+##PACTS
+########################################################################
+
+invite_to_pact =  {
+	category = alliance
+	require_acceptance = yes
+	is_visible = {
+		alliance_with = FROM
+		dip_tech = 38
+		NOT = {
+			OR = {
+				is_subject_of_type = pact_member
+				FROM = {
+					is_subject_of_type = pact_member
+				}
+			}
+		}
+		OR = {
+			AND = {
+				has_country_modifier = coalition_continent_hegemon
+				NOT  = {
+					OR = {
+						has_reform = democratic_mechanic
+						has_reform = authoritarian_mechanic
+						has_reform = futurist_mechanic
+						has_reform = fascist_mechanic
+						bgm_comgovt = yes
+					}
+				}
+			}
+			
+			AND = {
+				FROM = {
+					has_reform = democratic_mechanic
+				}
+				ROOT = {
+					has_reform = democratic_mechanic
+				}
+			}
+			
+			AND = {
+				FROM = {
+					has_reform = authoritarian_mechanic
+				}
+				ROOT = {
+					has_reform = authoritarian_mechanic
+				}
+			}
+			
+			AND = {
+				FROM = {
+					has_reform = futurist_mechanic
+				}
+				ROOT = {
+					has_reform = futurist_mechanic
+				}
+			}
+			
+			AND = {
+				FROM = {
+					has_reform = fascist_mechanic
+				}
+				ROOT = {
+					has_reform = fascist_mechanic
+				}
+			}
+			
+			AND = {
+				FROM = {
+					bgm_comgovt = yes
+				}
+				ROOT = {
+					bgm_comgovt = yes
+				}
+			}
+			
+		}
+	}
+	is_allowed = {
+		OR = {
+			AND = {
+				has_country_modifier = coalition_continent_hegemon
+				NOT  = {
+					OR = {
+						has_reform = democratic_mechanic
+						has_reform = authoritarian_mechanic
+						has_reform = futurist_mechanic
+						has_reform = fascist_mechanic
+						bgm_comgovt = yes
+					}
+				}
+			}
+			
+			AND = {
+				FROM = {
+					has_reform = democratic_mechanic
+				}
+				ROOT = {
+					has_reform = democratic_mechanic
+				}
+			}
+			
+			AND = {
+				FROM = {
+					has_reform = authoritarian_mechanic
+				}
+				ROOT = {
+					has_reform = authoritarian_mechanic
+				}
+			}
+			
+			AND = {
+				FROM = {
+					has_reform = futurist_mechanic
+				}
+				ROOT = {
+					has_reform = futurist_mechanic
+				}
+			}
+			
+			AND = {
+				FROM = {
+					has_reform = fascist_mechanic
+				}
+				ROOT = {
+					has_reform = fascist_mechanic
+				}
+			}
+			
+			AND = {
+				FROM = {
+					bgm_comgovt = yes
+				}
+				ROOT = {
+					bgm_comgovt = yes
+				}
+			}
+			
+		}
+	}
+	ai_acceptance = {
+		add_entry = {
+			name = OPINION
+			export_to_variable = { which = ai_value value = opinion who = FROM with = ROOT } 
+			multiply_variable = { which = ai_value value = 0.5 }
+		}
+		
+		add_entry = {
+			name = IS_RIVAL
+			#if = {
+				limit = {
+					FROM = {
+						is_rival = ROOT
+					}
+				}
+				export_to_variable = { which = ai_value value = -1000 }
+			#}
+		}
+		
+		add_entry = {
+			name = STRONGER_THAN
+			#if = {
+				limit = {
+					FROM = {
+						army_size = ROOT
+					}
+				}
+				export_to_variable = { which = ai_value value = -1000 }
+			#}
+		}
+		
+	}
+	on_accept = {
+		create_subject = {
+			subject_type = pact_member
+			subject = FROM
+		}
+	}
+	ai_will_do = {
+		OR = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_domineering
+			}
+			alliance_with = FROM
+			
+			FROM = {
+				#is_neighbor_of = ROOT
+				has_opinion = {
+					who = ROOT
+					value = 0
+				}
+			}
+		}
+	}
+}
+
+join_pact =  {
+	category = alliance
+	require_acceptance = yes
+	is_visible = {
+		alliance_with = FROM
+		dip_tech = 38
+		NOT = {
+			OR = {
+				is_subject_of_type = pact_member
+				FROM = {
+					is_subject_of_type = pact_member
+				}
+			}
+		}
+		OR = {
+			AND = {
+				has_country_modifier = coalition_continent_hegemon
+				NOT  = {
+					OR = {
+						has_reform = democratic_mechanic
+						has_reform = authoritarian_mechanic
+						has_reform = futurist_mechanic
+						has_reform = fascist_mechanic
+						bgm_comgovt = yes
+					}
+				}
+			}
+			
+			AND = {
+				FROM = {
+					has_reform = democratic_mechanic
+				}
+				ROOT = {
+					has_reform = democratic_mechanic
+				}
+			}
+			
+			AND = {
+				FROM = {
+					has_reform = authoritarian_mechanic
+				}
+				ROOT = {
+					has_reform = authoritarian_mechanic
+				}
+			}
+			
+			AND = {
+				FROM = {
+					has_reform = futurist_mechanic
+				}
+				ROOT = {
+					has_reform = futurist_mechanic
+				}
+			}
+			
+			AND = {
+				FROM = {
+					has_reform = fascist_mechanic
+				}
+				ROOT = {
+					has_reform = fascist_mechanic
+				}
+			}
+			
+			AND = {
+				FROM = {
+					bgm_comgovt = yes
+				}
+				ROOT = {
+					bgm_comgovt = yes
+				}
+			}
+			
+		}
+	}
+	is_allowed = {
+		OR = {
+			AND = {
+				has_country_modifier = coalition_continent_hegemon
+				NOT  = {
+					OR = {
+						has_reform = democratic_mechanic
+						has_reform = authoritarian_mechanic
+						has_reform = futurist_mechanic
+						has_reform = fascist_mechanic
+						bgm_comgovt = yes
+					}
+				}
+			}
+			
+			AND = {
+				FROM = {
+					has_reform = democratic_mechanic
+				}
+				ROOT = {
+					has_reform = democratic_mechanic
+				}
+			}
+			
+			AND = {
+				FROM = {
+					has_reform = authoritarian_mechanic
+				}
+				ROOT = {
+					has_reform = authoritarian_mechanic
+				}
+			}
+			
+			AND = {
+				FROM = {
+					has_reform = futurist_mechanic
+				}
+				ROOT = {
+					has_reform = futurist_mechanic
+				}
+			}
+			
+			AND = {
+				FROM = {
+					has_reform = fascist_mechanic
+				}
+				ROOT = {
+					has_reform = fascist_mechanic
+				}
+			}
+			
+			AND = {
+				FROM = {
+					bgm_comgovt = yes
+				}
+				ROOT = {
+					bgm_comgovt = yes
+				}
+			}
+			
+		}
+	}
+	ai_acceptance = {
+		add_entry = {
+			name = OPINION
+			export_to_variable = { which = ai_value value = opinion who = FROM with = ROOT } 
+			multiply_variable = { which = ai_value value = 0.5 }
+		}
+		
+		add_entry = {
+			name = IS_RIVAL
+			#if = {
+				limit = {
+					FROM = {
+						is_rival = ROOT
+					}
+				}
+				export_to_variable = { which = ai_value value = -1000 }
+			#}
+		}
+	}
+	on_accept = {
+		FROM = {
+			create_subject = {
+				subject_type = pact_member
+				subject = ROOT
+			}
+		}
+	}
+	ai_will_do = {
+		any_neighbor_country = {
+			OR = {
+				NOT = {
+					has_opinion = {
+						who = ROOT
+						value = 0
+					}
+				}
+				army_size = ROOT
+			}
+		}
+	}	
+}
+
+leave_pact = {
+	category = alliance
+	require_acceptance = no
+	is_visible = {
+		is_subject_of_type_with_overlord = { 
+			who = FROM 
+			type = pact_member 
+		}
+	}
+	is_allowed = {
+		is_subject_of_type_with_overlord = { 
+			who = FROM 
+			type = pact_member 
+		}
+	}
+	ai_acceptance = {
+		
+	}
+	on_accept = {
+		ROOT = {
+			grant_independence = yes
+		}
+	}
+	ai_will_do = {
+		FROM = {
+			OR = {
+				ai_attitude = {
+					who = ROOT
+					attitude = attitude_hostile
+				}
+			}
+			OR = {
+				ai_attitude = {
+					who = ROOT
+					attitude = attitude_outraged
+				}
+			}
+		}
+	}
+}
+
+kick_from_pact =  {
+	category = alliance
+	require_acceptance = no
+	is_visible = {
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = pact_member
+		}
+	}
+	is_allowed = {
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = pact_member
+		}
+	}
+	ai_acceptance = {
+		
+	}
+	on_accept = {
+		FROM = {
+			grant_independence = yes
+			add_opinion = {
+				who = ROOT
+				modifier = kicked_from_pact
+			}
+		}
+	}
+	ai_will_do = {
+		FROM = {
+			NOT = {
+				has_opinion = {
+					who = ROOT
+					value = -100
+				}
+			}
+		}
+	}
+}
+
+join_wars_of = {
+	category = alliance
+	require_acceptance = no
+	is_visible = {
+		OR = {
+			is_subject_of_type_with_overlord = { 
+				who = FROM 
+				type = pact_member 
+			}
+			overlord = {
+				FROM = {
+					is_subject_of_type = pact_member
+				}
+				ROOT = {
+					is_subject_of_type = pact_member
+				}
+			}
+		}
+	}
+	is_allowed = {
+		OR = {
+			is_subject_of_type_with_overlord = { 
+				who = FROM 
+				type = pact_member 
+			}
+			overlord = {
+				FROM = {
+					is_subject_of_type = pact_member
+				}
+				ROOT = {
+					is_subject_of_type = pact_member
+				}
+			}
+		}
+	}
+	ai_acceptance = {
+		
+	}
+	on_accept = {
+		join_all_offensive_wars_of = FROM
+		join_all_defensive_wars_of = FROM
+	}
+	ai_will_do = {
+		NOT = {
+			any_neighbor_country = {
+				OR = {
+					defensive_war_with = FROM
+					offensive_war_with = FROM
+				}
+				army_strength = {
+					who = ROOT
+					value = 2.0
+				}
+			}
+		}
+	}
+}
+
+###############################
+#COUPS
+###############################
+
+plot_dynastic_replacement =  {
+	category = covert
+	require_acceptance = no
+	is_visible = {
+		ROOT = {
+			government = monarchy
+		}
+		FROM = {
+			government = monarchy
+		}
+	}
+	is_allowed = {
+		has_spy_network_in = {
+			who = FROM
+			value = 100
+		}
+		
+		FROM = {
+			NOT = {
+				OR = {
+					has_country_flag = palace_plot
+					is_subject_of_type = personal_union
+				}
+			}
+		}
+	}
+	ai_acceptance = {
+	}
+	on_accept = {
+		add_spy_network_in = {
+			who = FROM
+			value = -100
+		}
+		FROM = {
+			set_country_flag = palace_plot
+			country_event = {
+				id = BGM_DIPLOMACY.19
+				days = 2920 #2920
+				random = 1500 #1500
+			}
+		}
+	}
+	ai_will_do = {
+		OR = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_rivalry
+			}
+			army_strength = {
+				who = FROM
+				value = 1.25
+			}
+		}
+	}
+}
+
+plot_government_replacement =  {
+	category = covert
+	require_acceptance = no
+	is_visible = {
+		FROM = {
+			NOT = {
+				government = monarchy
+			}
+		}
+	}
+	is_allowed = {
+		has_spy_network_in = {
+			who = FROM
+			value = 100
+		}
+		
+		FROM = {
+			NOT = {
+				OR = {
+					has_country_flag = palace_plot
+					is_subject_of_type = personal_union
+				}
+			}
+		}
+	}
+	ai_acceptance = {
+	}
+	on_accept = {
+		add_spy_network_in = {
+			who = FROM
+			value = -100
+		}
+		FROM = {
+			set_country_flag = palace_plot
+			country_event = {
+				id = BGM_DIPLOMACY.21
+				days = 2920 #2920
+				random = 1500 #1500
+			}
+		}
+	}
+	ai_will_do = {
+		OR = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_rivalry
+			}
+			army_strength = {
+				who = FROM
+				value = 1.25
+			}
+		}
+	}
+}
+
+demand_integration = {
+	category = influence
+	require_acceptance = yes
+	is_visible = {
+		OR = {
+			AND = {
+				has_institution = global_imperialism
+				FROM = {
+					capital_scope = {
+						NOT = {
+							continent = ROOT
+						}
+					}
+				}
+			}
+			AND = {
+				full_idea_group = expansion_ideas
+				FROM = {
+					capital_scope = {
+						OR = {
+							continent = north_america
+							continent = south_america
+						}
+					}
+				}
+			}
+			has_reform = fascist_mechanic
+			has_reform = communist_mechanic
+			has_reform = socialist_mechanic
+		}
+		OR = {
+			FROM = { is_part_of_hre = no }
+			AND = {
+				ROOT = {
+					is_part_of_hre = yes
+					is_emperor = no
+				}
+				FROM = {
+					is_part_of_hre = yes
+					is_emperor = no
+					#is_elector = no
+				}
+			}
+		}
+		NOT = { FROM = { continent = ROOT } }
+		FROM = { is_great_power = no } 
+		NOT = { FROM = { OR = { tag = PAP tag = NTI } } }
+		is_subject = no
+		OR = {
+			FROM = {
+				is_subject = no
+			}
+			FROM = {
+				AND = {
+					is_subject_of = ROOT
+					NOT = {
+						tech_difference = -5
+					}
+				}	
+			}
+		}
+	}
+	is_allowed = {
+		OR = {
+			FROM = {
+				is_subject = no
+			}
+			FROM = {
+				AND = {
+					is_subject_of = ROOT
+					NOT = {
+						tech_difference = -5
+					}
+				}	
+			}
+		}
+		NOT = { FROM = { OR = { tag = PAP tag = NTI } } }
+		NOT = { has_country_modifier = demanded_integration }
+		is_subject = no
+
+
+		FROM = {
+			is_at_war = no
+			NOT = {
+				army_strength = {
+					who = ROOT
+					value = 0.33
+				}
+				total_development = ROOT
+				truce_with = ROOT
+			}
+			any_neighbor_country = {
+				OR = {
+					tag = ROOT
+					is_subject_of = ROOT
+				}
+			}
+			NOT = {
+				any_ally = {
+					army_strength = {
+						who = ROOT
+						value = 0.5
+					}
+					total_development = ROOT
+				}
+			}
+		}
+	}
+	ai_acceptance = {
+		
+		add_entry = {
+			name = OPINION
+			export_to_variable = { which = ai_value value = opinion who = FROM with = ROOT } 
+			multiply_variable = { which = ai_value value = 0.05 }
+		}
+
+		add_entry = {
+			name = ROOT_DIPREP
+			export_to_variable = { 
+				which = ai_value 
+				value = modifier:diplomatic_reputation
+			} 
+			multiply_variable = { which = ai_value value = 3 }
+		}
+
+		add_entry = {
+			name = TOTAL_DEV_ROOT
+			export_to_variable = { 
+				which = ai_value 
+				value = total_development
+			} 
+			multiply_variable = { which = ai_value value = 0.1 }
+		}
+
+		add_entry = {
+			name = TOTAL_DEV
+			export_to_variable = { 
+				which = ai_value 
+				value = total_development 
+				who = FROM
+			} 
+			multiply_variable = { which = ai_value value = -0.65 }
+		}
+
+		
+		
+		add_entry = {
+			name = ROOT_FROM_MILITARY_POWER_COMPARED
+			limit = {
+				variable_arithmetic_trigger = {
+					export_to_variable = {
+						which = our_mil_tech
+						value = trigger_value:mil_tech
+					}
+					export_to_variable = {
+						which = their_mil_tech
+						value = trigger_value:mil_tech
+						who = FROM
+					}
+					export_to_variable = {
+						which = our_army_size
+						value = trigger_value:army_size
+					}
+					export_to_variable = {
+						which = their_army_size
+						value = trigger_value:army_size
+						who = FROM
+					}
+					export_to_variable = {
+						which = military_power
+						value = 0
+					}
+					divide_variable = { which = our_army_size value = 10 }
+					divide_variable = { which = their_army_size value = -10 }
+					change_variable = { which = our_army_size which = their_army_size }
+					multiply_variable = { which = their_mil_tech value = -1 }
+					change_variable = { which = our_mil_tech which = their_mil_tech }
+					multiply_variable = { which = our_mil_tech value = 3 }
+					change_variable = { which = military_power which = our_army_size }
+					change_variable = { which = military_power which = our_mil_tech }
+					NOT = { check_variable = { which = military_power value = -39 } }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 40
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = ROOT_FROM_MILITARY_POWER_COMPARED
+			limit = {
+				variable_arithmetic_trigger = {
+					export_to_variable = {
+						which = our_mil_tech
+						value = trigger_value:mil_tech
+					}
+					export_to_variable = {
+						which = their_mil_tech
+						value = trigger_value:mil_tech
+						who = FROM
+					}
+					export_to_variable = {
+						which = our_army_size
+						value = trigger_value:army_size
+					}
+					export_to_variable = {
+						which = their_army_size
+						value = trigger_value:army_size
+						who = FROM
+					}
+					export_to_variable = {
+						which = military_power
+						value = 0
+					}
+					divide_variable = { which = our_army_size value = 10 }
+					divide_variable = { which = their_army_size value = -10 }
+					change_variable = { which = our_army_size which = their_army_size }
+					multiply_variable = { which = their_mil_tech value = -1 }
+					change_variable = { which = our_mil_tech which = their_mil_tech }
+					multiply_variable = { which = our_mil_tech value = 3 }
+					change_variable = { which = military_power which = our_army_size }
+					change_variable = { which = military_power which = our_mil_tech }
+					check_variable = { which = military_power value = -39 }
+					NOT = { check_variable = { which = military_power value = 30 } }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 0
+			}
+			export_to_variable = {
+				which = our_mil_tech
+				value = trigger_value:mil_tech
+			}
+			export_to_variable = {
+				which = their_mil_tech
+				value = trigger_value:mil_tech
+				who = FROM
+			}
+			export_to_variable = {
+				which = our_army_size
+				value = trigger_value:army_size
+			}
+			export_to_variable = {
+				which = their_army_size
+				value = trigger_value:army_size
+				who = FROM
+			}
+			divide_variable = { which = our_army_size value = 10 }
+			divide_variable = { which = their_army_size value = -10 }
+			change_variable = { which = our_army_size which = their_army_size }
+			multiply_variable = { which = their_mil_tech value = -1 }
+			change_variable = { which = our_mil_tech which = their_mil_tech }
+			multiply_variable = { which = our_mil_tech value = 3 }
+			change_variable = { which = ai_value which = our_army_size }
+			change_variable = { which = ai_value which = our_mil_tech }
+		}
+		add_entry = {
+			name = ROOT_FROM_MILITARY_POWER_COMPARED
+			limit = {
+				variable_arithmetic_trigger = {
+					export_to_variable = {
+						which = our_mil_tech
+						value = trigger_value:mil_tech
+					}
+					export_to_variable = {
+						which = their_mil_tech
+						value = trigger_value:mil_tech
+						who = FROM
+					}
+					export_to_variable = {
+						which = our_army_size
+						value = trigger_value:army_size
+					}
+					export_to_variable = {
+						which = their_army_size
+						value = trigger_value:army_size
+						who = FROM
+					}
+					export_to_variable = {
+						which = military_power
+						value = 0
+					}
+					divide_variable = { which = our_army_size value = 10 }
+					divide_variable = { which = their_army_size value = -10 }
+					change_variable = { which = our_army_size which = their_army_size }
+					multiply_variable = { which = their_mil_tech value = -1 }
+					change_variable = { which = our_mil_tech which = their_mil_tech }
+					multiply_variable = { which = our_mil_tech value = 3 }
+					change_variable = { which = military_power which = our_army_size }
+					change_variable = { which = military_power which = our_mil_tech }
+					check_variable = { which = military_power value = 30 }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 30
+			}
+		}
+
+
+
+		add_entry = {
+			name = FRIENDLY
+			limit = {
+				FROM = {
+					OR = {
+						ai_attitude = { who = ROOT attitude = attitude_friendly }
+						ai_attitude = { who = ROOT attitude = attitude_allied }
+					}
+				}
+			}
+			export_to_variable = { which = ai_value value = -25 }
+		}
+
+		add_entry = {
+			name = PART_HRE
+			limit = {
+				FROM = {
+					is_part_of_hre = yes
+				}
+			}
+			export_to_variable = { which = ai_value value = -75 }
+		}
+
+		add_entry = {
+			name = FREE_CITY
+			limit = {
+				FROM = {
+					has_reform = free_city
+				}
+			}
+			export_to_variable = { which = ai_value value = -1000 }
+		}
+
+		add_entry = {
+			name = IS_ELECTOR
+			limit = {
+				FROM = {
+					is_elector = yes
+				}
+			}
+			export_to_variable = { which = ai_value value = -1000 }
+		}
+
+		add_entry = {
+			name = HOSTILE
+			limit = {
+				FROM = {
+					OR = {
+						ai_attitude = { who = ROOT attitude = attitude_hostile }
+						ai_attitude = { who = ROOT attitude = attitude_outraged }
+						ai_attitude = { who = ROOT attitude = attitude_rivalry }
+					}
+				}
+			}
+			export_to_variable = { which = ai_value value = -1000 }
+		}
+
+		add_entry = {
+			name = GUARANTEED
+			limit = {
+				any_country = {
+					has_guaranteed = FROM
+				}
+			}
+			export_to_variable = { which = ai_value value = -1000 }
+		}
+
+		add_entry = {
+			name = AI_THREATENED
+			limit = {
+				FROM = {
+					ai_attitude = { who = ROOT attitude = attitude_threatened }
+				}
+			}
+			export_to_variable = { which = ai_value value = 50 }
+		}
+		
+		add_entry = {
+			name = IS_RIVAL
+			#if = {
+				limit = {
+					FROM = {
+						is_rival = ROOT
+					}
+				}
+				export_to_variable = { which = ai_value value = -1000 }
+			#}
+		}
+	}
+	on_accept = {
+		if = {
+			limit = {
+				FROM = {
+					is_part_of_hre = yes
+				}
+			}
+			random_country = {
+				limit = {
+					is_emperor = yes
+				}
+				add_casus_belli = {
+					target = ROOT
+					type = cb_imperial_ban
+					months = 120
+				}
+			}
+		}
+		
+		FROM = {
+			every_owned_province = {
+				add_unrest = 30
+			}
+		}
+		
+		bgm_annex = yes
+
+		FROM = {
+			every_neighbor_country = {
+				limit = {
+					NOT = {
+						is_subject_of = ROOT
+					}
+				}
+				add_trust = {
+					who = ROOT
+					value = -5
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = annexed_neighbor_bgm
+				}
+			}
+		}
+	}
+	on_decline = {
+		if = {
+			limit = {
+				FROM = {
+					government = monarchy
+				}
+			}
+			add_casus_belli = {
+				target = FROM
+				type = cb_restore_personal_union
+				months = 60
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					NOT = {
+						government = monarchy
+					}
+				}
+			}
+			add_casus_belli = {
+				target = FROM
+				type = cb_annex
+				months = 60
+			}
+			
+		}
+		if = {
+			limit = {
+				FROM = {
+					alliance_with = ROOT
+				}
+			}
+			add_truce_with = ROOT
+			FROM = {
+				add_trust = {
+					who = ROOT
+					value = -75
+				}
+			}
+		}
+		add_prestige = -35
+		add_stability = -1
+    }
+	ai_will_do = {
+		OR = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_domineering
+			}
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_hostile
+			}
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_outraged
+			}
+			army_strength = {
+				who = FROM
+				value = 1.25
+			}
+			FROM = {
+				capital_scope = {
+					NOT = {
+						continent = ROOT
+					}
+				}
+			}
+		}
+		NOT = {
+			OR = {
+				has_casus_belli = {
+					type = cb_restore_personal_union
+					target = FROM
+				}
+				has_casus_belli = {
+					type = cb_annex
+					target = FROM
+				}
+				
+			}
+		}
+	}
+}
+
+join_independence_war = {
+	category = alliance
+	require_acceptance = no
+	is_visible = {
+		FROM = {
+			is_in_war = {
+				attacker_leader = FROM
+				casus_belli = cb_colonial_independance_war
+			}
+		}
+		ROOT = {
+			is_at_war = no
+		}
+	}
+	is_allowed = {
+		FROM = {
+			is_in_war = {
+				attacker_leader = FROM
+				casus_belli = cb_colonial_independance_war
+				#war_score = 15
+			}
+		}
+	}
+	ai_acceptance = {
+		
+	}
+	on_accept = {
+		join_all_offensive_wars_of = FROM
+		join_all_defensive_wars_of = FROM
+	}
+	ai_will_do = {
+		FROM = {
+			is_rival = ROOT
+			NOT = {
+				military_strength = {
+					who = ROOT
+					value = 1.0
+				}
+			}
+		}
+	}
+}
+
+leave_gercon = {
+	category = alliance
+	require_acceptance = no
+	is_visible = {
+		is_subject_of_type = german_confederation_member
+	}
+	is_allowed = {
+		is_subject_of_type = german_confederation_member
+	}
+	ai_acceptance = {
+		
+	}
+	on_accept = {
+		ROOT = {
+			grant_independence = yes
+		}
+	}
+	ai_will_do = {
+		always = no #ffs this is so borked
+		NOT = {
+			FROM = {
+				military_strength = {
+					who = ROOT
+					value = 3
+				}
+				has_opinion = {
+					who = ROOT
+					value = -190
+				}
+			}
+		}
+	}
+}
+
+join_zollverein = {
+	category = alliance
+	require_acceptance = yes
+	is_visible = {
+		is_subject = no
+		OR = {
+			
+			culture_group = germanic
+			
+			culture_group = benelux
+		}
+		FROM = {
+			has_subject_of_type = zollverein
+		}
+	}
+	is_allowed = {
+		is_subject_of_type = german_confederation_member
+	}
+	ai_acceptance = {
+		add_entry = {
+			name = FRIENDLY
+			limit = {
+				FROM = {
+					OR = {
+						ai_attitude = { who = ROOT attitude = attitude_friendly }
+						ai_attitude = { who = ROOT attitude = attitude_allied }
+					}
+				}
+			}
+			export_to_variable = { which = ai_value value = 1000 }
+		}
+		add_entry = {
+			name = DEFAULT_BGM
+			always = yes
+			export_to_variable = { which = ai_value value = 5 }
+		}
+		add_entry = {
+			name = HOSTILE
+			limit = {
+				FROM = {
+					OR = {
+						ai_attitude = { who = ROOT attitude = attitude_hostile }
+						ai_attitude = { who = ROOT attitude = attitude_outraged }
+						ai_attitude = { who = ROOT attitude = attitude_rivalry }
+					}
+				}
+			}
+			export_to_variable = { which = ai_value value = -1000 }
+		}
+	}
+	on_accept = {
+		FROM = {
+			create_subject = {
+				subject_type = zollverein
+				subject = ROOT
+			}
+		}
+	}
+	ai_will_do = {
+		always = no #ffs this is so borked
+		NOT = {
+			has_reform = united_cantons_reform
+		}
+		FROM = {
+			military_strength = {
+				who = ROOT
+				value = 2
+			}
+			has_opinion = {
+				who = ROOT
+				value = 100
+			}
+		}
+	}
+}

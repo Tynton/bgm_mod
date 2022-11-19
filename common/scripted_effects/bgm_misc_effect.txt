@@ -1,0 +1,6 @@
+bgm_religion_change = {
+	add_country_modifier = {
+		name = recent_conversion
+   		duration = 5475
+	}
+}

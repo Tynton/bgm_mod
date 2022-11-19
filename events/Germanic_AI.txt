@@ -1,0 +1,356 @@
+namespace = Germanic_AI
+
+
+#converts to protestant
+
+country_event = {
+	id = Germanic_AI.1
+	title = none
+	desc = none
+	picture = none
+	
+	trigger = {
+		ai = yes
+		OR = {
+			culture_group = scandinavian
+			
+			culture_group = germanic
+			tag = BRA
+			tag = TEU
+		}
+		is_subject = no
+		NOT = {
+			num_of_cities = 10
+		}
+		
+		NOT = {
+			has_country_modifier = conversion_zeal
+		}
+		
+		is_religion_enabled = protestant
+		
+		religion = catholic
+		NOT = {
+			has_country_flag = ai_scan_convert
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	#conversion_effects
+	
+	option = {
+		name = "Germanic_AI.1.a"
+		
+		set_country_flag = ai_scan_convert
+		
+		
+		if = {
+			limit = {
+				NOT = {
+					has_friendly_reformation_center = yes 
+				}
+			}
+			random_owned_province = {
+				change_religion = protestant
+				add_reform_center = protestant
+			}
+		}
+		
+		
+		change_religion = protestant
+		add_stability = -3
+		add_prestige = -100
+		remove_country_modifier = counter_reformation
+		remove_country_modifier = the_statue_in_restraint_of_appeals
+		remove_country_modifier = revocation_of_restraint_of_appeals
+		remove_country_modifier = bavarian_jesuits
+		remove_country_modifier = the_societas_jesu
+		remove_country_modifier = the_declaration_of_indulgence
+		remove_country_modifier = de_heretico_comburendo
+		remove_country_modifier = the_conventicle_act
+		add_country_modifier = {
+		name = "conversion_zeal"
+			duration = 3650
+		}
+		every_known_country = {
+			limit = {
+				reverse_has_opinion_modifier = {
+					who = ROOT
+					modifier = opinion_demote_pope
+				}
+			}
+			reverse_remove_opinion = {
+				who = ROOT
+				modifier = opinion_demote_pope
+			}
+		}
+	}
+}
+
+#attacks for claims
+
+country_event = {
+	id = Germanic_AI.2
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		BRA = {
+			ai = yes
+			army_strength = {
+				who = ROOT
+				value = 1.75
+			}
+			NOT = {
+				personality = ai_capitalist
+			}
+			is_at_war = no
+			truce_with = ROOT
+		}
+		any_owned_province = {
+			is_permanent_claim = BRA
+		}
+		NOT = {
+			any_ally = {
+				army_strength = {
+					who = BRA
+					value = 0.75
+				}
+			}
+		}
+		NOT = {
+			army_strength = {
+				who = BRA
+				value = 0.75
+			}
+			truce_with = BRA 
+		}
+		NOT = {
+			alliance_with = BRA
+		}
+		is_part_of_hre = no
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	#attack
+	
+	option = {
+		name = "Germanic_AI.2.a"
+		
+		BRA = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_annex
+			}
+		}
+	}
+}
+
+#alliance seeking
+
+country_event = {
+	id = Germanic_AI.3
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				BRA = {
+					ai = yes
+					NOT = {
+						is_rival = TEU
+					}
+				}
+				TEU = {
+					ai = yes
+					NOT = {
+						is_rival = BRA
+					}
+				}
+			}
+			
+			AND = {
+				BRA = {
+					ai = yes
+					NOT = {
+						is_rival = PRU
+					}
+				}
+				PRU = {
+					ai = yes
+					NOT = {
+						is_rival = BRA
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	#attack
+	
+	option = {
+		name = "Germanic_AI.3.a"
+		
+		BRA = {
+			create_alliance = TEU
+			create_alliance = PRU
+		}
+	}
+}
+
+country_event = {
+	id = Germanic_AI.4
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		PRU = {
+			is_subject_of = BRA
+			is_subject_of_type = personal_union
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	#attack
+	
+	option = {
+		name = "Germanic_AI.4.a"
+		
+		BRA = {
+			inherit = PRU
+		}
+	}
+}
+
+#alliance seeking 2
+
+country_event = {
+	id = Germanic_AI.5
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				HAB = {
+					ai = yes
+					NOT = {
+						is_rival = TEU
+					}
+				}
+				TEU = {
+					ai = yes
+					NOT = {
+						is_rival = HAB
+					}
+				}
+			}
+			
+			AND = {
+				HAB = {
+					ai = yes
+					NOT = {
+						is_rival = PRU
+					}
+				}
+				PRU = {
+					ai = yes
+					NOT = {
+						is_rival = HAB
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = "Germanic_AI.5.a"
+		
+		HAB = {
+			create_alliance = TEU
+			create_alliance = PRU
+		}
+		if = {
+			limit = {
+				BOH = {
+					ai = yes
+					NOT = {
+						OR = {
+							is_rival = TEU
+							is_rival = PRU
+							war_with = TEU
+							war_with = PRU
+						}
+					}
+				}
+			}
+			BOH = { create_alliance = TEU }
+			BOH = { create_alliance = PRU }
+		}
+	}
+}
+
+#curtail the prussian confederation
+
+country_event = {
+	id = Germanic_AI.6
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TEU
+		ai = yes
+		adm_power = 91
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "Germanic_AI.6.a"
+		add_adm_power = -91
+		add_stability = 1
+	}
+}

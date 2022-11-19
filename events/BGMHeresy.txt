@@ -1,0 +1,346 @@
+namespace = BGMHeresy
+
+country_event = {
+	id = BGMHeresy.1
+	title = "BGMHeresy.t.1"
+	desc = "BGMHeresy.d.1"
+	picture = {	
+		trigger = {
+			has_dlc = "Emperor"
+		}
+		picture = LUTHER_eventPicture
+	}
+	picture = {	
+		trigger = {
+			NOT = { has_dlc = "Emperor" }
+		}
+		picture = RELIGION_eventPicture
+	}
+	
+	fire_only_once = yes
+	
+	major = yes
+	
+	trigger = {
+		OR = {
+			current_age = age_of_reformation
+			current_age = age_of_absolutism
+		}
+		religion_years = { reformed = 20 }
+		
+		is_defender_of_faith = no
+		
+		OR = {
+			culture_group = west_slavic
+			culture_group = south_slavic
+			culture_group = carpathian
+			primary_culture = prussian
+		}
+		
+		religion = catholic
+		NOT = { has_reform = papacy_reform }
+		capital_scope = {
+			continent = europe
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 80
+		
+		modifier = {
+			factor = 0.5
+			religion_years = { protestant = 15 }
+		}
+		modifier = {
+			factor = 0.5
+			religion_years = { protestant = 30 }
+		}
+		modifier = {
+			factor = 0.9
+			innovativeness_ideas = 5
+		}
+		modifier = {
+			factor = 0.9
+			innovativeness_ideas = 6
+		}
+		modifier = {
+			factor = 0.9
+			innovativeness_ideas = 7
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { innovativeness_ideas = 3 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { innovativeness_ideas = 2 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { innovativeness_ideas = 1 }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea = humanist_tolerance
+		}
+		modifier = {
+			factor = 0.95
+			NOT = { has_opinion = { who = PAP value = -50 } }
+		}
+		modifier = {
+			factor = 0.85
+			NOT = { has_opinion = { who = PAP value = -100 } }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { has_opinion = { who = PAP value = -150 } }
+		}		
+		modifier = {
+			factor = 0.5
+			num_of_rebel_controlled_provinces = 1
+		}
+		modifier = {
+			factor = 2.0
+			government = theocracy
+		}
+		modifier = {
+			factor = 8.0
+			OR = {
+				NOT = { exists = PAP }
+				PAP = { is_part_of_hre = no }
+			}
+			OR = {
+				culture_group = latin
+				culture_group = iberian
+			}
+		}
+		modifier = {
+			factor = 0.75
+			PAP = { is_part_of_hre = yes }
+			is_part_of_hre = no
+			OR = {
+				culture_group = latin
+				culture_group = iberian
+			}
+		}
+	}
+	
+	option = {
+		name = "BGMHeresy.1.a"
+		enable_religion = unitarian
+		random_owned_province = {
+			change_religion = unitarian
+			add_reform_center = unitarian
+			add_permanent_province_modifier = {
+				name = "religious_zeal_at_conv"
+				duration = 9000
+			}
+			if = {
+				limit = {
+					NOT = { is_capital = yes }
+				}
+				root = {
+					capital_scope = {
+						change_religion = unitarian
+						add_permanent_province_modifier = {
+							name = "religious_zeal_at_conv"
+							duration = 9000
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = BGMHeresy.2
+	title = "BGMHeresy.t.2"
+	desc = "BGMHeresy.d.2"
+	picture = {	
+		trigger = {
+			has_dlc = "Emperor"
+		}
+		picture = LUTHER_eventPicture
+	}
+	picture = {	
+		trigger = {
+			NOT = { has_dlc = "Emperor" }
+		}
+		picture = RELIGION_eventPicture
+	}
+	
+	fire_only_once = yes
+	
+	major = yes
+	
+	trigger = {
+		is_religion_enabled = protestant
+		religion_years = { protestant = 15 }
+		is_defender_of_faith = no
+		religion = catholic
+		OR = {
+			
+			culture_group = germanic
+			
+		}
+		NOT = { has_reform = papacy_reform }
+		capital_scope = {
+			continent = europe
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 80
+		
+		modifier = {
+			factor = 0.5
+			religion_years = { protestant = 15 }
+		}
+		modifier = {
+			factor = 0.5
+			religion_years = { protestant = 30 }
+		}
+		modifier = {
+			factor = 0.9
+			innovativeness_ideas = 5
+		}
+		modifier = {
+			factor = 0.9
+			innovativeness_ideas = 6
+		}
+		modifier = {
+			factor = 0.9
+			innovativeness_ideas = 7
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { innovativeness_ideas = 3 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { innovativeness_ideas = 2 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { innovativeness_ideas = 1 }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea = humanist_tolerance
+		}
+		modifier = {
+			factor = 0.95
+			NOT = { has_opinion = { who = PAP value = -50 } }
+		}
+		modifier = {
+			factor = 0.85
+			NOT = { has_opinion = { who = PAP value = -100 } }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { has_opinion = { who = PAP value = -150 } }
+		}		
+		modifier = {
+			factor = 0.5
+			num_of_rebel_controlled_provinces = 1
+		}
+		modifier = {
+			factor = 2.0
+			government = theocracy
+		}
+		modifier = {
+			factor = 8.0
+			OR = {
+				NOT = { exists = PAP }
+				PAP = { is_part_of_hre = no }
+			}
+			OR = {
+				culture_group = latin
+				culture_group = iberian
+			}
+		}
+		modifier = {
+			factor = 0.75
+			PAP = { is_part_of_hre = yes }
+			is_part_of_hre = no
+			OR = {
+				culture_group = latin
+				culture_group = iberian
+			}
+		}
+	}
+	
+	option = {
+		name = "BGMHeresy.2.a"
+		enable_religion = anabaptist
+		random_owned_province = {
+			change_religion = anabaptist
+			add_reform_center = anabaptist
+			add_permanent_province_modifier = {
+				name = "religious_zeal_at_conv"
+				duration = 9000
+			}
+			if = {
+				limit = {
+					NOT = { is_capital = yes }
+				}
+				root = {
+					capital_scope = {
+						change_religion = anabaptist
+						add_permanent_province_modifier = {
+							name = "religious_zeal_at_conv"
+							duration = 9000
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+province_event = {
+	id = BGMHeresy.3
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		current_age = age_of_absolutism
+		is_reformation_center = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 4
+	}
+	
+	option = {
+		name = "BGMHeresy.3.a"
+		remove_reform_center = anabaptist
+	}
+}
+
+province_event = {
+	id = BGMHeresy.4
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		current_age = age_of_enlightenment
+		is_reformation_center = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 4
+	}
+	
+	option = {
+		name = "BGMHeresy.4.a"
+		remove_reform_center = unitarian
+	}
+}

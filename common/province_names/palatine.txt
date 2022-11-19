@@ -1,0 +1,22 @@
+1876 = { "Frangford" "Frangford am Maa" }
+65 = "Minche"
+50 = "Balin"
+77 = "Heidlberg"
+44 = "Hamburch"
+188 = "Meds"
+1869 = "Zirich"
+4748 = "Brandenbursch"
+4749 = "Naibrandenbursch"
+78 = "M‰‰nz"
+75 = "Stroosburi"
+94 = "Lugsebursch"
+83 = { "Nassau" "Wissbade" }
+
+
+1028 = "Togjo"
+5327 = { "Darmstait" "Darmundestat" }
+5153 = { "Landach" "Landau in der Pfalz" }
+
+1761 = { "Palz" "Wormbs" }
+4767 = { "Zweebrigge" "Saarbrigge" }
+80 = "Drir"

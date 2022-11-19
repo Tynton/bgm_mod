@@ -1,0 +1,210 @@
+intranational_cultural_tension = {
+	potential = {
+		NOT = { tag = ANA }
+		variable_arithmetic_trigger = {
+			custom_tooltip = cultural_dissimilarity_disaster
+			export_to_variable = {
+				which = num_of_provs_total
+				value = trigger_value:num_of_cities
+			}
+			export_to_variable = {
+				which = num_of_provs_with_trigger
+				value = 0
+			}
+			all_owned_province = {
+				if = {
+					limit = {
+						NOT = {
+							culture_group = ROOT
+						}
+					}
+					ROOT = {
+						variable_arithmetic_trigger = {
+							change_variable = { which = num_of_provs_with_trigger value = 1 }
+						}
+					}
+				}
+			}
+			divide_variable = { which = num_of_provs_with_trigger which = num_of_provs_total }
+			check_variable = { which = num_of_provs_with_trigger which = 0.5 } # 50%
+		}
+		has_institution = nationalism_institution
+		has_global_flag = revolutions_year_start
+
+		is_subject = no
+	}
+
+	
+	
+	can_start = {
+		variable_arithmetic_trigger = {
+			custom_tooltip = cultural_dissimilarity_disaster
+			export_to_variable = {
+				which = num_of_provs_total
+				value = trigger_value:num_of_cities
+			}
+			export_to_variable = {
+				which = num_of_provs_with_trigger
+				value = 0
+			}
+			all_owned_province = {
+				if = {
+					limit = {
+						NOT = {
+							culture_group = ROOT
+						}
+					}
+					ROOT = {
+						variable_arithmetic_trigger = {
+							change_variable = { which = num_of_provs_with_trigger value = 1 }
+						}
+					}
+				}
+			}
+			divide_variable = { which = num_of_provs_with_trigger which = num_of_provs_total }
+			check_variable = { which = num_of_provs_with_trigger value = 0.5 } # 50%
+		}
+		OR = {
+			AND = {
+				NOT = {
+					war_score = -50
+				}
+				is_at_war = yes
+			}
+			NOT = {
+				stability = 1
+			}
+		}
+	}
+	
+	can_stop = { 
+		OR = {
+			AND = {
+				is_at_war = no
+				stability = 3
+			}
+			#NOT = { num_of_loans = 1 }
+			NOT = {
+				variable_arithmetic_trigger = {
+					custom_tooltip = cultural_dissimilarity_disaster
+					export_to_variable = {
+						which = num_of_provs_total
+						value = trigger_value:num_of_cities
+					}
+					export_to_variable = {
+						which = num_of_provs_with_trigger
+						value = 0
+					}
+					all_owned_province = {
+						if = {
+							limit = {
+								NOT = {
+									culture_group = ROOT
+								}
+							}
+							ROOT = {
+								variable_arithmetic_trigger = {
+									change_variable = { which = num_of_provs_with_trigger value = 1 }
+								}
+							}
+						}
+					}
+					divide_variable = { which = num_of_provs_with_trigger which = num_of_provs_total }
+					check_variable = { which = num_of_provs_with_trigger value = 0.5 } # 50%
+				}
+			}
+		}
+	}
+	
+	
+	progress = {
+		modifier = {
+			factor = 4
+			is_bankrupt = yes
+		}
+		modifier = {
+			factor = 0.1
+			absolutism = 25
+		} 
+		modifier = {
+			factor = 0.1
+			absolutism = 50
+		} 
+		modifier = {
+			factor = 0.1
+			absolutism = 75
+		} 
+		modifier = {
+			factor = 3
+			has_global_flag = global_stock_crash
+		}
+		modifier = {
+			factor = 1
+			has_global_flag = lull_stock
+		}
+		modifier = {
+			factor = -0.5
+			has_global_flag = boom_stock
+		}
+		modifier = {
+			factor = 2
+			war_exhaustion = 1
+		}
+		modifier = {
+			factor = 2
+			war_exhaustion = 2
+		}
+		modifier = {
+			factor = 2
+			war_exhaustion = 4
+		}
+		modifier = {
+			factor = 4
+			war_exhaustion = 8
+		}
+	}
+	
+
+	
+	can_end = {
+		OR = {
+			current_size_of_parliament = 1
+			AND = {
+				stability = 3
+				NOT = { num_of_rebel_controlled_provinces = 1 }
+			}
+		}
+	}
+	
+
+	modifier = {
+		global_unrest = 25
+		stability_cost_modifier = 0.25
+		
+		stability_cost_to_declare_war = 2
+
+		min_autonomy = 25
+		global_autonomy = 0.15
+
+		diplomatic_reputation = -1
+		war_exhaustion = 2
+
+		reduced_liberty_desire = -10
+	}
+	
+	
+	on_start = intranational_tension.1
+	on_end = intranational_tension.4
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = { 
+			1000 = 0
+			100 = intranational_tension.2
+			100 = intranational_tension.3
+			100 = intranational_tension.5
+		}
+	}
+}
+

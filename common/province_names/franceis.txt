@@ -1,0 +1,19 @@
+85 = "Coloigne"
+151 = "Constantinoble"
+233 = "Cornuaille"
+214 = "Sarraguce"
+146 = "Athenes"
+4111 = { "Xainctonge" "Xaintonge" } #Saintes
+177 = { "Cemaine" "Le Maine" }
+88 = "Arteis"
+
+180 = { "Haut-Poitou" "Peitiers" }
+4769 = "L'Isle"
+4776 = { "Blais" "Bleis" }
+184 = "Orliens"
+4384 = { "Resnes" "Rednes" }
+204 = "Graignovol"
+
+194 = { "Périgord" "Bragayrac" }
+4374 = "Dorsete"
+4130 = "Sormersete"

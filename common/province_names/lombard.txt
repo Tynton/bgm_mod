@@ -1,0 +1,23 @@
+107 = { "Brèsa" "Brèssa" }
+4739 = { "Bèrghem" "Bergum" }
+4740 = { "Còmm" "Cómm" }
+2979 = "Nuàra"
+1862 = "Cremùna"
+104 = "Milan"
+118 = "Rouma"
+121 = { "Napul" "Napol" }
+116 = { "Fireenz" "Firenz" }
+112 = "Venèzia"
+2981 = "Monferraa"
+103 = "Türì"
+5014 = { "La Spesia" "La Spessia" }
+101 = "Genua"
+109 = "Mantua"
+4971 = "Tisin"
+5021 = "San Marin"
+4729 = "Padoa"
+
+5389 = "Avegvan"
+5390 = { "Monça" "Monscia" }
+5391 = "Büsti Grandi"
+5392 = "Burbanee"

@@ -1,0 +1,1751 @@
+colonial_ivory_coast = {
+	color = { 50 0 200 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		inuit = 10
+		aleutian = 8
+	}
+	
+	religion = {
+		shamanism = 10
+	}
+
+	provinces = {
+		1096 1466 1097 1098 1118 1119 2242 1306 
+		1111
+		1126 1139 1141 2257 2258 #West Africa Coast
+		
+		1140 1143 2291 2292 2295
+		1138 2254 2255 2256 2267
+		
+		#5353 5354
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_ivory_coast
+			}
+		}
+		name = "COLONIAL_WEST_AFRICA_ivory_coast"
+	}
+}
+
+colonial_south_africa = {
+	color = { 0 175 0 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		789 833 1175 1176 1177 1178 1179 1180 1181 1182 1801 1173 1800 2856 2864 2880 4781 4782 4783 4784
+		1174 
+		#5348 5349 5350 5333
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_south_africa
+			}
+		}
+		name = "COLONIAL_AFRICA_south_africa"
+	}
+}
+
+colonial_east_africa = {
+	color = { 200 0 0 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		1100 1102 1103 1193 1194 1792 4020 4021 4022 4023 4024 4025 4026 4027 4028 4029 4030 4031 4032
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_east_africa
+			}
+		}
+		name = "COLONIAL_AFRICA_east_africa"
+	}
+}
+
+colonial_safi = {
+	color = { 191 110 62 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		344 345 347 348 1110 2464 2467 2468 2469 2470 342 343
+		4564 4568
+		334 335 1751 4561 4563
+		
+		#2463 2459 2462 336 337 338 2461 2465 4562
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_safi
+			}
+		}
+		name = "COLONIAL_AFRICA_safi"
+	}
+}
+
+colonial_timbuktu = {
+	color = { 108 152 84 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		1115 2237 2240 1122 1125 2251 1135 1137 2265 2266 1136 2252 2253 2247 1120 1121 1124 1123 1131 1132 1134 1133 1142 2243 2244 2245 2246 2248 2249 2250 2259 2260 2261 2262 2263 2264 2268 2269 2270 
+		1128 1129 1130 2271
+		
+		1112 1113 1116 2239 #Jolof
+		2241
+		1114 1117 2238 #Futa Jalon
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_timbuktu
+			}
+		}
+		name = "colonial_timbuktu"
+	}
+}
+
+colonial_tunis = {
+	color = { 146 134 57 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		355 339 340 341 350 351 352 353 354 1882 2448 2449 2450 2451 2452 2453 2454 2455 2456 2457 2458 2472 2473 2474 2954 4566 4567
+		2463 2459 2462 336 337 338 2461 2465 4562
+		349 2460 1127 346 2466
+		356 357
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_tunis
+			}
+		}
+		name = "colonial_tunis"
+	}
+}
+
+colonial_alexandria = {
+	color = { 200 200 102 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		1234 2322 2323 #lower_nubia_area
+		365 2315 2320 2321 #gulf_of_arabia_area
+		1233 2318 4323 #al_wahat_area
+		358 362 363 #delta_area
+		361 2316 4316 4317 #bahari_area
+		359 2317 4318 #vostani_area
+		360 1231 2319 4319 4320 #said_area
+		2325 2326 #cyrenaica_area, 356 357
+		1232 2324 1226 1229 1225 1217 1216 2797 1228 2800 2801 2802 1221 1222 4033 1220 2798 2799
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_alexandria
+			}
+		}
+		name = "COLONIAL_AFRICA_alexandria"
+	}
+}
+
+colonial_katsina = {
+	color = { 215 56 56 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		1144 1146 1162 1145 1152 1153 1150 1154 1155 1156 1157 1158 1160 1161 1249 1149 1148 2273 2272 2274 2275 2276 2277 2278 2279 2280 2281 2282 2283 2284 2285 2286 2287 2288 2293 2475 1159
+		#5343 5344 5345 5346 5347
+		774 1219 2932
+		
+		2290 1147 2289 2294 1151 1163 1164 1165 4078 1166 1169
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_katsina
+			}
+		}
+		name = "COLONIAL_AFRICA_katsina"
+	}
+}
+
+colonial_aden = {
+	color = { 96 75 65 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		402 1099 4284 #mahra_area
+		387 2346 4279 #tihama_al_yemen_area
+		390 2344 4281 #upper_yemen_area
+		388 2345 4280 #yemen_area
+		386 391 4282 #asir_area
+		389 2343 4283 #hadramut_area
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_aden
+			}
+		}
+		name = "COLONIAL_BGM_aden"
+	}
+}
+
+colonial_ethiopia = {
+	color = { 40 46 64 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		1218 2756 2757 2758 2759 2760 2761 2762 2763 2772 2791 2778 2785 2766 
+		2767 2769 2770 2771 2779 2780 2781 1224 1213 1223 1214 1227 1207 1208 1210 2776 4158 2777 4051 4052
+		
+		2783 2786 2788 2789 2790 2793 2794 2795 2024 1205 1206 1209 1212 1215 1230 2765 2773 2792 2784 1211 2764 2787 1779 2775 2782 2768 #ethiopia
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_ethiopia
+			}
+		}
+		name = "COLONIAL_BGM_ethiopia"
+	}
+}
+
+colonial_kongo = {
+	color = { 125 29 32 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		1901 4079 4081 4085 4086 4087 4088 4089 4090 4091 4092 4096 4107 4098 4100 4101 4102 4103 4097 4099 4105 4109 
+		#5351 5352
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_kongo
+			}
+		}
+		name = "COLONIAL_BGM_kongo"
+	}
+}
+
+colonial_angola = {
+	color = { 245 20 40 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		inuit = 10
+		aleutian = 8
+	}
+	
+	religion = {
+		shamanism = 10
+	}
+
+	provinces = {
+		1167 1171 1172 #Angola
+		1168 1170 2949 4080 4084 798 2948 4082 4083 4094 4093 4095
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_angola
+			}
+		}
+		name = "COLONIAL_BGM_angola"
+	}
+}
+
+colonial_great_lakes = {
+	color = { 57 168 220 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		1273 1649 1798 1799 1925 4053 4054 4055 4056 4057 4058 4059 4060 4061 4062 4063 4064 4065 4066 4067 4068 4069 4070 4071 4072 4073 4074 4075 4076 4077 
+		
+		1197 1199 1200 1201 1202 1203 1204 2774 2796
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_great_lakes
+			}
+		}
+		name = "COLONIAL_BGM_great_lakes"
+	}
+}
+
+colonial_zambezi = {
+	color = { 32 164 51 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		1184 1185 1187 1188 1189 1190 1191 2950 2951 2952 4034 4035 4036 4037 4038 4039 4040 4041 4042 4043 4044 4045 4046 4047 4048 4050 4104 4106 4108
+		
+		788 1183 1186 1192 1195 1196 1198 4049
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_zambezi
+			}
+		}
+		name = "COLONIAL_BGM_zambezi"
+	}
+}
+
+colonial_aleppo = {
+	color = { 202 150 172 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		377 1849 2313 4298 #aleppo_area
+		378 382 1855 4297 #syria_area
+		407 411 2309 2314 4292 #al_jazira_area
+		405 4270 4271 #syrian_desert_area
+		2308
+		364 379 1854 #palestine_area
+		380 381 2327
+		321
+		#5119 5120
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_aleppo
+			}
+		}
+		name = "COLONIAL_BGM_syria"
+	}
+}
+
+colonial_basra = {
+	color = { 152 151 146 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		412 2217 4289 4290 4342 #khuzestan_area
+		394 395 396 2340 2347 #bahrain_area
+		393 2338 4272 #nafud_area
+		392 2337 4273 4274 #qasim_area
+		2335 2336 2339 4275 #yamamah_area
+		408 2311 2312 4288 #basra_area
+		406 409 410 2310 4291 #iraq_arabi_area
+		413 414 2209 2210 #luristan_area
+		415 2211 4293 4294 #shahrizor_area
+		384 2329 2330 #medina_area
+		383 2328 4268 4269 #tabuk_area
+		385 2331 2332 4277 4278 #mecca_area
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_basra
+			}
+		}
+		name = "COLONIAL_BGM_iraq"
+	}
+}
+
+colonial_persia = {
+	color = { 204 119 31 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		435 2224 2229 2230 #sistan_area
+		436 4334 4336 #birjand_area
+		446 4324 4325 #herat_area
+		2221 2235 2236 4326 #mashhad_area
+		417 426 2214 4339 4341 #tabarestan_area
+		427 428 2213 2216 4337 #iraq_e_ajam_area
+		429 433 2222 4335 4171 #isfahan_area
+		419 420 2202 2205 #armenia_area 4302
+		421 424 4299 4305 4340 #shirvan_area
+		416 2206 2207 4304 #tabriz_area
+		2212 2215 4300 4338 #azerbaijan_area
+		
+		431 2999 4327 #mogostan_area
+		432 2220 2234 4345 #kerman_area
+		2218 4329 4330 4331 #farsistan_area
+		430 2219 2223 4332  #persian_gulf_coast
+		434 575 2231 2232 2233 #makran_area
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_persia
+			}
+		}
+		name = "COLONIAL_BGM_persia"
+	}
+}
+
+colonial_hormuz = {
+	color = { 177 108 98 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		397 398 404 2333 #pirate_coast_area
+		403 4285 4287 #oman_area
+		399 400 4286 #mascat_area
+		401 2341 2342 #dhofar_area
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_hormuz
+			}
+		}
+		name = "COLONIAL_BGM_hormuz"
+	}
+}
+
+colonial_girin = {
+	color = { 41 82 45 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		1850 1049 2107 2108 2111 2106 2186 1058 2102 2104 1053 2103 1034 1035 1036 1037 1038 1039 1040 1041 1042 1043 1044 1046 1047 1052 1783 2438 2439 2440 2446 1055 1056 1057 730 2110 2188 4201 1033 1048 1050 4214 4216 729 731 2105 4215 4217 722 2109 2187 4202 4203 724 725 4218 727 728 2185 4200
+		4654 4655 4656 4657 4658 4659 4660 4661 4662 4653 4663
+		4664 4665 4674 4675 4672 2115
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_girin
+			}
+		}
+		name = "COLONIAL_BGM_manchuria"
+	}
+}
+
+colonial_nippon = {
+	color = { 248 234 155 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		1012 1014 1017 1018 1019 1020 1021 1023 1024 1025 1026 1027 1028 1029 1030 1031 1032 1818 1819 1820 1825 1830 1832 1835 1837 1839 1843 1847 1852 4131 4180 4181 4182 4183 4184 4185 4186 4187 4188 4189 4190 4191 4192 4193 1015 4359 4360 4651
+		#5355 5356 5357 5358
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_nippon
+			}
+		}
+		name = "COLONIAL_BGM_japan"
+	}
+}
+
+colonial_korea = {
+	color = { 41 82 145 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		1845 2744 4232 #pyongan_area
+		732 2742 2743 #hamgyeong_area
+		733 735 4230 4231 #western_korea_area
+		734 736 2694 2745 4227 #eastern_korea_area
+		737 1013 2741 4228 4229 #south_korea_area
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_korea
+			}
+		}
+		name = "COLONIAL_BGM_korea"
+	}
+}
+
+colonial_west_india = {
+	color = { 135 104 85 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		518 2058 2087 4501 4462 #mewar_area
+		512 4502 4507 2066 #jangladesh_area
+		513 514 2067 4506 #marwar_area
+		504 2088 4503 4504 #sindh_area
+		505 2072 4505 #northern_sindh_area
+		529 530 2089 4429 #konkan_area
+		515 521 2052 4454 4455 #saurashtra_area
+		517 2036 4430 #tapti_area
+		503 2053 4456 4480 #patan_area
+		516 2051 2054 4512 4457 #ahmedabad_area
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_west_india
+			}
+		}
+		name = "COLONIAL_BGM_westindia"
+	}
+}
+
+colonial_east_india = {
+	color = { 135 0 0 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		553 2082 4447 4451 4452 #upper_mahanadi_area
+		547 2048 4445 4446 4448 #garjat_area
+		561 2081 4476 4477 #west_bengal_area
+		564 2039 4474 4475 4478 #east_bengal_area
+		552 2038 2043 2049 4441 #orissa_area
+		560 2096 4450 4470 4471 #jharkhand_area
+		562 2045 2046 4486 #north_bengal_area
+		563 2044 4479 #gaur_area
+		568 579 2402 #arakan_area
+		558 4469 4472 4489 #bihar_area
+		2047 4484 4487 4488 #mithila_area
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_east_india
+			}
+		}
+		name = "COLONIAL_BGM_eastindia"
+	}
+}
+
+colonial_burma = {
+	color = { 135 150 0 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		570 573 2041 #naga_hills_area
+		584 2399 581 #upper_burma_area
+		2398 580 4393 2397 #chindwin_area
+		566 571 2040 2042 4440 #assam_area
+		4394 4396 585 4395 #central_burma_area
+		583 588 2400 4397 4406 #shan_hill_area
+		587 2401 4398 #karenni_area 
+		582 2395 2396 4404 4405 #kachin_area
+		567 2091 4473 #tripura_area
+		586 590 1815 2403 4399 #lower_burma_area
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_burma
+			}
+		}
+		name = "COLONIAL_BGM_burma"
+	}
+}
+
+colonial_coromandel = {
+	color = { 50 30 210 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		2083 4418 4419 4420 #north_carnatic_area
+		539 540 1947 2027 4417 #south_carnatic_area
+		536 2101 4412 #madura_area
+		2100 4408 4409 #lanka_area
+		572 2099 4407 #south_lanka_area
+		574 1101 1248 1998 1999 #indian_ocean_islands_area
+		538 2085 4414 #kongu_area
+		2026 4415 4416 #tanjore_area
+		533 2031 4421 4422 4426 #mysore_area
+		541 1949 2090 4423 4424 #rayalaseema_area
+		534 535 537 4410 4413 #malabar_area
+		531 2029 2030 2032 4427 #kanara_area
+		543 549 2084 2080 4425 #andhra_area
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_coromandel
+			}
+		}
+		name = "COLONIAL_BGM_southindia"
+	}
+}
+
+colonial_deccan = {
+	color = { 175 27 217 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		526 2056 2057 2093 4461 #malwa_area
+		550 551 2092 4458 4460 #gondwana_area
+		532 2033 4428 #raichur_doab_area
+		2028 4438 4444 #telingana_area
+		542 2037 4436 4439 #golconda_area
+		527 4434 4453 #khandesh_area
+		569 1948 2035 4435 #maidan_area
+		546 548 2050 4442 4443 #berar_area
+		1946 2034 4431 #desh_area
+		544 545 4432 4433 4437 #ahmednagar_area
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_deccan
+			}
+		}
+		name = "COLONIAL_BGM_centralindia"
+	}
+}
+
+colonial_north_india = {
+	color = { 220 150 10 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		522 2060 2062 #upper_doab_area
+		2061 4498 4499 #katehar_area
+		519 520 2064 4500 #jaipur_area
+		523 2094 4494 4495 4497 #oudh_area
+		555 2055 2095 4490 #purvanchal_area
+		524 556 2063 4496 #lower_doab_area
+		525 528 740 4464 4465 #gird_area
+		559 2059 4459 4466 4467 #bundelkhand_area
+		2097 2098 4468 #baghelkhand_area
+		4491 4492 554 #baisi_rajya_area
+		509 511 2069 4493 #himalayan_hills_area
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_north_india
+			}
+		}
+		name = "COLONIAL_BGM_northindia"
+	}
+}
+
+colonial_indonesia = {
+	color = { 0 240 0 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		593 594 595 596 597 598 599 617 618 619 620 621 622 623 636 637 638 639 640 659 1361 2390 2391 2392 2393 2394 2673 2674 2675 2676 2677 2678 2679 2680 2681 2682 2683 2684 2685 2686 2703 2704 2705 2706 2707 2708 2709 2710 2711 2712 2740 
+		4799 4800 4801 4802 4803 4804 4805 4806 4809 4810 4811 4812 4813 4814 4815 4816 4817 4818
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_indonesia
+			}
+		}
+		name = "COLONIAL_BGM_indonesia"
+	}
+}
+
+colonial_philippines = {
+	color = { 0 200 150 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		2701 2702 4355 #mindanao_area
+		652 653 4354 #west_mindanao_area
+		654 2700 4351 4352 4353 #visayas_area
+		651 655 4356 #palawan_area
+		657 658 2698 4348 #luzon_area
+		656 2697 2699 4349 4350 #southern_luzon_area
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_philippines
+			}
+		}
+		name = "COLONIAL_BGM_philippines"
+	}
+}
+
+colonial_moluccas = {
+	color = { 196 191 61 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		646 2687 2688 2689 2690 2718 2724 1357 1245 647 645 2717 648 649 650 2725 2696 2695 635 633 634 643 2713 2714 642 2715 641 2716 632 627 2691 631 2693 629 2692 628 626 625 630 624 644 2723
+		2722 2721 1237 2720 2719 # eastern papua
+		1789 # papua wasteland
+		4790 4791 4792 4793 4794 4795 4796 4797 4798 4845
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_moluccas
+			}
+		}
+		name = "COLONIAL_BGM_moluccas"
+	}
+}
+
+colonial_indochina = {
+	color = { 84 152 93 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		592 600 601 602 603 604 605 606 609 607 608 611 612 614 615 1817 1823 1844 1022 2374 2375 2376 2377 2378 2379 2380 2381 2382 2383 2384 2385 2386 2387 2388 2389 591 2404 2371 1365
+		589 #Karenni
+		4822 4823 4824 4825 4826 4827 4828 4829 4830 4831 4832 4833 4834 4835 4836 4837 4838 4839 4840 4841 4842
+		610 613 616 2373 4819 4820 4821 1016 2372 #vietnam
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_indochina
+			}
+		}
+		name = "COLONIAL_BGM_indochina"
+	}
+}
+
+colonial_polynesia = {
+	color = { 220 138 57 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		1238 1242 1244 1989 1243
+		1990 1992 1240 1997
+		1235 1995 1996 1241 1991
+		1993 1994 1988 1986 1236
+		1987 1239 4934 4935 4936
+		4937 4938
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_polynesia
+			}
+		}
+		name = "COLONIAL_BGM_polynesia"
+	}
+}
+
+colonial_lahore = {
+	color = { 63 150 30 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		508 2073 2074 4449 4521 #kashmir_area
+		507 2075 2076 4510 4513 #lahore_area
+		506 2079 2086 4508 4509 #multan_area
+		2077 2078 4511 #sind_sagar_area
+		510 2065 4411 4463 #sirhind_area
+		576 577 2068 #kalat_area
+		448 451 452 578 2226 #kabulistan_area
+		447 449 2225 #ghor_area
+		450 2227 2228 #balkh_area
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_lahore
+			}
+		}
+		name = "COLONIAL_BGM_lahore"
+	}
+}
+
+colonial_siberia = {
+	color = { 147 96 77 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		1782 1781 1071 479 1054 1059 1061 1062 1063 1064 1067 1068 1070 480 1069 1073 1074 1080 1078 1075 1076 2357 2369 2427 2428 2429 2430 2431 2432 2433 2434 2436 2437 2442 2443 2445 1072 1780 1045 2435 1051 2441 2354 716 1065 1066 
+		1060
+		4679 4686 4687 4688 4689 4690 4691 4692
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_siberia
+			}
+		}
+		name = "COLONIAL_BGM_siberia"
+	}
+}
+
+colonial_astrakhan = {
+	color = { 202 120 152 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		288 303 465 467 469 470 474 1971 2365 2367 2366 2409 2418 2419 472 471 464 466 468 2416 2417 
+		302 304 2415 #tambov_area
+		425 2198 2199 2208 4306 #dagestan_area
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_astrakhan
+			}
+		}
+		name = "COLONIAL_BGM_astrakhan"
+	}
+}
+
+colonial_samarkand = {
+	color = { 141 120 67 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		440 441 442 444 445 453 454 455 456 457 459 476 477 1967 1969 1970 1973 461 478 2126 2370 2362 2363 2356 2364 2368 2355 2360 2361 2358 2352 2351 2353 2359 458 2125 460 2350 437 438 439 443 2349 739 2124 2127 4209 4210 
+		1968 4344 4343 #termez_area
+		4685
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_samarkand
+			}
+		}
+		name = "COLONIAL_BGM_samarkand"
+	}
+}
+
+colonial_yumen = {
+	color = { 115 93 58 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		710 1786 707 708 711 714 719 1784 2118 2119 2123 2189 2190 2194 2182 2184 2122 4206 4207 717 721 2116 4219 4220 720 2193 4221 713 715 2120 4208 718 2117 4222 712 2121 2192 
+		4673 4666 4667 723 4669 4668 4681 4683 4682 4678 4677 4680 4684 4693
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_yumen
+			}
+		}
+		name = "COLONIAL_BGM_yumen"
+	}
+}
+
+colonial_xian = {
+	color = { 159 112 119 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		687 1836 2181 2180 698 699 688 692 2183 2175 2176 681 682 2171 2172 4197 689 700 2179 4198 701 709 2191 4223 
+		4676
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_xian
+			}
+		}
+		name = "COLONIAL_BGM_xian"
+	}
+}
+
+colonial_chengdu = {
+	color = { 196 157 34 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		2132 2167 678 2135 2131 2133 660 661 2165 2166 679 680 4212 2169 2170 4211 675 2168 2748 4213
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_chengdu
+			}
+		}
+		name = "COLONIAL_BGM_chengdu"
+	}
+}
+
+colonial_lhasa = {
+	color = { 106 112 138 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		2129 2128 676 705 706 2134 4204 677 2130 4205 
+		565 4481 4482 #bhutan_area
+		557 2070 2071 4483 4485 #nepal_area
+		4514 4515 4516 4517 4518 4519 4520 #new tibetan provinces
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_lhasa
+			}
+		}
+		name = "COLONIAL_BGM_tibet"
+	}
+}
+
+colonial_south_china = {
+	color = { 100 230 20 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		2161 1371 664 665 666 667 668 672 738 1840 2154 2155 2156 2157 2158 2159 2160 2162 2163 2164 2173 2174 671 662 663 673 674 4199 
+		#4947 4948 4949 5370 5371 
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_south_china
+			}
+		}
+		name = "COLONIAL_BGM_south_china"
+	}
+}
+
+colonial_east_china = {
+	color = { 178 34 34 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		669 670 683 684 685 686 1821 1822 1824 1829 1833 1838 1897 2143 2144 2145 2146 2147 2148 2149 2150 2151 2152 2153
+		2141 2142 4196 #North Jiangsu
+		#5372 5373 5374 5375 5376
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_east_china
+			}
+		}
+		name = "COLONIAL_BGM_east_china"
+	}
+}
+
+colonial_north_china = {
+	color = { 60 60 255 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		690 691 702 2138 2139 2140 2114 2747 4671
+		703 1816 2136 4194 #North Hebei
+		695 696 2137 4195 #South Hebei
+		704 726 2112 2113 4652  #Liaoning
+		693 694 697 2177 2178 #Shanxi
+		4670
+		#5359 5360 5361 5362 5363 5364 5365 5366 5367 5368 5369
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_north_china
+			}
+		}
+		name = "COLONIAL_BGM_north_china"
+	}
+}
+
+colonial_turkey = {
+	color = { 126 203 120 }
+
+	# Random New World
+	tax_income = 0
+	native_size = 8
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		naval_supplies = 1
+	}
+	
+	culture = {
+		aleutian = 1
+	}
+	
+	religion = {
+		shamanism = 1
+	}
+
+	provinces = {
+		325 328 2299 2304
+		329 1846 2300 4314 4315 #rum_area
+		316 317 2296 #hudavendigar_area
+		322 1848 4308 4311 #germiyan_area
+		318 319 2297 2298 4309 #aydin_area
+		326 4312 4313 #ankara_area
+		327 2302 #cukurova_area
+		323 324 2301 4307 #karaman_area
+		332 2303 4310 #dulkadir_area URFA 2308 IS IN ALEPPO
+		418 2306 2307 4295 4296 #north_kurdistan_area
+		2196 2204 4303 #samtskhe_area
+		4302
+		2305
+		4700 # 1.30
+		330 331
+	}
+	# Generic
+	names = {
+		trigger = {
+			any_owned_province = {
+				colonial_region = colonial_turkey
+			}
+		}
+		name = "COLONIAL_BGM_turkey"
+	}
+}

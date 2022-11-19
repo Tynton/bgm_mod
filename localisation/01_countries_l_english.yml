@@ -1,0 +1,430 @@
+﻿l_english:
+ UNK:0 "United Kingdom"
+ UNK_ADJ:0 "British"
+ SGB:0 "Great Britain"
+ SGB_ADJ:0 "British"
+ BRP:0 "British Republic"
+ BRP_ADJ:0 "British"
+ EJA:0 "Empire of Japan"
+ EJA_ADJ:0 "Japanese"
+ AHU:0 "Austria-Hungary"
+ AHU_ADJ:0 "Austro-Hungarian"
+ BEL:0 "Belgium"
+ BEL_ADJ:0 "Belgian"
+ ROC:0 "China"
+ ROC_ADJ:0 "Chinese"
+ PRC:0 "People's Republic of China"
+ PRC_ADJ:0 "Chinese"
+ SVU:0 "Soviet Union"
+ SVU_ADJ:0 "Soviet"
+ RUF:0 "Russian Federation"
+ RUF_ADJ:0 "Russian"
+ CZE:0 "Czechia"
+ CZE_ADJ:0 "Czechian"
+ CZS:0 "Czechoslovakia"
+ CZS_ADJ:0 "Czechoslovakian"
+ SLV:0 "Slovenia"
+ SLV_ADJ:0 "Slovakian"
+ TRK:0 "Turkey"
+ TRK_ADJ:0 "Turkish"
+ AIS:0 "Automated State"
+ AIS_ADJ:0 "Automated"
+ UKN:0 "Ukraine"
+ UKN_ADJ:0 "Ukrainian" #Ukraiyinskyy
+ FRR:0 "Republican France"
+ FRR_ADJ:0 "French"
+ FRC:0 "French Popular Republic"
+ FRC_ADJ:0 "French"
+ FRE:0 "Imperial France"
+ FRE_ADJ:0 "French"
+ BRF:0 "Empire of Britain"
+ BRF_ADJ:0 "British"
+ BRC:0 "British Democratic Republic"
+ BRC_ADJ:0 "British"
+ GRG:0 "Greater Germany"
+ GRG_ADJ:0 "German"
+ BLR:0 "Belarus"
+ BLR_ADJ:0 "Belarusian"
+ GRF:0 "German Realm"
+ GRF_ADJ:0 "German"
+ LAT:0 "Latvia"
+ LAT_ADJ:0 "Latvian"
+ DRC:0 "Zaire"
+ DRC_ADJ:0 "Zairean"
+ SAF:0 "South Africa"
+ SAF_ADJ:0 "South African"
+ YUG:0 "Yugoslavia"
+ YUG_ADJ:0 "Yugoslavian"
+ RAJ:0 "The Raj"
+ RAJ_ADJ:0 "Colonial"
+ CSA:0 "Confederate States"
+ CSA_ADJ:0 "Confederate"
+ OTF:0 "Second Ottoman Empire"
+ OTF_ADJ:0 "Ottoman"
+ GRC:0 "German Democratic Republic"
+ GRC_ADJ:0 "German"
+ ABY:0 "Abyssinia"
+ ABY_ADJ:0 "Abyssinian"
+ SUD:0 "Sudan"
+ SUD_ADJ:0 "Sudanese"
+ GRS:0 "Germany"
+ GRS_ADJ:0 "German"
+ RDI:0 "Inglaterra"
+ RDI_ADJ:0 "Ingles"
+ ZMB:0 "Zimbabwe"
+ ZMB_ADJ:0 "Zimbabwean"
+ EUU:0 "European Union"
+ EUU_ADJ:0 "European"
+ NTI:0 "Fraticelli Papacy"
+ NTI_ADJ:0 "Fraticelli"
+ ADO:0 "Andorra"
+ ADO_ADJ:0 "Andorran"
+ CMA:0 "Colmar"
+ CMA_ADJ:0 "Colmarian"
+ SMA:0 "San Marino"
+ SMA_ADJ:0 "San Marinese"
+ OFF:0 "Offenburg"
+ OFF_ADJ:0 "Offenburger"
+ HIL:0 "Hildesheim"
+ HIL_ADJ:0 "Hildesheimer"
+ FCO:0 "Free County"
+ FCO_ADJ:0 "Franc-Comtois"
+ HMM:0 "Hamm"
+ HMM_ADJ:0 "Hammer"
+ DUI:0 "Duisburg"
+ DUI_ADJ:0 "Duisburger"
+ KTZ:0 "Katzenelnbogen"
+ KTZ_ADJ:0 "Katzenelnbogener"
+ FNE:0 "Finale"
+ FNE_ADJ:0 "Finalese"
+ AUE:0 "Austrian Realm"
+ AUE_ADJ:0 "Austrian"
+ KEN:0 "Kent"
+ KEN_ADJ:0 "Kentish"
+ MRC:0 "Mercia"
+ MRC_ADJ:0 "Mercian"
+ WSX:0 "Wessex"
+ WSX_ADJ:0 "Wessexian"
+ ANA:0 "Anarchy"
+ ANA_ADJ:0 "Anarchic"
+ REF:0 "Russian Empire"
+ REF_ADJ:0 "Russian"
+ FRF:0 "French Empire"
+ FRF_ADJ:0 "French"
+ 
+ SPD:0 "Spain"
+ SPD_ADJ:0 "Spanish"
+ SPF:0 "State of Spain"
+ SPF_ADJ:0 "Spanish"
+ SPC:0 "Popular Republic"
+ SPC_ADJ:0 "Spanish"
+ 
+ ITD:0 "Italy"
+ ITD_ADJ:0 "Italian"
+ ITF:0 "Italian Empire"
+ ITF_ADJ:0 "Italian"
+ ITC:0 "Italian Commune"
+ ITC_ADJ:0 "Italian"
+ 
+ GRD:0 "Germany"
+ GRD_ADJ:0 "German"
+ 
+ NIG:0 "Nigeria"
+ NIG_ADJ:0 "Nigerian"
+ CDI:0 "Ivory Coast"
+ CDI_ADJ:0 "Ivory Coastian"
+ ANG:0 "Angola"
+ ANG_ADJ:0 "Angolan"
+ CNG:0 "Congo"
+ CNG_ADJ:0 "Congolese"
+ TNS:0 "Tunisia"
+ TNS_ADJ:0 "Tunisian"
+ IDN:0 "Indonesia"
+ IDN_ADJ:0 "Indonesian"
+ KNY:0 "Kenya"
+ KNY_ADJ:0 "Kenyan"
+
+ AEV:0 "The Angevin Realm"
+ AEV_ADJ:0 "Angevin"
+ VIY:0 "Italy"
+ VIY_ADJ:0 "Italian"
+ 
+ OCC:0 "Occitania"
+ OCC_ADJ:0 "Occitanian"
+ WLO:0 "Wallonia"
+ WLO_ADJ:0 "Wallonian"
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Gallia:0 "Gallia"
+ Gallia_ADJ:0 "Gallica"
+ 
+ Austria:0 "Austria"
+ Austria_ADJ:0 "Austrian"
+ 
+ Burgundia:0 "Burgundia"
+ Burgundia_ADJ:0 "Burgundian"
+ 
+ Angliae:0 "Angliae"
+ Angliae_ADJ:0 "Anglicus"
+ 
+ Hispaniae:0 "Hispaniae"
+ Hispaniae_ADJ:0 "Hispanice"
+ 
+ Etats-Unis:0 "États-Unis"
+ Etats-Unis_ADJ:0 "Americain"
+ 
+ Vaeinigte_Staatn:0 "Vaeinigte Stååtn"
+ Vaeinigte_Staatn_ADJ:0 "Amerikaner"
+ 
+ Nivernensis:0 "Nivernensis"
+ Nivernensis_ADJ:0 "Nivernais"
+ 
+ Normannia:0 "Normannia"
+ Normannia_ADJ:0 "Norman"
+ 
+ Flandriae:0 "Flandriae"
+ Flandriae_ADJ:0 "Flemish"
+ 
+ Brabantia:0 "Brabantia"
+ Brabantia_ADJ:0 "Brabantian"
+ 
+ Hollandia:0 "Hollandia"
+ Hollandia_ADJ:0 "Hollander"
+ 
+ Netherlandia:0 "Netherlandia"
+ Netherlandia_ADJ:0 "Netherlander"
+ 
+ Frisia:0 "Frisia"
+ Frisia_ADJ:0 "Frisian"
+ 
+ Germania:0 "Germania"
+ Germania_ADJ:0 "German"
+ 
+ Brandenburgum:0 "Brandenburgum"
+ Brandenburgum_ADJ:0 "Brandenburger"
+ 
+ Borussiae:0 "Borussiae"
+ Borussiae_ADJ:0 "Prussian"
+ 
+ Helvetia:0 "Helvetia"
+ Helvetia_ADJ:0 "Helvetian"
+ 
+ Castellum:0 "Castellum"
+ Castellum_ADJ:0 "Castilian"
+ 
+ Hispaniae:0 "Hispaniae"
+ Hispaniae_ADJ:0 "Spanish"
+ 
+ Aragoniae:0 "Aragoniae"
+ Aragoniae_ADJ:0 "Aragonese"
+ 
+ Britannia:0 "Britannia"
+ Britannia_ADJ:0 "British"
+ 
+ Scotiae:0 "Scotiae"
+ Scotiae_ADJ:0 "Scottish"
+ 
+ Neapolis:0 "Neapolis"
+ Neapolis_ADJ:0 "Neapolitan"
+ 
+ Venetiae:0 "Venetiae"
+ Venetiae_ADJ:0 "Venetian"
+ 
+ Sabaudia:0 "Sabaudia"
+ Sabaudia_ADJ:0 "Savoyard"
+ 
+ Mediolanum:0 "Mediolanum"
+ Mediolanum_ADJ:0 "Milanese"
+ 
+ Polonia:0 "Polonia"
+ Polonia_ADJ:0 "Polish"
+ 
+ RPUN:0 "Res Publica Utriusque Nationis"
+ RPUN_ADJ:0 "Commonwealth"
+ 
+ Lithuaniae:0 "Lithuaniae"
+ Lithuaniae_ADJ:0 "Lithuanian"
+ 
+ Russia:0 "Russia"
+ Russia_ADJ:0 "Russian"
+ 
+ Ucraina:0 "Ucraina"
+ Ucraina_ADJ:0 "Ukrainian"
+ 
+ Hungarica:0 "Hungarica"
+ Hungarica_ADJ:0 "Hungarian"
+ 
+ Brazil:0 "Brazil"
+ Brazil_ADJ:0 "Brazilian"
+ 
+ BrazilFR:0 "Brésil"
+ BrazilFR_ADJ:0 "Brésilien"
+ 
+ Brasil:0 "Brasil"
+ Brasil_ADJ:0 "Brasilian"
+ 
+ Brasile:0 "Brasile"
+ Brasile_ADJ:0 "Brasiliana"
+ 
+ Brasilien:0 "Brasilien"
+ Brasilien_ADJ:0 "Brasiliansch"
+ 
+ Brazilie:0 "Brazilië"
+ Brazilie_ADJ:0 "Braziliaans"
+ 
+ Australia:0 "Australia"
+ Australia_ADJ:0 "Australian"
+ 
+ Australie:0 "Australie"
+ Australie_ADJ:0 "Australienne"
+ 
+ AustralieDU:0 "Australië"
+ AustralieDU_ADJ:0 "Australische"
+ 
+ AustraliaPO:0 "Austrália"
+ AustraliaPO_ADJ:0 "Australiana"
+ 
+ Australien:0 "Australien"
+ Australien_ADJ:0 "Australisch"
+ 
+ ABM:0 "An Bhreatain Mhór"
+ ABM_ADJ:0 "British"
+ 
+ GBS:0 "Graet Breetain"
+ GBS_ADJ:0 "British"
+ 
+ BV:0 "Breten Veur"
+ BV_ADJ:0 "British"
+ 
+ Canada:0 "Canada"
+ Canada_ADJ:0 "Canadian"
+ 
+ Kanada:0 "Kanada"
+ Kanada_ADJ:0 "Kanadisch"
+ 
+ CanadaIB:0 "Canadá"
+ CanadaIB_ADJ:0 "Canadiense"
+ 
+ CanadaOC:0 "Canadà"
+ CanadaOC_ADJ:0 "Canadian"
+ 
+ Colombie:0 "Colombie"
+ Colombie_ADJ:0 "Colombienne"
+ 
+ ColombiaOC:0 "Colómbia"
+ ColombiaOC_ADJ:0 "Colombian"
+ 
+ Colombia:0 "Colombia"
+ Colombia_ADJ:0 "Colombian"
+ 
+ Kolumbien:0 "Kolumbien"
+ Kolumbien_ADJ:0 "Kolumbianisch"
+ 
+ FlorideFR:0 "Floride"
+ FlorideFR_ADJ:0 "Floridienne"
+ 
+ Franca:0 "França"
+ Franca_ADJ:0 "Francés"
+ 
+ Frans:0 "Frañs"
+ Frans_ADJ:0 "Frañsizien"
+ 
+ Gaule:0 "Gaule"
+ Gaule_ADJ:0 "Française"
+ 
+ Frantzia:0 "Frantzia"
+ Frantzia_ADJ:0 "French"
+ 
+ Duutschland:0 "Düütschland"
+ Duutschland_ADJ:0 "Düütsch"
+ 
+ Deitschland:0 "Deitschland"
+ Deitschland_ADJ:0 "Deitsch"
+ 
+ Duitsland:0 "Duitsland"
+ Duitsland_ADJ:0 "Duits"
+ 
+ Nemecko:0 "Nemecko"
+ Nemecko_ADJ:0 "Nemecky"
+ 
+ Mjymcy:0 "Mjymcy"
+ Mjymcy_ADJ:0 "German"
+ 
+ ItaliaNIC:0 "Itàlia"
+ ItaliaNIC_ADJ:0 "Italian"
+ 
+ Italia:0 "Italia"
+ Italia_ADJ:0 "Italiana"
+ 
+ Mexique:0 "Mexique"
+ Mexique_ADJ:0 "Mexicaine"
+ 
+ Messico:0 "Messico"
+ Messico_ADJ:0 "Messicano"
+ 
+ Mexico:0 "Mexico"
+ Mexico_ADJ:0 "Mexican"
+ 
+ Mexiko:0 "Mexiko"
+ Mexiko_ADJ:0 "Mexikaner"
+ 
+ Mexic:0 "Mexic"
+ Mexic_ADJ:0 "Mexican"
+ 
+ Peru:0 "Peru"
+ Peru_ADJ:0 "Peruvian"
+ 
+ Perou:0 "Pérou"
+ Perou_ADJ:0 "Péruvien"
+ 
+ PeruIT:0 "Perù"
+ PeruIT_ADJ:0 "Peruviano"
+ 
+ PeruES:0 "Perú"
+ PeruES_ADJ:0 "Peruano"
+ 
+ Pero: "Peró"
+ Pero_ADJ:0 "Peruvian"
+ 
+ Espanya:0 "Espanya"
+ Espanya_ADJ:0 "Espanyol"
+ 
+ Espainia:0 "Espainia"
+ Espainia_ADJ:0 "Spanish"
+ 
+ US:0 "United States"
+ US_ADJ:0 "American"
+ 
+ VSDU:0 "Verenigde Staten"
+ VSDU_ADJ:0 "Amerikaans"
+ 
+ VSLG:0 "Verenigten Staten"
+ VSLG_ADJ:0 "Amerikaner"
+ 
+ VSGER:0 "Vereinigte Staaten"
+ VSGER_ADJ:0 "Amerikaner"
+ 
+ SGBR:0 "Stuart Britain"
+ SGBR_ADJ:0 "British"
+ 
+ 
+ 
+ 
+ 

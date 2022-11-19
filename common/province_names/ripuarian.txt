@@ -1,0 +1,5 @@
+80 = "Drir"
+85 = "Kölle"
+4768 = { "Gülich" "Guelich" }
+1878 = "Oche"
+84 = { "Berg" "Düsseldörp" }

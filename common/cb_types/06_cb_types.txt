@@ -1,0 +1,64 @@
+cb_zollverein = {
+
+	prerequisites = {
+		OR = {
+			total_development = FROM
+
+			AND = {
+				45 = { #Lubeck
+					trade_share = {
+						country = ROOT
+						share = 25
+					}
+				}
+				1766 = { #Frankfurt/Rheinland
+					trade_share = {
+						country = ROOT
+						share = 25
+					}
+				}
+				61 = { #Saxony
+					trade_share = {
+						country = ROOT
+						share = 25
+					}
+				}
+				134 = { #Vienna
+					trade_share = {
+						country = ROOT
+						share = 25
+					}
+				}
+			}
+		}
+		
+		is_subject_of = FROM
+		is_subject_of_type = german_confederation_member
+		#OR = {
+		#	culture_group = benelux
+		#	
+		#	culture_group = germanic
+		#	
+		#}
+	}
+
+	war_goal = take_capital_zollverein
+}
+
+cb_dynastic_enforcement = {
+
+	prerequisites = {
+		FROM = {
+			government = monarchy
+			marriage_with = ROOT
+			NOT = {
+				dynasty = ROOT
+				prestige = ROOT
+			}
+			has_heir = no
+		}
+		government = monarchy
+	}
+
+	war_goal = take_capital_enforcedynasty
+}

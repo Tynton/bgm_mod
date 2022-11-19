@@ -1,0 +1,71 @@
+#Province Scope
+gercon_vote_yes_value = {
+	if = {
+		limit = {
+			NOT = { total_development = 250 }
+		}
+		overlord = { change_variable = { which = gercon_yes value = 1 } }
+	}
+	else_if = {
+		limit = {
+			NOT = { total_development = 500 }
+		}
+		overlord = { change_variable = { which = gercon_yes value = 2 } }
+	}
+	else_if = {
+		limit = {
+			NOT = { total_development = 750 }
+		}
+		overlord = { change_variable = { which = gercon_yes value = 3 } }
+	}
+	else_if = {
+		limit = {
+			NOT = { total_development = 1000 }
+		}
+		overlord = { change_variable = { which = gercon_yes value = 4 } }
+	}
+	else = { #1000+
+		overlord = { change_variable = { which = gercon_yes value = 5 } }
+	}
+}
+
+gercon_vote_no_value = {
+	if = {
+		limit = {
+			NOT = { total_development = 250 }
+		}
+		overlord = { change_variable = { which = gercon_no value = 1 } }
+	}
+	else_if = {
+		limit = {
+			NOT = { total_development = 500 }
+		}
+		overlord = { change_variable = { which = gercon_no value = 2 } }
+	}
+	else_if = {
+		limit = {
+			NOT = { total_development = 750 }
+		}
+		overlord = { change_variable = { which = gercon_no value = 3 } }
+	}
+	else_if = {
+		limit = {
+			NOT = { total_development = 1000 }
+		}
+		overlord = { change_variable = { which = gercon_no value = 4 } }
+	}
+	else = { #1000+
+		overlord = { change_variable = { which = gercon_no value = 5 } }
+	}
+}
+
+gercon_reset_vote = {
+	set_variable = {
+		which = gercon_yes
+		value = 0
+	}
+	set_variable = {
+		which = gercon_no
+		value = 0
+	}
+}

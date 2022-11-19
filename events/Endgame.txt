@@ -1,0 +1,199 @@
+namespace = Endgame
+
+#Virus
+
+country_event = {
+	id = Endgame.1
+	title = "Endgame.t.1"
+	desc = "Endgame.d.1" #Be sure to mention a preemptive vaccination program
+	picture = NUKE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Endgame.1.a"
+
+		set_global_flag = endgame_began
+
+		set_global_flag = endgame_bioweapon
+
+		set_country_flag = created_bioweapon
+		
+		random_owned_province = {
+			add_devastation = 35
+			set_province_flag = infected_superweapon
+		}
+
+		every_country = {
+			add_stability = -3
+		}
+	}
+}
+
+#Virus spreads
+
+province_event = {
+	id = Endgame.2
+	title = "Endgame.t.2"
+	desc = "Endgame.d.2"
+	picture = NUKE_eventPicture
+	
+	trigger = {
+		has_global_flag = endgame_bioweapon
+		OR = {
+			owner = {
+				any_owned_province = {
+					has_port = yes
+					province_has_center_of_trade_of_level = 1
+				}
+			}
+			any_neighbor_province = {
+				has_province_modifier = bioweapon
+			}
+		}
+		NOT = {
+			OR = {
+				owner = {
+					OR = {
+						has_country_flag = created_bioweapon
+						has_country_flag = scuffed_vaccine
+					}
+				}
+				has_province_flag = infected_superweapon
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+
+		modifier = {
+			factor = 0.000001
+			any_neighbor_province = {
+				has_province_modifier = bioweapon
+			}
+		}
+
+		modifier = {
+			factor = 4
+			NOT = {
+				development = 5
+			}
+		}
+
+		modifier = {
+			factor = 2.0
+			NOT = {
+				development = 10
+			}
+		}
+
+		modifier = {
+			factor = 1.5
+			NOT = {
+				development = 15
+			}
+		}
+
+		modifier = {
+			factor = 1.25
+			NOT = {
+				development = 20
+			}
+		}
+
+		modifier = {
+			factor = 0.75
+			development = 25
+		}
+
+		modifier = {
+			factor = 0.5
+			development = 40
+		}
+
+		modifier = {
+			factor = 0.01
+			development = 65
+		}
+	}
+	
+	option = {
+		name = "Endgame.2.a"
+		
+		add_province_modifier = {
+			name = bioweapon
+			duration = 1825
+		}
+		set_province_flag = infected_superweapon
+	}
+}
+
+#Collapse of local society
+
+province_event = {
+	id = Endgame.3
+	title = "Endgame.t.3"
+	desc = "Endgame.d.3"
+	picture = NUKE_eventPicture
+	
+	trigger = {
+		has_province_modifier = bioweapon
+		is_capital = no
+		NOT = {
+			owner = {
+				has_country_flag = created_bioweapon
+			}
+		}
+		NOT = {
+			development = 5
+		}
+		OR = {
+			exists = ANA
+			NOT = {
+				exists = ANA
+				continent = europe
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = "Endgame.3.a"
+
+		every_province = {
+			limit = {
+				NOT = {
+					development = 5
+				}
+				has_province_modifier = bioweapon
+			}
+			owner = {
+				add_truce_with = ANA
+			}
+	
+			cede_province = ANA
+			add_core = ANA
+			set_province_flag = infected_superweapon
+		}
+	}
+}
+
+#Treatment Program
+
+country_event = {
+	id = Endgame.4
+	title = "Endgame.t.4"
+	desc = "Endgame.d.4"
+	picture = NUKE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Endgame.4.a"
+		set_country_flag = scuffed_vaccine
+	}
+}

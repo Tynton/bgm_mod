@@ -1,0 +1,7 @@
+101 = "Zêna"
+2992 = "Arbenga"
+4752 = "Sciumme"
+4946 = "A Spèza"
+5016 = { "Sanrémmo" "Sanreumo" }
+
+121 = "Nappoli"

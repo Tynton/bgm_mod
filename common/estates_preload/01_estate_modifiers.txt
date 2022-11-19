@@ -1,0 +1,69 @@
+#Define estate loyalty and influence modifiers here
+
+estate_proletarian = {
+	modifier_definition = {
+		type = loyalty
+		key = prole_loyalty_modifier
+		trigger = {
+			has_estate = estate_proletarian
+		}
+	}
+	modifier_definition = {
+		type = influence
+		key = prole_influence_modifier
+		trigger = {
+			has_estate = estate_proletarian
+		}
+	}
+}
+
+estate_industrialist = {
+	modifier_definition = {
+		type = loyalty
+		key = ind_loyalty_modifier
+		trigger = {
+			has_estate = estate_industrialist
+		}
+	}
+	modifier_definition = {
+		type = influence
+		key = ind_influence_modifier
+		trigger = {
+			has_estate = estate_industrialist
+		}
+	}
+}
+
+estate_military = {
+	modifier_definition = {
+		type = loyalty
+		key = mil_loyalty_modifier
+		trigger = {
+			has_estate = estate_military
+		}
+	}
+	modifier_definition = {
+		type = influence
+		key = mil_influence_modifier
+		trigger = {
+			has_estate = estate_military
+		}
+	}
+}
+
+estate_ruling_party = {
+	modifier_definition = {
+		type = loyalty
+		key = party_loyalty_modifier
+		trigger = {
+			has_estate = estate_ruling_party
+		}
+	}
+	modifier_definition = {
+		type = influence
+		key = party_influence_modifier
+		trigger = {
+			has_estate = estate_ruling_party
+		}
+	}
+}

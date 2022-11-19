@@ -1,0 +1,13 @@
+2754 = "La Mansja"
+100 = "Ljouwert"
+4382 = { "Grinslân" "Grins" }
+4383 = "De Haach"
+1931 = "East-Fryslân"
+98 = "Utert"
+96 = "Seelân"
+
+50 = "Berlyn"
+134 = "Wenen"
+41 = "Keningsberch"
+
+4951 = "Dúntsjerk"

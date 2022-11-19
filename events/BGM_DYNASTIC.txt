@@ -1,0 +1,934 @@
+namespace = BGM_DYNASTIC
+
+#Power Struggle (initiate)
+
+country_event = {
+	id = BGM_DYNASTIC.1
+	title = BGM_DYNASTIC.t.1
+	desc = BGM_DYNASTIC.d.1
+	picture = RELIGIOUS_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	#Initiate Power Struggle
+	option = {
+		name = BGM_DYNASTIC.1.a
+		
+		set_country_flag = has_power_struggle
+		
+		add_adm_power = -75
+		add_dip_power = -75
+		add_mil_power = -75
+		
+		add_stability = -1
+		
+		add_legitimacy = -40
+		
+		custom_tooltip = brother_revolt_bgm
+		
+		hidden_effect = {
+			define_heir = {
+				dynasty = ROOT
+				claim = 50
+				age = 15
+			}
+			
+			random_owned_province = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 3
+					use_heir_as_leader = yes
+				}
+			}
+			remove_heir = {}
+		}
+		
+		custom_tooltip = power_struggle_tooltip
+	}
+}
+
+#End of Dynastic Struggle
+
+country_event = {
+	id = BGM_DYNASTIC.2
+	title = BGM_DYNASTIC.t.2
+	desc = BGM_DYNASTIC.d.2
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		stability = 0
+		has_country_flag = has_power_struggle
+		
+		legitimacy = 75
+		
+		NOT = {
+			num_of_rebel_armies = 1
+			num_of_rebel_controlled_provinces = 1
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 4
+		
+		modifier = {
+			factor = 0.25
+			stability = 1
+		}
+	}
+	
+	#Consolidate Power
+	option = {
+		name = BGM_DYNASTIC.2.a
+		clr_country_flag = has_power_struggle
+		
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
+		
+		add_stability = 1
+		
+		custom_tooltip = power_struggle_ended
+	}
+}
+
+#Support for the Crown
+
+country_event = {
+	id = BGM_DYNASTIC.3
+	title = "BGM_DYNASTIC.t.3"
+	desc = "BGM_DYNASTIC.d.3"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		has_country_flag = has_power_struggle
+	}
+	
+	mean_time_to_happen = {
+		months = 14
+		
+		modifier = {
+			factor = 0.25
+			stability = 1
+		}
+	}
+	
+	#Accept Support
+	option = {
+		name = "BGM_DYNASTIC.3.a"
+		add_years_of_income = 0.075
+		add_yearly_manpower = 0.075
+		
+		custom_tooltip = power_struggle_tooltip
+	}
+}
+
+#Support for the Pretender
+
+country_event = {
+	id = BGM_DYNASTIC.4
+	title = "BGM_DYNASTIC.t.4"
+	desc = "BGM_DYNASTIC.d.4"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		has_country_flag = has_power_struggle
+	}
+	
+	mean_time_to_happen = {
+		months = 9
+		
+		modifier = {
+			factor = 1.5
+			num_of_rebel_armies = 2
+		}
+		
+		modifier = {
+			factor = 2.0
+			num_of_rebel_armies = 3
+		}
+		
+		modifier = {
+			factor = 3.0
+			num_of_rebel_armies = 4
+		}
+		
+		modifier = {
+			factor = 4.0
+			num_of_rebel_armies = 5
+		}
+		
+		modifier = {
+			factor = 5.0
+			num_of_rebel_armies = 6
+		}
+	}
+	
+	#Enemy Gains Army (or Armies)
+	option = {
+		name = "BGM_DYNASTIC.4.a"
+		add_years_of_income = -0.075
+		add_yearly_manpower = -0.075
+		
+		random_list = {
+			40 = {
+				random_owned_province = {
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 2
+					}
+				}
+			}
+			60 = {
+				random_owned_province = {
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 1
+					}
+				}
+				
+				random_owned_province = {
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 1
+					}
+				}
+			}
+		}
+		custom_tooltip = power_struggle_tooltip
+	}
+}
+
+#Malevolent Heir Event Chain (Begin)
+
+country_event = {
+	id = BGM_DYNASTIC.5
+	title = "BGM_DYNASTIC.t.5"
+	desc = "BGM_DYNASTIC.d.5"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	##hidden = yes
+	
+	trigger = {
+		always = no
+		OR = {
+			heir_has_personality = malevolent_personality
+			heir_has_personality = cruel_personality
+		}
+		heir_age = 20
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+		
+		modifier = {
+			factor = 0.8
+			NOT = {
+				adm = 5
+				dip = 5
+				mil = 5
+			}
+		}
+		
+		modifier = {
+			factor = 0.7
+			NOT = {
+				adm = 4
+				dip = 4
+				mil = 4
+			}
+		}
+		
+		modifier = {
+			factor = 0.6
+			NOT = {
+				adm = 3
+				dip = 3
+				mil = 3
+			}
+		}
+		
+		modifier = {
+			factor = 0.25
+			NOT = {
+				adm = 2
+				dip = 2
+				mil = 2
+			}
+		}
+	}
+	
+	#Start Heir Scheme
+	option = {
+		name = "BGM_DYNASTIC.5.a"
+		
+		set_country_flag = heir_scheming
+	}
+}
+
+#Heir Scheme Result (End)
+
+country_event = {
+	id = BGM_DYNASTIC.6
+	title = "BGM_DYNASTIC.t.6"
+	desc = "BGM_DYNASTIC.d.6"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		has_country_flag = heir_scheming
+		always = no
+	}
+	
+	mean_time_to_happen = {
+		months = 150
+
+		
+		modifier = {
+			factor = 2.5
+			ruler_has_personality = secretive_personality
+		}
+		
+		modifier = {
+			factor = 0.5
+			ruler_has_personality = loose_lips_personality
+		}
+	}
+	
+	#Attempted Assassination, High Legitimacy
+	option = {
+		name = "BGM_DYNASTIC.6.a"
+		
+		trigger = {
+			OR = {
+				legitimacy = 60
+			}
+		}
+		
+		random_list = {
+			40 = {
+				kill_ruler = yes
+			}
+			60 = {
+				kill_heir = { allow_new_heir = no }
+			}
+		}
+		clr_country_flag = heir_scheming
+	}
+	
+	#Attempted Assassination, Low Legitimacy
+	option = {
+		name = "BGM_DYNASTIC.6.b"
+		
+		trigger = {
+			NOT = {
+				legitimacy = 60
+			}
+		}
+		
+		add_stability = -2
+		
+		random_list = {
+			75 = {
+				kill_ruler = yes
+			}
+			25 = {
+				kill_heir = { allow_new_heir = no }
+			}
+		}
+		clr_country_flag = heir_scheming
+	}
+}
+
+#New Cadet Branch (Secondary Dynasty)
+
+country_event = {
+	id = BGM_DYNASTIC.7
+	title = "BGM_DYNASTIC.t.7"
+	desc = "BGM_DYNASTIC.d.7"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		OR = {
+			has_country_flag = second_heir
+			has_country_flag = tertiary_heir
+		}
+		NOT = {
+			has_country_flag = first_cadet_branch
+		}
+		heir_age = 25
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+		total_development = 90
+	}
+	
+	mean_time_to_happen = {
+		months = 500
+		
+		modifier = {
+			factor = 0.75
+			has_country_flag = tertiary_heir
+		}
+	}
+	
+	#Start Heir Scheme
+	option = {
+		name = "BGM_DYNASTIC.7.a"
+		
+		set_country_flag = first_cadet_branch
+	}
+}
+
+#New Cadet Branch (Tertiary Dynasty)
+
+country_event = {
+	id = BGM_DYNASTIC.8
+	title = "BGM_DYNASTIC.t.8"
+	desc = "BGM_DYNASTIC.d.8"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		has_country_flag = tertiary_heir
+		has_country_flag = first_cadet_branch
+		NOT = {
+			has_country_flag = second_cadet_branch
+		}
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+		#total_development = 750
+	}
+	
+	mean_time_to_happen = {
+		months = 500
+	}
+	
+	#Start Heir Scheme
+	option = {
+		name = "BGM_DYNASTIC.8.a"
+		
+		set_country_flag = second_cadet_branch
+	}
+}
+
+#Heir Scheme Caught
+
+country_event = {
+	id = BGM_DYNASTIC.9
+	title = "BGM_DYNASTIC.t.9"
+	desc = "BGM_DYNASTIC.d.9"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		has_country_flag = heir_scheming
+	}
+	
+	mean_time_to_happen = {
+		months = 275
+		
+		modifier = {
+			factor = 0.5
+			ruler_has_personality = intricate_web_weaver_personality
+		}
+		
+		modifier = {
+			factor = 0.5
+			ruler_has_personality = well_connected_personality
+		}
+		
+		modifier = {
+			factor = 0.5
+			ruler_has_personality = well_advised_personality
+		}
+		
+		modifier = {
+			factor = 2.0
+			ruler_has_personality = babbling_buffoon_personality
+		}
+		
+		modifier = {
+			factor = 2.0
+			ruler_has_personality = loose_lips_personality
+		}
+		
+		modifier = {
+			factor = 2.0
+			ruler_has_personality = naive_personality
+		}
+	}
+	
+	#Imprison Heir
+	option = {
+		name = "BGM_DYNASTIC.9.a"
+		
+		add_stability = -1
+		
+		remove_heir = {}
+		clr_country_flag = heir_scheming
+	}
+}
+
+#Heir has grandchild
+
+country_event = {
+	id = BGM_DYNASTIC.10
+	title = "BGM_DYNASTIC.t.10"
+	desc = "BGM_DYNASTIC.d.10"
+	picture = NEW_HEIR_eventPicture
+	
+	trigger = {
+		heir_age = 15
+		NOT = {
+			heir_has_personality = infertile_personality
+		}
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+		NOT = { has_country_flag = grandson }
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+		
+		modifier = {
+			factor = 0.25
+			heir_has_personality = fertile_personality
+		}
+	}
+	
+	#Congratulations
+	option = {
+		name = "BGM_DYNASTIC.10.a"
+		
+		set_country_flag = grandson
+
+		if = {
+			limit = {
+				has_country_flag = second_heir_scheming
+			}
+			clr_country_flag = second_heir_scheming
+		}
+	}
+}
+
+#Grandson becomes Heir
+
+country_event = {
+	id = BGM_DYNASTIC.11
+	title = "BGM_DYNASTIC.t.11"
+	desc = "BGM_DYNASTIC.d.11"
+	picture = NEW_HEIR_eventPicture
+	
+	trigger = {
+		has_country_flag = grandson
+		NOT = { is_subject_of_type = personal_union }
+		has_heir = no
+	}
+	
+	mean_time_to_happen = {
+		days = 15
+		
+		modifier = {
+			factor = 0.0001
+			has_country_flag = grandson
+			has_heir = no
+		}
+	}
+	
+	#Congratulations
+	option = {
+		name = "BGM_DYNASTIC.11.a"
+		
+		define_heir = {
+			male = yes
+			dynasty = ROOT
+			claim = 100
+			age = 0
+		}
+		
+		clr_country_flag = grandson
+	}
+}
+
+#Brother of Original Heir is now Heir
+
+country_event = {
+	id = BGM_DYNASTIC.12
+	title = "BGM_DYNASTIC.t.12"
+	desc = "BGM_DYNASTIC.d.12"
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	trigger = {
+		NOT = { has_country_flag = grandson }
+		NOT = { is_subject_of_type = personal_union }
+		OR = {
+			has_country_flag = second_heir
+			has_country_flag = tertiary_heir
+		}
+		has_heir = no
+	}
+	
+	mean_time_to_happen = {
+		days = 15
+		
+		modifier = {
+			factor = 0.0001
+			NOT = { has_country_flag = grandson }
+			OR = {
+				has_country_flag = second_heir
+				has_country_flag = tertiary_heir
+			}
+			has_heir = no
+		}
+	}
+	
+	#Congratulations
+	option = {
+		name = "BGM_DYNASTIC.12.a"
+		
+		clr_country_flag = tertiary_heir
+		
+		if = {
+			limit = {
+				NOT = { has_country_flag = tertiary_heir }
+			}
+			clr_country_flag = second_heir
+		}
+		
+		define_heir = {
+			male = yes
+			dynasty = ROOT
+			age = 25
+		}
+	}
+}
+
+#Malevolent Second Heir
+
+country_event = {
+	id = BGM_DYNASTIC.13
+	title = "BGM_DYNASTIC.t.13"
+	desc = "BGM_DYNASTIC.d.13"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	##hidden = yes
+	
+	trigger = {
+		always = no
+		has_country_flag = second_heir
+		heir_age = 25
+		OR = {
+			heir_has_personality = malevolent_personality
+			heir_has_personality = cruel_personality
+		}
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 800
+		
+		modifier = {
+			factor = 0.8
+			NOT = {
+				heir_adm = 3
+				heir_dip = 3
+				heir_mil = 3
+			}
+		}
+		
+		modifier = {
+			factor = 2.0
+			heir_has_personality = intricate_web_weaver_personality
+		}
+		
+		modifier = {
+			factor = 2.0
+			heir_has_personality = well_connected_personality
+		}
+		
+		modifier = {
+			factor = 2.0
+			heir_has_personality = well_advised_personality
+		}
+	}
+	
+	#Start Heir Scheme
+	option = {
+		name = "BGM_DYNASTIC.13.a"
+		
+		set_country_flag = second_heir_scheming
+	}
+}
+
+#Heir Scheme Result (End)
+
+country_event = {
+	id = BGM_DYNASTIC.14
+	title = "BGM_DYNASTIC.t.14"
+	desc = "BGM_DYNASTIC.d.14"
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	trigger = {
+		has_country_flag = second_heir_scheming
+		
+		has_regency = yes
+		always = no
+	}
+	
+	mean_time_to_happen = {
+		months = 150
+		
+		modifier = {
+			factor = 2.5
+			ruler_has_personality = secretive_personality
+		}
+		
+		modifier = {
+			factor = 0.5
+			ruler_has_personality = loose_lips_personality
+		}
+	}
+	
+	#Assassination Attempt
+	option = {
+		name = "BGM_DYNASTIC.14.a"
+		
+		add_stability = -2
+		kill_heir = { allow_new_heir = no }
+		clr_country_flag = second_heir_scheming
+		clr_country_flag = tertiary_heir
+		
+		
+		define_ruler = {
+			dynasty = ROOT
+			claim = 40
+			age = 25
+		}
+		hidden_effect = {
+			add_ruler_personality = cruel_personality
+		}
+	}
+}
+
+
+#Coup d'Etat (Incompetent Ruler)
+
+country_event = {
+	id = BGM_DYNASTIC.15
+	title = "BGM_DYNASTIC.t.15"
+	desc = "BGM_DYNASTIC.d.15"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		NOT = {
+			adm = 3
+			dip = 3
+			mil = 3
+			stability = 0
+			has_country_flag = had_noble_conspiracy
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 64
+		
+		modifier = {
+			factor = 2.0
+			ruler_has_personality = secretive_personality
+		}
+		
+		modifier = {
+			factor = 0.75
+			ruler_has_personality = loose_lips_personality
+		}
+	}
+	
+	#Overthrow Monarch
+	option = {
+		name = "BGM_DYNASTIC.15.a"
+		
+		add_stability = 1
+		
+		kill_ruler = yes
+
+		if = {
+			limit = {
+				has_country_flag = second_cadet_branch
+				has_heir = no
+			}
+			clr_country_flag = second_cadet_branch
+			set_country_flag = first_cadet_branch
+		}
+
+		clr_country_flag = second_heir_scheming
+		clr_country_flag = heir_scheming
+	}
+	
+	#Rest of Court Sympathizes with Monarch
+	option = {
+		name = "BGM_DYNASTIC.15.b"
+		
+		set_country_flag = had_noble_conspiracy
+		
+		add_stability = -1
+		
+		random_owned_province = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 3
+			}
+		}
+	}
+}
+
+#Female heir, address issue
+
+country_event = {
+	id = BGM_DYNASTIC.16
+	title = "BGM_DYNASTIC.t.16"
+	desc = "BGM_DYNASTIC.d.16"
+	picture = NEW_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	
+	#Rewrite law
+	option = {
+		name = "BGM_DYNASTIC.16.a"
+		
+		set_country_flag = revised_succession
+
+		add_adm_power = 25
+
+		add_stability = -1
+		add_prestige = -10
+
+		ai_chance = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						is_emperor = yes
+						adm_tech = 36
+						has_parliament = yes
+					}
+				}
+			}
+		}
+	}
+	
+	#Disinherit female heir
+	option = {
+		name = "BGM_DYNASTIC.16.b"
+		
+		remove_heir = { allow_new_heir = no }
+
+		ai_chance = {
+			factor = 2
+
+			modifier = {
+				factor = 0
+				heir_adm = 3
+				heir_dip = 3
+				heir_mil = 3
+			}
+		}
+	}
+
+	#Abstain from doing anything
+	option = {
+		name = "BGM_DYNASTIC.16.c"
+	}
+}
+
+#Female heir, ascension
+
+country_event = {
+	id = BGM_DYNASTIC.17
+	title = "BGM_DYNASTIC.t.17"
+	desc = "BGM_DYNASTIC.d.17"
+	picture = NEW_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	
+	#Fight the pretender
+	option = {
+		name = "BGM_DYNASTIC.17.a"
+		
+		set_country_flag = revised_succession
+
+		random_owned_province = {
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+			}
+		}
+
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0
+				NOT = {
+					adm	= 3
+					dip = 3
+					mil = 3
+				}
+			}
+		}
+	}
+	
+	#Let the cadet branch take over
+	option = {
+		name = "BGM_DYNASTIC.17.b"
+
+		trigger = {
+			OR = {
+				has_country_modifier = cadet_branch_one
+				is_subject_of_type = personal_union
+			}
+		}
+		
+		kill_ruler = yes
+
+		define_ruler = {
+			culture = ROOT
+			min_age = 20
+			max_age = 50
+			claim = 90
+			male = yes
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_subject_of_type = personal_union
+			}
+		}
+	}
+}
+
+country_event = {
+	id = BGM_DYNASTIC.18
+	title = "BGM_DYNASTIC.t.18"
+	desc = "BGM_DYNASTIC.d.18"
+	picture = NEW_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	
+	#get cb
+	option = {
+		name = "BGM_DYNASTIC.18.a"
+		add_casus_belli = {
+			target = FROM
+			type = cb_dynastic_enforcement
+			months = 120
+		}
+	}
+}

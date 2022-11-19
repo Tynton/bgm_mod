@@ -1,0 +1,73 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+color = { 10 10 10 }
+revolutionary_colors = { 1 1 1 }
+
+historical_idea_groups = {
+	defensive_ideas
+	religious_ideas
+	offensive_ideas
+	trade_ideas
+	spy_ideas
+	diplomatic_ideas
+	administrative_ideas
+	economic_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	spanish_tercio
+	austrian_tercio
+	austrian_grenzer
+	austrian_hussar
+	austrian_white_coat
+	austrian_jaeger
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"---" = 1
+	"---" = 1
+	"---" = 1
+	"---" = 1
+	"---" = 1
+	"---" = 1
+	"---" = 1
+	"---" = 1
+	"---" = 1
+	"---" = 1
+	"---" = 1
+}
+
+leader_names = {
+	---
+	---
+	---
+	---
+	---
+	---
+	---
+	---
+	---
+	---
+}
+
+ship_names = {
+	---
+	---
+	---
+	---
+	---
+	---
+	---
+	---
+	---
+	---
+	---
+}

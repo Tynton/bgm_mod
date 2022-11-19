@@ -1,0 +1,2 @@
+206 = "A Coruña"
+4558 = "Ourense"

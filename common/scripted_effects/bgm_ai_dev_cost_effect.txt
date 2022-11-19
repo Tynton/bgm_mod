@@ -1,0 +1,611 @@
+#Province Scope
+ai_dev_cost = {
+
+	export_to_variable = {
+		which = local_dev_cost
+		value = modifier:local_development_cost
+	}
+
+	log = calcString
+
+	set_variable = {
+		which = dev_base_cost
+		value = 150
+	}
+
+	if = {
+        limit = {
+            is_capital = yes
+            ROOT = { NOT = { total_development = 1000 } }
+        }
+        owner = {
+            export_to_variable = {
+                which = country_total_dev
+                value = trigger_value:total_development
+            }
+            PREV = {
+                set_variable = { which = country_total_dev which = PREV }
+            }
+        }
+        multiply_variable = { which = country_total_dev value = 0.05 }
+        divide_variable = { which = country_total_dev value = 100 }
+        subtract_variable = { which = local_dev_cost which = country_total_dev }
+    }
+    else_if = {
+        limit = {
+            is_capital = yes
+        }
+        set_variable = {
+            which = country_total_dev
+            value = 0.5
+        }
+        subtract_variable = { which = local_dev_cost which = country_total_dev }
+    }
+
+    log = calcString
+
+    owner = {
+        export_to_variable = {
+            which = owner_dev_cost
+            value = modifier:development_cost
+        }
+        PREV = {
+            set_variable = { which = owner_dev_cost which = PREV }
+        }
+    }
+	#############################
+	#############################
+	#############################
+
+
+	set_variable = {
+		which = dev_efficiency
+		value = 1
+	}
+	if = {
+		limit = {
+			adm_tech = 17
+		}
+		change_variable = { which = dev_efficiency value = -0.01 }
+	}
+	if = {
+		limit = {
+			adm_tech = 23
+		}
+		change_variable = { which = dev_efficiency value = -0.02 }
+	}
+	
+	if = {
+		limit = {
+			adm_tech = 27
+		}
+		change_variable = { which = dev_efficiency value = -0.03 }
+	}
+	
+	if = {
+		limit = {
+			adm_tech = 29
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	if = {
+		limit = {
+			adm_tech = 30
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	if = {
+		limit = {
+			adm_tech = 31
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	
+	if = {
+		limit = {
+			adm_tech = 35
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	if = {
+		limit = {
+			adm_tech = 36
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	
+	if = {
+		limit = {
+				adm_tech = 39
+		}
+		change_variable = { which = dev_efficiency value = -0.02 }
+	}
+	if = {
+		limit = {
+			adm_tech = 40
+		}
+		change_variable = { which = dev_efficiency value = -0.03 }
+	}
+	
+	if = {
+		limit = {
+			adm_tech = 44
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	if = {
+		limit = {
+			adm_tech = 45
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	if = {
+		limit = {
+			adm_tech = 46
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	
+	if = {
+		limit = {
+			adm_tech = 50
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+		
+	}
+	
+	multiply_variable = { which = dev_base_cost which = dev_efficiency }
+
+
+	#############################
+	#END OF BASECOST CALCULATION#
+	#############################
+
+	change_variable = {
+		which = local_dev_cost
+		which = owner_dev_cost
+	}
+
+	log = calcString
+
+	change_variable = {
+		which = local_dev_cost
+		value = 1
+	}
+
+	log = calcString
+
+	multiply_variable = {
+		which = local_dev_cost
+		which = dev_base_cost
+	}
+
+	log = calcString
+
+
+	while = {
+		limit = {
+			check_variable = {
+				which = local_dev_cost
+				value = 1
+			}
+		}
+		
+		subtract_variable = {
+			which = local_dev_cost
+			value = 1
+		}
+		owner = {
+			add_$type$_power = -1
+		}
+	}
+	add_base_$xyz$ = 1
+}
+
+#Province Scope
+ai_dev_cost_dip = {
+
+	export_to_variable = {
+		which = local_dev_cost
+		value = modifier:local_development_cost
+	}
+
+	log = calcString
+
+	set_variable = {
+		which = dev_base_cost
+		value = 150
+	}
+
+	if = {
+        limit = {
+            is_capital = yes
+            ROOT = { NOT = { total_development = 1000 } }
+        }
+        owner = {
+            export_to_variable = {
+                which = country_total_dev
+                value = trigger_value:total_development
+            }
+            PREV = {
+                set_variable = { which = country_total_dev which = PREV }
+            }
+        }
+        multiply_variable = { which = country_total_dev value = 0.05 }
+        divide_variable = { which = country_total_dev value = 100 }
+        subtract_variable = { which = local_dev_cost which = country_total_dev }
+    }
+    else_if = {
+        limit = {
+            is_capital = yes
+        }
+        set_variable = {
+            which = country_total_dev
+            value = 0.5
+        }
+        subtract_variable = { which = local_dev_cost which = country_total_dev }
+    }
+
+    log = calcString
+
+    owner = {
+        export_to_variable = {
+            which = owner_dev_cost
+            value = modifier:development_cost
+        }
+        PREV = {
+            set_variable = { which = owner_dev_cost which = PREV }
+        }
+    }
+	#############################
+	#############################
+	#############################
+
+
+	set_variable = {
+		which = dev_efficiency
+		value = 1
+	}
+	if = {
+		limit = {
+			adm_tech = 17
+		}
+		change_variable = { which = dev_efficiency value = -0.01 }
+	}
+	if = {
+		limit = {
+			adm_tech = 23
+		}
+		change_variable = { which = dev_efficiency value = -0.02 }
+	}
+	
+	if = {
+		limit = {
+			adm_tech = 27
+		}
+		change_variable = { which = dev_efficiency value = -0.03 }
+	}
+	
+	if = {
+		limit = {
+			adm_tech = 29
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	if = {
+		limit = {
+			adm_tech = 30
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	if = {
+		limit = {
+			adm_tech = 31
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	
+	if = {
+		limit = {
+			adm_tech = 35
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	if = {
+		limit = {
+			adm_tech = 36
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	
+	if = {
+		limit = {
+				adm_tech = 39
+		}
+		change_variable = { which = dev_efficiency value = -0.02 }
+	}
+	if = {
+		limit = {
+			adm_tech = 40
+		}
+		change_variable = { which = dev_efficiency value = -0.03 }
+	}
+	
+	if = {
+		limit = {
+			adm_tech = 44
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	if = {
+		limit = {
+			adm_tech = 45
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	if = {
+		limit = {
+			adm_tech = 46
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	
+	if = {
+		limit = {
+			adm_tech = 50
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+		
+	}
+	
+	multiply_variable = { which = dev_base_cost which = dev_efficiency }
+
+
+	#############################
+	#END OF BASECOST CALCULATION#
+	#############################
+
+	change_variable = {
+		which = local_dev_cost
+		which = owner_dev_cost
+	}
+
+	log = calcString
+
+	change_variable = {
+		which = local_dev_cost
+		value = 1
+	}
+
+	log = calcString
+
+	multiply_variable = {
+		which = local_dev_cost
+		which = dev_base_cost
+	}
+
+	log = calcString
+
+
+	while = {
+		limit = {
+			check_variable = {
+				which = local_dev_cost
+				value = 1
+			}
+		}
+		
+		subtract_variable = {
+			which = local_dev_cost
+			value = 1
+		}
+		owner = {
+			add_dip_power = -1
+		}
+	}
+	add_base_production = 1
+}
+
+#Province Scope
+ai_dev_cost_mil = {
+
+	export_to_variable = {
+		which = local_dev_cost
+		value = modifier:local_development_cost
+	}
+
+	log = calcString
+
+	set_variable = {
+		which = dev_base_cost
+		value = 150
+	}
+
+	if = {
+        limit = {
+            is_capital = yes
+            ROOT = { NOT = { total_development = 1000 } }
+        }
+        owner = {
+            export_to_variable = {
+                which = country_total_dev
+                value = trigger_value:total_development
+            }
+            PREV = {
+                set_variable = { which = country_total_dev which = PREV }
+            }
+        }
+        multiply_variable = { which = country_total_dev value = 0.05 }
+        divide_variable = { which = country_total_dev value = 100 }
+        subtract_variable = { which = local_dev_cost which = country_total_dev }
+    }
+    else_if = {
+        limit = {
+            is_capital = yes
+        }
+        set_variable = {
+            which = country_total_dev
+            value = 0.5
+        }
+        subtract_variable = { which = local_dev_cost which = country_total_dev }
+    }
+
+    log = calcString
+
+    owner = {
+        export_to_variable = {
+            which = owner_dev_cost
+            value = modifier:development_cost
+        }
+        PREV = {
+            set_variable = { which = owner_dev_cost which = PREV }
+        }
+    }
+	#############################
+	#############################
+	#############################
+
+
+	set_variable = {
+		which = dev_efficiency
+		value = 1
+	}
+	if = {
+		limit = {
+			adm_tech = 17
+		}
+		change_variable = { which = dev_efficiency value = -0.01 }
+	}
+	if = {
+		limit = {
+			adm_tech = 23
+		}
+		change_variable = { which = dev_efficiency value = -0.02 }
+	}
+	
+	if = {
+		limit = {
+			adm_tech = 27
+		}
+		change_variable = { which = dev_efficiency value = -0.03 }
+	}
+	
+	if = {
+		limit = {
+			adm_tech = 29
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	if = {
+		limit = {
+			adm_tech = 30
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	if = {
+		limit = {
+			adm_tech = 31
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	
+	if = {
+		limit = {
+			adm_tech = 35
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	if = {
+		limit = {
+			adm_tech = 36
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	
+	if = {
+		limit = {
+				adm_tech = 39
+		}
+		change_variable = { which = dev_efficiency value = -0.02 }
+	}
+	if = {
+		limit = {
+			adm_tech = 40
+		}
+		change_variable = { which = dev_efficiency value = -0.03 }
+	}
+	
+	if = {
+		limit = {
+			adm_tech = 44
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	if = {
+		limit = {
+			adm_tech = 45
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	if = {
+		limit = {
+			adm_tech = 46
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+	}
+	
+	if = {
+		limit = {
+			adm_tech = 50
+		}
+		change_variable = { which = dev_efficiency value = -0.05 }
+		
+	}
+	
+	multiply_variable = { which = dev_base_cost which = dev_efficiency }
+
+
+	#############################
+	#END OF BASECOST CALCULATION#
+	#############################
+
+	change_variable = {
+		which = local_dev_cost
+		which = owner_dev_cost
+	}
+
+	log = calcString
+
+	change_variable = {
+		which = local_dev_cost
+		value = 1
+	}
+
+	log = calcString
+
+	multiply_variable = {
+		which = local_dev_cost
+		which = dev_base_cost
+	}
+
+	log = calcString
+
+
+	while = {
+		limit = {
+			check_variable = {
+				which = local_dev_cost
+				value = 1
+			}
+		}
+		
+		subtract_variable = {
+			which = local_dev_cost
+			value = 1
+		}
+		owner = {
+			add_mil_power = -1
+		}
+	}
+	add_base_manpower = 1
+}

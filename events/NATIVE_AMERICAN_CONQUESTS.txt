@@ -1,0 +1,177 @@
+namespace = native_american_conquests_euro
+
+country_event = {
+	id = native_american_conquests_euro.1
+	title = "native_american_conquests_euro.n.1"
+	desc = "native_american_conquests_euro.d.1"
+	picture = NATIVES_eventPicture
+
+	trigger = {
+		NOT = {
+			OR = {
+				culture_group = maya
+				culture_group = central_american
+				culture_group = aridoamerican
+				culture_group = otomanguean
+				culture_group = andean_group
+				culture_group = eastern_algonquian
+				culture_group = iroquoian
+				culture_group = siouan
+				culture_group = caddoan
+				culture_group = muskogean
+				culture_group = sonoran
+				culture_group = apachean
+				culture_group = na_dene
+				culture_group = penutian
+				culture_group = je
+				culture_group = je_tupi
+				culture_group = maranon
+				culture_group = chibchan
+				culture_group = mataco
+				culture_group = araucanian
+				culture_group = carribean
+				culture_group = eskaleut
+				culture_group = central_algonquian
+				culture_group = plains_algonquian
+				culture_group = aboriginal_australian
+				culture_group = pacific
+			}
+		}
+		any_owned_province = {
+			OR = {
+				culture_group = maya
+				culture_group = central_american
+				culture_group = aridoamerican
+				culture_group = otomanguean
+				culture_group = andean_group
+				culture_group = eastern_algonquian
+				culture_group = iroquoian
+				culture_group = siouan
+				culture_group = caddoan
+				culture_group = muskogean
+				culture_group = sonoran
+				culture_group = apachean
+				culture_group = na_dene
+				culture_group = penutian
+				culture_group = je
+				culture_group = je_tupi
+				culture_group = maranon
+				culture_group = chibchan
+				culture_group = mataco
+				culture_group = araucanian
+				culture_group = carribean
+				culture_group = eskaleut
+				culture_group = central_algonquian
+				culture_group = plains_algonquian
+				culture_group = aboriginal_australian
+				culture_group = pacific
+			}
+			is_city = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 20
+	}
+	
+	option = {
+		name = "native_american_conquests_euro.1.a"
+		
+		custom_tooltip = native_conquests_bgm
+		
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						culture_group = maya
+						culture_group = central_american
+						culture_group = aridoamerican
+						culture_group = otomanguean
+						culture_group = andean_group
+						culture_group = eastern_algonquian
+						culture_group = iroquoian
+						culture_group = siouan
+						culture_group = caddoan
+						culture_group = muskogean
+						culture_group = sonoran
+						culture_group = apachean
+						culture_group = na_dene
+						culture_group = penutian
+						culture_group = je
+						culture_group = je_tupi
+						culture_group = maranon
+						culture_group = chibchan
+						culture_group = mataco
+						culture_group = araucanian
+						culture_group = carribean
+						culture_group = eskaleut
+						culture_group = central_algonquian
+						culture_group = plains_algonquian
+						culture_group = aboriginal_australian
+						culture_group = pacific
+					}
+				}
+				change_culture = ROOT
+				change_religion = ROOT
+			}
+		}
+	}
+}
+
+#spread of illness
+
+province_event = {
+	id = native_american_conquests_euro.2
+	title = "native_american_conquests_euro.n.2"
+	desc = "native_american_conquests_euro.d.2"
+	picture = NATIVES_eventPicture
+	
+	trigger = {
+		owner = {
+			OR = {
+				technology_group = north_american
+				technology_group = mesoamerican
+				technology_group = south_american
+				technology_group = andean
+				technology_group = aboriginal_tech
+				technology_group = polynesian_tech
+			}
+		}
+		NOT = {
+			has_province_flag = euro_illness_spread
+		}
+		OR = {
+			any_neighbor_province = {
+				has_province_flag = euro_illness_spread
+			}
+			any_neighbor_province = {
+				owner = {
+					NOT = {
+						OR = {
+							technology_group = north_american
+							technology_group = mesoamerican
+							technology_group = south_american
+							technology_group = andean
+							technology_group = aboriginal_tech
+							technology_group = polynesian_tech
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 8
+	}
+	
+	option = {
+		name = native_american_conquests_euro.2.a
+		set_province_flag = euro_illness_spread
+		add_devastation = 90
+		add_base_tax = -4
+		add_base_production = -4
+		add_base_manpower = -4
+		add_local_autonomy = 50
+	}
+}

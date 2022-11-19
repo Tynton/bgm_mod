@@ -1,0 +1,1444 @@
+namespace = BGM_DIPLOMACY
+
+#Ruler Dies During Battle Without Heir
+
+country_event = {
+	id = BGM_DIPLOMACY.1
+	title = "BGM_DIPLOMACY.t.1"
+	desc = "BGM_DIPLOMACY.d.1"
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	#Crown a Pretender
+	option = {
+		name = "BGM_DIPLOMACY.1.a"
+		
+		kill_ruler = yes
+		add_prestige = -50
+		
+		define_ruler = {
+			#dynasty = ROOT
+			culture = ROOT
+			religion = ROOT
+			claim = 35
+		}
+		
+		add_years_of_income = 0.2
+		
+	}
+	
+	#Concede
+	option = {
+		name = "BGM_DIPLOMACY.1.b"
+		
+		kill_ruler = yes
+		add_prestige = -100
+		
+		white_peace = FROM
+		
+		FROM = {
+			create_union = ROOT
+		}
+	}
+}
+
+#Secondary Heirs (to be honest I don't know why these are here but I'm too lazy to put them in BGM_DYNASTIC)
+
+country_event = {
+	id = BGM_DIPLOMACY.2
+	title = "BGM_DIPLOMACY.t.2"
+	desc = "BGM_DIPLOMACY.d.2"
+	picture = NEW_HEIR_eventPicture
+	
+	trigger = {
+		has_heir = yes 
+		
+		NOT = {
+			ruler_has_personality = infertile_personality
+		}
+		
+		has_consort = yes
+		
+		has_any_disaster = no
+		
+		NOT = {
+			OR = {
+				has_country_flag = second_heir
+				has_country_flag = tertiary_heir
+			}
+		}
+		
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 64
+		
+		modifier = {
+			factor = 5.0
+			
+			ruler_has_personality = infertile_personality
+		}
+		
+		modifier = {
+			factor = 0.25
+			
+			ruler_has_personality = fertile_personality
+		}
+	}
+	
+	#Normal Titles
+	option = {
+		name = "BGM_DIPLOMACY.2.a"
+		set_country_flag = second_heir
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+	
+	#Strip of Titles
+	#option = {
+	#	name = "BGM_DIPLOMACY.2.b"
+	#	add_prestige = -25
+	#	
+	#	ai_chance = {
+	#		factor = 0
+	#	}
+	#}
+}
+
+#Tertiary Heirs
+
+country_event = {
+	id = BGM_DIPLOMACY.3
+	title = "BGM_DIPLOMACY.t.3"
+	desc = "BGM_DIPLOMACY.d.3"
+	picture = NEW_HEIR_eventPicture
+	
+	trigger = {
+		has_heir = yes 
+		has_country_flag = second_heir
+		
+		NOT = {
+			has_country_flag = tertiary_heir
+		}
+		
+		has_any_disaster = no
+		
+		NOT = {
+			ruler_has_personality = infertile_personality
+		}
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+		has_consort = yes 
+	}
+	
+	mean_time_to_happen = {
+		months = 64
+		
+		#This code is meaningless
+		modifier = {
+			factor = 5.0
+			ruler_has_personality = infertile_personality
+		}
+		
+		modifier = {
+			factor = 0.25
+			ruler_has_personality = fertile_personality
+		}
+	}
+	
+	#Normal Titles
+	option = {
+		name = "BGM_DIPLOMACY.3.a"
+		set_country_flag = tertiary_heir
+	}
+}
+
+#Heir Capture Scheme (target acquired)
+
+country_event = {
+	id = BGM_DIPLOMACY.4
+	title = "BGM_DIPLOMACY.t.4"
+	desc = "BGM_DIPLOMACY.d.4"
+	picture = ASSASSINATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	#mean_time_to_happen = {
+	#	months = 80
+	#	
+	#	modifier = {
+	#		factor = 0.75
+	#		FROM = {
+	#			ruler_has_personality = intricate_web_weaver_personality
+	#		}
+	#	}
+	#	modifier = {
+	#		factor = 1.25
+	#		FROM = {
+	#			ruler_has_personality = loose_lips_personality
+	#		}
+	#	}
+	#	modifier = {
+	#		factor = 0.75
+	#		ruler_has_personality = loose_lips_personality
+	#	}
+	#	
+	#	modifier = {
+	#		factor = 2.5
+	#		heir_has_personality = secretive_personality
+	#	}
+	#	
+	#	modifier = {
+	#		factor = 1.25
+	#		ruler_has_personality = secretive_personality
+	#	}
+	#}
+	
+	#Heir Taken, Negotiate
+	option = {
+		name = "BGM_DIPLOMACY.4.a"
+		clr_country_flag = abduction_scheme
+		
+		FROM = {
+			country_event = {
+				id = BGM_DIPLOMACY.5
+			}
+		}
+		ROOT = {
+			exile_heir_as = heir_imprisoned
+		}
+		
+		ai_chance = {
+			factor = 10
+			
+			modifier = {
+				factor = 5
+				NOT = {
+					stability = -1
+				}
+			}
+		}
+	}
+	
+	#Heir Taken, Disinterested
+	option = {
+		name = "BGM_DIPLOMACY.4.b"
+		clr_country_flag = abduction_scheme
+		remove_heir = {}
+		
+		add_stability = -1
+		add_prestige = -75
+		
+		FROM = {
+			country_event = {
+				id = BGM_DIPLOMACY.6
+			}
+		}
+		
+		ai_chance = {
+			factor = 2
+			
+			modifier = {
+				factor = 5
+				adm_power = 800
+			}
+		}
+	}
+}
+
+#Heir Capture Scheme (For offensive party)
+
+country_event = {
+	id = BGM_DIPLOMACY.5
+	title = "BGM_DIPLOMACY.t.5"
+	desc = "BGM_DIPLOMACY.d.5"
+	picture = ASSASSINATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	#Return Heir
+	option = {
+		name = "BGM_DIPLOMACY.5.a"
+		
+		custom_tooltip = heir_restoration_bribe
+		
+		FROM = {
+			if = {
+				limit = {
+					has_country_flag = second_heir
+				}
+				clr_country_flag = second_heir
+				set_country_flag = tertiary_heir
+			}
+			if = {
+				limit = {
+					has_heir = yes
+				}
+				remove_heir = {}
+				set_country_flag = second_heir
+			}
+		
+			set_heir = heir_imprisoned
+			
+			add_opinion = {
+				who = ROOT
+				modifier = kidnap_plot
+			}
+			
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = {
+							total_development = 100
+						}
+					}
+					add_treasury = -50
+					ROOT = {
+						add_treasury = 50
+					}
+				}
+				
+				if = {
+					limit = {
+						total_development = 100
+						NOT = {
+							total_development = 250
+						}
+					}
+					add_treasury = -100
+					ROOT = {
+						add_treasury = 100
+					}
+				}
+				
+				if = {
+					limit = {
+						total_development = 250
+						NOT = {
+							total_development = 500
+						}
+					}
+					add_treasury = -225
+					ROOT = {
+						add_treasury = 225
+					}
+				}
+				
+				if = {
+					limit = {
+						total_development = 500
+						NOT = {
+							total_development = 1000
+						}
+					}
+					add_treasury = -550
+					ROOT = {
+						add_treasury = 550
+					}
+				}
+				
+				if = {
+					limit = {
+						total_development = 1000
+						NOT = {
+							total_development = 2000
+						}
+					}
+					add_treasury = -1200
+					ROOT = {
+						add_treasury = 1200
+					}
+				}
+				
+				if = {
+					limit = {
+						total_development = 2000
+						NOT = {
+							total_development = 4000
+						}
+					}
+					add_treasury = -3000
+					ROOT = {
+						add_treasury = 3000
+					}
+				}
+				
+				if = {
+					limit = {
+						total_development = 4000
+					}
+					add_treasury = -6000
+					ROOT = {
+						add_treasury = 6000
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			every_neighbor_country = {
+				add_trust = {
+					who = ROOT
+					value = -5
+				}
+			}
+		}
+	
+		if = {
+			limit = {
+				FROM = {
+					is_rival = ROOT
+				}
+			}
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+		}
+	}
+}
+
+#Heir Capture Scheme (For offensive party, no heir return)
+
+country_event = {
+	id = BGM_DIPLOMACY.6
+	title = "BGM_DIPLOMACY.t.6"
+	desc = "BGM_DIPLOMACY.d.6"
+	picture = ASSASSINATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	#Shameful
+	option = {
+		name = "BGM_DIPLOMACY.6.a"
+		hidden_effect = {
+			every_neighbor_country = {
+				add_trust = {
+					who = ROOT
+					value = -5
+				}
+			}
+		}
+		custom_tooltip = condemnation_neighbors
+	}
+}
+
+#Heir Capture Scheme (Failure)
+
+country_event = {
+	id = BGM_DIPLOMACY.7
+	title = "BGM_DIPLOMACY.t.7"
+	desc = "BGM_DIPLOMACY.d.7"
+	picture = ASSASSINATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	#Spies caught, opinion decrease
+	option = {
+		name = "BGM_DIPLOMACY.7.a"
+		clr_country_flag = abduction_scheme
+		
+		
+		
+		FROM = {
+			country_event = {
+				id = BGM_DIPLOMACY.8
+			}
+		}
+		ROOT = {
+			add_opinion = {
+				who = FROM
+				modifier = kidnap_plot
+			}
+			add_casus_belli = {
+				target = FROM
+				type = cb_insult
+				months = 60
+			}
+		}
+		
+		custom_tooltip = condemnation_neighbors
+	}
+}
+
+#Heir Capture Scheme (For offensive party, spies caught)
+
+country_event = {
+	id = BGM_DIPLOMACY.8
+	title = "BGM_DIPLOMACY.t.8"
+	desc = "BGM_DIPLOMACY.d.8"
+	picture = ASSASSINATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	#Shameful
+	option = {
+		name = "BGM_DIPLOMACY.8.a"
+		#abduction_scheme already cleared by this point
+		hidden_effect = {
+			every_neighbor_country = {
+				add_trust = {
+					who = ROOT
+					value = -5
+				}
+			}
+		}
+	}
+}
+
+##########################################################
+##################### MURDER PLOT ########################
+##########################################################
+
+
+#Ruler Murder Scheme (Opportunity)
+
+country_event = {
+	id = BGM_DIPLOMACY.9
+	title = "BGM_DIPLOMACY.t.9"
+	desc = "BGM_DIPLOMACY.d.9"
+	picture = ASSASSINATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	##################(ALL OPTIIONS CLEAR THE FLAG FOR THE SCHEMES!)##################
+	
+	#Take the Chance, High Likelihood 
+	
+	option = {
+		name = "BGM_DIPLOMACY.9.a"
+		clr_country_flag = murder_scheme
+		
+		trigger = {
+			has_spy_network_in = {
+				who = FROM
+				value = 75
+			}
+		}
+		
+		random_list = {
+			75 = {
+				ROOT = { #SUCCEEDED
+					country_event = {
+						id = BGM_DIPLOMACY.10
+					}
+				}
+				FROM = {
+					
+					country_event = {
+						id = BGM_DIPLOMACY.12
+					}
+				}
+			}
+			25 = { #FAILED
+				FROM = {
+					country_event = {
+						id = BGM_DIPLOMACY.13
+					}
+				}
+				ROOT = {
+					country_event = {
+						id = BGM_DIPLOMACY.11
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "BGM_DIPLOMACY.9.b"
+		clr_country_flag = murder_scheme
+		
+		trigger = {
+			has_spy_network_in = {
+				who = FROM
+				value = 50
+			}
+			NOT = {
+				has_spy_network_in = {
+					who = FROM
+					value = 75
+				}
+			}
+		}
+		
+		random_list = {
+			50 = {
+				ROOT = { #SUCCEEDED
+					country_event = {
+						id = BGM_DIPLOMACY.10
+					}
+				}
+				FROM = {
+					
+					country_event = {
+						id = BGM_DIPLOMACY.12
+					}
+				}
+			}
+			50 = { #FAILED
+				FROM = {
+					country_event = {
+						id = BGM_DIPLOMACY.13
+					}
+				}
+				ROOT = {
+					country_event = {
+						id = BGM_DIPLOMACY.11
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "BGM_DIPLOMACY.9.c"
+		clr_country_flag = murder_scheme
+		
+		trigger = {
+			has_spy_network_in = {
+				who = FROM
+				value = 0
+			}
+			NOT = {
+				has_spy_network_in = {
+					who = FROM
+					value = 50
+				}
+			}
+		}
+		
+		random_list = {
+			25 = {
+				ROOT = { #SUCCEEDED
+					country_event = {
+						id = BGM_DIPLOMACY.10
+					}
+				}
+				FROM = {
+					
+					country_event = {
+						id = BGM_DIPLOMACY.12
+					}
+				}
+			}
+			75 = { #FAILED
+				FROM = {
+					country_event = {
+						id = BGM_DIPLOMACY.13
+					}
+				}
+				ROOT = {
+					country_event = {
+						id = BGM_DIPLOMACY.11
+					}
+				}
+			}
+		}
+	}
+	
+	#Back down
+	option = {
+		name = "BGM_DIPLOMACY.9.d"
+		clr_country_flag = murder_scheme
+	}
+}
+
+#Successful Ruler Murder Scheme (Attacking Party)
+
+country_event = {
+	id = BGM_DIPLOMACY.10
+	title = "BGM_DIPLOMACY.t.10"
+	desc = "BGM_DIPLOMACY.d.10"
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	
+	#Success
+	option = {
+		name = "BGM_DIPLOMACY.10.a"
+		
+		custom_tooltip = ruler_killed
+		
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = murder_plot
+			}
+		}
+		hidden_effect = {
+			every_neighbor_country = {
+				add_trust = {
+					who = ROOT
+					value = -15
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				FROM = {
+					NOT = {
+						is_rival = ROOT
+					}
+				}
+			}
+			add_stability = -1
+			add_prestige = -50
+		}
+	
+		if = {
+			limit = {
+				FROM = {
+					is_rival = ROOT
+				}
+			}
+			add_adm_power = 125
+			add_dip_power = 125
+			add_mil_power = 125
+		}
+		
+		custom_tooltip = condemnation_neighbors
+	}
+}
+
+#Ruler Murder Scheme (Failure)
+
+country_event = {
+	id = BGM_DIPLOMACY.11
+	title = "BGM_DIPLOMACY.t.11"
+	desc = "BGM_DIPLOMACY.d.11"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	#Shameful
+	option = {
+		name = "BGM_DIPLOMACY.11.a"
+		
+		if = {
+			limit = {
+				
+				FROM = {
+					NOT = {
+						is_rival = ROOT
+					}
+				}
+			}
+			add_stability = -1
+			add_prestige = -50
+		}
+		
+		if = {
+			limit = {
+				FROM = {
+					is_rival = ROOT
+				}
+			}
+			add_prestige = -25
+		}
+		
+		hidden_effect = {
+			every_neighbor_country = {
+				add_trust = {
+					who = ROOT
+					value = -15
+				}
+			}
+		}
+		
+		custom_tooltip = condemnation_neighbors
+	}
+}
+
+#Ruler Murder Scheme (Success, Recipient)
+
+country_event = {
+	id = BGM_DIPLOMACY.12
+	title = "BGM_DIPLOMACY.t.12"
+	desc = "BGM_DIPLOMACY.d.12"
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	
+	
+	
+	#Shameful
+	option = {
+		name = "BGM_DIPLOMACY.12.a"
+		ROOT = {
+			add_opinion = {
+				who = FROM
+				modifier = murder_plot
+			}
+			add_casus_belli = {
+				target = FROM
+				type = cb_insult
+				months = 120
+			}
+			kill_ruler = yes
+		}
+	}
+}
+
+#Ruler Murder Scheme (Failure, Recipient)
+
+country_event = {
+	id = BGM_DIPLOMACY.13
+	title = "BGM_DIPLOMACY.t.13"
+	desc = "BGM_DIPLOMACY.d.13"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	#Shameful
+	option = {
+		name = "BGM_DIPLOMACY.13.a"
+		ROOT = {
+			add_opinion = {
+				who = FROM
+				modifier = murder_plot
+			}
+			add_casus_belli = {
+				target = FROM
+				type = cb_insult
+				months = 120
+			}
+		}
+	}
+}
+
+#Ruler Murder Scheme, CAUGHT IN PROCESS
+
+country_event = {
+	id = BGM_DIPLOMACY.14
+	title = "BGM_DIPLOMACY.t.14"
+	desc = "BGM_DIPLOMACY.d.14"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	
+	#Spies caught, opinion decrease
+	option = {
+		name = "BGM_DIPLOMACY.14.a"
+		clr_country_flag = murder_scheme
+		
+		FROM = {
+			country_event = {
+				id = BGM_DIPLOMACY.11
+			}
+			hidden_effect = {
+				every_neighbor_country = {
+					add_trust = {
+						who = ROOT
+						value = -15
+					}
+				}
+			}
+		}
+		ROOT = {
+			add_opinion = {
+				who = FROM
+				modifier = murder_plot
+			}
+			add_casus_belli = {
+				target = FROM
+				type = cb_insult
+				months = 60
+			}
+		}
+	}
+}
+
+##########################################################
+##################### I FUCKED UP ########################
+##########################################################
+
+#Heir Capture Scheme (Fixed)
+
+country_event = {
+	id = BGM_DIPLOMACY.15
+	title = "BGM_DIPLOMACY.t.15"
+	desc = "BGM_DIPLOMACY.d.15"
+	picture = ASSASSINATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	##################(ALL OPTIIONS CLEAR THE FLAG FOR THE SCHEMES!)##################
+	
+	#Take the Chance, High Likelihood 
+	
+	option = {
+		name = "BGM_DIPLOMACY.15.a"
+		clr_country_flag = abduction_scheme
+		
+		trigger = {
+			has_spy_network_in = {
+				who = FROM
+				value = 75
+			}
+			FROM = {
+				has_heir = yes
+			}
+		}
+		
+		random_list = {
+			75 = {
+				FROM = { #SUCCEEDED
+					country_event = {
+						id = BGM_DIPLOMACY.4
+					}
+				}
+			}
+			25 = { #FAILED
+				FROM = {
+					country_event = {
+						id = BGM_DIPLOMACY.7
+					}
+				}
+				ROOT = {
+					country_event = {
+						id = BGM_DIPLOMACY.8
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "BGM_DIPLOMACY.15.b"
+		clr_country_flag = abduction_scheme
+		
+		trigger = {
+			has_spy_network_in = {
+				who = FROM
+				value = 50
+			}
+			NOT = {
+				has_spy_network_in = {
+					who = FROM
+					value = 75
+				}
+			}
+			FROM = {
+				has_heir = yes
+			}
+		}
+		
+		random_list = {
+			50 = {
+				FROM = { #SUCCEEDED
+					country_event = {
+						id = BGM_DIPLOMACY.4
+					}
+				}
+			}
+			50 = { #FAILED
+				FROM = {
+					country_event = {
+						id = BGM_DIPLOMACY.7
+					}
+				}
+				ROOT = {
+					country_event = {
+						id = BGM_DIPLOMACY.8
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "BGM_DIPLOMACY.15.c"
+		clr_country_flag = abduction_scheme
+		
+		trigger = {
+			has_spy_network_in = {
+				who = FROM
+				value = 0
+			}
+			NOT = {
+				has_spy_network_in = {
+					who = FROM
+					value = 50
+				}
+			}
+			FROM = {
+				has_heir = yes
+			}
+		}
+		
+		random_list = {
+			25 = {
+				FROM = { #SUCCEEDED
+					country_event = {
+						id = BGM_DIPLOMACY.4
+					}
+				}
+			}
+			75 = { #FAILED
+				FROM = {
+					country_event = {
+						id = BGM_DIPLOMACY.7
+					}
+				}
+				ROOT = {
+					country_event = {
+						id = BGM_DIPLOMACY.8
+					}
+				}
+			}
+		}
+	}
+	
+	#Back down
+	option = {
+		name = "BGM_DIPLOMACY.15.d"
+		FROM = {
+			clr_country_flag = abduction_scheme
+		}
+	}
+}
+
+#Heir Capture Scheme (Hidden Precursor)
+
+country_event = {
+	id = BGM_DIPLOMACY.16
+	title = "BGM_DIPLOMACY.t.16"
+	desc = "BGM_DIPLOMACY.d.16"
+	picture = ASSASSINATION_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	#Execute Opportunity
+	option = {
+		name = "BGM_DIPLOMACY.16.a"
+		FROM = {
+			country_event = {
+				id = BGM_DIPLOMACY.15
+			}
+		}
+		clr_country_flag = abduction_scheme
+	}
+}
+
+#Ruler Murder Scheme (Hidden Precursor)
+
+country_event = {
+	id = BGM_DIPLOMACY.17
+	title = "BGM_DIPLOMACY.t.17"
+	desc = "BGM_DIPLOMACY.d.17"
+	picture = ASSASSINATION_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	#Execute Opportunity
+	option = {
+		name = "BGM_DIPLOMACY.17.a"
+		FROM = {
+			country_event = {
+				id = BGM_DIPLOMACY.9
+			}
+		}
+		clr_country_flag = murder_scheme
+	}
+}
+
+#Trigger Continental Hegemony
+
+country_event = {
+	id = BGM_DIPLOMACY.18
+	title = "BGM_DIPLOMACY.t.18"
+	desc = "BGM_DIPLOMACY.d.18"
+	picture = LAND_MILITARY_eventPicture
+	
+	major = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+	
+		is_subject = no
+		
+		capital_scope = {
+			continent = europe
+		}
+		
+		
+		any_country = {
+			capital_scope = {
+				continent = ROOT
+			}
+			is_hegemon = yes
+			army_size = 1000
+			total_development = 3000
+		}
+		
+		great_power_rank = 4
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.25
+			dip = 4
+		}
+	}
+	#set tag
+	option = {
+		name = "BGM_DIPLOMACY.18.a"
+		every_country = {
+			limit = {
+				capital_scope = {
+					continent = ROOT
+				}
+			}
+			set_country_flag = continental_hegemony
+		}
+	}
+}
+
+#Trigger Palace Coup Sympathetic Candidates (Monarchist) RECIPIENT
+
+country_event = {
+	id = BGM_DIPLOMACY.19
+	title = "BGM_DIPLOMACY.t.19"
+	desc = "BGM_DIPLOMACY.d.19"
+	picture = RELIGIOUS_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	#Fight Pretender
+	option = {
+		name = "BGM_DIPLOMACY.19.a"
+		add_stability = -1
+		add_prestige = -25
+		capital_scope = { 
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 3
+				culture = FROM
+			}
+		}
+		FROM = {
+			country_event = {
+				id = BGM_DIPLOMACY.20
+			}
+		}
+		
+		clr_country_flag = palace_plot
+		
+		ai_chance = {
+			factor = 5
+		}
+	}
+	
+	#Support Pretender
+	option = {
+		name = "BGM_DIPLOMACY.19.b"
+		FROM = {
+			create_subject = {
+				subject_type = personal_union
+				subject = ROOT
+			}
+		}
+		add_stability = -1
+		add_prestige = -25
+		kill_ruler = yes
+		kill_heir = { allow_new_heir = no }
+		define_ruler = {
+			dynasty = FROM
+			age = 25
+			claim = 20
+		}
+		
+		clr_country_flag = palace_plot
+		
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				OR = {
+					is_great_power = yes
+					NOT = {
+						FROM = {
+							army_strength = {
+								who = ROOT
+								value = 1
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#State Coup Sympathetic Candidates (Non-Monarchy) SENDER
+
+country_event = {
+	id = BGM_DIPLOMACY.20
+	title = "BGM_DIPLOMACY.t.20"
+	desc = "BGM_DIPLOMACY.d.20"
+	picture = RELIGIOUS_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	#Support Pretender
+	option = {
+		name = "BGM_DIPLOMACY.20.a"
+		add_casus_belli = {
+			target = FROM
+			type = cb_restore_personal_union
+			months = 60
+		}
+		ai_chance = {
+			factor = 3
+		}
+	}
+	
+	#Stand Down
+	option = {
+		name = "BGM_DIPLOMACY.20.b"
+		
+		add_truce_with = FROM
+		FROM = {
+			add_truce_with = ROOT
+		}
+		
+		ai_chance = {
+			factor = 2
+			
+			modifier = {
+				factor = 0
+				
+				FROM = {
+					NOT = {
+						any_ally = {
+							army_strength = {
+								who = ROOT
+								value = 0.8
+							}
+						}
+						
+						army_strength = {
+							who = ROOT
+							value = 0.8
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#State Coup Sympathetic Candidates (Non-Monarchy)
+
+country_event = {
+	id = BGM_DIPLOMACY.21
+	title = "BGM_DIPLOMACY.t.21"
+	desc = "BGM_DIPLOMACY.d.21"
+	picture = MIL_ADVANCE_eventPicture
+	
+	is_triggered_only = yes
+	
+	#Fight Pretender
+	option = {
+		name = "BGM_DIPLOMACY.21.a"
+		add_stability = -1
+		add_prestige = -25
+		FROM = {
+			country_event = {
+				id = BGM_DIPLOMACY.22
+			}
+		}
+		
+		clr_country_flag = palace_plot
+		
+		ai_chance = {
+			factor = 5
+		}
+	}
+	
+	#Support Pretender
+	option = {
+		name = "BGM_DIPLOMACY.21.b"
+		FROM = {
+			create_subject = {
+				subject_type = vassal
+				subject = ROOT
+			}
+		}
+		add_stability = -1
+		add_prestige = -25
+		kill_ruler = yes
+		define_ruler = {
+			dynasty = FROM
+			age = 25
+			claim = 20
+		}
+		
+		clr_country_flag = palace_plot
+		
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#State Coup Sympathetic Candidates (Non-Monarchy) SENDER
+
+country_event = {
+	id = BGM_DIPLOMACY.22
+	title = "BGM_DIPLOMACY.t.22"
+	desc = "BGM_DIPLOMACY.d.22"
+	picture = MIL_ADVANCE_eventPicture
+	
+	is_triggered_only = yes
+	
+	#Support Pretender
+	option = {
+		name = "BGM_DIPLOMACY.22.a"
+		add_casus_belli = {
+			target = FROM
+			type = cb_annex
+			months = 60
+		}
+		ai_chance = {
+			factor = 3
+		}
+	}
+	
+	#Stand Down
+	option = {
+		name = "BGM_DIPLOMACY.22.b"
+		
+		add_truce_with = FROM
+		FROM = {
+			add_truce_with = ROOT
+		}
+		
+		ai_chance = {
+			factor = 2
+		}
+	}
+}
+
+#tech
+
+country_event = {
+	id = BGM_DIPLOMACY.23
+	title = none
+	desc = none
+	picture = none
+
+	hidden = yes
+	
+	trigger = {
+		dip_tech = 12
+		NOT = {
+			has_country_flag = dip1
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	#Support Pretender
+	option = {
+		name = none
+		set_country_flag = dip1
+		add_country_modifier = {
+			name = dip_1
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = BGM_DIPLOMACY.24
+	title = none
+	desc = none
+	picture = none
+
+	hidden = yes
+	
+	trigger = {
+		dip_tech = 20
+		NOT = {
+			has_country_flag = dip2
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	#Support Pretender
+	option = {
+		name = none
+		set_country_flag = dip2
+		add_country_modifier = {
+			name = dip_2
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = BGM_DIPLOMACY.25
+	title = none
+	desc = none
+	picture = none
+
+	hidden = yes
+	
+	trigger = {
+		dip_tech = 28
+		NOT = {
+			has_country_flag = dip3
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	#Support Pretender
+	option = {
+		name = none
+		set_country_flag = dip3
+		add_country_modifier = {
+			name = dip_3
+			duration = -1
+		}
+	}
+}
+
+country_event = { #flag for demand annexation
+	id = BGM_DIPLOMACY.26
+	title = none
+	desc = none
+	picture = none
+
+	hidden = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = none
+		clr_country_flag = demand_annex
+	}
+}

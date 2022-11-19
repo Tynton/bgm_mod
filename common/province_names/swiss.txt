@@ -1,0 +1,42 @@
+4721 = { "Fribourg" "Frybùrg" }
+1871 = { "Valais" "Wallis" }
+1867 = { "Vaud" "Waadt" }
+4720 = { "Genève" " Gämf" }
+
+4971 = "Ticino"
+4972 = "Martigny"
+166 = { "Waldstätte" "Uri" }
+
+4713 = "Konschdanz"
+
+75 = { "Strassburg" "Strossburi" }
+85 = "Köln"
+4765 = { "Milhüsa" "Milhüüse" }
+65 = "München"
+50 = "Berlin"
+
+151 = "Konstantinopel"
+
+4994 = "Lozärn"
+4993 = "Soledurn"
+4971 = "Tessin"
+4997 = "Glaris"
+
+134 = "Wien"
+1868 = { "Augsburg" "Augschburg" }
+67 = "Nürmbärg"
+
+
+262 = "Krakau"
+
+1951 = "Iisemärt"
+
+#italy
+
+104 = "Mailand"
+
+1247 = "Korsika"
+
+#spain
+
+366 = "Kanarische Inseln"

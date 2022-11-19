@@ -1,0 +1,57 @@
+unitarian_jesus_exemplar_aspect = {
+	cost = 100
+	modifier = {
+		yearly_corruption = -0.1
+		legitimacy = 0.25
+		devotion = 0.25
+		horde_unity = 0.25
+		republican_tradition = 0.125
+	}
+}
+
+unitarian_rationality_aspect = {
+	cost = 100
+	modifier = {
+		advisor_cost = -0.075
+		idea_cost = -0.05
+	}
+}
+
+unitarian_human_will_aspect = {
+	cost = 100
+	modifier = {
+		innovativeness_gain = 1
+	}
+}
+
+unitarian_no_original_sin_aspect = {
+	cost = 100
+	modifier = {
+		global_unrest = -1
+		years_of_nationalism = -5
+	}
+}
+
+unitarian_invalid_predestination_aspect = {
+	cost = 100
+	modifier = {
+		tolerance_own = 1
+		tolerance_heretic = 1
+	}
+}
+
+unitarian_biblical_error_aspect = {
+	cost = 100
+	modifier = {
+		missionaries = 1
+		global_autonomy = -0.05
+	}
+}
+
+unitarian_liberty_of_practice_aspect = {
+	cost = 100
+	modifier = {
+		stability_cost_modifier = -0.1
+		religious_unity = 0.25
+	}
+}

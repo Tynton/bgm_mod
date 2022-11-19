@@ -1,0 +1,22 @@
+280 = "Kyiv"
+291 = { "Kharkiv" "Bilhorod" }
+2961 = "Lviv"
+289 = "Chernihiv"
+
+
+183 = "Paryzh"
+
+134 = "Viden"
+
+12 = "Ghuma"
+
+101 = "Henuia"
+104 = "Milan"
+103 = "Turyn"
+121 = "Neapol"
+118 = "Rym"
+262 = "Krakiv"
+2424 = "Peremyshl"
+
+4720 = "Zheneva"
+1867 = "Lozanna"

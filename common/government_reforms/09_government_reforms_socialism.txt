@@ -1,0 +1,91 @@
+socialist_mechanic = {
+	republican_name = yes
+	royal_marriage = no
+	republic = yes
+	basic_reform = yes # = invisible/does not take up a slot
+	valid_for_nation_designer = no
+	#revolutionary = yes
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+	}
+	conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		militarised_society = yes
+	}
+}
+
+socialist_government_reform = {
+	icon = "socialist_star"
+	#republican_name = no
+	allow_normal_conversion = yes
+	#dictatorship = yes
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		max_absolutism = 10
+	}
+}
+
+socialist_juche = {
+	icon = "socialist_juche"
+	#republican_name = no
+	republic = no
+	#dictatorship = yes
+	maintain_dynasty = yes
+	allow_normal_conversion = yes
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	
+	potential = {
+		OR = {
+			primary_culture = korean
+			any_country = {
+				has_reform = socialist_juche
+			}
+		}
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+	}
+	
+	modifiers = {
+		max_absolutism = 15
+	}
+}
+
+revolutionary_socialism = {
+	icon = "socialist_revolutionary"
+	potential = {
+		has_country_modifier = forced_socialism
+	}
+	#republican_name = yes
+	#dictatorship = yes
+	allow_normal_conversion = no
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = no
+	nation_designer_cost = 0
+	modifiers = {
+		yearly_absolutism = 1.5
+		land_forcelimit_modifier = 0.5
+		global_manpower_modifier = 0.5
+	}
+}
+
+socialist_republic = {
+	icon = "socialist_star"
+	republican_name = no
+	#dictatorship = yes
+	allow_normal_conversion = yes
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		max_absolutism = 5
+		yearly_absolutism = 0.5
+	}
+	duration = 4
+	has_term_election = yes
+}

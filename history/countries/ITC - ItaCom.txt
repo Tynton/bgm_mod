@@ -1,0 +1,7 @@
+government = republic
+add_government_reform = communist_mechanic
+primary_culture = tuscan
+religion = catholic
+technology_group = western
+capital = 118 # Rome
+national_focus = ADM

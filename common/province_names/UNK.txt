@@ -1,0 +1,14 @@
+235 = { "Kent" "Canterbury" }
+237 = "Oxford"
+239 = "Gloucestershire"
+233 = "Cornwall"
+4370 = "Bedfordshire"
+1860 = "Norfolk"
+246 = { "Northumberland" "Northumbria" }
+244 = "Lancashire"
+87 = "Calais"
+4376 = "Leicester"
+4375 = "Chester"
+234 = { "Hampshire" "Salisbury" }
+
+248 = { "Lothian" "Edinburgh" }

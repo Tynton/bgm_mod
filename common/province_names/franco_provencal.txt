@@ -1,0 +1,26 @@
+204 = { "Grainóvol" "Grenoblo" }
+203 = "Liyon"
+205 = "Chambèri"
+4719 = { "Brêsse" "Bôrg" }
+4721 = { "Fribôrg" "Friboua" }
+1867 = { "Vôd" "Losena" }
+4720 = "Geneva"
+1871 = "Valês"
+103 = "Turin"
+201 = { "Aix-en-Provence" "Marselye" }
+4777 = { "Forêz" "Montbréson" }
+190 = "Borbonês"
+174 = "Bordôx"
+179 = "Bèrri"
+1869 = "Tsurique"
+199 = "Ôvèrgne"
+
+
+257 = "Varsovie"
+165 = "Bèrna"
+361 = "Cayiro"
+50 = "Bèrlin"
+75 = "Strasbôrg"
+94 = "Luxembôrg"
+4384 = { "Rennais" "Renes" }
+134 = "Vièna"

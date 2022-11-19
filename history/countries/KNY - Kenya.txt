@@ -1,0 +1,4 @@
+government = republic
+primary_culture = swahili
+technology_group = east_african
+unit_type = sub_saharan

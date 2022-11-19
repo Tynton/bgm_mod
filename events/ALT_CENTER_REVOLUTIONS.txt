@@ -1,0 +1,97 @@
+namespace = alt_center_rev
+
+#DISSOLUTION OF THE REVOLUTION
+province_event = {
+	id = alt_center_rev.2
+	title = "alt_center_rev.n.2"
+	desc = "alt_center_rev.d.2"
+	picture = ANGRY_MOB_eventPicture
+	
+	fire_only_once = yes
+	
+	hidden = yes
+
+	#major = yes
+
+	trigger = {
+		has_global_flag = revolutions_year_start
+		#is_center_of_revolution = yes
+	}	
+
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = "alt_center_rev.2.a"
+		owner = {
+			remove_center_of_revolution = yes
+		}
+		hidden_effect = {
+			every_province = {
+				limit = { has_revolution_in_province = yes }
+				remove_revolution_from_province_effect = yes
+			}
+		}
+		every_country = {
+			limit = {
+				is_revolution_target = yes
+			}
+			country_event = {
+				id = alt_center_rev.4
+			}
+		}
+	}
+}
+
+#DISSOLUTION OF THE REVOLUTION
+province_event = {
+	id = alt_center_rev.3
+	title = "alt_center_rev.n.3"
+	desc = "alt_center_rev.d.3"
+	picture = ANGRY_MOB_eventPicture
+	
+	hidden = yes
+
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "alt_center_rev.3.a"
+		hidden_effect = {
+			every_province = {
+				limit = { has_revolution_in_province = yes }
+				remove_revolution_from_province_effect = yes
+			}
+			clear_global_event_target = revolution_center
+		}
+	}
+}
+
+#REV TARGET DESTRUCTION
+country_event = {
+	id = alt_center_rev.4
+	title = "alt_center_rev.n.4"
+	desc = "alt_center_rev.d.4"
+	picture = ANGRY_MOB_eventPicture
+	
+	hidden = yes
+
+	major = yes
+	
+	trigger = {
+		has_global_flag = revolutions_year_start
+		is_revolution_target = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "alt_center_rev.4.a"
+		set_revolution_target = ---
+		clear_global_event_target = revolution_center
+	}
+}

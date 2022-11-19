@@ -1,0 +1,328 @@
+ ag_missions = {
+	slot = 4
+	
+	generic = yes
+	
+	potential = {
+		capital_scope = {
+			OR = {
+				region = france_region
+				region = italy_region
+				region = south_german_region
+				region = iberia_region
+				superregion = eastern_europe_superregion
+				NOT = { area = silesia_area }
+				continent = africa
+				continent = asia
+				continent = south_america
+			}
+		}  
+	}
+	high_income_missionag = {
+		icon = mission_high_income
+		required_missions = {  } #None
+		trigger = { share_of_starting_income = 1.5 }
+		effect = {
+			add_country_modifier = {
+				name = "growing_economy"
+				duration = 9125 #25 years
+			}
+		}
+	}
+	build_manpower = {
+		icon = mission_italian_condottiere
+		required_missions = { high_income_missionag }
+		trigger = {
+			barracks = 10
+		}
+		effect = {
+			add_mil_power = 50
+			add_country_modifier = {
+				name = "high_manpower"
+				duration = 9125
+			}
+		}
+	}
+	high_manpower_mission = {
+		icon = mission_assemble_an_army
+		required_missions = { build_manpower }
+		trigger = { 
+			manpower_percentage = 0.8
+		}
+		effect = {
+			add_country_modifier = {
+				name = "satisfactory_manpower"
+				duration = 9125
+			}
+		}
+	}
+	build_infrastructure = {
+		icon = mission_early_game_buildings
+		required_missions = { high_manpower_mission }
+		trigger = {
+			OR = {
+				barracks = 20
+				soldier_households = 5
+			}
+			temple = 15
+		}
+		effect = {
+			add_country_modifier = {
+				name = "bgm_infrastructure"
+				duration = 9125
+			}
+		}
+	}
+	bgm_balanced_economy = {
+		icon = mission_early_modern_university
+		required_missions = { build_infrastructure }
+		trigger = {
+			production_income_percentage = 0.25
+			trade_income_percentage = 0.25
+			tax_income_percentage = 0.25
+			manpower_percentage = 0.75
+		}
+		effect = {
+			add_adm_power = 75
+			add_dip_power = 75
+			add_mil_power = 75
+			add_country_modifier = {
+				name = "secure_economy"
+				duration = 18250
+			}
+		}
+	}
+}
+
+ind_missions = {
+	slot = 4
+	
+	generic = yes
+	
+	potential = {
+		capital_scope = {
+			OR = {
+				region = north_german_region
+				region = british_isles_region
+				region = low_countries_region
+				region = scandinavia_region
+				area = silesia_area
+			}
+		}  
+	}
+	high_income_missionind = {
+		icon = mission_high_income
+		required_missions = {  } #None
+		trigger = { share_of_starting_income = 1.5 }
+		effect = {
+			add_country_modifier = {
+				name = "growing_economy"
+				duration = 9125 #25 years
+			}
+		}
+	}
+	build_production = {
+		icon = mission_early_game_buildings
+		required_missions = { high_income_missionind }
+		trigger = {
+			workshop = 10
+		}
+		effect = {
+			add_stability = 1
+			add_adm_power = 50
+			add_country_modifier = {
+				name = "surplus"
+				duration = 9125
+			}
+		}
+	}
+	centers_of_trade = {
+		icon = mission_hanseatic_city
+		required_missions = { build_production }
+		trigger = { 
+			num_of_centers_of_trade = 3
+		}
+		effect = {
+			add_country_modifier = {
+				name = "commercial_power"
+				duration = 9125
+			}
+		}
+	}
+	bgm_pre_industrialize = {
+		icon = mission_have_manufactories
+		required_missions = { centers_of_trade }
+		trigger = {
+			calc_true_if = {
+				desc = build_manufactories_mission_tooltip
+				all_owned_province = {
+					OR = {
+						has_building = mills
+						has_building = farm_estate
+						has_building = tradecompany
+						has_building = plantations
+						has_building = textile
+						has_building = weapons
+						has_building = wharf
+						has_building = furnace
+					}
+				}
+				amount = 20
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "proto_industrialization"
+				duration = 9125
+			}
+		}
+	}
+	bgm_prosperous_nation = {
+		icon = mission_early_modern_university
+		required_missions = { bgm_pre_industrialize }
+		trigger = {
+			years_of_income = 1
+			stability = 1
+			prestige = 0
+			NOT = { num_of_loans = 1 }
+		}
+		effect = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+			add_country_modifier = {
+				name = "secure_economy"
+				duration = 18250
+			}
+			capital_scope = {
+				center_of_trade = 1
+			}
+		}
+	}
+}
+
+non_colonial_missions = {
+	slot = 3
+	
+	generic = yes
+	
+	potential = {
+		capital_scope = {
+			OR = {
+				region = north_german_region
+				region = south_german_region
+				NOT = { region = italy_region }
+				superregion = eastern_europe_superregion
+				continent = africa
+				continent = asia
+			}
+		}  
+	}
+	trusted_allies = {
+		icon = mission_alliances
+		required_missions = {  } #None
+		trigger = { 
+			custom_trigger_tooltip = {
+			tooltip = building_alliances.tooltip
+			num_of_allies = 2
+			calc_true_if = {
+				all_ally = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				amount = 2
+			}
+		} }
+		effect = {
+			add_prestige = 10
+			add_country_modifier = {
+				name = "influential_diplomacy"
+				duration = 9125 #25 years
+			}
+		}
+	}
+	lordships = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { trusted_allies }
+		trigger = {
+			num_of_subjects = 2
+		}
+		effect = {
+			add_prestige = 10
+			add_country_modifier = {
+				name = "dip_primacy"
+				duration = 9125
+			}
+		}
+	}
+	regional_dominance = {
+		icon = mission_eastern_european_city
+		required_missions = { lordships }
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = reg_dom
+				capital_scope = {
+					NOT = {
+						region_for_scope_province = {
+							NOT = { owned_by = ROOT }
+							is_capital = yes
+							owner = {
+								total_development = ROOT
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "regional_power"
+				duration = 9125
+			}
+		}
+	}
+	great_power = {
+		icon = mission_early_game_buildings
+		required_missions = { regional_dominance }
+		trigger = {
+			is_great_power = yes
+		}
+		effect = {
+			add_prestige = 25
+			add_country_modifier = {
+				name = "rising_force"
+				duration = 9125
+			}
+		}
+	}
+	exert_far_influence = {
+		icon = mission_early_modern_university
+		required_missions = { great_power }
+		trigger = {
+			num_of_allies = 1
+			stability = 1
+			NOT = { num_of_revolts = 1 }
+			NOT = { great_power_rank = 4 }
+		}
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+
+			add_legitimacy = 20
+			add_devotion = 20
+			add_horde_unity = 20
+			add_republican_tradition = 10
+
+			add_country_modifier = {
+				name = "intergenerational_stability"
+				duration = 18250
+			}
+			capital_scope = {
+				center_of_trade = 1
+			}
+		}
+	}
+}

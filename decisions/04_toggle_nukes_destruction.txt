@@ -1,0 +1,117 @@
+country_decisions = {
+
+	toggle_genocide_on = {
+		potential = {
+			NOT = { has_country_modifier = genocides }
+			OR = {
+				#ruler_has_personality = malevolent_personality
+				#ruler_has_personality = cruel_personality
+				has_reform = intolerance_reform
+			}
+		}
+		allow = {
+			NOT = { has_country_modifier = genocides }
+			OR = {
+				#ruler_has_personality = malevolent_personality
+				#ruler_has_personality = cruel_personality
+				has_reform = intolerance_reform
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "genocides"
+				duration = -1
+			}
+			add_years_of_income = -0.75
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						diplomatic_reputation = 0
+						current_income_balance = 0
+					}
+				}
+			}
+		}
+	}
+	toggle_genocide_off = {
+		potential = {
+			has_country_modifier = genocides
+		}
+		
+		allow = {
+			has_country_modifier = genocides
+		}
+		
+		effect = {
+			remove_country_modifier = genocides
+		}
+		
+		ai_will_do = {
+			factor = 0
+			
+			modifier = {
+				factor = 1
+				num_of_loans = 2
+			}
+		}
+	}
+	
+	toggle_nuke_on = {
+		potential = {
+			NOT = { has_country_flag = nukes_on }
+			OR = {
+				technology_group = modern_nuke
+				technology_group = modern_german_nuke
+				technology_group = modern_soviet_nuke
+			}
+		}
+		allow = {
+			OR = {
+				NOT = { has_country_flag = nukes_on }
+			}
+		}
+		effect = {
+			set_country_flag = nukes_on
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = {
+						war_score = -25
+					}
+					any_owned_province = { devastation = 50 }
+				}
+			}
+		}
+	}
+	toggle_nuke_off = {
+		potential = {
+			has_country_flag = nukes_on
+		}
+		
+		allow = {
+			has_country_flag = nukes_on
+		}
+		
+		effect = {
+			clr_country_flag = nukes_on
+		}
+		
+		ai_will_do = {
+			factor = 0
+			
+			modifier = {
+				factor = 1
+				num_of_loans = 2
+			}
+		}
+	}
+}

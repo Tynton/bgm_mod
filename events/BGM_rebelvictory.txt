@@ -1,0 +1,52 @@
+namespace = BGM_rebelvictory
+
+# Revolution
+country_event = {
+	id = BGM_rebelvictory.1
+	title = "BGM_rebelvictory.1.t"
+	desc = "BGM_rebelvictory.1.d"
+	picture = SOC_REV_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_rebelvictory.1.a"			# Dire times are ahead of us
+		add_prestige = -50
+		if = {
+			limit = {
+				NOT = { 
+					OR = {
+						government = republic
+						has_reform = papacy_reform
+						has_reform = steppe_horde
+						has_reform = celestial_empire
+						has_reform = iqta
+						has_reform = daimyo
+						has_reform = shogunate
+						has_reform = colonial_government
+						has_reform = native_basic_reform
+						has_reform = revolutionary_republic_reform
+					}
+				}
+			}
+			change_government = futurist_government
+			add_government_reform = socialist_republic
+			set_legacy_government = republican_dictatorship
+		}
+		if = {
+			limit = {
+				is_subject = yes
+			}
+			grant_independence = yes
+		}
+		define_ruler = {
+			rebel = yes
+		}
+		if = {
+			limit = { has_disaster = socialist_revolution }
+			end_disaster = socialist_revolution
+			remove_country_modifier = reduceed_war_expenditures
+			remove_country_modifier = decreased_morale
+		}
+	}
+}

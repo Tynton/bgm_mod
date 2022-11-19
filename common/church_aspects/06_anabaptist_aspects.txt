@@ -1,0 +1,49 @@
+anabaptist_equality_aspect = {
+	cost = 100
+	modifier = {
+		production_efficiency = 0.2
+	}
+}
+
+anabaptist_charisma_aspect = {
+	cost = 100
+	modifier = {
+		prestige_per_development_from_conversion = 0.25
+	}
+}
+
+anabaptist_liberty_of_conscience_aspect = {
+	cost = 100
+	modifier = {
+		stability_cost_modifier = -0.2
+		religious_unity = 0.2
+	}
+}
+
+anabaptist_nonconformism_aspect = {
+	cost = 100
+	modifier = {
+		tolerance_heretic = 2
+		global_spy_defence = 0.25
+	}
+}
+
+anabaptist_pacifism_aspect = {
+	cost = 100
+	modifier = {
+		stability_cost_to_declare_war = 1 
+		diplomatic_reputation = 2
+	}
+}
+
+anabaptist_soteriology_aspect = {
+	cost = 100
+	modifier = {
+		legitimacy = 0.5
+		devotion = 0.5
+		horde_unity = 0.5
+		republican_tradition = 0.25
+		
+		global_unrest = -2
+	}
+}

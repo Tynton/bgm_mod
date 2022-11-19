@@ -1,0 +1,1760 @@
+country_decisions = {
+
+	form_uk = {
+	
+		major = yes
+	
+		potential = {
+			adm_tech = 28
+			OR = {
+				tag = GBR
+				tag = BRC
+				tag = BRF
+			}
+			NOT = { tag = UNK }
+			has_parliament = yes 
+			OR = {
+				has_reform = democratic_mechanic
+				government = monarchy
+			}
+		}
+		allow = {
+			adm_tech = 29
+			owns_core_province = 236		# London
+			owns_core_province = 237		# Oxfordshire
+			owns_core_province = 234		# Wessex
+			owns_core_province = 248		# Lothian
+			owns_core_province = 251		# Aberdeen
+			has_parliament = yes
+			government = monarchy 
+			is_subject = no
+		}
+		effect = {
+			change_tag = UNK
+			country_event = {
+				id = westeurope.5
+			}
+
+			if = {
+				limit = {
+					primary_culture = irish
+				}
+				override_country_name = "An Ríocht Aontaithe"
+			}
+			if = {
+				limit = {
+					primary_culture = highland_scottish
+				}
+				override_country_name = "Unitit Kinrick"
+			}
+			if = {
+				limit = {
+					primary_culture = cornish
+				}
+				override_country_name = "Gwlaskor Kesunyes"
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_rdi = {
+	
+		major = yes
+	
+		potential = {
+			adm_tech = 28
+			culture_group = iberian
+			has_parliament = yes 
+			government = monarchy 
+			NOT = {
+				was_tag = GBR
+			}
+		}
+		allow = {
+			adm_tech = 29
+			culture_group = iberian
+			owns_core_province = 236		# London
+			owns_core_province = 237		# Oxfordshire
+			owns_core_province = 234		# Wessex
+			owns_core_province = 248		# Lothian
+			owns_core_province = 251		# Aberdeen
+			NOT = {
+				owns_core_province = 217
+			}
+			#has_parliament = yes 
+			#government = monarchy 
+			is_subject = no
+		}
+		effect = {
+			change_tag = RDI
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#form_imperial_japan = {
+	#
+	#	major = yes
+	#
+	#	potential = {
+	#		adm_tech = 35
+	#		tag = JAP
+	#		is_subject = no
+	#		NOT = {
+	#			was_tag = JAP
+	#		}
+	#	}
+	#	allow = {
+	#		adm_tech = 36
+	#		tag = JAP
+	#		all_province = {
+	#			limit = {
+	#				region = japan_region
+	#			}
+	#			owner = ROOT
+	#		}
+	#	}
+	#	effect = {
+	#		change_tag = EJA
+	#	}
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#}
+	
+	form_turkey = {
+	
+		major = yes
+	
+		potential = {
+			adm_tech = 32
+			NOT = { exists = TRK }
+			tag = TUR
+		}
+		allow = {
+			adm_tech = 33
+			tag = TUR
+			has_reform = democratic_mechanic
+			is_subject = no
+		}
+		effect = {
+			change_tag = TRK
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_belgium = {
+	
+		major = yes
+	
+		potential = {
+			#adm_tech = 31
+			OR = {
+				primary_culture = flemish
+				primary_culture = wallonian
+				tag = BUR
+				AND = {
+					has_institution = nationalism_institution
+					tag = LOT
+				}
+			}
+			capital_scope = {
+				OR = {
+					region = low_countries_region
+					region = france_region
+				}
+			}
+			any_owned_province = {
+				culture_group = benelux
+			}
+			is_subject = no
+			NOT = { exists = BEL }
+		}
+		allow = {
+			OR = {
+				owns = 90
+				owns = 87
+			}
+			owns = 92
+			OR = {
+				owns = 192
+				owns = 1744
+			}
+			OR = {
+				development_in_provinces = {
+					value = 100
+					culture_group = benelux
+				}
+				num_of_owned_provinces_with = {
+					value = 7
+					culture_group = benelux
+				}
+			}
+			adm_tech = 20
+			is_at_war = no
+			NOT = {
+				exists = BEL
+			}
+		}
+		effect = {
+			change_tag = BEL
+			country_event = {
+				id = ideagroups.1
+			}
+
+			if = {
+				limit = {
+					NOT = {
+						accepted_culture = flemish
+					}
+				}
+				add_accepted_culture = flemish
+			}
+			if = {
+				limit = {
+					NOT = {
+						accepted_culture = west_flemish
+					}
+				}
+				add_accepted_culture = west_flemish
+			}
+			if = {
+				limit = {
+					NOT = {
+						accepted_culture = brabantian
+					}
+				}
+				add_accepted_culture = brabantian
+			}
+
+			#if = {
+			#	limit = {
+			#		primary_culture = flemish
+			#	}
+			#	override_country_name = België
+			#}
+			#if = {
+			#	limit = {
+			#		primary_culture = wallonian
+			#	}
+			#	override_country_name = Beldjike
+			#}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_yugoslavia = {
+	
+		major = yes
+	
+		potential = {
+			culture_group = south_slavic
+			#is_subject = no
+		}
+		allow = {
+			is_subject = no
+			num_of_owned_provinces_with = {
+				value = 10
+				culture_group = south_slavic
+			}
+			owns = 4752
+			owns = 4239
+			adm_tech = 10
+			NOT = {
+				exists = YUG
+			}
+		}
+		effect = {
+			change_tag = YUG
+			#country_event = {
+			#	id = ideagroups.1
+			#}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	form_occitania = {
+	
+		major = yes
+	
+		potential = {
+			culture_group = occitan
+			#is_subject = no
+		}
+		allow = {
+			is_subject = no
+			num_of_owned_provinces_with = {
+				value = 16
+				OR = {
+					culture_group = occitan
+					area = provence_area
+					area = guyenne_area
+					area = languedoc_area
+					area = catalonia_area
+					area = pyrenees_area
+					area = massif_central_area
+				}
+			}
+			owns = 174
+			owns = 201
+			adm_tech = 10
+			NOT = {
+				exists = OCC
+			}
+		}
+		effect = {
+			change_tag = OCC
+			provence_area = {
+				add_permanent_claim = ROOT
+			}
+			guyenne_area = {
+				add_permanent_claim = ROOT
+			}
+			languedoc_area = {
+				add_permanent_claim = ROOT
+			}
+			catalonia_area = {
+				add_permanent_claim = ROOT
+			}
+			pyrenees_area = {
+				add_permanent_claim = ROOT
+			}
+			massif_central_area = {
+				add_permanent_claim = ROOT
+			}
+			#country_event = {
+			#	id = ideagroups.1
+			#}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	form_wallonia = {
+	
+		major = yes
+	
+		potential = {
+			OR = {
+				primary_culture = wallonian
+				primary_culture = picard
+				primary_culture = lorrain
+				primary_culture = champenois
+			}
+			#is_subject = no
+		}
+		allow = {
+			is_subject = no
+			num_of_owned_provinces_with = {
+				value = 3
+				OR = {
+					culture_group = french
+					area = wallonia_area
+					area = picardy_area
+					area = champagne_area
+					area = flanders_area
+				}
+			}
+			owns = 93
+			owns = 1866
+			adm_tech = 10
+			NOT = {
+				exists = WLO
+			}
+		}
+		effect = {
+			change_tag = WLO
+			#country_event = {
+			#	id = ideagroups.1
+			#}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_austria_hungary = {
+	
+		major = yes
+	
+		potential = {
+			adm_tech = 34
+			OR = {
+				primary_culture = austrian
+				primary_culture = hungarian
+			}
+			is_subject = no
+			NOT = { tag = AHU }
+			NOT = { tag = GER }
+		}
+		allow = {
+			owns = 134
+			owns = 153
+			owns = 1863
+			adm_tech = 35
+			OR = {
+				primary_culture = austrian
+				primary_culture = hungarian
+			}
+			OR = {
+				accepted_culture = austrian
+				accepted_culture = hungarian
+			}
+		}
+		effect = {
+			change_tag = AHU
+			country_event = {
+				id = ideagroups.1
+			}
+			country_event = {
+				id = westeurope.4
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_austria_empire = {
+	
+		major = yes
+	
+		potential = {
+			primary_culture = austrian
+			is_subject = no
+			NOT = { tag = AHU }
+			NOT = { tag = AUE }
+			NOT = { tag = GER }
+			government_rank = 3
+		}
+		allow = {
+			primary_culture = austrian
+			total_development = 1000
+			government_rank = 3
+		}
+		effect = {
+			change_tag = AUE
+			add_accepted_culture = hungarian
+			every_province = {
+				limit = {
+					OR = {
+						culture = hungarian
+						culture = slovak
+						culture = transylvanian
+						culture = croatian
+						culture = slovene
+						
+						culture_group = germanic
+						
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#form_raj = {
+	#
+	#	major = yes
+	#
+	#	potential = {
+	#		#has_global_flag = raj_event_flag
+	#		NOT = {
+	#			exists = RAJ
+	#		}
+	#	}
+	#	allow = {
+	#		NOT = {
+	#			exists = RAJ
+	#		}
+	#		is_subject = no
+	#	}
+	#	effect = {
+	#		country_event = {
+	#			id = asia_colony.1
+	#		}
+	#	}
+	#	ai_will_do = {
+	#		factor = 0
+	#	}
+	#}
+	
+	form_czechia = {
+	
+		major = yes
+	
+		potential = {
+			adm_tech = 30
+			primary_culture = czech
+			total_development = 75
+			NOT = { tag = CZE }
+			NOT = { tag = CZS }
+		}
+		allow = {
+			adm_tech = 31
+			primary_culture = czech
+			is_subject = no
+		}
+		effect = {
+			change_tag = CZE
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_slovakia = {
+	
+		major = yes
+	
+		potential = {
+			adm_tech = 30
+			primary_culture = slovak
+			NOT = { tag = SLV }
+		}
+		allow = {
+			adm_tech = 31
+			tag = SLO
+			is_subject = no
+		}
+		effect = {
+			change_tag = SLV
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_czechoslovakia = {
+	
+		major = yes
+	
+		potential = {
+			adm_tech = 36
+			OR = {
+				primary_culture = czech
+				primary_culture = slovak
+			}
+			any_owned_province = {
+				culture = slovak
+			}
+			any_owned_province = {
+				culture = czech
+			}
+			NOT = { tag = CZS }
+		}
+		allow = {
+			adm_tech = 37
+			OR = {
+				primary_culture = czech
+				primary_culture = slovak
+			}
+			OR = {
+				accepted_culture = czech
+				accepted_culture = slovak
+			}
+			is_subject = no
+		}
+		effect = {
+			change_tag = CZS
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_republic_china = {
+	
+		major = yes
+	
+		potential = {
+			adm_tech = 29
+			culture_group = east_asian
+			OR = {
+				is_emperor_of_china = yes 
+				total_development = 1400
+			}
+			NOT = { tag = ROC }
+			NOT = { bgm_comgovt = yes }
+		}
+		allow = {
+			adm_tech = 30
+			is_subject = no
+		}
+		effect = {
+			change_tag = ROC
+			country_event = {
+				id = ideagroups.1
+			}
+			every_subject_country = {
+				limit = {
+					ai = yes
+				}
+				ROC = {
+					inherit = PREV
+				}
+			}
+			dismantle_empire_of_china = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_peoples_republic_china = {
+	
+		major = yes
+	
+		potential = {
+			culture_group = east_asian
+			bgm_comgovt = yes
+			NOT = { tag = PRC }
+		}
+		allow = {
+			culture_group = east_asian
+			bgm_comgovt = yes
+			total_development = 1400
+			OR = {
+				is_subject = no
+				overlord = { 
+					bgm_comgovt = yes
+				}
+			}
+		}
+		effect = {
+			change_tag = PRC
+			country_event = {
+				id = ideagroups.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_soviet_russia = {
+	
+		major = yes
+	
+		potential = {
+			OR = {
+				tag = RUF
+				tag = REF
+				tag = RUS
+			}
+			bgm_comgovt = yes
+			NOT = { tag = SVU }
+		}
+		allow = {
+			bgm_comgovt = yes
+			OR = {
+				is_subject = no
+				overlord = { 
+					bgm_comgovt = yes
+				}
+			}
+		}
+		effect = {
+			change_tag = SVU
+			country_event = {
+				id = ideagroups.1
+			}
+			set_government_rank = 3
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	russian_fascism = {
+	
+		major = yes
+	
+		potential = {
+			OR = {
+				tag = RUF
+				tag = SVU
+				tag = RUS
+			}
+			has_reform = fascist_mechanic
+			NOT = { tag = REF }
+		}
+		allow = {
+			has_reform = fascist_mechanic
+			OR = {
+				is_subject = no
+				overlord = { 
+					has_reform = fascist_mechanic
+				}
+			}
+		}
+		effect = {
+			change_tag = REF
+			set_government_rank = 3
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_russian_federation = {
+	
+		major = yes
+	
+		potential = {
+			OR = {
+				tag = SVU
+				tag = REF
+				tag = RUS
+			}
+			has_reform = democratic_mechanic
+			NOT = { tag = RUF }
+		}
+		allow = {
+			has_reform = democratic_mechanic
+			is_subject = no
+		}
+		effect = {
+			change_tag = RUF
+			set_government_rank = 3
+			every_province = {
+				limit = {
+					region = ural_region
+				}
+				add_permanent_claim = ROOT
+			}
+			every_province = {
+				limit = {
+					region = crimea_region
+				}
+				add_permanent_claim = ROOT
+			}
+			every_province = {
+				limit = {
+					region = ruthenia_region
+				}
+				add_permanent_claim = ROOT
+			}
+			every_province = {
+				limit = {
+					region = russia_region
+				}
+				add_permanent_claim = ROOT
+			}
+			every_province = {
+				limit = {
+					region = west_siberia_region
+				}
+				add_permanent_claim = ROOT
+			}
+			every_province = {
+				limit = {
+					region = east_siberia_region
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_french_republic = {
+	
+		major = yes
+	
+		potential = {
+			government = republic
+			NOT = {
+				bgm_comgovt = yes
+			}
+			OR = {
+				tag = FRA
+				tag = FRE
+				tag = FRC
+				tag = FRF
+				AND = {
+					tag = AEV
+					NOT = {
+						any_owned_province = {
+							region = british_isles_region
+						}
+					}
+				}
+			}
+			NOT = {
+				tag = FRR
+			}
+		}
+		allow = {
+			is_subject = no
+		}
+		effect = {
+			change_tag = FRR
+
+			if = {
+				limit = {
+					NOT = {
+						tag = FRE
+					}
+				}
+				country_event = {
+					id = ideagroups.1
+				}
+			}
+
+			#if = {
+			#	limit = {
+			#		culture_group = occitan
+			#	}
+			#	override_country_name = França
+			#}
+			#if = {
+			#	limit = {
+			#		primary_culture = breton
+			#	}
+			#	override_country_name = Frañs
+			#}
+			#if = {
+			#	limit = {
+			#		OR = {
+			#			primary_culture = burgundian
+			#			primary_culture = frainc_comtou
+			#		}
+			#	}
+			#	override_country_name = "Republique de Gaule"
+			#}
+			#if = {
+			#	limit = {
+			#		primary_culture = basque
+			#	}
+			#	override_country_name = Frantzia
+			#}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_french_empire = {
+	
+		major = yes
+	
+		potential = {
+			
+			has_reform = authoritarian_mechanic
+			OR = {
+				tag = FRA
+				tag = FRR
+				tag = FRC
+				tag = FRF
+				AND = {
+					tag = AEV
+					NOT = {
+						any_owned_province = {
+							region = british_isles_region
+						}
+					}
+				}
+			}
+			NOT = {
+				tag = FRE
+			}
+		}
+		allow = {
+			is_subject = no
+		}
+		effect = {
+			set_government_rank = 3
+			change_tag = FRE
+
+			if = {
+				limit = {
+					NOT = {
+						tag = FRR
+					}
+				}
+				country_event = {
+					id = ideagroups.1
+				}
+			}
+
+			#if = {
+			#	limit = {
+			#		culture_group = occitan
+			#	}
+			#	override_country_name = França
+			#}
+			#if = {
+			#	limit = {
+			#		primary_culture = breton
+			#	}
+			#	override_country_name = Frañs
+			#}
+			#if = {
+			#	limit = {
+			#		OR = {
+			#			primary_culture = burgundian
+			#			primary_culture = frainc_comtou
+			#		}
+			#	}
+			#	override_country_name = Gaule
+			#}
+			#if = {
+			#	limit = {
+			#		primary_culture = basque
+			#	}
+			#	override_country_name = Frantzia
+			#}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	french_communism = {
+	
+		major = yes
+	
+		potential = {
+			bgm_comgovt = yes
+			OR = {
+				tag = FRA
+				tag = FRR
+				tag = FRE
+				tag = FRF
+				AND = {
+					tag = AEV
+					NOT = {
+						any_owned_province = {
+							region = british_isles_region
+						}
+					}
+				}
+			}
+			NOT = {
+				tag = FRC
+			}
+		}
+		allow = {
+			is_subject = no
+		}
+		effect = {
+			change_tag = FRC
+			if = {
+				limit = {
+					culture_group = occitan
+				}
+				override_country_name = França
+			}
+			if = {
+				limit = {
+					primary_culture = breton
+				}
+				override_country_name = Frañs
+			}
+			if = {
+				limit = {
+					OR = {
+						primary_culture = burgundian
+						primary_culture = frainc_comtou
+					}
+				}
+				override_country_name = Gaule
+			}
+			if = {
+				limit = {
+					primary_culture = basque
+				}
+				override_country_name = Frantzia
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	french_fascism = {
+	
+		major = yes
+	
+		potential = {
+			has_reform = fascist_mechanic
+			OR = {
+				tag = FRA
+				tag = FRR
+				tag = FRE
+				tag = FRC
+				AND = {
+					tag = AEV
+					NOT = {
+						any_owned_province = {
+							region = british_isles_region
+						}
+					}
+				}
+			}
+			NOT = {
+				tag = FRF
+			}
+		}
+		allow = {
+			is_subject = no
+		}
+		effect = {
+			change_tag = FRF
+			if = {
+				limit = {
+					is_subject = yes
+				}
+				override_country_name = "Vichy France"
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	uk_fascism = {
+		potential = {
+			has_reform = fascist_mechanic
+			OR = {
+				tag = GBR
+				tag = UNK
+				tag = BRC
+			}
+			NOT = { tag = BRF }
+		}
+		allow = {
+			OR = {
+				tag = GBR
+				tag = UNK
+				tag = BRC
+			}
+			is_subject = no
+		}
+		effect = {
+			change_tag = BRF
+			set_government_rank = 3
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ger_fascism = {
+		potential = {
+			has_reform = fascist_mechanic
+			OR = {
+				tag = GER
+				tag = GRS
+				tag = GRD
+			}
+			NOT = { tag = GRF }
+		}
+		allow = {
+			is_subject = no
+		}
+		effect = {
+			change_tag = GRF
+			set_government_rank = 3
+
+			country_event = {
+				id = ideagroups.1
+			}
+			
+			country_event = {
+				id = westeurope.7
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ger_commie = {
+		potential = {
+			has_reform = fascist_mechanic
+			OR = {
+				tag = GER
+				tag = GRF
+				tag = GRD
+			}
+			NOT = { tag = GRS }
+		}
+		allow = {
+			is_subject = no
+		}
+		effect = {
+			change_tag = GRS
+			set_government_rank = 3
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ger_dem = {
+		potential = {
+			has_reform = democratic_mechanic
+			OR = {
+				tag = GER
+				tag = GRF
+				tag = GRS
+			}
+			NOT = { tag = GRD }
+		}
+		allow = {
+			is_subject = no
+		}
+		effect = {
+			change_tag = GRD
+			set_government_rank = 3
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	uk_communism = {
+	
+		major = yes
+	
+		potential = {
+			OR = {
+				tag = GBR
+				tag = UNK
+				tag = BRF
+			}
+			bgm_comgovt = yes
+			NOT = { tag = BRC }
+		}
+		allow = {
+			OR = {
+				tag = GBR
+				tag = UNK
+				tag = BRF
+			}
+			bgm_comgovt = yes
+			OR = {
+				is_subject = no
+				overlord = { 
+					bgm_comgovt = yes
+				}
+			}
+		}
+		effect = {
+			change_tag = BRC
+			set_government_rank = 3
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+
+	spa_fascism = {
+		potential = {
+			has_reform = fascist_mechanic
+			OR = {
+				tag = SPD
+				tag = SPC
+				tag = SPA
+			}
+			NOT = {
+				tag = SPF
+			}
+		}
+		allow = {
+			is_subject = no
+		}
+		effect = {
+			change_tag = SPF
+			set_government_rank = 3
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	spa_dem = {
+		potential = {
+			has_reform = democratic_mechanic
+			OR = {
+				tag = SPF
+				tag = SPC
+				tag = SPA
+			}
+			NOT = {
+				tag = SPD
+			}
+		}
+		allow = {
+			is_subject = no
+		}
+		effect = {
+			change_tag = SPD
+			set_government_rank = 3
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	spa_com = {
+		potential = {
+			bgm_comgovt = yes
+			OR = {
+				tag = SPF
+				tag = SPD
+				tag = SPA
+			}
+			NOT = {
+				tag = SPC
+			}
+		}
+		allow = {
+			is_subject = no
+		}
+		effect = {
+			change_tag = SPC
+			set_government_rank = 3
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+
+	ita_fascism = {
+		potential = {
+			has_reform = fascist_mechanic
+			OR = {
+				tag = ITD
+				tag = ITC
+				tag = ITA
+			}
+			NOT = {
+				tag = ITF
+			}
+		}
+		allow = {
+			is_subject = no
+		}
+		effect = {
+			change_tag = ITF
+			set_government_rank = 3
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ita_dem = {
+		potential = {
+			has_reform = democratic_mechanic
+			OR = {
+				tag = ITF
+				tag = ITC
+				tag = ITA
+			}
+			NOT = {
+				tag = ITD
+			}
+		}
+		allow = {
+			is_subject = no
+		}
+		effect = {
+			change_tag = ITD
+			set_government_rank = 3
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ita_com = {
+		potential = {
+			bgm_comgovt = yes
+			OR = {
+				tag = ITF
+				tag = ITD
+				tag = ITA
+			}
+			NOT = {
+				tag = ITC
+			}
+		}
+		allow = {
+			is_subject = no
+		}
+		effect = {
+			change_tag = ITC
+			set_government_rank = 3
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+	
+	form_eurounion = {
+		potential = {
+			adm_tech = 41
+			#total_development = 4000
+			OR = {
+				culture_group = french
+				culture_group = germanic
+				culture_group = british
+				culture_group = latin
+				culture_group = iberian
+			}
+			OR = {
+				has_reform = democratic_mechanic
+				has_reform = futurist_mechanic
+				bgm_comgovt = yes
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				ROOT = {
+					num_of_owned_provinces_with = {
+						is_core = ROOT
+						OR = {
+							superregion = europe_superregion
+						}
+						value = 200
+					}
+				}
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 42
+			num_of_owned_provinces_with = {
+				is_core = ROOT
+				OR = {
+					superregion = europe_superregion
+				}
+				value = 200
+			}
+			#France
+			owns = 177
+			owns = 179
+			owns = 182
+			owns = 183
+			owns = 184
+			owns = 185
+			owns = 186
+			owns = 75
+			#Italy
+			owns = 101
+			owns = 104
+			owns = 106
+			owns = 108
+			owns = 109
+			owns = 116
+			owns = 117
+			owns = 118
+			owns = 119
+			#Germany
+			owns = 44
+			owns = 57
+			owns = 63
+			owns = 65
+			owns = 67
+			owns = 81
+			owns = 85
+			owns = 1761
+			owns = 1868
+			owns = 1876
+			#Benelux
+			owns = 95
+			owns = 96
+			owns = 97
+			owns = 98
+			owns = 99
+			owns = 100
+			owns = 4383
+			owns = 94
+			NOT = {
+				exists = EUU
+			}
+		}
+		effect = {
+			change_tag = EUU
+
+			country_event = {
+				id = ideagroups.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	form_nigeria = {
+		major = yes
+		potential = {
+			has_institution = industrialization
+			capital_scope = {
+				colonial_region = colonial_katsina
+			}
+			NOT = { exists = NIG }
+		}
+		allow = {
+			OR = {
+				is_former_colonial_nation = yes
+				AND = {
+					has_institution = nationalism_institution
+					OR = {
+						culture_group = west_african
+						culture_group = mande
+					}
+				}
+			}
+			is_subject = no
+		}
+		effect = {
+			change_tag = NIG
+			colonial_katsina = {
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_tunisia = {
+		major = yes
+		potential = {
+			has_institution = industrialization
+			capital_scope = {
+				colonial_region = colonial_tunis
+			}
+			OR = {
+				NOT = {
+					exists = TUN
+				}
+				tag = TUN
+			}
+			NOT = { exists = TNS }
+		}
+		allow = {
+			OR = {
+				is_former_colonial_nation = yes
+				AND = {
+					has_institution = nationalism_institution
+					culture_group = maghrebi
+				}
+			}
+			is_subject = no
+		}
+		effect = {
+			change_tag = TNS
+			colonial_tunis = {
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_ivco = {
+		major = yes
+		potential = {
+			capital_scope = {
+				colonial_region = colonial_ivory_coast
+			}
+			NOT = { exists = CDI }
+		}
+		allow = {
+			OR = {
+				is_former_colonial_nation = yes
+				AND = {
+					has_institution = nationalism_institution
+					culture_group = west_african
+				}
+			}
+			NOT = { tag = CDI }
+			is_subject = no
+		}
+		effect = {
+			change_tag = CDI
+			colonial_ivory_coast = {
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_kenya = {
+		major = yes
+		potential = {
+			capital_scope = {
+				colonial_region = colonial_great_lakes
+			}
+			NOT = { exists = KNY }
+		}
+		allow = {
+			OR = {
+				is_former_colonial_nation = yes
+				AND = {
+					has_institution = nationalism_institution
+					culture_group = african
+				}
+			}
+			is_subject = no
+		}
+		effect = {
+			change_tag = KNY
+			colonial_great_lakes = {
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_zimbabwe = {
+		major = yes
+		potential = {
+			capital_scope = {
+				colonial_region = colonial_zambezi
+			}
+			NOT = { exists = ZMB }
+		}
+		allow = {
+			OR = {
+				is_former_colonial_nation = yes
+				AND = {
+					has_institution = nationalism_institution
+					culture_group = southern_african
+				}
+			}
+			is_subject = no
+		}
+		effect = {
+			change_tag = ZMB
+			every_province = {
+				limit = {
+					colonial_region = colonial_zambezi
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_zaire = {
+	
+		major = yes
+	
+		potential = {
+			capital_scope = {
+				colonial_region = colonial_kongo
+			}
+			NOT = { exists = DRC }
+		}
+		allow = {
+			OR = {
+				is_former_colonial_nation = yes
+				AND = {
+					has_institution = nationalism_institution
+					culture_group = kongo_group
+				}
+			}
+			is_subject = no
+		}
+		effect = {
+			change_tag = DRC
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_abyssinia = {
+	
+		major = yes
+	
+		potential = {
+			capital_scope = {
+				colonial_region = colonial_ethiopia
+			}
+			NOT = { tag = ABY }
+		}
+		allow = {
+			OR = {
+				is_former_colonial_nation = yes
+				AND = {
+					has_institution = nationalism_institution
+					culture_group = cushitic
+				}
+			}
+			is_subject = no
+		}
+		effect = {
+			change_tag = ABY
+			
+			horn_of_africa_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_abyssinia = {
+	
+		major = yes
+	
+		potential = {
+			capital_scope = {
+				colonial_region = colonial_ethiopia
+			}
+			NOT = { tag = ABY }
+		}
+		allow = {
+			OR = {
+				is_former_colonial_nation = yes
+				AND = {
+					has_institution = nationalism_institution
+					culture_group = cushitic
+				}
+			}
+			is_subject = no
+		}
+		effect = {
+			change_tag = ABY
+			
+			colonial_ethiopia = {
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_indonesia = {
+	
+		major = yes
+	
+		potential = {
+			capital_scope = {
+				OR = {
+					colonial_region = colonial_moluccas
+					colonial_region = colonial_indonesia
+				}
+			}
+			NOT = { tag = IDN }
+		}
+		allow = {
+			OR = {
+				is_former_colonial_nation = yes
+				AND = {
+					has_institution = nationalism_institution
+					culture_group = cushitic
+				}
+			}
+			is_subject = no
+		}
+		effect = {
+			change_tag = IDN
+			
+			colonial_indonesia = {
+				add_permanent_claim = ROOT
+			}
+			colonial_moluccas = {
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_angola = {
+	
+		major = yes
+	
+		potential = {
+			capital_scope = {
+				colonial_region = colonial_angola
+			}
+			NOT = { tag = IDN }
+		}
+		allow = {
+			OR = {
+				is_former_colonial_nation = yes
+				AND = {
+					has_institution = nationalism_institution
+					culture_group = kongo_group
+				}
+			}
+			is_subject = no
+		}
+		effect = {
+			change_tag = ANG
+			
+			colonial_indonesia = {
+				add_permanent_claim = ROOT
+			}
+			colonial_moluccas = {
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_sa = {
+	
+		major = yes
+	
+		potential = {
+			capital_scope = {
+				colonial_region = colonial_south_africa
+			}
+			NOT = { tag = SAF }
+		}
+		allow = {
+			OR = {
+				is_former_colonial_nation = yes
+				AND = {
+					has_institution = nationalism_institution
+					culture_group = southern_african
+				}
+			}
+			is_subject = no
+		}
+		effect = {
+			change_tag = SAF
+			
+			colonial_south_africa = {
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

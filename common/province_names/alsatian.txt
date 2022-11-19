@@ -1,0 +1,19 @@
+
+#swabian
+
+1868 = "Augschburg"
+70 = "Schduagert"
+79 = "Wörzborg"
+
+72 = "Brisgau"
+
+#alsatian
+
+1880 = "Àltkìrech"
+4765 = "Milhüse"
+75 = { "Strossburi" "Strossburig" }
+#4968 = "Colmer"
+
+#swiss
+
+165 = "Bärn"

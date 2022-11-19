@@ -1,0 +1,46 @@
+lollard_purgatory_denial_aspect = {
+	cost = 100
+	modifier = {
+		missionary_maintenance_cost = -0.15
+		production_efficiency = 0.05
+	}
+}
+
+lollard_baptism_unnecessary_aspect = {
+	cost = 100
+	modifier = {
+		global_heretic_missionary_strength = 0.02
+		religious_unity = 0.1
+	}
+}
+
+lollard_exorcism_aspect = {
+	cost = 100
+	modifier = {
+		stability_cost_modifier = -0.05
+		global_unrest = -1
+	}
+}
+
+lollard_simplification_of_life_aspect = {
+	cost = 100
+	modifier = {
+		idea_cost = -0.025
+		prestige = 0.125
+	}
+}
+
+lollard_clerical_non_celibacy_aspect = {
+	cost = 100
+	modifier = {
+		tolerance_own = 1
+	}
+}
+
+lollard_pacifism_aspect = {
+	cost = 100
+	modifier = {
+		stability_cost_to_declare_war = 1
+		development_cost = -0.175
+	}
+}

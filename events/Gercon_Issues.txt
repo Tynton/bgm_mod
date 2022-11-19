@@ -1,0 +1,724 @@
+namespace = Gercon_issues
+
+
+#Rev. 1848
+country_event = {
+	id = Gercon_issues.1
+	title = "Gercon_issues.n.1"
+	desc = "Gercon_issues.d.1"
+	picture = HRE_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+	
+	trigger = {
+		any_subject_country = {
+			is_subject_of_type = german_confederation_member
+		}
+		is_subject = no
+
+		has_global_flag = revolutions_year_start
+		NOT = {
+			has_global_flag = gercon_deliberating
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		
+		modifier = {
+			factor = 0.1
+			any_neighbor_country = {
+				has_country_flag = responded_rev
+			}
+		}
+	}
+	
+	option = {
+		name = "Gercon_issues.1.a" #concession
+
+		set_global_flag = gercon_rev_period
+		set_global_flag = gercon_deliberating
+
+		set_country_flag = gercon_voted
+
+		add_country_modifier = {
+			name = local_rev_concessions
+			duration = 10950
+		}
+		
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = german_confederation_member
+				}
+				country_event = {
+					id = Gercon_issues.2
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				government = republic
+			}
+			change_government = democracy_govt
+			add_government_reform = parliamentary_republic_reform
+		}
+
+		if = {
+			limit = {
+				government = monarchy
+			}
+			change_government = democracy_govt
+			add_government_reform = parliamentary_monarchism
+		}
+		
+		if = {
+			limit = {
+				government = theocracy
+			}
+			change_government = democracy_govt
+			add_government_reform = parliamentary_monarchism
+		}
+
+		hidden_effect = {
+			set_variable = {
+				which = gercon_yes
+				value = 4
+			}
+		}
+
+	}
+
+	option = {
+		name = "Gercon_issues.1.b" #crackdown
+
+		set_global_flag = gercon_rev_period
+		set_global_flag = gercon_deliberating
+
+		set_country_flag = gercon_voted
+
+		add_country_modifier = {
+			name = local_crackdown
+			duration = 10950
+		}
+		
+
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = german_confederation_member
+				}
+				country_event = {
+					id = Gercon_issues.2
+				}
+			}
+		}
+
+		hidden_effect = {
+			set_variable = {
+				which = gercon_no
+				value = 4
+			}
+		}
+
+		if = {
+			limit = {
+			  government = republic
+			}
+			change_government = authoritarian_government
+			add_government_reform = auth_republic_reform
+		}
+
+		if = {
+			limit = {
+			  government = monarchy
+			}
+			change_government = authoritarian_government
+			add_government_reform = auth_monarchism
+		}
+		
+		if = {
+			limit = {
+			  government = theocracy
+			}
+			change_government = authoritarian_government
+			add_government_reform = auth_monarchism
+		}
+
+	}
+}
+
+country_event = { #Individual Voting
+	id = Gercon_issues.2
+	title = "Gercon_issues.n.2"
+	desc = "Gercon_issues.d.2"
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Gercon_issues.2.a" #concessions
+		
+		add_country_modifier = {
+			name = local_rev_concessions
+			duration = 10950
+		}
+
+		if = {
+			limit = {
+				government = republic
+			}
+			change_government = democracy_govt
+			add_government_reform = parliamentary_republic_reform
+		}
+
+		if = {
+			limit = {
+				government = monarchy
+			}
+			change_government = democracy_govt
+			add_government_reform = parliamentary_monarchism
+		}
+		
+		if = {
+			limit = {
+				government = theocracy
+			}
+			change_government = democracy_govt
+			add_government_reform = parliamentary_monarchism
+		}
+		
+		hidden_effect = {
+			gercon_vote_yes_value = yes
+		}
+
+		ai_chance = {
+			factor = 10
+
+			modifier = {
+				factor = 0
+				government = republic
+			}
+		}
+	}
+	
+	option = {
+		name = "Gercon_issues.2.b" #crackdown
+		
+		add_country_modifier = {
+			name = local_crackdown
+			duration = 10950
+		}
+		
+		if = {
+			limit = {
+			  government = republic
+			}
+			change_government = authoritarian_government
+			add_government_reform = auth_republic_reform
+		}
+
+		if = {
+			limit = {
+			  government = monarchy
+			}
+			change_government = authoritarian_government
+			add_government_reform = auth_monarchism
+		}
+		
+		if = {
+			limit = {
+			  government = theocracy
+			}
+			change_government = authoritarian_government
+			add_government_reform = auth_monarchism
+		}
+
+		hidden_effect = {
+			gercon_vote_no_value = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	after = {
+		set_country_flag = gercon_voted
+		if = {
+			limit = {
+				overlord = {
+					all_subject_country = { 
+						OR = {
+							NOT = { is_subject_of_type = german_confederation_member }
+							has_country_flag = gercon_voted
+						}
+					}
+				}
+			}
+			overlord = {
+				country_event = {
+					id = Gercon_issues.3
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Final Consensus on Issue
+	id = Gercon_issues.3
+	title = "Gercon_issues.n.3"
+	desc = "Gercon_issues.d.3"
+	picture = HRE_eventPicture
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Gercon_issues.3.a" #concession
+		set_global_flag = gercon_concession
+
+		trigger = {
+			check_variable = {
+				which = gercon_yes
+				which = gercon_no
+			}
+		}
+	}
+
+	option = {
+		name = "Gercon_issues.3.b" #crackdown
+
+		set_global_flag = gercon_crackdown
+
+		trigger = {
+			check_variable = {
+				which = gercon_no
+				which = gercon_yes
+			}
+		}
+	}
+	after = {
+		gercon_reset_vote = yes
+		clr_global_flag = gercon_rev_period
+		clr_global_flag = gercon_deliberating
+		clr_country_flag = gercon_voted
+		every_subject_country = {
+			limit = {
+				is_subject_of_type = german_confederation_member
+			}
+			clr_country_flag = gercon_voted
+		}
+	}
+}
+
+#Reforms
+country_event = {
+	id = Gercon_issues.4
+	title = "Gercon_issues.n.4"
+	desc = "Gercon_issues.d.4"
+	picture = HRE_eventPicture
+
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Gercon_issues.4.a" #In favor of
+
+		set_global_flag = gercon_deliberating
+		set_country_flag = gercon_voted
+
+		
+		
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = german_confederation_member
+				}
+				country_event = {
+					id = Gercon_issues.5
+				}
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = gercon_yes
+				value = 4
+			}
+		}
+	}
+}
+
+country_event = { #Individual Voting
+	id = Gercon_issues.5
+	title = "Gercon_issues.n.5"
+	desc = {
+		trigger = {
+			has_global_flag = gercon_const_delib
+		}
+		desc = "Gercon_issues.d.5a"
+	}
+	desc = {
+		trigger = {
+			has_global_flag = gercon_mil_deliberation
+		}
+		desc = "Gercon_issues.d.5b"
+	}
+	desc = {
+		trigger = {
+			has_global_flag = gercon_dip_delib
+		}
+		desc = "Gercon_issues.d.5c"
+	}
+	desc = {
+		trigger = {
+			has_global_flag = gercon_trade_delib
+		}
+		desc = "Gercon_issues.d.5d"
+	}
+	desc = {
+		trigger = {
+			has_global_flag = gercon_final_delib
+		}
+		desc = "Gercon_issues.d.5e"
+	}
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Gercon_issues.5.a" #yes
+		
+		hidden_effect = {
+			gercon_vote_yes_value = yes
+		}
+
+		ai_chance = {
+			factor = 10
+
+			modifier = {
+				factor = 0
+				OR = {
+					ai_attitude = {
+						who = FROM
+						attitude = attitude_threatened
+					}
+					ai_attitude = {
+						who = FROM
+						attitude = attitude_disloyal
+					}
+					ai_attitude = {
+						who = FROM
+						attitude = attitude_hostile
+					}
+					ai_attitude = {
+						who = FROM
+						attitude = attitude_outraged
+					}
+					ai_attitude = {
+						who = FROM
+						attitude = attitude_neutral
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "Gercon_issues.5.b" #no
+
+		
+		hidden_effect = {
+			gercon_vote_no_value = yes
+		}
+	}
+
+	after = {
+		set_country_flag = gercon_voted
+		if = {
+			limit = {
+				overlord = {
+					all_subject_country = { 
+						OR = {
+							NOT = { is_subject_of_type = german_confederation_member }
+							has_country_flag = gercon_voted
+						}
+					}
+				}
+			}
+			overlord = {
+				country_event = {
+					id = Gercon_issues.6
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Final Consensus on Issue
+	id = Gercon_issues.6
+	title = "Gercon_issues.n.6"
+	desc = {
+		trigger = {
+			check_variable = {
+				which = gercon_yes
+				which = gercon_no
+			}
+			has_global_flag = gercon_const_delib
+		}
+		desc = "Gercon_issues.d.6a"
+	}
+
+	desc = {
+		trigger = {
+			check_variable = {
+				which = gercon_no
+				which = gercon_yes
+			}
+		}
+		desc = "Gercon_issues.d.6b"
+	}
+
+	desc = {
+		trigger = {
+			check_variable = {
+				which = gercon_yes
+				which = gercon_no
+			}
+			has_global_flag = gercon_mil_deliberation
+		}
+		desc = "Gercon_issues.d.6c"
+	}
+
+	desc = {
+		trigger = {
+			check_variable = {
+				which = gercon_yes
+				which = gercon_no
+			}
+			has_global_flag = gercon_dip_delib
+		}
+		desc = "Gercon_issues.d.6d"
+	}
+
+	desc = {
+		trigger = {
+			check_variable = {
+				which = gercon_yes
+				which = gercon_no
+			}
+			has_global_flag = gercon_trade_delib
+		}
+		desc = "Gercon_issues.d.6e"
+	}
+
+	desc = {
+		trigger = {
+			check_variable = {
+				which = gercon_yes
+				which = gercon_no
+			}
+			has_global_flag = gercon_final_delib
+		}
+		desc = "Gercon_issues.d.6f"
+	}
+	picture = HRE_eventPicture
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Gercon_issues.6.a" #victory
+
+		trigger = {
+			check_variable = {
+				which = gercon_yes
+				which = gercon_no
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = gercon_const_delib
+			}
+			add_country_modifier = {
+				name = gercon_constitution
+				duration = -1
+			}
+	
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = german_confederation_member
+				}
+				clr_country_flag = gercon_voted
+				add_country_modifier = {
+					name = gercon_constitution_member
+					duration = -1
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				has_global_flag = gercon_mil_deliberation
+			}
+			add_country_modifier = {
+				name = gercon_military
+				duration = -1
+			}
+	
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = german_confederation_member
+				}
+				clr_country_flag = gercon_voted
+				add_country_modifier = {
+					name = gercon_military_member
+					duration = -1
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				has_global_flag = gercon_dip_delib
+			}
+			add_country_modifier = {
+				name = gercon_dip
+				duration = -1
+			}
+	
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = german_confederation_member
+				}
+				clr_country_flag = gercon_voted
+				add_country_modifier = {
+					name = gercon_dip_member
+					duration = -1
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				has_global_flag = gercon_trade_delib
+			}
+			add_country_modifier = {
+				name = gercon_trade
+				duration = -1
+			}
+	
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = german_confederation_member
+				}
+				clr_country_flag = gercon_voted
+				add_country_modifier = {
+					name = gercon_trade_member
+					duration = -1
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				has_global_flag = gercon_final_delib
+			}
+			add_country_modifier = {
+				name = gercon_final
+				duration = -1
+			}
+	
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = german_confederation_member
+				}
+				clr_country_flag = gercon_voted
+				add_country_modifier = {
+					name = gercon_final_member
+					duration = -1
+				}
+			}
+		}
+		
+	}
+
+	option = {
+		name = "Gercon_issues.6.b" #no
+
+		trigger = {
+			check_variable = {
+				which = gercon_no
+				which = gercon_yes
+			}
+		}
+
+		add_prestige = -25
+	}
+
+	after = {
+		clr_global_flag = gercon_deliberating
+		if = { #Constitution
+			limit = {
+				has_global_flag = gercon_const_delib
+			}
+			clr_global_flag = gercon_const_delib
+			set_global_flag = gercon_constitution_loc #for customizable localization
+		}
+		if = { #Military reform
+			limit = {
+				has_global_flag = gercon_mil_deliberation
+			}
+			clr_global_flag = gercon_mil_deliberation
+			set_global_flag = gercon_military
+		}
+		if = { #Diplomacy
+			limit = {
+				has_global_flag = gercon_dip_delib
+			}
+			clr_global_flag = gercon_dip_delib
+			set_global_flag = gercon_diplomacy
+		}
+		if = { #Trade
+			limit = {
+				has_global_flag = gercon_trade_delib
+			}
+			clr_global_flag = gercon_trade_delib
+			set_global_flag = gercon_commerce
+		}
+		if = { #Final
+			limit = {
+				has_global_flag = gercon_final_delib
+			}
+			clr_global_flag = gercon_final_delib
+			set_global_flag = gercon_final_policy
+		}
+
+		every_subject_country = {
+			limit = {
+				is_subject_of_type = german_confederation_member
+			}
+			clr_country_flag = gercon_voted
+		}
+		clr_country_flag = gercon_voted
+		gercon_reset_vote = yes
+	}
+}
+
+country_event = {
+	id = Gercon_issues.7
+	title = "Gercon_issues.7.t"
+	desc = "Gercon_issues.7.d"
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Gercon_issues.7.a"
+	}
+}

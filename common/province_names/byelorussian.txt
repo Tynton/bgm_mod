@@ -1,0 +1,39 @@
+275 = "Pólack"
+276 = "Mjensk"
+278 = "Pínsk"
+277 = "Bjérascje"
+4246 = "Mscíslau"
+1937 = { "Hóradnja" "Hródna" }
+293 = "Smaljénsk"
+292 = "Mahiljóu"
+771 = "Vícjebsk"
+
+280 = { "Kíjeu" "Kiey" }
+279 = "Valyn'"
+2962 = "Róuna"
+1942 = "Zytómir"
+2961 = "L'vou"
+1944 = "Carkásy"
+
+
+4538 = { "Xelm" "Xolm" }
+
+272 = { "Víl'njus" "Víl'nja" }
+
+257 = "Varsáva"
+262 = "Krákau"
+260 = "Ljúblin"
+254 = "Póznan'"
+2424 = { "Pjarémysl'" "Psémysl'" }
+
+41 = "Karaljávjec"
+43 = { "Dancyh" "Hdan'sk" }
+
+38 = { "Ryha" "Ryga" }
+
+295 = "Maskvá"
+33 = { "Sankt-Pjecjarbúrh" "Pjecjarbúrh" }
+310 = "Nóuharad"
+274 = "Pskou"
+301 = "Rjazán'"
+308 = "Jaraslául'"

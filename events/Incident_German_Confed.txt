@@ -1,0 +1,138 @@
+namespace = incidents_german_con
+normal_or_historical_nations = yes
+
+# Prussian Mission
+country_event = {
+	id = incidents_german_con.1
+	title = "incidents_german_con.1.t"
+	desc = "incidents_german_con.1.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "incidents_german_con.1.a"
+		ai_chance = { 
+			factor = 10
+		}
+		set_global_flag = secular_hre_incident
+		set_imperial_incident = incident_german_confederation
+	}
+	option = {
+		name = "incidents_german_con.1.b"
+		ai_chance = { 
+			factor = 10
+		}
+		set_global_flag = secular_hre_incident
+		set_imperial_incident = incident_german_confederation
+	}
+}
+
+#Organic Secularization
+country_event = {
+	id = incidents_german_con.2
+	title = "incidents_german_con.2.t"
+	desc = "incidents_german_con.2.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_global_flag = revolutions_year_start
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+
+		modifier = {
+			factor = 0.1
+			is_year = 1848
+		}
+	}
+	
+	option = {
+		name = "incidents_german_con.2.a"
+		ai_chance = { 
+			factor = 10
+		}
+		set_global_flag = secular_hre_incident
+		set_imperial_incident = incident_german_confederation
+	}
+	option = {
+		name = "incidents_german_con.2.b"
+		ai_chance = { 
+			factor = 10
+		}
+		set_global_flag = secular_hre_incident
+		set_imperial_incident = incident_german_confederation
+	}
+}
+
+#Final decision
+country_event = {
+	id = incidents_german_con.3
+	title = "incidents_german_con.3.t"
+	desc = "incidents_german_con.3.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	#Reform into the German Confederation
+	
+	option = {
+		name = "incidents_german_con.3.a"
+		ai_chance = { 
+			factor = 25
+		}
+		clr_global_flag = secular_hre_incident
+
+		ROOT = {
+			country_event = {
+				id = german_confederation.3
+			}
+		}
+	}
+
+	#Simply secularize the HRE instead
+
+	option = {
+		name = "incidents_german_con.3.b"
+		ai_chance = { 
+			factor = 15
+		}
+		clr_global_flag = secular_hre_incident
+
+		every_country = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			add_country_modifier = {
+				name = gercon_tolerance
+				duration = 18250
+			}
+		}
+
+		if = {
+			limit = {
+				hre_religion_locked = yes
+			}
+			set_hre_religion_treaty = yes 
+		}
+	}
+
+	#Stay the way we are
+
+	option = {
+		name = "incidents_german_con.3.c"
+		ai_chance = { 
+			factor = 5
+		}
+		clr_global_flag = secular_hre_incident
+	}
+}

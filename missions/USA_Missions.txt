@@ -1,0 +1,526 @@
+usa_missions_main = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = USA
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	usa_independence = {
+		icon = mission_assemble_an_army
+		required_missions = { }
+		trigger = {
+			is_subject = no
+			is_at_war = no
+		}
+		effect = {
+			change_government_reform_progress = 100
+			if = {
+				limit = { NOT = { legitimacy_equivalent = 90 } }
+				add_legitimacy = 20
+				add_horde_unity = 20
+				add_devotion = 20
+				add_republican_tradition = 10
+			}
+			else = { add_prestige = 15 }
+			if = { #For bookmark start
+				limit = {
+					northeast_america_region = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+				}
+				northeast_america_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	defend_the_american_colonies = {
+		icon = mission_cannons_firing
+		required_missions = { usa_independence }
+		provinces_to_highlight = {
+			region = northeast_america_region
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			northeast_america_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 50
+			add_stability = 2
+			if = { #For bookmark start
+				limit = {
+					southeast_america_region = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+				}
+				southeast_america_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	conquer_florida = {
+		icon = mission_unite_home_region
+		required_missions = { defend_the_american_colonies }
+		provinces_to_highlight = {
+			region = southeast_america_region
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			southeast_america_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "military_victory"
+				duration = 7300
+			}
+		}
+	}
+	reach_the_mississippi = {
+		icon = mission_settlers_north_america
+		required_missions = { conquer_florida }
+		provinces_to_highlight = {
+			region = mississippi_region
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				region = mississippi_region
+				value = 10
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "colonial_enthusiasm"
+				duration = 7300
+			}
+			country_event = {
+				id = americangovt.3
+			}
+			colonial_louisiana = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	take_west_coast = {
+		icon = mission_settlers_north_america
+		required_missions = { reach_the_mississippi }
+		provinces_to_highlight = {
+			OR = {
+				region = california_region
+				region = rio_grande_region
+				region = great_plains_region
+				area = snake_river_area
+				area = oregon_area
+				area = columbia_river_area
+				area = salish_sea_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				colonial_region = colonial_louisiana
+				value = 35
+			}
+		}
+		effect = {
+			country_event = {
+				id = americangovt.2
+			}
+			colonial_louisiana = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	buy_alaska = {
+		icon = mission_settlers_north_america
+		required_missions = { take_west_coast }
+		provinces_to_highlight = {
+			area = alaska_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				region = california_region
+				value = 20
+			}
+			navy_size = 125
+		}
+		effect = {
+			#country_event = {
+			#	id = americangovt.3
+			#}
+			alaska_area = {
+				add_permanent_claim = ROOT
+			}
+			835 = { add_permanent_claim = ROOT }
+			add_country_modifier = {
+				name = usa_navy_soi
+				duration = -1
+			}
+			
+			868 = {
+				center_of_trade = 1
+			}
+			
+			2476 = {
+				center_of_trade = 1
+			}
+			
+			874 = {
+				center_of_trade = 1
+			}
+			
+			4903 = {
+				center_of_trade = 1
+			}
+
+			add_adm_power = 250
+			add_dip_power = 250
+			add_mil_power = 250
+			add_prestige = 50
+			add_stability = 1
+		}
+	}
+}
+
+usa_missions_eco = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = USA
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	
+	
+	blackstone_valley = {
+		icon = mission_settlers_north_america
+		required_missions = { }
+		provinces_to_highlight = {
+			province_id = 966
+			province_id = 967
+		}
+		trigger = {
+			owns = 966
+			owns = 967
+		}
+		effect = {
+			
+			966 = {
+				add_base_tax = 1
+				add_base_production = 4
+				change_trade_goods = cloth
+			}
+			967 = {
+				add_base_tax = 1
+				add_base_production = 4
+				change_trade_goods = cloth
+				center_of_trade = 1
+			}
+		}
+	}
+
+	new_england_industrialization = {
+		icon = mission_settlers_north_america
+		required_missions = { blackstone_valley }
+		provinces_to_highlight = {
+			region = northeast_america_region
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				region = northeast_america_region
+				value = 25
+			}
+		}
+		effect = {
+			
+			965 = {
+				center_of_trade = 1
+			}
+			952 = {
+				center_of_trade = 1
+			}
+			953 = {
+				center_of_trade = 1
+			}
+			955 = {
+				center_of_trade = 1
+			}
+			956 = {
+				center_of_trade = 1
+			}
+			2540 = {
+				center_of_trade = 1
+			}
+		}
+	}
+	
+	attract_immigrants = {
+		icon = mission_assemble_an_army
+		required_missions = { new_england_industrialization }
+		trigger = {
+			has_parliament = yes
+			stability = 1
+			prestige = 15
+			is_at_war = no
+		}
+		effect = {
+			every_owned_province = {
+				limit = {
+					region = northeast_america_region
+				}
+				add_province_modifier = {
+					name = new_england_ind_bgm
+					duration = -1
+				}
+				add_prosperity = 100
+				add_devastation = -100
+			}
+			change_government_reform_progress = 100
+			capital_scope = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+			every_owned_province = {
+				limit = {
+					province_has_center_of_trade_of_level = 1
+				}
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+				
+			}
+		}
+	}
+}
+
+usa_cont_exp = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = USA
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	free_canada = {
+		icon = mission_settlers_north_america
+		position = 6
+		required_missions = { take_west_coast }
+		provinces_to_highlight = {
+			colonial_region = colonial_canada
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			stability = 1
+			army_size = 150
+		}
+		effect = {
+			colonial_canada = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	mexican_client = {
+		icon = mission_settlers_north_america
+		position = 7
+		required_missions = { free_canada }
+		provinces_to_highlight = {
+			colonial_region = colonial_mexico
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				colonial_region = colonial_canada
+				value = 40
+			}
+			army_size = 250
+		}
+		effect = {
+			central_america_superregion = {
+				add_permanent_claim = ROOT
+			}
+			cuba_area = {
+				add_permanent_claim = ROOT
+			}
+			east_cuba_area = {
+				add_permanent_claim = ROOT
+			}
+			#if = {
+			#	limit = {
+			#		exists = MEX
+			#	}
+			#	add_casus_belli = {
+			#		target = MEX
+			#		type = cb_annex
+			#	}
+			#}
+		}
+	}
+	
+	continental_unity = {
+		icon = mission_settlers_north_america
+		position = 8
+		required_missions = { mexican_client }
+		trigger = {
+			stability = 1
+			prestige = 75
+			
+			num_of_owned_provinces_with = {
+				colonial_region = colonial_mexico
+				value = 35
+			}
+		}
+		effect = {
+			add_adm_power = 250
+			add_dip_power = 250
+			add_mil_power = 250
+			
+			add_country_modifier = {
+				name = usa_endgame
+				duration = -1
+			}
+		}
+	}
+}
+
+usa_dip = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = USA
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	consolidate_country = {
+		icon = mission_settlers_north_america
+		required_missions = { }
+		
+		trigger = {
+			OR = {
+				government_rank = 3
+				army_size = 100
+				stability = 3
+				prestige = 100
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = usa_dip_one
+				duration = -1
+			}
+			add_country_modifier = {
+				name = usa_dip_temp
+				duration = 9125
+			}
+		}
+	}
+	
+	west_euro_ally = {
+		icon = mission_settlers_north_america
+		
+		required_missions = { consolidate_country }
+		provinces_to_highlight = {
+			colonial_region = colonial_mexico
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			any_country = {
+				capital_scope = {
+					superregion = europe_superregion
+				}
+				is_great_power = yes
+				alliance_with = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_dip_power = 100
+			add_mercantilism = 10
+		}
+	}
+	
+	japan_expedition = {
+		icon = mission_settlers_north_america
+		
+		required_missions = { west_euro_ally }
+		provinces_to_highlight = {
+			colonial_region = colonial_mexico
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			OR = {
+				california_area = {
+					any_province = {
+						owned_by = USA
+					}
+				}
+				salish_sea_area = {
+					any_province = {
+						owned_by = USA
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = americangovt.11
+			}
+		}
+	}
+}

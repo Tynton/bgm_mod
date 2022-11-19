@@ -1,0 +1,33 @@
+245 = "Évèroui"
+262 = "Cracaû"
+1816 = "Péqùin"
+50 = "Bèrlîn"
+481 = "Bèrmude"
+373 = "Dublîn"
+1095 = "Îles Falkland"
+1876 = "Francfort-sur-le-Main"
+226 = "Dgibrâltar"
+
+4371 = "Sussex"
+4374 = "Dorset"
+238 = "Essex"
+240 = "Shrewsbury"
+4372 = "Coventry"
+243 = "Lincolnshire"
+4368 = "Scarborough"
+#4984 = "Manchester"
+1861 = "Derby"
+4785 = "Sheffield"
+
+168 = "Kaem"
+1879 = "Alençoun"
+
+237 = { "Oxneford" "Oxenford" }
+239 = "Gloucestreschire"
+4370 = { "Bedefordschire" "Cantebrigge" }
+1860 = "Northfolk"
+246 = { "Northumberlond" "Northhumberlond" }
+244 = "Lancastreshire"
+4376 = "Ledecestre"
+4375 = "Chestre"
+234 = { "Hampshire" "Sarisberie" }

@@ -1,0 +1,16 @@
+4995 = "Tavau"
+1873 = { "Cuira" "Coira" }
+4722 = "Glion"
+1870 = "Son Gagl"
+4997 = "Glaruna"
+1869 = "Turitg"
+4980 = "Basilea"
+165 = "Berna"
+4993 = "Soloturn"
+4996 = "Sviz"
+
+1871 = "Valais"
+4994 = "Lucerna"
+1876 = "Losanna"
+4720 = "Genevra"
+4721 = "Friburg"

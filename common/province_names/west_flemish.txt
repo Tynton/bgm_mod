@@ -1,0 +1,4 @@
+4769 = "Rysel"
+4948 = { "Kortryk" "Kortrik" }
+90 = "Brugge"
+4951 = "Duunkerke"

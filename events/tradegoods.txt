@@ -1,0 +1,1616 @@
+namespace = tradegoods
+
+province_event = {
+	id = tradegoods.1
+	title = "tradegoods.n.1"
+	desc = "tradegoods.d.1"
+	picture = FACTORY_eventPicture
+
+	trigger = {
+		#industrialization = 99
+		#is_prosperous = yes
+		owner = {
+			has_institution = industrialization
+			adm_tech = 36
+		}
+		OR = {
+			has_building = factory_infrastructure
+			has_building = counting_house
+			has_building = workshop
+		}
+		#development = 20
+		OR = {
+			trade_goods = wool
+			trade_goods = tropical_wood
+			trade_goods = cloth
+			trade_goods = cloves
+			trade_goods = wine
+			trade_goods = gems
+			AND = {
+				trade_goods = salt
+				owner = {
+					adm_tech = 38
+				}
+			}
+			trade_goods = glass
+			trade_goods = paper
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 500
+
+		modifier = {
+			factor = 0.75
+			OR = {
+				trade_goods = wool
+				trade_goods = tropical_wood
+				trade_goods = cloth
+			}
+		}
+
+		modifier = {
+			factor = 1.75
+			trade_goods = salt
+		}
+
+		modifier = {
+			factor = 2.5
+			trade_goods = paper
+		}
+
+		modifier = {
+			factor = 4
+			trade_goods = wine
+		}
+		
+		modifier = {
+			factor = 0.9
+			development = 10
+		}
+		modifier = {
+			factor = 0.85
+			development = 15
+		}
+		modifier = {
+			factor = 0.75
+			development = 20
+		}
+		modifier = {
+			factor = 0.5
+			development = 25
+		}
+		
+		modifier = {
+			factor = 0.5
+			trade_goods = iron
+		}
+		
+		modifier = {
+			factor = 0.25
+			owner = {
+				adm_tech = 40
+			}
+		}
+		
+		modifier = {
+			factor = 0.25
+			owner = {
+				adm_tech = 42
+			}
+		}
+	}
+	
+	option = {
+		name = "tradegoods.1.a"
+		change_trade_goods = steel
+		if = {
+			limit = {
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+				owner = {
+					ai = yes
+				}
+			}
+			remove_building = temple
+			remove_building = cathedral
+		}
+	}
+}
+
+province_event = {
+	id = tradegoods.2
+	title = "tradegoods.n.2"
+	desc = "tradegoods.d.2"
+	picture = DREADNOUGHT_eventPicture
+
+	trigger = {
+		
+		OR = {
+			has_building = grand_shipyard
+			has_building = shipyard
+		}
+		owner = {
+			#dip_tech = 37
+			has_institution = nationalism_institution
+			has_institution = industrialization
+			adm_tech = 38
+		}
+		OR = {
+			AND = {
+				has_port = yes
+				trade_goods = naval_supplies
+			}
+			trade_goods = naval_supplies
+		}
+		
+	}
+
+	mean_time_to_happen = {
+		months = 500
+		
+		modifier = {
+			factor = 0.9
+			development = 10
+		}
+		modifier = {
+			factor = 0.85
+			development = 15
+		}
+		modifier = {
+			factor = 0.75
+			development = 20
+		}
+		modifier = {
+			factor = 0.5
+			development = 25
+		}
+		
+		modifier = {
+			factor = 0.5
+			trade_goods = iron
+		}
+		
+		modifier = {
+			factor = 0.25
+			owner = {
+				adm_tech = 37
+			}
+		}
+		
+		modifier = {
+			factor = 0.25
+			owner = {
+				adm_tech = 39
+			}
+		}
+	}
+	
+	option = {
+		name = "tradegoods.2.a"
+		change_trade_goods = naval_equipment
+	}
+}
+
+province_event = {
+	id = tradegoods.3
+	title = "tradegoods.n.3"
+	desc = "tradegoods.d.3"
+	picture = CIRCUIT_eventPicture
+
+	trigger = {
+		AND = {
+			owner = {
+				has_institution = information_infrastructure
+			}
+			#is_prosperous = yes
+		}
+		has_building = factory_infrastructure
+		NOT = {
+			OR = {
+				trade_goods = oil
+				trade_goods = rubber
+				trade_goods = tungsten
+				trade_goods = aluminium
+				trade_goods = uranium
+				trade_goods = electronics
+				trade_goods = coal
+				trade_goods = gold
+				trade_goods = cinema
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 480
+		
+		modifier = {
+			factor = 0.9
+			development = 80
+		}
+		modifier = {
+			factor = 0.85
+			development = 85
+		}
+		modifier = {
+			factor = 0.75
+			development = 90
+		}
+		modifier = {
+			factor = 0.5
+			development = 95
+		}
+		
+		modifier = {
+			factor = 1.5
+			owner = {
+				NOT = {
+					OR = {
+						stability = 2
+						prestige = 50
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.5
+			owner = {
+				NOT = {
+					OR = {
+						stability = 1
+						prestige = 25
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.5
+			owner = {
+				NOT = {
+					OR = {
+						stability = 0
+						prestige = 0
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "tradegoods.3.a"
+		change_trade_goods = electronics
+	}
+}
+
+country_event = {
+	id = tradegoods.4
+	title = "tradegoods.n.4"
+	desc = "tradegoods.d.4"
+	picture = ELECTRICITY_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		adm_tech = 38
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "tradegoods.4.a"
+		change_price = {
+			trade_goods = copper
+			key = PROLIFERATION_ELECTRICITY
+			value = 0.5
+			duration = -1
+		}
+		add_prestige = 15
+	}
+}
+
+country_event = {
+	id = tradegoods.5
+	title = "tradegoods.n.5"
+	desc = "tradegoods.d.5"
+	picture = COAL_FURNACE_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		adm_tech = 35
+	}
+
+	mean_time_to_happen = {
+		months = 48
+	}
+	
+	option = {
+		name = "tradegoods.5.a"
+		change_price = {
+			trade_goods = coal
+			key = COAL_TECHNOLOGY
+			value = 1.0
+			duration = -1
+		}
+		add_prestige = 10
+	}
+}
+
+country_event = {
+	id = tradegoods.6
+	title = "tradegoods.n.6"
+	desc = "tradegoods.d.6"
+	picture = CIRCUIT_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		adm_tech = 45
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "tradegoods.6.a"
+		change_price = {
+			trade_goods = paper
+			key = COMPUTER_TECHNOLOGY
+			value = -0.5
+			duration = -1
+		}
+		add_prestige = 25
+	}
+}
+
+country_event = {
+	id = tradegoods.7
+	title = "tradegoods.n.7"
+	desc = "tradegoods.d.7"
+	picture = REFRIGERATION_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		dip_tech = 38
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "tradegoods.7.a"
+		change_price = {
+			trade_goods = salt
+			key = REFRIGERATION
+			value = -0.2
+			duration = -1
+		}
+		add_prestige = 20
+	}
+}
+
+country_event = {
+	id = tradegoods.8
+	title = "tradegoods.n.8"
+	desc = "tradegoods.d.8"
+	picture = FACTORY_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		mil_tech = 40
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "tradegoods.8.a"
+		change_price = {
+			trade_goods = iron
+			key = METAL_DEPENDENCY
+			value = 0.75
+			duration = 21900
+		}
+		change_price = {
+			trade_goods = steel
+			key = METAL_DEPENDENCY
+			value = 0.5
+			duration = 21900
+		}
+		change_price = {
+			trade_goods = oil
+			key = METAL_DEPENDENCY
+			value = 1.0
+			duration = 21900
+		}
+		add_prestige = 15
+	}
+}
+
+country_event = {
+	id = tradegoods.9
+	title = "tradegoods.n.9"
+	desc = "tradegoods.d.9"
+	picture = MODERN_ARCHITECTURE_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		adm_tech = 44
+		has_reform = democratic_mechanic
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "tradegoods.9.a"
+		change_price = {
+			trade_goods = glass
+			key = MODERN_ARCHITECTURE
+			value = 0.5
+			duration = -1
+		}
+		add_prestige = 15
+	}
+}
+
+#automobile
+
+province_event = {
+	id = tradegoods.10
+	title = "tradegoods.n.10"
+	desc = "tradegoods.d.10"
+	picture = FACTORY_eventPicture
+
+	trigger = {
+		owner = {
+			adm_tech = 39
+		}
+		OR = {
+			has_building = factory_infrastructure
+			development = 40
+		}
+		is_prosperous = yes 
+		OR = {
+			trade_goods = steel
+			trade_goods = gems
+			trade_goods = cloth
+			trade_goods = wool
+			trade_goods = wine
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 500
+		
+		modifier = {
+			factor = 0.9
+			development = 30
+		}
+		modifier = {
+			factor = 0.85
+			development = 35
+		}
+		modifier = {
+			factor = 0.75
+			development = 40
+		}
+		modifier = {
+			factor = 0.5
+			development = 45
+		}
+	}
+	
+	option = {
+		name = "tradegoods.10.a"
+		change_trade_goods = automobile
+	}
+}
+
+province_event = {
+	id = tradegoods.11
+	title = "tradegoods.n.11"
+	desc = "tradegoods.d.11"
+	picture = RADIO_TV_eventPicture
+
+	trigger = {
+		#is_prosperous = yes
+		#development = 75
+		is_in_capital_area = yes 
+		owner = {
+			has_institution = mass_media
+		}
+		OR = {
+			has_building = factory_infrastructure
+			has_building = counting_house
+		}
+		OR = {
+			trade_goods = steel
+			trade_goods = automobile
+			trade_goods = gems
+			trade_goods = cloth
+			trade_goods = wool
+			trade_goods = wine
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 800
+		
+		modifier = {
+			factor = 0.9
+			development = 80
+		}
+		modifier = {
+			factor = 0.85
+			development = 85
+		}
+		modifier = {
+			factor = 0.75
+			development = 90
+		}
+		modifier = {
+			factor = 0.5
+			development = 95
+		}
+		
+		modifier = {
+			factor = 1.5
+			owner = {
+				NOT = {
+					OR = {
+						stability = 2
+						prestige = 50
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.5
+			owner = {
+				NOT = {
+					OR = {
+						stability = 1
+						prestige = 25
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.5
+			owner = {
+				NOT = {
+					OR = {
+						stability = 0
+						prestige = 0
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "tradegoods.11.a"
+		change_trade_goods = cinema
+	}
+}
+
+country_event = {
+	id = tradegoods.12
+	title = "tradegoods.n.12"
+	desc = "tradegoods.d.12"
+	picture = FACTORY_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		#trade_goods = steel
+		adm_tech = 40
+		#development = 40
+	}
+
+	mean_time_to_happen = {
+		months = 450
+	}
+	
+	option = {
+		name = "tradegoods.12.a"
+		change_price = {
+			trade_goods = automobile
+			key = SECOND_IND_REV
+			value = 0.2
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = tradegoods.13
+	title = "tradegoods.n.13"
+	desc = "tradegoods.d.13"
+	picture = FACTORY_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		dip_tech = 30
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "tradegoods.13.a"
+		change_price = {
+			trade_goods = cotton
+			key = COTTON_GIN
+			value = 0.15
+			duration = -1
+		}
+		add_prestige = 15
+	}
+}
+
+country_event = {
+	id = tradegoods.14
+	title = "tradegoods.n.14"
+	desc = "tradegoods.d.14"
+	picture = FACTORY_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		dip_tech = 36
+		
+		any_owned_province = {
+			trade_goods = silk
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "tradegoods.14.a"
+		change_price = {
+			trade_goods = silk
+			key = ARTIFICIAL_SILK
+			value = -0.15
+			duration = -1
+		}
+		add_prestige = 15
+		
+		random_owned_province = { 
+			limit = {
+				trade_goods = silk
+			}
+			add_base_production = 4
+		} 
+	}
+}
+
+country_event = {
+	id = tradegoods.15
+	title = "tradegoods.n.15"
+	desc = "tradegoods.d.15"
+	picture = FACTORY_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		mil_tech = 41
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "tradegoods.15.a"
+		change_price = {
+			trade_goods = sugar
+			key = ARTIFICIAL_SWEETENERS
+			value = -0.3
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = tradegoods.16
+	title = "tradegoods.n.16"
+	desc = "tradegoods.d.16"
+	picture = FACTORY_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		adm_tech = 33
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "tradegoods.16.a"
+		change_price = {
+			trade_goods = cocoa
+			key = MILK_CHOCOLATE
+			value = 0.25
+			duration = -1
+		}
+	}
+}
+
+province_event = {
+	id = tradegoods.17
+	title = "tradegoods.n.17"
+	desc = "tradegoods.d.17"
+	picture = RADIO_TV_eventPicture
+
+	trigger = {
+		owner = {
+			has_institution = mass_media
+			
+			is_great_power = yes
+			
+			NOT = {
+				any_owned_province = {
+					trade_goods = cinema
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 4
+	}
+	
+	option = {
+		name = "tradegoods.17.a"
+		change_trade_goods = cinema
+	}
+}
+
+#Stock market crash
+
+country_event = {
+	id = tradegoods.18
+	title = "tradegoods.n.18"
+	desc = "tradegoods.d.18"
+	picture = MODERN_ARCHITECTURE_eventPicture
+	
+	major = yes
+
+	trigger = {
+		NOT = {
+			has_global_flag = global_stock_crash
+		}
+		adm_tech = 40
+		is_great_power = yes
+		is_at_war = yes
+		any_country = {
+			is_great_power = yes
+			war_with = ROOT
+		}
+		ROOT = {
+			OR = {
+				num_of_loans = 1
+				NOT = {
+					stability = 0
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+		modifier = {
+			factor = 0.25
+			is_hegemon = yes
+		}
+
+		modifier = {
+			factor = 0.25
+			is_bankrupt = yes
+		}
+	}
+	
+	option = {
+		name = "tradegoods.18.a"
+		set_global_flag = global_stock_crash
+
+		change_price = {
+			trade_goods = tropical_wood
+			key = CRASHED_ECONOMY
+			value = -0.75
+			duration = -1
+		}
+
+		#temporary
+
+		change_price = {
+			trade_goods = steel
+			key = CRASHED_ECONOMY
+			value = -0.75
+			duration = 9125
+		}
+		change_price = {
+			trade_goods = automobile
+			key = CRASHED_ECONOMY
+			value = -0.25
+			duration = 9125
+		}
+		change_price = {
+			trade_goods = cinema
+			key = CRASHED_ECONOMY
+			value = -0.75
+			duration = 9125
+		}
+		change_price = {
+			trade_goods = oil
+			key = CRASHED_ECONOMY
+			value = -0.5
+			duration = 9125
+		}
+		change_price = {
+			trade_goods = iron
+			key = CRASHED_ECONOMY
+			value = -0.75
+			duration = 9125
+		}
+		change_price = {
+			trade_goods = cloth
+			key = CRASHED_ECONOMY
+			value = -0.75
+			duration = 9125
+		}
+		change_price = {
+			trade_goods = spices
+			key = CRASHED_ECONOMY
+			value = -0.75
+			duration = 9125
+		}
+		change_price = {
+			trade_goods = coal
+			key = CRASHED_ECONOMY
+			value = -0.5
+			duration = 9125
+		}
+		change_price = {
+			trade_goods = naval_equipment
+			key = CRASHED_ECONOMY
+			value = -0.75
+			duration = 9125
+		}
+		change_price = {
+			trade_goods = tungsten
+			key = CRASHED_ECONOMY
+			value = -0.75
+			duration = 9125
+		}
+		change_price = {
+			trade_goods = aluminium
+			key = CRASHED_ECONOMY
+			value = -0.75
+			duration = 9125
+		}
+		change_price = {
+			trade_goods = electronics
+			key = CRASHED_ECONOMY
+			value = -0.9
+			duration = 9125
+		}
+		change_price = {
+			trade_goods = silk
+			key = CRASHED_ECONOMY
+			value = -0.8
+			duration = 9125
+		}
+		change_price = {
+			trade_goods = dyes
+			key = CRASHED_ECONOMY
+			value = -0.8
+			duration = 9125
+		}
+	}
+}
+
+#The War Economy
+
+country_event = {
+	id = tradegoods.19
+	title = "tradegoods.n.19"
+	desc = "tradegoods.d.19"
+	picture = MODERN_ARCHITECTURE_eventPicture
+	
+	major = yes
+
+	trigger = {
+		has_global_flag = global_stock_crash
+		NOT = {
+			has_global_flag = war_economy
+		}
+		is_great_power = yes
+		is_at_war = yes
+		any_country = {
+			is_great_power = yes
+			war_with = ROOT
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+		modifier = {
+			factor = 0.25
+			is_hegemon = yes
+		}
+
+		modifier = {
+			factor = 0.25
+			is_bankrupt = yes
+		}
+	}
+	
+	option = {
+		name = "tradegoods.19.a"
+		set_global_flag = war_economy
+		change_price = {
+			trade_goods = gems
+			key = WAR_ECO
+			value = -0.85
+			duration = -1
+		}
+		change_price = {
+			trade_goods = cocoa
+			key = WAR_ECO
+			value = -0.85
+			duration = -1
+		}
+		change_price = {
+			trade_goods = cloves
+			key = WAR_ECO
+			value = -0.9
+			duration = -1
+		}
+		change_price = {
+			trade_goods = ivory
+			key = WAR_ECO
+			value = -0.5
+			duration = -1
+		}
+
+		#temporary prices
+
+		change_price = {
+			trade_goods = grain
+			key = WAR_ECO
+			value = 0.25
+			duration = 4380
+		}
+		change_price = {
+			trade_goods = livestock
+			key = WAR_ECO
+			value = 0.3
+			duration = 4380
+		}
+		change_price = {
+			trade_goods = fish
+			key = WAR_ECO
+			value = 0.25
+			duration = 4380
+		}
+
+		change_price = {
+			trade_goods = steel
+			key = WAR_ECO
+			value = 0.5
+			duration = 4380
+		}
+		change_price = {
+			trade_goods = cinema
+			key = WAR_ECO
+			value = -0.8
+			duration = 4380
+		}
+		change_price = {
+			trade_goods = spices
+			key = WAR_ECO
+			value = -0.75
+			duration = 4380
+		}
+		change_price = {
+			trade_goods = automobile
+			key = WAR_ECO
+			value = -0.75
+			duration = 4380
+		}
+		change_price = {
+			trade_goods = oil
+			key = WAR_ECO
+			value = 1.0
+			duration = 4380
+		}
+		change_price = {
+			trade_goods = iron
+			key = WAR_ECO
+			value = 0.25
+			duration = 4380
+		}
+		change_price = {
+			trade_goods = copper
+			key = WAR_ECO
+			value = 0.25
+			duration = 4380
+		}
+		change_price = {
+			trade_goods = coal
+			key = WAR_ECO
+			value = 0.125
+			duration = 4380
+		}
+		change_price = {
+			trade_goods = naval_equipment
+			key = WAR_ECO
+			value = 0.5
+			duration = 4380
+		}
+		change_price = {
+			trade_goods = naval_supplies
+			key = WAR_ECO
+			value = 0.5
+			duration = 4380
+		}
+		change_price = {
+			trade_goods = tungsten
+			key = WAR_ECO
+			value = 0.5
+			duration = 4380
+		}
+		change_price = {
+			trade_goods = aluminium
+			key = WAR_ECO
+			value = 0.25
+			duration = 4380
+		}
+		change_price = {
+			trade_goods = electronics
+			key = WAR_ECO
+			value = 0.75
+			duration = 4380
+		}
+		change_price = {
+			trade_goods = wool
+			key = WAR_ECO
+			value = -0.5
+			duration = 4380
+		}
+		change_price = {
+			trade_goods = silk
+			key = WAR_ECO
+			value = -0.75
+			duration = 4380
+		}
+	}
+}
+
+#rising world population
+
+country_event = {
+	id = tradegoods.20
+	title = "tradegoods.n.20"
+	desc = "tradegoods.d.20"
+	picture = FACTORY_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		adm_tech = 36
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "tradegoods.20.a"
+		change_price = {
+			trade_goods = livestock
+			key = RISING_POP
+			value = 0.25
+			duration = -1
+		}
+		change_price = {
+			trade_goods = grain
+			key = RISING_POP
+			value = 0.25
+			duration = -1
+		}
+		change_price = {
+			trade_goods = fish
+			key = RISING_POP
+			value = 0.25
+			duration = -1
+		}
+		change_price = {
+			trade_goods = wine
+			key = RISING_POP
+			value = 0.125
+			duration = -1
+		}
+		change_price = {
+			trade_goods = tea
+			key = RISING_POP
+			value = 0.15
+			duration = -1
+		}
+		change_price = {
+			trade_goods = coffee
+			key = RISING_POP
+			value = 0.15
+			duration = -1
+		}
+	}
+}
+
+#industrial economic trends
+
+country_event = {
+	id = tradegoods.21
+	title = "tradegoods.n.21"
+	desc = "tradegoods.d.21"
+	picture = FACTORY_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		adm_tech = 35
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "tradegoods.21.a"
+		change_price = {
+			trade_goods = grain
+			key = INCREASE_PRODUCTION
+			value = -0.25
+			duration = -1
+		}
+
+		change_price = {
+			trade_goods = incense
+			key = IND_TREND
+			value = -0.5
+			duration = -1
+		}
+
+		change_price = {
+			trade_goods = paper
+			key = IND_TREND
+			value = 0.25
+			duration = -1
+		}
+
+		change_price = {
+			trade_goods = iron
+			key = IND_TREND
+			value = 0.125
+			duration = -1
+		}
+		change_price = {
+			trade_goods = gems
+			key = IND_TREND
+			value = -0.25
+			duration = -1
+		}
+
+		change_price = {
+			trade_goods = cloth
+			key = IND_TREND
+			value = 0.125
+			duration = -1
+		}
+
+		change_price = {
+			trade_goods = naval_supplies
+			key = IND_TREND
+			value = 0.25
+			duration = -1
+		}
+	}
+}
+
+#banned ivory
+
+country_event = {
+	id = tradegoods.22
+	title = "tradegoods.n.22"
+	desc = "tradegoods.d.22"
+	picture = FACTORY_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		adm_tech = 46
+		has_reform = democratic_mechanic
+		is_great_power = yes
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "tradegoods.22.a"
+		change_price = {
+			trade_goods = ivory
+			key = IVORY_BAN
+			value = -0.95
+			duration = -1
+		}
+	}
+}
+
+#lull in stock market
+
+country_event = {
+	id = tradegoods.23
+	title = "tradegoods.n.23"
+	desc = "tradegoods.d.23"
+	picture = FACTORY_eventPicture
+	
+	major = yes
+
+	trigger = {
+		has_global_flag = war_economy
+		NOT = {
+			OR = {
+				has_global_flag = lull_stock
+				has_global_flag = boom_stock
+			}
+		}
+		is_at_war = no
+		is_great_power = yes
+		adm_tech = 45
+		dip_tech = 45
+		mil_tech = 45
+	}
+
+	mean_time_to_happen = {
+		months = 72
+	}
+	
+	option = {
+		name = "tradegoods.23.a"
+		set_global_flag = lull_stock
+		change_price = {
+			trade_goods = steel
+			key = LULL_MARKET
+			value = -0.4
+			duration = 3650
+		}
+		change_price = {
+			trade_goods = cinema
+			key = LULL_MARKET
+			value = -0.75
+			duration = 3650
+		}
+		change_price = {
+			trade_goods = oil
+			key = LULL_MARKET
+			value = 0.25
+			duration = 3650
+		}
+		change_price = {
+			trade_goods = automobile
+			key = LULL_MARKET
+			value = -0.5
+			duration = 3650
+		}
+		change_price = {
+			trade_goods = wine
+			key = LULL_MARKET
+			value = -0.4
+			duration = 3650
+		}
+		change_price = {
+			trade_goods = livestock
+			key = LULL_MARKET
+			value = 0.125
+			duration = 3650
+		}
+		change_price = {
+			trade_goods = grain
+			key = LULL_MARKET
+			value = -0.4
+			duration = 3650
+		}
+		change_price = {
+			trade_goods = silk
+			key = LULL_MARKET
+			value = -0.5
+			duration = 3650
+		}
+
+		hidden_effect = {
+			country_event = {
+				id = tradegoods.24
+				days = 3650
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tradegoods.24
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		clr_global_flag = lull_stock
+		clr_global_flag = boom_stock
+	}
+}
+
+country_event = {
+	id = tradegoods.25
+	title = "tradegoods.n.25"
+	desc = "tradegoods.d.25"
+	picture = FACTORY_eventPicture
+	
+	major = yes
+
+	trigger = {
+		has_global_flag = war_economy
+		NOT = {
+			OR = {
+				has_global_flag = lull_stock
+				has_global_flag = boom_stock
+			}
+		}
+		is_great_power = yes
+		adm_tech = 45
+		dip_tech = 45
+		mil_tech = 45
+	}
+
+	mean_time_to_happen = {
+		months = 72
+	}
+	
+	option = {
+		name = "tradegoods.25.a"
+		set_global_flag = boom_stock
+		change_price = {
+			trade_goods = steel
+			key = BOOM_STOCK
+			value = 0.25
+			duration = 3650
+		}
+		change_price = {
+			trade_goods = cinema
+			key = BOOM_STOCK
+			value = 0.5
+			duration = 3650
+		}
+		change_price = {
+			trade_goods = oil
+			key = BOOM_STOCK
+			value = 0.25
+			duration = 3650
+		}
+		change_price = {
+			trade_goods = automobile
+			key = BOOM_STOCK
+			value = 0.25
+			duration = 3650
+		}
+		change_price = {
+			trade_goods = wine
+			key = BOOM_STOCK
+			value = 0.25
+			duration = 3650
+		}
+		change_price = {
+			trade_goods = livestock
+			key = BOOM_STOCK
+			value = 0.25
+			duration = 3650
+		}
+		change_price = {
+			trade_goods = grain
+			key = BOOM_STOCK
+			value = 0.25
+			duration = 3650
+		}
+		change_price = {
+			trade_goods = silk
+			key = BOOM_STOCK
+			value = 0.25
+			duration = 3650
+		}
+
+		hidden_effect = {
+			country_event = {
+				id = tradegoods.24
+				days = 3650
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tradegoods.26
+	title = "tradegoods.n.26"
+	desc = "tradegoods.d.26"
+	picture = FACTORY_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		has_institution = industrialization
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "tradegoods.26.a"
+
+		change_price = {
+			trade_goods = iron
+			key = INDUSTRIALIZATION_BGM
+			value = 0.25
+			duration = -1
+		}
+		change_price = {
+			trade_goods = steel
+			key = INDUSTRIALIZATION_BGM
+			value = 0.25
+			duration = -1
+		}
+		change_price = {
+			trade_goods = coal
+			key = INDUSTRIALIZATION_BGM
+			value = 0.25
+			duration = -1
+		}
+
+
+		change_price = {
+			trade_goods = cloth
+			key = INDUSTRIALIZATION_BGM
+			value = -0.5
+			duration = -1
+		}
+		change_price = {
+			trade_goods = ivory
+			key = INDUSTRIALIZATION_BGM
+			value = -0.75
+			duration = -1
+		}
+		change_price = {
+			trade_goods = gems
+			key = INDUSTRIALIZATION_BGM
+			value = -0.5
+			duration = -1
+		}
+		change_price = {
+			trade_goods = glass
+			key = INDUSTRIALIZATION_BGM
+			value = -0.5
+			duration = -1
+		}
+		change_price = {
+			trade_goods = grain
+			key = INDUSTRIALIZATION_BGM
+			value = -0.5
+			duration = -1
+		}
+		change_price = {
+			trade_goods = livestock
+			key = INDUSTRIALIZATION_BGM
+			value = -0.25
+			duration = -1
+		}
+		change_price = {
+			trade_goods = tea
+			key = INDUSTRIALIZATION_BGM
+			value = -0.5
+			duration = -1
+		}
+		change_price = {
+			trade_goods = coffee
+			key = INDUSTRIALIZATION_BGM
+			value = -0.5
+			duration = -1
+		}
+		change_price = {
+			trade_goods = cocoa
+			key = INDUSTRIALIZATION_BGM
+			value = -0.5
+			duration = -1
+		}
+		change_price = {
+			trade_goods = cotton
+			key = INDUSTRIALIZATION_BGM
+			value = -0.25
+			duration = -1
+		}
+		change_price = {
+			trade_goods = wine
+			key = INDUSTRIALIZATION_BGM
+			value = -0.25
+			duration = -1
+		}
+		change_price = {
+			trade_goods = fur
+			key = INDUSTRIALIZATION_BGM
+			value = -0.25
+			duration = -1
+		}
+		change_price = {
+			trade_goods = wool
+			key = INDUSTRIALIZATION_BGM
+			value = -0.5
+			duration = -1
+		}
+	}
+}

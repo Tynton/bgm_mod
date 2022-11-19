@@ -1,0 +1,20 @@
+127 = { "Tàtari" "Sàssari" }
+#4977 = "Bastìa"
+2986 = "Casteddu"
+#4976 = "Aiacciu"
+
+121 = "Nàpoli"
+125 = "Palermu"
+116 = { "Firentze" "Frorentzia" }
+104 = "Milanu"
+103 = "Torinu"
+
+2754 = "A Mancia"
+
+94 = "Lussemburgu"
+227 = "Lisbona"
+50 = "Berlinu"
+1247 = { "Còssiga" "Bonifaziu" }
+295 = "Mosca"
+4752 = { "Flùmmene" "Fiume" }
+1 = "Stoccolma"

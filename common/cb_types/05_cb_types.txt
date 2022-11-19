@@ -1,0 +1,32 @@
+cb_conquer_natives = {
+	valid_for_subject = no
+	
+	prerequisites = {
+		ROOT = {
+			OR = {
+				full_idea_group = exploration_ideas
+				full_idea_group = expansion_ideas
+			}
+		}
+		FROM = {
+			capital_scope = {
+				NOT = {
+					continent = ROOT
+				}
+			}
+			OR = {
+				technology_group = north_american
+				technology_group = mesoamerican
+				technology_group = south_american
+				technology_group = andean
+				technology_group = aboriginal_tech
+				technology_group = polynesian_tech
+			}
+			any_neighbor_country = { 
+				tag = ROOT
+			} 
+		}
+	}
+
+	war_goal = take_border
+}

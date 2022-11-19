@@ -1,0 +1,85 @@
+po_bgmleague = {
+	category = 6
+	power_projection = humiliated_rival
+	power_cost_base = 0.0
+	prestige_base = 1.0
+	ae_base = 0.5
+	warscore_cost = {
+		all_provinces = 0.0
+		no_provinces = 100.0
+		owner_keeps = 0.0
+		conquered = 0.75
+		returned_core = 1.5
+		released_nation = 0.1
+		cancelled_subject = 0.1
+		concede_colonial_region = 0.0
+	}
+	warscore_cap = -1
+	requires_demand_independence = no
+	is_make_subject = no
+	requires_is_allowed = yes
+	
+	is_visible = {
+		always = yes
+	}
+	is_allowed = {
+	}
+	effect = {
+		if = {
+			limit = {
+				religion = hussite
+			}
+			set_hre_religion = hussite
+		}
+		if = {
+			limit = {
+				religion = lollard
+			}
+			set_hre_religion = lollard
+		}
+		if = {
+			limit = {
+				religion = waldensian
+			}
+			set_hre_religion = waldensian
+		}
+		if = {
+			limit = {
+				religion = fraticelli
+			}
+			set_hre_religion = fraticelli
+		}
+		if = {
+			limit = {
+				religion = anglican
+			}
+			set_hre_religion = anglican
+		}
+		if = {
+			limit = {
+				religion = cathar
+			}
+			set_hre_religion = cathar
+		}
+		if = {
+			limit = {
+				religion = anabaptist
+			}
+			set_hre_religion = anabaptist
+		}
+		set_hre_religion_locked = yes
+		if = {
+			limit = {
+				religion = catholic
+			}
+			set_hre_religion = catholic
+		}
+		set_hre_religion_locked = yes
+	}
+	ai_weight = { # Defaults to always evaluate to 0
+		export_to_variable = {
+			variable_name = ai_value
+			value = 100
+		}
+	}
+}

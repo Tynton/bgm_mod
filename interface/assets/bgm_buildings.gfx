@@ -1,0 +1,712 @@
+objectTypes = {
+
+	
+	pdxmesh = {
+		name = "modernistgfx_city_0"
+		file = "gfx/models/Buildings/Modernist/modernist_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_city_1"
+		file = "gfx/models/Buildings/Modernist/modernist_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_city_2"
+		file = "gfx/models/Buildings/Modernist/modernist_citycenter_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_city_3"
+		file = "gfx/models/Buildings/Modernist/modernist_citycenter_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_castle_1"
+		file = "gfx/models/Buildings/Modernist/modernist_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_castle_2"
+		file = "gfx/models/Buildings/Modernist/modernist_citycenter_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_castle_3"
+		file = "gfx/models/Buildings/Modernist/modernist_citycenter_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_house_1_1"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_1_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_house_1_2"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_1_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_house_1_3"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_1_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_house_1_4"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_1_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_house_2_1"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_2_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_house_2_2"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_2_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_house_2_3"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_2_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_house_2_4"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_2_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_house_3_1"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_3_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_house_3_2"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_3_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_house_3_3"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_3_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_house_3_4"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_3_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_house_4_1"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_4_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_house_4_2"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_4_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_house_4_3"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_4_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "modernistgfx_house_4_4"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_4_04.mesh"
+		scale = 0.4
+	}
+
+
+
+
+	#####################################################EASTERNMODERNITY#####################################################
+
+	pdxmesh = {
+		name = "easteuropemoderngfx_city_0"
+		file = "gfx/models/Buildings/EastModern/easteuropemoderngfx_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_city_1"
+		file = "gfx/models/Buildings/EastModern/easteuropemoderngfx_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_city_2"
+		file = "gfx/models/Buildings/EastModern/easteuropemoderngfx_citycenter_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_city_3"
+		file = "gfx/models/Buildings/EastModern/easteuropemoderngfx_citycenter_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_castle_1"
+		file = "gfx/models/Buildings/EastModern/easteuropemoderngfx_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_castle_2"
+		file = "gfx/models/Buildings/EastModern/easteuropemoderngfx_citycenter_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_castle_3"
+		file = "gfx/models/Buildings/EastModern/easteuropemoderngfx_citycenter_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_house_1_1"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_1_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_house_1_2"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_1_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_house_1_3"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_1_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_house_1_4"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_1_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_house_2_1"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_2_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_house_2_2"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_2_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_house_2_3"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_2_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_house_2_4"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_2_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_house_3_1"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_3_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_house_3_2"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_3_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_house_3_3"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_3_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_house_3_4"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_3_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_house_4_1"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_4_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_house_4_2"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_4_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_house_4_3"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_4_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "easteuropemoderngfx_house_4_4"
+		file = "gfx/models/Buildings/Modernist/modernist_buildings_4_04.mesh"
+		scale = 0.4
+	}
+
+	#####################################################NEOCLACISSIST#####################################################
+
+	pdxmesh = {
+		name = "neoclacissistgfx_city_0"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_city_1"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_city_2"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_citycenter_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_city_3"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_citycenter_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_castle_1"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_castle_2"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_citycenter_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_castle_3"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_citycenter_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_house_1_1"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_buildings_1_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_house_1_2"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_buildings_1_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_house_1_3"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_buildings_1_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_house_1_4"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_buildings_1_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_house_2_1"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_buildings_2_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_house_2_2"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_buildings_2_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_house_2_3"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_buildings_2_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_house_2_4"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_buildings_2_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_house_3_1"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_buildings_3_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_house_3_2"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_buildings_3_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_house_3_3"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_buildings_3_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_house_3_4"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_buildings_3_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_house_4_1"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_buildings_4_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_house_4_2"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_buildings_4_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_house_4_3"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_buildings_4_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "neoclacissistgfx_house_4_4"
+		file = "gfx/models/Buildings/Neoclacissist/neoclacissist_buildings_4_04.mesh"
+		scale = 0.4
+	}
+
+	#####################################################BRUTALIST#####################################################
+
+	pdxmesh = {
+		name = "brutalistgfx_city_0"
+		file = "gfx/models/Buildings/Brutalist/Brutalist_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_city_1"
+		file = "gfx/models/Buildings/Brutalist/Brutalist_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_city_2"
+		file = "gfx/models/Buildings/Brutalist/Brutalist_citycenter_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_city_3"
+		file = "gfx/models/Buildings/Brutalist/Brutalist_citycenter_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_castle_1"
+		file = "gfx/models/Buildings/Brutalist/Brutalist_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_castle_2"
+		file = "gfx/models/Buildings/Brutalist/Brutalist_citycenter_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_castle_3"
+		file = "gfx/models/Buildings/Brutalist/Brutalist_citycenter_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_house_1_1"
+		file = "gfx/models/Buildings/Brutalist/brutalist_buildings_1_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_house_1_2"
+		file = "gfx/models/Buildings/Brutalist/brutalist_buildings_1_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_house_1_3"
+		file = "gfx/models/Buildings/Brutalist/brutalist_buildings_1_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_house_1_4"
+		file = "gfx/models/Buildings/Brutalist/brutalist_buildings_1_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_house_2_1"
+		file = "gfx/models/Buildings/Brutalist/brutalist_buildings_2_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_house_2_2"
+		file = "gfx/models/Buildings/Brutalist/brutalist_buildings_2_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_house_2_3"
+		file = "gfx/models/Buildings/Brutalist/brutalist_buildings_2_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_house_2_4"
+		file = "gfx/models/Buildings/Brutalist/brutalist_buildings_2_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_house_3_1"
+		file = "gfx/models/Buildings/Brutalist/brutalist_buildings_3_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_house_3_2"
+		file = "gfx/models/Buildings/Brutalist/brutalist_buildings_3_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_house_3_3"
+		file = "gfx/models/Buildings/Brutalist/brutalist_buildings_3_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_house_3_4"
+		file = "gfx/models/Buildings/Brutalist/brutalist_buildings_3_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_house_4_1"
+		file = "gfx/models/Buildings/Brutalist/brutalist_buildings_4_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_house_4_2"
+		file = "gfx/models/Buildings/Brutalist/brutalist_buildings_4_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_house_4_3"
+		file = "gfx/models/Buildings/Brutalist/brutalist_buildings_4_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "brutalistgfx_house_4_4"
+		file = "gfx/models/Buildings/Brutalist/brutalist_buildings_4_04.mesh"
+		scale = 0.4
+	}
+
+	#####################################################ARTDECO#####################################################
+
+	pdxmesh = {
+		name = "artdecogfx_city_0"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_city_1"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_city_2"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_citycenter_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_city_3"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_citycenter_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_castle_1"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_castle_2"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_citycenter_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_castle_3"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_citycenter_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_house_1_1"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_buildings_1_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_house_1_2"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_buildings_1_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_house_1_3"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_buildings_1_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_house_1_4"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_buildings_1_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_house_2_1"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_buildings_2_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_house_2_2"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_buildings_2_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_house_2_3"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_buildings_2_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_house_2_4"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_buildings_2_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_house_3_1"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_buildings_3_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_house_3_2"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_buildings_3_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_house_3_3"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_buildings_3_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_house_3_4"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_buildings_3_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_house_4_1"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_buildings_4_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_house_4_2"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_buildings_4_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_house_4_3"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_buildings_4_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "artdecogfx_house_4_4"
+		file = "gfx/models/Buildings/ArtDeco/artdeco_buildings_4_04.mesh"
+		scale = 0.4
+	}
+
+	#####################################################ITALIANATE#####################################################
+
+	pdxmesh = {
+		name = "italianategfx_city_0"
+		file = "gfx/models/Buildings/Italianate/italianate_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_city_1"
+		file = "gfx/models/Buildings/Italianate/italianate_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_city_2"
+		file = "gfx/models/Buildings/Italianate/italianate_citycenter_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_city_3"
+		file = "gfx/models/Buildings/Italianate/italianate_citycenter_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_castle_1"
+		file = "gfx/models/Buildings/Italianate/italianate_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_castle_2"
+		file = "gfx/models/Buildings/Italianate/italianate_citycenter_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_castle_3"
+		file = "gfx/models/Buildings/Italianate/italianate_citycenter_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_house_1_1"
+		file = "gfx/models/Buildings/Italianate/italianate_buildings_1_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_house_1_2"
+		file = "gfx/models/Buildings/Italianate/italianate_buildings_1_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_house_1_3"
+		file = "gfx/models/Buildings/Italianate/italianate_buildings_1_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_house_1_4"
+		file = "gfx/models/Buildings/Italianate/italianate_buildings_1_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_house_2_1"
+		file = "gfx/models/Buildings/Italianate/italianate_buildings_2_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_house_2_2"
+		file = "gfx/models/Buildings/Italianate/italianate_buildings_2_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_house_2_3"
+		file = "gfx/models/Buildings/Italianate/italianate_buildings_2_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_house_2_4"
+		file = "gfx/models/Buildings/Italianate/italianate_buildings_2_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_house_3_1"
+		file = "gfx/models/Buildings/Italianate/italianate_buildings_3_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_house_3_2"
+		file = "gfx/models/Buildings/Italianate/italianate_buildings_3_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_house_3_3"
+		file = "gfx/models/Buildings/Italianate/italianate_buildings_3_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_house_3_4"
+		file = "gfx/models/Buildings/Italianate/italianate_buildings_3_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_house_4_1"
+		file = "gfx/models/Buildings/Italianate/italianate_buildings_4_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_house_4_2"
+		file = "gfx/models/Buildings/Italianate/italianate_buildings_4_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_house_4_3"
+		file = "gfx/models/Buildings/Italianate/italianate_buildings_4_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "italianategfx_house_4_4"
+		file = "gfx/models/Buildings/Italianate/italianate_buildings_4_04.mesh"
+		scale = 0.4
+	}
+}

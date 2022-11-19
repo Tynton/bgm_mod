@@ -1,0 +1,155 @@
+namespace = AI_Chartering
+
+
+country_event = {
+	id = AI_Chartering.1
+	title = "AI_Chartering.n.1"
+	desc = "AI_Chartering.d.1"
+	picture = ANGRY_MOB_eventPicture
+
+	hidden = yes
+	
+	trigger = {
+		total_development = 450
+		capital_scope = {
+			superregion = europe_superregion
+		}
+		any_country = {
+			capital_scope = {
+				NOT = {
+					OR = {
+						continent = ROOT
+						continent = europe
+					}
+				}
+			}
+			NOT = {
+				total_development = 1000
+			}
+			any_owned_province = {
+				range = ROOT
+			}
+			is_subject = no
+			ai = yes
+			num_of_cities = 2
+		}
+		OR = {
+			has_idea_group = expansion_ideas
+			has_idea_group = exploration_ideas
+		}
+		#is_subject = no
+		is_at_war = no
+		ai = yes
+		NOT = {
+			OR = {
+				is_subject_of_type = crown_colony
+				is_subject_of_type = private_enterprise
+				is_subject_of_type = self_governing_colony
+				is_subject_of_type = colony
+			}
+		}
+		treasury = 650
+	}
+	
+	mean_time_to_happen = {
+		months = 75
+
+		modifier = {
+			factor = 0.75
+			treasury = 1000
+		}
+
+		modifier = {
+			factor = 0.5
+			treasury = 1500
+		}
+
+		modifier = {
+			factor = 0.25
+			treasury = 2000
+		}
+	}
+	
+	option = {
+		name = "AI_Chartering.1.a"
+		
+		random_country = {
+			limit = {
+				capital_scope = {
+					NOT = {
+						continent = ROOT
+					}
+				}
+				any_owned_province = {
+					range = ROOT
+				}
+				is_subject = no
+				ai = yes
+				NOT = {
+					total_development = 1000
+				}
+			}
+			country_event = {
+				id = AI_Chartering.2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AI_Chartering.2
+	title = "AI_Chartering.n.2"
+	desc = "AI_Chartering.d.2"
+	picture = ANGRY_MOB_eventPicture
+
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "AI_Chartering.2.a"
+		random_owned_province = {
+			limit = {
+				has_port = yes 
+				range = FROM
+			}
+			cede_province = FROM
+		}
+		
+		if = {
+			limit = {
+				total_development = 100
+				NOT = {
+					total_development = 250
+				}
+			}
+			add_treasury = -100
+			ROOT = {
+				add_treasury = 100
+			}
+		}
+		
+		if = {
+			limit = {
+				total_development = 250
+				NOT = {
+					total_development = 500
+				}
+			}
+			add_treasury = -250
+			ROOT = {
+				add_treasury = 250
+			}
+		}
+		
+		if = {
+			limit = {
+				total_development = 500
+			}
+			add_treasury = -500
+			ROOT = {
+				add_treasury = 500
+			}
+		}
+	}
+}

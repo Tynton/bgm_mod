@@ -1,0 +1,75 @@
+namespace = angevin
+
+#cores
+
+province_event = {
+	id = angevin.1
+	title = "angevin.n.1"
+	desc = "angevin.d.1"
+	picture = UNIVERSITY_eventPicture
+
+	trigger = {
+		culture_group = british
+		any_neighbor_province = {
+			owned_by = ROOT
+			culture_group = french
+		}
+		owner = {
+			stability = 1
+			prestige = 30
+		}
+		OR = {
+			owner = {
+				has_country_flag = angevin
+				tag = AEV
+			}
+			owner = {
+				tag = FRA
+				yorkshire_area = {
+					all_province = {
+						owned_by = ROOT
+					}
+				}
+				east_midlands_area = {
+					all_province = {
+						owned_by = ROOT
+					}
+				}
+				west_midlands_area = {
+					all_province = {
+						owned_by = ROOT
+					}
+				}
+				wessex_area = {
+					all_province = {
+						owned_by = ROOT
+					}
+				}
+				home_counties_area = {
+					all_province = {
+						owned_by = ROOT
+					}
+				}
+				east_anglia_area = {
+					all_province = {
+						owned_by = ROOT
+					}
+				}
+				scottish_marches_area = {
+					all_province = {
+						owned_by = ROOT
+					}
+				}
+			}
+		}
+	}	
+
+	mean_time_to_happen = {
+		months = 900 #75 years for each province
+	}
+	
+	option = {
+		name = "angevin.1.a"
+		change_culture = anglo_norman
+	}
+}

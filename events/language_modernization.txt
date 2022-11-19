@@ -1,0 +1,484 @@
+namespace = language_modernization
+
+#Dutch
+
+country_event = {
+	id = language_modernization.1
+	title = "language_modernization.n.1"
+	desc = "language_modernization.d.1"
+	picture = ANGRY_MOB_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		is_year = 1500
+		culture_group = benelux
+		OR = {
+			ai = no
+			AND = {
+				ai = yes
+				NOT = {
+					any_country = {
+						ai = no
+						culture_group = benelux
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	option = {
+		name = "language_modernization.1.a"
+		set_global_flag = mod_dutch
+		4383 = {
+			if = {	
+				limit = {
+					owner = {
+						culture_group = benelux
+					}
+				}
+				change_province_name = "Den Haag"
+			}
+		}
+		4769 = {
+			if = {	
+				limit = {
+					owner = {
+						culture_group = benelux
+					}
+				}
+				change_province_name = "Rijsel"
+			}
+		}
+		4948 = {
+			if = {	
+				limit = {
+					owner = {
+						culture = dutch
+					}
+				}
+				change_province_name = "Kortrijk"
+			}
+		}
+		96 = {
+			if = {	
+				limit = {
+					owner = {
+						culture = dutch
+					}
+				}
+				change_province_name = "Zeeland"
+			}
+		}
+		97 = {
+			if = {	
+				limit = {
+					owner = {
+						culture = dutch
+					}
+				}
+				change_province_name = "Amsterdam"
+			}
+		}
+	}
+	option = {
+		name = "language_modernization.1.b"
+	}
+}
+
+country_event = {
+	id = language_modernization.2
+	title = "language_modernization.n.2"
+	desc = "language_modernization.d.2"
+	picture = ANGRY_MOB_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		is_year = 1650
+		culture_group = french
+		OR = {
+			ai = no
+			AND = {
+				ai = yes
+				NOT = {
+					any_country = {
+						ai = no
+						culture_group = french
+					}
+				}
+			}
+		}
+	}	
+
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	option = {
+		name = "language_modernization.2.a"
+		set_global_flag = mod_french
+		4111 = {
+			if = {	
+				limit = {
+					owner = {
+						culture_group = french
+					}
+				}
+				change_province_name = "Saintonge"
+			}
+		}
+		180 = {
+			if = {	
+				limit = {
+					owner = {
+						culture_group = french
+					}
+				}
+				change_province_name = "Haut-Poitou"
+			}
+		}
+		178 = {
+			if = {	
+				limit = {
+					owner = {
+						culture_group = french
+					}
+				}
+				change_province_name = "Anjou"
+			}
+		}
+		174 = {
+			if = {	
+				limit = {
+					owner = {
+						culture_group = french
+					}
+				}
+				change_province_name = "Bordeaux"
+			}
+		}
+		every_country = {
+			limit = {
+				culture_group = french
+			}
+			set_country_flag = evolved_french
+		}
+	}
+	option = {
+		name = "language_modernization.2.b"
+	}
+}
+
+#English
+
+country_event = {
+	id = language_modernization.3
+	title = "language_modernization.n.3"
+	desc = "language_modernization.d.3"
+	picture = ANGRY_MOB_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		is_year = 1500
+		culture_group = british
+		OR = {
+			ai = no
+			AND = {
+				ai = yes
+				NOT = {
+					any_country = {
+						ai = no
+						culture_group = british
+					}
+				}
+			}
+		}
+	}	
+
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	option = {
+		name = "language_modernization.3.a"
+		245 = {
+			if = {	
+				limit = {
+					owner = {
+						culture_group = british
+					}
+				}
+				change_province_name = "York"
+			}
+		}
+		237 = {
+			if = {	
+				limit = {
+					owner = {
+						culture_group = british
+					}
+				}
+				change_province_name = "Oxford"
+			}
+		}
+		244 = {
+			if = {	
+				limit = {
+					owner = {
+						culture_group = british
+					}
+				}
+				change_province_name = "Lancashire"
+			}
+		}
+		4375 = {
+			if = {	
+				limit = {
+					owner = {
+						culture_group = british
+					}
+				}
+				change_province_name = "Chester"
+			}
+		}
+		233 = {
+			if = {	
+				limit = {
+					owner = {
+						culture_group = british
+					}
+				}
+				change_province_name = "Cornwall"
+			}
+		}
+		239 = {
+			if = {	
+				limit = {
+					owner = {
+						culture_group = british
+					}
+				}
+				change_province_name = "Gloucestershire"
+			}
+		}
+		4376 = {
+			if = {	
+				limit = {
+					owner = {
+						culture_group = british
+					}
+				}
+				change_province_name = "Leicester"
+			}
+		}
+		1860 = {
+			if = {	
+				limit = {
+					owner = {
+						culture_group = british
+					}
+				}
+				change_province_name = "Norfolk"
+			}
+		}
+		87 = {
+			if = {	
+				limit = {
+					owner = {
+						culture_group = british
+					}
+				}
+				change_province_name = "Calais"
+			}
+		}
+		every_country = {
+			limit = {
+				culture_group = british
+			}
+			set_country_flag = evolved_english
+		}
+	}
+	option = {
+		name = "language_modernization.3.b"
+	}
+}
+
+country_event = {
+	id = language_modernization.4
+	title = "language_modernization.n.4"
+	desc = "language_modernization.d.4"
+	picture = ANGRY_MOB_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		is_year = 1550
+		culture = tuscan
+		owns = 116
+	}	
+
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	option = {
+		name = "language_modernization.4.a"
+		set_global_flag = mod_ital
+		245 = {
+			if = {	
+				limit = {
+					owner = {
+						culture = tuscan
+					}
+				}
+				change_province_name = "Firenze"
+			}
+		}
+	}
+	option = {
+		name = "language_modernization.4.b"
+	}
+}
+
+#Spanish
+
+country_event = {
+	id = language_modernization.5
+	title = "language_modernization.n.5"
+	desc = "language_modernization.d.5"
+	picture = ANGRY_MOB_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		is_year = 1500
+		culture_group = iberian
+		NOT = {
+			primary_culture = portugese
+		}
+		OR = {
+			ai = no
+			AND = {
+				ai = yes
+				NOT = {
+					any_country = {
+						ai = no
+						culture_group = iberian
+						NOT = {
+							primary_culture = portugese
+						}
+					}
+				}
+			}
+		}
+	}	
+
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	option = {
+		name = "language_modernization.5.a"
+		214 = {
+			if = {	
+				limit = {
+					owner = {
+						culture_group = iberian
+						NOT = {
+							OR = {
+								tag = ARA
+								primary_culture = portugese
+							}
+						}
+					}
+				}
+				change_province_name = "Zaragoza"
+			}
+		}
+		every_country = {
+			limit = {
+				culture_group = iberian
+				NOT = {
+					primary_culture = portugese
+				}
+			}
+			set_country_flag = evolved_spanish
+		}
+	}
+	option = {
+		name = "language_modernization.5.b"
+	}
+}
+
+#Spanish
+
+country_event = {
+	id = language_modernization.6
+	title = "language_modernization.n.6"
+	desc = "language_modernization.d.6"
+	picture = ANGRY_MOB_eventPicture
+	
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		is_year = 1600
+		low_german = yes
+		OR = {
+			ai = no
+			AND = {
+				ai = yes
+				NOT = {
+					any_country = {
+						ai = no
+						low_german = yes
+					}
+				}
+			}
+		}
+	}	
+
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	option = {
+		name = "language_modernization.6.a"
+		214 = {
+			if = {	
+				limit = {
+					owner = {
+						low_german = yes
+					}
+				}
+				change_province_name = "Lübeek" #Lubeke
+			}
+		}
+		every_country = {
+			limit = {
+				low_german = yes
+			}
+			set_country_flag = evolved_low_german
+		}
+	}
+	option = {
+		name = "language_modernization.6.b"
+	}
+}

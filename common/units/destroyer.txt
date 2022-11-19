@@ -1,0 +1,12 @@
+#Archipelago Frigate
+type = galley
+
+hull_size = 30
+base_cannons = 42
+sail_speed = 12
+
+blockade = 5
+
+sailors = 125
+
+sprite_level = 5

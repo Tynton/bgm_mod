@@ -1,0 +1,115 @@
+44 = "Hamborg"
+45 = "Lubeke"
+1775 = "Holsteen"
+13 = "Sleswig"
+53 = "Lümborg"
+1874 = "Breem"
+54 = "Stood"
+1758 = "Hannober"
+1931 = "Ostfräisland"
+57 = "Brunswiek"
+52 = "Meideborg"
+82 = "Westfalen"
+4773 = "Chöttingen"
+5162 = "Ülz’n"
+
+4382 = { "Grunnen" "Grunneng" }
+100 = { "Ljouwert" "Liwwadden" }
+4975 = "Rötterdaam"
+4383 = "N Heeg"
+
+
+86 = "Mönster"
+
+#westphalians
+
+56 = "Ossenbrügge"
+
+#rhenish/palatine
+
+1761 = "Palz"
+4767 = "Tweebrügge"
+80 = "Trier"
+1878 = { "Aken" "Oche" }
+
+1876 = { "Frankfort" "Frankfort an'n Main" }
+
+#ripurian
+
+85 = "Köln"
+
+#upper saxon
+
+62 = "Leipzig"
+
+#bavarian/franconian
+
+4717 = "Bayreuth"
+
+#swabian
+79 = "Wörzborg"
+
+#alsatian
+
+1880 = "Ooltkark"
+4765 = "Milhuusen"
+75 = "Strassborg"
+4968 = "Colmer"
+
+#other
+
+33 = "Sankt Petersborg"
+
+#fictitious
+
+2964 = "Ooltmärz"
+4749 = "Neebrandenborg"
+48 = "Kolbarg"
+2993 = "Uukermärz"
+49 = "Neemärz"
+59 = "Wittenbarg"
+63 = "Erfoord"
+55 = "Ooltenborg"
+4141 = "Dithmaschen"
+4775 = "Ravensbarg"
+1857 = "Lauenborg"
+4748 = "Brandenborg"
+71 = "Ansbak"
+4768 = "Gülik"
+84 = "Barg"
+77 = "Heidelbarg"
+4715 = "Rothenborg"
+4714 = "Durlak"
+4713 = "Urak"
+65 = "Münken"
+1868 = "Oogsborg"
+4716 = "Coborg"
+66 = "Bambarg"
+4718 = "Aschaffenborg"
+4760 = "Innbayern"
+76 = "Soltborg"
+1757 = "Oberpalz"
+67 = "Nürnborg"
+4707 = "Waterborg"
+1841 = "Marienborg"
+41 = "Keunigsbarg"
+767 = "Ortelsborg"
+1770 = "Manhartsbarg"
+5022 = "Mistelbak"
+5026 = "Hartbarg"
+4969 = "Sternbarg"
+4747 = "Dramborg"
+2957 = "Regensborg"
+46 = "Rostook"
+4744 = "Zwiikau"
+
+
+34 = "Wienstadt"
+73 = "Innsbruuk"
+4761 = "Steyr"
+4762 = "Sankt Pölten"
+5029 = "Kufschtåa"
+5033 = "Ried im Innkreis"
+5032 = "Baden bei Wienstadt"
+132 = "Steiermärz"
+94 = "Luxemborg"

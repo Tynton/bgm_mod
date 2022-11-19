@@ -1,0 +1,7 @@
+government = republic
+add_government_reform = democratic_mechanic
+primary_culture = prussian
+religion = protestant
+technology_group = western
+capital = 50 # Berlin
+national_focus = ADM

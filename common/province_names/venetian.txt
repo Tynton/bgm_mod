@@ -1,0 +1,99 @@
+112 = { "Venexia" "Venesia" }
+4729 = "Pàdova"
+111 = { "Friul" "Údine" }
+1774 = "Trevixo"
+108 = { "Veròna" "Verona" }
+107 = "Bressa"
+
+120 = "Abruzso"
+4946 = { "La Spesia" "La Spezsia" }
+116 = { "Firense" "Firenzse" }
+115 = "Pixa"
+121 = "Nàpuli"
+101 = "Genoa"
+104 = "Milàn"
+2981 = "Monferà"
+103 = "Turìn"
+5021 = "San Marin"
+2977 = "Urbìn"
+113 = "Ferara"
+2978 = { "Arezso" "Arezo" }
+5017 = "Groseto"
+4730 = { "Bulògna" "Bològna" }
+102 = "Nizsa"
+4976 = "Ajacio"
+4732 = "Teracina"
+2976 = "Peruxa"
+114 = "Ravena"
+4734 = "Avelin"
+4733 = "Molixe"
+122 = "Taranto"
+#5118 = "Bibiena"
+4738 = "Trieste"
+136 = "Spàlato"
+137 = "Raguxa"
+4754 = "Cátaro"
+4174 = { "Durazo" "Durazso" }
+110 = { "Trénto" "Trent" }
+127 = "Sasari"
+4971 = "Tizsin"
+92 = "Borsela"
+90 = "Bruza"
+4758 = { "Bolzan" "Bolzsan" }
+
+4751 = "Celeia"
+1769 = "Aidussina"
+129 = "Cragno"
+1826 = "Segna"
+
+173 = "Lapurdi"
+
+178 = "Anzier"
+
+142 = "Corfù"
+
+134 = "Viena"
+183 = { "Parixi" "Parixe" }
+165 = "Berna"
+174 = "Bordò"
+5070 = "Costanzsa"
+148 = "Salonico"
+146 = "Atene"
+201 = "Aix-en-Provence"
+196 = "Toloxa"
+203 = "Lion"
+236 = "Londra"
+1876 = { "Francoforte" "Francoforte sul Meno" }
+85 = { "Cologna" "Colonia" }
+266 = "Praga"
+
+44 = "Anburgo"
+
+484 = "L’Avana"
+
+5070 = "Constanzsa"
+1766 = "Cosovo"
+
+5241 = "Lubiana"
+
+5393 = "Pordenon"
+5396 = "Vicensa"
+
+201 = "Aix-en-Provence"
+
+227 = "Lisbóna"
+
+2982 = "Siracuxa"
+
+163 = "Candia"
+
+76 = { "Salisburghexe" "Salisburgo" }
+
+1749 = "Càdice"
+
+#fake ones
+
+88 = "Artexia"
+185 = "Nemoxio"
+1878 = "Aquixgrana"
+4390 = "Trexetto"

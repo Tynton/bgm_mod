@@ -1,0 +1,808 @@
+namespace = national_program
+
+#National language
+
+country_event = {
+	id = national_program.1
+	title = "national_program.n.1"
+	desc = "national_program.d.1"
+	picture = BUREAU_eventPicture
+	
+	major = yes
+
+	is_triggered_only = yes
+	
+	#Non-Specific, Own Culture
+	option = {
+		
+		name = "national_program.1.a"
+		add_country_modifier = { 
+			name = standard_language_adm
+			duration = -1
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	###############FRENCH/OCCITAN
+	#Mandate Parisian French
+	option = {
+		name = "national_program.1.b"
+		trigger = {
+			OR = {
+				culture_group = french
+				culture_group = occitan
+			}
+		}
+		add_country_modifier = { 
+			name = standard_language_adm
+			duration = -1
+		}
+		change_primary_culture = cosmopolitan_french
+		if = {
+			limit = {
+				OR = {
+					primary_culture = champenois
+					primary_culture = cosmopolitan_french
+				}
+				adm_tech = 25
+			}
+			set_country_flag = modern_french_standardized
+			clr_country_flag = evolved_french
+		}
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						primary_culture = cosmopolitan_french
+						primary_culture = orleanais
+						primary_culture = champenois
+						primary_culture = picard
+						primary_culture = angevin
+						primary_culture = poitevin
+					}
+				}
+			}
+		}
+	}
+
+	#Mandate Old French
+	option = {
+		name = "national_program.1.c"
+		trigger = {
+			OR = {
+				culture_group = french
+				culture_group = occitan
+			}
+		}
+		add_country_modifier = { 
+			name = standard_language_adm
+			duration = -1
+		}
+		change_primary_culture = franceis
+		clr_country_flag = evolved_french
+		
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	#Mandate Burgundian French
+	option = {
+		name = "national_program.1.d"
+		trigger = {
+			OR = {
+				culture_group = french
+				culture_group = occitan
+			}
+		}
+		add_country_modifier = { 
+			name = standard_language_adm
+			duration = -1
+		}
+		change_primary_culture = burgundian
+		clr_country_flag = evolved_french
+		
+		ai_chance = {
+			factor = 100
+
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						primary_culture = burgundian
+						primary_culture = frainc_comtou
+						primary_culture = lorrain
+						primary_culture = bourbonnais_culture
+					}
+				}
+			}
+		}
+	}
+
+	#Mandate Occitan
+	option = {
+		name = "national_program.1.e"
+		trigger = {
+			OR = {
+				culture_group = french
+				culture_group = occitan
+			}
+		}
+		add_country_modifier = { 
+			name = standard_language_adm
+			duration = -1
+		}
+		change_primary_culture = occitain
+		clr_country_flag = evolved_french
+		
+		ai_chance = {
+			factor = 100
+
+			modifier = {
+				factor = 0
+				culture_group = occitan
+				is_great_power = no
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					culture_group = occitan
+				}
+			}
+		}
+	}
+
+	###############GERMAN/DUTCH
+	#Mandate Standard German
+	option = {
+		name = "national_program.1.f"
+		trigger = {
+			OR = {
+				
+				
+				culture_group = germanic
+				culture_group = benelux
+			}
+		}
+		add_country_modifier = { 
+			name = standard_language_adm
+			duration = -1
+		}
+		change_primary_culture = saxon
+		
+		ai_chance = {
+			factor = 100
+
+			modifier = {
+				factor = 0
+				culture_group = benelux
+			}
+		}
+	}
+
+	#Mandate Standard High German
+	option = {
+		name = "national_program.1.g"
+		trigger = {
+			OR = {
+				
+				
+				culture_group = germanic
+				culture_group = benelux
+			}
+		}
+		add_country_modifier = { 
+			name = standard_language_adm
+			duration = -1
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					primary_culture = austrian
+				}
+			}
+			change_primary_culture = bavarian
+		}
+		
+		ai_chance = {
+			factor = 100
+
+			modifier = {
+				factor = 0
+				OR = {
+					culture_group = benelux
+					
+				}
+			}
+		}
+	}
+
+	#Mandate Low German
+	option = {
+		name = "national_program.1.h"
+		trigger = {
+			OR = {
+				
+				
+				culture_group = germanic
+				culture_group = benelux
+			}
+		}
+		add_country_modifier = { 
+			name = standard_language_adm
+			duration = -1
+		}
+		change_primary_culture = lower_saxon
+		
+		ai_chance = {
+			factor = 100
+
+			modifier = {
+				factor = 0
+				OR = {
+					culture_group = benelux
+					
+				}
+			}
+		}
+	}
+
+	#Mandate Dutch
+	option = {
+		name = "national_program.1.j"
+		trigger = {
+			OR = {
+				
+				
+				culture_group = germanic
+				culture_group = benelux
+			}
+		}
+		add_country_modifier = { 
+			name = standard_language_adm
+			duration = -1
+		}
+		change_primary_culture = dutch
+		
+		ai_chance = {
+			factor = 100
+
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						culture_group = benelux
+						
+					}
+				}
+			}
+		}
+	}
+
+	#Mandate Flemish
+	option = {
+		name = "national_program.1.k"
+		trigger = {
+			OR = {
+				
+				
+				culture_group = germanic
+				culture_group = benelux
+			}
+		}
+		add_country_modifier = { 
+			name = standard_language_adm
+			duration = -1
+		}
+		change_primary_culture = flemish
+		
+		ai_chance = {
+			factor = 100
+
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						culture_group = benelux
+						
+					}
+				}
+			}
+		}
+	}
+
+	###############ITALIAN
+	#Tuscan
+	option = {
+		name = "national_program.1.l"
+		trigger = {
+			OR = {
+				
+				culture_group = latin
+			}
+		}
+		add_country_modifier = { 
+			name = standard_language_adm
+			duration = -1
+		}
+		change_primary_culture = tuscan
+		
+		ai_chance = {
+			factor = 100
+
+			modifier = {
+				factor = 0
+				NOT = {
+					culture_group = latin
+				}
+			}
+		}
+	}
+
+	#venetian
+	option = {
+		name = "national_program.1.m"
+		trigger = {
+			OR = {
+				
+				culture_group = latin
+			}
+		}
+		add_country_modifier = { 
+			name = standard_language_adm
+			duration = -1
+		}
+		change_primary_culture = venetian
+		
+		ai_chance = {
+			factor = 100
+
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						primary_culture = venetian
+						primary_culture = dalmatian
+						primary_culture = lombard
+						primary_culture = piedmontese
+						primary_culture = ligurian
+					}
+				}
+			}
+		}
+	}
+
+	###############ENGLISH
+	#middle english
+	option = {
+		name = "national_program.1.n"
+		trigger = {
+			culture_group = british
+		}
+		add_country_modifier = { 
+			name = standard_language_adm
+			duration = -1
+		}
+		change_primary_culture = english
+		set_country_flag = middle_english
+		clr_country_flag = evolved_english
+		
+		ai_chance = {
+			factor = 100
+
+			modifier = {
+				factor = 0
+				NOT = {
+					primary_culture = english
+				}
+			}
+		}
+	}
+
+	###############SPANISH
+	#old spanish
+	option = {
+		name = "national_program.1.o"
+		trigger = {
+			culture_group = iberian
+		}
+		add_country_modifier = { 
+			name = standard_language_adm
+			duration = -1
+		}
+		change_primary_culture = castillian
+		set_country_flag = old_spanish
+		
+		ai_chance = {
+			factor = 100
+
+			modifier = {
+				factor = 0
+				NOT = {
+					primary_culture = castillian
+				}
+			}
+		}
+	}
+
+	###############DUTCH REVISIT
+
+	#Middle Dutch
+	option = {
+		name = "national_program.1.p"
+		trigger = {
+			OR = {
+				
+				
+				culture_group = germanic
+				culture_group = benelux
+			}
+		}
+		add_country_modifier = { 
+			name = standard_language_adm
+			duration = -1
+		}
+		set_country_flag = middle_dutch
+		
+		ai_chance = {
+			factor = 100
+
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						culture_group = benelux
+						
+					}
+				}
+			}
+		}
+	}
+}
+
+#National language (Emulation Policy)
+
+country_event = {
+	id = national_program.2
+	title = "national_program.n.2"
+	desc = "national_program.d.2"
+	picture = BUREAU_eventPicture
+	
+	trigger = {
+		any_neighbor_country = { 
+			has_country_modifier = standard_language_adm
+		}
+		NOT = {
+			has_country_modifier = standard_language_adm
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 16
+	}
+	
+	option = {
+		name = "national_program.2.a"
+		add_country_modifier = { 
+			name = standard_language_adm
+			duration = -1
+		}
+	}
+}
+
+#Basic Education
+
+country_event = {
+	id = national_program.3
+	title = "national_program.n.3"
+	desc = "national_program.d.3"
+	picture = BUREAU_eventPicture
+	
+	#major = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "national_program.3.a"
+		add_country_modifier = { 
+			name = basic_language_ed
+			duration = -1
+		}
+	}
+}
+
+#Emulation Policy
+
+country_event = {
+	id = national_program.4
+	title = "national_program.n.4"
+	desc = "national_program.d.4"
+	picture = BUREAU_eventPicture
+	
+	trigger = {
+		any_neighbor_country = { 
+			has_country_modifier = basic_language_ed
+		}
+		NOT = {
+			has_country_modifier = basic_language_ed
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 16
+	}
+	
+	option = {
+		name = "national_program.4.a"
+		add_country_modifier = { 
+			name = basic_language_ed
+			duration = -1
+		}
+	}
+}
+
+#Province Cultural Assimilation
+
+country_event = {
+	id = national_program.5
+	title = "national_program.n.5"
+	desc = "national_program.d.5"
+	picture = MODERN_UNREST_eventPicture
+	
+	#hidden = yes
+	
+	trigger = {
+		has_country_modifier = basic_language_ed
+		
+		#any_neighbor_province = {
+		#	culture_group = ROOT
+		#}
+		
+		any_owned_province = {
+			NOT = {
+				culture_group = ROOT
+			}
+		}
+		OR = {
+			stability = 2
+			any_owned_province = {
+				is_prosperous = yes
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 124
+		
+		modifier = {
+			factor = 0.25
+			all_owned_province = {
+				is_prosperous = yes
+			}
+		}
+
+		modifier = {
+			factor = 0.75
+			stability = 1
+		}
+
+		modifier = {
+			factor = 0.75
+			stability = 3
+		}
+		
+		#modifier = {
+		#	factor = 0.5
+		#	any_neighbor_province = {
+		#		culture_group = ROOT
+		#	}
+		#}
+	}
+	
+	option = {
+		name = "national_program.5.a"
+		random_owned_province = {
+			limit = {
+				OR = {
+					any_neighbor_province = {
+						culture_group = ROOT
+					}
+					has_port = yes
+				}
+				is_prosperous = yes
+				NOT = {
+					culture_group = ROOT
+				}
+			}
+			change_culture = ROOT
+		}
+	}
+}
+
+#Adminstrative Law
+
+country_event = {
+	id = national_program.6
+	title = "national_program.n.6"
+	desc = "national_program.d.6"
+	picture = BUREAU_eventPicture
+	
+	major = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "national_program.6.a"
+		add_country_modifier = { 
+			name = standard_adm_law
+			duration = -1
+		}
+	}
+}
+
+#Emulation Policy
+
+country_event = {
+	id = national_program.7
+	title = "national_program.n.7"
+	desc = "national_program.d.7"
+	picture = BUREAU_eventPicture
+	
+	trigger = {
+		any_neighbor_country = { 
+			has_country_modifier = standard_adm_law
+		}
+		NOT = {
+			has_country_modifier = standard_adm_law
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 16
+	}
+	
+	option = {
+		name = "national_program.7.a"
+		add_country_modifier = { 
+			name = standard_adm_law
+			duration = -1
+		}
+	}
+}
+
+#Adminstrative Law
+
+country_event = {
+	id = national_program.8
+	title = "national_program.n.8"
+	desc = "national_program.d.8"
+	picture = BUREAU_eventPicture
+	
+	major = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "national_program.8.a"
+		add_country_modifier = { 
+			name = economic_management_adm
+			duration = -1
+		}
+	}
+}
+
+#Emulation Policy
+
+country_event = {
+	id = national_program.9
+	title = "national_program.n.9"
+	desc = "national_program.d.9"
+	picture = BUREAU_eventPicture
+	
+	trigger = {
+		any_neighbor_country = { 
+			has_country_modifier = economic_management_adm
+		}
+		NOT = {
+			has_country_modifier = economic_management_adm
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 16
+	}
+	
+	option = {
+		name = "national_program.9.a"
+		add_country_modifier = { 
+			name = economic_management_adm
+			duration = -1
+		}
+	}
+}
+
+#Province changes culture
+
+country_event = {
+	id = national_program.10
+	title = none
+	desc = none
+	picture = BUREAU_eventPicture
+
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			has_country_modifier = standard_language_adm
+			has_reform = intolerance_reform
+		}
+		any_owned_province = {
+			OR = {
+				has_province_modifier = standardized_language_french
+				has_province_modifier = standardized_language_italian
+				has_province_modifier = standardized_language_germanic
+				has_province_modifier = standardized_language_spanish
+			}
+			has_owner_accepted_culture = yes
+			any_neighbor_province = {
+				culture_group = ROOT
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 39
+
+		modifier = {
+			factor = 0.6
+			stability = 1
+		}
+
+		modifier = {
+			factor = 0.5
+			stability = 2
+		}
+
+		modifier = {
+			factor = 0.25
+			has_reform = intolerance_reform
+		}
+
+		modifier = {
+			factor = 2.0
+			NOT = { has_reform = intolerance_reform }
+		}
+
+		modifier = {
+			factor = 0.25
+			culture_group = ROOT
+		}
+	}
+	
+	option = {
+		name = none
+		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_group = ROOT
+				}
+				OR = {
+					has_province_modifier = standardized_language_french
+					has_province_modifier = standardized_language_italian
+					has_province_modifier = standardized_language_germanic
+					has_province_modifier = standardized_language_spanish
+				}
+				has_owner_accepted_culture = yes
+				any_neighbor_province = {
+					culture_group = ROOT
+				}
+			}
+			change_culture = ROOT
+		}
+	}
+}

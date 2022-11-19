@@ -1,0 +1,121 @@
+372 = "Tir Eoghain"
+373 = { "Áth Cliath" "Mide" }
+374 = "Laighin"
+375 = "Tuadhmhumhain"
+376 = "Connacht"
+4119 = "Sligeach"
+4120 = "Cill Dara"
+4121 = "Ulaidh"
+4378 = "Deas-Mhumhain"
+4379 = "PROVINCE4379IRISH"
+
+236 = "Londain" #London
+4373 = "Diabhal" #Devon
+233 = "Corn na Breataine" #Cornwall
+245 = "Eabhrac" #York
+247 = "Kembrea" #Cumbria
+4365 = "Manainn" #Mann
+248 = "Dún Éideann" #Lothian
+253 = "Inse Gall" #Outer Hebridies
+4364 = "Na hInse Gall" #Inner Hebridies
+69 = "Caerfyrddin" #Carmarthen
+1978 = "Inse Orc" #Orkney
+4366 = "An Baile Nua" #Montgomery
+240 = "An t-Inbhear" #Shrewsbury
+239 = "PROVINCE239IRISH" #Gloucester
+4130 = "Mianach" #Somerset
+4374 = "PROVINCE4374IRISH" #Dorset
+234 = "Contae an Deiscirt" #Hampshire
+237 = { "Áth na nDamh" "Stoc Adhmaid" } #Oxford
+4371 = "Geal" #Sussex
+235 = "PROVINCE235IRISH" #Kent
+238 = "PROVINCE238IRISH" #Essex
+1860 = "Caife" #Norfolk
+4370 = "PROVINCE4370IRISH" #Bedfordshire
+243 = "Deontasham" #Lincolnshire
+1861 = "PROVINCE1861IRISH" #Derby
+4376 = "Guail" #Leicester
+4372 = "Foireann" #Coventry
+
+251 = "Obar Deathain"
+97 = "Amstardam"
+1744 = "Antuairp"
+
+464 = "an Astracáin"
+146 = "An Aithin"
+4239 = "Béalgrád"
+50 = "Beirlín"
+174 = "Bordaíl"
+1772 = "An Bhratasláiv"
+90 = "Brugge"
+92 = "An Bhruiséil"
+
+161 = "Búcairist"
+
+153 = "Búdaipeist"
+
+12 = "Cóbanhávan"
+142 = "Corfú"
+
+4118 = "Corcaigh"
+
+116 = "Flórans"
+4720 = "An Ghinéiv"
+226 = "Giobráltar"
+
+28 = "Heilsincí"
+
+252 = "Inbhear Nis"
+
+151 = "Cathair Chonstaintín"
+
+280 = "Cív"
+227 = "Liospóin"
+129 = "Liúibleána"
+
+94 = "Lucsamburg"
+
+217 = "Maidrid"
+104 = "Milano"
+
+276 = "Mionsc"
+
+295 = "Moscó"
+183 = "Páras"
+231 = "Oporto"
+
+266 = "Prág"
+
+370 = "Réicivíc"
+
+38 = "Ríge"
+
+118 = "An Róimh"
+
+33 = "Cathair Pheadair"
+
+3001 = "Scóipé"
+
+1765 = "Sóifia"
+
+1 = "Stócólm"
+
+2982 = "Sioracús"
+4383 = "An Háig"
+
+148 = "Teasaloinicé"
+
+112 = "An Veinéis"
+134 = "Vín"
+
+272 = "Vilnias"
+257 = "Vársá"
+131 = "Ságrab"
+
+206 = "an Choróin"
+
+333 = "Mallarca"
+4559 = "Mionarca"
+
+965 = "Nua-Eabhrac"
+968 = "Bostún"

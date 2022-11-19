@@ -1,0 +1,44 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_subject_gercon_icon"
+		texturefile = "gfx//interface//subject_gercon_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_diplomacy_leadgercon"
+		texturefile = "gfx//interface//subject_gercon_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_diplomacy_weakgercon"
+		texturefile = "gfx//interface//subject_gercon_icon.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_subject_italea_icon"
+		texturefile = "gfx//interface//subject_italea_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_diplomacy_leaditalea"
+		texturefile = "gfx//interface//subject_italea_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_diplomacy_weakitalea"
+		texturefile = "gfx//interface//subject_italea_icon.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_subject_geremp_icon"
+		texturefile = "gfx//interface//subject_geremp_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_diplomacy_leadgeremp"
+		texturefile = "gfx//interface//subject_geremp_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_diplomacy_weakgeremp"
+		texturefile = "gfx//interface//subject_geremp_icon.dds"
+	}
+	
+}

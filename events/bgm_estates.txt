@@ -1,0 +1,627 @@
+namespace = bgm_estates
+
+# Coup
+country_event = {
+	id = bgm_estates.1
+	title = "bgm_estates.1.t"
+	desc = "bgm_estates.1.d"
+	picture = SOC_REV_eventPicture
+
+	trigger = {
+		NOT = {
+			estate_loyalty = {
+				estate = estate_ruling_party
+				loyalty = 25
+			}
+		}
+		estate_influence = {
+			estate = estate_ruling_party
+			influence = 75
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 80
+	}
+	
+	
+	option = {
+		name = "bgm_estates.1.a" #Throw them off
+		random_list = {
+			65 = {
+				add_stability = -1
+				capital_scope = {
+					spawn_rebels = {
+						size = 1
+						type = particularist_rebels
+					}
+				}
+			}
+			35 = {
+				kill_ruler = yes
+
+				define_ruler = {
+					culture = ROOT
+					religion = ROOT
+					max_random_adm = 2
+					max_random_dip = 2
+					max_random_mil = 2
+					min_age = 45
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "bgm_estates.1.b" #Concede
+		kill_ruler = yes
+		define_ruler = {
+			culture = ROOT
+			religion = ROOT
+			max_random_adm = 2
+			max_random_dip = 2
+			max_random_mil = 2
+			min_age = 45
+		}
+	}
+
+	after = {
+		add_yearly_manpower = -0.25
+	}
+}
+
+# Coup, military
+country_event = {
+	id = bgm_estates.2
+	title = "bgm_estates.2.t"
+	desc = "bgm_estates.2.d"
+	picture = SOC_REV_eventPicture
+
+	trigger = {
+		NOT = {
+			estate_loyalty = {
+				estate = estate_military
+				loyalty = 25
+			}
+		}
+		estate_influence = {
+			estate = estate_military
+			influence = 75
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 80
+	}
+	
+	
+	option = {
+		name = "bgm_estates.2.a" #Throw them off
+		random_list = {
+			65 = {
+				add_stability = -1
+				capital_scope = {
+					spawn_rebels = {
+						size = 1
+						type = particularist_rebels
+					}
+				}
+				if = {
+					limit = {
+						num_of_generals = 1
+					}
+					kill_leader = general
+				}
+			}
+			35 = {
+				kill_ruler = yes
+
+				if = {
+					limit = {
+						NOT = {
+							num_of_generals = 1
+						}
+					}
+					define_ruler = {
+						culture = ROOT
+						religion = ROOT
+						max_random_adm = 2
+						max_random_dip = 2
+						max_random_mil = 2
+						min_age = 45
+					}
+				}
+				else = {
+					define_leader_to_ruler = {
+						type = general
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "bgm_estates.2.b" #Concede
+		kill_ruler = yes
+		define_ruler = {
+			culture = ROOT
+			religion = ROOT
+			max_random_adm = 2
+			max_random_dip = 2
+			max_random_mil = 2
+			min_age = 45
+		}
+	}
+
+	after = {
+		add_yearly_manpower = -0.25
+	}
+}
+
+# influx of new naive party members
+country_event = {
+	id = bgm_estates.3
+	title = "bgm_estates.3.t"
+	desc = "bgm_estates.3.d"
+	picture = BUREAU_eventPicture
+
+	trigger = {
+		has_estate = estate_ruling_party
+		NOT = {
+			OR = {
+				has_estate_loyalty_modifier = {
+					estate = estate_ruling_party
+					modifier = NEW_PARTY_MEMBER
+				}
+				has_estate_influence_modifier = {
+					estate = estate_ruling_party
+					modifier = OLD_PARTY_MEMBER
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 80
+	}
+	
+	
+	option = {
+		name = "bgm_estates.3.a" #ok
+		add_estate_influence_modifier = {
+			estate = estate_ruling_party
+			desc = NEW_PARTY_MEMBER
+			influence = -10
+			duration = 7300
+		}
+		add_estate_loyalty_modifier = {
+			estate = estate_ruling_party
+			desc = NEW_PARTY_MEMBER
+			loyalty = 10
+			duration = 7300
+		}
+	}
+}
+
+# aging senior members' influence
+country_event = {
+	id = bgm_estates.4
+	title = "bgm_estates.4.t"
+	desc = "bgm_estates.4.d"
+	picture = BUREAU_eventPicture
+
+	trigger = {
+		has_estate = estate_ruling_party
+		NOT = {
+			OR = {
+				has_estate_loyalty_modifier = {
+					estate = estate_ruling_party
+					modifier = NEW_PARTY_MEMBER
+				}
+				has_estate_influence_modifier = {
+					estate = estate_ruling_party
+					modifier = OLD_PARTY_MEMBER
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 80
+	}
+	
+	option = {
+		name = "bgm_estates.4.a" #ok
+		add_estate_influence_modifier = {
+			estate = estate_ruling_party
+			desc = OLD_PARTY_MEMBER
+			influence = 10
+			duration = 7300
+		}
+	}
+}
+
+# spike in strikes
+country_event = {
+	id = bgm_estates.5
+	title = "bgm_estates.5.t"
+	desc = "bgm_estates.5.d"
+	picture = BUREAU_eventPicture
+
+	trigger = {
+		has_estate = estate_proletarian
+		NOT = {
+			OR = {
+				bgm_comgovt = yes
+				has_reform = fascist_mechanic
+			}
+		}
+		NOT = {
+			estate_loyalty = {
+				estate = estate_proletarian
+				loyalty = 30
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 80
+	}
+	
+	option = {
+		name = "bgm_estates.5.a" #ok
+		add_estate_loyalty_modifier = {
+			estate = estate_proletarian
+			desc = STRIKES
+			loyalty = -10
+			duration = 1825
+		}
+		add_estate_influence_modifier = {
+			estate = estate_proletarian
+			desc = STRIKES
+			influence = 15
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = "bgm_estates.5.b" #crackdown
+		add_stability = -1
+		add_estate_loyalty_modifier = {
+			estate = estate_proletarian
+			desc = STRIKES
+			loyalty = -25
+			duration = 1825
+		}
+		random_owned_province = {
+			spawn_rebels = {
+				type = particularist_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+# corruption in the military
+country_event = {
+	id = bgm_estates.6
+	title = "bgm_estates.6.t"
+	desc = "bgm_estates.6.d"
+	picture = BUREAU_eventPicture
+
+	trigger = {
+		has_estate = estate_military
+		NOT = {
+			OR = {
+				has_country_modifier = mil_corrupt
+				has_country_modifier = mil_purges
+			}
+		}
+		NOT = {
+			has_reform = futurist_mechanic
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 80
+
+		modifier = {
+			factor = 1.75
+			has_reform = democratic_mechanic
+		}
+	}
+	
+	option = {
+		name = "bgm_estates.6.a" #ok
+		add_country_modifier = {
+			name = mil_corrupt
+			duration = 1825
+		}
+	}
+}
+
+# purges in the military
+country_event = {
+	id = bgm_estates.7
+	title = "bgm_estates.7.t"
+	desc = "bgm_estates.7.d"
+	picture = BUREAU_eventPicture
+
+	trigger = {
+		has_estate = estate_military
+		NOT = {
+			has_country_modifier = mil_corrupt
+		}
+		OR = {
+			bgm_comgovt = yes
+			has_reform = fascist_mechanic
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 80
+
+		modifier = {
+			factor = 0.5
+			absolutism = 95
+		}
+	}
+	
+	option = {
+		name = "bgm_estates.7.a" #ok
+		add_country_modifier = {
+			name = mil_purges
+			duration = 7300
+		}
+	}
+
+	option = {
+		name = "bgm_estates.7.b" #don't
+		
+	}
+}
+
+# jingoism
+province_event = {
+	id = bgm_estates.8
+	title = "bgm_estates.8.t"
+	desc = "bgm_estates.8.d"
+	picture = MIL_ADVANCE_eventPicture
+
+	trigger = {
+		any_neighbor_province = {
+			owner = {
+				NOT = {
+					OR = {
+						is_subject_of = ROOT
+						alliance_with = ROOT
+					}
+				}
+			}
+			OR = {
+				is_claim = owner
+				is_core = owner
+			}
+			NOT = {
+				owned_by = ROOT
+			}
+		}
+		owner = {
+			has_estate = estate_military
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 250
+
+		modifier = {
+			factor = 0.75
+			owner = {
+				religion_group = christian
+			}
+			any_neighbor_province = {
+				owner = {
+					NOT = {
+						religion_group = christian
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "bgm_estates.8.a" #start border skirmishes
+		owner = {
+			add_yearly_manpower = -0.05
+			add_estate_loyalty = {
+				estate = estate_military
+				loyalty = 10
+			}
+		}
+		random_neighbor_province = {
+			limit = {
+				NOT = {
+					OR = {
+						owned_by = ROOT
+						owner = {
+							OR = {
+								is_subject_of = ROOT
+								alliance_with = ROOT
+							}
+						}
+					}
+				}
+			}
+			owner = {
+				country_event = {
+					id = bgm_estates.9
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "bgm_estates.8.b" #don't
+		owner = {
+			add_estate_loyalty = {
+				estate = estate_military
+				loyalty = -10
+			}	
+		}
+	}
+}
+
+# jingoism pt 2
+country_event = {
+	id = bgm_estates.9
+	title = "bgm_estates.9.t"
+	desc = "bgm_estates.9.d"
+	picture = MIL_ADVANCE_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		add_casus_belli = {
+			type = cb_border_war
+			target = FROM
+		}
+		add_opinion = {
+			who = FROM
+			modifier = border_aggression
+		}
+	}
+	
+	option = {
+		name = "bgm_estates.9.a" #respond in kind
+		add_yearly_manpower = -0.075
+		FROM = {
+			add_casus_belli = {
+				type = cb_border_war
+				target = ROOT
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = border_aggression
+			}
+		}
+
+		ai_chance = {
+			factor = 5
+		}
+	}
+
+	option = {
+		name = "bgm_estates.9.b" #concede the territory
+		random_owned_province = {
+			limit = {
+				owned_by = ROOT
+				any_neighbor_province = {
+					owned_by = FROM
+				}
+			}
+			cede_province = FROM
+		}
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					bgm_comgovt = yes
+					has_reform = fascist_mechanic
+					has_reform = futurist_mechanic
+					has_reform = authoritarian_mechanic
+				}
+			}
+		}
+	}
+}
+
+# superior business/profits
+country_event = {
+	id = bgm_estates.10
+	title = "bgm_estates.10.t"
+	desc = "bgm_estates.10.d"
+	picture = BUREAU_eventPicture
+
+	trigger = {
+		has_estate = estate_industrialist
+		OR = {
+			has_reform = fascist_mechanic
+			has_reform = democratic_mechanic
+		}
+		NOT = {
+			faction_in_power = dm_communist
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 80
+
+		modifier = {
+			factor = 1.25
+			faction_in_power = dm_social_democrat
+		}
+	}
+	
+	option = {
+		name = "bgm_estates.10.a" #ok
+		add_country_modifier = {
+			name = competent_business
+			duration = 1825
+		}
+	}
+}
+
+# businesses require bailouts
+country_event = {
+	id = bgm_estates.11
+	title = "bgm_estates.11.t"
+	desc = "bgm_estates.11.d"
+	picture = BUREAU_eventPicture
+
+	trigger = {
+		has_estate = estate_industrialist
+		OR = {
+			has_reform = fascist_mechanic
+			has_reform = democratic_mechanic
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 80
+
+		modifier = {
+			factor = 0.85
+			faction_in_power = dm_social_democrat
+		}
+
+		modifier = {
+			factor = 0.75
+			faction_in_power = dm_communist
+		}
+
+		modifier = {
+			factor = 1.25
+			faction_in_power = dm_social_liberal
+		}
+	}
+	
+	option = {
+		name = "bgm_estates.11.a" #don't support
+		add_estate_loyalty = {
+			estate = estate_industrialist
+			loyalty = -15
+		}
+		
+	}
+
+	option = {
+		name = "bgm_estates.11.b" #bail outs
+		add_years_of_income = -0.35
+		add_estate_loyalty = {
+			estate = estate_industrialist
+			loyalty = 10
+		}
+	}
+}

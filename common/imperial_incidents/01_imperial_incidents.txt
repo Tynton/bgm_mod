@@ -1,0 +1,25 @@
+# default options are 0-based
+# In console, can use imperial_incident [key] to immediately begin an incident
+
+#this one's by Prussia
+
+incident_german_confederation = {
+    event = incidents_german_con.3
+	default_option = 0
+	
+	can_stop = {
+		exists = GER
+	}
+
+	0 = { #Reform into the German Confederation
+		factor = 25
+	}
+	
+	1 = { #Simply secularize the HRE instead
+		factor = 15
+	}
+	
+	2 = { #Stay the way we are
+		factor = 5
+	}
+}

@@ -1,0 +1,47 @@
+namespace = AI_Supercomputers
+
+
+country_event = {
+	id = AI_Supercomputers.1
+	title = "AI_Supercomputers.1.t"
+	desc = "AI_Supercomputers.1.d"
+	picture = FUTURIST_REV_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		adm_tech = 50
+		NOT = { has_country_flag = ai_supercomputers }
+		NOT = { has_country_flag = no_ai_computer }
+		NOT = { has_global_flag = endgame_started }
+		
+		adm_power = 500
+		dip_power = 500
+		mil_power = 500
+	}
+
+	mean_time_to_happen = {
+		months = 72
+	}
+	
+	option = {
+		name = "AI_Supercomputers.1.a"
+		
+		set_country_flag = ai_supercomputers
+		
+		add_country_modifier = {
+			name = ai_technology
+			duration = -1
+		}
+		
+		custom_tooltip = ai_computers_prompt
+		
+		set_global_flag = endgame_started
+	}
+	
+	option = {
+		name = "AI_Supercomputers.1.b"
+		
+		set_country_flag = no_ai_computer
+	}
+}

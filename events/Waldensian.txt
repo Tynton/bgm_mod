@@ -1,0 +1,185 @@
+namespace = waldensianEvents
+
+# Conversion to Waldensian
+country_event = {
+	id = waldensianEvents.1
+	title = waldensianEvents.1.t
+	desc = waldensianEvents.1.d
+	picture = PRAYING_eventPicture
+	
+	trigger = {
+		religion = catholic
+		dominant_religion = waldensian
+		
+		NOT = {
+			has_country_flag = no_waldensian
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 48
+	}
+	
+	option = { # we will convert
+		name = "waldensianEvents.1.a"
+		add_stability = -2
+		add_prestige = -50
+		change_religion = waldensian
+			remove_country_modifier = counter_reformation
+			remove_country_modifier = the_statue_in_restraint_of_appeals
+			remove_country_modifier = revocation_of_restraint_of_appeals
+			remove_country_modifier = bavarian_jesuits
+			remove_country_modifier = the_societas_jesu
+			remove_country_modifier = the_declaration_of_indulgence
+			remove_country_modifier = de_heretico_comburendo
+			remove_country_modifier = the_conventicle_act
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+			every_known_country = {
+				limit = {
+					reverse_has_opinion_modifier = {
+						who = ROOT
+						modifier = opinion_demote_pope
+					}
+				}
+				reverse_remove_opinion = {
+					who = ROOT
+					modifier = opinion_demote_pope
+				}
+			}
+
+		add_reform_desire = 0.015
+	}
+	option = { # we will not convert to a perverted faith
+		name = "waldensianEvents.1.b"
+		add_stability = -1
+		add_prestige = 15
+		set_country_flag = no_waldensian
+	}
+}
+
+# Quest for Lyons
+country_event = {
+	id = waldensianEvents.2
+	title = waldensianEvents.2.t
+	desc = waldensianEvents.2.d
+	picture = PRAYING_eventPicture
+	
+	#fire_only_once = true
+	
+	trigger = {
+		religion = waldensian
+		
+		203 = {
+			NOT = {
+				religion = waldensian
+				owned_by = ROOT
+			}
+		}
+		
+		NOT = {
+			has_country_flag = no_lyons
+		}
+		
+		#any_neighbor_province = {
+		#	province_id = 203
+		#}
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	option = { # we will claim Waldo's homeland
+		name = "waldensianEvents.2.a"
+		add_stability = 1
+		add_permanent_claim = 203
+		
+		set_country_flag = no_lyons ###########lazy lol
+		
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { # we will not
+		name = "waldensianEvents.2.b"
+		add_stability = -1
+		set_country_flag = no_lyons
+		
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+# Conquest of Lyons
+country_event = {
+	id = waldensianEvents.3
+	title = waldensianEvents.3.t
+	desc = waldensianEvents.3.d
+	picture = PRAYING_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		religion = waldensian
+		
+		203 = {
+			owned_by = ROOT
+		}
+		
+		NOT = {
+			has_country_flag = no_lyons
+		}
+		NOT = {
+			has_country_flag = has_lyons
+		}
+	}
+	
+	option = { # Glory to Waldo!
+		name = "waldensianEvents.3.a"
+		add_stability = 1
+		203 = {
+			change_religion = waldensian
+			add_reform_center = waldensian
+		}
+		set_country_flag = has_lyons
+		
+		add_manpower = 5
+		add_treasury = 50
+	}
+}
+
+# Criticism of the Treasury
+country_event = {
+	id = waldensianEvents.4
+	title = waldensianEvents.4.t
+	desc = waldensianEvents.4.d
+	picture = PRAYING_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = waldensian
+			religion = fraticelli
+		}
+		
+		years_of_income = 3.5
+	}
+	
+	mean_time_to_happen = {
+		months = 68
+	}
+	
+	option = { # donate some
+		name = "waldensianEvents.4.a"
+		add_years_of_income = -0.15
+		add_prestige = 5
+	}
+	
+	option = { # keep it all
+		name = "waldensianEvents.4.b"
+		add_prestige = -10
+	}
+}

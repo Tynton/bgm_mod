@@ -1,0 +1,42 @@
+28 = "Uusimaa"
+30 = "Viipuri"
+
+92 = "Bryssel"
+
+12 = "Kööpenhamina"
+
+358 = "Aleksandria"
+361 = "Kairo"
+
+36 = "Rääveli"
+
+183 = "Pariisi"
+102 = "Nizza"
+1247 = "Korsika"
+
+50 = "Berliini"
+45 = "Lyypekki"
+44 = "Hampuri"
+
+146 = "Ateena"
+142 = "Korfu"
+163 = "Kreeta"
+
+118 = "Rooma"
+112 = "Venetsia"
+
+38 = "Riika"
+
+262 = "Krakova"
+257 = "Varsova"
+
+227 = "Lissabon"
+
+295 = "Moskova"
+
+4720 = "Geneve"
+
+291 = "Harkova"
+280 = "Kiova"
+
+236 = "Lontoo"

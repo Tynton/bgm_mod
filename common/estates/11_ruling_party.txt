@@ -1,0 +1,120 @@
+estate_ruling_party = {
+	icon = 14
+
+	# If true, country will get estate
+	trigger = {
+		OR = {
+			AND = {
+				NOT = {
+					government = monarchy
+				}
+				has_reform = authoritarian_mechanic
+			}
+			bgm_comgovt = yes
+			has_reform = fascist_mechanic
+			has_reform = futurist_mechanic
+		}
+		NOT = {
+			has_reform = anarchy
+		}
+	}
+
+	country_modifier_happy = {
+		stability_cost_modifier = -0.15
+		global_unrest = -2
+		army_tradition = -0.5
+		global_autonomy = -0.05
+	}
+	country_modifier_neutral = {
+		stability_cost_modifier = -0.05
+	}	
+	country_modifier_angry = {
+		stability_cost_modifier = 0.2
+		global_unrest = 4
+	}
+	land_ownership_modifier = {
+		#nobles_loyalty_modifier = 0.2
+	}
+
+	province_independence_weight = {
+		factor = 0
+	}
+
+	# Influence modifiers
+	base_influence = 60
+	
+	influence_modifier = {
+		desc = TOTALITARIAN_LEADER
+		trigger = {
+			absolutism = 100
+		}
+		influence = -25
+	}
+	influence_modifier = {
+		desc = RELIANT_LEADER
+		trigger = {
+			NOT = {
+				absolutism = 65
+			}
+		}
+		influence = 25
+	}
+	influence_modifier = {
+		desc = STABLE_COUNTRY
+		trigger = {
+			stability = 1
+		}
+		influence = -10
+	}
+	influence_modifier = {
+		desc = VERY_STABLE_COUNTRY
+		trigger = {
+			stability = 2
+		}
+		influence = -15
+	}
+
+
+	influence_modifier = {
+		desc = POLICE_SPENDING
+		trigger = {
+			has_reform = large_policing_bureaucracy
+		}
+		influence = 25
+	}
+
+
+	
+	#LOYALTY MODIFIERS
+	loyalty_modifier = {
+		desc = UNSTABLE_COUNTRY
+		trigger = {
+			NOT = {
+				stability = 0
+			}
+		}
+		loyalty = -10
+	}
+	loyalty_modifier = {
+		desc = VERY_UNSTABLE_COUNTRY
+		trigger = {
+			NOT = {
+				stability = -2
+			}
+		}
+		loyalty = -10
+	}
+	color = { 25 100 25 }
+	
+	privileges = {
+		campaign_personality_cult
+		raise_party_member_stipend
+		state_art_architecture
+		party_divisions
+	}
+
+	agendas = {
+	}
+	
+	influence_from_dev_modifier = 1.0
+}

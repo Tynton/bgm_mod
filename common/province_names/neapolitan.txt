@@ -1,0 +1,25 @@
+121 = "Napule"
+2983 = "Salierno"
+1933 = { "Baàr" "Bare" }
+2982 = "Siracusa"
+123 = { "Calàbbria" "Calavria" }
+122 = "Tarde"
+2985 = "Fògge"
+4733 = "Mulise"
+120 = { "Abbrùzze" "Abbrùzzu" }
+
+116 = "Sciorenza"
+118 = { "Romma" "Rómma" }
+103 = "Turino"
+5166 = { "Fùnn" "Fondi" }
+
+183 = "Parigge"
+151 = "Custantenobbule"
+201 = { "Acchisi" "Marsiglia" }
+260 = "Lublino"
+
+257 = "Varsavia"
+266 = "Praga"
+
+#an assumption
+4752 = "Ciume"

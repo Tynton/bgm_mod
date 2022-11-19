@@ -1,0 +1,79 @@
+#AVIALABLE CUSTOM LOCALISATION KEYS
+#When adding new custom loc keys, add them to the appropriate category (or add a new one) and describe them. Name the strings "String_X" where x is its content.
+# To not display anything, you can use 'localisation_key = ""'
+# Please add one example sentence for each key.
+
+#As this list grow organize with categories.
+#Current loc keys in this file:
+#GetTributaryOverlord
+#GetOldEra
+#GetLocalPowerStructure
+#GetGovernmentSupporters
+#GetNoblesReplacementForOtherGovernments
+
+
+defined_text = {
+    name = GetGerconReform1
+    random = no
+    text = {
+        localisation_key = GerconReform1
+        trigger = {
+            has_global_flag = gercon_constitution_loc
+        }
+    }
+    text = {
+        localisation_key = GerconReform1no
+    }
+}
+defined_text = {
+    name = GetGerconReform2
+    random = no
+    text = {
+        localisation_key = GerconReform2
+        trigger = {
+            has_global_flag = gercon_military
+        }
+    }
+    text = {
+        localisation_key = GerconReform2no
+    }
+}
+defined_text = {
+    name = GetGerconReform3
+    random = no
+    text = {
+        localisation_key = GerconReform3
+        trigger = {
+            has_global_flag = gercon_diplomacy
+        }
+    }
+    text = {
+        localisation_key = GerconReform3no
+    }
+}
+defined_text = {
+    name = GetGerconReform4
+    random = no
+    text = {
+        localisation_key = GerconReform4
+        trigger = {
+            has_global_flag = gercon_commerce
+        }
+    }
+    text = {
+        localisation_key = GerconReform4no
+    }
+}
+defined_text = {
+    name = GetGerconReform5
+    random = no
+    text = {
+        localisation_key = GerconReform5
+        trigger = {
+            has_global_flag = gercon_final_policy
+        }
+    }
+    text = {
+        localisation_key = GerconReform5no
+    }
+}

@@ -1,0 +1,23 @@
+namespace = BGM_colonies
+
+country_event = {
+	id = BGM_colonies.1
+	title = "BGM_colonies.n.1"
+	desc = "BGM_colonies.d.1"
+	picture = BUREAU_eventPicture
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_colonies.1.a"
+		
+		FROM = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_colonial_independance_war
+			}
+		}
+	}
+}

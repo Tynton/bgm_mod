@@ -1,0 +1,151 @@
+namespace = Austria_AI
+
+
+#integrate hungary
+
+country_event = {
+	id = Austria_AI.1
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		HUN = {
+			has_ruler = "Ladislaus Postumus"
+		}
+		HAB = {
+			ai = yes
+			has_heir = "Ladislaus Postumus"
+			prestige = 0
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	#abdicates
+	
+	option = {
+		name = "Austria_AI.1.a"
+		
+		HAB = {
+			kill_ruler = yes
+			add_prestige = -25
+		}
+	}
+}
+
+#attacks for union
+
+country_event = {
+	id = Austria_AI.2
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		HAB = {
+			ai = yes
+			OR = {
+				num_of_allies = 2
+				alliance_with = HUN
+			}
+			has_casus_belli = {
+				type = cb_restore_personal_union
+				target = ROOT
+			}
+			is_at_war = no
+		}
+		ROOT = {
+			NOT = {
+				any_ally = {
+					army_strength = {
+						who = HAB
+						value = 0.8
+					}
+				}
+				
+				army_strength = {
+					who = HAB
+					value = 0.8
+				}
+			}
+		}
+		NOT = {
+			HAB = {
+				truce_with = ROOT
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	#austria attacks
+	
+	option = {
+		name = "Austria_AI.2.a"
+		
+		HAB = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_restore_personal_union
+			}
+		}
+	}
+}
+
+#ally electors
+
+country_event = {
+	id = Austria_AI.3
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		HAB = {
+			ai = yes
+			is_emperor = yes
+			NOT = {
+				is_rival = ROOT
+			}
+		}
+		ROOT = {
+			ai = yes
+			is_elector = yes 
+			NOT = {
+				has_country_flag = allied_aus
+			}
+			NOT = {
+				is_rival = HAB
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	#abdicates
+	
+	option = {
+		name = "Austria_AI.3.a"
+		
+		HAB = {
+			create_alliance = ROOT
+		}
+		
+		ROOT = {
+			set_country_flag = allied_aus
+		}
+	}
+}

@@ -1,0 +1,294 @@
+namespace = AI_GameStart
+
+country_event = {
+	id = AI_GameStart.1
+	title = "AI_GameStart.n.1"
+	desc = "AI_GameStart.d.1"
+	picture = BUREAU_eventPicture
+	
+	hidden = yes
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "AI_GameStart.1.a"
+		
+		set_global_flag = game_start_bgmevent
+
+		if = {
+			limit = {
+				any_country = {
+					ai = no
+					capital_scope = {
+						continent = ROOT
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					capital_scope = {
+						continent = ROOT
+					}
+				}
+				set_country_flag = player_on_continent
+			}
+		}
+
+		#Add language law modifiers preemptively
+
+		#french
+
+		every_province = {
+			limit = {
+				OR = {
+					culture_group = french
+					culture_group = franco_provencal
+					culture_group = occitan
+					culture = basque
+					culture = breton
+				}
+			}
+			add_province_triggered_modifier = standardized_language_french
+		}
+
+		#german
+
+		every_province = {
+			limit = {
+				OR = {
+					culture_group = benelux
+					
+					culture_group = germanic
+					
+				}
+			}
+			add_province_triggered_modifier = standardized_language_germanic
+		}
+
+		#italian
+
+		every_province = {
+			limit = {
+				OR = {
+					culture_group = latin
+					culture = nicard
+				}
+			}
+			add_province_triggered_modifier = standardized_language_italian
+		}
+
+		#spanish
+
+		every_province = {
+			limit = {
+				OR = {
+					culture_group = iberian
+					culture = basque
+					culture = catalan
+					culture = andalucian
+				}
+			}
+			add_province_triggered_modifier = standardized_language_spanish
+		}
+
+		if = {
+			limit = {
+				FRA = {
+					ai = yes
+					NOT = {
+						is_rival = CAS
+					}
+					NOT = {
+						is_rival = VEN
+					}
+				}
+				CAS = {
+					ai = yes
+					NOT = {
+						is_rival = VEN
+					}
+				}
+				VEN = {
+					ai = yes
+				}
+			}
+			FRA = {
+				create_alliance = CAS
+				create_alliance = VEN
+			}
+			CAS = {
+				create_alliance = VEN
+			}
+		}
+		
+		if = {
+			limit = {
+				ENG = { ai = yes }
+				BUR = { ai = yes }
+				NOT = {
+					OR = {
+						ENG = {
+							is_rival = BUR
+						}
+						BUR = {
+							is_rival = ENG
+						}
+					}
+				}
+			}
+			random_list = {
+				95 = {
+					BUR = {
+						create_alliance = ENG
+					}
+				}
+				5 = {
+					
+				}
+			}
+		}
+		
+		#England purges the last Anglo-Normans
+		if = {
+			limit = {
+				exists = ENG
+				ENG = {
+					owns = 236
+				}
+			}
+			236 = {
+				add_culture_construction = {
+					time = 1.0
+					cost = 0.0
+				}
+			}
+		}
+		
+		#Autonomy in Silesia, west HRE, styria, France
+		GLG = {
+			every_owned_province = {
+				set_local_autonomy = 75
+			}
+		}
+		OPL = {
+			every_owned_province = {
+				set_local_autonomy = 75
+			}
+		}
+		lower_swabia_area = {
+			set_local_autonomy = 75
+		}
+		upper_swabia_area = {
+			set_local_autonomy = 75
+		}
+		alsace_area = {
+			set_local_autonomy = 50
+		}
+		upper_rhineland_area = {
+			set_local_autonomy = 50
+		}
+		hesse_area = {
+			set_local_autonomy = 75
+		}
+		north_westphalia_area = {
+			set_local_autonomy = 75
+		}
+		westphalia_area = {
+			set_local_autonomy = 75
+		}
+		north_rhine_area = {
+			set_local_autonomy = 75
+		}
+		lower_rhineland_area = {
+			set_local_autonomy = 75
+		}
+		lower_saxony_area = {
+			set_local_autonomy = 50
+		}
+		weser_area = {
+			set_local_autonomy = 25
+		}
+		franconia_area = {
+			set_local_autonomy = 25
+		}
+		palatinate_area = {
+			set_local_autonomy = 50
+		}
+		upper_franconia_area = {
+			set_local_autonomy = 50
+		}
+		
+		#bohemia
+		
+		moravia_area = {
+			set_local_autonomy = 50
+		}
+		lusatia_area = {
+			set_local_autonomy = 25
+		}
+		
+		#austria
+		
+		tirol_area = {
+			set_local_autonomy = 25
+		}
+		austria_proper_area = {
+			set_local_autonomy = 25
+		}
+		inner_austria_area = {
+			set_local_autonomy = 50
+		}
+		carinthia_area = {
+			set_local_autonomy = 50
+		}
+		
+		#france
+		
+		champagne_area = {
+			set_local_autonomy = 15
+		}
+		massif_central_area = {
+			set_local_autonomy = 35
+		}
+		pyrenees_area = {
+			set_local_autonomy = 35
+		}
+		languedoc_area = {
+			set_local_autonomy = 35
+		}
+		guyenne_area = {
+			set_local_autonomy = 35
+		}
+		loire_area = {
+			set_local_autonomy = 25
+		}
+		orleans_area = {
+			set_local_autonomy = 25
+		}
+		
+		if = {
+			limit = {
+				exists = ORL
+			}
+			ORL = {
+				every_owned_province = {
+					limit = {
+						culture = poitevin
+					}
+					set_local_autonomy = 50
+				}
+			}
+		}
+		
+		#sapmis
+		
+		laponia_area = {
+			set_local_autonomy = 75
+		}
+		norrland_area = {
+			set_local_autonomy = 50
+		}
+	}
+}

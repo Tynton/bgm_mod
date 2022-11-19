@@ -1,0 +1,15 @@
+bgm_comgovt = {
+	OR = {
+		has_reform = socialist_government_reform
+		has_reform = socialist_juche
+		has_reform = socialist_republic
+	}
+}
+bgm_mon = {
+	OR = {
+		has_reform = futurist_empire
+		has_reform = parliamentary_monarchism
+		has_reform = fascist_monarchism
+		has_reform = auth_monarchism
+	}
+}

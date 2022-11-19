@@ -1,0 +1,130 @@
+#netherlands
+
+97 = "Amesterdão"
+4382 = "Groninga"
+4975 = "Roterdão"
+4383 = "Haia"
+98 = "Utreque"
+96 = "Zelândia"
+
+#belgium
+
+1744 = "Antuérpia"
+90 = "Bruges"
+92 = "Bruxelas"
+1865 = "Gante"
+
+#luxemburg
+
+94 = "Luxemburgo"
+
+#france
+
+88 = "Artésia"
+199 = "Auvérnia"
+202 = "Avinhão"
+174 = "Bordéus"
+87 = "Calêsio"
+4695 = "Carcassona"
+193 = "Besançon"
+203 = "Lião"
+2753 = "Narbona"
+184 = "Orleães"
+167 = { "Ruão" "Rouen" }
+75 = "Estrasburgo"
+196 = "Tolosa"
+201 = "Marselha"
+178 = "Anju"
+
+#germany
+
+1878 = { "Aquisgrão" "Aquisgrano" }
+1868 = "Augsburgo"
+50 = "Berlim"
+5156 = "Bona"
+57 = "Brunsvique"
+1874 = "Brema"
+4716 = "Coburgo"
+85 = "Colónia"
+61 = "Dresda"
+1876 = "Francoforte"
+4773 = "Gotinga"
+44 = "Hamburgo"
+4712 = "Constança"
+1760 = "Coblença"
+62 = "Lípsia"
+77 = "Heidelberga"
+45 = "Lubeque"
+65 = "Munique"
+2957 = "Ratisbona"
+4767 = "Sarre"
+70 = "Estugarda"
+1869 = "Zurique"
+
+#do the rest later
+
+#italy
+
+2978 = "Arécio"
+123 = "Calábria"
+2986 = "Cálhari"
+116 = "Florença"
+101 = "Génova"
+109 = "Mântua"
+104 = "Milão"
+121 = "Nápoles"
+4729 = "Pádua"
+103 = "Turim"
+112 = "Veneza"
+
+#morocco
+
+1110 = "Santa Cruz do Cabo de Gué"
+2466 = "Drá"
+344 = "Marraquexe"
+2467 = { "Mequinez" "Meknès" }
+2464 = "Uarzazate"
+348 = "Suz"
+346 = { "Tafilete" "Tafilalet" }
+334 = "Tânger"
+
+#portugal
+
+231 = "Porto"
+4150 = "Evora"
+232 = "Bragança"
+228 = "Viseu"
+4787 = "Santarem"
+
+#Spain
+
+207 = "Astúrias"
+218 = "Badalhouce"
+206 = "Corunha"
+225 = "Córdova"
+1749 = "Cádis"
+209 = { "Biscaia" "Bilbau" }
+1748 = "Xaém"
+2754 = "A Mancha"
+366 = "Grande Canária"
+208 = "Leão"
+
+333 = "Maiorca"
+4559 = "Minorca"
+
+335 = "Melilha"
+
+221 = "Múrcia"
+4558 = "Ourense"
+4552 = { "Palença" "Palência" }
+211 = { "Pirenéus" "Pirinéus" }
+224 = "Sevilha"
+220 = "Valência"
+215 = "Valhadolide"
+4553 = "Samora"
+214 = "Saragoça"
+
+#japan
+
+1020 = "Quioto"
+1028 = "Tóquio"

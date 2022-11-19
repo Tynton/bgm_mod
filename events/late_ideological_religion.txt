@@ -1,0 +1,61 @@
+namespace = late_ideological_religion
+
+# conversion
+country_event = {
+	id = late_ideological_religion.1
+	title = late_ideological_religion.1.t
+	desc = late_ideological_religion.1.d
+	picture = PRAYING_eventPicture
+	
+	trigger = {
+		religion = cult_of_reason
+		NOT = {
+			all_owned_province = {
+				religion = cult_of_reason
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+		modifier = {
+			factor = 0.1
+			capital_scope = {
+				NOT = {
+					religion = cult_of_reason
+				}
+			}
+		}
+		modifier = {
+			factor = 0.8
+			stability = 0
+		}
+		
+		modifier = {
+			factor = 0.8
+			stability = 1
+		}
+		
+		modifier = {
+			factor = 0.8
+			stability = 2
+		}
+	}
+	
+	option = {
+		name = "late_ideological_religion.1.a"
+		random_owned_province = {
+			limit = {
+				NOT = {
+					religion = cult_of_reason
+				}
+			}
+			change_religion = cult_of_reason
+		} 
+		hidden_effect = {
+			capital_scope = {
+				change_religion = cult_of_reason
+			}
+		}
+	}
+}

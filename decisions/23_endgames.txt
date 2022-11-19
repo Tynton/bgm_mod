@@ -1,0 +1,68 @@
+country_decisions = {
+
+	plan_bioweapon = {
+	
+		major = yes
+	
+		potential = {
+			has_country_flag = had_pol_reorg
+			has_country_modifier = state_win
+			NOT = {
+				OR = {
+					any_country = {
+						has_country_flag = plan_bioweapon_flag
+					}
+					has_country_flag = plan_bioweapon_flag
+				}
+			}
+		}
+		allow = {
+			years_of_income = 2.5
+		}
+		effect = {
+			set_country_flag = plan_bioweapon_flag
+			add_years_of_income = -2.5
+			country_event = {
+				id = Endgame.1
+				days = 1460
+				random = 730
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	scuffed_vaccine = {
+	
+		major = yes
+	
+		potential = {
+			has_global_flag = endgame_bioweapon
+			NOT = {
+				has_country_flag = created_bioweapon
+			}
+		}
+		allow = {
+			years_of_income = 1.0
+			adm_power = 150
+			dip_power = 150
+			mil_power = 150
+		}
+		effect = {
+			add_stability = 1
+			add_adm_power = -150
+			add_dip_power = -150
+			add_mil_power = -150
+			add_years_of_income = -1.0
+			country_event = {
+				id = Endgame.4
+				days = 60
+				random = 15
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

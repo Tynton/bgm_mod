@@ -1,0 +1,333 @@
+country_decisions = {
+	
+	basic_language_education = {
+	
+		major = yes
+	
+		potential = {
+			NOT = { tag = ANA }
+			OR = {
+				all_country = {
+					NOT = {
+						has_country_modifier = basic_language_ed
+					}
+				}
+				AND = {
+					NOT = {
+						has_country_modifier = basic_language_ed
+					}
+					
+					any_neighbor_country = {
+						has_country_modifier = basic_language_ed
+					}
+				}
+				has_country_flag = BGM_GER_education
+			}
+			has_institution = compulsory_education
+		}
+		allow = {
+			years_of_income = 2.5
+			is_at_war = no
+		}
+		effect = {
+			country_event = { 
+				id = national_program.3
+			}
+			add_absolutism = 20
+			add_revolutionary_zeal = 25
+			add_years_of_income = -2.5
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1
+				
+				dip = 0
+			}
+		}
+	}
+	
+	standardize_admlaw = {
+	
+		major = yes
+	
+		potential = {
+			NOT = { tag = ANA }
+			OR = {
+				AND = {
+					all_country = {
+						NOT = {
+							has_country_modifier = standard_adm_law
+						}
+					}
+					NOT = {
+						has_country_modifier = standard_adm_law
+					}
+				}
+
+				any_neighbor_country = { 
+					has_country_modifier = standard_adm_law
+				}
+			}
+			OR = {
+				has_institution = electrification
+
+				has_country_flag = BGM_GER_education
+			}
+			NOT = {
+				has_country_modifier = standard_adm_law
+			}
+		}
+		allow = {
+			OR = {
+				any_neighbor_country = { 
+					has_country_modifier = standard_adm_law
+				}
+				has_institution = electrification
+			}
+			years_of_income = 2.5
+			is_at_war = no
+		}
+		effect = {
+			country_event = { 
+				id = national_program.6
+			}
+			add_absolutism = 20
+			add_revolutionary_zeal = 25
+			add_years_of_income = -2.5
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1
+				
+				dip = 0
+			}
+		}
+	}
+	
+	open_eco_management = {
+	
+		major = yes
+	
+		potential = {
+			NOT = { tag = ANA }
+			OR = {
+				AND = {
+					all_country = {
+						NOT = {
+							has_country_modifier = economic_management_adm
+						}
+					}
+					NOT = {
+						has_country_modifier = economic_management_adm
+					}
+				}
+
+				any_neighbor_country = { 
+					has_country_modifier = economic_management_adm
+				}
+			}
+			OR = {
+				has_institution = electrification
+
+				has_country_flag = BGM_GER_education
+			}
+			NOT = {
+				has_country_modifier = economic_management_adm
+			}
+		}
+		allow = {
+			OR = {
+				any_neighbor_country = { 
+					has_country_modifier = economic_management_adm
+				}
+				has_institution = electrification
+			}
+			years_of_income = 2.5
+			is_at_war = no
+		}
+		effect = {
+			country_event = { 
+				id = national_program.8
+			}
+			add_absolutism = 20
+			add_revolutionary_zeal = 25
+			add_years_of_income = -2.5
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1
+				
+				dip = 0
+			}
+		}
+	}
+	
+	conduct_census_bgm = {
+	
+		major = yes
+	
+		potential = {
+			NOT = { tag = ANA }
+			has_country_modifier = standard_adm_law
+		}
+		allow = {
+			NOT = {
+				has_country_modifier = census_in_progress
+			}
+			years_of_income = 3.5
+			is_at_war = no
+		}
+		effect = {
+			
+			add_country_modifier = { 
+				name = census_in_progress
+				duration = 548
+			}
+			add_years_of_income = -3.5
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 1
+				
+				dip = 0
+			}
+		}
+	}
+
+	establish_standard_language = {
+	
+		major = yes
+	
+		potential = {
+			NOT = { tag = ANA }
+			NOT = {
+				has_country_modifier = standard_language_adm
+			}
+			OR = {
+				all_country = {
+					NOT = {
+						has_country_modifier = standard_language_adm
+					}
+				}
+				any_neighbor_country = { 
+					has_country_modifier = standard_language_adm
+				}
+				has_country_flag = BGM_GER_education
+			}
+			has_institution = nationalism_institution
+		}
+		allow = {
+			years_of_income = 2.5
+			is_at_war = no
+		}
+		effect = {
+			country_event = { 
+				id = national_program.1
+			}
+			add_absolutism = 20
+			add_revolutionary_zeal = 25
+			add_years_of_income = -2.5
+
+			if = {
+				limit = {
+					OR = {
+						primary_culture = champenois
+						primary_culture = cosmopolitan_french
+					}
+					adm_tech = 25
+				}
+				set_country_flag = modern_french_standardized
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				
+				dip = 0
+			}
+		}
+	}
+
+	latin_linguafranca = {
+	
+		major = yes
+	
+		potential = {
+			full_idea_group = religious_ideas
+			OR = {
+				religion = catholic
+				religion = fraticelli
+			}
+			NOT = {
+				primary_culture = roman
+			}
+			ai = no
+		}
+		allow = {
+		}
+		effect = {
+			hidden_effect = {
+				export_to_variable = {
+					variable_name = prevCulture
+					value = trigger_value:primary_culture
+				}
+			}
+			change_primary_culture = roman
+			latin_name = yes
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				
+				always = no
+			}
+		}
+	}
+	
+	return_old_culture = {
+	
+		major = yes
+	
+		potential = {
+			primary_culture = roman
+			NOT = {
+				dominant_culture = roman
+			}
+			OR = {
+				NOT = {
+					full_idea_group = religious_ideas
+				}
+				AND = {
+					full_idea_group = religious_ideas
+					has_idea_group = exploration_ideas
+				}
+				ai = yes
+			}
+		}
+		allow = {
+			NOT = {
+				dominant_culture = roman
+			}
+		}
+		effect = {
+			change_primary_culture = variable:prevCulture
+
+			#namechange = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

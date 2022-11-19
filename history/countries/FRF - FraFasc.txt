@@ -1,0 +1,7 @@
+government = republic
+add_government_reform = fascist_mechanic
+primary_culture = cosmopolitan_french
+technology_group = western
+capital = 183 # Paris
+national_focus = MIL
+government_rank = 3

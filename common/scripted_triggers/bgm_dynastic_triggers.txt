@@ -1,0 +1,19 @@
+dynasty_is_alone = { # self-explanatory
+	NOT = {
+		any_country = {
+			dynasty = ROOT
+			NOT = { tag = ROOT } #PREV
+		}
+	}
+}
+
+from_root_invite_dynasty = { # check if either party involved in an action have invited dynasty
+	OR = {
+		FROM = {
+			has_ruler_flag = invited_dynasty
+		}
+		ROOT = {
+			has_ruler_flag = invited_dynasty
+		}
+	}
+}

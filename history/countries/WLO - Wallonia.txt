@@ -1,0 +1,5 @@
+government = monarchy
+primary_culture = wallonian
+religion = catholic
+technology_group = western
+national_focus = ADM

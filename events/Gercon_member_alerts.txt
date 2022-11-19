@@ -1,0 +1,31 @@
+namespace = Gercon_member_alerts
+
+
+#Constitution
+country_event = {
+	id = Gercon_member_alerts.1
+	title = "Gercon_member_alerts.n.1"
+	desc = "Gercon_member_alerts.d.1"
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Gercon_member_alerts.1.a"
+	}
+}
+
+
+#Military reform
+country_event = {
+	id = Gercon_member_alerts.2
+	title = "Gercon_member_alerts.n.2"
+	desc = "Gercon_member_alerts.d.2"
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Gercon_member_alerts.2.a"
+	}
+}

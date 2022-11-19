@@ -1,0 +1,254 @@
+namespace = enforce_subject_ideology
+
+	#FASCISM
+
+	country_event = {
+		id = enforce_subject_ideology.1
+		title = "enforce_subject_ideology.t.1"
+		desc = "enforce_subject_ideology.d.1"
+		picture = ANGRY_MOB_eventPicture
+		
+		hidden = yes
+
+		trigger = {
+			overlord = { 
+				has_reform = fascist_mechanic
+			} 
+			NOT = {
+				has_reform = fascist_mechanic
+			}
+			NOT = {
+				is_subject_of_type = german_confederation_member
+			}
+			NOT = {
+				OR = {
+					is_subject_of_type = colony
+					is_subject_of_type = crown_colony
+					is_subject_of_type = private_enterprise
+					is_subject_of_type = self_governing_colony
+				}
+			}
+		}	
+
+		mean_time_to_happen = {
+			days = 1
+		}
+	
+		option = {
+			name = "enforce_subject_ideology.1.a"
+			change_government = fascist_government
+		}
+	}
+	
+	#AUTH
+
+	country_event = {
+		id = enforce_subject_ideology.2
+		title = "enforce_subject_ideology.t.2"
+		desc = "enforce_subject_ideology.d.2"
+		picture = ANGRY_MOB_eventPicture
+		
+		hidden = yes
+
+		trigger = {
+			overlord = { 
+				has_reform = authoritarian_mechanic
+			} 
+			NOT = {
+				has_reform = authoritarian_mechanic
+			}
+			NOT = {
+				is_subject_of_type = german_confederation_member
+			}
+			NOT = {
+				OR = {
+					is_subject_of_type = colony
+					is_subject_of_type = crown_colony
+					is_subject_of_type = private_enterprise
+					is_subject_of_type = self_governing_colony
+				}
+			}
+		}	
+
+		mean_time_to_happen = {
+			days = 1
+		}
+	
+		option = {
+			name = "enforce_subject_ideology.2.a"
+			change_government = authoritarian_government
+		}
+	}
+	
+	#SOCIALISM
+
+	country_event = {
+		id = enforce_subject_ideology.3
+		title = "enforce_subject_ideology.t.3"
+		desc = "enforce_subject_ideology.d.3"
+		picture = ANGRY_MOB_eventPicture
+		
+		hidden = yes
+
+		trigger = {
+			overlord = { 
+				bgm_comgovt = yes
+			} 
+			NOT = {
+				bgm_comgovt = yes
+			}
+			NOT = {
+				is_subject_of_type = german_confederation_member
+			}
+			NOT = {
+				OR = {
+					is_subject_of_type = colony
+					is_subject_of_type = crown_colony
+					is_subject_of_type = private_enterprise
+					is_subject_of_type = self_governing_colony
+				}
+			}
+		}	
+
+		mean_time_to_happen = {
+			days = 1
+		}
+	
+		option = {
+			name = "enforce_subject_ideology.3.a"
+			change_government = futurist_government
+			add_government_reform = socialist_republic
+		}
+	}
+	
+	#DEMOCRACY
+
+	country_event = {
+		id = enforce_subject_ideology.4
+		title = "enforce_subject_ideology.t.4"
+		desc = "enforce_subject_ideology.d.4"
+		picture = ANGRY_MOB_eventPicture
+		
+		hidden = yes
+
+		trigger = {
+			overlord = { 
+				has_reform = democratic_mechanic
+			} 
+			NOT = {
+				has_reform = democratic_mechanic
+			}
+			NOT = {
+				is_subject_of_type = german_confederation_member
+			}
+			NOT = {
+				OR = {
+					is_subject_of_type = colony
+					is_subject_of_type = crown_colony
+					is_subject_of_type = private_enterprise
+					is_subject_of_type = self_governing_colony
+				}
+			}
+		}	
+
+		mean_time_to_happen = {
+			days = 1
+		}
+	
+		option = {
+			name = "enforce_subject_ideology.4.a"
+			change_government = democracy_govt
+		}
+	}
+
+	#FUTURISM
+
+	country_event = {
+		id = enforce_subject_ideology.5
+		title = "enforce_subject_ideology.t.5"
+		desc = "enforce_subject_ideology.d.5"
+		picture = ANGRY_MOB_eventPicture
+		
+		hidden = yes
+
+		trigger = {
+			overlord = { 
+				has_reform = futurist_mechanic
+				bgm_comgovt = no
+			} 
+			NOT = {
+				has_reform = futurist_mechanic
+				bgm_comgovt = no
+			}
+			NOT = {
+				is_subject_of_type = german_confederation_member
+			}
+			NOT = {
+				OR = {
+					is_subject_of_type = colony
+					is_subject_of_type = crown_colony
+					is_subject_of_type = private_enterprise
+					is_subject_of_type = self_governing_colony
+				}
+			}
+		}	
+
+		mean_time_to_happen = {
+			days = 1
+		}
+	
+		option = {
+			name = "enforce_subject_ideology.5.a"
+			change_government = futurist_government
+		}
+	}
+	
+	#RELIGION & COLONY
+
+	#country_event = {
+	#	id = enforce_subject_ideology.6
+	#	title = "enforce_subject_ideology.t.6"
+	#	desc = "enforce_subject_ideology.d.6"
+	#	picture = ANGRY_MOB_eventPicture
+	#	
+	#	hidden = yes
+	#
+	#	trigger = {
+	#		any_subject_country = {
+	#			NOT = {
+	#				religion = ROOT
+	#			}
+	#			OR = {
+	#				is_subject_of_type = colony
+	#				is_subject_of_type = crown_colony
+	#				is_subject_of_type = private_enterprise
+	#				is_subject_of_type = self_governing_colony
+	#			}
+	#		}
+	#	}	
+	#
+	#	mean_time_to_happen = {
+	#		days = 1
+	#	}
+	#
+	#	option = {
+	#		name = "enforce_subject_ideology.6.a"
+	#		export_to_variable = {
+	#			which = overlord_religion
+	#			value = religion
+	#			who = ROOT
+	#		}
+	#		every_subject_country = {
+	#			limit = {
+	#				OR = {
+	#					is_subject_of_type = colony
+	#					is_subject_of_type = crown_colony
+	#					is_subject_of_type = private_enterprise
+	#					is_subject_of_type = self_governing_colony
+	#				}
+	#			}
+	#			change_religion = variable:overlord_religion
+	#			force_converted = yes
+	#		}
+	#	}
+	#}

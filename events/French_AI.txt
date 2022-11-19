@@ -1,0 +1,67 @@
+namespace = French_AI
+
+
+#attacks for claims
+
+country_event = {
+	id = French_AI.1
+	title = "French_AI.n.1"
+	desc = "French_AI.d.1"
+	picture = BUREAU_eventPicture
+	
+	hidden = yes
+	
+	trigger = {
+		FRA = {
+			ai = yes
+			army_strength = {
+				who = ROOT
+				value = 2.5
+			}
+			NOT = {
+				personality = ai_capitalist
+			}
+			is_at_war = no
+			truce_with = ROOT
+		}
+		any_owned_province = {
+			is_permanent_claim = FRA
+		}
+		NOT = {
+			any_ally = {
+				army_strength = {
+					who = FRA
+					value = 0.75
+				}
+			}
+		}
+		NOT = {
+			army_strength = {
+				who = FRA
+				value = 0.75
+			}
+			truce_with = FRA 
+		}
+		NOT = {
+			alliance_with = FRA 
+		}
+		is_part_of_hre = no
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	#buy land
+	
+	option = {
+		name = "French_AI.1.a"
+		
+		FRA = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_annex
+			}
+		}
+	}
+}

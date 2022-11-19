@@ -1,0 +1,1028 @@
+latin_name = {
+	if = {
+		limit = {
+			tag = FRA
+		}
+		override_country_name = Gallia
+	}
+	if = {
+		limit = {
+			tag = BUR
+		}
+		override_country_name = Burgundia
+	}
+	if = {
+		limit = {
+			tag = NEV
+		}
+		override_country_name = Nivernensis
+	}
+	if = {
+		limit = {
+			tag = NRM
+		}
+		override_country_name = Normannia
+	}
+
+	if = {
+		limit = {
+			tag = FLA
+		}
+		override_country_name = Flandriae
+	}
+	if = {
+		limit = {
+			tag = BRB
+		}
+		override_country_name = Brabantia
+	}
+	if = {
+		limit = {
+			tag = HOL
+		}
+		override_country_name = Hollandia
+	}
+	if = {
+		limit = {
+			tag = NED
+		}
+		override_country_name = Netherlandia
+	}
+	if = {
+		limit = {
+			tag = FRI
+		}
+		override_country_name = Frisia
+	}
+
+
+	if = {
+		limit = {
+			tag = GER
+		}
+		override_country_name = Germania
+	}
+	if = {
+		limit = {
+			tag = HAB
+		}
+		override_country_name = Austria
+	}
+	if = {
+		limit = {
+			tag = BRA
+		}
+		override_country_name = Brandenburgum
+	}
+	if = {
+		limit = {
+			tag = PRU
+		}
+		override_country_name = Borussiae
+	}
+	if = {
+		limit = {
+			tag = SWI
+		}
+		override_country_name = Helvetia
+	}
+
+
+	if = {
+		limit = {
+			tag = CAS
+		}
+		override_country_name = Castellum
+	}
+	if = {
+		limit = {
+			tag = SPA
+		}
+		override_country_name = Hispaniae
+	}
+	if = {
+		limit = {
+			tag = ARA
+		}
+		override_country_name = Aragoniae
+	}
+
+	if = {
+		limit = {
+			tag = ENG
+		}
+		override_country_name = Angliae
+	}
+	if = {
+		limit = {
+			tag = GBR
+		}
+		override_country_name = Britannia
+	}
+	if = {
+		limit = {
+			tag = SCO
+		}
+		override_country_name = Scotiae
+	}
+
+	if = {
+		limit = {
+			tag = NAP
+		}
+		override_country_name = Neapolis
+	}
+	if = {
+		limit = {
+			tag = VEN
+		}
+		override_country_name = Venetiae
+	}
+	if = {
+		limit = {
+			tag = SAV
+		}
+		override_country_name = Sabaudia
+	}
+	if = {
+		limit = {
+			tag = MLO
+		}
+		override_country_name = Mediolanum
+	}
+
+
+	if = {
+		limit = {
+			tag = POL
+		}
+		override_country_name = Polonia
+	}
+	if = {
+		limit = {
+			tag = PLC
+		}
+		override_country_name = RPUN
+	}
+	if = {
+		limit = {
+			tag = LIT
+		}
+		override_country_name = Lithuaniae
+	}
+
+	if = {
+		limit = {
+			tag = RUS
+		}
+		override_country_name = Russia
+	}
+	if = {
+		limit = {
+			tag = UKN
+		}
+		override_country_name = Ucraina
+	}
+
+	if = {
+		limit = {
+			tag = HUN
+		}
+		override_country_name = Hungarica
+	}
+}
+
+namechange = {
+	if = {
+		limit = {
+			culture_group = british
+			tag = BRZ
+		}
+		override_country_name = Brazil
+	}
+	if = {
+		limit = {
+			culture_group = french
+			tag = BRZ
+		}
+		override_country_name = BrazilFR
+	}
+	if = {
+		limit = {
+			OR = {
+				culture_group = iberian
+				culture_group = occitan
+			}
+			tag = BRZ
+		}
+		override_country_name = Brasil
+	}
+	if = {
+		limit = {
+			OR = {
+				culture_group = latin
+				
+			}
+			tag = BRZ
+		}
+		override_country_name = Brasile
+	}
+	if = {
+		limit = {
+			OR = {
+				
+				culture_group = germanic
+				
+				culture_group = scandinavian
+			}
+			tag = BRZ
+		}
+		override_country_name = Brasilien
+	}
+	if = {
+		limit = {
+			culture_group = benelux
+			tag = BRZ
+		}
+		override_country_name = Brazilie
+	}
+
+
+
+
+	if = {
+		limit = {
+			OR = {
+				culture_group = british
+				culture_group = occitan
+				
+				culture_group = latin
+				culture_group = iberian
+			}
+			NOT = { primary_culture = portugese }
+			tag = AUS
+		}
+		override_country_name = Australia
+	}
+
+	if = {
+		limit = {
+			culture_group = french
+			tag = AUS
+		}
+		override_country_name = Australie
+	}
+
+	if = {
+		limit = {
+			culture_group = benelux
+			tag = AUS
+		}
+		override_country_name = AustralieDU
+	}
+
+	if = {
+		limit = {
+			primary_culture = portugese
+			tag = AUS
+		}
+		override_country_name = AustraliaPO
+	}
+
+	if = {
+		limit = {
+			OR = {
+				
+				culture_group = germanic
+				
+			}
+			tag = AUS
+		}
+		override_country_name = Australien
+	}
+
+
+
+
+	if = {
+		limit = {
+			primary_culture = irish
+			tag = GBR
+		}
+		override_country_name = ABM
+	}
+	if = {
+		limit = {
+			primary_culture = highland_scottish
+			tag = GBR
+		}
+		override_country_name = GBS
+	}
+	if = {
+		limit = {
+			primary_culture = cornish
+			tag = GBR
+		}
+		override_country_name = BV
+	}
+
+
+
+	if = {
+		limit = {
+			OR = {
+				culture_group = british
+				culture_group = french
+				culture_group = benelux
+				
+				culture_group = latin
+			}
+			tag = CAN
+		}
+		override_country_name = Canada
+	}
+
+	if = {
+		limit = {
+			OR = {
+				
+				culture_group = germanic
+				
+			}
+			tag = CAN
+		}
+		override_country_name = Kanada
+	}
+
+	if = {
+		limit = {
+			culture_group = iberian
+			tag = CAN
+		}
+		override_country_name = CanadaIB
+	}
+
+	if = {
+		limit = {
+			culture_group = occitan
+			tag = CAN
+		}
+		override_country_name = CanadaOC
+	}
+
+
+
+	if = {
+		limit = {
+			culture_group = french
+			tag = COL
+		}
+		override_country_name = Colombie
+	}
+
+	if = {
+		limit = {
+			culture_group = occitan
+			tag = COL
+		}
+		override_country_name = ColombiaOC
+	}
+
+	if = {
+		limit = {
+			OR = {
+				culture_group = british
+				culture_group = iberian
+				
+				culture_group = latin
+				culture_group = benelux
+			}
+			tag = COL
+		}
+		override_country_name = Colombia
+	}
+
+	if = {
+		limit = {
+			OR = {
+				
+				culture_group = germanic
+				
+			}
+			tag = COL
+		}
+		override_country_name = Kolumbien
+	}
+
+
+
+
+	if = {
+		limit = {
+			culture_group = french
+			tag = FLO
+		}
+		override_country_name = FlorideFR
+	}
+
+
+
+
+	if = {
+		limit = {
+			culture_group = occitan
+			tag = FRA
+		}
+		override_country_name = Franca
+	}
+	if = {
+		limit = {
+			primary_culture = breton
+			tag = FRA
+		}
+		override_country_name = Frans
+	}
+	if = {
+		limit = {
+			OR = {
+				primary_culture = burgundian
+				primary_culture = frainc_comtou
+			}
+			tag = FRA
+		}
+		override_country_name = Gaule
+	}
+	if = {
+		limit = {
+			primary_culture = basque
+			tag = FRA
+		}
+		override_country_name = Frantzia
+	}
+
+
+
+
+	if = {
+		limit = {
+			
+			tag = GER
+		}
+		override_country_name = Duutschland
+	}
+
+	if = {
+		limit = {
+			
+			tag = GER
+		}
+		override_country_name = Deitschland
+	}
+
+	if = {
+		limit = {
+			culture_group = benelux
+			tag = GER
+		}
+		override_country_name = Duitsland
+	}
+
+	if = {
+		limit = {
+			OR = {
+				primary_culture = czech
+				primary_culture = moravian
+			}
+			tag = GER
+		}
+		override_country_name = Nemecko
+	}
+
+	if = {
+		limit = {
+			primary_culture = schlesian
+			tag = GER
+		}
+		override_country_name = Mjymcy
+	}
+
+
+
+
+	if = {
+		limit = {
+			primary_culture = nicard
+			tag = ITA
+		}
+		override_country_name = ItaliaNIC
+	}
+
+
+
+
+	if = {
+		limit = {
+			culture_group = french
+			tag = MEX
+		}
+		override_country_name = Mexique
+	}
+	if = {
+		limit = {
+			OR = {
+				
+				culture_group = latin
+			}
+			tag = MEX
+		}
+		override_country_name = Messico
+	}
+
+	if = {
+		limit = {
+			OR = {
+				culture_group = iberian
+				culture_group = british
+				culture_group = benelux
+			}
+			tag = MEX
+		}
+		override_country_name = Mexico
+	}
+
+	if = {
+		limit = {
+			OR = {
+				
+				culture_group = germanic
+				
+			}
+			tag = MEX
+		}
+		override_country_name = Mexiko
+	}
+
+	if = {
+		limit = {
+			culture_group = occitan
+			tag = MEX
+		}
+		override_country_name = Mexic
+	}
+
+
+
+
+	if = {
+		limit = {
+			OR = {
+				culture_group = british
+				
+				culture_group = benelux
+				culture_group = germanic
+				
+			}
+			tag = PEU
+		}
+		override_country_name = Peru
+	}
+
+	if = {
+		limit = {
+			culture_group = french
+			tag = PEU
+		}
+		override_country_name = Perou
+	}
+	if = {
+		limit = {
+			OR = {
+				
+				culture_group = latin
+			}
+			tag = PEU
+		}
+		override_country_name = PeruIT
+	}
+
+	if = {
+		limit = {
+			culture_group = iberian
+			tag = PEU
+		}
+		override_country_name = PeruES
+	}
+
+	if = {
+		limit = {
+			culture_group = occitan
+			tag = PEU
+		}
+		override_country_name = Pero
+	}
+
+
+
+
+	if = {
+		limit = {
+			primary_culture = catalan
+			tag = SPA
+		}
+		override_country_name = Espanya
+	}
+
+	if = {
+		limit = {
+			primary_culture = basque
+			tag = SPA
+		}
+		override_country_name = Espainia
+	}
+
+
+
+
+	if = {
+		limit = {
+			culture_group = british
+			tag = USA
+		}
+		override_country_name = US
+	}
+
+	if = {
+		limit = {
+			culture_group = benelux
+			tag = USA
+		}
+		override_country_name = VSDU
+	}
+
+	if = {
+		limit = {
+			
+			tag = USA
+		}
+		override_country_name = VSLG
+	}
+
+	if = {
+		limit = {
+			culture_group = germanic
+			tag = USA
+		}
+		override_country_name = VSGER
+	}
+
+
+
+	else_if = {
+		limit = {
+			NOT = {
+				OR = {
+					AND = {
+						culture_group = british
+						tag = BRZ
+					}
+					AND = {
+						culture_group = french
+						tag = BRZ
+					}
+					AND = {
+						OR = {
+							culture_group = iberian
+							culture_group = occitan
+						}
+						tag = BRZ
+					}
+					AND = {
+						OR = {
+							culture_group = latin
+							
+						}
+						tag = BRZ
+					}
+					AND = {
+						OR = {
+							
+							culture_group = germanic
+							
+							culture_group = scandinavian
+						}
+						tag = BRZ
+					}
+					AND = {
+						culture_group = benelux
+						tag = BRZ
+					}
+				
+				
+				
+				
+					AND = {
+						OR = {
+							culture_group = british
+							culture_group = occitan
+							
+							culture_group = latin
+							culture_group = iberian
+						}
+						NOT = { primary_culture = portugese }
+						tag = AUS
+					}
+				
+					AND = {
+						culture_group = french
+						tag = AUS
+					}
+				
+					AND = {
+						culture_group = benelux
+						tag = AUS
+					}
+				
+					AND = {
+							primary_culture = portugese
+							tag = AUS
+					}
+				
+					AND = {
+						OR = {
+							
+							culture_group = germanic
+							
+						}
+						tag = AUS
+					}
+				
+				
+				
+				
+					AND = {
+						primary_culture = irish
+						tag = GBR
+					}
+					AND = {
+						primary_culture = highland_scottish
+						tag = GBR
+					}
+					AND = {
+						primary_culture = cornish
+						tag = GBR
+					}
+				
+				
+				
+					AND = {
+						OR = {
+							culture_group = british
+							culture_group = french
+							culture_group = benelux
+							
+							culture_group = latin
+						}
+						tag = CAN
+					}
+				
+					AND = {
+						OR = {
+							
+							culture_group = germanic
+							
+						}
+						tag = CAN
+					}
+				
+					AND = {
+						culture_group = iberian
+						tag = CAN
+					}
+				
+					AND = {
+						culture_group = occitan
+						tag = CAN
+					}
+				
+				
+				
+					AND = {
+						culture_group = french
+						tag = COL
+					}
+				
+					AND = {
+						culture_group = occitan
+						tag = COL
+					}
+				
+					AND = {
+						OR = {
+							culture_group = british
+							culture_group = iberian
+							
+							culture_group = latin
+							culture_group = benelux
+						}
+						tag = COL
+					}
+				
+					AND = {
+						OR = {
+							
+							culture_group = germanic
+							
+						}
+						tag = COL
+					}
+				
+				
+				
+				
+					AND = {
+						culture_group = french
+						tag = FLO
+					}
+				
+				
+				
+				
+					AND = {
+						culture_group = occitan
+						tag = FRA
+					}
+					AND = {
+						primary_culture = breton
+						tag = FRA
+					}
+					AND = {
+						OR = {
+							primary_culture = burgundian
+							primary_culture = frainc_comtou
+						}
+						tag = FRA
+					}
+					AND = {
+						primary_culture = basque
+						tag = FRA
+					}
+				
+				
+				
+				
+					AND = {
+						
+						tag = GER
+					}
+				
+					AND = {
+						
+						tag = GER
+					}
+				
+					AND = {
+						culture_group = benelux
+						tag = GER
+					}
+				
+					AND = {
+							OR = {
+								primary_culture = czech
+								primary_culture = moravian
+							}
+							tag = GER
+					}
+				
+					AND = {
+						primary_culture = schlesian
+						tag = GER
+					}
+				
+				
+				
+				
+					AND = {
+						primary_culture = nicard
+						tag = ITA
+					}
+				
+				
+				
+				
+					AND = {
+						culture_group = french
+						tag = MEX
+					}
+					AND = {
+						OR = {
+							
+							culture_group = latin
+						}
+						tag = MEX
+					}
+				
+					AND = {
+						OR = {
+							culture_group = iberian
+							culture_group = british
+							culture_group = benelux
+						}
+						tag = MEX
+					}
+				
+					AND = {
+						OR = {
+							culture_group = iberian
+							
+							culture_group = germanic
+							
+						}
+						tag = MEX
+					}
+				
+					AND = {
+						culture_group = occitan
+						tag = MEX
+					}
+				
+				
+				
+				
+					AND = {
+						OR = {
+							culture_group = british
+							
+							culture_group = benelux
+							culture_group = germanic
+							
+						}
+						tag = PEU
+					}
+				
+					AND = {
+						culture_group = french
+						tag = PEU
+					}
+					AND = {
+						OR = {
+							
+							culture_group = latin
+						}
+						tag = PEU
+					}
+				
+					AND = {
+						culture_group = iberian
+						tag = PEU
+					}
+				
+					AND = {
+						culture_group = occitan
+						tag = PEU
+					}
+				
+				
+				
+				
+					AND = {
+						primary_culture = catalan
+						tag = SPA
+					}
+				
+					AND = {
+						primary_culture = basque
+						tag = SPA
+					}
+				
+				
+				
+				
+					AND = {
+						culture_group = british
+						tag = USA
+					}
+				
+					AND = {
+						culture_group = benelux
+						tag = USA
+					}
+				
+					AND = {
+						
+						tag = USA
+					}
+				
+					AND = {
+						culture_group = germanic
+						tag = USA
+					}
+				}
+			}
+		}
+		restore_country_name = yes
+	} 
+}
+
+stuart_britain = {
+	override_country_name = SGBR
+}

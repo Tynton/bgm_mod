@@ -1,0 +1,261 @@
+fascist_mechanic = {
+	republican_name = yes
+	royal_marriage = no
+	republic = no
+	start_territory_to_estates = 0
+	basic_reform = yes # = invisible/does not take up a slot
+	valid_for_nation_designer = no
+	#revolutionary = yes
+	custom_attributes = {
+		claim_states = yes
+		enables_aristocratic_idea_group = yes
+	}
+	conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		militarised_society = yes
+	}
+}
+
+fascist_government_reform = {
+	icon = "fascist_government"
+	dictatorship = yes
+	allow_normal_conversion = yes
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	potential = {
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+	}
+	modifiers = {
+		land_forcelimit_modifier = 0.15
+		global_manpower_modifier = 0.05
+	}
+}
+
+islamism = {
+	icon = "islamism"
+	monarchy = yes
+	queen = yes
+	heir = yes
+	royal_marriage = yes
+	republican_name = no
+	allow_normal_conversion = yes
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	potential = {
+		NOT = {
+			government = monarchy 
+		}
+		OR = {
+			religion_group = muslim
+		}
+	}
+	modifiers = {
+		all_power_cost = -0.05
+	}
+}
+
+fascist_monarchism = {
+	icon = "eagle_empire"
+	monarchy = yes
+	queen = yes
+	heir = yes
+	royal_marriage = yes
+	republican_name = no
+	allow_normal_conversion = yes
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		yearly_absolutism = 0.5
+	}
+}
+
+rexism = {
+	icon = "rexism"
+	monarchy = yes
+	queen = yes
+	heir = yes
+	royal_marriage = yes
+	republican_name = no
+	potential = {
+		OR = {
+			culture_group = french
+			any_country = {
+				has_reform = rexism
+			}
+		}
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+	}
+	allow_normal_conversion = yes
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		trade_efficiency = 0.1
+		global_missionary_strength = 0.01
+	}
+	effect = {
+		change_religion = catholic
+	}
+}
+
+austrofascism = {
+	icon = "austrofascism"
+	dictatorship = yes
+	potential = {
+		OR = {
+			culture_group = germanic
+			
+			any_country = {
+				has_reform = austrofascism
+			}
+		}
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+	}
+	allow_normal_conversion = yes
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		global_missionary_strength = 0.02
+		stability_cost_modifier = -0.25
+	}
+	effect = {
+		change_religion = catholic
+	}
+}
+
+falanghism = {
+	icon = "falanghism"
+	dictatorship = yes
+	royal_marriage = no
+	potential = {
+		OR = {
+			culture_group = iberian
+			culture_group = occitan
+			any_country = {
+				has_reform = falanghism
+			}
+		}
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+	}
+	allow_normal_conversion = yes
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		global_missionary_strength = 0.02
+		unrest_catholic_provinces = -3
+	}
+	effect = {
+		change_religion = catholic
+	}
+}
+
+revolutionary_fascism = {
+	icon = "fascist_government_gold"
+	dictatorship = yes
+	potential = {
+		has_country_modifier = forced_fascism
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+	}
+	allow_normal_conversion = yes
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = no
+	modifiers = {
+		yearly_absolutism = 1.5
+		land_forcelimit_modifier = 1.0
+		global_manpower_modifier = 0.3
+	}
+}
+
+national_socialism = {
+	icon = "swastika"
+	dictatorship = yes
+	potential = {
+		OR = {
+			culture_group = germanic
+			
+			culture_group = scandinavian
+		}
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+		NOT = {
+			religion = catholic
+		}
+	}
+	allow_normal_conversion = yes
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		land_forcelimit_modifier = 0.5
+		global_manpower_modifier = 0.2
+	}
+}
+
+strasserist_fascism = {
+	icon = "strasserism"
+	dictatorship = yes
+	potential = {
+		OR = {
+			culture_group = germanic
+			
+			culture_group = scandinavian
+			any_country = {
+				has_reform = strasserist_fascism
+			}
+		}
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+		NOT = {
+			religion = catholic
+		}
+	}
+	allow_normal_conversion = yes
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		land_forcelimit_modifier = 0.4
+		global_manpower_modifier = 0.4
+		global_tax_modifier = 0.2
+	}
+}
+
+italian_fascism = {
+	icon = "fascist_government_italy"
+	dictatorship = yes
+	potential = {
+		OR = {
+			culture_group = latin
+			
+		}
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+	}
+	allow_normal_conversion = yes
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		land_forcelimit_modifier = 0.3
+		global_manpower_modifier = 0.05
+		governing_capacity = 400
+	}
+}

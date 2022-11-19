@@ -1,0 +1,7 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_development_icon"
+		texturefile = "gfx/interface/development_icon.dds"
+	}
+
+}

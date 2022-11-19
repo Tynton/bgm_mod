@@ -1,0 +1,17 @@
+Google/Duckduckgo: providing me with half the graphical assets I needed
+Albert/ET: great mod and the main inspiration for this one
+Extended Timeline: A little code
+removed revolutionary names mod: I was trying to find where in the stock paradox localization code this was, could not find anything so I had to settle for this. Sincerely, thanks @Rein
+BetterAI: Inspired myself to actually try to improve the AI in meaningful capacities
+glosbe/wiktionary for some translations
+TBARW: I borrowed a little code to fix an ambition, thank you much (even if I didn't ask :( )
+
+
+contributions:
+Zyphon (Chief Developer)
+LimonenZitrone (EU4 Modding Community)
+Seelowe (EU4 Modding Community)
+(Chaos) Jester
+WIICHART24/Boris Weedler
+hallengard guy
+Saarlan

@@ -1,0 +1,8 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_advisor_modernistgfx_artist"
+		texturefile = "gfx//interface//advisors//modernist_artist.dds"
+		# ...
+	}
+}

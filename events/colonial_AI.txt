@@ -1,0 +1,140 @@
+namespace = colonial_AI
+
+#attacks for empirebuilding
+
+country_event = {
+	id = colonial_AI.1
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		
+		ROOT = {
+			ai = yes
+			has_casus_belli = {
+				type = cb_imperial
+				target = FROM
+			}
+			capital_scope = {
+				region = british_isles_region
+			}
+			NOT = {
+				OR = {
+					marriage_with = FROM
+					alliance_with = FROM
+					truce_with = FROM
+				}
+			}
+		}
+		FROM = {
+			NOT = {
+				any_ally = {
+					army_strength = {
+						who = ROOT
+						value = 0.5
+					}
+				}
+				
+				army_strength = {
+					who = ROOT
+					value = 0.5
+				}
+				capital_scope = {
+					continent = FROM
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	#british wars
+	
+	option = {
+		#name = "British_Isles_AI.1.a"
+		
+		ROOT = {
+			declare_war_with_cb = {
+				who = FROM
+				casus_belli = cb_imperial
+			}
+		}
+	}
+}
+
+country_event = {
+	id = colonial_AI.2
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		
+		ROOT = {
+			ai = yes
+			has_casus_belli = {
+				type = cb_imperial
+				target = FROM
+			}
+			capital_scope = {
+				region = iberia_region
+			}
+			NOT = {
+				OR = {
+					marriage_with = FROM
+					alliance_with = FROM
+					truce_with = FROM
+				}
+			}
+			any_ally = {
+				army_size = 50
+				military_strength = {
+					who = ROOT
+					value = 0.5
+				}
+			}
+		}
+		FROM = {
+			NOT = {
+				any_ally = {
+					army_strength = {
+						who = ROOT
+						value = 0.5
+					}
+				}
+				
+				army_strength = {
+					who = ROOT
+					value = 0.5
+				}
+				capital_scope = {
+					continent = FROM
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	#british wars
+	
+	option = {
+		#name = "British_Isles_AI.1.a"
+		
+		ROOT = {
+			declare_war_with_cb = {
+				who = FROM
+				casus_belli = cb_imperial
+			}
+		}
+	}
+}

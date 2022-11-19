@@ -1,0 +1,87 @@
+5279 = "Becicherecu Mare"
+
+156 = "Timis"
+157 = "Bihor"
+158 = "Mures"
+268 = "Suceava"
+1756 = "Basarabia"
+1951 = "Hunedoara"
+1952 = "Maramures"
+2405 = "Tighina"
+
+134 = { "Viena" "Beci" }
+
+5284 = "Rusciuc"
+2746 = "Diiu"
+150 = "Nicopole"
+159 = "Dârstor"
+
+137 = "Raguza"
+266 = "Praga"
+12 = "Copenhaga"
+5289 = "Talin"
+201 = "Marsilia"
+102 = "Nisa"
+
+1874 = "Brema"
+61 = "Dresda"
+85 = "Colonia"
+4712 = "Constanta"
+62 = "Lipsca"
+78 = "Maienta"
+
+146 = "Atena"
+148 = { "Salonic" "Saruna" }
+
+155 = "Bichis"
+4126 = { "Cion" "Ciongrad" }
+5002 = { "Giula" "Jula" }
+153 = { "Pesta" "Budapesta" }
+5000 = "Miscolt"
+1953 = { "Debretin" "Dobritân" }
+5008 = "Seghedin"
+4125 = { "Solnoc" "Solnoca" }
+5001 = "Mestecanesti"
+4128 = "Pamântul craiesc"
+
+379 = "Ierusalim"
+
+116 = "Florenta"
+112 = "Venetia"
+
+3001 = "Scopia"
+
+4383 = "Haga"
+
+43 = "Gedania"
+262 = "Cracovia"
+254 = "Posnania"
+257 = "Varsovia"
+264 = { "Breslavia" "Vratislavia" }
+
+227 = "Lisabona"
+
+295 = { "Moscu" "Moscova" }
+33 = "Sankt Petersburg"
+
+1772 = "Pojon"
+5095 = "Casovia"
+162 = "Susudava"
+
+165 = "Berna"
+4720 = "Geneva"
+4994 = "Lucerna"
+
+382 = "Damasc"
+377 = "Alep"
+
+151 = { "Constantinopol" "Tarigrad" }
+4779 = "Adrianopol"
+
+
+283 = "Zaporojia"
+5110 = "Muncaciu"
+2961 = "Liov"
+282 = "Odesa"
+
+236 = "Londra"

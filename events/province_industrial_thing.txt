@@ -1,0 +1,640 @@
+namespace = province_industrialization
+
+province_event = {
+	id = province_industrialization.1
+	title = "province_industrialization.n.1"
+	desc = "province_industrialization.d.1"
+	picture = ANGRY_MOB_eventPicture
+
+	hidden = yes
+	
+	trigger = {
+		owner = {
+			adm_tech = 34
+			
+			is_bankrupt = no
+		}
+		
+		is_prosperous = yes 
+		
+		NOT = {
+			has_province_modifier = provincial_railroad
+		}
+	}	
+
+	mean_time_to_happen = {
+		months = 900
+		
+		modifier = {
+			factor = 0.7
+			has_terrain = farmlands
+		}
+		
+		modifier = {
+			factor = 0.75
+			has_terrain = grasslands
+		}
+		
+		modifier = {
+			factor = 0.775
+			has_terrain = woods
+		}
+		
+		modifier = {
+			factor = 1.1
+			has_terrain = forest
+		}
+		
+		modifier = {
+			factor = 1.1
+			OR = {
+				has_terrain = hills
+				has_terrain = coastline
+				has_terrain = drylands
+			}
+		}
+		
+		modifier = {
+			factor = 1.25
+			owner = {
+				is_subject = yes
+			}
+		}
+		
+		modifier = {
+			factor = 1.2
+			has_terrain = highlands
+		}
+		
+		modifier = {
+			factor = 1.3
+			OR = {
+				has_terrain = marsh
+				has_terrain = savannah
+			}
+		}
+		
+		modifier = {
+			factor = 0.85
+			OR = {
+				highest_value_trade_node = yes
+			}
+		}
+		
+		modifier = {
+			factor = 1.35
+			OR = {
+				has_terrain = mountain
+				has_terrain = jungle
+				has_terrain = desert
+				has_terrain = coastal_desert
+				has_terrain = glacier
+			}
+		}
+		
+		modifier = {
+			factor = 0.8
+			OR = {
+				province_has_center_of_trade_of_level = 2
+			}
+		}
+		
+		modifier = {
+			factor = 0.8
+			OR = {
+				current_age = age_of_great_wars
+			}
+		}
+	}
+	
+	option = {
+		name = "province_industrialization.1.a" 
+		add_province_modifier = {
+			name = provincial_railroad
+			duration = -1
+		}
+	}
+}
+
+#Rural Flight
+
+province_event = {
+	id = province_industrialization.2
+	title = none
+	desc = none
+	picture = none
+
+	hidden = yes
+	
+	trigger = {
+		owner = {
+			#adm_tech = 30
+			num_of_cities = 2
+		}
+		owner = {
+			stability = 1
+			OR = {
+				prestige = 50
+				capital_scope = {
+					is_prosperous = yes
+				}
+			}
+			#is_great_power = yes
+		}
+		NOT = {
+			province_has_center_of_trade_of_level = 1
+		}
+
+		base_tax = 2
+		base_production = 2
+		base_manpower = 2
+	}
+
+	mean_time_to_happen = {
+		months = 480
+
+		modifier = {
+			factor = 0.5
+
+			owner = {
+				OR = {
+					has_idea_group = humanist_ideas
+					has_idea_group = plutocracy_ideas
+					government = republic
+				}
+			}
+		}
+
+		modifier = {
+			factor = 2.5
+			NOT = {
+				development = 10
+			}
+		}
+		
+		modifier = {
+			factor = 5
+			NOT = {
+				owner = {
+					adm_tech = 10
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 2
+			NOT = {
+				owner = {
+					adm_tech = 20
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.75
+			owner = {
+				has_parliament = yes
+			}
+		}
+		
+		modifier = {
+			factor = 0.75
+			has_owner_accepted_culture = no
+		}
+
+		modifier = {
+			factor = 1.5
+			has_owner_accepted_culture = yes
+		}
+
+		modifier = {
+			factor = 0.5
+			has_province_modifier = provincial_railroad
+		}
+		
+		modifier = {
+			factor = 0.75
+			owner = {
+				any_owned_province = {
+					is_capital = yes
+					
+					NOT = {
+						development = 25
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.75
+			owner = {
+				any_owned_province = {
+					is_capital = yes
+					
+					NOT = {
+						development = 35
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.75
+			owner = {
+				any_owned_province = {
+					is_capital = yes
+					
+					NOT = {
+						development = 50
+					}
+				}
+			}
+		}
+
+		modifier = {
+			factor = 5
+
+			OR = {
+				AND = {
+					owner = {
+						adm_tech = 10
+						capital_scope = {
+							development = 20
+						}
+					}
+				}
+				AND = {
+					owner = {
+						adm_tech = 15
+						capital_scope = {
+							development = 25
+						}
+					}
+				}
+				AND = {
+					owner = {
+						adm_tech = 20
+						capital_scope = {
+							development = 35
+						}
+					}
+				}
+				AND = {
+					owner = {
+						adm_tech = 25
+						capital_scope = {
+							development = 50
+						}
+					}
+				}
+				AND = {
+					owner = {
+						adm_tech = 30
+						capital_scope = {
+							development = 65
+						}
+					}
+				}
+				AND = {
+					owner = {
+						adm_tech = 35
+						capital_scope = {
+							development = 80
+						}
+					}
+				}
+				AND = {
+					owner = {
+						adm_tech = 40
+						capital_scope = {
+							development = 110
+						}
+					}
+				}
+				AND = {
+					owner = {
+						adm_tech = 45
+						capital_scope = {
+							development = 140
+						}
+					}
+				}
+				AND = {
+					owner = {
+						adm_tech = 50
+						capital_scope = {
+							development = 200
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "province_industrialization.2.a" 
+		
+		owner = {
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					
+					base_tax = 3
+					base_production = 3
+					base_manpower = 3
+				}
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+			}
+			random_list = {
+				40 = {
+					capital_scope = {
+						add_base_tax = 1
+					}
+				}
+				40 = {
+					capital_scope = {
+						add_base_production = 1
+					}
+				}
+				20 = {
+					capital_scope = {
+						add_base_manpower = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+#fuck
+
+province_event = {
+	id = province_industrialization.3
+	title = none
+	desc = none
+	picture = none
+
+	hidden = yes
+	
+	trigger = {
+		always = no
+	}
+	
+	option = {
+		name = "province_industrialization.3.a" 
+			add_base_tax = -12
+			add_base_production = -12
+			add_base_manpower = -12
+	}
+}
+
+#Rural Flight from Puppet States
+
+province_event = {
+	id = province_industrialization.4
+	title = none
+	desc = none
+	picture = none
+
+	hidden = yes
+	
+	trigger = {
+		owner = {
+			#adm_tech = 30
+			num_of_cities = 2
+			any_subject_country = {
+				is_subject = yes #a retarded way of putting it but aight
+			}
+		}
+		
+		NOT = {
+			OR = {
+				AND = {
+					owner = {
+						adm_tech = 10
+						capital_scope = {
+							development = 20
+						}
+					}
+				}
+				AND = {
+					owner = {
+						adm_tech = 15
+						capital_scope = {
+							development = 25
+						}
+					}
+				}
+				AND = {
+					owner = {
+						adm_tech = 20
+						capital_scope = {
+							development = 35
+						}
+					}
+				}
+				AND = {
+					owner = {
+						adm_tech = 25
+						capital_scope = {
+							development = 50
+						}
+					}
+				}
+				AND = {
+					owner = {
+						adm_tech = 30
+						capital_scope = {
+							development = 65
+						}
+					}
+				}
+				AND = {
+					owner = {
+						adm_tech = 35
+						capital_scope = {
+							development = 80
+						}
+					}
+				}
+				AND = {
+					owner = {
+						adm_tech = 40
+						capital_scope = {
+							development = 110
+						}
+					}
+				}
+				AND = {
+					owner = {
+						adm_tech = 45
+						capital_scope = {
+							development = 140
+						}
+					}
+				}
+				AND = {
+					owner = {
+						adm_tech = 50
+						capital_scope = {
+							development = 200
+						}
+					}
+				}
+			}
+			owner = {
+				stability = 3
+				OR = {
+					prestige = 85
+					capital_scope = {
+						is_prosperous = yes
+					}
+				}
+				
+				is_great_power = yes
+			}
+		}
+		
+		NOT = {
+			province_has_center_of_trade_of_level = 1
+		}
+
+		base_tax = 3
+		base_production = 3
+		base_manpower = 3
+	}	
+
+	mean_time_to_happen = {
+		months = 80
+
+		modifier = {
+			factor = 1.5
+
+			owner = {
+				OR = {
+					has_idea_group = humanist_ideas
+					has_idea_group = plutocracy_ideas
+					government = republic
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 5
+			NOT = {
+				owner = {
+					adm_tech = 10
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 2
+			NOT = {
+				owner = {
+					adm_tech = 20
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.75
+			owner = {
+				has_parliament = yes
+			}
+		}
+		
+		modifier = {
+			factor = 0.75
+			has_owner_accepted_culture = no
+		}
+
+		modifier = {
+			factor = 1.5
+			has_owner_accepted_culture = yes
+		}
+
+		modifier = {
+			factor = 0.5
+			has_province_modifier = provincial_railroad
+		}
+		
+		modifier = {
+			factor = 0.75
+			owner = {
+				any_owned_province = {
+					is_capital = yes
+					
+					NOT = {
+						development = 25
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.75
+			owner = {
+				any_owned_province = {
+					is_capital = yes
+					
+					NOT = {
+						development = 35
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.75
+			owner = {
+				any_owned_province = {
+					is_capital = yes
+					
+					NOT = {
+						development = 50
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "province_industrialization.4.a" 
+		
+		owner = {
+			random_subject_country = {
+				random_owned_province = {
+					limit = {
+						base_tax = 3
+						base_production = 3
+						base_manpower = 3
+					}
+					add_base_tax = -1
+					add_base_production = -1
+					add_base_manpower = -1
+				}
+			}
+			
+			random_list = {
+				40 = {
+					capital_scope = {
+						add_base_tax = 1
+					}
+				}
+				40 = {
+					capital_scope = {
+						add_base_production = 1
+					}
+				}
+				20 = {
+					capital_scope = {
+						add_base_manpower = 1
+					}
+				}
+			}
+		}
+	}
+}

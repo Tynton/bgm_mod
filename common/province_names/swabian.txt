@@ -1,0 +1,8 @@
+4714 = "Kallsruh"
+4713 = { "Urach" "Dibenga" }
+70 = "Schduagert"
+1868 = "Augschburg"
+68 = "Memmingen"
+
+72 = "Brisgau"
+74 = "Baade"

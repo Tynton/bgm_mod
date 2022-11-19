@@ -1,0 +1,8 @@
+government = monarchy
+#add_government_reform = english_monarchy
+technology_group = western
+primary_culture = scottish
+add_accepted_culture = northumbrian
+add_accepted_culture = highland_scottish
+religion = reformed
+capital = 236	# London, would be Edinburgh

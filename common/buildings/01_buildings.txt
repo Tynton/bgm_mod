@@ -1,0 +1,131 @@
+# Do not change tags in here without changing every other reference to them.
+# If adding new buildings, make sure they are uniquely named.
+
+# cost = x #==> cost in $ to build (subject to other modifiers)
+# time = x #==> number of months to build.
+# modifier = m # a modifier on the province that the building gives
+# trigger = t # an and trigger that needs to be fullfilled to build and keep the building
+# one_per_country = yes/no # if yes, only one of these can exist in a country
+# manufactory = { trade_good trade_good } # list of trade goods that get a production bonus
+# onmap = yes/no # show as a sprite on the map
+
+# FROM = owner
+# ROOT = province
+
+# Building AI is now mainly hard-coded. The AI will estimate how much it gains yearly from each building,
+# convert the value to ducats, and take the building with biggest yearly return as a percentage of the build cost.
+# If lower than 1%, the AI will not consider the yearly return worth it.
+# It will also require higher yearly return if the economy in not in prime shape.
+# Forts' value also get converted to a yearly return based on terrain and strategic position, as well as available budget for fort maintenance.
+
+# AI can still be modded though; it will multiply the yearly return with the value of ai_will_do.
+# If you don't want the AI to build a building at all, make ai_will_do become 0.
+# AI will consider each building to be worth 0.01 ducats per year as a base, so making ai_will_do above cost will have them build it at some point.
+# It will still check whether it can afford a building before doing so though, but may save up to it.
+
+factory_infrastructure = {
+	cost = 800
+	time = 24
+	
+	modifier = {
+		local_production_efficiency = 2.0
+	}
+	
+	allow_in_gold_provinces = no
+
+	on_built = {
+		add_development_from_building = {
+			building = factory_infrastructure
+			type = production
+			value = 4
+		}
+		if = {
+			limit = {
+				OR = {
+					has_terrain = woods
+					has_terrain = hills
+					has_terrain = forest
+					has_terrain = highlands
+					has_terrain = mountain
+				}
+			}
+			add_province_modifier = {
+				name = factory_dev
+				duration = -1
+			}
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = factory_infrastructure
+			type = production
+			value = 4
+		}
+		remove_province_modifier = factory_dev
+	}
+	on_obsolete = {
+	}
+
+	ai_will_do = {
+		factor = 50
+		
+		modifier = {
+			factor = 200
+			owner = {
+				tag = JAP
+			}
+			is_institution_enabled = industrialization
+		}
+	}
+}
+
+tax_center = {
+	cost = 350
+	time = 12
+	modifier = {
+		local_tax_modifier = 1.0
+		local_state_maintenance_modifier = -0.3
+	}
+
+	on_built = {
+		add_development_from_building = {
+			building = tax_center
+			type = tax
+			value = 4
+		}
+		if = {
+			limit = {
+				OR = {
+					has_terrain = woods
+					has_terrain = hills
+					has_terrain = forest
+					has_terrain = highlands
+					has_terrain = mountain
+				}
+			}
+			add_province_modifier = {
+				name = tax_dev
+				duration = -1
+			}
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = tax_center
+			type = tax
+			value = 4
+		}
+		remove_province_modifier = tax_dev
+	}
+	
+	ai_will_do = {
+		factor = 50
+		
+		modifier = {
+			factor = 100
+			#owner = {
+			#	bgm_comgovt = yes
+			#}
+		}
+	}
+}

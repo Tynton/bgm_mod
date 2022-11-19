@@ -1,0 +1,152 @@
+# Province Triggered modifiers are here.
+# These are added to provinces through the add_province_triggered_modifier effect
+#
+# Effects are fully scriptable here.
+
+
+###########################################
+# Just random test modifier
+###########################################
+standardized_language_germanic = {
+	potential = {
+		always = yes
+	}
+
+	trigger = {
+		owner = {
+			OR = {
+				
+				culture_group = benelux
+				culture_group = germanic
+				
+			}
+			has_country_modifier = standard_language_adm
+		}
+		OR = {
+			
+			culture_group = benelux
+			culture_group = germanic
+			
+		}
+		has_building = university
+	}
+
+	local_culture_conversion_cost = -0.75
+	local_autonomy = -0.05
+	
+	#Province scope
+	on_activation = {
+		add_unrest = -5
+	}
+	
+	on_deactivation = {
+		add_unrest = 15
+	}
+}
+
+standardized_language_french = {
+	potential = {
+		always = yes
+	}
+
+	trigger = {
+		owner = {
+			OR = {
+				culture_group = french
+				culture_group = franco_provencal
+				culture_group = occitan
+				primary_culture = breton
+			}
+			has_country_modifier = standard_language_adm
+		}
+		OR = {
+			culture_group = french
+			culture_group = franco_provencal
+			culture_group = occitan
+			culture = breton
+		}
+		has_building = university
+	}
+
+	local_culture_conversion_cost = -0.75
+	local_autonomy = -0.05
+	
+	#Province scope
+	on_activation = {
+		add_unrest = -5
+	}
+	
+	on_deactivation = {
+		add_unrest = 15
+	}
+}
+
+standardized_language_italian = {
+	potential = {
+		always = yes
+	}
+
+	trigger = {
+		owner = {
+			OR = {
+				
+				culture_group = latin
+				primary_culture = nicard
+			}
+			has_country_modifier = standard_language_adm
+		}
+		OR = {
+			
+			culture_group = latin
+			culture = nicard
+		}
+		has_building = university
+	}
+
+	local_culture_conversion_cost = -0.75
+	local_autonomy = -0.05
+	
+	#Province scope
+	on_activation = {
+		add_unrest = -5
+	}
+	
+	on_deactivation = {
+		add_unrest = 15
+	}
+}
+
+standardized_language_spanish = {
+	potential = {
+		always = yes
+	}
+
+	trigger = {
+		owner = {
+			OR = {
+				culture_group = iberian
+				culture_group = occitan
+				primary_culture = andalucian
+			}
+			has_country_modifier = standard_language_adm
+		}
+		OR = {
+			culture_group = iberian
+			culture_group = occitan
+			culture = andalucian
+		}
+		has_building = university
+	}
+
+	local_culture_conversion_cost = -0.75
+	local_autonomy = -0.05
+	
+	#Province scope
+	on_activation = {
+		add_unrest = -5
+	}
+	
+	on_deactivation = {
+		add_unrest = 15
+	}
+}

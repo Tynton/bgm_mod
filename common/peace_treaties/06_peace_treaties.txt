@@ -1,0 +1,90 @@
+po_zollverein = {
+	category = 6
+	power_projection = humiliated_rival
+	power_cost_base = 0.0
+	prestige_base = 1.0
+	ae_base = 0.5
+	warscore_cost = {
+		all_provinces = 0.0
+		no_provinces = 100.0
+		owner_keeps = 0.0
+		conquered = 0.75
+		returned_core = 1.5
+		released_nation = 0.1
+		cancelled_subject = 0.1
+		concede_colonial_region = 0.0
+	}
+	warscore_cap = -1
+	requires_demand_independence = no
+	is_make_subject = no
+	requires_is_allowed = yes
+	
+	is_visible = {
+		always = yes
+	}
+	is_allowed = {
+		FROM = {
+			has_subject_of_type = german_confederation_member
+		}
+	}
+	effect = {
+		set_country_flag = victorious_zollverein
+
+		add_country_modifier = {
+			name = zollverein_overlord
+			duration = -1
+		}
+
+		set_government_rank = 3
+
+		every_country = {
+			limit = {
+				has_country_flag = gercon_leader
+			}
+			clr_country_flag = gercon_leader
+		}
+		every_country = {
+			limit = {
+				is_subject_of_type = german_confederation_member
+				NOT = {
+					OR = {
+						primary_culture = swiss
+						tag = PREV
+					}
+				}
+				OR = {
+					culture_group = benelux
+					culture_group = germanic
+					primary_culture = czech
+					primary_culture = moravian
+					primary_culture = schlesian
+				}
+			}
+			country_event = {
+				id = germanyunity.9
+			}
+			#clr_country_flag = gercon_member
+		}
+		log = "german confederation dead"
+	}
+	#FROM = {
+	#	every_subject_country = {
+	#		limit = {
+	#			is_subject_of_type = german_confederation_member
+	#		}
+	#		PREV = { grant_independence = yes }
+	#		ROOT = {
+	#			create_subject = {
+	#				subject = PREV
+	#				subject_type = german_confederation_member
+	#			}
+	#		}
+	#	}
+	#}
+	ai_weight = { # Defaults to always evaluate to 0
+		export_to_variable = {
+			variable_name = ai_value
+			value = 100
+		}
+	}
+}

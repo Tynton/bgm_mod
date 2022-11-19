@@ -1,0 +1,381 @@
+namespace = disaster_pol_reorg
+
+# Political Rift Opened
+country_event = {
+	id = disaster_pol_reorg.1
+	title = "disaster_pol_reorg.1.n"
+	desc = "disaster_pol_reorg.1.d"
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = had_pol_reorg
+		add_stability = -3
+	}
+
+	option = {
+		name = "disaster_pol_reorg.1.a"
+		add_prestige = -25
+
+		set_variable = {
+			which = populistScore
+			value = 0
+		}
+
+		set_variable = {
+			which = stateScore
+			value = 0
+		}
+
+		change_price = {
+			trade_goods = cinema
+			key = POLITICAL_CRISIS
+			value = -0.05
+			duration = -1
+		}
+		change_price = {
+			trade_goods = oil
+			key = POLITICAL_CRISIS
+			value = 0.05
+			duration = -1
+		}
+	}
+}
+
+# Incompetence in Government
+country_event = {
+	id = disaster_pol_reorg.2
+	title = "disaster_pol_reorg.2.n"
+	desc = "disaster_pol_reorg.2.d"
+	picture = ANGRY_MOB_eventPicture
+
+	trigger = {
+		has_disaster = political_reorganization
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	option = {
+		name = "disaster_pol_reorg.2.a" # Blame political adversaries
+		ai_chance = { factor = 50 }
+
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						bgm_comgovt = yes
+						has_reform = fascist_mechanic
+					}
+				}
+			}
+			add_prestige = -10
+			add_mil_power = 25
+			state_add = yes
+		}
+		if = {
+			limit = {
+				OR = {
+					bgm_comgovt = yes
+					has_reform = fascist_mechanic
+				}
+			}
+			add_mil_power = 50
+			state_add = yes
+		}
+	}
+	option = {
+		name = "disaster_pol_reorg.2.b" # Obscurantism
+		ai_chance = { factor = 50 }
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						bgm_comgovt = yes
+						has_reform = fascist_mechanic
+					}
+				}
+			}
+			
+			add_prestige = -5
+			add_adm_power = 50
+		}
+		if = {
+			limit = {
+				OR = {
+					bgm_comgovt = yes
+					has_reform = fascist_mechanic
+				}
+			}
+			state_add = yes
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+		}
+	}
+
+	option = {
+		name = "disaster_pol_reorg.2.c" # Concede
+		ai_chance = { factor = 10 }
+
+		trigger = {
+			NOT = {
+				OR = {
+					bgm_comgovt = yes
+					has_reform = fascist_mechanic
+				}
+			}
+		}
+		populist_add = yes
+		add_stability = 1
+		change_government_reform_progress = -100	
+	}
+}
+
+# Populists Ascendant
+country_event = {
+	id = disaster_pol_reorg.3
+	title = "disaster_pol_reorg.3.n"
+	desc = "disaster_pol_reorg.3.d"
+	picture = BATTLE_eventPicture
+
+	trigger = {
+		has_disaster = political_reorganization
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = {
+		name = "disaster_pol_reorg.3.a" # Slow them down
+		ai_chance = { factor = 50 }
+
+		trigger = {
+			stability = -2
+		}
+
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						bgm_comgovt = yes
+						has_reform = fascist_mechanic
+					}
+				}
+			}
+			random_list = {
+				40 = { 
+					add_stability = -1
+					add_adm_power = -50
+					populist_add = yes
+				}
+				60 = {
+					state_add = yes
+					add_adm_power = 25
+					add_dip_power = 25
+					add_mil_power = 25
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					bgm_comgovt = yes
+					has_reform = fascist_mechanic
+				}
+			}
+			state_add = yes
+			add_stability = 1
+			add_adm_power = 25
+			add_dip_power = 25
+			add_mil_power = 25
+		}
+	}
+	option = {
+		name = "disaster_pol_reorg.3.b" # Attempt to co-opt the populists into a subfaction
+		ai_chance = { factor = 40 }
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						bgm_comgovt = yes
+						has_reform = fascist_mechanic
+					}
+				}
+			}
+			random_list = {
+				35 = { 
+					populist_add = yes
+				}
+				65 = {
+					state_add = yes
+					add_country_modifier = { 
+						name = coopted_populists
+						duration = 1095
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					bgm_comgovt = yes
+					has_reform = fascist_mechanic
+				}
+			}
+			state_add = yes
+			add_country_modifier = { 
+				name = coopted_populists
+				duration = 1095
+			}
+		}
+	}
+}
+
+# Major Opportunity
+
+country_event = {
+	id = disaster_pol_reorg.4
+	title = "disaster_pol_reorg.4.n"
+	desc = "disaster_pol_reorg.4.d"
+	picture = BATTLE_eventPicture
+
+	trigger = {
+		has_disaster = political_reorganization
+	}
+
+	mean_time_to_happen = {
+		months = 7
+	}
+
+	option = {
+		name = "disaster_pol_reorg.4.a" # Take the opportunity
+		ai_chance = { factor = 50 }
+
+		trigger = {
+			stability = -2
+		}
+
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						bgm_comgovt = yes
+						has_reform = fascist_mechanic
+					}
+				}
+			}
+			random_list = {
+				30 = { 
+					add_stability = -1
+					populist_add = yes
+				}
+				70 = {
+					populist_add = yes
+					state_add = yes
+					add_stability = -1
+					add_adm_power = 50
+					add_dip_power = 50
+					add_mil_power = 50
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					bgm_comgovt = yes
+					has_reform = fascist_mechanic
+				}
+			}
+			state_add = yes
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+		}
+	}
+	option = {
+		name = "disaster_pol_reorg.4.b" # Stand solemnly
+		ai_chance = { factor = 1 }
+		populist_add = yes
+		add_stability = 1
+		add_legitimacy = 15
+		add_devotion = 15
+		add_horde_unity = 15
+		add_republican_tradition = 8
+	}
+}
+
+#End
+
+country_event = {
+	id = disaster_pol_reorg.5
+	title = "disaster_pol_reorg.5.n"
+	desc = {
+		trigger = {
+			check_variable = {
+				which = stateScore
+				which = populistScore
+			}
+		}
+		desc = "disaster_pol_reorg.d.5a"
+	}
+
+	desc = {
+		trigger = {
+			check_variable = {
+				which = populistScore
+				which = stateScore
+			}
+		}
+		desc = "disaster_pol_reorg.d.5b"
+	}
+	picture = CITY_VIEW_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "disaster_pol_reorg.5.a" #State Wins
+
+		trigger = {
+			check_variable = {
+				which = stateScore
+				which = populistScore
+			}
+		}
+
+		add_country_modifier = { 
+			name = state_win
+			duration = -1
+		}
+	}
+
+	option = {
+		name = "disaster_pol_reorg.5.b" #Populists Win
+
+		trigger = {
+			check_variable = {
+				which = populistScore
+				which = stateScore
+			}
+		}
+
+		add_country_modifier = { 
+			name = populists_win
+			duration = -1
+		}
+
+		change_price = {
+			trade_goods = oil
+			key = POLITICAL_CRISIS
+			value = -0.05
+			duration = -1
+		}
+	}
+
+	after = {
+		set_country_flag = had_pol_reorg
+	}
+}

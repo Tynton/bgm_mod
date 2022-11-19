@@ -1,0 +1,274 @@
+estate_military = {
+	icon = 15
+
+	# If true, country will get estate
+	trigger = {
+		has_institution = nationalism_institution
+		mil_tech = 34
+		NOT = {
+			has_reform = anarchy
+		}
+	}
+
+	country_modifier_happy = {
+		army_tradition = 0.5
+		drill_gain_modifier = 0.5
+		land_maintenance_modifier = -0.1
+	}
+	country_modifier_neutral = {
+		army_tradition = 0.25
+		drill_gain_modifier = 0.25
+		land_maintenance_modifier = -0.05
+	}	
+	country_modifier_angry = {
+		army_tradition = -0.25
+		land_maintenance_modifier = 0.05
+	}
+	land_ownership_modifier = {
+		#nobles_loyalty_modifier = 0.2
+	}
+
+	province_independence_weight = {
+		factor = 0
+	}
+
+	# Influence modifiers
+	base_influence = 0
+	
+	influence_modifier = {
+		desc = MIL_25
+		trigger = {
+			army_size_percentage = 0.25
+		}	
+		influence = 12
+	}
+	influence_modifier = {
+		desc = MIL_50
+		trigger = {
+			army_size_percentage = 0.5
+		}	
+		influence = 12
+	}
+	influence_modifier = {
+		desc = MIL_75
+		trigger = {
+			army_size_percentage = 0.75
+		}	
+		influence = 12
+	}
+	influence_modifier = {
+		desc = MIL_100
+		trigger = {
+			army_size_percentage = 1
+		}
+		influence = 12
+	}
+
+	influence_modifier = {
+		desc = MIL_SPENDING
+		trigger = {
+			land_maintenance = 0.95
+		}
+		influence = 4
+	}
+	influence_modifier = {
+		desc = NAVY_SPENDING
+		trigger = {
+			naval_maintenance = 0.95
+		}
+		influence = 4
+	}
+
+
+
+	influence_modifier = {
+		desc = NAVY_25
+		trigger = {
+			navy_size_percentage = 0.25
+		}	
+		influence = 12
+	}
+	influence_modifier = {
+		desc = NAVY_50
+		trigger = {
+			navy_size_percentage = 0.5
+		}	
+		influence = 12
+	}
+	influence_modifier = {
+		desc = NAVY_75
+		trigger = {
+			navy_size_percentage = 0.75
+		}	
+		influence = 12
+	}
+	influence_modifier = {
+		desc = NAVY_100
+		trigger = {
+			navy_size_percentage = 1
+		}
+		influence = 12
+	}
+
+
+
+	influence_modifier = {
+		desc = STRONG_PARTY
+		trigger = {
+			estate_influence = {
+				estate = estate_ruling_party
+				influence = 75
+			}
+		}
+		influence = -25
+	}
+
+	
+	#LOYALTY MODIFIERS
+	loyalty_modifier = {
+		desc = NEGLECTED_ARMY
+		trigger = {
+			NOT = {
+				army_tradition = 25
+			}
+		}
+		loyalty = -10
+	}
+	loyalty_modifier = {
+		desc = NEGLECTED_ARMY_FUNDING
+		trigger = {
+			NOT = {
+				land_maintenance = 0.25
+			}
+		}
+		loyalty = -15
+	}
+	loyalty_modifier = {
+		desc = ARMY_EXP
+		trigger = {
+			army_tradition = 65
+		}
+		loyalty = 10
+	}
+	loyalty_modifier = {
+		desc = ARMY_SPENDING
+		trigger = {
+			land_maintenance = 0.95
+		}
+		loyalty = 15
+	}
+
+	loyalty_modifier = {
+		desc = NEGLECTED_NAVY
+		trigger = {
+			NOT = {
+				navy_tradition = 25
+			}
+		}
+		loyalty = -5
+	}
+	loyalty_modifier = {
+		desc = NEGLECTED_NAVY_FUNDING
+		trigger = {
+			NOT = {
+				naval_maintenance = 0.25
+			}
+		}
+		loyalty = -10
+	}
+	loyalty_modifier = {
+		desc = ARMY_EXP
+		trigger = {
+			navy_tradition = 65
+		}
+		loyalty = 5
+	}
+
+	influence_modifier = {
+		desc = AIR_FORCE
+		trigger = {
+			OR = {
+				has_country_modifier = air_force_tierone
+				has_country_modifier = air_force_tiertwo
+				has_country_modifier = air_force_tierthree
+				has_country_modifier = air_force_tierfour
+				has_country_modifier = air_force_tierfive
+				has_country_modifier = air_force_tiersix
+				has_country_modifier = air_force_tierseven
+			}
+		}
+		influence = 15
+	}
+
+	loyalty_modifier = {
+		desc = DISLOYAL_PARTY
+		trigger = {
+			NOT = {
+				estate_loyalty = {
+					estate = estate_ruling_party
+					loyalty = 30
+				}
+			}
+		}
+		loyalty = -20
+	}
+
+
+	loyalty_modifier = {
+		desc = MOBILIZE_33
+		trigger = {
+			militarised_society = 33
+		}
+		loyalty = 5
+	}
+	loyalty_modifier = {
+		desc = MOBILIZE_67
+		trigger = {
+			militarised_society = 67
+		}
+		loyalty = 5
+	}
+	loyalty_modifier = {
+		desc = MOBILIZE_100
+		trigger = {
+			militarised_society = 100
+		}
+		loyalty = 5
+	}
+
+
+
+	loyalty_modifier = {
+		desc = WARTIME
+		trigger = {
+			is_at_war = yes
+		}
+		loyalty = 10
+	}
+	loyalty_modifier = {
+		desc = THREATENING_NEIGHBOR
+		trigger = {
+			any_neighbor_country = {
+				military_strength = {
+					who = ROOT
+					value = 2
+				}
+			}
+		}
+		loyalty = -5
+	}
+
+	color = { 25 100 25 }
+	
+	privileges = {
+		mil_general_staff
+		mil_mp
+		mil_expand_officers
+		mil_field_hospital
+	}
+
+	agendas = {
+	}
+	
+	influence_from_dev_modifier = 0.0
+}

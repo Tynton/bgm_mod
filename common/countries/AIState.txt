@@ -1,0 +1,39 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 0  0  0 }
+revolutionary_colors = { 1 1 1 }
+
+historical_idea_groups = {
+	trade_ideas
+	defensive_ideas
+	innovativeness_ideas
+	offensive_ideas
+	economic_ideas
+	maritime_ideas
+	quality_ideas
+	administrative_ideas
+}
+
+
+monarch_names = {
+	"Unit Model A" = 10
+	"Unit Model B" = -1
+	"Unit Model A" = 10
+	"Unit Model B" = -1
+	"Unit Model A" = 10
+	"Unit Model B" = -1
+	"Unit Model A" = 10
+	"Unit Model B" = -1
+	"Unit Model A" = 10
+	"Unit Model B" = -1
+}
+
+leader_names = {
+	"Independent CPU 1" "Independent CPU 2" "Independent CPU 3" "Independent CPU 4" "Independent CPU 5" "Independent CPU 6" "Independent CPU 7" "Independent CPU 8" "Independent CPU 9" "Independent CPU 10" "Independent CPU 11" "Independent CPU 12"
+}
+
+ship_names = {
+	"Vessel <1" "Vessel 1" "Vessel 2" "Vessel 3" "Vessel 4" "Vessel 5" "Vessel 6" "Vessel 7" "Vessel 8" "Vessel 9" "Vessel 10" "Vessel >10"
+}

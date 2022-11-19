@@ -1,0 +1,182 @@
+namespace = intranational_tension
+
+# Start
+country_event = {
+	id = intranational_tension.1
+	title = "intranational_tension.1.t"
+	desc = "intranational_tension.1.d"
+	picture = MIL_ADVANCE_eventPicture
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		add_stability = -4
+		add_war_exhaustion = 10
+	}
+	
+	option = {
+		name = "intranational_tension.1.a"			# Dire times are ahead of us
+		add_prestige = -10
+
+		if = {
+			limit = {
+				NOT = {
+					has_reform = democratic_mechanic
+				}
+			}
+			capital_scope = {
+				spawn_rebels = {
+					type = democratic_rebels
+					size = 3
+				}
+			}
+		}
+
+		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_group = ROOT
+				}
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 3
+			}
+		}
+
+		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_group = ROOT
+				}
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+#Spawn Rebels/add unrest
+
+country_event = {
+	id = intranational_tension.2
+	title = "intranational_tension.2.t"
+	desc = "intranational_tension.2.d"
+	picture = BUREAU_eventPicture
+	
+	#major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "intranational_tension.2.a"			# Fight them
+		add_prestige = -10
+
+		random_owned_province = {
+			limit = {
+				culture_group = ROOT
+			}
+			spawn_rebels = {
+				type = democratic_rebels
+				size = 1
+			}
+		}
+
+		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_group = ROOT
+				}
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 2
+			}
+		}
+	}
+
+	option = {
+		name = "intranational_tension.2.b"			# Acquiesce for autonomy
+
+		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_group = ROOT
+				}
+			}
+			add_local_autonomy = 100
+		}
+	}
+}
+
+#Loss of influence over subjects
+
+country_event = {
+	id = intranational_tension.3
+	title = "intranational_tension.3.t"
+	desc = "intranational_tension.3.d"
+	picture = BUREAU_eventPicture
+	
+	#major = yes
+	
+	is_triggered_only = yes #ADD MTTH & ADVISOR RESIGNATION EVENTS
+	
+	option = {
+		name = "intranational_tension.3.a"			# Let them go
+		add_prestige = -10
+
+		random_subject_country = {
+			add_liberty_desire = 25
+		}
+	}
+
+	option = {
+		name = "intranational_tension.2.b"			# Acquiesce for autonomy
+
+		random_subject_country = {
+			grant_independence = yes
+		}
+	}
+}
+
+#End of disaster
+
+country_event = {
+	id = intranational_tension.4
+	title = "intranational_tension.4.t"
+	desc = "intranational_tension.4.d"
+	picture = BUREAU_eventPicture
+	
+	#major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "intranational_tension.4.a"			# End
+		end_disaster = intranational_cultural_tension
+		add_stability = 5
+		add_prestige = -50
+	}
+}
+
+#Government official's resignation
+
+country_event = {
+	id = intranational_tension.5
+	title = "intranational_tension.5.t"
+	desc = "intranational_tension.5.d"
+	picture = BUREAU_eventPicture
+	
+	#major = yes
+	
+	is_triggered_only = yes #ADD MTTH & ADVISOR RESIGNATION EVENTS
+	
+	option = {
+		name = "intranational_tension.5.a"			# ugh
+		remove_advisor = random
+	}
+}

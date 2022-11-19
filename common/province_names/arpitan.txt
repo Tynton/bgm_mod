@@ -1,0 +1,11 @@
+4720 = "Genèva"
+1867 = { "Vaud" "Losena" }
+4721 = { "Fribôrg" "Friboua" }
+1871 = "Valês"
+4719 = "Bôrg"
+205 = "Chambèri"
+#5397 = "Chamôni"
+204 = { "Dôfenât" "Grainóvol" }
+98 = "Utrèct"
+
+203 = "Liyon"

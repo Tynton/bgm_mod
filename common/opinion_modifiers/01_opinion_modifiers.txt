@@ -1,0 +1,76 @@
+
+same_ideology = {
+	opinion = 100
+}
+
+diff_ideology = {
+	opinion = -100
+}
+
+fellow_democracy = {
+	opinion = 100
+}
+
+authoritarian_opinion = {
+	opinion = -200
+}
+
+entente_cordiale_opinion = {
+	opinion = 75
+}
+
+diplomatic_mission = {
+	opinion = 75
+}
+
+is_dominion = {
+	opinion = 80
+}
+
+embraced_revolution = {
+	opinion = -150
+}
+
+no_zollverein = {
+	opinion = -25
+	yearly_decay = 1
+}
+
+generous_donation = {
+	opinion = 50
+	yearly_decay = 2
+}
+
+red_planet_overlord = {
+	opinion = 2000
+}
+
+kidnap_plot = {
+	opinion = -75
+	yearly_decay = 1
+}
+
+murder_plot = {
+	opinion = -175
+	yearly_decay = 1
+}
+
+royal_member_murdered = {
+	opinion = -200
+	yearly_decay = 1
+}
+
+intimidated_into_dynasty = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+kicked_from_pact = {
+	opinion = -100
+	yearly_decay = 2
+}
+
+annexed_neighbor_bgm = {
+	opinion = -50
+	yearly_decay = 1
+}

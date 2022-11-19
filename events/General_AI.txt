@@ -1,0 +1,2151 @@
+namespace = general_ai
+
+#RANDOM DEVELOPMENT, ADM
+
+province_event = {
+	id = general_ai.1
+	title = "general_ai.n.1"
+	desc = "general_ai.d.1"
+	picture = ANGRY_MOB_eventPicture
+
+	
+	
+	trigger = {
+		controlled_by = owner
+
+		OR = {
+			culture_group = owner
+			has_owner_accepted_culture = yes
+		}
+		owner = {
+			OR = {
+				AND = {
+					adm_power = 750
+					NOT = {
+						adm_tech = 30
+					}
+				}
+				AND = {
+					adm_power = 1100
+					adm_tech = 30
+				}
+			}
+			ai = yes
+			NOT = {
+				governing_capacity_percentage = 1.0
+			}
+			NOT = { has_country_modifier = ai_get_tech }
+			
+
+			variable_arithmetic_trigger = {
+			custom_tooltip = ROOT_HAS_ENOUGH_$type$_POWER_TO_DEVELOP_PROV
+			
+				export_to_variable = {
+					which = dev_base_cost
+					value = $base_cost$
+				}
+				export_to_variable = {
+					which = dev_efficiency
+					value = 1
+				}
+				if = {
+					limit = {
+						adm_tech = 17
+					}
+					variable_arithmetic_trigger = {
+						change_variable = { which = dev_efficiency value = -0.01 }
+					}
+				}
+				if = {
+					limit = {
+						adm_tech = 23
+					}
+					variable_arithmetic_trigger = {
+						change_variable = { which = dev_efficiency value = -0.02 }
+					}
+				}
+				
+				if = {
+					limit = {
+						adm_tech = 27
+					}
+					variable_arithmetic_trigger = {
+						change_variable = { which = dev_efficiency value = -0.02 }
+					}
+				}
+				
+				if = {
+					limit = {
+						adm_tech = 29
+					}
+					variable_arithmetic_trigger = {
+						change_variable = { which = dev_efficiency value = -0.02 }
+					}
+				}
+				if = {
+					limit = {
+						adm_tech = 30
+					}
+					variable_arithmetic_trigger = {
+						change_variable = { which = dev_efficiency value = -0.03 }
+					}
+				}
+				if = {
+					limit = {
+						adm_tech = 31
+					}
+					variable_arithmetic_trigger = {
+						change_variable = { which = dev_efficiency value = -0.02 }
+					}
+				}
+				
+				if = {
+					limit = {
+						adm_tech = 35
+					}
+					variable_arithmetic_trigger = {
+						change_variable = { which = dev_efficiency value = -0.03 }
+					}
+				}
+				if = {
+					limit = {
+						adm_tech = 36
+					}
+					variable_arithmetic_trigger = {
+						change_variable = { which = dev_efficiency value = -0.02 }
+					}
+				}
+				
+				if = {
+					limit = {
+						adm_tech = 39
+					}
+					variable_arithmetic_trigger = {
+						change_variable = { which = dev_efficiency value = -0.02 }
+					}
+				}
+				if = {
+					limit = {
+						adm_tech = 40
+					}
+					variable_arithmetic_trigger = {
+						change_variable = { which = dev_efficiency value = -0.03 }
+					}
+				}
+				
+				if = {
+					limit = {
+						adm_tech = 44
+					}
+					variable_arithmetic_trigger = {
+						change_variable = { which = dev_efficiency value = -0.02 }
+					}
+				}
+				if = {
+					limit = {
+						adm_tech = 45
+					}
+					variable_arithmetic_trigger = {
+						change_variable = { which = dev_efficiency value = -0.03 }
+					}
+				}
+				if = {
+					limit = {
+						adm_tech = 46
+					}
+					variable_arithmetic_trigger = {
+						change_variable = { which = dev_efficiency value = -0.02 }
+					}
+				}
+				
+				if = {
+					limit = {
+						adm_tech = 50
+					}
+					variable_arithmetic_trigger = {
+						change_variable = { which = dev_efficiency value = -0.03 }
+					}
+				}
+				
+				multiply_variable = { which = dev_efficiency value = -0.01 }
+				change_variable = { which = dev_efficiency value = 1 }
+				multiply_variable = { which = dev_base_cost which = dev_efficiency }
+				
+				export_to_variable = {
+					which = local_dev_cost
+					value = modifier:local_development_cost
+				}
+				export_to_variable = {
+					which = dev_cost
+					value = modifier:development_cost
+					who = owner
+				}
+				
+				change_variable = { which = local_dev_cost which = dev_cost }
+				
+				if = {
+					limit = {
+						is_capital = yes
+						ROOT = { NOT = { total_development = 1000 } }
+					}
+					variable_arithmetic_trigger = {
+						export_to_variable = {
+							which = country_total_dev
+							value = trigger_value:total_development
+							who = owner
+						}
+						multiply_variable = { which = country_total_dev value = 0.05 }
+						divide_variable = { which = country_total_dev value = 100 }
+						subtract_variable = { which = local_dev_cost which = country_total_dev }
+					}
+				}
+				if = {
+					limit = {
+						is_capital = yes
+						ROOT = { total_development = 1000 }
+					}
+					variable_arithmetic_trigger = {
+						export_to_variable = {
+							which = country_total_dev
+							value = 0.5
+						}
+						subtract_variable = { which = local_dev_cost which = country_total_dev }
+					}
+				}
+				
+				
+				change_variable = { which = local_dev_cost value = 1 }
+				multiply_variable = { which = dev_base_cost which = local_dev_cost }
+				divide_variable = { which = dev_base_cost value = 1000 }
+				multiply_variable = { which = dev_base_cost value = 1000 }
+				
+				export_to_variable = {
+					which = country_$type$_monarch_power
+					value = trigger_value:$type$_power
+					who = owner
+				}
+				change_variable = { which = country_$type$_monarch_power value = -1 }
+				
+				check_variable = { which = country_$type$_monarch_power which = dev_base_cost }
+			}
+		}
+
+		NOT = {
+			check_variable = {
+				which = dev_base_cost
+				value = 200
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 50 #70
+
+		modifier = {
+			factor = 5
+			check_variable = {
+				which = dev_base_cost
+				value = 50
+			}
+		}
+
+		modifier = {
+			factor = 0.175
+			NOT = {
+				check_variable = {
+					which = dev_base_cost
+					value = 50
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.01
+			owner = {
+				has_country_modifier = adm_tech_plateaued
+				has_country_modifier = dip_tech_plateaued
+				has_country_modifier = mil_tech_plateaued
+			}
+		}
+
+		modifier = {
+			factor = 5.0
+			has_port = yes
+		}
+		
+		modifier = {
+			factor = 0.1
+			owner = {
+				adm_power = 1100
+			}
+		}
+		
+		modifier = {
+			factor = 0.01
+			owner = {
+				OR = {
+					is_colonial_nation = yes
+					is_former_colonial_nation = yes
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.25
+			current_institution = 1
+		}
+		
+		modifier = {
+			factor = 0.5
+			OR = {
+				trade_goods = grain
+				trade_goods = livestock
+				trade_goods = fish
+			}
+		}
+		
+		modifier = {
+			factor = 0.1
+			is_prosperous = yes 
+		}
+		
+		modifier = {
+			factor = 0.0001
+			is_prosperous = yes 
+			NOT = { development = 10 }
+		}
+	}
+	
+	option = {
+		name = "general_ai.1.a"
+		
+		ai_dev_cost = { 
+			type = adm
+			xyz = tax
+		}
+	}
+}
+
+#RANDOM DEVELOPMENT, DIP
+
+province_event = {
+	id = general_ai.2
+	title = "general_ai.n.2"
+	desc = "general_ai.d.2"
+	picture = ANGRY_MOB_eventPicture
+
+	
+	
+	trigger = {
+		controlled_by = owner
+		OR = {
+			culture_group = owner
+			has_owner_accepted_culture = yes
+		}
+		owner = {
+			OR = {
+				AND = {
+					dip_power = 750
+					NOT = {
+						dip_tech = 30
+					}
+				}
+				AND = {
+					dip_power = 1100
+					dip_tech = 30
+				}
+			}
+			ai = yes
+			NOT = {
+				governing_capacity_percentage = 1.0
+			}
+			NOT = { has_country_modifier = ai_get_tech }
+
+			variable_arithmetic_trigger = {
+				custom_tooltip = ROOT_HAS_ENOUGH_$type$_POWER_TO_DEVELOP_PROV
+				
+					export_to_variable = {
+						which = dev_base_cost
+						value = $base_cost$
+					}
+					export_to_variable = {
+						which = dev_efficiency
+						value = 1
+					}
+					if = {
+						limit = {
+							adm_tech = 17
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.01 }
+						}
+					}
+					if = {
+						limit = {
+							adm_tech = 23
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.02 }
+						}
+					}
+					
+					if = {
+						limit = {
+							adm_tech = 27
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.02 }
+						}
+					}
+					
+					if = {
+						limit = {
+							adm_tech = 29
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.02 }
+						}
+					}
+					if = {
+						limit = {
+							adm_tech = 30
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.03 }
+						}
+					}
+					if = {
+						limit = {
+							adm_tech = 31
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.02 }
+						}
+					}
+					
+					if = {
+						limit = {
+							adm_tech = 35
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.03 }
+						}
+					}
+					if = {
+						limit = {
+							adm_tech = 36
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.02 }
+						}
+					}
+					
+					if = {
+						limit = {
+							adm_tech = 39
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.02 }
+						}
+					}
+					if = {
+						limit = {
+							adm_tech = 40
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.03 }
+						}
+					}
+					
+					if = {
+						limit = {
+							adm_tech = 44
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.02 }
+						}
+					}
+					if = {
+						limit = {
+							adm_tech = 45
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.03 }
+						}
+					}
+					if = {
+						limit = {
+							adm_tech = 46
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.02 }
+						}
+					}
+					
+					if = {
+						limit = {
+							adm_tech = 50
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.03 }
+						}
+					}
+					
+					multiply_variable = { which = dev_efficiency value = -0.01 }
+					change_variable = { which = dev_efficiency value = 1 }
+					multiply_variable = { which = dev_base_cost which = dev_efficiency }
+					
+					export_to_variable = {
+						which = local_dev_cost
+						value = modifier:local_development_cost
+					}
+					export_to_variable = {
+						which = dev_cost
+						value = modifier:development_cost
+						who = owner
+					}
+					
+					change_variable = { which = local_dev_cost which = dev_cost }
+					
+					if = {
+						limit = {
+							is_capital = yes
+							ROOT = { NOT = { total_development = 1000 } }
+						}
+						variable_arithmetic_trigger = {
+							export_to_variable = {
+								which = country_total_dev
+								value = trigger_value:total_development
+								who = owner
+							}
+							multiply_variable = { which = country_total_dev value = 0.05 }
+							divide_variable = { which = country_total_dev value = 100 }
+							subtract_variable = { which = local_dev_cost which = country_total_dev }
+						}
+					}
+					if = {
+						limit = {
+							is_capital = yes
+							ROOT = { total_development = 1000 }
+						}
+						variable_arithmetic_trigger = {
+							export_to_variable = {
+								which = country_total_dev
+								value = 0.5
+							}
+							subtract_variable = { which = local_dev_cost which = country_total_dev }
+						}
+					}
+					
+					
+					change_variable = { which = local_dev_cost value = 1 }
+					multiply_variable = { which = dev_base_cost which = local_dev_cost }
+					divide_variable = { which = dev_base_cost value = 1000 }
+					multiply_variable = { which = dev_base_cost value = 1000 }
+					
+					export_to_variable = {
+						which = country_$type$_monarch_power
+						value = trigger_value:$type$_power
+						who = owner
+					}
+					change_variable = { which = country_$type$_monarch_power value = -1 }
+					
+					check_variable = { which = country_$type$_monarch_power which = dev_base_cost }
+			}
+		}
+
+		NOT = {
+			check_variable = {
+				which = dev_base_cost
+				value = 200
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 50
+
+		modifier = {
+			factor = 5
+			check_variable = {
+				which = dev_base_cost
+				value = 50
+			}
+		}
+
+		modifier = {
+			factor = 0.175
+			NOT = {
+				check_variable = {
+					which = dev_base_cost
+					value = 50
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.01
+			owner = {
+				has_country_modifier = adm_tech_plateaued
+				has_country_modifier = dip_tech_plateaued
+				has_country_modifier = mil_tech_plateaued
+			}
+		}
+		
+		modifier = {
+			factor = 0.01
+			owner = {
+				dip_power = 1100
+			}
+		}
+		
+		modifier = {
+			factor = 0.075
+			trade_goods = gold
+		}
+		
+		modifier = {
+			factor = 10.0
+			OR = {
+				trade_goods = grain
+				trade_goods = livestock
+				trade_goods = fish
+				trade_goods = wine
+			}
+		}
+		
+		modifier = {
+			factor = 0.1
+			is_prosperous = yes 
+		}
+		
+		modifier = {
+			factor = 0.01
+			is_prosperous = yes 
+			NOT = { development = 10 }
+		}
+		
+		modifier = {
+			factor = 0.25
+			current_institution = 1
+		}
+		
+		modifier = {
+			factor = 0.1
+			OR = {
+				trade_goods = cloth
+				trade_goods = gold
+				trade_goods = iron
+				trade_goods = ivory
+				trade_goods = spices
+				trade_goods = cotton
+				trade_goods = sugar
+				trade_goods = tobacco
+				trade_goods = silk
+				trade_goods = dyes
+				trade_goods = paper
+			}
+		}
+		
+		modifier = {
+			factor = 0.15
+			has_port = yes
+		}
+	}
+	
+	option = {
+		name = "general_ai.2.a"
+		ai_dev_cost = { 
+			type = dip
+			xyz = production
+		}
+	}
+}
+
+#RANDOM DEVELOPMENT, MIL
+
+province_event = {
+	id = general_ai.3
+	title = "general_ai.n.3"
+	desc = "general_ai.d.3"
+	picture = ANGRY_MOB_eventPicture
+
+	
+	
+	trigger = {
+		controlled_by = owner
+		OR = {
+			culture_group = owner
+			has_owner_accepted_culture = yes
+		}
+		owner = {
+			OR = {
+				AND = {
+					mil_power = 750
+					NOT = {
+						mil_tech = 30
+					}
+				}
+				AND = {
+					mil_power = 1100
+					mil_tech = 30
+				}
+			}
+			ai = yes
+			NOT = {
+				governing_capacity_percentage = 1.0
+			}
+			NOT = { has_country_modifier = ai_get_tech }
+
+			variable_arithmetic_trigger = {
+				custom_tooltip = ROOT_HAS_ENOUGH_$type$_POWER_TO_DEVELOP_PROV
+				
+					export_to_variable = {
+						which = dev_base_cost
+						value = $base_cost$
+					}
+					export_to_variable = {
+						which = dev_efficiency
+						value = 1
+					}
+					if = {
+						limit = {
+							adm_tech = 17
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.01 }
+						}
+					}
+					if = {
+						limit = {
+							adm_tech = 23
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.02 }
+						}
+					}
+					
+					if = {
+						limit = {
+							adm_tech = 27
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.02 }
+						}
+					}
+					
+					if = {
+						limit = {
+							adm_tech = 29
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.02 }
+						}
+					}
+					if = {
+						limit = {
+							adm_tech = 30
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.03 }
+						}
+					}
+					if = {
+						limit = {
+							adm_tech = 31
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.02 }
+						}
+					}
+					
+					if = {
+						limit = {
+							adm_tech = 35
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.03 }
+						}
+					}
+					if = {
+						limit = {
+							adm_tech = 36
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.02 }
+						}
+					}
+					
+					if = {
+						limit = {
+							adm_tech = 39
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.02 }
+						}
+					}
+					if = {
+						limit = {
+							adm_tech = 40
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.03 }
+						}
+					}
+					
+					if = {
+						limit = {
+							adm_tech = 44
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.02 }
+						}
+					}
+					if = {
+						limit = {
+							adm_tech = 45
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.03 }
+						}
+					}
+					if = {
+						limit = {
+							adm_tech = 46
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.02 }
+						}
+					}
+					
+					if = {
+						limit = {
+							adm_tech = 50
+						}
+						variable_arithmetic_trigger = {
+							change_variable = { which = dev_efficiency value = -0.03 }
+						}
+					}
+					
+					multiply_variable = { which = dev_efficiency value = -0.01 }
+					change_variable = { which = dev_efficiency value = 1 }
+					multiply_variable = { which = dev_base_cost which = dev_efficiency }
+					
+					export_to_variable = {
+						which = local_dev_cost
+						value = modifier:local_development_cost
+					}
+					export_to_variable = {
+						which = dev_cost
+						value = modifier:development_cost
+						who = owner
+					}
+					
+					change_variable = { which = local_dev_cost which = dev_cost }
+					
+					if = {
+						limit = {
+							is_capital = yes
+							ROOT = { NOT = { total_development = 1000 } }
+						}
+						variable_arithmetic_trigger = {
+							export_to_variable = {
+								which = country_total_dev
+								value = trigger_value:total_development
+								who = owner
+							}
+							multiply_variable = { which = country_total_dev value = 0.05 }
+							divide_variable = { which = country_total_dev value = 100 }
+							subtract_variable = { which = local_dev_cost which = country_total_dev }
+						}
+					}
+					if = {
+						limit = {
+							is_capital = yes
+							ROOT = { total_development = 1000 }
+						}
+						variable_arithmetic_trigger = {
+							export_to_variable = {
+								which = country_total_dev
+								value = 0.5
+							}
+							subtract_variable = { which = local_dev_cost which = country_total_dev }
+						}
+					}
+					
+					
+					change_variable = { which = local_dev_cost value = 1 }
+					multiply_variable = { which = dev_base_cost which = local_dev_cost }
+					divide_variable = { which = dev_base_cost value = 1000 }
+					multiply_variable = { which = dev_base_cost value = 1000 }
+					
+					export_to_variable = {
+						which = country_$type$_monarch_power
+						value = trigger_value:$type$_power
+						who = owner
+					}
+					change_variable = { which = country_$type$_monarch_power value = -1 }
+					
+					check_variable = { which = country_$type$_monarch_power which = dev_base_cost }
+			}
+		}
+
+		NOT = {
+			check_variable = {
+				which = dev_base_cost
+				value = 200
+			}
+		}
+	}	
+
+	mean_time_to_happen = {
+		months = 50
+
+		modifier = {
+			factor = 5
+			check_variable = {
+				which = dev_base_cost
+				value = 50
+			}
+		}
+
+		modifier = {
+			factor = 0.175
+			NOT = {
+				check_variable = {
+					which = dev_base_cost
+					value = 50
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.01
+			owner = {
+				has_country_modifier = adm_tech_plateaued
+				has_country_modifier = dip_tech_plateaued
+				has_country_modifier = mil_tech_plateaued
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			has_port = yes
+		}
+		
+		modifier = {
+			factor = 0.01
+			owner = {
+				mil_power = 1100
+			}
+		}
+		
+		modifier = {
+			factor = 0.1
+			is_prosperous = yes 
+		}
+		
+		modifier = {
+			factor = 0.01
+			is_prosperous = yes 
+			NOT = { development = 10 }
+		}
+
+		modifier = {
+			factor = 0.25
+			current_institution = 1
+			
+		}
+		
+		modifier = {
+			factor = 0.2
+			OR = {
+				trade_goods = grain
+				trade_goods = livestock
+				trade_goods = fish
+				trade_goods = wine
+			}
+		}
+		
+		modifier = {
+			factor = 0.1
+			trade_goods = livestock
+		}
+		
+		modifier = {
+			factor = 5.0
+			NOT = {
+				OR = {
+					trade_goods = grain
+					trade_goods = livestock
+					trade_goods = fish
+					trade_goods = wine
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "general_ai.3.a"
+		add_devastation = -5
+		ai_dev_cost = { 
+			type = mil
+			xyz = manpower
+		}
+	}
+}
+
+##############DISINHERITING EVENT
+
+country_event = {
+	id = general_ai.10
+	title = "general_ai.n.10"
+	desc = "general_ai.d.10"
+	picture = ANGRY_MOB_eventPicture
+
+	
+	
+	trigger = {
+		always = no #this event is now REDUNDANT
+		ai = yes
+		government = monarchy
+		prestige = 0
+		NOT = {
+			heir_adm = 4
+			heir_dip = 4
+			heir_mil = 4
+		}
+		NOT = { has_heir_flag = is_charles_of_burg_flag }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "general_ai.10.a"
+		add_prestige = -25
+		remove_heir = {}
+	}
+}
+
+##############STABILITY
+
+country_event = {
+	id = general_ai.11
+	title = "general_ai.n.11"
+	desc = "general_ai.d.11"
+	picture = ANGRY_MOB_eventPicture
+
+	
+	
+	trigger = {
+		#ai = yes
+		#NOT = {
+		#	stability = 1
+		#}
+		#adm_power = 100
+		always = no
+	}
+
+	mean_time_to_happen = {
+		months = 16
+		
+		modifier = {
+			factor = 0.1
+			NOT = {
+				stability = -1
+			}
+		}
+		
+		modifier = {
+			factor = 0.1
+			NOT = {
+				stability = -2
+			}
+		}
+	}
+	
+	option = {
+		name = "general_ai.11.a"
+		#add_adm_power = -75
+		#add_stability = 1
+	}
+}
+
+province_event = {
+	id = general_ai.12
+	title = "general_ai.n.12"
+	desc = "general_ai.d.12"
+	picture = ANGRY_MOB_eventPicture
+
+	
+	
+	trigger = {
+		owner = {
+			treasury = 300
+			ai = yes
+			adm_tech = 23
+		}
+		num_free_building_slots = 0
+		NOT = {
+			OR = {
+				has_construction = core
+				has_construction = building
+				has_construction = culture
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+		
+		modifier = {
+			factor = 0.5
+			has_terrain = farmlands
+		}
+	}
+	
+	option = {
+		name = "general_ai.12.a"
+		add_building_construction = {
+			building = university
+			speed = 1.0
+			cost = 0.8
+		}
+	}
+}
+
+##############manpower
+
+country_event = {
+	id = general_ai.13
+	title = "general_ai.n.13"
+	desc = "general_ai.d.13"
+	picture = ANGRY_MOB_eventPicture
+
+	
+	
+	trigger = {
+		ai = yes
+		is_at_war = yes
+		NOT = {
+			manpower_percentage = 0.2
+		}
+		army_professionalism = 0.10
+	}
+
+	mean_time_to_happen = {
+		months = 4
+		
+		modifier = {
+			factor = 0.6
+			NOT = {
+				manpower_percentage = 0.15
+			}
+		}
+		
+		modifier = {
+			factor = 0.3
+			NOT = {
+				manpower_percentage = 0.1
+			}
+		}
+		
+		modifier = {
+			factor = 0.00001
+			NOT = {
+				manpower_percentage = 0.05
+			}
+		}
+	}
+	
+	option = {
+		name = "general_ai.11.a"
+		add_army_professionalism = -0.1
+		add_yearly_manpower = 1.0
+	}
+}
+
+##############succession crisis
+
+country_event = {
+	id = general_ai.14
+	title = "general_ai.n.14"
+	desc = "general_ai.d.14"
+	picture = ANGRY_MOB_eventPicture
+
+	
+	
+	trigger = {
+		ai = yes
+		has_country_flag = has_power_struggle
+		NOT = {
+			legitimacy = 75
+		}
+		mil_power = 75
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "general_ai.11.a"
+		add_legitimacy = 10
+		add_mil_power = -75
+	}
+}
+
+##############PERSONALITY CHANGES
+
+#Peacetime, buildup
+
+country_event = {
+	id = general_ai.15
+	title = "general_ai.n.15"
+	desc = "general_ai.d.15"
+	picture = ANGRY_MOB_eventPicture
+
+	
+	
+	trigger = {
+		ai = yes
+		is_emperor_of_china = no
+		is_emperor = no
+		OR = {
+			religion_group = muslim
+			capital_scope = {
+				continent = europe
+			}
+		}
+		OR = {
+			num_of_loans = 3
+			NOT = {
+				stability = 0
+			}
+			NOT = {
+				capital_scope = {
+					region = italy_region
+				}
+				adm_tech = 25
+			}
+			AND = {
+				all_owned_province = {
+					is_prosperous = yes 
+				}
+				years_of_income = 1.5
+				is_part_of_hre = no
+				is_great_power = no
+			}
+			is_subject = yes
+			any_neighbor_country = {
+				NOT = {
+					army_size = ROOT
+				}
+			}
+		}
+		
+		NOT = {
+			OR = {
+				personality = ai_colonialist
+				personality = ai_capitalist
+			}
+		}
+		NOT = { personality = ai_capitalist }
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "general_ai.15.a"
+		set_ai_personality = {
+			personality = ai_capitalist
+			locked = no
+		}
+	}
+}
+
+#Confident in own ability
+
+country_event = {
+	id = general_ai.16
+	title = none
+	desc = none
+	picture = none
+
+	
+	
+	trigger = {
+		ai = yes
+		is_subject = no
+		is_emperor_of_china = no
+		is_emperor = no
+		NOT = {
+			religion = anabaptist
+		}
+		OR = {
+			religion_group = muslim
+			capital_scope = {
+				continent = europe
+			}
+		}
+		#NOT = {
+		#	has_country_flag = player_on_continent
+		#}
+		NOT = {
+			OR = {
+				has_idea_group = expansion_ideas
+				has_idea_group = exploration_ideas
+			}
+		}
+		NOT = {
+			personality = ai_militarist
+		}
+		
+		OR = {
+			all_owned_province = {
+				is_prosperous = yes 
+			}
+			years_of_income = 1.5
+			is_part_of_hre = yes
+			is_great_power = yes
+		}
+		
+		NOT = {
+			OR = {
+				num_of_loans = 3
+				NOT = {
+					stability = 0
+				}
+			}
+		}
+		NOT = { personality = ai_militarist }
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "general_ai.16.a"
+		set_ai_personality = {
+			personality = ai_militarist
+			locked = no
+		}
+	}
+}
+
+#Confident in own ability, colonialism
+
+country_event = {
+	id = general_ai.17
+	title = none
+	desc = none
+	picture = none
+
+	
+	
+	trigger = {
+		ai = yes
+		is_subject = no
+		is_emperor_of_china = no
+		OR = {
+			has_idea_group = expansion_ideas
+			has_idea_group = exploration_ideas
+		}
+		OR = {
+			religion_group = muslim
+			capital_scope = {
+				continent = europe
+			}
+		}
+		
+		OR = {
+			AND = {
+				NOT = {
+					religion = anabaptist
+				}
+				NOT = {
+					personality = ai_colonialist
+				}
+				
+				OR = {
+					all_owned_province = {
+						is_prosperous = yes 
+					}
+					years_of_income = 1.5
+				}
+				
+				NOT = {
+					OR = {
+						num_of_loans = 3
+						NOT = {
+							stability = 0
+						}
+					}
+				}
+			}
+			AND = {
+				capital_scope = {
+					region = italy_region
+				}
+				adm_tech = 25
+			}
+		}
+		NOT = { personality = ai_colonialist }
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+	
+	option = {
+		name = "general_ai.17.a"
+		set_ai_personality = {
+			personality = ai_colonialist
+			locked = no
+		}
+	}
+}
+
+#reduce war exhaustion
+
+country_event = {
+	id = general_ai.18
+	title = none
+	desc = none
+	picture = none
+
+	
+	
+	trigger = {
+		ai = yes
+		war_exhaustion = 2
+		
+		dip_power = 100
+	}
+
+	mean_time_to_happen = {
+		months = 24
+		
+		modifier = {
+			factor = 0.0001
+			war_exhaustion = 5
+		}
+	}
+	
+	option = {
+		name = "general_ai.18.a"
+		add_war_exhaustion = -2
+		add_dip_power = -50
+	}
+}
+
+#increase mercantilism
+
+country_event = {
+	id = general_ai.19
+	title = none
+	desc = none
+	picture = none
+
+	
+	
+	trigger = {
+		ai = yes
+		
+		#dip_power = 100
+		
+		NOT = { adm_tech = 30 }
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+	
+	option = {
+		name = "general_ai.19.a"
+		add_mercantilism = 4
+		add_years_of_income = 2
+	}
+}
+
+#increase mercantilism, manually
+
+country_event = {
+	id = general_ai.20
+	title = none
+	desc = none
+	picture = none
+
+	
+	
+	trigger = {
+		ai = yes
+		NOT = {
+			mercantilism = 100
+		}
+		dip_power = 1150
+		NOT = { adm_tech = 30 }
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	option = {
+		name = "general_ai.19.a"
+		add_mercantilism = 1
+		add_dip_power = -95
+	}
+}
+
+country_event = {
+	id = general_ai.21
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+
+	
+	
+	trigger = {
+		ai = yes
+		government = monarchy
+		NOT = { has_country_modifier = burgundian_succession_crisis }
+		prestige = 0
+		has_heir = yes
+		heir_age = 15
+		variable_arithmetic_trigger = {
+			export_to_variable = {
+				which = heirskill
+				value = heir_adm
+			}
+			export_to_variable = {
+				which = heirskill_dip
+				value = heir_dip
+			}
+			export_to_variable = {
+				which = heirskill_mil
+				value = heir_mil
+			}
+			change_variable = { which = heirskill which = heirskill_dip }
+			change_variable = { which = heirskill which = heirskill_mil }
+
+			check_variable = {
+				which = heirskill
+				value = 9
+			}
+
+
+			#######Check Monarch
+			export_to_variable = {
+				which = rulerskill
+				value = adm
+			}
+			export_to_variable = {
+				which = rulerskill_dip
+				value = dip
+			}
+			export_to_variable = {
+				which = rulerskill_mil
+				value = mil
+			}
+			change_variable = { which = rulerskill which = rulerskill_dip }
+			change_variable = { which = rulerskill which = rulerskill_mil }
+
+			NOT = {
+				check_variable = {
+					which = rulerskill
+					value = 9
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = none
+		add_prestige = -25
+		kill_ruler = yes
+	}
+}
+
+province_event = {
+	id = general_ai.23
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+
+	
+	
+	trigger = {
+		owner = {
+			treasury = 100
+			ai = yes
+			dip_tech = 5
+		}
+		has_port = yes
+		num_free_building_slots = 1
+		NOT = {
+			religion = sunni
+		}
+		OR = {
+			region = italy_region
+			area = languedoc_area
+			area = provence_area
+			region = iberia_region
+		}
+		NOT = { has_building = coastal_defence }
+		NOT = {
+			OR = {
+				has_construction = core
+				has_construction = building
+				has_construction = culture
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		
+		modifier = {
+			factor = 0.5
+			has_terrain = farmlands
+		}
+	}
+	
+	option = {
+		name = none
+		add_building_construction = {
+			building = coastal_defence
+			speed = 1.0
+			cost = 1.0
+		}
+	}
+}
+
+province_event = {
+	id = general_ai.24
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+
+	
+	
+	trigger = {
+		owner = {
+			treasury = 700
+			ai = yes
+			adm_tech = 30
+		}
+		OR = {
+			trade_goods = coal
+			trade_goods = steel
+		}
+		NOT = { has_building = furnace }
+		NOT = {
+			OR = {
+				has_construction = core
+				has_construction = building
+				has_construction = culture
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+		
+		modifier = {
+			factor = 0.5
+			has_terrain = farmlands
+		}
+	}
+	
+	option = {
+		name = none
+		remove_building = temple
+		remove_building = cathedral
+		add_building_construction = {
+			building = furnace
+			speed = 1.0
+			cost = 1.0
+		}
+	}
+}
+
+#Fall of the Mamluks
+country_event = {
+	id = general_ai.25
+	title = general_ai.25.t
+	desc = general_ai.25.d
+	picture = GREAT_BUILDING_eventPicture
+
+	major = yes
+
+	trigger = {
+		TUR = {
+			is_in_war = {
+				attacker_leader = ROOT
+				defender_leader = MAM
+				war_score = 50
+			}
+		}
+		MAM = { ai = yes }
+	}
+
+	option = {
+		MAM = {
+			every_owned_province = {
+				add_core = TUR
+			}
+		}
+		TUR = {
+			inherit = MAM
+		}
+	}
+}
+
+#claim fabrication
+country_event = {
+	id = general_ai.26
+	title = none
+	desc = none
+	picture = GREAT_BUILDING_eventPicture
+
+	
+
+	trigger = {
+		ai = yes
+	}
+
+	mean_time_to_happen = {
+		months = 250
+
+		modifier = {
+			factor = 0.25
+			OR = {
+				culture_group = french
+				culture_group = occitan
+				culture_group = iberian
+				
+				culture_group = latin
+			}
+			any_neighbor_country = {
+				OR = {
+					
+					culture_group = latin
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.25
+			is_part_of_hre = yes
+			any_neighbor_country = {
+				is_part_of_hre = yes
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			any_neighbor_country = {
+				NOT = {
+					army_strength = {
+						who = ROOT
+						value = 1
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		random_neighbor_country = {
+			random_owned_province = {
+				limit = {
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+					NOT = {
+						is_claim = ROOT
+					}
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+}
+
+#french claim italy
+country_event = {
+	id = general_ai.27
+	title = none
+	desc = none
+	picture = GREAT_BUILDING_eventPicture
+
+	
+
+	trigger = {
+		ai = yes
+		OR = {
+			culture_group = french
+			culture_group = occitan
+			
+			culture_group = latin
+		}
+		any_neighbor_country = {
+			OR = {
+				
+				culture_group = latin
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 100
+
+
+		modifier = {
+			factor = 0.25
+			is_part_of_hre = no
+			any_neighbor_country = {
+				is_part_of_hre = no
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			any_neighbor_country = {
+				NOT = {
+					army_strength = {
+						who = ROOT
+						value = 1
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		random_neighbor_country = {
+			limit = {
+				OR = {
+					
+					culture_group = latin
+				}
+			}
+			random_owned_province = {
+				limit = {
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+					NOT = {
+						is_claim = ROOT
+					}
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+}
+
+#remove now useless ideas
+country_event = {
+	id = general_ai.28
+	title = none
+	desc = none
+	picture = GREAT_BUILDING_eventPicture
+
+	
+
+	trigger = {
+		ai = yes
+		adm_tech = 42
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+	option = {
+		if = {
+			limit = {
+				has_idea_group = exploration_ideas
+			}
+			remove_idea_group = exploration_ideas
+			add_dip_power = 400
+		}
+		if = {
+			limit = {
+				has_idea_group = religious_ideas
+			}
+			remove_idea_group = religious_ideas
+			add_dip_power = 400
+		}
+		if = {
+			limit = {
+				has_idea_group = expansion_ideas
+			}
+			remove_idea_group = expansion_ideas
+			add_adm_power = 400
+		}
+	}
+}
+
+#disinherit heir if heir incompetent
+country_event = {
+	id = general_ai.29
+	title = none
+	desc = none
+	picture = none
+
+	
+
+	trigger = {
+		ai = yes
+		NOT = { has_country_modifier = burgundian_succession_crisis }
+		prestige = 0
+		has_heir = yes
+		variable_arithmetic_trigger = {
+			export_to_variable = {
+				which = heirskill
+				value = heir_adm
+			}
+			export_to_variable = {
+				which = heirskill_dip
+				value = heir_dip
+			}
+			export_to_variable = {
+				which = heirskill_mil
+				value = heir_mil
+			}
+			change_variable = { which = heirskill which = heirskill_dip }
+			change_variable = { which = heirskill which = heirskill_mil }
+			NOT = {
+				check_variable = {
+					which = heirskill
+					value = 9
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+	option = {
+		kill_heir = {
+			allow_new_heir = no
+		}
+		add_prestige = -25
+	}
+}
+
+#destroy ramparts if no fort
+province_event = {
+	id = general_ai.30
+	title = none
+	desc = none
+	picture = GREAT_BUILDING_eventPicture
+
+	
+
+	trigger = {
+		owner = {
+			ai = yes
+		}
+		NOT = {
+			fort_level = 1
+		}
+		has_building = ramparts
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+	option = {
+		remove_building = ramparts
+	}
+}
+
+#######################
+####NON EUROPEAN AI####
+#######################
+
+country_event = {
+	id = general_ai.31
+	title = none
+	desc = none
+	picture = none
+
+	
+	
+	trigger = {
+		ai = yes
+		NOT = { personality = ai_diplomat }
+		capital_scope = {
+			NOT = {
+				continent = europe
+			}
+		}
+		NOT = {
+			religion_group = muslim
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+	
+	option = {
+		name = "general_ai.17.a"
+		set_ai_personality = {
+			personality = ai_diplomat
+			locked = no
+		}
+	}
+}
+
+#no idea/dev if not max tech
+country_event = {
+	id = general_ai.32
+	title = none
+	desc = none
+	picture = GREAT_BUILDING_eventPicture
+
+	
+
+	trigger = {
+		ai = yes
+		OR = {
+			has_country_modifier = stop_idea
+			has_country_modifier = stop_dev
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+	option = {
+		remove_country_modifier = stop_idea
+		remove_country_modifier = stop_dev
+	}
+}
+
+#no idea/dev if not max tech
+country_event = {
+	id = general_ai.33
+	title = none
+	desc = none
+	picture = GREAT_BUILDING_eventPicture
+
+	
+
+	trigger = {
+		ai = yes
+		has_country_modifier = ai_get_tech
+		NOT = { adm_tech = 45 }
+	}
+
+	mean_time_to_happen = {
+		years = 18
+	}
+	option = {
+		add_country_modifier = { 
+			name = allow_idea
+			duration = 3
+		}
+	}
+}
+
+#dec war on small country with same culture if revolutionary
+country_event = {
+	id = general_ai.34
+	title = none
+	desc = none
+	picture = GREAT_BUILDING_eventPicture
+
+	
+
+	trigger = {
+		ai = yes
+		any_neighbor_country = {
+			ai = yes
+			military_strength = {
+				who = ROOT
+				value = 2
+			}
+			culture_group = ROOT
+			NOT = {
+				marriage_with = ROOT
+				truce_with = ROOT
+				alliance_with = ROOT
+			}
+			OR = {
+				ROOT = {
+					is_part_of_hre = no
+				}
+				ROOT = {
+					is_part_of_hre = yes
+					emperor = {
+						any_ally = {
+							NOT = {
+								military_strength = {
+									who = ROOT
+									value = 1
+								}
+							}
+						}
+						NOT = {
+							military_strength = {
+								who = ROOT
+								value = 1
+							}
+						}
+					}
+				}
+			}
+		}
+		OR = {
+			NOT = {
+				any_ally = {
+					military_strength = {
+						who = ROOT
+						value = 1
+					}
+				}
+			}
+			NOT = {
+				num_of_allies = 1
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+	option = {
+		random_neighbor_country = {
+			limit = {
+				military_strength = {
+					who = ROOT
+					value = 2
+				}
+				culture_group = ROOT
+				NOT = {
+					marriage_with = ROOT
+					truce_with = ROOT
+					alliance_with = ROOT
+				}
+			}
+			declare_war_with_cb = {
+				casus_belli = cb_imperial
+				who = ROOT
+			}
+		}
+	}
+}

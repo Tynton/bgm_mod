@@ -1,0 +1,13 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 3
+primary_culture = austrian
+add_accepted_culture = hungarian
+religion = catholic
+technology_group = western
+capital = 134 # Wien
+historical_friend = PRU
+historical_friend = GER
+historical_rival = FRA
+historical_friend = RUS
+national_focus = ADM

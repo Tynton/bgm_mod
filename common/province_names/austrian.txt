@@ -1,0 +1,24 @@
+
+#bavarian/franconian
+
+4717 = "Bareid"
+67 = "Närmberch"
+65 = { "München" "Minga" }
+64 = { "Landshut" "Landshuad" }
+1757 = { "Oberpfalz" "Owerpfolz" }
+76 = { "Salzburg" "Såizburg" }
+4760 = { "Innviertel" "Innviadl" }
+79 = { "Würzburg" "Wörtzburch" }
+4709 = { "Passau" "Båssa" }
+
+
+#austria
+34 = { "Wien" "Wean" }
+73 = { "Innsbruck" "Innschbruck" }
+4761 = { "Steyr" "Steia" }
+4762 = { "Sankt Pölten" "St. Pödn" }
+4710 = { "Voralberg" "Voralbärg" }
+133 = "Ob Der Enns"
+
+#italy
+111 = "Friaul" #Baidn

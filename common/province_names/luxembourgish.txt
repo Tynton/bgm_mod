@@ -1,0 +1,24 @@
+5185 = "Baaschtnech"
+
+4963 = "Arel"
+5240 = "Béibreg"
+5246 = "Diddenuewen"
+
+
+94 = "Lëtzebuerg"
+80 = "Tréier"
+92 = "Bréissel"
+93 = "Léck"
+189 = "Nanzeg"
+183 = "Paräis"
+75 = "Stroosbuerg"
+1878 = "Oochen"
+4767 = "Saarbrécken"
+
+116 = "Florenz"
+104 = "Mailand"
+121 = "Neapel"
+118 = "Roum"
+122 = "Tarent"
+4738 = "Triest"
+112 = "Venedeg"

@@ -1,0 +1,163 @@
+namespace = TEST_EVENTS
+
+
+country_event = {
+	id = TEST_EVENTS.1
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		every_country = {
+			limit = {
+				war_with = ROOT
+			}
+			add_yearly_manpower = -9
+			add_years_of_income = -9
+			add_stability = -6
+			add_war_exhaustion = 50
+			every_owned_province = {
+				change_controller = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = TEST_EVENTS.2
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		change_government = futurist_government
+	}
+	option = {
+		name = none
+		change_government = fascist_government
+	}
+	option = {
+		name = none
+		change_government = democracy_govt
+	}
+	option = {
+		name = none
+		change_government = futurist_government
+		add_government_reform = socialist_republic
+	}
+}
+
+country_event = {
+	id = TEST_EVENTS.3
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		every_country = {
+			disband_rebels = pretender_rebels
+		}
+	}
+}
+
+country_event = {
+	id = TEST_EVENTS.4
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		define_advisor = {
+			type = artist
+		}
+	}
+}
+
+country_event = {
+	id = TEST_EVENTS.5
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		change_graphical_culture = modernistgfx
+	}
+}
+
+country_event = {
+	id = TEST_EVENTS.6
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		kill_heir = { allow_new_heir = no }
+		define_ruler = {
+			dynasty = ROOT
+		}
+	}
+}
+
+country_event = {
+	id = TEST_EVENTS.7
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		random_owned_province = {
+			add_base_tax = 50
+			add_base_production = 50
+			add_base_manpower = 50
+		}
+	}
+}
+
+country_event = {
+	id = TEST_EVENTS.8
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		restore_country_name = yes
+	}
+}
+country_event = {
+	id = TEST_EVENTS.9
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		clr_country_flag = responded_rev
+		clr_global_flag = revolutions_year_start
+	}
+}

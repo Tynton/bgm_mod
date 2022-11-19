@@ -1,0 +1,94 @@
+political_reorganization = {
+	potential = {
+		NOT = { tag = ANA }
+		NOT = { has_country_flag = had_pol_reorg }
+		is_free_or_tributary_trigger = yes
+		OR = {
+			full_idea_group = postmodern_ideas
+			bgm_comgovt = yes
+			has_reform = fascist_mechanic
+		}
+	}
+
+
+	can_start = {
+		has_any_disaster = no
+	}
+	
+	
+	can_stop = {
+		OR = {
+			has_any_disaster = yes
+			check_variable = {
+				which = populistScore
+				value = 15
+			}
+			check_variable = {
+				which = stateScore
+				value = 15
+			}
+		}
+	}
+	
+	progress = {
+		modifier = {
+			factor = 1
+			absolutism = 50
+		}
+		modifier = {
+			factor = 1
+			unrest = 1.5
+		}
+		modifier = {
+			factor = 1
+			absolutism = 60
+		}
+		modifier = {
+			factor = 1
+			NOT = { stability = 1 }
+		}
+		modifier = {
+			factor = -1
+			stability = 3
+		}
+		modifier = {
+			factor = -1
+			NOT = { unrest = 1 }
+		}
+	}
+
+
+
+
+	
+	can_end = {
+		OR = {
+			check_variable = {
+				which = populistScore
+				value = 15
+			}
+			check_variable = {
+				which = stateScore
+				value = 15
+			}
+		}
+	}
+	
+
+
+
+	modifier = {
+		global_trade_power = -1.0
+		trade_efficiency = -0.5
+		all_power_cost = 0.25
+	}
+	
+	on_start = disaster_pol_reorg.1
+	on_end = disaster_pol_reorg.5
+	
+	on_monthly = {
+		events = {
+		}
+	}
+}
+

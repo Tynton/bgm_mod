@@ -1,0 +1,56 @@
+authoritarian_mechanic = {
+	republican_name = yes
+	royal_marriage = no
+	republic = no
+	start_territory_to_estates = 0
+	basic_reform = yes # = invisible/does not take up a slot
+	valid_for_nation_designer = no
+	#revolutionary = yes
+	custom_attributes = {
+		enables_aristocratic_idea_group = yes
+		claim_states = yes
+	}
+	conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		militarised_society = yes
+	}
+}
+
+auth_republic_reform = {
+	icon = "fascist_government"
+	monarchy = yes
+	queen = no
+	heir = no
+	republic = yes
+	royal_marriage = no
+	allow_normal_conversion = yes
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	potential = {
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+	}
+	modifiers = {
+		land_forcelimit_modifier = 0.2
+		global_manpower_modifier = 0.05
+		governing_capacity = 200
+	}
+}
+
+auth_monarchism = {
+	icon = "eagle_empire"
+	monarchy = yes
+	queen = yes
+	heir = yes
+	royal_marriage = yes
+	republican_name = no
+	allow_normal_conversion = yes
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		yearly_absolutism = 0.5
+	}
+}

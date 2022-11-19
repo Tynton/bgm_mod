@@ -1,0 +1,138 @@
+futurist_mechanic = {
+	republican_name = yes
+	royal_marriage = no
+	republic = yes
+	start_territory_to_estates = 0
+	basic_reform = yes # = invisible/does not take up a slot
+	valid_for_nation_designer = no
+	#revolutionary = yes
+	custom_attributes = {
+		enables_aristocratic_idea_group = yes
+		claim_states = yes
+	}
+	conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		militarised_society = yes
+	}
+	
+}
+
+doomsday_cult = {
+	icon = "futurism"
+	queen = no
+	heir = no
+	royal_marriage = no
+	allow_normal_conversion = yes
+	has_devotion = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	potential = {
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+		bgm_comgovt = no
+		has_country_flag = endgame_began
+	}
+	modifiers = {
+		all_power_cost = -0.05
+	}
+}
+
+postmodernist_reform = {
+	icon = "futurism"
+	queen = no
+	heir = no
+	royal_marriage = no
+	allow_normal_conversion = yes
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	potential = {
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+		has_country_flag = had_pol_reorg
+	}
+	modifiers = {
+		all_power_cost = -0.25
+	}
+}
+
+futurist_government_reform = {
+	icon = "futurism"
+	queen = no
+	heir = no
+	royal_marriage = no
+	allow_normal_conversion = yes
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	potential = {
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+		bgm_comgovt = no
+	}
+	modifiers = {
+		adm_tech_cost_modifier = -0.05
+		dip_tech_cost_modifier = -0.05
+		mil_tech_cost_modifier = -0.1
+		idea_cost = -0.1
+		
+		female_advisor_chance = 0.25
+	}
+}
+
+futurist_empire = {
+	icon = "eagle_empire"
+	monarchy = yes
+	queen = yes
+	heir = yes
+	royal_marriage = yes
+	potential = {
+		absolutism = 90
+		NOT = {
+			full_idea_group = innovativeness_ideas
+		}
+		bgm_comgovt = no
+	}
+	republican_name = no
+	allow_normal_conversion = yes
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		adm_tech_cost_modifier = -0.05
+		dip_tech_cost_modifier = -0.1
+		mil_tech_cost_modifier = -0.05
+		idea_cost = -0.1
+		
+		yearly_absolutism = 0.5
+	}
+	fixed_rank = 3
+}
+
+technocracy = {
+	icon = "technocracy_gfx"
+	monarchy = no
+	queen = no
+	heir = no
+	royal_marriage = no
+	potential = {
+		NOT = {
+			is_subject_of_type = personal_union
+		}
+		bgm_comgovt = no
+	}
+	allow_normal_conversion = yes
+	legacy_equivalent = republican_dictatorship
+	valid_for_nation_designer = no
+	modifiers = {
+		adm_tech_cost_modifier = -0.1
+		dip_tech_cost_modifier = -0.05
+		mil_tech_cost_modifier = -0.05
+		idea_cost = -0.1
+		land_forcelimit_modifier = 0.25
+		global_manpower_modifier = 0.25
+	}
+}

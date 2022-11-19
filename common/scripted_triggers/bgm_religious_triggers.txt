@@ -1,0 +1,119 @@
+##############################################œ
+###   French localization custom strings   ###
+###       Scripted by Nicolas Fouqué       ###
+##############################################
+
+#############################################################################
+###   Ruler Articles & Titles // Articles et titres pour les dirigeants   ###
+#############################################################################
+# Ex.: _masc_cons_ => LE roi / DU roi / AU roi / CE roi / nouvEAU roi / SON roi / SON nouveau roi / SON ancien roi
+# Ex.: _masc_vow_ => L'évêque / DE L'évêque / À L'évêque / CET évêque / nouvEL évêque / SON évêque / SON nouvel évêque / SON ancien évêque
+# Ex.: _masc_cons_ => LA reine / DE LA reine / À LA reine / CETTE reine / nouvELLE reine / SA reine / SA nouvelle reine / SON ancienne reine
+# Ex.: _masc_vow_ => L'abbesse / DE L'abbesse / À L'abbesse / CETTE abbesse / nouvELLE abbesse / SON abbesse / SA nouvelle abbesse / SON ancienne abbesse
+
+### HIGHER PRIORITY / PRIORITÉ HAUTE = 00_government_names.txt ###
+
+lollard_ref_trigger = { # Lollardy
+	OR = {
+		any_country = {
+			is_great_power = yes
+			religion = lollard
+		}
+		calc_true_if = {
+			any_province = {
+				religion = lollard
+				is_reformation_center = yes
+			}
+			amount = 3
+		}
+	}
+	num_of_cities = 5
+	religion = lollard
+	has_friendly_reformation_center = yes
+	NOT = { has_global_flag = preprot_heresy }
+}
+
+wald_ref_trigger = { # Waldensian
+	OR = {
+		OR = {
+			any_country = {
+				is_great_power = yes
+				religion = waldensian
+			}
+			calc_true_if = {
+				any_province = {
+					religion = waldensian
+					is_reformation_center = yes
+				}
+				amount = 3
+			}
+		}
+	}
+	num_of_cities = 5
+	religion = waldensian
+	has_friendly_reformation_center = yes
+	NOT = { has_global_flag = preprot_heresy }
+}
+
+hussite_ref_trigger = { # Hussite
+	OR = {
+		any_country = {
+			is_great_power = yes
+		}
+		calc_true_if = {
+			any_province = {
+				religion = hussite
+				is_reformation_center = yes
+			}
+			amount = 3
+		}
+	}
+	num_of_cities = 5
+	religion = hussite
+	has_friendly_reformation_center = yes
+	NOT = { has_global_flag = preprot_heresy }
+}
+
+cathar_ref_trigger = { # Cathars
+	OR = {
+		OR = {
+			any_country = {
+				is_great_power = yes
+				religion = cathar
+			}
+			calc_true_if = {
+				any_province = {
+					religion = cathar
+					is_reformation_center = yes
+				}
+				amount = 3
+			}
+		}
+	}
+	num_of_cities = 5
+	religion = cathar
+	has_friendly_reformation_center = yes
+	NOT = { has_global_flag = preprot_heresy }
+}
+
+frat_ref_trigger = { # Fraticelli
+	OR = {
+		OR = {
+			any_country = {
+				is_great_power = yes
+				religion = fraticelli
+			}
+			calc_true_if = {
+				any_province = {
+					religion = fraticelli
+					is_reformation_center = yes
+				}
+				amount = 3
+			}
+		}
+	}
+	num_of_cities = 5
+	religion = fraticelli
+	has_friendly_reformation_center = yes
+	NOT = { has_global_flag = preprot_heresy }
+}

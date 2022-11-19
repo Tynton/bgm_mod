@@ -1,0 +1,23 @@
+state_add = {
+	change_variable = {
+		which = stateScore
+		value = 1
+	}
+}
+populist_add = {
+	change_variable = {
+		which = populistScore
+		value = 1
+	}
+}
+
+reset_scores = {
+	set_variable = {
+		which = stateScore
+		value = 0
+	}
+	set_variable = {
+		which = populistScore
+		value = 0
+	}
+}

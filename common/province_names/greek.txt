@@ -1,0 +1,183 @@
+
+#ALBANIA
+
+4174 = "Dhyrrákhio"
+143 = "Avlónas"
+4750 = "Króia"
+5281 = "Agioi Saranda"
+
+#AUSTRIA
+
+134 = "Viénni"
+
+#BELGIUM
+
+92 = "Vryxélles"
+1744 = "Amvérsa"
+90 = "Bryz"
+93 = "Liégi"
+1865 = "Ghándhi"
+
+#BULGARIA
+
+1764 = "Pýrgos"
+2750 = "Filippúpoli"
+
+#CROATIA
+
+137 = "Ragúsa"
+136 = "Aspálathos"
+131 = "Ágrano"
+
+#CZECHIA
+
+266 = "Prága"
+
+#DENMARK
+
+12 = "Kopenkhági"
+14 = "Fionía"
+
+#FRANCE
+
+102 = "Níkaia"
+172 = "Nándi"
+183 = "Parísioi"
+89 = "Pikardía"
+186 = "Réímoi"
+75 = "Strasvúrgo"
+196 = "Tulúzi"
+
+#GREECE/TURKEY
+
+148 = "Thessaloníki"
+146 = "Athína"
+151 = "Konstandinúpoli"
+149 = "Adrianoúpoli"
+317 = "Prúsa"
+322 = { "Kotýlaion" "Kiutákheia" }
+328 = "Sinópi"
+325 = "Kastamonoú"
+330 = "Trapezúnda"
+4779 = "Kallípoli"
+4702 = "Siróz"
+316 = "Kotzaéli"
+2296 = { "Karási" "Pígas" }
+2297 = "Sarouchán"
+318 = "Soúnkla"
+4309 = "Aïdínio"
+2299 = "Diaireménoi"
+4312 = "Soultanonoú"
+326 = "Ángyra"
+2298 = "Tekké"
+1848 = "Chamínt"
+4308 = "Ntenizlí"
+4311 = "Karachisár"
+4313 = "Kan'nkíri"
+1846 = "Amáseia"
+4315 = "Tokát"
+2300 = "Bozók"
+4314 = "Kirsechír"
+329 = "Sívas"
+323 = "Ikónio"
+4307 = "Aksarái"
+2301 = "Kaïséri"
+324 = "Karamán"
+327 = "Ádana"
+4298 = "Aïntáb"
+4310 = "Divrígi"
+
+#SYRIA
+
+2313 = "Andiókheia"
+
+#GERMANY
+
+1878 = "Akyísgrano"
+1868 = "Avgústa"
+50 = "Verolíno"
+1874 = "Vrémi"
+85 = "Kolonía"
+61 = "Drésdi"
+63 = "Erfúrti"
+1876 = "Frankfúrti"
+44 = "Amvúrgo"
+52 = "Magdevúrgo"
+78 = "Magendía"
+65 = "Mónakho"
+67 = "Nyremvérgi"
+2957 = "Ratisvóni"
+70 = "Stutgárdhi"
+82 = "Vestfalía"
+1761 = "Vormatía"
+
+#IRELAND
+
+373 = "Duvlíno"
+
+#ITALY
+
+119 = "Ankóna"
+118 = "Romi"
+116 = "Florendía"
+101 = "Génova"
+104 = "Miláno"
+121 = "Neápoli"
+4729 = "Pádova"
+125 = "Pánormos"
+115 = "Píza"
+103 = "Turíno"
+112 = { "Enetía" "Venetía" }
+4738 = "Tergésti"
+
+#NETHERLAND
+
+4383 = "Khági"
+96 = "Zilandhía"
+98 = "Utrékhti"
+
+#POLAND
+
+
+
+#PORTUGAL
+
+
+
+#RUSSIA
+
+
+
+#SERB
+
+
+
+#SPAIN
+
+220 = "Valentía"
+
+#SWEDEN
+
+
+
+#SWITZERLAND
+
+1869 = "Zyríchi"
+
+
+
+#UKRAINE
+
+
+
+
+#UK
+
+236 = "Londhíno"
+248 = "Edimvúrgo"
+237 = "Oxfórdi"
+
+#USA
+
+968 = "Vostóni"
+96 = "Néa Yórki"

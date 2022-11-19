@@ -1,0 +1,558 @@
+# Do not change tags in here without changing every other reference to them.
+# Do not change tags in here without changing every other reference to them.
+# If adding new groups or ideas, make sure they are unique.
+
+# ai_will do is only used to determine which idea group is picked if AI_USES_HISTORICAL_IDEA_GROUPS define is 0, OR start is custom/random
+# ai never picks an idea that resolves to ai_will_do = 0, even if AI_USES_HISTORICAL_IDEA_GROUPS = 1
+# ROOT = country picking the idea
+# groups set to colonial=yes will be higher prioritized by the AI when spending power
+
+modern_strategy_ideas = {
+	category = MIL
+
+	bonus = {
+		land_attrition = -0.15
+	}
+	trigger = {
+		adm_tech = 35
+	}
+
+	bunkers_and_trench_garrisons  = {
+		defensiveness = 0.25
+	}
+	ready_conscripts = {
+		global_manpower_modifier = 0.3
+		manpower_recovery_speed = 0.15
+	}
+	military_science_division = {
+		mil_tech_cost_modifier = -0.1
+	}
+	rally_national_defenses = {
+		fort_maintenance_modifier = -0.2
+	}
+	naval_design_quality_regulations = {
+		ship_durability = 0.1 
+		navy_tradition = 0.5
+		naval_morale = 0.2
+	}
+	equipment_stockpiling = {
+		land_maintenance_modifier = -0.15
+	}
+	offensive_tactics = {
+		movement_speed = 0.2
+		infantry_shock = 1
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 15
+			mil = 4
+		}
+	}
+}
+
+modern_trade_ideas = {
+	category = DIP
+
+	bonus = {
+		global_trade_power = 0.25
+	}
+	trigger = {
+		adm_tech = 35
+		NOT = {
+			OR = {
+				has_idea_group = modern_socialist_ideas 
+				bgm_comgovt = yes
+			}
+		}
+	}
+
+	international_trade  = {
+		merchants = 2
+	}
+	expansion_of_foreign_ministries = {
+		diplomats = 1
+	}
+	international_stock_market = {
+		global_own_trade_power = 0.15
+	}
+	subsidization_of_businesses = {
+		trade_range_modifier = 0.25
+	}
+	deregulation_of_business = {
+		production_efficiency = 0.2
+		global_tax_modifier = -0.2
+	}
+	advancement_of_private_companies = {
+		development_cost = -0.15
+		global_trade_goods_size_modifier = 0.1
+	}
+	foreign_trade_reputation = {
+		diplomatic_reputation = 2
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 15
+			dip = 4
+		}
+	}
+}
+
+modern_espionage_ideas = {
+	category = DIP
+
+	bonus = {
+		global_unrest = -2
+	}
+	trigger = {
+		adm_tech = 37
+	}
+
+	polygraph_testing = {
+		global_spy_defence = 0.15
+	}
+	intelligence_cryptography = {
+		spy_offence = 0.15
+	}
+	insurgent_training = {
+		rebel_support_efficiency = 2.5
+	}
+	subject_intelligence = {
+		liberty_desire_from_subject_development = -0.25
+	}
+	remote_communication = {
+		envoy_travel_time = -0.5
+	}
+	influence_over_foreign_nations = {
+		discovered_relations_impact = -0.15
+	}
+	formalized_espionage_division = {
+		advisor_pool = 1
+		advisor_cost = -0.2
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 15
+			dip = 4
+		}
+	}
+}
+
+modern_socialist_ideas = {
+	category = ADM
+
+	bonus = {
+		production_efficiency = 0.2
+	}
+	trigger = {
+		adm_tech = 35
+		OR = {
+			bgm_comgovt = yes
+			has_reform = democratic_socialism
+			has_reform = democratic_regulationism
+		}
+		NOT = {
+			has_idea_group = modern_trade_ideas 
+		}
+	}
+
+	wartime_tax_collection  = {
+		war_taxes_cost_modifier = -0.5
+	}
+	expansion_of_administration = {
+		global_tax_modifier = 0.2
+		inflation_reduction = -0.15
+	}
+	state_controlled_business = {
+		global_trade_power = -0.2
+		yearly_absolutism = 1.0
+	}
+	socialist_rhetoric = {
+		innovativeness_gain = 1.0
+	}
+	regulated_economoy = {
+		global_unrest = -2
+		global_trade_power = -0.2
+	}
+	marxist_philosophy = {
+		global_trade_goods_size_modifier = 0.25
+		build_time = -0.1
+		build_cost = -0.1
+	}
+	socialist_warfare = {
+		infantry_cost = -0.25
+		cavalry_cost = -0.1
+		artillery_cost = -0.1
+		land_forcelimit_modifier = 0.25
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 15
+			adm = 4
+		}
+	}
+}
+
+modern_administrative_ideas = {
+	category = ADM
+
+	bonus = {
+		war_taxes_cost_modifier = -0.5
+		#may_perform_slave_raid = no
+	}
+	trigger = {
+		adm_tech = 35
+	}
+
+	introduction_of_identification_measures = {
+		global_unrest = -2
+	}
+	urban_planning = {
+		development_cost = -0.1
+		build_time = -0.2
+		build_cost = -0.1 
+	}
+	public_utilities = {
+		global_tax_modifier = 0.15
+	}
+	expansion_of_bureaucracy = {
+		core_creation = -0.2
+	}
+	management_of_internal_regions = {
+		governing_capacity = 600
+	}
+	integration_streamlining = {
+		diplomatic_annexation_cost = -0.5
+	}
+	modern_territorial_management = {
+		state_maintenance_modifier = -0.5
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 15
+			adm = 4
+		}
+	}
+}
+
+modern_navy_ideas = {
+	category = MIL
+
+	bonus = {
+		naval_morale = 0.15
+	}
+	trigger = {
+		adm_tech = 35
+	}
+
+	massed_cannons = {
+		heavy_ship_power = 0.15
+		leader_naval_fire = 1
+	}
+	industrial_dockyards = {
+		global_ship_cost = -0.2
+		global_ship_recruit_speed = -0.1
+	}
+	submarine_fleets = {
+		leader_naval_shock = 1 
+	}
+	naval_education_academies = {
+		navy_tradition = 1.5
+	}
+	naval_cryptology = {
+		leader_naval_shock = 2
+	}
+	wolfpack_tactics = {
+		privateer_efficiency = 0.2
+	}
+	coastal_defenses = {
+		own_coast_naval_combat_bonus = 1.0
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 15
+			mil = 4
+		}
+	}
+}
+
+militarist_ideas = {
+	category = MIL
+
+	bonus = {
+		movement_speed = 0.15
+	}
+	trigger = {
+		adm_tech = 35
+		OR = {
+			bgm_comgovt = yes
+			has_reform = fascist_mechanic
+			has_reform = futurist_mechanic
+			has_reform = authoritarian_mechanic
+		}
+	}
+
+	aggressive_rhetoric = {
+		#land_morale = 0.10
+		#ae_impact = 0.25
+		unjustified_demands = -0.5
+	}
+	war_economy = {
+		land_maintenance_modifier = -0.25
+		#naval_maintenance_modifier = -0.25
+		#fort_maintenance_modifier = -0.25
+	}
+	offensive_diplomacy = {
+		diplomats = 2
+		#diplomatic_upkeep = 4
+	}
+	expand_conscription_infrastructure = {
+		#global_sailors_modifier = 0.35
+		#naval_forcelimit_modifier = 0.15
+		land_forcelimit_modifier = 0.15
+	}
+	the_national_enemy = {
+		#enemy_core_creation = 0.5
+		#hostile_attrition = 2
+		defensiveness = 0.5
+	}
+	paramilitaries = {
+		discipline = 0.05
+		#yearly_army_professionalism = 0.1
+	}
+	prepare_for_war = {
+		war_exhaustion_cost = -0.5
+		#global_regiment_cost = -0.5
+		#global_regiment_recruit_speed = -0.5
+		#leader_cost = -0.25
+	}
+
+	ai_will_do = {
+		factor = 25
+	}
+}
+
+peasant_ideas = {
+	category = MIL
+
+	bonus = {
+		build_cost = -0.15
+	}
+	trigger = {
+		OR = {
+			has_reform = peasants_republic
+			is_revolutionary = yes
+		}
+		#full_idea_group = peasant_ideas
+	}
+
+	subjugate_elite = {
+		improve_relation_modifier = -0.2
+	}
+	equality_of_masses = {
+		stability_cost_modifier = -0.25
+	}
+	popular_sovereign = {
+		republican_tradition = 0.5
+	}
+	free_populace = {
+		manpower_recovery_speed = 0.10
+	}
+	eradicate_monarchism = {
+		power_projection_from_insults = 1.0
+	}
+	peasant_nationalism = {
+		land_morale = 0.15
+	}
+	destroy_old_order = {
+		land_forcelimit_modifier = 0.15
+	}
+
+	ai_will_do = {
+		factor = 25
+	}
+}
+
+peasant_adm_ideas = {
+	category = ADM
+
+	bonus = {
+		global_autonomy = -0.05
+	}
+	trigger = {
+		OR = {
+			has_reform = peasants_republic
+			is_revolutionary = yes
+		}
+		full_idea_group = peasant_ideas
+	}
+
+	welfare_government = {
+		global_tax_modifier = -0.15
+	}
+	expand_administrations = {
+		state_governing_cost = -0.25
+	}
+	efficient_architecture = {
+		build_time = -0.25
+	}
+	all_are_united = {
+		culture_conversion_cost = -0.2
+	}
+	under_one_banner = {
+		years_of_nationalism = -10
+	}
+	mass_prosperity = {
+		production_efficiency = 0.1
+	}
+	primus_inter_pares = {
+		stability_cost_modifier = -0.25
+	}
+
+	ai_will_do = {
+		factor = 25
+	}
+}
+
+peasant_dip_ideas = {
+	category = DIP
+
+	bonus = {
+		province_warscore_cost = -0.15
+	}
+	trigger = {
+		OR = {
+			has_reform = peasants_republic
+			is_revolutionary = yes
+		}
+		full_idea_group = peasant_ideas
+	}
+
+	rhetoric_of_liberation = {
+		improve_relation_modifier = -0.2
+	}
+	state_security = {
+		global_spy_defence = 0.15
+	}
+	recruit_foreign_spies = {
+		spy_offence = 0.15
+	}
+	popular_cause = {
+		ae_impact = -0.15
+	}
+	all_are_free = {
+		fabricate_claims_cost = -0.5
+	}
+	consolidate_nation = {
+		harsh_treatment_cost = -0.5
+	}
+	to_the_world_stage = {
+		prestige = 0.5
+	}
+
+	ai_will_do = {
+		factor = 25
+	}
+}
+
+postmodern_ideas = {
+	category = ADM
+
+	bonus = {
+		yearly_absolutism = 1
+	}
+	trigger = {
+		adm_tech = 44
+	}
+
+	destroy_truth = {
+		global_unrest = 3
+		#stability_cost_modifier = -0.25
+	}
+	postmodern_art = {
+		#embracement_cost = -0.25
+		technology_cost = -0.1
+	}
+	postmodern_multiculturalism = {
+		years_of_nationalism = -10
+		#promote_culture_cost = -0.5
+		#land_morale = 0.10
+		#naval_morale = 0.10
+	}
+	moral_relativism = {
+		stability_cost_modifier = -0.1
+		#liberty_desire_from_subject_development = -0.25
+	}
+	deconstruction = {
+		all_power_cost = -0.05
+	}
+	postmodern_semiotics = {
+		max_absolutism = 5
+		#global_unrest = -2
+	}
+	defamiliarization = {
+		#innovativeness_gain = 1.0
+		culture_conversion_cost = -0.5
+	}
+
+	ai_will_do = {
+		factor = 25
+	}
+}
+
+artistic_ideas = {
+	category = DIP
+
+	bonus = {
+		possible_policy = 1 
+	}
+	trigger = {
+		adm_tech = 37
+		NOT = {
+			OR = {
+				has_reform = fascist_mechanic
+				bgm_comgovt = yes
+			}
+		}
+	}
+
+	aesthetic_entertainment = {
+		global_unrest = -3
+	}
+	diversity_of_genre = {
+		stability_cost_modifier = -0.2
+	}
+	circulation_of_individual_works = {
+		prestige_decay = -0.01 
+	}
+	artistic_critique_of_society = {
+		idea_cost = -0.2
+	}
+	art_for_progress = {
+		innovativeness_gain = 1.0
+		#technology_cost = -0.1
+	}
+	satirical_humor = {
+		power_projection_from_insults = 0.1
+		#monarch_lifespan = 0.05
+	}
+	art_as_political_tool = {
+		#free_policy = 1
+		reelection_cost = -0.15
+	}
+
+	ai_will_do = {
+		factor = 25
+	}
+}

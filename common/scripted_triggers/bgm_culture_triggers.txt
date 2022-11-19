@@ -1,0 +1,11 @@
+low_german = { # self-explanatory
+	OR = {
+		primary_culture = hannoverian
+		primary_culture = eastphalian
+		primary_culture = schleswig_holsteiner
+		primary_culture = lower_saxon
+		primary_culture = pommeranian
+		primary_culture = east_pomeranian
+		primary_culture = brandenburgian
+	}
+}

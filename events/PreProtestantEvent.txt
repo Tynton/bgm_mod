@@ -1,0 +1,860 @@
+namespace = PreProtestantEvent
+
+# Conversion to Lollardy
+country_event = {
+	id = PreProtestantEvent.2
+	title = PreProtestantEvent.2.t
+	desc = PreProtestantEvent.2.d
+	picture = PRAYING_eventPicture
+	
+	is_triggered_only = yes
+	
+	#major = yes
+	
+	option = {
+		name = "PreProtestantEvent.2.a"
+		random_owned_province = {
+			add_reform_center = lollard
+		}
+		add_reform_desire = 1.5
+	}
+}
+
+# Conversion to Fraticelli
+country_event = {
+	id = PreProtestantEvent.4
+	title = PreProtestantEvent.4.t
+	desc = PreProtestantEvent.4.d
+	picture = PRAYING_eventPicture
+	
+	is_triggered_only = yes
+	
+	#major = yes
+	
+	option = {
+		name = "PreProtestantEvent.4.a"
+		random_owned_province = {
+			add_reform_center = fraticelli
+		}
+		add_reform_desire = 1.5
+	}
+}
+
+# Protestant Reformation
+country_event = {
+	id = PreProtestantEvent.6
+	title = PreProtestantEvent.6.t
+	desc = PreProtestantEvent.6.d
+	picture = PRAYING_eventPicture
+
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	trigger = {
+		current_age = age_of_reformation
+		is_religion_enabled = protestant
+		OR = {
+			religion = lollard
+			religion = fraticelli
+			religion = waldensian
+		}
+		has_friendly_reformation_center = yes 
+		NOT = {
+			OR = {
+				has_global_flag = rome_fallen
+				has_global_flag = lollard_ref
+				has_global_flag = wald_ref
+
+				any_country = {
+					is_great_power = yes
+					OR = {
+						religion = fraticelli
+						religion = waldensian
+						religion = lollard
+						religion = hussite
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "PreProtestantEvent.6.a"
+		every_province = {
+			limit = {
+				is_reformation_center = yes
+			}
+			remove_reform_center = lollard
+			remove_reform_center = waldensian
+			remove_reform_center = fraticelli
+		}
+	}
+}
+
+# Major Fraticelli
+country_event = {
+	id = PreProtestantEvent.7
+	title = PreProtestantEvent.7.t
+	desc = PreProtestantEvent.7.d
+	picture = PRAYING_eventPicture
+
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	trigger = {
+		current_age = age_of_reformation
+		OR = {
+			religion = lollard
+			religion = fraticelli
+			religion = waldensian
+		}
+		is_religion_enabled = protestant
+		has_friendly_reformation_center = yes 
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "PreProtestantEvent.7.a"
+		every_province = {
+			limit = {
+				is_reformation_center = yes
+			}
+			remove_reform_center = lollard
+			remove_reform_center = waldensian
+			remove_reform_center = fraticelli
+		}
+	}
+}
+
+# Destroy Heretics
+country_event = {
+	id = PreProtestantEvent.8
+	title = PreProtestantEvent.8.t
+	desc = PreProtestantEvent.8.d
+	picture = PRAYING_eventPicture
+	
+	trigger = {
+		religion = catholic
+		
+		has_truce = no
+		any_neighbor_country = {
+			OR = {
+				religion = waldensian
+				religion = fraticelli
+				religion = lollard
+			}
+			NOT = {
+				army_strength = {
+					who = ROOT
+					value = 0.5
+				}
+				num_of_allies = 1
+			}
+		}
+		NOT = {
+			any_country = {
+				is_great_power = yes
+				OR = {
+					religion = waldensian
+					religion = fraticelli
+					religion = lollard
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 96
+		
+		modifier = {
+			factor = 0.8
+			NOT = {
+				stability = 0
+			}
+		}
+	}
+	
+	option = {
+		name = "PreProtestantEvent.8.a"
+		random_owned_province = { 
+			limit = {
+				religion = catholic
+			}
+			change_religion = lollard
+		} 
+	}
+}
+
+#######################################REFORMATION#######################################
+
+country_event = {
+	id = PreProtestantEvent.9
+	title = PreProtestantEvent.9.t
+	desc = PreProtestantEvent.9.d
+	picture = PRAYING_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = lollard
+			religion = waldensian
+		}
+		any_province = {
+			religion = protestant
+		}
+		NOT = {
+			has_country_flag = stay_preprotestant
+		}
+		is_subject = no
+		is_force_converted = no 
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "PreProtestantEvent.9.a"
+		change_religion = protestant
+		
+		every_owned_province = {
+			limit = {
+				OR = {
+					religion = lollard
+					religion = waldensian
+				}
+			}
+			change_religion = protestant
+		}
+
+		ai_chance = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				any_country = {
+					is_great_power = yes
+					OR = {
+						religion = waldensian
+						religion = lollard
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "PreProtestantEvent.9.b"
+		set_country_flag = stay_preprotestant
+	}
+}
+
+# Change to Protestant
+country_event = {
+	id = PreProtestantEvent.10
+	title = PreProtestantEvent.10.t
+	desc = PreProtestantEvent.10.d
+	picture = PRAYING_eventPicture
+	
+	hidden = yes
+	
+	trigger = {
+	
+		always = no
+	
+	#	any_owned_province = {
+	#		OR = {
+	#			religion = lollard
+	#			religion = waldensian
+	#		}
+	#	}
+	#	NOT = {
+	#		OR = {
+	#			religion = lollard
+	#			religion = waldensian
+	#		}
+	#	}
+	#	any_province = {
+	#		religion = protestant
+	#	}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "PreProtestantEvent.10.a"
+		every_owned_province = {
+			limit = {
+				OR = {
+					religion = lollard
+					religion = waldensian
+				}
+			}
+			change_religion = protestant
+		}
+	}
+}
+
+country_event = {
+	id = PreProtestantEvent.11
+	title = PreProtestantEvent.11.t
+	desc = PreProtestantEvent.11.d
+	picture = PRAYING_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "PreProtestantEvent.11.a"
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					religion = catholic
+				}
+				change_religion = FROM
+			}
+			set_hre_religion = fraticelli
+		}
+		change_religion = FROM
+		
+		add_stability = -4
+		
+		set_global_flag = rome_converted_bgm
+		
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				OR = {
+					government = theocracy
+					has_idea_group = religious_ideas
+					
+					NOT = {
+						stability = 1
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "PreProtestantEvent.11.b"
+		
+		add_stability = -3
+		add_prestige = -50
+		add_claim = 118
+		
+		set_global_flag = rome_converted_bgm
+		
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				stability = 2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = PreProtestantEvent.12
+	title = "PreProtestantEvent.12.t"
+	desc = "PreProtestantEvent.12.d"
+	picture = POPE_PREACHING_eventPicture
+	
+	trigger = {
+		papacy_active = yes
+		owns = 118		# Rome
+		normal_or_historical_nations = yes
+		religion = fraticelli
+		NOT = { OR = { tag = ITA tag = VIY } }
+		NOT = { tag = ROM }
+		NOT = { exists = NTI }
+		NOT = { has_country_flag = no_support_frat }
+	}
+	
+	mean_time_to_happen = {
+		months = 2
+		
+		modifier = {
+			factor = 0.95
+			num_of_cardinals = 1
+		}
+		modifier = {
+			factor = 0.95
+			num_of_cardinals = 2
+		}
+		modifier = {
+			factor = 0.75
+			has_idea_group = religious_ideas
+		}
+		modifier = {
+			factor = 0.9
+			is_defender_of_faith = yes
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { is_defender_of_faith = yes }
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { advisor = theologian }
+		}
+		modifier = {
+			factor = 0.9
+			theologian = 2
+		}
+	}
+	
+	option = {
+		name = "PreProtestantEvent.12.a" # We will never support such a state
+		ai_chance = { factor = 25 }
+		add_prestige = -10
+		add_stability = -1
+		every_country = {
+			limit = {
+				religion = fraticelli
+				NOT = { tag = ROOT }
+			}
+			add_opinion = { who = ROOT modifier = opinion_declined_independent_state_support }
+		}
+		set_country_flag = no_support_frat
+	}
+	option = {
+		name = "PreProtestantEvent.12.b" # Rome is rightfully theirs
+		ai_chance = { 
+			factor = 75 
+			modifier = {
+				factor = 0
+				is_core = 118
+			}
+		}
+		118 = {
+			add_core = NTI
+			cede_province = NTI
+			if = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+		add_prestige = 25
+		NTI = {
+			change_religion = fraticelli
+			change_government = theocracy
+			add_government_reform = papacy_reform
+			change_primary_culture = umbrian
+			
+			#define_ruler = {
+			#	name = "Filippo"
+			#	dynasty = "Berbegni"
+			#	claim = 95
+			#	culture = umbrian
+			#}
+		}
+	}
+}
+
+country_event = {
+	id = PreProtestantEvent.13
+	title = "PreProtestantEvent.13.t"
+	desc = "PreProtestantEvent.13.d"
+	picture = POPE_PREACHING_eventPicture
+	
+	trigger = {
+		NOT = {
+			owns = 118
+		}
+		normal_or_historical_nations = yes
+		total_development = 65
+		religion = fraticelli
+		NOT = { tag = ITA }
+		NOT = { tag = ROM }
+		NOT = { exists = NTI }
+		NOT = { has_country_flag = no_support_frat }
+	}
+	
+	mean_time_to_happen = {
+		months = 2
+		
+		modifier = {
+			factor = 0.95
+			num_of_cardinals = 1
+		}
+		modifier = {
+			factor = 0.95
+			num_of_cardinals = 2
+		}
+		modifier = {
+			factor = 0.75
+			has_idea_group = religious_ideas
+		}
+		modifier = {
+			factor = 0.9
+			is_defender_of_faith = yes
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { is_defender_of_faith = yes }
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { advisor = theologian }
+		}
+		modifier = {
+			factor = 0.9
+			theologian = 2
+		}
+	}
+	
+	option = {
+		name = "PreProtestantEvent.13.a" # We will never support such a state
+		ai_chance = { factor = 25 }
+		add_prestige = -10
+		add_stability = -1
+		every_country = {
+			limit = {
+				religion = fraticelli
+				NOT = { tag = ROOT }
+			}
+			add_opinion = { who = ROOT modifier = opinion_declined_independent_state_support }
+		}
+		set_country_flag = no_support_frat
+	}
+	option = {
+		name = "PreProtestantEvent.13.b" # XXX is rightfully theirs
+		ai_chance = { 
+			factor = 75 
+			modifier = {
+				factor = 0
+				is_core = 118
+			}
+		}
+		random_owned_province = {
+			add_core = NTI
+			cede_province = NTI
+			if = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+		add_prestige = 25
+		NTI = {
+			change_religion = fraticelli
+			change_government = theocracy
+			add_government_reform = papacy_reform
+			change_primary_culture = umbrian
+			
+			#define_ruler = {
+			#	name = "Filippo"
+			#	dynasty = "Berbegni"
+			#	claim = 95
+			#	culture = umbrian
+			#}
+		}
+	}
+}
+
+country_event = {
+	id = PreProtestantEvent.14
+	title = "PreProtestantEvent.14.t"
+	desc = "PreProtestantEvent.14.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	major = yes
+
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+			is_religion_enabled = protestant
+		}
+		OR = {
+			lollard_ref_trigger = yes
+			cathar_ref_trigger = yes
+			wald_ref_trigger =  yes
+			hussite_ref_trigger = yes
+			frat_ref_trigger = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 2
+	}
+
+	immediate = {
+		set_global_flag = preprot_heresy
+	}
+	
+	option = {
+		name = "PreProtestantEvent.14.a" # A new reformation has begun
+		if = {
+			limit = {
+				lollard_ref_trigger = yes
+			}
+			set_global_flag = lol_lea
+		}
+		if = {
+			limit = {
+				cathar_ref_trigger = yes
+			}
+			set_global_flag = cathar_lea
+		}
+		if = {
+			limit = {
+				wald_ref_trigger = yes
+			}
+			set_global_flag = wald_lea
+		}
+		if = {
+			limit = {
+				hussite_ref_trigger = yes
+			}
+			set_global_flag = hus_lea
+		}
+		if = {
+			limit = {
+				frat_ref_trigger = yes
+			}
+			set_global_flag = frat_lea
+		}
+	}
+}
+
+country_event = {
+	id = PreProtestantEvent.15
+	title = "PreProtestantEvent.15.t"
+	desc = "PreProtestantEvent.15.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	major = yes
+
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			religion = lollard
+			religion = waldensian
+			religion = fraticelli
+			religion = cathar
+			religion = hussite
+		}
+		OR = {
+			is_great_power = yes
+			calc_true_if = {
+				all_country = {
+					is_part_of_hre = yes
+					religion = ROOT
+				}
+				amount = 7
+			}
+		}
+		any_country = {
+			adm_tech = 16
+		}
+		has_global_flag = preprot_heresy
+		is_at_war = no
+		NOT = { has_country_flag = evangelical_union }
+	}
+	
+	mean_time_to_happen = {
+		months = 40
+	}
+	
+	option = {
+		name = "PreProtestantEvent.15.a" # oh no!
+
+		enable_hre_leagues = yes
+
+		#set_global_flag = preprot_heresy
+		if = {
+			limit = {
+				ROOT = { religion = lollard }
+				#has_global_flag = lol_lea
+			}
+			set_hre_heretic_religion = lollard
+		}
+		if = {
+			limit = {
+				ROOT = { religion = cathar }
+				#has_global_flag = cathar_lea
+			}
+			set_hre_heretic_religion = cathar
+		}
+		if = {
+			limit = {
+				ROOT = { religion = waldensian }
+				#has_global_flag = wald_lea
+			}
+			set_hre_heretic_religion = waldensian
+		}
+		if = {
+			limit = {
+				ROOT = { religion = hussite }
+				#has_global_flag = hus_lea
+			}
+			set_hre_heretic_religion = hussite
+		}
+		if = {
+			limit = {
+				ROOT = { religion = fraticelli }
+				#has_global_flag = frat_lea
+			}
+			set_hre_heretic_religion = fraticelli
+		}
+	}
+}
+
+# Debate on secularization, Lollardy
+country_event = {
+	id = PreProtestantEvent.16
+	title = PreProtestantEvent.16.t
+	desc = PreProtestantEvent.16.d
+	picture = PRAYING_eventPicture
+	
+	#hidden = yes
+	
+	trigger = {
+		religion = lollard
+		NOT = {
+			OR = {
+				has_country_modifier = lollard_secular
+				has_country_modifier = lollard_politics
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 68
+	}
+	
+	option = {
+		name = "PreProtestantEvent.16.a" #Religion should not concern the state
+		add_stability = 1
+		add_country_modifier = {
+			name = lollard_secular
+			duration = 3650
+		}
+	}
+	option = {
+		name = "PreProtestantEvent.16.b" #Their beliefs do not matter; we will make political use of the church on our own
+		add_stability = -1
+		add_country_modifier = {
+			name = lollard_politics
+			duration = 3650
+		}
+	}
+}
+
+# Difference between Lollardy and Catholics
+country_event = {
+	id = PreProtestantEvent.17
+	title = PreProtestantEvent.17.t
+	desc = PreProtestantEvent.17.d
+	picture = PRAYING_eventPicture
+	
+	#hidden = yes
+	
+	trigger = {
+		religion = lollard
+	}
+	
+	mean_time_to_happen = {
+		months = 146
+	}
+	
+	option = {
+		name = "PreProtestantEvent.17.a" #Hold true to our ideals; suffering should not be idealized as the materialism of the church is sinful
+		add_prestige = -5
+		add_stability = 1
+		every_neighbor_country = {
+			limit = {
+				OR = {
+					religion = catholic
+					religion = fraticelli
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_religious_tension
+				years = 5
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					stability = 0
+				}
+			}
+		}
+	}
+	option = {
+		name = "PreProtestantEvent.17.b" #The catholics hold points here
+		add_stability = -1
+		add_years_of_income = 0.25
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+# Lollard iconoclasm
+country_event = {
+	id = PreProtestantEvent.18
+	title = PreProtestantEvent.18.t
+	desc = PreProtestantEvent.18.d
+	picture = PRAYING_eventPicture
+	
+	#hidden = yes
+	
+	trigger = {
+		religion = lollard
+	}
+	
+	mean_time_to_happen = {
+		months = 146
+	}
+	
+	option = {
+		name = "PreProtestantEvent.18.a" #Hide the paintings
+		add_prestige = 5
+
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					stability = 0
+				}
+			}
+		}
+	}
+	option = {
+		name = "PreProtestantEvent.18.b" #Destroy them
+		add_prestige = -10
+		add_stability = -1
+		add_yearly_manpower = 0.125
+		
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
