@@ -53,8 +53,21 @@ revolutionary_rebels = {
 			}
 		}
 		modifier = {
-			factor = 0
-			has_global_flag = revolutions_year_start
+			factor = 0.1
+			owner = {
+				has_country_flag = rev_year
+			}
+		}
+		modifier = {
+			factor = 0.1
+			owner = {
+				OR = {
+					has_reform = futurist_mechanic
+					has_reform = fascist_mechanic
+					has_reform = democratic_mechanic
+					has_reform = authoritarian_mechanic
+				}
+			}
 		}
 		modifier = {
 			factor = 2
@@ -309,7 +322,15 @@ revolutionary_rebels = {
 			limit = {
 				has_global_flag = revolutions_year_start
 			}
-			change_government = futurist_government #testing github
+			change_government = futurist_government
+		}
+		if = {
+			limit = {
+				owner = {
+					has_reform = futurist_mechanic
+				}
+			}
+			change_government = democratic_government
 		}
 	}
 }

@@ -12,6 +12,9 @@
  
  take_capital_enforcedynasty_desc:0 "Take their capital!"
  
+ rev_trad_m:0 "Revolutionary Traditions"
+ rev_target_trad_m:0 "Revolutionary Target Tradition"
+ 
  rome:0 "Rome"
  british_isles_node:0 "British Isles"
  

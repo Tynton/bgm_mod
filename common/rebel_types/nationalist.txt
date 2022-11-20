@@ -57,6 +57,17 @@ nationalist_rebels = {
 			tolerance_to_this = 0			
 	 	}
 		modifier = {
+			factor = 50
+			owner = {
+				OR = {
+					has_reform = futurist_mechanic
+					has_reform = fascist_mechanic
+					has_reform = democratic_mechanic
+					has_reform = authoritarian_mechanic
+				}
+			}
+		}
+		modifier = {
 			factor = 0.01
 			region = france_region
 			has_owner_religion = no

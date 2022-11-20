@@ -153,6 +153,7 @@ country_decisions = {
 		major = yes
 	
 		potential = {
+			NOT = { tag = NED }
 			#adm_tech = 31
 			OR = {
 				primary_culture = flemish
@@ -257,6 +258,9 @@ country_decisions = {
 		potential = {
 			culture_group = south_slavic
 			#is_subject = no
+			NOT = {
+				exists = YUG
+			}
 		}
 		allow = {
 			is_subject = no
@@ -267,9 +271,6 @@ country_decisions = {
 			owns = 4752
 			owns = 4239
 			adm_tech = 10
-			NOT = {
-				exists = YUG
-			}
 		}
 		effect = {
 			change_tag = YUG

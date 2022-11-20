@@ -32,7 +32,7 @@ artificial_rebels = {
 	
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
-		factor = 100000000000000
+		factor = 1000
 		modifier = {
 			factor = 0.0
 			owner = {

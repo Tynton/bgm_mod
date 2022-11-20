@@ -25,7 +25,7 @@ futurist_rebels = {
 	morale = 1.2
 	
 	# Possible handle actions
-	handle_action_negotiate = no
+	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
 	handle_action_send_missionary = yes		
@@ -52,36 +52,34 @@ futurist_rebels = {
 			}
 		}
 		modifier = {
+			factor = 50
+			owner = {
+				OR = {
+					has_reform = futurist_mechanic
+					has_reform = fascist_mechanic
+					has_reform = democratic_mechanic
+					has_reform = authoritarian_mechanic
+				}
+			}
+		}
+		modifier = {
+			factor = 0.1
+			owner = {
+				NOT = {
+					OR = {
+						has_reform = futurist_mechanic
+						has_reform = fascist_mechanic
+						has_reform = democratic_mechanic
+						has_reform = authoritarian_mechanic
+					}
+				}
+			}
+		}
+		modifier = {
 			factor = 0.25
 			owner = {
 				bgm_comgovt = yes
 			}
-		}
-		modifier = {
-			factor = 1.5
-			is_year = 1900
-		}
-		modifier = {
-			factor = 1.5
-			is_year = 1915
-		}
-		modifier = {
-			factor = 1.5
-			is_year = 1930
-		}
-		#modifier = {
-		#	factor = 66
-		#	NOT = {
-		#		prestige = 0
-		#	}
-		#}
-		modifier = {
-			factor = 0.05
-			is_overseas = yes
-		}
-		modifier = {
-			factor = 0.25
-			NOT = { is_year = 1800 }
 		}
 		modifier = {
 			factor = 50.0
@@ -137,7 +135,7 @@ futurist_rebels = {
 	
 	# Country scope
 	can_negotiate_trigger = {
-		always = no
+		always = yes
 	}
 	
 	# Country scope

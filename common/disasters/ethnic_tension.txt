@@ -32,6 +32,7 @@ intranational_cultural_tension = {
 		has_global_flag = revolutions_year_start
 
 		is_subject = no
+		#has_disaster = intranational_cultural_tension
 	}
 
 	

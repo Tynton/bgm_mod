@@ -157,7 +157,45 @@ country_event = {
 	
 	option = {
 		name = none
-		clr_country_flag = responded_rev
-		clr_global_flag = revolutions_year_start
+		random_owned_province = {
+			spawn_rebels = {
+				type = futurist_rebels
+				size = 1
+			}
+		}
+		random_owned_province = {
+			spawn_rebels = {
+				type = fascist_rebels
+				size = 1
+			}
+		}
+		random_owned_province = {
+			spawn_rebels = {
+				type = socialist_rebels
+				size = 1
+			}
+		}
+		random_owned_province = {
+			spawn_rebels = {
+				type = democratic_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = TEST_EVENTS.10
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		every_country_including_inactive = {
+			set_country_flag = rev_year
+		}
 	}
 }

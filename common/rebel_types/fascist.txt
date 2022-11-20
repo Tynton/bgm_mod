@@ -25,7 +25,7 @@ fascist_rebels = {
 	morale = 1.2
 	
 	# Possible handle actions
-	handle_action_negotiate = no
+	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
 	handle_action_send_missionary = yes		
@@ -46,33 +46,33 @@ fascist_rebels = {
 			}
 		}
 		modifier = {
-			factor = 0.25
+			factor = 50
 			owner = {
-				bgm_comgovt = yes
+				OR = {
+					has_reform = futurist_mechanic
+					has_reform = fascist_mechanic
+					has_reform = democratic_mechanic
+					has_reform = authoritarian_mechanic
+				}
 			}
 		}
 		modifier = {
-			factor = 1.5
-			is_year = 1900
+			factor = 0.1
+			owner = {
+				NOT = {
+					OR = {
+						has_reform = futurist_mechanic
+						has_reform = fascist_mechanic
+						has_reform = democratic_mechanic
+						has_reform = authoritarian_mechanic
+					}
+				}
+			}
 		}
 		modifier = {
-			factor = 1.5
-			is_year = 1915
-		}
-		modifier = {
-			factor = 3.0
-			is_year = 1930
-		}
-		#modifier = {
-		#	factor = 66
-		#	NOT = {
-		#		prestige = 0
-		#	}
-		#}
-		modifier = {
-			factor = 0
-			NOT = {
-				is_year = 1900
+			factor = 0.25
+			owner = {
+				bgm_comgovt = yes
 			}
 		}
 		modifier = {
@@ -132,7 +132,7 @@ fascist_rebels = {
 	
 	# Country scope
 	can_negotiate_trigger = {
-		always = no
+		always = yes
 	}
 	
 	# Country scope

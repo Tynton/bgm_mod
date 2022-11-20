@@ -28,20 +28,38 @@
 #	unjustified_demands = -0.25
 #}
 
-liberal_traditions = {
+rev_trad_m = {
 	potential = {
-		has_country_flag = liberal_traditions_flag
+		has_country_flag = rev_trad
 		has_reform = democratic_mechanic
 	}
 
 	trigger = {
-		has_country_flag = liberal_traditions_flag
+		has_country_flag = rev_trad
 		has_reform = democratic_mechanic
 	}
 
 	dm_social_democrat_influence = 0.05
-	dm_social_liberal_influence = 0.05
-	dm_social_conservative_influence = 0.05
+	dm_social_liberal_influence = 0.025
+	dm_social_conservative_influence = -0.05
+	dm_fascist_influence = -0.05
+	dm_monarchist_influence = -0.05
+}
+
+rev_target_trad_m = {
+	potential = {
+		has_country_flag = rev_target_trad
+		has_reform = democratic_mechanic
+	}
+
+	trigger = {
+		has_country_flag = rev_target_trad
+		has_reform = democratic_mechanic
+	}
+
+	dm_social_democrat_influence = 0.05
+	dm_social_liberal_influence = 0.025
+	dm_social_conservative_influence = -0.05
 	dm_fascist_influence = -0.05
 	dm_monarchist_influence = -0.05
 }

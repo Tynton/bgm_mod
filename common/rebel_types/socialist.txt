@@ -25,7 +25,7 @@ socialist_rebels = {
 	morale = 0.95
 	
 	# Possible handle actions
-	handle_action_negotiate = no
+	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
 	handle_action_send_missionary = yes		
@@ -52,9 +52,27 @@ socialist_rebels = {
 			}
 		}
 		modifier = {
-			factor = 0
-			NOT = {
-				is_year = 1850
+			factor = 50
+			owner = {
+				OR = {
+					has_reform = futurist_mechanic
+					has_reform = fascist_mechanic
+					has_reform = democratic_mechanic
+					has_reform = authoritarian_mechanic
+				}
+			}
+		}
+		modifier = {
+			factor = 0.1
+			owner = {
+				NOT = {
+					OR = {
+						has_reform = futurist_mechanic
+						has_reform = fascist_mechanic
+						has_reform = democratic_mechanic
+						has_reform = authoritarian_mechanic
+					}
+				}
 			}
 		}
 		modifier = {
@@ -140,7 +158,7 @@ socialist_rebels = {
 	
 	# Country scope
 	can_negotiate_trigger = {
-		always = no
+		always = yes
 	}
 	
 	# Country scope
@@ -171,8 +189,8 @@ socialist_rebels = {
 					}
 				}
 			}
-			change_government = futurist_government
-			add_government_reform = socialist_republic
+			#change_government = futurist_government
+			#add_government_reform = socialist_republic
 		}
 		if = {
 			limit = {

@@ -601,6 +601,10 @@ war_taxes = {
 	land_maintenance_modifier = -0.15
 	naval_maintenance_modifier = -0.15
 	merc_maintenance_modifier = -0.05
+	dm_communist_influence = 0.15
+	dm_social_liberal_influence = 0.1
+	dm_social_democrat_influence = 0.075
+	dm_social_conservative_influence = -0.05
 }
 
 stability = {
@@ -621,8 +625,9 @@ positive_stability = {
 	yearly_corruption = -0.02
 	global_institution_spread = 0.05
 	yearly_harmony = 0.25
-	
-	
+	dm_social_conservative_influence = 0.1
+	dm_social_liberal_influence = 0.1
+	dm_social_democrat_influence = 0.05
 }
 
 privateering = {
@@ -637,6 +642,12 @@ negative_stability = {
 	devotion = 1
 	caravan_power = 0.05
 	yearly_harmony = 0.25
+	dm_communist_influence = 0.1
+	dm_fascist_influence = 0.1
+	dm_nationalist_influence = 0.1
+	dm_social_democrat_influence = 0.025
+	dm_social_conservative_influence = -0.05
+	dm_social_liberal_influence = -0.05
 }
 
 positive_mandate = {	# 100% strength at 100 mandate, 0% at 50 mandate
@@ -688,6 +699,10 @@ inflation = {
 	advisor_cost = 0.01						#1% for each inflation step
 	mercenary_cost = 0.01					#1% for each inflation step
 	fort_maintenance_modifier = 0.01		#1% for each inflation step
+	dm_communist_influence = 0.25
+	dm_fascist_influence = 0.25
+	dm_nationalist_influence = 0.25
+	dm_monarchist_influence = 0.25
 }
 
 bankruptcy = {
@@ -709,6 +724,10 @@ bankruptcy = {
 	idea_cost = 0.5
 	imperial_mandate = -0.1
 	great_project_upgrade_cost = 0.5
+	dm_communist_influence = 0.25
+	dm_fascist_influence = 0.25
+	dm_nationalist_influence = 0.25
+	dm_monarchist_influence = 0.25
 }
 
 
@@ -726,6 +745,8 @@ peace = {
 	pr_smugglers_influence = 0.1
 	monthly_militarized_society = -5.0
 	stability_cost_modifier = -0.05
+	dm_social_liberal_influence = 0.05
+	dm_social_democrat_influence = 0.075
 }
 
 unconditional_surrender = {
@@ -736,6 +757,7 @@ unconditional_surrender = {
 
 call_for_peace = {
 	war_exhaustion = 0.008
+	dm_communist_influence = 0.008
 }
 
 war_exhaustion = {
@@ -751,6 +773,7 @@ war_exhaustion = {
 	sailors_recovery_speed = -0.01
 	siege_ability = -0.01
 	global_trade_goods_size_modifier = -0.02
+	dm_communist_influence = 0.008
 }
 
 doom = {
@@ -767,6 +790,7 @@ authority = {
 
 regency_council = {
 	stability_cost_modifier = 0.25
+	dm_social_conservative_influence = -0.05
 }
 
 trade_efficiency = {
@@ -799,6 +823,7 @@ army_tradition = {
 	nobles_loyalty_modifier = 0.05
 	maratha_loyalty_modifier = 0.05
 	rajput_loyalty_modifier = 0.05
+	dm_social_conservative_influence = 0.025
 }
 
 navy_tradition = {
@@ -812,6 +837,7 @@ navy_tradition = {
 	sailors_recovery_speed = 0.2
 	burghers_loyalty_modifier = 0.05
 	vaisyas_loyalty_modifier = 0.05
+	dm_social_conservative_influence = 0.025
 }
 
 positive_piety = { #As of 1.23 Legalism
@@ -844,7 +870,7 @@ defender_of_faith = {
 	prestige = 1							#1% extra prestige yearly
 	missionaries = 1
 	devotion = 0.5
-	
+	dm_social_conservative_influence = 0.05
 	
 }
 
@@ -858,6 +884,7 @@ emperor = {
 	diplomatic_upkeep = 1
 	free_leader_pool = 1
 	prestige = 1
+	dm_social_conservative_influence = 0.05
 }
 
 states_in_hre = {							#bonuses for each non-free city with capital in HRE.. as emperor
@@ -947,6 +974,7 @@ legitimacy = {
 	monthly_militarized_society = 0.05
 	max_absolutism = 20
 	nobles_loyalty_modifier = 0.1
+	dm_social_conservative_influence = 0.025
 }
 
 #Multiplied by current Horde Unity - 50
@@ -972,6 +1000,7 @@ devotion = {
 	church_loyalty_modifier = 0.1
 	brahmins_hindu_loyalty_modifier = 0.1
 	reform_progress_growth = 0.5
+	dm_social_conservative_influence = 0.025
 }
 
 # Multiplied by current meritocracy - 50
@@ -979,6 +1008,7 @@ meritocracy = {
 	global_spy_defence = 1.0
 	advisor_cost = -0.5
 	reform_progress_growth = 0.5
+	dm_social_conservative_influence = 0.025
 }
 
 # Multiplied by 50 - meritocracy
@@ -1050,6 +1080,10 @@ militarized_society = {
 	global_trade_goods_size_modifier = -0.5
 	production_efficiency = -0.5
 	trade_efficiency = -0.5
+	dm_social_conservative_influence = 0.025
+	dm_monarchist_influence = 0.125
+	dm_fascist_influence = 0.1
+	dm_nationalist_influence = 0.1
 }
 
 
@@ -1094,6 +1128,8 @@ over_extension = {
 	bureaucrats_influence = 0.5
 	mr_guilds_influence = 0.5
 	yearly_corruption = 0.5
+	dm_communist_influence = 0.1
+	dm_social_democrat_influence = 0.05
 }
 
 prestige = {
@@ -1122,7 +1158,7 @@ prestige = {
 	dhimmi_loyalty_modifier = 0.05
 	jains_loyalty_modifier = 0.05
 	rajput_loyalty_modifier = 0.05
-
+	dm_social_conservative_influence = 0.15
 }
 
 no_debate_in_parliament = {
@@ -1136,11 +1172,16 @@ republican_tradition = {
 	reform_progress_growth = 1.0
 	burghers_loyalty_modifier = 0.05
 	vaisyas_loyalty_modifier = 0.05
+	dm_social_conservative_influence = 0.15
 }
 
 inverse_republican_tradition = {
 	stability_cost_modifier = 2.0
 	rr_jacobins_influence = -0.1
+	dm_monarchist_influence = 0.01
+	dm_communist_influence = 0.01
+	dm_fascist_influence = 0.01
+	dm_nationalist_influence = 0.01
 }
 
 ########################################
@@ -1181,6 +1222,10 @@ inverse_religious_unity = {
 
 total_occupation = {
 	war_exhaustion = 0.005					#increases exhaustion.
+	dm_monarchist_influence = 0.1
+	dm_communist_influence = 0.1
+	dm_fascist_influence = 0.1
+	dm_nationalist_influence = 0.1
 }
 
 total_blockaded = {
@@ -1191,11 +1236,15 @@ total_blockaded = {
 
 uncontested_cores = {
 	prestige = -0.1
+	dm_monarchist_influence = 0.1
+	dm_fascist_influence = 0.1
+	dm_nationalist_influence = 0.1
 }
 
 
 num_objectives_fullfilled = {
 	monthly_splendor = 2
+	dm_social_conservative_influence = 0.05
 }
 
 production_leader = {
@@ -1245,6 +1294,9 @@ is_great_power = {						#Only works with Rights of Man DLC enabled
 	prestige_decay = -0.01
 	embracement_cost = -0.1
 	max_absolutism = 5
+	dm_social_conservative_influence = 0.05
+	dm_social_liberal_influence = 0.05
+	dm_social_democrat_influence = 0.05
 }
 
 in_golden_era = {
@@ -1254,17 +1306,25 @@ in_golden_era = {
 	naval_morale = 0.1
 	max_absolutism = 5
 	max_revolutionary_zeal = 10
+	dm_social_conservative_influence = 0.05
 }
 
 absolutism = {
 	administrative_efficiency = 0.3
 	discipline = 0.05
 	core_decay_on_your_own = -0.5
+	dm_social_conservative_influence = 0.05
+	dm_monarchist_influence = 0.01
+	dm_communist_influence = 0.01
+	dm_fascist_influence = 0.01
 }
 
 low_army_professionalism = {
 	mercenary_cost = -0.15
 	mercenary_manpower = 0.15
+	dm_communist_influence = 0.1
+	dm_social_democrat_influence = 0.1
+	dm_social_liberal_influence = 0.05
 }
 
 high_army_professionalism = {
@@ -1272,6 +1332,10 @@ high_army_professionalism = {
 	shock_damage = 0.1
 	siege_ability = 0.2
 	drill_decay_modifier = -0.5
+	dm_monarchist_influence = 0.05
+	dm_social_conservative_influence = 0.1
+	dm_fascist_influence = 0.1
+	dm_nationalist_influence = 0.1
 }
 
 streltsy_modifier = {
@@ -1288,6 +1352,7 @@ power_projection = {
 	devotion = 0.5
 	horde_unity = 0.5
 	republican_tradition = 0.2
+	dm_social_conservative_influence = 0.1
 }
 
 power_projection_25 = {
@@ -1322,18 +1387,21 @@ new_world_exploitation_modifier = {
 crown_colony_overlord = {
 	merchants = 1
 	global_trade_power = 0.05
+	dm_social_conservative_influence = 0.025
 }
 
 private_enterprise_overlord = {
 	merchants = 1
 	global_trade_power = 0.05
 	global_tariffs = -0.05
+	dm_social_conservative_influence = 0.025
 }
 
 self_governing_colony_overlord = {
 	merchants = 1
 	global_trade_power = 0.05
 	global_tariffs = -0.10
+	dm_social_conservative_influence = 0.025
 }
 
 crown_colony_subject = {
@@ -1467,6 +1535,9 @@ dishonoured_alliance =  {
 
 drilling_armies = { # Multiplied by percentage of forcelimit currently drilling
 	yearly_army_professionalism = 0.01
+	dm_monarchist_influence = 0.025
+	dm_fascist_influence = 0.025
+	dm_nationalist_influence = 0.025
 }
 
 ##################################################################################################
@@ -1488,14 +1559,26 @@ discontent_sowed = {
 	devotion = -1
 	horde_unity = -1
 	meritocracy = -0.5
+	dm_monarchist_influence = 0.075
+	dm_fascist_influence = 0.075
+	dm_nationalist_influence = 0.075
+	dm_communist_influence = 0.075
 }
 
 reputation_sabotaged = {
 	diplomatic_reputation = -3
+	dm_monarchist_influence = 0.075
+	dm_fascist_influence = 0.075
+	dm_nationalist_influence = 0.075
+	dm_communist_influence = 0.075
 }
 
 corrupt_officials = {
 	yearly_corruption = 0.1
+	dm_monarchist_influence = 0.075
+	dm_fascist_influence = 0.075
+	dm_nationalist_influence = 0.075
+	dm_communist_influence = 0.075
 }
 
 scaled_trade_league_leader = { #scaled by number of members
@@ -1543,9 +1626,13 @@ support_loyalists = {
 send_officers = {
 	discipline = 0.05
 	land_morale = 0.2
+	dm_fascist_influence = 0.05
+	dm_nationalist_influence = 0.05
 }
 
 divert_trade = {
+	dm_fascist_influence = 0.025
+	dm_nationalist_influence = 0.025
 }
 
 ########################################
@@ -1895,11 +1982,20 @@ over_governing_capacity_modifier = {
 	advisor_cost = 1.0
 	monthly_militarized_society = -1.0
 	administrative_efficiency = -0.5
+	dm_social_democrat_influence = 0.1
+	dm_communist_influence = 0.05
+	dm_monarchist_influence = 0.05
+	dm_fascist_influence = 0.05
+	dm_nationalist_influence = 0.05
 }
 
 
 lost_hegemony = {
-	all_power_cost	= 0.10
+	prestige = -0.5
+	dm_communist_influence = 0.05
+	dm_monarchist_influence = 0.05
+	dm_fascist_influence = 0.05
+	dm_nationalist_influence = 0.05
 }
 
 at_peace_revolutionary = { # Applied if at peace while reactionaries are bordering you
@@ -1957,12 +2053,21 @@ num_accepted_cultures = {
 }
 
 ruler_adm = {
+	dm_social_conservative_influence = 0.02
+	dm_social_liberal_influence = 0.025
+	dm_social_democrat_influence = 0.02
 }
 
 ruler_dip = {
+	dm_social_conservative_influence = 0.02
+	dm_social_liberal_influence = 0.025
+	dm_social_democrat_influence = 0.02
 }
 
 ruler_mil = {
+	dm_social_conservative_influence = 0.02
+	dm_social_liberal_influence = 0.025
+	dm_social_democrat_influence = 0.02
 }
 
 heir_adm = {

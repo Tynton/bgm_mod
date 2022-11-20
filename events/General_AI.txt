@@ -2049,6 +2049,19 @@ country_event = {
 		ai = yes
 		has_country_modifier = ai_get_tech
 		NOT = { adm_tech = 45 }
+		NOT = {
+			OR = {
+				any_neighbor_country = {
+					mil_tech = ROOT
+				}
+				any_rival_country = {
+					mil_tech = ROOT
+				}
+				any_enemy_country = {
+					mil_tech = ROOT
+				}
+			}
+		}
 	}
 
 	mean_time_to_happen = {
@@ -2069,10 +2082,11 @@ country_event = {
 	desc = none
 	picture = GREAT_BUILDING_eventPicture
 
-	
+	is_triggered_only = yes
 
 	trigger = {
 		ai = yes
+		is_at_war = no
 		any_neighbor_country = {
 			ai = yes
 			military_strength = {
@@ -2084,6 +2098,8 @@ country_event = {
 				marriage_with = ROOT
 				truce_with = ROOT
 				alliance_with = ROOT
+				is_subject_of = ROOT
+				overlord_of = ROOT
 			}
 			OR = {
 				ROOT = {
@@ -2126,11 +2142,12 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 2
+		days = 90
 	}
 	option = {
 		random_neighbor_country = {
 			limit = {
+				is_at_war = no
 				military_strength = {
 					who = ROOT
 					value = 2
@@ -2140,6 +2157,8 @@ country_event = {
 					marriage_with = ROOT
 					truce_with = ROOT
 					alliance_with = ROOT
+					is_subject_of = ROOT
+					overlord_of = ROOT
 				}
 			}
 			declare_war_with_cb = {

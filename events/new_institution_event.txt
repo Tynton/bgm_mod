@@ -290,7 +290,12 @@ country_event = {
 		}
 		
 		hidden_effect = {
-			###########################GERMANY
+
+		every_country_including_inactive = {
+			set_country_flag = rev_year
+		}
+
+		###########################GERMANY
 		
 		every_province = {
 			limit = {

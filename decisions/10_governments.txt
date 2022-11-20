@@ -11,7 +11,7 @@ country_decisions = {
 				faction_in_power = dm_social_democrat
 				faction_in_power = dm_communist
 			}
-			NOT = { government = republic }
+			NOT = { has_reform = parliamentary_republic_reform }
 		}
 		allow = {
 			OR = {
@@ -22,6 +22,21 @@ country_decisions = {
 			}
 			stability = 1
 			is_at_war = no
+
+			OR = {
+				faction_influence = {
+					faction = at_republicanist
+					influence = 50
+				}
+				faction_influence = {
+					faction = dm_social_liberal
+					influence = 50
+				}
+				faction_influence = {
+					faction = dm_social_democrat
+					influence = 50
+				}
+			}
 		}
 		effect = {
 			add_government_reform = parliamentary_republic_reform
@@ -95,11 +110,31 @@ country_decisions = {
 			}
 			stability = 1
 			is_at_war = no
+
+			OR = {
+				faction_influence = {
+					faction = dm_monarchist
+					influence = 50
+				}
+				faction_influence = {
+					faction = at_monarchist
+					influence = 50
+				}
+			}
 		}
 		effect = {
 			change_government = authoritarian_government
 			add_government_reform = auth_monarchism
 			add_stability = -3
+			if = {
+				limit = {
+					is_subject = yes
+					overlord = {
+						has_reform = democratic_mechanic
+					}
+				}
+				grant_independence = yes
+			}
 		}
 		ai_will_do = {
 				factor = 0
@@ -130,11 +165,25 @@ country_decisions = {
 				faction_in_power = at_dictatorial
 			}
 			stability = 1
+
+			faction_influence = {
+				faction = dm_communist
+				influence = 50
+			}
 		}
 		effect = {
 			change_government = futurist_government
 			add_government_reform = socialist_republic
 			add_stability = -3
+			if = {
+				limit = {
+					is_subject = yes
+					overlord = {
+						has_reform = democratic_mechanic
+					}
+				}
+				grant_independence = yes
+			}
 		}
 		ai_will_do = {
 			factor = 0
@@ -165,10 +214,23 @@ country_decisions = {
 			}
 			is_at_war = no
 			stability = 1
+			faction_influence = {
+				faction = dm_fascist
+				influence = 50
+			}
 		}
 		effect = {
 			change_government = fascist_government
 			add_stability = -3
+			if = {
+				limit = {
+					is_subject = yes
+					overlord = {
+						has_reform = democratic_mechanic
+					}
+				}
+				grant_independence = yes
+			}
 		}
 		ai_will_do = {
 			factor = 0
@@ -194,10 +256,24 @@ country_decisions = {
 			faction_in_power = dm_nationalist
 			is_at_war = no
 			stability = 1
+
+			faction_influence = {
+				faction = dm_nationalist
+				influence = 50
+			}
 		}
 		effect = {
 			change_government = futurist_government
 			add_stability = -3
+			if = {
+				limit = {
+					is_subject = yes
+					overlord = {
+						has_reform = democratic_mechanic
+					}
+				}
+				grant_independence = yes
+			}
 		}
 		ai_will_do = {
 			factor = 0

@@ -13,6 +13,9 @@ country_event = {
 	#Initiate Power Struggle
 	option = {
 		name = BGM_DYNASTIC.1.a
+
+		government = monarchy
+		has_parliament = no
 		
 		set_country_flag = has_power_struggle
 		

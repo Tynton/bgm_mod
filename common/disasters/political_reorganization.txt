@@ -3,22 +3,17 @@ political_reorganization = {
 		NOT = { tag = ANA }
 		NOT = { has_country_flag = had_pol_reorg }
 		is_free_or_tributary_trigger = yes
-		OR = {
-			full_idea_group = postmodern_ideas
-			bgm_comgovt = yes
-			has_reform = fascist_mechanic
-		}
+		full_idea_group = postmodern_ideas
 	}
 
 
 	can_start = {
-		has_any_disaster = no
+		full_idea_group = postmodern_ideas
 	}
 	
 	
 	can_stop = {
 		OR = {
-			has_any_disaster = yes
 			check_variable = {
 				which = populistScore
 				value = 15

@@ -10,15 +10,13 @@ country_event = {
 	major = yes
 	
 	is_triggered_only = yes
-
-	immediate = {
-		add_stability = -4
-		add_war_exhaustion = 10
-	}
 	
 	option = {
 		name = "intranational_tension.1.a"			# Dire times are ahead of us
 		add_prestige = -10
+
+		add_stability = -4
+		add_war_exhaustion = 10
 
 		if = {
 			limit = {
