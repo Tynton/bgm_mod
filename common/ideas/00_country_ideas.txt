@@ -515,6 +515,190 @@ BEL_ideas = {
 	}
 }
 
+OCC_ideas = {
+
+	trigger = {
+		tag = OCC
+	}
+
+	start = {
+		army_tradition = 1
+		discipline = 0.05
+	}
+	
+	bonus = {
+		prestige = 0.25
+	}
+	free = yes
+	
+	troubadour_history = {
+		prestige_decay = -0.01
+	}
+	reassert_sovereignty = {
+		land_morale = 0.15
+	}
+	occitan_economy = {
+		development_cost_modifier = -0.1
+		global_manpower_modifier = 0.1
+	}
+	defensive_geography = {
+		defensiveness = 0.1
+		fort_maintenance_modifier = -0.1
+	}
+	standard_occitan = {
+		same_culture_advisor_cost = -0.25
+		culture_conversion_cost = -0.1
+	}
+	reclaim_catalonia = {
+		galley_power = 0.25
+		naval_maintenance_modifier = -0.15
+	}
+	occitan_poetry = {
+		improve_relation_modifier = 0.05
+	}
+}
+
+SGC_ideas = {
+
+	trigger = {
+		tag = SGC
+	}
+
+	start = {
+		improve_relation_modifier = 0.25
+		global_manpower_modifier = 0.175
+	}
+	
+	bonus = {
+		prestige = 0.25
+	}
+	free = yes
+	
+	austrobav_dip = {
+		diplomatic_reputation = 1
+	}
+	south_german_farmlands = {
+		development_cost_modifier = -0.15
+	}
+	expand_manufacturing = {
+		production_efficiency = 0.1
+		trade_goods_size_modifier = 0.1
+	}
+	alpine_terrain = {
+		defensiveness = 0.25
+		fort_maintenance_modifier = -0.2
+	}
+	integrated_free_cities = {
+		merchants = 1
+		global_trade_power = 0.15
+	}
+	merc_bastion = {
+		mercenary_discipline = 0.05
+		merc_maintenance_modifier = -0.25
+	}
+	northern_ambition = {
+		ae_impact = -0.15
+		fabricate_claims_cost = -0.2 
+	}
+}
+
+NGC_ideas = {
+
+	trigger = {
+		tag = NGC
+	}
+
+	start = {
+		discipline = 0.05
+		technology_cost = -0.05
+	}
+	
+	bonus = {
+		vassal_forcelimit_bonus = 0.25
+		vassal_income = 0.25
+	}
+	free = yes
+	
+	brandenburger_mil = {
+		land_morale = 0.15
+		infantry_power = 0.1
+	}
+	north_german_industry = {
+		production_efficiency = 0.15
+		trade_goods_size_modifier = 0.15
+	}
+	diverse_industries = {
+		global_trade_power = 0.15
+		embargo_efficiency = 0.25
+	}
+	leverage_power = {
+		diplomatic_reputation = 1
+		accept_vassalization_reasons = 10
+	}
+	excellent_ministries = {
+		advisor_cost = -0.25
+		general_cost = -0.15
+	}
+	general_staff = {
+		army_tradition = 1
+		army_tradition_decay = -0.015
+	}
+	southern_ambition = {
+		ae_impact = -0.15
+		fabricate_claims_cost = -0.2
+	}
+}
+
+UMB_ideas = {
+
+	trigger = {
+		tag = UMB
+	}
+
+	start = {
+		prestige = 0.25
+		technology_cost = -0.05
+	}
+	
+	bonus = {
+		discipline = 0.05
+	}
+	free = yes
+	
+	roman_capital = {
+		development_cost_modifier = -0.1
+		build_cost = -0.1
+	}
+	bishopric_of_rome = {
+		tolerance_own = 1
+		global_missionary_strength = 0.01
+	}
+	giostra_della_quintana = {
+		army_tradition = 0.5
+		mil_tech_cost_modifier = -0.05
+	}
+	italian_legitimation = {
+		fabricate_claims_cost = -0.1
+		diplomatic_reputation = 1
+	}
+	resolve_baron_struggle = {
+		legitimacy = 1
+		republican_tradition = 0.5
+		horde_unity = 1
+		devotion = 1
+		meritocracy = 1
+		stability_cost_modifier = -0.2
+	}
+	agrarian_economy = {
+		global_tax_modifier = 0.1
+		global_manpower_modifier = 0.15
+	}
+	italian_geography = {
+		land_morale = 0.1
+		defensiveness = 0.2
+	}
+}
+
 #SMA_ideas = {
 #
 #	trigger = {

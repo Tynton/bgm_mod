@@ -153,7 +153,16 @@ country_decisions = {
 		major = yes
 	
 		potential = {
-			NOT = { tag = NED }
+			NOT = {
+				OR = { 
+					tag = FRA
+					tag = FRF
+					tag = FRC
+					tag = FRE
+					tag = FRR
+					tag = NED
+				}
+			}
 			#adm_tech = 31
 			OR = {
 				primary_culture = flemish
@@ -196,7 +205,17 @@ country_decisions = {
 					culture_group = benelux
 				}
 			}
-			adm_tech = 20
+			OR = {
+				development_in_provinces = {
+					value = 50
+					culture_group = french
+				}
+				num_of_owned_provinces_with = {
+					value = 3
+					culture_group = french
+				}
+			}
+			adm_tech = 15
 			is_at_war = no
 			NOT = {
 				exists = BEL
@@ -332,9 +351,9 @@ country_decisions = {
 			massif_central_area = {
 				add_permanent_claim = ROOT
 			}
-			#country_event = {
-			#	id = ideagroups.1
-			#}
+			country_event = {
+				id = ideagroups.1
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -358,17 +377,11 @@ country_decisions = {
 			is_subject = no
 			num_of_owned_provinces_with = {
 				value = 3
-				OR = {
-					culture_group = french
-					area = wallonia_area
-					area = picardy_area
-					area = champagne_area
-					area = flanders_area
-				}
+				area = wallonia_area
 			}
 			owns = 93
 			owns = 1866
-			adm_tech = 10
+			#adm_tech = 10
 			NOT = {
 				exists = WLO
 			}
@@ -378,6 +391,244 @@ country_decisions = {
 			#country_event = {
 			#	id = ideagroups.1
 			#}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	form_alsace = {
+	
+		major = yes
+	
+		potential = {
+			OR = {
+				primary_culture = alsatian
+			}
+			NOT = {
+				OR = {
+					tag = GER
+					tag = GRC
+					tag = GRS
+					tag = GRF
+					tag = GRD
+					tag = NGC
+					tag = SGC
+				}
+			}
+			#is_subject = no
+			NOT = {
+				exists = ASE
+			}
+		}
+		allow = {
+			is_subject = no
+			num_of_owned_provinces_with = {
+				value = 2
+				area = alsace_area
+			}
+			#adm_tech = 10
+			
+		}
+		effect = {
+			change_tag = ASE
+			alsace_area = {
+				add_permanent_claim = ROOT
+			}
+			#country_event = {
+			#	id = ideagroups.1
+			#}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	form_umb = {
+	
+		major = yes
+	
+		potential = {
+			primary_culture = umbrian
+			NOT = {
+				OR = {
+					tag = PAP
+					tag = NTI
+					tag = ITA
+					tag = VIY
+					tag = ITD
+					tag = ITC
+					tag = ITF
+				}
+			}
+			#is_subject = no
+			NOT = {
+				exists = UMB
+			}
+		}
+		allow = {
+			is_subject = no
+			num_of_owned_provinces_with = {
+				value = 5
+				culture = umbrian
+			}
+			owns = 118
+			#adm_tech = 10
+		}
+		effect = {
+			change_tag = UMB
+			every_province = {
+				limit = {
+					culture = umbrian
+					region = italy_region
+				}
+				add_permanent_claim = ROOT
+			}
+			country_event = {
+				id = ideagroups.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	form_sgc = {
+	
+		major = yes
+	
+		potential = {
+			capital_scope = {
+				region = south_german_region
+			}
+			culture_group = germanic
+			NOT = {
+				OR = {
+					tag = GER
+					tag = GRC
+					tag = GRS
+					tag = GRF
+					tag = GRD
+				}
+			}
+			NOT = {
+				exists = SGC
+			}
+		}
+		allow = {
+			NOT = {
+				any_country = {
+					is_part_of_hre = yes
+				}
+			}
+			adm_tech = 15
+			is_subject = no
+			owns = 65
+			owns = 1868
+			owns = 2957
+			OR = {
+				owns = 134
+				owns = 1863
+			}
+			OR = {
+				owns = 75
+				owns = 4765
+			}
+			OR = {
+				owns = 67
+				owns = 78
+			}
+			OR = {
+				owns = 165
+				owns = 4712
+			}
+			num_of_owned_provinces_with = {
+				value = 30
+				region = south_german_region
+			}
+		}
+		effect = {
+			change_tag = SGC
+			south_german_region = {
+				add_permanent_claim = ROOT
+			}
+			north_german_region = {
+				add_claim = ROOT
+			}
+			country_event = {
+				id = ideagroups.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	form_ngc = {
+	
+		major = yes
+	
+		potential = {
+			capital_scope = {
+				region = north_german_region
+			}
+			culture_group = germanic
+			NOT = {
+				OR = {
+					tag = GER
+					tag = GRC
+					tag = GRS
+					tag = GRF
+					tag = GRD
+				}
+			}
+			NOT = {
+				exists = SGC
+			}
+		}
+		allow = {
+			NOT = {
+				any_country = {
+					is_part_of_hre = yes
+				}
+			}
+			adm_tech = 15
+			is_subject = no
+			owns = 57
+			owns = 82
+			owns = 85
+			OR = {
+				owns = 471
+				owns = 61
+			}
+			OR = {
+				owns = 50
+				owns = 266
+			}
+			OR = {
+				owns = 1931
+				owns = 1858
+			}
+			OR = {
+				owns = 44
+				owns = 45
+			}
+			num_of_owned_provinces_with = {
+				value = 30
+				region = north_german_region
+			}
+		}
+		effect = {
+			change_tag = NGC
+			north_german_region = {
+				add_permanent_claim = ROOT
+			}
+			south_german_region = {
+				add_claim = ROOT
+			}
+			country_event = {
+				id = ideagroups.1
+			}
 		}
 		ai_will_do = {
 			factor = 1

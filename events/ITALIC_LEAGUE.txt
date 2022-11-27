@@ -18,7 +18,13 @@ country_event = {
 				total_development = 300
 			}
 		}
-
+		is_subject = no
+		all_country = {
+			capital_scope = {
+				region = italy_region
+			}
+			is_at_war = no
+		}
 		has_global_flag = italians_leave_hre
 		
 		NOT = {
@@ -78,7 +84,7 @@ country_event = {
 					culture_group = latin
 					
 					culture_group = franco_provencal
-					
+					is_at_war = no
 				}
 				is_subject = no
 			}
@@ -87,10 +93,10 @@ country_event = {
 				id = italic_league.4
 			}
 		}
-		country_event = { #40 years to reform to integrate
-			id = italic_league.5
-			days = 14600
-		}
+		#country_event = { #40 years to reform to integrate
+		#	id = italic_league.5
+		#	days = 14600
+		#}
 	}
 
 	option = {

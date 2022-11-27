@@ -502,6 +502,7 @@ america_exclusive = {
 
 leader_of_german_nations = {
 	potential = {
+		ai = yes
 		OR = {
 			german_confederation_member = 1
 			german_empire_member = 1
@@ -532,6 +533,7 @@ leader_of_german_nations = {
 
 land_of_opportunity = {
 	potential = {
+		ai = yes
 		AND = {
 			OR = {
 				has_parliament = yes

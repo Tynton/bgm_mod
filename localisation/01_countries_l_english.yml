@@ -153,6 +153,16 @@
  OCC_ADJ:0 "Occitanian"
  WLO:0 "Wallonia"
  WLO_ADJ:0 "Wallonian"
+ ASE:0 "Alsace"
+ ASE_ADJ:0 "Alsatian"
+ 
+ NGC:0 "North German Confederation"
+ NGC_ADJ:0 "North German"
+ SGC:0 "South German Confederation"
+ SGC_ADJ:0 "South German"
+ 
+ UMB:0 "Umbria"
+ UMB_ADJ:0 "Umbrian"
  
  
  

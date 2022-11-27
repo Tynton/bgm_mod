@@ -1146,6 +1146,11 @@ country_event = {
 	#Support Pretender
 	option = {
 		name = "BGM_DIPLOMACY.19.b"
+
+		trigger = {
+			is_subject = no
+		}
+
 		FROM = {
 			create_subject = {
 				subject_type = personal_union

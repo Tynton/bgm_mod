@@ -885,7 +885,10 @@ swabian_ideas = {
 		improve_relation_modifier = 0.25
 	}
 	trigger = {
-		primary_culture = swabian
+		OR = {
+			primary_culture = swabian
+			primary_culture = alsatian
+		}
 	}
 	free = yes
 

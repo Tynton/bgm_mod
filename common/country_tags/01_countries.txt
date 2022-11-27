@@ -84,6 +84,10 @@ AEV = "countries/Angevin.txt"
 VIY = "countries/Vitaly.txt"
 OCC = "countries/Occitania.txt"
 WLO = "countries/Wallonia.txt"
+ASE = "countries/AlsaceCountry.txt"
+SGC = "countries/SouthGermany.txt"
+NGC = "countries/NorthGermany.txt"
+UMB = "countries/Umbria.txt"
 
 
 #ESN = "countries/Essen.txt"

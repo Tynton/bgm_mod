@@ -20,19 +20,8 @@ country_decisions = {
 		}
 		allow = {
 			NOT = { has_country_modifier = recent_conversion }
-			OR = {
-				AND = {
-					dominant_religion = waldensian
-					stability = 1
-				}
-				AND = {
-					any_owned_province = {
-						religion = waldensian
-					}
-					is_excommunicated = yes 
-					stability = 1
-				}
-			}
+			dominant_religion = waldensian
+			stability = 1
 		}
 		effect = {
 			change_religion = waldensian
@@ -108,7 +97,7 @@ country_decisions = {
 				}
 				AND = {
 					OR = {
-						any_owned_province = {
+						any_province = {
 							religion = unitarian
 						}
 						ai = no
@@ -280,20 +269,8 @@ country_decisions = {
 		}
 		allow = {
 			NOT = { has_country_modifier = recent_conversion }
-			OR = {
-				AND = {
-					dominant_religion = lollard
-					stability = 1
-				}
-				AND = {
-					any_owned_province = {
-						religion = lollard
-					}
-					is_excommunicated = yes 
-					stability = 1
-				}
-				has_global_flag = lollard_ref
-			}
+			dominant_religion = lollard
+			stability = 1
 			is_at_war = no
 		}
 		effect = {
@@ -374,19 +351,8 @@ country_decisions = {
 		}
 		allow = {
 			NOT = { has_country_modifier = recent_conversion }
-			OR = {
-				AND = {
-					dominant_religion = fraticelli
-					stability = 1
-				}
-				AND = {
-					any_owned_province = {
-						religion = fraticelli
-					}
-					is_excommunicated = yes 
-					stability = 1
-				}
-			}
+			dominant_religion = fraticelli
+			stability = 1
 		}
 		effect = {
 			change_religion = fraticelli
@@ -556,20 +522,12 @@ country_decisions = {
 		}
 		allow = {
 			NOT = { has_country_modifier = recent_conversion }
+			is_excommunicated = yes
 			OR = {
-				AND = {
-					OR = {
-						NOT = {
-							any_country = {
-								religion = cathar
-							}
-						}
-						any_owned_province = {
-							religion = cathar
-						}
-						ai = no
-					}
-					stability = 1
+				culture_group = french
+				culture_group = occitan
+				any_neighbor_country = {
+					religion = cathar
 				}
 			}
 			is_at_war = no

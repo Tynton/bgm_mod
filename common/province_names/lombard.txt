@@ -6,7 +6,7 @@
 104 = "Milan"
 118 = "Rouma"
 121 = { "Napul" "Napol" }
-116 = { "Fireenz" "Firenz" }
+116 = { "Firenz" "Fireenz" }
 112 = "Venèzia"
 2981 = "Monferraa"
 103 = "Türì"
@@ -16,6 +16,7 @@
 4971 = "Tisin"
 5021 = "San Marin"
 4729 = "Padoa"
+111 = "Friul"
 
 5389 = "Avegvan"
 5390 = { "Monça" "Monscia" }

@@ -611,51 +611,6 @@ colonial_california = {
 	}
 
 	# Specific
-	names = {
-		trigger = {
-			culture_group = british
-		}
-		name = "COLONIAL_ENG_cali"
-	}
-	names = {
-		trigger = {
-			culture_group = french
-		}
-		name = "COLONIAL_FRA_cali"
-	}
-	names = {
-		trigger = {
-			culture_group = benelux
-		}
-		name = "COLONIAL_NED_cali"
-	}
-	names = {
-		trigger = {
-			OR = {
-				
-				culture_group = germanic
-				
-			}
-		}
-		name = "COLONIAL_GER_cali"
-	}
-	names = {
-		trigger = {
-			OR = {
-				
-				culture_group = latin
-				culture_group = iberian
-			}
-			NOT = { primary_culture = portugese }
-		}
-		name = "COLONIAL_ITA_cali"
-	}
-	names = {
-		trigger = {
-			primary_culture = portugese
-		}
-		name = "COLONIAL_POR_cali"
-	}
 	# Generic
 	names = {
 		name = "COLONIAL_CALIFORNIA_California"

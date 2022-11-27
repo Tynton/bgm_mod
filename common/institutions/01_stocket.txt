@@ -62,7 +62,12 @@
 				AND = {
 					owner = {
 						any_subject_country = {
-							is_overseas_subject = yes 
+							OR = {
+								is_subject_of_type = private_enterprise
+								is_subject_of_type = crown_colony
+								is_subject_of_type = self_governing_colony
+								is_subject_of_type = colony
+							}
 						}
 					}
 				}
@@ -75,9 +80,25 @@
 			}
 			
 			owner = {
-				adm_tech = 26
-				dip_tech = 26
-				mil_tech = 26
+				OR = {
+					AND = {
+						NOT = {
+							great_power_rank = 2
+						}
+						#is_hegemon = yes
+						OR = {
+							private_enterprise = 3
+							crown_colony = 3
+							self_governing_colony = 3
+							colony = 6
+						}
+					}
+					AND = {
+						adm_tech = 26
+						dip_tech = 26
+						mil_tech = 26
+					}
+				}
 			}
 		}
 		start_chance = 50		#in 100 for when a province can_start

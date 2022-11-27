@@ -104,7 +104,7 @@ NDefines.NGraphics.LIGHT_SHADOW_DIRECTION_Z = -75
 
 NDefines.NGraphics.BORDER_WIDTH = 4.0
 
-NDefines.NGraphics.CITY_SPRAWL_AMOUNT = 1.0
+NDefines.NGraphics.CITY_SPRAWL_AMOUNT = 1.5
 
 
 NDefines.NNationDesigner.RULER_MIN_AGE = 15

@@ -1,7 +1,7 @@
 # Decapoles
-alliance = {
-	first = CMA
-	second = MLH
-	start_date = 1354.1.1
-	end_date = 1679.1.1
-}
+#alliance = {
+#	first = CMA
+#	second = MLH
+#	start_date = 1354.1.1
+#	end_date = 1679.1.1
+#}

@@ -1,6 +1,6 @@
 #Country Name: Please see filename.
 
-graphical_culture = westerngfx
+graphical_culture = italianategfx
 
 historical_council = harsh
 color = { 214 179 99 }

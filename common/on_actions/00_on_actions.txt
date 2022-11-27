@@ -1067,6 +1067,7 @@ on_new_monarch = {
 				culture_group = germanic
 				culture_group = benelux
 			}
+			government = monarchy
 			NOT = {
 				OR = {
 					has_country_flag = revised_succession
@@ -1192,7 +1193,24 @@ on_monarch_death = {
 
 	#update_dynasty = yes
 
-	
+	if = {
+		limit = {
+			has_subject_of_type = italic_league_member
+		}
+		random_list = {
+			50 = {
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = italic_league_member
+					}
+					grant_independence = yes
+				}
+			}
+			50 = {
+				
+			}
+		}
+	}
 
 	if = {
 		limit = {

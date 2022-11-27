@@ -172,7 +172,7 @@
 			primary = MBZ
 		}
 		alsatian = {
-			primary = ALS
+			primary = ASE
 			male_names = {
 				Artur Jean Bernard Adolphe Adolf Ehrenfried Thomas René Willi François Rémy Marc Johannes Rulman Jakob Hans Albrecht Christian Hieronymus Heinrich Philippe Martin Franz Klemens Achatius Valentin Claus
 			}
@@ -2590,7 +2590,7 @@ french = {
 		}
 	}
 	frainc_comtou = {
-		primary = BUR
+		primary = FCO
 		male_names = {
 			Jan Charle Charlot Piarre Phelipe Luison Jâque Jaco Augueustin Augueuste Franchi Franschi Françoi Toino Béjamin Berein
 		}
@@ -2599,7 +2599,7 @@ french = {
 		}
 	}
 	wallonian = {
-		primary = HAI
+		primary = WLO
 	}
 	louisianans = {
 		primary = LOU
@@ -3784,7 +3784,7 @@ latin = {
 		primary = NAP
 	}
 	umbrian = {
-		primary = URB
+		primary = UMB
 	}
 	sicilian = {
 		primary = SIC

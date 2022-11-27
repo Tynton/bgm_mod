@@ -4,3 +4,35 @@ bgm_religion_change = {
    		duration = 5475
 	}
 }
+
+var_effect_h = {
+    if = {
+        limit = { check_variable = { which = $var$ value = $num$ } }
+        subtract_variable = { which = $var$ value = $num$ }
+        $effect$ = $sign$$num$
+    }
+}
+var_effect = { #var #effect #sign ##positive only
+    while = {
+        limit = { check_variable = { which = $var$ value = 13107.2 } }
+        subtract_variable = { which = $var$ value = 13107.2 }
+        $effect$ = $sign$13107.2
+    }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=6553.6 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=3276.8 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=1638.4 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=819.2 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=409.6 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=204.8 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=102.4 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=51.2 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=25.6 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=12.8 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=6.4 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=3.2 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=1.6 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=0.8 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=0.4 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=0.2 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=0.1 }
+}

@@ -304,7 +304,7 @@ catholic_rome = {
 	trigger = {	
 		NOT = { overlord_of = PAP }
 		owns_or_vassal_of = 118 # Roma		
-		NOT = { OR = { tag = ITA tag = VIY } }
+		NOT = { OR = { tag = ITA tag = VIY tag = UMB } }
 		NOT = { tag = HLR }
 		NOT = { tag = ROM }
 		NOT = { full_idea_group = religious_ideas }
@@ -325,7 +325,7 @@ papal_subjugation = {
 
 	trigger = {	
 		overlord_of = PAP
-		NOT = { OR = { tag = ITA tag = VIY } }
+		NOT = { OR = { tag = ITA tag = VIY tag = UMB } }
 		NOT = { tag = HLR }
 		if = {
 			limit = {

@@ -101,20 +101,7 @@ workshop = {
 
 	ai_will_do = {
 		factor = 1
-		
-		modifier = {
-			factor = 0.0
-			AND = {
-				NOT = {
-					base_production = 25
-				}
-				OR = {
-					trade_goods = grain
-					trade_goods = livestock
-					trade_goods = fish
-				}
-			}
-		}
+
 		modifier = {
 			factor = 2.0
 			OR = {
@@ -130,19 +117,27 @@ workshop = {
 				trade_goods = paper
 			}
 		}
-		
 		modifier = {
-			factor = 2.0
-			base_production = 4
+			factor = 0.1
+			NOT = {
+				OR = {
+					trade_goods = cloth
+					trade_goods = iron
+					trade_goods = ivory
+					trade_goods = spices
+					trade_goods = cotton
+					trade_goods = sugar
+					trade_goods = tobacco
+					trade_goods = silk
+					trade_goods = dyes
+					trade_goods = paper
+				}
+			}
 		}
 		
 		modifier = {
-			factor = 0.0
-			NOT = {
-				owner = {
-					adm_tech = 10
-				}
-			}
+			factor = 2.0
+			base_production = 5
 		}
 		
 		modifier = {
@@ -369,7 +364,7 @@ barracks = {
 		}
 		
 		modifier = {
-			factor = 0.0
+			factor = 0.1
 			NOT = {
 				OR = {
 					trade_goods = wine
@@ -653,7 +648,7 @@ regimental_camp = {
 		}
 		
 		modifier = {
-			factor = 0.0
+			factor = 0.1
 			NOT = {
 				owner = {
 					years_of_income = 0.3
@@ -913,7 +908,7 @@ trade_depot = {
 		factor = 1.0 # Because hard-coded AI only considers what it will gain, not what its enemies will lose.
 		
 		modifier = {
-			factor = 0.0
+			factor = 0.1
 			NOT = {
 				province_trade_power = 3
 			}
@@ -1075,7 +1070,7 @@ training_fields = {
 		}
 		
 		modifier = {
-			factor = 0.0
+			factor = 0.1
 			NOT = {
 				OR = {
 					trade_goods = wine
@@ -1241,19 +1236,7 @@ counting_house = {
 		factor = 1
 
 		modifier = {
-			factor = 0
-			OR = {
-				trade_goods = grain
-				trade_goods = livestock
-				trade_goods = wine
-			}
-			NOT = {
-				base_production = 8
-			}
-		}
-		
-		modifier = {
-			factor = 8.0
+			factor = 2.0
 			OR = {
 				trade_goods = cloth
 				trade_goods = iron
@@ -1265,6 +1248,35 @@ counting_house = {
 				trade_goods = silk
 				trade_goods = dyes
 				trade_goods = paper
+			}
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					trade_goods = cloth
+					trade_goods = iron
+					trade_goods = ivory
+					trade_goods = spices
+					trade_goods = cotton
+					trade_goods = sugar
+					trade_goods = tobacco
+					trade_goods = silk
+					trade_goods = dyes
+					trade_goods = paper
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 2.0
+			base_production = 5
+		}
+		
+		modifier = {
+			factor = 8.0
+			owner = {
+				production_income_percentage = 0.3
 			}
 		}
 		
@@ -1926,6 +1938,15 @@ furnace = {
 
 	ai_will_do = {
 		factor = 1
+
+		modifier = {
+			factor = 999.0
+			OR = {
+				trade_goods = coal
+				trade_goods = oil
+				trade_goods = steel
+			}
+		}
 	}
 }
 
@@ -1955,8 +1976,9 @@ ramparts = {
 		}
 		modifier = {
 			factor = 0.0
-			NOT = {
-				fort_level = 2
+			OR = {
+				has_terrain = grasslands
+				has_terrain = farmlands
 			}
 		}
 	}
@@ -2009,7 +2031,6 @@ soldier_households = {
 				trade_goods = livestock
 				trade_goods = fish
 			}
-			base_manpower = 3
 		}
 		
 		modifier = {

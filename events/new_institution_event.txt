@@ -307,6 +307,13 @@ country_event = {
 		every_province = {
 			limit = {
 				continent = europe
+				culture = alsatian
+			}
+			add_core = ASE
+		}
+		every_province = {
+			limit = {
+				continent = europe
 				culture = hessian
 			}
 			add_core = HES
@@ -375,7 +382,7 @@ country_event = {
 				continent = europe
 				culture = wallonian
 			}
-			add_core = HAI
+			add_core = WLO
 		}
 		every_province = {
 			limit = {
@@ -398,6 +405,13 @@ country_event = {
 				culture = breton
 			}
 			add_core = BRI
+		}
+		every_province = {
+			limit = {
+				region = france_region
+				culture_group = occitan
+			}
+			add_core = OCC
 		}
 		
 		###########################ITALY

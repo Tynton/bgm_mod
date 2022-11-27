@@ -37,6 +37,16 @@
  form_occitania_desc:0 "Form Occitania"
  form_wallonia_title:0 "Form Wallonia"
  form_wallonia_desc:0 "Form Wallonia"
+ form_alsace_title:0 "Form Alsace"
+ form_alsace_desc:0 "Form Alsace"
+ 
+ form_ngc_title:0 "Form North German Confederation"
+ form_ngc_desc:0 "Form North German Confederation"
+ form_sgc_title:0 "Form South German Confederation"
+ form_sgc_desc:0 "Form South German Confederation"
+ 
+ form_umb_title:0 "Form Umbria"
+ form_umb_desc:0 "Form Umbria"
  
  
  recent_conversion:0 "Recent Conversion"

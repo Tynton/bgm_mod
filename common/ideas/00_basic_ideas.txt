@@ -1251,7 +1251,17 @@ quantity_ideas = {
 	category = MIL
 	
 	trigger = {
-		mil_tech = 40
+		OR = {
+			mil_tech = 40
+			is_great_power = yes
+			calc_true_if = {
+				amount = 3
+				all_country = {
+					is_great_power = yes
+					full_idea_group = quantity_ideas
+				}
+			}
+		}
 	}
 
 	bonus = {
@@ -1287,85 +1297,7 @@ quantity_ideas = {
 	}
 
 	ai_will_do = {
-		factor = 1.0
-		
-		modifier = {
-			factor = 3
-			OR = {
-				tag = BOH
-				tag = RUS
-				tag = MOS
-				tag = USA
-				tag = FRA
-				tag = ENG
-				tag = GBR
-			}
-		}
-		modifier = {
-			factor = 4
-			OR = {
-				tag = BRA
-				tag = TEU
-				tag = HUN
-				tag = SCO
-			}
-		}
-		modifier = {
-			factor = 4
-			is_subject_of = MOS
-		}
-		modifier = {
-			factor = 0.2
-			NOT = {
-				capital_scope = {
-					continent = europe
-				}
-				OR = {
-					culture_group = japanese_g
-					is_emperor_of_china = yes
-				}
-			}
-		}
-		modifier = {
-			factor = 2.5
-			any_rival_country = {
-				military_strength = {
-					who = ROOT
-					value = 0.8
-				}
-			}
-		}
-		modifier = {
-			factor = 7.5
-			is_great_power = yes 
-		}
-		modifier = {
-			factor = 5.0
-			NOT = {
-				manpower_percentage = 0.50
-			}
-		}
-		
-		modifier = {
-			factor = 5.0
-			OR = {
-				has_reform = democratic_mechanic
-				bgm_comgovt = yes
-				has_reform = fascist_mechanic
-			}
-		}
-		
-		modifier = {
-			factor = 2.0
-			capital_scope = {
-				region = low_countries_region
-			}
-		}
-		
-		modifier = {
-			factor = 5.0
-			is_emperor = yes
-		}
+		factor = 100.0
 		modifier = {
 			factor = 500.0
 			any_country = {

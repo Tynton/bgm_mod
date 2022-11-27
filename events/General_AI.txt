@@ -2048,24 +2048,64 @@ country_event = {
 	trigger = {
 		ai = yes
 		has_country_modifier = ai_get_tech
-		NOT = { adm_tech = 45 }
-		NOT = {
-			OR = {
-				any_neighbor_country = {
-					mil_tech = ROOT
-				}
-				any_rival_country = {
-					mil_tech = ROOT
-				}
-				any_enemy_country = {
-					mil_tech = ROOT
-				}
+		OR = {
+			NOT = { adm_tech = 45 }
+			AND = {
+				has_idea_group = postmodern_ideas
+				NOT = { full_idea_group = postmodern_ideas }
+			}
+			AND = {
+				has_idea_group = exploration_ideas
+				NOT = { full_idea_group = exploration_ideas }
+			}
+			AND = {
+				has_idea_group = expansion_ideas
+				NOT = { full_idea_group = expansion_ideas }
+			}
+			AND = {
+				has_idea_group = quantity_ideas
+				NOT = { full_idea_group = quantity_ideas }
 			}
 		}
+		#NOT = {
+		#	OR = {
+		#		any_neighbor_country = {
+		#			mil_tech = ROOT
+		#		}
+		#		any_rival_country = {
+		#			mil_tech = ROOT
+		#		}
+		#		any_enemy_country = {
+		#			mil_tech = ROOT
+		#		}
+		#	}
+		#}
 	}
 
 	mean_time_to_happen = {
 		years = 18
+
+		modifier = {
+			factor = 0.0001
+			OR = {
+				AND = {
+					has_idea_group = postmodern_ideas
+					NOT = { full_idea_group = postmodern_ideas }
+				}
+				AND = {
+					has_idea_group = exploration_ideas
+					NOT = { full_idea_group = exploration_ideas }
+				}
+				AND = {
+					has_idea_group = expansion_ideas
+					NOT = { full_idea_group = expansion_ideas }
+				}
+				AND = {
+					has_idea_group = quantity_ideas
+					NOT = { full_idea_group = quantity_ideas }
+				}
+			}
+		}
 	}
 	option = {
 		add_country_modifier = { 
@@ -2165,6 +2205,239 @@ country_event = {
 				casus_belli = cb_imperial
 				who = ROOT
 			}
+		}
+	}
+}
+
+#BUILDINGS
+province_event = {
+	id = general_ai.35
+	title = none
+	desc = none
+	picture = GREAT_BUILDING_eventPicture
+
+	trigger = {
+		owner = {
+			ai = yes
+			treasury = 350
+		}
+		NOT = { 
+			OR = {
+				has_building = workshop 
+				has_building = counting_house
+			}
+		}
+		OR = {
+			NOT = {
+				OR = {
+					trade_goods = wine
+					trade_goods = livestock
+					trade_goods = grain
+					trade_goods = fish
+				}
+			}
+			AND = {
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+				OR = {
+					has_building = barracks
+					has_building = training_fields
+				}
+				OR = {
+					has_building = marketplace
+					has_building = trade_depot
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 2
+	}
+	option = {
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						adm_tech = 24
+					}
+				}
+			}
+			add_building_construction = {
+				building = workshop
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_tech = 24
+				}
+			}
+			add_building_construction = {
+				building = counting_house
+				speed = 1.0
+				cost = 0.85
+			}
+		}
+	}
+}
+
+province_event = {
+	id = general_ai.36
+	title = none
+	desc = none
+	picture = GREAT_BUILDING_eventPicture
+
+	trigger = {
+		owner = {
+			ai = yes
+			treasury = 110
+			NOT = { adm_tech = 20 }
+		}
+		NOT = { 
+			OR = {
+				has_building = temple 
+				has_building = cathedral
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 2
+	}
+	option = {
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						adm_tech = 19
+					}
+				}
+			}
+			add_building_construction = {
+				building = temple
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_tech = 19
+				}
+			}
+			add_building_construction = {
+				building = cathedral
+				speed = 1.0
+				cost = 0.85
+			}
+		}
+	}
+}
+
+province_event = {
+	id = general_ai.37
+	title = none
+	desc = none
+	picture = GREAT_BUILDING_eventPicture
+
+	trigger = {
+		owner = {
+			ai = yes
+			treasury = 110
+		}
+		NOT = {
+			OR = {
+				has_building = workshop 
+				has_building = training_fields
+			}
+		}
+		OR = {
+			OR = {
+				trade_goods = wine
+				trade_goods = livestock
+				trade_goods = grain
+				trade_goods = fish
+			}
+			AND = {
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 2
+	}
+	option = {
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						mil_tech = 16
+					}
+				}
+			}
+			add_building_construction = {
+				building = barracks
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					mil_tech = 16
+				}
+			}
+			add_building_construction = {
+				building = training_fields
+				speed = 1.0
+				cost = 0.85
+			}
+		}
+	}
+}
+
+province_event = {
+	id = general_ai.38
+	title = none
+	desc = none
+	picture = GREAT_BUILDING_eventPicture
+
+	trigger = {
+		owner = {
+			ai = yes
+			treasury = 110
+		}
+		NOT = { 
+			OR = {
+				has_building = marketplace 
+				has_building = trade_depot
+				has_building = stock_exchange
+			}
+		}
+		province_has_center_of_trade_of_level = 1
+	}
+
+	mean_time_to_happen = {
+		years = 2
+	}
+	option = {
+		add_building_construction = {
+			building = barracks
+			speed = 1.0
+			cost = 0.9
 		}
 	}
 }

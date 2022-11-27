@@ -1,0 +1,4 @@
+government = monarchy
+primary_culture = bavarian
+religion = catholic
+technology_group = western

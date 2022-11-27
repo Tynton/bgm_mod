@@ -89,6 +89,10 @@ country_event = {
 	}
 	option = {
 		name = "language_modernization.1.b"
+
+		ai_chance = {
+			factor = 0
+		}
 	}
 }
 
@@ -175,6 +179,10 @@ country_event = {
 	}
 	option = {
 		name = "language_modernization.2.b"
+
+		ai_chance = {
+			factor = 0
+		}
 	}
 }
 
@@ -312,6 +320,10 @@ country_event = {
 	}
 	option = {
 		name = "language_modernization.3.b"
+
+		ai_chance = {
+			factor = 0
+		}
 	}
 }
 
@@ -351,6 +363,10 @@ country_event = {
 	}
 	option = {
 		name = "language_modernization.4.b"
+
+		ai_chance = {
+			factor = 0
+		}
 	}
 }
 
@@ -423,6 +439,10 @@ country_event = {
 	}
 	option = {
 		name = "language_modernization.5.b"
+
+		ai_chance = {
+			factor = 0
+		}
 	}
 }
 
@@ -480,5 +500,9 @@ country_event = {
 	}
 	option = {
 		name = "language_modernization.6.b"
+
+		ai_chance = {
+			factor = 0
+		}
 	}
 }

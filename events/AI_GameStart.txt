@@ -122,6 +122,38 @@ country_event = {
 				create_alliance = VEN
 			}
 		}
+
+		if = {
+			limit = {
+				CAS = {
+					ai = yes
+					NOT = {
+						is_rival = ENG
+					}
+					NOT = {
+						is_rival = BUR
+					}
+				}
+				BUR = {
+					ai = yes
+					NOT = {
+						is_rival = ENG
+					}
+				}
+				ENG = {
+					ai = yes
+					NOT = { is_rival = HAB }
+				}
+			}
+			CAS = {
+				create_alliance = BUR
+				create_alliance = ENG
+			}
+			ENG = {
+				create_alliance = BUR
+				create_alliance = HAB
+			}
+		}
 		
 		if = {
 			limit = {
