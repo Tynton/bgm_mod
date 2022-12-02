@@ -421,8 +421,8 @@ christian = {
 			catholic
 		}
 		country = {
-			land_morale = -0.1
-			improve_relation_modifier = 0.25
+			stability_cost_to_declare_war = 1
+			development_cost = -0.5
 		}
 		
 		country_as_secondary = {
@@ -654,6 +654,8 @@ christian = {
 				}
 			}
 		}
+
+		fervor = yes
 		
 		heretic = { HERETICS }
 	}

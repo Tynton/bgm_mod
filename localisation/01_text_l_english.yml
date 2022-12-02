@@ -1839,6 +1839,16 @@
  
  cathar_center_of_reformation:0 "Cathar Center of Reformation"
  
+ HERETICS:0 "Heretics"
+ MICHAELITES:0 "Michaelites"
+ PAUPERE:0 "Pauperes"
+ CLARENI:0 "Clareni"
+ SANDALIATI:0 "Sandaliati"
+ DOCTORES:0 "Doctores"
+ NOVELLANI:0 "Novellani"
+ CHARISMATIC:0 "Charismatics"
+ ARIAN:0 "Arians"
+ 
  ai_group:0 "Automated"
  ai_culture:0 "AI"
  

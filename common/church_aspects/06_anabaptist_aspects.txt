@@ -31,8 +31,8 @@ anabaptist_nonconformism_aspect = {
 anabaptist_pacifism_aspect = {
 	cost = 100
 	modifier = {
-		stability_cost_to_declare_war = 1 
-		diplomatic_reputation = 2
+		technology_cost = -0.1
+		innovativeness_gain = 0.5
 	}
 }
 
