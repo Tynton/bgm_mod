@@ -3,7 +3,56 @@
 # country
 on_startup = {
 
-	
+	if = {
+		limit = {
+			OR = {
+				has_reform = democratic_mechanic
+				has_reform = futurist_mechanic
+				has_reform = authoritarian_mechanic
+			}
+			has_institution = nationalism_institution
+			NOT = { has_institution = electrification }
+		}
+		change_graphical_culture = neoclacissistgfx
+	}
+	if = {
+		limit = {
+			OR = {
+				has_reform = fascist_mechanic
+				has_reform = authoritarian_mechanic
+			}
+			has_institution = nationalism_institution
+		}
+		change_graphical_culture = neoclacissistgfx
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_reform = democratic_mechanic
+			}
+			has_institution = electrification
+			NOT = { has_institution = information_infrastructure }
+		}
+		change_graphical_culture = artdecogfx
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_reform = democratic_mechanic
+			}
+			has_institution = information_infrastructure
+		}
+		change_graphical_culture = modernistgfx
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_reform = futurist_mechanic
+			}
+			has_institution = electrification
+		}
+		change_graphical_culture = brutalistgfx
+	}
 
 	if = {
 		limit = {
@@ -5901,6 +5950,16 @@ on_institution_embracement = {
 		}
 		change_graphical_culture = neoclacissistgfx
 	}
+	if = {
+		limit = {
+			NOT = {
+				has_reform = democratic_mechanic
+			}
+			has_institution = electrification
+		}
+		change_graphical_culture = modernistgfx
+	}
+
 	#add tech cost reduction
 }
 on_national_focus_change = {}

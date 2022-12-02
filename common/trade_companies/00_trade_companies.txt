@@ -191,7 +191,7 @@ trade_company_champagne = {
 	provinces = {
 		182 183 185 4388 #ile_de_france_area
 		179 184 4776 # Orleans area
-		181 186 4390 #champagne_area
+		181 186 4390 4952 #champagne_area
 		187 188 189 #lorraine_area
 		165 1867 1871 #romandie_area
 		91 93 94 1866 #wallonia_area

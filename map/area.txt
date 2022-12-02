@@ -343,7 +343,7 @@ ile_de_france_area = { #4
 }
 
 champagne_area = { #3
-	181 186 4390
+	181 186 4390 4952
 }
 
 loire_area = { #5
