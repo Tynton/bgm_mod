@@ -3,6 +3,7 @@ french_minor_missions = {
 	generic = no
 	ai = yes
 	potential = {
+		capital_scope = { continent = europe }
 		OR = {
 			culture_group = occitan
 			culture_group = franco_provencal

@@ -13,7 +13,8 @@ country_decisions = {
 			NOT = { has_country_modifier = "uniting_culture_group" }
 			NOT = { has_country_modifier = "intention_to_unite" }
 			NOT = { has_country_flag = uniting_home_nation }
-			is_colonial_nation = no
+			NOT = { OR = { exists = ITA exists = VIY } }
+			capital_scope = { continent = europe }
 		}
 		allow = {
 			adm_tech = 22
@@ -23,7 +24,6 @@ country_decisions = {
 			}
 			NOT = { has_country_modifier = "uniting_culture_group" }
 			NOT = { has_country_modifier = "intention_to_unite" }
-			NOT = { OR = { exists = ITA exists = VIY } }
 			is_at_war = no
 		}
 		effect = {
@@ -56,24 +56,20 @@ country_decisions = {
 			adm_tech = 21
 			OR = {
 				culture_group = germanic
-				
-				
 			}
 			NOT = { has_country_modifier = "uniting_culture_group" }
 			NOT = { has_country_modifier = "intention_to_unite" }
 			NOT = { has_country_flag = uniting_home_nation }
-			is_colonial_nation = no
+			capital_scope = { continent = europe }
+			NOT = { exists = GER }
 		}
 		allow = {
 			adm_tech = 22
 			OR = {
 				culture_group = germanic
-				
-				
 			}
 			NOT = { has_country_modifier = "uniting_culture_group" }
 			NOT = { has_country_modifier = "intention_to_unite" }
-			NOT = { exists = GER }
 			is_at_war = no
 		}
 		effect = {

@@ -106,7 +106,7 @@ country_event = {
 		}
 
 		modifier = {
-			factor = 0.8
+			factor = 0.9
 			OR = {
 				religion = anglican
 				religion = unitarian
@@ -116,7 +116,7 @@ country_event = {
 		}
 
 		modifier = {
-			factor = 0.5
+			factor = 0.8
 			capital_scope = {
 				OR = {
 					has_terrain = grasslands
@@ -126,7 +126,7 @@ country_event = {
 		}
 
 		modifier = {
-			factor = 0.8
+			factor = 0.85
 			capital_scope = {
 				OR = {
 					has_terrain = woods

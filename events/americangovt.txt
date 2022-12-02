@@ -508,6 +508,7 @@ country_event = {
 					full_idea_group = expansion_ideas
 					full_idea_group = exploration_ideas
 				}
+				NOT = { tag = USA }
 			}
 			country_event = {
 				id = americangovt.11

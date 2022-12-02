@@ -1837,6 +1837,8 @@
  futurist_rebels_demand_desc:0 "Futurists are very opposed to liberal and collectivist ideologies, and they will establish a government in their own favor."
  futurist_rebels_army:0 "Futurist Armies"
  
+ cathar_center_of_reformation:0 "Cathar Center of Reformation"
+ 
  ai_group:0 "Automated"
  ai_culture:0 "AI"
  
@@ -2073,6 +2075,8 @@
  
  revolutionary_group:0 "Revolutionary"
  cult_of_the_supreme_being:0 "Cult of the Supreme Being"
+ institute_cult_of_the_supreme_being_title:0 "Institute Cult of the Supreme Being"
+ institute_cult_of_the_supreme_being_desc:0 "Institute Cult of the Supreme Being"
  
  large_empire:0 "Large Empire"
  large_empire_unstable:0 "Large Empire | Low Stability"

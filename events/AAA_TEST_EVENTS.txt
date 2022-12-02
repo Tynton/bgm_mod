@@ -199,3 +199,126 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = TEST_EVENTS.11
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		random_country = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+	}
+}

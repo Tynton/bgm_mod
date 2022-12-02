@@ -1002,19 +1002,11 @@ country_event = {
 	desc = "general_ai.d.10"
 	picture = ANGRY_MOB_eventPicture
 
-	
+	is_triggered_only = yes
 	
 	trigger = {
 		always = no #this event is now REDUNDANT
-		ai = yes
-		government = monarchy
-		prestige = 0
-		NOT = {
-			heir_adm = 4
-			heir_dip = 4
-			heir_mil = 4
-		}
-		NOT = { has_heir_flag = is_charles_of_burg_flag }
+		
 	}
 
 	mean_time_to_happen = {
@@ -1908,6 +1900,7 @@ country_event = {
 	trigger = {
 		ai = yes
 		NOT = { has_country_modifier = burgundian_succession_crisis }
+		NOT = { has_heir_flag = is_charles_of_burg_flag }
 		prestige = 0
 		has_heir = yes
 		variable_arithmetic_trigger = {
@@ -2219,7 +2212,42 @@ province_event = {
 	trigger = {
 		owner = {
 			ai = yes
-			treasury = 350
+		}
+		OR = {
+			AND = {
+				owner = {
+					treasury = 500
+				}
+				NOT = {
+					OR = {
+						has_building = wharf
+						has_building = soldier_households
+						has_building = impressment_offices
+						has_building = mills
+						has_building = furnace
+						has_building = tradecompany
+						has_building = plantations
+						has_building = textile
+						has_building = weapons
+					}
+				}
+			}
+			AND = {
+				owner = {
+					treasury = 300
+				}
+				OR = {
+					has_building = wharf
+					has_building = soldier_households
+					has_building = impressment_offices
+					has_building = mills
+					has_building = furnace
+					has_building = tradecompany
+					has_building = plantations
+					has_building = textile
+					has_building = weapons
+				}
+			}
 		}
 		NOT = { 
 			OR = {
@@ -2286,6 +2314,7 @@ province_event = {
 	}
 }
 
+#TAX
 province_event = {
 	id = general_ai.36
 	title = none
@@ -2295,8 +2324,43 @@ province_event = {
 	trigger = {
 		owner = {
 			ai = yes
-			treasury = 110
 			NOT = { adm_tech = 20 }
+		}
+		OR = {
+			AND = {
+				owner = {
+					treasury = 500
+				}
+				NOT = {
+					OR = {
+						has_building = wharf
+						has_building = soldier_households
+						has_building = impressment_offices
+						has_building = mills
+						has_building = furnace
+						has_building = tradecompany
+						has_building = plantations
+						has_building = textile
+						has_building = weapons
+					}
+				}
+			}
+			AND = {
+				owner = {
+					treasury = 300
+				}
+				OR = {
+					has_building = wharf
+					has_building = soldier_households
+					has_building = impressment_offices
+					has_building = mills
+					has_building = furnace
+					has_building = tradecompany
+					has_building = plantations
+					has_building = textile
+					has_building = weapons
+				}
+			}
 		}
 		NOT = { 
 			OR = {
@@ -2339,6 +2403,7 @@ province_event = {
 	}
 }
 
+#MANPOWER
 province_event = {
 	id = general_ai.37
 	title = none
@@ -2348,7 +2413,42 @@ province_event = {
 	trigger = {
 		owner = {
 			ai = yes
-			treasury = 110
+		}
+		OR = {
+			AND = {
+				owner = {
+					treasury = 500
+				}
+				NOT = {
+					OR = {
+						has_building = wharf
+						has_building = soldier_households
+						has_building = impressment_offices
+						has_building = mills
+						has_building = furnace
+						has_building = tradecompany
+						has_building = plantations
+						has_building = textile
+						has_building = weapons
+					}
+				}
+			}
+			AND = {
+				owner = {
+					treasury = 300
+				}
+				OR = {
+					has_building = wharf
+					has_building = soldier_households
+					has_building = impressment_offices
+					has_building = mills
+					has_building = furnace
+					has_building = tradecompany
+					has_building = plantations
+					has_building = textile
+					has_building = weapons
+				}
+			}
 		}
 		NOT = {
 			OR = {
@@ -2409,6 +2509,7 @@ province_event = {
 	}
 }
 
+#MANUFACTORY
 province_event = {
 	id = general_ai.38
 	title = none
@@ -2418,26 +2519,146 @@ province_event = {
 	trigger = {
 		owner = {
 			ai = yes
-			treasury = 110
+			treasury = 500
 		}
-		NOT = { 
-			OR = {
-				has_building = marketplace 
-				has_building = trade_depot
-				has_building = stock_exchange
-			}
-		}
-		province_has_center_of_trade_of_level = 1
+		
 	}
 
 	mean_time_to_happen = {
-		years = 2
+		months = 2
 	}
 	option = {
-		add_building_construction = {
-			building = barracks
-			speed = 1.0
-			cost = 0.9
+		if = {
+			limit = {
+				trade_goods = salt
+			}
+			add_building_construction = {
+				building = wharf
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					trade_goods = wine
+					trade_goods = grain
+					trade_goods = livestock
+					AND = {
+						trade_goods = fish
+						base_manpower = 5
+					}
+				}
+			}
+			add_building_construction = {
+				building = soldier_households
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+		if = {
+			limit = {
+				trade_goods = fish
+				NOT = {
+					base_manpower = 5
+				}
+			}
+			add_building_construction = {
+				building = impressment_offices
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					trade_goods = paper
+					trade_goods = gems
+					trade_goods = tropical_wood
+					trade_goods = chinaware
+					trade_goods = glass
+				}
+			}
+			add_building_construction = {
+				building = mills
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					trade_goods = coal
+					trade_goods = steel
+				}
+			}
+			add_building_construction = {
+				building = furnace
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					trade_goods = ivory
+					trade_goods = slaves
+					trade_goods = spices
+					trade_goods = cloves
+					trade_goods = fur
+					trade_goods = incense
+				}
+			}
+			add_building_construction = {
+				building = tradecompany
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					trade_goods = coffee
+					trade_goods = cotton
+					trade_goods = sugar
+					trade_goods = tobacco
+					trade_goods = tea
+					trade_goods = cocoa
+				}
+			}
+			add_building_construction = {
+				building = plantations
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					trade_goods = wool
+					trade_goods = cloth
+					trade_goods = silk
+					trade_goods = dyes
+				}
+			}
+			add_building_construction = {
+				building = textile
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					trade_goods = iron
+					trade_goods = copper
+				}
+			}
+			add_building_construction = {
+				building = weapons
+				speed = 1.0
+				cost = 0.9
+			}
 		}
 	}
 }

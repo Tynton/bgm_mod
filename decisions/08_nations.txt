@@ -215,7 +215,20 @@ country_decisions = {
 					culture_group = french
 				}
 			}
-			adm_tech = 15
+			OR = {
+				AND = {
+					tag = BUR
+					NOT = { exists = FLA }
+					NOT = { exists = BRB }
+					OR = {
+						NOT = { exists = HOL }
+						HOL = { NOT = { is_subject_of = BUR } }
+					}
+					mission_completed = emp_bur_secure_succession
+				}
+				adm_tech = 15
+				has_reform = peasants_republic
+			}
 			is_at_war = no
 			NOT = {
 				exists = BEL

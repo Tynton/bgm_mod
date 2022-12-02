@@ -498,37 +498,27 @@ country_decisions = {
 				AND = {
 					NOT = { religion = cathar }
 					NOT = { is_subject = yes }
-					
-					any_province = {
-						religion = cathar
-					}
 				}
 				has_global_flag = cathar_lea
-			}
-			
-			OR = {
-				NOT = {
-					any_country = {
-						religion = cathar
-					}
-				}
-				any_owned_province = {
-					religion = cathar
-				}
-				ai = no
 			}
 			religion_group = christian
 			is_emperor = no
 		}
 		allow = {
-			NOT = { has_country_modifier = recent_conversion }
-			is_excommunicated = yes
 			OR = {
-				culture_group = french
-				culture_group = occitan
-				any_neighbor_country = {
-					religion = cathar
+				AND = {
+					NOT = { has_country_modifier = recent_conversion }
+					is_excommunicated = yes
+					OR = {
+						culture_group = french
+						culture_group = occitan
+						any_neighbor_country = {
+							religion = cathar
+						}
+					}
+					NOT = { any_country = { religion = cathar } }
 				}
+				dominant_religion = cathar
 			}
 			is_at_war = no
 		}
@@ -549,6 +539,7 @@ country_decisions = {
 				duration = 3650
 			}
 			random_owned_province = {
+				change_religion = cathar
 				add_reform_center = cathar
 			}
 			every_known_country = {
@@ -584,6 +575,9 @@ country_decisions = {
 
 			modifier = {
 				factor = 0
+				any_country = {
+					religion = cathar
+				}
 				NOT = {
 					dominant_religion = cathar
 				}

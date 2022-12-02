@@ -735,6 +735,8 @@ country_event = {
 			mil = 3
 			stability = 0
 			has_country_flag = had_noble_conspiracy
+			has_ruler_flag = henry_vi_lancaster
+			has_ruler_flag = is_charles_of_burg_flag
 		}
 	}
 	

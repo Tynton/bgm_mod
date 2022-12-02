@@ -586,7 +586,7 @@ offensive_ideas = {
 	}
 
 	ai_will_do = {
-		factor = 1.25
+		factor = 100
 		
 		modifier = {
 			factor = 1.5
@@ -1218,7 +1218,7 @@ quality_ideas = {
 	}
 
 	ai_will_do = {
-		factor = 0.49
+		factor = 100.0
 
 		modifier = {
 			factor = 9
