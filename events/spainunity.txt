@@ -115,7 +115,6 @@ country_event = {
 	picture = ANGRY_MOB_eventPicture
 
 	trigger = {
-		is_year = 1815
 		ai = yes
 		NOT = {
 			current_age = age_of_great_wars
@@ -127,6 +126,10 @@ country_event = {
 			continent = europe
 		}
 		culture_group = iberian
+		SPA = {
+			is_subject = no
+			has_institution = nationalism_institution
+		}
 	}	
 
 	mean_time_to_happen = {

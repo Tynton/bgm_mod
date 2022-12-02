@@ -1436,10 +1436,10 @@ on_regent = {
 			NOT = { has_global_flag = death_of_haji_giray } #Also set in history.
 			tag = CRI
 			exists = TUR
-			is_subject = no
+			#is_subject = no
 			TUR = {
 				num_of_cities = ROOT
-				is_subject = no
+				#is_subject = no
 				num_of_ports = 1
 			}
 		}

@@ -171,9 +171,6 @@ country_event = {
 			AND = {
 				OR = {
 					culture_group = germanic
-					
-					
-					
 					AND = {
 						culture_group = benelux
 						is_revolutionary = yes
@@ -191,11 +188,18 @@ country_event = {
 			is_subject = no
 			is_subject_of = GER
 		}
+		GER = { 
+			is_subject = no 
+			has_institution = nationalism_institution
+		}
 		NOT = {
 			truce_with = GER
 		}
 		capital_scope = {
-			continent = europe
+			OR = {
+				region = north_german_region
+				region = south_german_region
+			}
 		}
 	}	
 

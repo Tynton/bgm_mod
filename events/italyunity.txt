@@ -118,7 +118,10 @@ country_event = {
 		exists = ITA
 		ai = yes 
 		culture_group = latin
-		has_institution = nationalism_institution
+		ITA = {
+			is_subject = no
+			has_institution = nationalism_institution
+		}
 		NOT = {
 			num_of_cities = 45
 		}
@@ -130,7 +133,7 @@ country_event = {
 			is_subject_of = ITA
 		}
 		capital_scope = {
-			continent = europe
+			region = italy_region
 		}
 		
 	}	

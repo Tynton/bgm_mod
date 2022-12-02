@@ -27,7 +27,7 @@ country_decisions = {
 			owns_core_province = 251		# Aberdeen
 			has_parliament = yes
 			government = monarchy 
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = UNK
@@ -85,7 +85,7 @@ country_decisions = {
 			}
 			#has_parliament = yes 
 			#government = monarchy 
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = RDI
@@ -102,7 +102,7 @@ country_decisions = {
 	#	potential = {
 	#		adm_tech = 35
 	#		tag = JAP
-	#		is_subject = no
+	#		#is_subject = no
 	#		NOT = {
 	#			was_tag = JAP
 	#		}
@@ -138,7 +138,7 @@ country_decisions = {
 			adm_tech = 33
 			tag = TUR
 			has_reform = democratic_mechanic
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = TRK
@@ -182,7 +182,7 @@ country_decisions = {
 			any_owned_province = {
 				culture_group = benelux
 			}
-			is_subject = no
+			#is_subject = no
 			NOT = { exists = BEL }
 		}
 		allow = {
@@ -289,13 +289,13 @@ country_decisions = {
 	
 		potential = {
 			culture_group = south_slavic
-			#is_subject = no
+			##is_subject = no
 			NOT = {
 				exists = YUG
 			}
 		}
 		allow = {
-			is_subject = no
+			#is_subject = no
 			num_of_owned_provinces_with = {
 				value = 10
 				culture_group = south_slavic
@@ -321,10 +321,10 @@ country_decisions = {
 	
 		potential = {
 			culture_group = occitan
-			#is_subject = no
+			##is_subject = no
 		}
 		allow = {
-			is_subject = no
+			#is_subject = no
 			num_of_owned_provinces_with = {
 				value = 16
 				OR = {
@@ -384,10 +384,10 @@ country_decisions = {
 				primary_culture = lorrain
 				primary_culture = champenois
 			}
-			#is_subject = no
+			##is_subject = no
 		}
 		allow = {
-			is_subject = no
+			#is_subject = no
 			num_of_owned_provinces_with = {
 				value = 3
 				area = wallonia_area
@@ -429,13 +429,13 @@ country_decisions = {
 					tag = SGC
 				}
 			}
-			#is_subject = no
+			##is_subject = no
 			NOT = {
 				exists = ASE
 			}
 		}
 		allow = {
-			is_subject = no
+			#is_subject = no
 			num_of_owned_provinces_with = {
 				value = 2
 				area = alsace_area
@@ -474,13 +474,13 @@ country_decisions = {
 					tag = ITF
 				}
 			}
-			#is_subject = no
+			##is_subject = no
 			NOT = {
 				exists = UMB
 			}
 		}
 		allow = {
-			is_subject = no
+			#is_subject = no
 			num_of_owned_provinces_with = {
 				value = 5
 				culture = umbrian
@@ -535,7 +535,7 @@ country_decisions = {
 				}
 			}
 			adm_tech = 15
-			is_subject = no
+			#is_subject = no
 			owns = 65
 			owns = 1868
 			owns = 2957
@@ -606,7 +606,7 @@ country_decisions = {
 				}
 			}
 			adm_tech = 15
-			is_subject = no
+			#is_subject = no
 			owns = 57
 			owns = 82
 			owns = 85
@@ -658,7 +658,7 @@ country_decisions = {
 				primary_culture = austrian
 				primary_culture = hungarian
 			}
-			is_subject = no
+			#is_subject = no
 			NOT = { tag = AHU }
 			NOT = { tag = GER }
 		}
@@ -696,7 +696,7 @@ country_decisions = {
 	
 		potential = {
 			primary_culture = austrian
-			is_subject = no
+			#is_subject = no
 			NOT = { tag = AHU }
 			NOT = { tag = AUE }
 			NOT = { tag = GER }
@@ -746,7 +746,7 @@ country_decisions = {
 	#		NOT = {
 	#			exists = RAJ
 	#		}
-	#		is_subject = no
+	#		#is_subject = no
 	#	}
 	#	effect = {
 	#		country_event = {
@@ -772,7 +772,7 @@ country_decisions = {
 		allow = {
 			adm_tech = 31
 			primary_culture = czech
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = CZE
@@ -794,7 +794,7 @@ country_decisions = {
 		allow = {
 			adm_tech = 31
 			tag = SLO
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = SLV
@@ -832,7 +832,7 @@ country_decisions = {
 				accepted_culture = czech
 				accepted_culture = slovak
 			}
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = CZS
@@ -858,7 +858,7 @@ country_decisions = {
 		}
 		allow = {
 			adm_tech = 30
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = ROC
@@ -894,7 +894,7 @@ country_decisions = {
 			bgm_comgovt = yes
 			total_development = 1400
 			OR = {
-				is_subject = no
+				#is_subject = no
 				overlord = { 
 					bgm_comgovt = yes
 				}
@@ -927,7 +927,7 @@ country_decisions = {
 		allow = {
 			bgm_comgovt = yes
 			OR = {
-				is_subject = no
+				#is_subject = no
 				overlord = { 
 					bgm_comgovt = yes
 				}
@@ -961,7 +961,7 @@ country_decisions = {
 		allow = {
 			has_reform = fascist_mechanic
 			OR = {
-				is_subject = no
+				#is_subject = no
 				overlord = { 
 					has_reform = fascist_mechanic
 				}
@@ -991,7 +991,7 @@ country_decisions = {
 		}
 		allow = {
 			has_reform = democratic_mechanic
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = RUF
@@ -1066,7 +1066,7 @@ country_decisions = {
 			}
 		}
 		allow = {
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = FRR
@@ -1141,7 +1141,7 @@ country_decisions = {
 			}
 		}
 		allow = {
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			set_government_rank = 3
@@ -1216,7 +1216,7 @@ country_decisions = {
 			}
 		}
 		allow = {
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = FRC
@@ -1278,7 +1278,7 @@ country_decisions = {
 			}
 		}
 		allow = {
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = FRF
@@ -1310,7 +1310,7 @@ country_decisions = {
 				tag = UNK
 				tag = BRC
 			}
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = BRF
@@ -1333,7 +1333,7 @@ country_decisions = {
 			NOT = { tag = GRF }
 		}
 		allow = {
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = GRF
@@ -1363,7 +1363,7 @@ country_decisions = {
 			NOT = { tag = GRS }
 		}
 		allow = {
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = GRS
@@ -1385,7 +1385,7 @@ country_decisions = {
 			NOT = { tag = GRD }
 		}
 		allow = {
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = GRD
@@ -1417,7 +1417,7 @@ country_decisions = {
 			}
 			bgm_comgovt = yes
 			OR = {
-				is_subject = no
+				#is_subject = no
 				overlord = { 
 					bgm_comgovt = yes
 				}
@@ -1447,7 +1447,7 @@ country_decisions = {
 			}
 		}
 		allow = {
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = SPF
@@ -1470,7 +1470,7 @@ country_decisions = {
 			}
 		}
 		allow = {
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = SPD
@@ -1493,7 +1493,7 @@ country_decisions = {
 			}
 		}
 		allow = {
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = SPC
@@ -1519,7 +1519,7 @@ country_decisions = {
 			}
 		}
 		allow = {
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = ITF
@@ -1542,7 +1542,7 @@ country_decisions = {
 			}
 		}
 		allow = {
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = ITD
@@ -1565,7 +1565,7 @@ country_decisions = {
 			}
 		}
 		allow = {
-			is_subject = no
+			#is_subject = no
 		}
 		effect = {
 			change_tag = ITC

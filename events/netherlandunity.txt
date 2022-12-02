@@ -111,7 +111,7 @@ country_event = {
 		capital_scope = {
 			continent = europe
 		}
-		
+		NED = { is_subject = no }
 	}	
 
 	mean_time_to_happen = {

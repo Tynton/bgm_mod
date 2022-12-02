@@ -102,6 +102,10 @@ country_event = {
 			num_of_cities = 45
 		}
 		is_subject = no
+		JAP = {
+			is_subject = no
+			has_institution = nationalism_institution
+		}
 	}	
 
 	mean_time_to_happen = {
