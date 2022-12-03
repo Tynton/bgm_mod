@@ -99,6 +99,7 @@ country_event = {
 
 	trigger = {
 		exists = NED
+		NOT = { tag = NED }
 		ai = yes 
 		culture_group = benelux
 		NOT = {

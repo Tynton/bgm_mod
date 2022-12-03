@@ -181,6 +181,10 @@ country_event = {
 				}
 			}
 		}
+		NOT = { tag = GER }
+		NOT = { tag = GRD }
+		NOT = { tag = GRF }
+		NOT = { tag = GRC }
 		NOT = {
 			has_country_flag = denied_annexation
 		}
