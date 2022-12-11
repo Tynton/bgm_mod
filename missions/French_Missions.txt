@@ -3,7 +3,10 @@ french_missions_north = {
 	generic = no
 	ai = yes
 	potential = {
-		tag = FRA
+		OR = {
+			tag = FRA
+			tag = SFR
+		}
 		NOT = { map_setup = map_setup_random }
 		NOT = { has_dlc = "Emperor" }
 	}
@@ -205,7 +208,10 @@ french_mission_slot_2 = {
 	generic = no
 	ai = yes
 	potential = {
-		tag = FRA
+		OR = {
+			tag = FRA
+			tag = SFR
+		}
 		NOT = { map_setup = map_setup_random }
 		NOT = { has_dlc = "Emperor" }
 	}
@@ -267,7 +273,10 @@ french_missions_colonial = {
 	generic = no
 	ai = yes
 	potential = {
-		tag = FRA
+		OR = {
+			tag = FRA
+			tag = SFR
+		}
 		is_random_new_world = no
 		NOT = { map_setup = map_setup_random }
 		NOT = { has_dlc = "Emperor" }
@@ -579,7 +588,10 @@ france_expand_south = {
 	generic = no
 	ai = yes
 	potential = {
-		tag = FRA
+		OR = {
+			tag = FRA
+			tag = SFR
+		}
 		NOT = { map_setup = map_setup_random }
 		NOT = { has_dlc = "Emperor" }
 	}
@@ -776,7 +788,10 @@ france_expand_south_2 = {
 	generic = no
 	ai = yes
 	potential = {
-		tag = FRA
+		OR = {
+			tag = FRA
+			tag = SFR
+		}
 		NOT = { has_dlc = "Emperor" }
 	}
 	has_country_shield = yes
@@ -862,7 +877,10 @@ french_liberalism = {
 	generic = no
 	ai = yes
 	potential = {
-		tag = FRA
+		OR = {
+			tag = FRA
+			tag = SFR
+		}
 	}
 	has_country_shield = yes
 	greater_france = {

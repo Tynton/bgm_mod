@@ -338,6 +338,10 @@ christian = {
 			dissolve_monasteries_aspect
 			monopoly_aspect
 			stability_aspect
+			innovativeness_aspect
+			expel_heretics_aspect
+			diplomats_of_the_reformation_aspect
+			icons_of_the_church_aspect
 		}
 		aspects_name = ANGLICAN_ASPECTS
 		

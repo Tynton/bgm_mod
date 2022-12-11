@@ -153,10 +153,7 @@ country_decisions = {
 		major = yes
 	
 		potential = {
-			OR = {
-				faction_in_power = dm_communist
-				faction_in_power = at_dictatorial
-			}
+			has_faction = dm_communist
 			has_global_flag = communist_manifesto_written
 		}
 		allow = {
@@ -165,11 +162,6 @@ country_decisions = {
 				faction_in_power = at_dictatorial
 			}
 			stability = 1
-
-			faction_influence = {
-				faction = dm_communist
-				influence = 50
-			}
 		}
 		effect = {
 			change_government = futurist_government
@@ -201,23 +193,12 @@ country_decisions = {
 		major = yes
 	
 		potential = {
-			OR = {
-				faction_in_power = dm_fascist
-				faction_in_power = at_dictatorial
-			}
-			#current_age = age_of_great_wars
+			has_faction = dm_fascist
+			has_global_flag = fascism_invented
 		}
 		allow = {
-			OR = {
-				faction_in_power = dm_fascist
-				faction_in_power = at_dictatorial
-			}
-			is_at_war = no
+			faction_in_power = dm_fascist
 			stability = 1
-			faction_influence = {
-				faction = dm_fascist
-				influence = 50
-			}
 		}
 		effect = {
 			change_government = fascist_government
@@ -249,18 +230,17 @@ country_decisions = {
 		major = yes
 	
 		potential = {
-			faction_in_power = dm_nationalist
-			#current_age = age_of_great_wars
+			has_faction = dm_nationalist
+			has_global_flag = futurist_manifesto_written
 		}
 		allow = {
 			faction_in_power = dm_nationalist
-			is_at_war = no
 			stability = 1
 
-			faction_influence = {
-				faction = dm_nationalist
-				influence = 50
-			}
+			#faction_influence = {
+			#	faction = dm_nationalist
+			#	influence = 50
+			#}
 		}
 		effect = {
 			change_government = futurist_government

@@ -14,6 +14,20 @@ fascist_mechanic = {
 		allow = { has_dlc = "Rights of Man" }
 		militarised_society = yes
 	}
+
+	factions = {
+		bgm_status_quo
+		bgm_liberals
+	}
+
+	effect = {
+		hidden_effect = {
+			add_faction_influence = {
+				faction = bgm_liberals
+				influence = -50
+			}
+		}
+	}
 }
 
 fascist_government_reform = {

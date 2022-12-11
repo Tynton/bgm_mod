@@ -148,6 +148,8 @@ dictator = {
 			OR = {
 				government = monarchy
 				has_reform = democratic_mechanic
+				faction_in_power = cr_mensheviks
+				faction_in_power = bgm_futurist_republican
 			}
 		}
 	}
@@ -162,6 +164,17 @@ republican_leader = {
 	potential = {
 		NOT = {
 			government = monarchy
+		}
+		OR = {
+			AND = {
+				ai = yes
+				OR = {
+					faction_in_power = cr_mensheviks
+					faction_in_power = cr_bolshevists
+					faction_in_power = bgm_futurist_republican
+				}
+			}
+			ai = no
 		}
 	}
 	allow_normal_conversion = yes
@@ -193,6 +206,7 @@ bgm_parliament = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_reform = democratic_mechanic }
+		NOT = { has_reform = dictator }
 	}
 	modifiers = {
 		max_absolutism = -10
@@ -234,8 +248,8 @@ dictatorial_dominance = {
 	trigger = {
 		NOT = { 
 			OR = {
-				has_reform = republican_leader
-				has_reform = futurist_empire
+				has_reform = dictator
+				has_reform = minister_monarchy
 			}
 		}
 	}
@@ -268,9 +282,9 @@ marxist_economy = {
 	}
 	modifiers = {
 		global_trade_goods_size_modifier = -0.25
-		build_cost = -0.4
-		build_time = -0.4
-		development_cost = -0.3
+		build_cost = -0.2
+		build_time = -0.2
+		development_cost = -0.2
 	}
 }
 
@@ -286,7 +300,7 @@ socialist_economy_reform = {
 	modifiers = {
 		build_cost = -0.1
 		build_time = -0.1
-		development_cost = -0.05
+		development_cost = -0.1
 	}
 }
 
@@ -322,11 +336,6 @@ social_economy = {
 
 syndicalism = {
 	icon = "rioting_burning"
-	potential = {
-		NOT = {
-			has_reform = authoritarian_mechanic
-		}
-	}
 	trigger = {
 		OR = {
 			has_reform = futurist_mechanic
@@ -703,5 +712,32 @@ large_policing_bureaucracy = {
 		legitimacy = 2.0
 		republican_tradition = 2.0
 		global_tax_modifier = -0.25
+	}
+}
+
+suppress_nationalism = {
+	icon = "futurist_government"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			bgm_comgovt = yes
+			has_reform = fascist_mechanic
+			has_reform = authoritarian_mechanic
+			has_reform = futurist_mechanic
+		}
+		NOT = {
+			has_reform = anarchy
+		}
+	}
+	trigger = {
+		NOT = {
+			all_owned_province = {
+				culture_group = ROOT
+			}
+		}
+	}
+	modifiers = {
+		culture_conversion_cost = -0.2
+		trade_goods_size_modifier = -0.2
 	}
 }

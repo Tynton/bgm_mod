@@ -184,6 +184,11 @@
  franceunity.d.8:0 "Referendum to Join France"
  franceunity.8.a:0 "Our fate is with our brethren!"
  
+ franceunity.n.9:0 "Primacy of French Culture"
+ franceunity.d.9:0 "We now lay claim to France. As France is now under our control, we own a vast swath of French speaking territory while not maintaining it as our primary culture. Will our ruling class assimilate or will we remain true to our old ways?"
+ franceunity.9.a:0 "We will become one with the French."
+ franceunity.9.b:0 "The New France's royalty will remain of its old heritage."
+ 
  spainunity.n.1:0 "Spanish Revolt!"
  spainunity.d.1:0 "-AWAITING LOCALIZATION-"
  spainunity.1.a:0 "Destroy them!"
@@ -191,6 +196,35 @@
  
  ukrainecore.n.1:0 "The Ukrainian Nation"
  ukrainecore.d.1:0 "There had been no nation for the Ukrainians to call their own since the Kievan Rus nearly 800 years ago. With popular nationalism as a new trend, we have inevitably joined the fray and a new proclamation has grown more interest - that of a Ukrainian nation outside the influence of foreign nations."
+ 
+ bgm_liberal.1.t:0 "Political Instability"
+ bgm_liberal.1.d:0 "The authoritarian government of $COUNTRY$ has recently been subject to a troubling context which has enabled supporters of liberal republicanism to make headway in overthrowing the government and establishing a new regime. Now they have elected to protest in various cities around the nation and have the means available to resist by force if need be."
+ bgm_liberal.1.a:0 "Shut them down."
+ bgm_liberal.1.b:0 "The current regime stands down."
+ 
+ bgm_liberal.2.t:0 "Liberals in $PROVINCE$ Revolt"
+ bgm_liberal.2.d:0 "In continuation of the liberal republicans' demands for a free society, residents in one of our provinces have sprung up their own revolt to add their pressure in creation of a state of their own design."
+ bgm_liberal.2.a:0 "Fight them."
+ bgm_liberal.2.b:0 "Grant local concessions."
+ 
+ bgm_liberal.3.t:0 "Nationalists in $PROVINCE$ Revolt"
+ bgm_liberal.3.d:0 "In continuation of the liberal republicans' demands for a free society, residents in one of our provinces have sprung up their own revolt to add their pressure in creation of a liberal country of their own design."
+ bgm_liberal.3.a:0 "Fight them."
+ bgm_liberal.3.b:0 "Grant local concessions."
+ 
+ bgm_liberal.4.t:0 "Authoritarian Counter-Coup"
+ bgm_liberal.4.d:0 "The struggle for a free society does not end with a single coup d'etat by liberal revolutionaries. Now adherents to the old order have made their move on the capital and are attempting to abort the free society."
+ bgm_liberal.4.a:0 "Fight them."
+ bgm_liberal.4.b:0 "Stand down."
+ 
+ bgm_liberal.5.t:0 "Liberal Counter-Coup"
+ bgm_liberal.5.d:0 "Even with a pair of recent coups our society still has yet to favor the old regime once again. Democratic supporters are once again plotting a march on the capital to reinstate their own government."
+ bgm_liberal.5.a:0 "Fight them."
+ bgm_liberal.5.b:0 "Stand down."
+ 
+ bgm_liberal.6.t:0 "Stability Restored"
+ bgm_liberal.6.d:0 "The current government of $COUNTRY$ has defeated their opposition and consolidated the country with hopes of a prosperous future under their guidance. Long live the new state."
+ bgm_liberal.6.a:0 "Ok."
  
  republics.9.b:0 "Find and kill the suspects!"
  trade.8.b:0 "If they refuse to work, then they will be made to!"

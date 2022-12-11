@@ -1,0 +1,584 @@
+namespace = bgm_liberal
+
+# Coup
+country_event = {
+	id = bgm_liberal.1
+	title = "bgm_liberal.1.t"
+	desc = "bgm_liberal.1.d"
+	picture = MARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = { 
+				has_reform = futurist_mechanic
+				bgm_comgovt = yes
+			}
+			set_country_flag = communism_lib
+		}
+		if = {
+			limit = { 
+				has_reform = futurist_mechanic
+				bgm_comgovt = no
+			}
+			set_country_flag = futurism_lib
+		}
+		if = {
+			limit = { 
+				has_reform = authoritarian_mechanic
+			}
+			set_country_flag = auth_lib
+		}
+		if = {
+			limit = { 
+				has_reform = fascist_mechanic
+			}
+			set_country_flag = fasc_lib
+		}
+	}
+	
+	option = {
+		name = "bgm_liberal.1.a" #fight
+		add_stability = -4
+		capital_scope = {
+			spawn_rebels = {
+				size = 3
+				type = democratic_rebels
+			}
+		}
+		if = {
+			limit = { 
+				num_of_cities = 10
+			}
+			random_owned_province = {
+				limit = { 
+					NOT = { 
+						is_capital_of = ROOT 
+					} 
+				}
+				spawn_rebels = {
+					size = 2
+					type = democratic_rebels
+				}
+			}
+		}
+		if = {
+			limit = { 
+				num_of_cities = 15
+			}
+			random_owned_province = {
+				limit = { 
+					NOT = { 
+						is_capital_of = ROOT 
+					} 
+				}
+				spawn_rebels = {
+					size = 1
+					type = democratic_rebels
+				}
+			}
+		}
+		if = {
+			limit = { 
+				num_of_cities = 20
+			}
+			random_owned_province = {
+				limit = { 
+					NOT = { 
+						is_capital_of = ROOT 
+					} 
+				}
+				spawn_rebels = {
+					size = 2
+					type = democratic_rebels
+				}
+			}
+			random_owned_province = {
+				limit = { 
+					NOT = { 
+						is_capital_of = ROOT 
+					} 
+				}
+				spawn_rebels = {
+					size = 1
+					type = democratic_rebels
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 1
+
+			modifier = {
+				factor = 25
+				adm_power = 400
+				army_size_percentage = 0.5
+			}
+		}
+	}
+	
+	option = {
+		name = "bgm_liberal.1.b" #Concede
+		kill_ruler = yes
+		change_government = democracy_govt
+		add_government_reform = parliamentary_republic_reform
+
+		add_adm_power = -250
+		add_dip_power = -250
+		add_mil_power = -250
+		add_prestige = -50
+
+		add_stability = 1
+
+		#end_disaster = bgm_liberal
+
+		if = {
+			limit = {
+				NOT = {
+					is_subject_of_type = pact_member
+				}
+			}
+			overlord = {
+				add_casus_belli = {
+					target = ROOT
+					type = cb_annex
+					months = 120
+				}
+			}
+			grant_independence = yes
+			end_disaster = bgm_liberal
+		}
+
+
+
+
+
+		ai_chance = {
+			factor = 1
+
+			modifier = {
+				factor = 1000
+				OR = {
+					liberty_desire = 50
+					NOT = {
+						has_opinion = {
+							who = overlord
+							value = -25
+						}
+					}
+				}
+			}
+		}
+	}
+
+	after = {
+		add_yearly_manpower = -0.25
+	}
+}
+
+
+#liberals in province
+province_event = {
+	id = bgm_liberal.2
+	title = "bgm_liberal.2.t"
+	desc = "bgm_liberal.2.d"
+	picture = MARCH_eventPicture
+
+	trigger = {
+		owner = {
+			has_disaster = bgm_liberal
+			NOT = { has_reform = democratic_mechanic }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 80
+
+		modifier = {
+			factor = 0.9
+			owner = {
+				faction_influence = {
+					faction = bgm_liberals
+					influence = 50
+				}
+			}
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
+				faction_influence = {
+					faction = bgm_liberals
+					influence = 55
+				}
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				faction_influence = {
+					faction = bgm_liberals
+					influence = 60
+				}
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				faction_influence = {
+					faction = bgm_liberals
+					influence = 65
+				}
+			}
+		}
+		modifier = {
+			factor = 0.6
+			owner = {
+				faction_influence = {
+					faction = bgm_liberals
+					influence = 70
+				}
+			}
+		}
+		modifier = {
+			factor = 0.6
+			owner = {
+				faction_influence = {
+					faction = bgm_liberals
+					influence = 75
+				}
+			}
+		}
+	}
+	
+	
+	option = {
+		name = "bgm_liberal.2.a" #fight
+		add_unrest = 10
+		spawn_rebels = {
+			size = 2
+			type = democratic_rebels
+		}
+	}
+	
+	option = {
+		name = "bgm_liberal.2.b" #make local concessions
+		add_unrest = 5
+		add_local_autonomy = 50
+	}
+}
+
+#nationalists in province
+province_event = {
+	id = bgm_liberal.3
+	title = "bgm_liberal.3.t"
+	desc = "bgm_liberal.3.d"
+	picture = MARCH_eventPicture
+
+	trigger = {
+		owner = {
+			has_disaster = bgm_liberal
+		}
+		has_owner_accepted_culture = no
+		NOT = { culture_group = owner }
+	}
+
+	mean_time_to_happen = {
+		months = 80
+
+		modifier = {
+			factor = 0.9
+			owner = {
+				faction_influence = {
+					faction = bgm_liberals
+					influence = 50
+				}
+			}
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
+				faction_influence = {
+					faction = bgm_liberals
+					influence = 55
+				}
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				faction_influence = {
+					faction = bgm_liberals
+					influence = 60
+				}
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				faction_influence = {
+					faction = bgm_liberals
+					influence = 65
+				}
+			}
+		}
+		modifier = {
+			factor = 0.6
+			owner = {
+				faction_influence = {
+					faction = bgm_liberals
+					influence = 70
+				}
+			}
+		}
+		modifier = {
+			factor = 0.6
+			owner = {
+				faction_influence = {
+					faction = bgm_liberals
+					influence = 75
+				}
+			}
+		}
+	}
+	
+	
+	option = {
+		name = "bgm_liberal.3.a" #fight
+		spawn_rebels = {
+			size = 2
+			type = nationalist_rebels
+		}
+		ai_chance = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				NOT = {
+					owner = {
+						army_size_percentage = 0.5
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "bgm_liberal.3.b" #make local concessions
+		add_local_autonomy = 100
+
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				owner = {
+					army_size_percentage = 0.5
+				}
+			}
+		}
+	}
+}
+
+#counter-coup
+country_event = {
+	id = bgm_liberal.4
+	title = "bgm_liberal.4.t"
+	desc = "bgm_liberal.4.d"
+	picture = BUREAU_eventPicture
+
+	trigger = {
+		has_disaster = bgm_liberal
+		has_reform = democratic_mechanic
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	immediate = {
+		set_country_flag = had_countercoup
+	}
+	
+	
+	option = {
+		name = "bgm_liberal.4.a" #fight
+		trigger = {
+			stability = 1
+		}
+
+		if = {
+			limit = {
+				has_country_flag = communism_lib
+			}
+			capital_scope = {
+				spawn_rebels = {
+					size = 3
+					type = socialist_rebels
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = futurism_lib
+			}
+			capital_scope = {
+				spawn_rebels = {
+					size = 3
+					type = futurist_rebels
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = auth_lib
+			}
+			capital_scope = {
+				spawn_rebels = {
+					size = 1
+					type = fascist_rebels
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = fasc_lib
+			}
+			capital_scope = {
+				spawn_rebels = {
+					size = 3
+					type = fascist_rebels
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				NOT = {
+					army_size_percentage = 0.5
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "bgm_liberal.4.b" #the coup succeeds
+
+		add_stability = -2
+
+		if = {
+			limit = {
+				has_country_flag = communism_lib
+			}
+			change_government = futurist_government
+			add_government_reform = socialist_republic
+		}
+		if = {
+			limit = {
+				has_country_flag = futurism_lib
+			}
+			change_government = futurist_government
+			add_government_reform = futurist_government_reform
+		}
+		if = {
+			limit = {
+				has_country_flag = auth_lib
+			}
+			change_government = authoritarian_government
+			add_government_reform = authoritarian_mechanic
+		}
+		if = {
+			limit = {
+				has_country_flag = fasc_lib
+			}
+			change_government = fascist_government
+			add_government_reform = fascist_government_reform
+		}
+
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				army_size_percentage = 0.5
+			}
+		}
+	}
+}
+
+#counter-counter-coup
+country_event = {
+	id = bgm_liberal.5
+	title = "bgm_liberal.5.t"
+	desc = "bgm_liberal.5.d"
+	picture = MARCH_eventPicture
+
+	trigger = {
+		has_disaster = bgm_liberal
+		NOT = { has_reform = democratic_mechanic }
+		has_country_flag = had_countercoup
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	
+	option = {
+		name = "bgm_liberal.5.a" #fight
+		capital_scope = {
+			spawn_rebels = {
+				size = 2
+				type = democratic_rebels
+			}
+		}
+		add_yearly_manpower = -0.15
+		
+		ai_chance = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				NOT = {
+					army_size_percentage = 0.5
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "bgm_liberal.5.b" #the coup succeeds
+
+		add_stability = -1
+
+		change_government = democracy_govt
+		add_government_reform = parliamentary_republic_reform
+
+		ai_chance = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				army_size_percentage = 0.5
+			}
+		}
+	}
+}
+
+#end
+country_event = {
+	id = bgm_liberal.6
+	title = "bgm_liberal.6.t"
+	desc = "bgm_liberal.6.d"
+	picture = DAWNING_ERA_eventPicture
+
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = "bgm_liberal.6.a" #end
+	}
+}

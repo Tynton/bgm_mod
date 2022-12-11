@@ -81,6 +81,12 @@ democratic_rebels = {
 				}
 			}
 		}
+		modifier = {
+			factor = 1000
+			owner = {
+				has_disaster = bgm_liberal
+			}
+		}
 		#modifier = {
 		#	factor = 66
 		#	NOT = {

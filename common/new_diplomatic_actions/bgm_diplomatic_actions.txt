@@ -453,21 +453,38 @@ invite_dynasty =  {
 		#	who = FROM
 		#	attitude = attitude_threatened
 		#}
-		FROM = {
-			has_opinion = {
-				who = ROOT
-				value = 100
+		OR = {
+			AND = {
+				FROM = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+				is_great_power = no
+				any_country = {
+					NOT = {
+						tag = FROM
+					}
+					dynasty = FROM
+				}
+				dynasty_is_alone = yes
+				from_root_invite_dynasty = no
+			}
+			AND = {
+				NOT = {
+					any_country = {
+						is_great_power = yes
+						dynasty = ROOT
+					}
+				}
+				trust = { 
+					who = FROM
+					value = 100 
+				}
 			}
 		}
-		is_great_power = no
-		any_country = {
-			NOT = {
-				tag = FROM
-			}
-			dynasty = FROM
-		}
-		dynasty_is_alone = yes
-		from_root_invite_dynasty = no
+		
 	}
 }
 
@@ -1855,5 +1872,161 @@ join_zollverein = {
 				value = 100
 			}
 		}
+	}
+}
+
+####################DOMINION
+
+request_dominion = {
+	category = influence
+	require_acceptance = yes
+	is_visible = {
+		OR = {
+			is_subject_of_type = colony
+			is_subject_of_type = crown_colony
+			is_subject_of_type = private_enterprise
+			is_subject_of_type = self_governing_colony
+		}
+	}
+	is_allowed = {
+		OR = {
+			is_subject_of_type = colony
+			is_subject_of_type = crown_colony
+			is_subject_of_type = private_enterprise
+			is_subject_of_type = self_governing_colony
+		}
+		liberty_desire = 50
+		overlord = { has_reform = democratic_mechanic }
+	}
+	ai_acceptance = {
+		add_entry = {
+			name = FRIENDLY
+			limit = {
+				always = yes
+			}
+			export_to_variable = { which = ai_value value = 25 }
+		}
+	}
+	on_accept = {
+		overlord = {
+			create_subject = {
+				subject_type = dominion
+				subject = ROOT
+			}
+		}
+	}
+	on_decline = {
+		add_liberty_desire = 100
+    }
+	ai_will_do = {
+		liberty_desire = 50
+	}
+}
+
+request_independence = {
+	category = influence
+	require_acceptance = yes
+	is_visible = {
+		is_subject_of_type = dominion
+	}
+	is_allowed = {
+		is_subject_of_type = dominion
+		liberty_desire = 50
+		overlord = { has_reform = democratic_mechanic }
+	}
+	ai_acceptance = {
+		add_entry = {
+			name = FRIENDLY
+			limit = {
+				always = yes
+			}
+			export_to_variable = { which = ai_value value = 25 }
+		}
+	}
+	on_accept = {
+		overlord = {
+			grant_independence = ROOT
+		}
+	}
+	on_decline = {
+		add_liberty_desire = 100
+    }
+	ai_will_do = {
+		liberty_desire = 50
+	}
+}
+
+influence_ideology = {
+	category = influence
+	require_acceptance = no
+	is_visible = {
+		OR = {
+			has_reform = fascist_mechanic
+			has_reform = futurist_mechanic
+		}
+		FROM = {
+			has_reform = bgm_dem_parliament
+		}
+	}
+	is_allowed = {
+		has_spy_network_in = {
+			who = FROM
+			value = 25
+		}
+	}
+	on_accept = {
+		if = {
+			limit = {
+				ROOT = {
+					has_reform = fascist_mechanic
+				}
+			}
+			FROM = {
+				add_country_modifier = {
+					add_country_modifier = { 
+						name = fascist_influence
+						duration = 1825
+						hidden = yes
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					has_reform = futurist_mechanic
+					bgm_comgovt = no
+				}
+			}
+			FROM = {
+				add_country_modifier = {
+					add_country_modifier = { 
+						name = futurist_influence
+						duration = 1825
+						hidden = yes
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					has_reform = futurist_mechanic
+					bgm_comgovt = yes
+				}
+			}
+			FROM = {
+				add_country_modifier = {
+					add_country_modifier = { 
+						name = communist_influence
+						duration = 1825
+						hidden = yes
+					}
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		always = yes
 	}
 }

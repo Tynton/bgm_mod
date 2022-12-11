@@ -188,7 +188,7 @@ colonial_timbuktu = {
 				colonial_region = colonial_timbuktu
 			}
 		}
-		name = "colonial_timbuktu"
+		name = "COLONIAL_AFRICA_timbuktu"
 	}
 }
 
@@ -226,7 +226,7 @@ colonial_tunis = {
 				colonial_region = colonial_tunis
 			}
 		}
-		name = "colonial_tunis"
+		name = "COLONIAL_AFRICA_tunis"
 	}
 }
 

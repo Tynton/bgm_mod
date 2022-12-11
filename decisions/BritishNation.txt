@@ -54,7 +54,7 @@ country_decisions = {
 		}
 		allow = {
 			adm_tech = 10
-			is_free_or_tributary_trigger = yes
+			#is_free_or_tributary_trigger = yes
 			is_nomad = no
 			is_at_war = no
 			owns_core_province = 237		# Oxfordshire
@@ -198,7 +198,7 @@ country_decisions = {
 		}
 		allow = {
 			adm_tech = 10
-			is_free_or_tributary_trigger = yes
+			#is_free_or_tributary_trigger = yes
 			is_nomad = no
 			is_at_war = no
 			legitimacy = 100
@@ -348,7 +348,7 @@ country_decisions = {
 		}
 		allow = {
 			adm_tech = 10
-			is_free_or_tributary_trigger = yes
+			#is_free_or_tributary_trigger = yes
 			is_nomad = no
 			is_at_war = no
 			owns_core_province = 237		# Oxfordshire

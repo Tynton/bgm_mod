@@ -7,7 +7,10 @@ emp_france_missions_1 = {
 	}
 	potential = {
 		has_dlc = "Emperor"
-		tag = FRA
+		OR = {
+			tag = FRA
+			tag = SFR
+		}
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
@@ -275,7 +278,10 @@ emp_france_missions_1_b = {
 	}
 	potential = {
 		has_dlc = "Emperor"
-		tag = FRA
+		OR = {
+			tag = FRA
+			tag = SFR
+		}
 		NOT = { map_setup = map_setup_random }
 		is_random_new_world = no 
 	}
@@ -450,7 +456,10 @@ emp_france_missions_2 = {
 	}
 	potential = {
 		has_dlc = "Emperor"
-		tag = FRA
+		OR = {
+			tag = FRA
+			tag = SFR
+		}
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
@@ -952,7 +961,10 @@ emp_france_missions_2_b = {
 	}
 	potential = {
 		has_dlc = "Emperor"
-		tag = FRA
+		OR = {
+			tag = FRA
+			tag = SFR
+		}
 		NOT = { map_setup = map_setup_random }
 		is_random_new_world = no 
 	}
@@ -1051,7 +1063,10 @@ emp_france_missions_2_c = {
 	}
 	potential = {
 		has_dlc = "Emperor"
-		tag = FRA
+		OR = {
+			tag = FRA
+			tag = SFR
+		}
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
@@ -1113,7 +1128,10 @@ emp_france_missions_3 = {
 	}
 	potential = {
 		has_dlc = "Emperor"
-		tag = FRA
+		OR = {
+			tag = FRA
+			tag = SFR
+		}
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
@@ -1565,7 +1583,10 @@ emp_france_missions_4 = {
 	}
 	potential = {
 		has_dlc = "Emperor"
-		tag = FRA
+		OR = {
+			tag = FRA
+			tag = SFR
+		}
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
@@ -1910,7 +1931,10 @@ emp_france_missions_5 = {
 	}
 	potential = {
 		has_dlc = "Emperor"
-		tag = FRA
+		OR = {
+			tag = FRA
+			tag = SFR
+		}
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
@@ -1960,7 +1984,11 @@ emp_france_missions_5 = {
 		trigger = {
 			stability = 1
 			#is_religion_enabled = reformed
-			current_age = age_of_reformation
+			any_owned_province = {
+				NOT = {
+					religion = ROOT
+				}
+			}
 			OR = {
 				custom_trigger_tooltip = {
 					tooltip = fra_had_wars_of_religion
@@ -2132,7 +2160,10 @@ french_mexico_slots = {
 	}
 	potential = {
 		has_dlc = "Emperor"
-		tag = FRA
+		OR = {
+			tag = FRA
+			tag = SFR
+		}
 		NOT = { map_setup = map_setup_random }
 	}
 	french_mexico = {

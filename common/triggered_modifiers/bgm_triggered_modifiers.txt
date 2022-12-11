@@ -216,6 +216,108 @@ national_prosperity = {
 	global_trade_power = 0.075
 }
 
+ww1_right = {
+	potential = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww1_r
+	}
+
+	trigger = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww1_r
+	}
+
+	dm_fascist_influence = -0.1
+	dm_monarchist_influence = -0.1
+}
+
+ww1_left = {
+	potential = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww1_l
+	}
+
+	trigger = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww1_l
+	}
+
+	dm_communist_influence = -0.1
+	dm_nationalist_influence = -0.1
+}
+
+ww2_right = {
+	potential = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww2_r
+	}
+
+	trigger = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww2_r
+	}
+
+	dm_fascist_influence = -0.3
+	dm_monarchist_influence = -0.3
+}
+
+ww2_left = {
+	potential = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww2_l
+	}
+
+	trigger = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww2_l
+	}
+
+	dm_communist_influence = -0.3
+	dm_nationalist_influence = -0.3
+}
+
+ww3_right = {
+	potential = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww3_r
+	}
+
+	trigger = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww3_r
+	}
+
+	dm_fascist_influence = -0.5
+	dm_monarchist_influence = -0.5
+}
+
+ww3_left = {
+	potential = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww3_l
+	}
+
+	trigger = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww3_l
+	}
+
+	dm_communist_influence = -0.5
+	dm_nationalist_influence = -0.5
+}
+
 no_futurism = {
 	potential = {
 		has_reform = democratic_mechanic
@@ -250,6 +352,27 @@ no_communism = {
 		
 		NOT = {
 			has_global_flag = communist_manifesto_written
+		}
+	}
+
+	dm_communist_influence = -1.0
+	dm_social_democrat_influence = -0.75
+}
+
+no_fascism = {
+	potential = {
+		has_reform = democratic_mechanic
+		
+		NOT = {
+			has_global_flag = fascism_invented
+		}
+	}
+
+	trigger = {
+		has_reform = democratic_mechanic
+		
+		NOT = {
+			has_global_flag = fascism_invented
 		}
 	}
 

@@ -27,6 +27,22 @@ communist_govt_reform = {
 	modifiers = {
 		max_absolutism = 10
 	}
+
+	factions = {
+		cr_mensheviks
+		cr_bolshevists
+		cr_stalinists
+		bgm_liberals
+	}
+
+	effect = {
+		hidden_effect = {
+			add_faction_influence = {
+				faction = bgm_liberals
+				influence = -50
+			}
+		}
+	}
 }
 
 anarchy = {

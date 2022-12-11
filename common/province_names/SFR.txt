@@ -1,0 +1,4 @@
+4721 = "Freiburg"
+4720 = "Genf"
+1867 = "Waadt"
+192 = "Dision"

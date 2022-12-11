@@ -75,11 +75,12 @@ po_bgmleague = {
 			set_hre_religion = catholic
 		}
 		set_hre_religion_locked = yes
+		set_global_flag = bgm_hre_league
 	}
 	ai_weight = { # Defaults to always evaluate to 0
 		export_to_variable = {
 			variable_name = ai_value
-			value = 100
+			value = 1000
 		}
 	}
 }

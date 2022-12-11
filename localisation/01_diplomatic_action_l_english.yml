@@ -135,3 +135,17 @@
  join_zollverein_tooltip:0 "Join the Zollverein."
  join_zollverein_dialog:0 "A nation has joined the Zollverein."
  join_zollverein_tooltip:0 "Join the Zollverein. We are granted security this way from foreign invaders, but take a risk with the rising nation's sphere of influence."
+ 
+ request_dominion:0 "Request Dominionship"
+ request_dominion_title:0 "Request Dominionship"
+ request_dominion_desc:0 "Request Dominionship. We are entitled liberty in all areas possible. It's a reasonable compromise with the overlordship."
+ request_dominion_tooltip:0 "Request Dominionship."
+ request_dominion_dialog:0 "A nation has joined the Zollverein."
+ request_dominion_tooltip:0 "Request Dominionship. We are entitled liberty in all areas possible. It's a reasonable compromise with the overlordship."
+ 
+ request_independence:0 "Request Independence"
+ request_independence_title:0 "Request Independence"
+ request_independence_desc:0 "Request Independence. We are entitled liberty in all political sectors, including foreign policy."
+ request_independence_tooltip:0 "Request Independence."
+ request_independence_dialog:0 "A nation has joined the Zollverein."
+ request_independence_tooltip:0 "Request Independence. We are entitled liberty in all political sectors, including foreign policy."

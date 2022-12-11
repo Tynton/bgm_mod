@@ -179,7 +179,7 @@
 187 = "Herzogenbar"
 189 = "Nanzig"
 192 = "Dision"
-193 = "Freigrafschaft"
+193 = { "Bisantz" "Freigrafschaft" }
 196 = "Tholosen"
 201 = "Walsch-Aachen"
 203 = "Lienhardstadt"
@@ -233,6 +233,7 @@
 1865 = "Gent"
 1866 = "Namen"
 1867 = "Waadt"
+192 = "Dision"
 1931 = "Ostfriesland"
 1934 = "Lukanien"
 1936 = "Kauen"
@@ -272,6 +273,10 @@
 
 1877 = "Charolles"
 191 = "Nevers"
+
+174 = "Bordeaulx"
+204 = "Graswalde"
+4947 = "Valenz"
 
 
 493 = "Sankt Thomas"
@@ -375,11 +380,6 @@
 1108 = "Tauranga"
 2737 = "Hastings"
 
-4945 = "Klattau"
-4946 = "Zlin"
-4951 = "Tetschen–Bodenbach"
-4952 = "Znaim"
-4953 = "Kuttenberg"
 4954 = "Tabor"
 4955 = "Kladen"
 
@@ -418,7 +418,7 @@
 5063 = "Plonsk"
 
 
-5069 = ( "Diemrich" "Denburg" }
+5069 = { "Diemrich" "Denburg" }
 5095 = "Kaschau"
 5096 = "Sillein"
 5097 = "Altsohl"
@@ -447,14 +447,14 @@
 4386 = "Luçon"
 4111 = "Saintes"
 4387 = "Angoulême"
-204 = "Grenoble"
-203 = "Lyon"
+204 = "Granspel"
+203 = "Lünstadt"
 4777 = "Montbrisons"
 4391 = "Viviers"
 2753 = "Narbonne"
 194 = "Bergerac"
 4697 = "Guéret"
-187 = "Bar-le-Duc"
+187 = "Herzogenbar"
 4392 = "Auxerre"
 191 = "Nevers"
 1877 = "Charolles"
@@ -463,7 +463,7 @@
 171 = "Vannes"
 88 = "Arras"
 181 = "Rethel"
-1743 = "Cambrai"
+1743 = "Kamerich"
 172 = "Nantes"
 4112 = "Cahors"
 198 = "Rodez"

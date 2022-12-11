@@ -325,3 +325,22 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = franceunity.9
+	title = "franceunity.n.9"
+	desc = "franceunity.d.9"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "franceunity.9.a"
+		change_primary_culture = cosmopolitan_french
+	}
+
+	option = {
+		name = "franceunity.9.b"
+		
+	}
+}

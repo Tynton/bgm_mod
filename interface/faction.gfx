@@ -170,7 +170,7 @@ spriteTypes = {
 	}	
 	spriteType = {
 		name = "GFX_faction_dm_social_liberal"	
-		texturefile = "gfx//interface//dm_social_liberal.dds"
+		texturefile = "gfx//interface//pl_social_liberal.dds"
 	}
 	spriteType = {
 		name = "GFX_faction_bg_dm_social_conservative"
@@ -266,7 +266,7 @@ spriteTypes = {
 	}	
 	spriteType = {
 		name = "GFX_faction_cr_bolshevists"	
-		texturefile = "gfx//interface//cr_bolshevists.dds"
+		texturefile = "gfx//interface//dm_communist.dds"
 	}
 	spriteType = {
 		name = "GFX_faction_bg_cr_mensheviks"
@@ -275,7 +275,7 @@ spriteTypes = {
 	}	
 	spriteType = {
 		name = "GFX_faction_cr_mensheviks"	
-		texturefile = "gfx//interface//cr_mensheviks.dds"
+		texturefile = "gfx//interface//dm_social_democrat.dds"
 	}
 	spriteType = {
 		name = "GFX_faction_bg_cr_stalinists"
@@ -309,12 +309,58 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_faction_bg_at_monarchist"	
-		texturefile = "gfx//interface//faction_purple_frame_frame.tga"
+		texturefile = "gfx//interface//faction_purple_frame.tga"
 		transparencecheck = yes
 	}	
 	spriteType = {
 		name = "GFX_faction_at_monarchist"	
 		texturefile = "gfx//interface//at_monarchist.dds"
+	}
+
+	#generic
+	
+	spriteType = {
+		name = "GFX_faction_bg_bgm_liberals"
+		texturefile = "gfx//interface//faction_red_frame.tga"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_faction_bgm_liberals"
+		texturefile = "gfx//interface//bgm_liberals.tga"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GFX_faction_bg_bgm_status_quo"
+		texturefile = "gfx//interface//faction_purple_frame.tga"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_faction_bgm_status_quo"
+		texturefile = "gfx//interface//dm_fascist.tga"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GFX_faction_bg_bgm_futurist_loyalist"
+		texturefile = "gfx//interface//faction_purple_frame.tga"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_faction_bgm_futurist_loyalist"
+		texturefile = "gfx//interface//dm_nationalist.tga"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GFX_faction_bg_bgm_futurist_republican"
+		texturefile = "gfx//interface//faction_red_frame.tga"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_faction_bgm_futurist_republican"
+		texturefile = "gfx//interface//dm_communist.tga"
+		transparencecheck = yes
 	}
 
 }

@@ -13,27 +13,86 @@ province_event = {
 			OR = {
 				is_capital = yes
 				province_has_center_of_trade_of_level = 2
-				
+				owner = {
+					NOT = { had_recent_war = 25 }
+				}
 			}
 			#industrialization = 99
 		}
-		is_prosperous = yes
-	}	
+		#is_prosperous = yes
+		NOT = { devastation = 1 }
+	}
 
 	mean_time_to_happen = {
 		months = 650
 		
 		modifier = {
-			factor = 0.5
+			factor = 0.9
 			owner = {
-				OR = {
-					tag = USA
-					tag = ENG
-					tag = GBR
-					tag = UNK
-					tag = GER
-					government_rank = 3
+				NOT = { had_recent_war = 40 }
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			owner = {
+				NOT = { had_recent_war = 50 }
+			}
+		}
+
+		modifier = {
+			factor = 0.9
+			owner = {
+				stability = 1
+			}
+		}
+
+		modifier = {
+			factor = 0.9
+			owner = {
+				stability = 2
+			}
+		}
+
+		modifier = {
+			factor = 0.9
+			owner = {
+				NOT = { num_of_loans = 1 }
+				full_idea_group = economic_ideas
+				capital_scope = {
+					region = british_isles_region
 				}
+				all_owned_province = {
+					region = british_isles_region
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.9
+			owner = {
+				NOT = { num_of_loans = 1 }
+				full_idea_group = trade_ideas
+				capital_scope = {
+					region = british_isles_region
+				}
+				all_owned_province = {
+					region = british_isles_region
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			owner = {
+				full_idea_group = economic_ideas
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			owner = {
+				full_idea_group = trade_ideas
 			}
 		}
 		
@@ -237,58 +296,36 @@ province_event = {
 	
 	trigger = {
 		industrialization = 99
-		is_prosperous = yes
+		OR = {
+			AND = {
+				NOT = { devastation = 1 }
+				owner = { stability = 1 }
+			}
+			is_prosperous = yes
+		}
 		owner = {
 			has_parliament = yes
 		}
 		OR = {
+			NOT = { development = 15 }
 			has_seat_in_parliament = yes
 			province_has_center_of_trade_of_level = 1
 		}
 	}	
 
 	mean_time_to_happen = {
-		months = 800
+		months = 650
 		
 		modifier = {
-			factor = 0.7
-			
-			OR = {
-				province_id = 965
-				province_id = 956
-				province_id = 950
-				province_id = 932
-				province_id = 968
-				province_id = 944
-				province_id = 893
-				#JAP
-				province_id = 1030
-				province_id = 1021
-				province_id = 1028
-				province_id = 4189
-				province_id = 4190
-				province_id = 1021
-				province_id = 4182
-				province_id = 1020
-				province_id = 1818
-				province_id = 4185
-				province_id = 1019
-				#BRIT
-				province_id = 4375
-				province_id = 245
-				province_id = 4367
-				province_id = 4368
-				province_id = 238
-				province_id = 235
-				province_id = 234
-				province_id = 4374
-				province_id = 248
-				province_id = 249
-				province_id = 373
-				#NED
-				province_id = 97
-				province_id = 4383
-				has_seat_in_parliament = yes
+			factor = 0.9
+			owner = {
+				NOT = { had_recent_war = 40 }
+			}
+		}
+				modifier = {
+			factor = 0.8
+			owner = {
+				NOT = { had_recent_war = 50 }
 			}
 		}
 		

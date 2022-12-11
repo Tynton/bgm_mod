@@ -38,7 +38,7 @@
 945 = "Michilimackinac"
 946 = "Sandoské"
 947 = "Chiningué"
-948 = "Belle Rivière"
+948 = "Belle Riviére"
 954 = "Presqu'Isle"
 956 = "Philadelphie"
 958 = "Sonnontouanie"
@@ -47,7 +47,7 @@
 961 = "Onneyout"
 963 = "Nouvelle Saintonge"
 964 = "Agniers"
-965 = "Nouv. Angoulême"
+965 = "Nouv. Angouléme"
 967 = "Baye Notre-Dame"
 968 = "Baye Blanche"
 970 = "Pointe Verte"
@@ -60,7 +60,7 @@
 986 = "Gaspé"
 988 = "Huronie"
 989 = "Cataraqui"
-990 = "Trois-Rivières"
+990 = "Trois-Riviéres"
 991 = "Mataouane"
 992 = "Gatineau"
 993 = "Montréal"
@@ -74,9 +74,9 @@
 1003 = "Fort Saint-Louis"
 1004 = "Fort Sainte-Anne"
 1005 = "Fort Bourbon"
-1006 = "Rivière Danoise"
+1006 = "Riviére Danoise"
 1007 = "Kaministiquia"
-1008 = "Rivière Rouge"
+1008 = "Riviére Rouge"
 1010 = "Dauphin"
 1011 = "Pasquia"
 1101 = "Chagos"
@@ -91,7 +91,7 @@
 2023 = "Carantouanie"
 2512 = "Beauharnois"
 2513 = "La Harpe"
-2514 = "Sainte Geneviève"
+2514 = "Sainte Geneviéve"
 2515 = "Fayetteville"
 2517 = "Milles Lacs"
 2518 = "La Pointe"
@@ -100,7 +100,7 @@
 2521 = "Saguinaw"
 2522 = "Saint Joseph"
 2523 = "Vincennes"
-2525 = "Rivière à la Roche"
+2525 = "Riviére à la Roche"
 2530 = "Bilocci"
 2532 = "Tombecbé"
 2542 = "Beaufort"
@@ -128,14 +128,14 @@
 2588 = "La Cloche"
 2592 = "Nieusauane"
 2593 = "Lac des Bois"
-2595 = "Ile à la Crosse"
+2595 = "Ile é la Crosse"
 2599 = "Lac la Biche"
 2669 = "Le Dout"
 2670 = "Douville"
 2671 = "Ronde"
 2957 = "Ratisbonne"
 4364 = "Hébrides"
-4365 = "Île de Man"
+4365 = "éle de Man"
 
 2983 = "Salerne"
 
@@ -165,7 +165,7 @@
 2011 = "Acconachena"
 2498 = "Choumans"
 2499 = "Caouachés"
-2516 = "Adaïé"
+2516 = "Adaéé"
 2526 = "Cachiqueto"
 2533 = "Sainte Rose"
 2535 = "Caloucha"
@@ -173,14 +173,14 @@
 2539 = "Saint Mathieu"
 2540 = "Caouitas"
 2547 = "La Magdelaine"
-2548 = "Nouvelle-Rivière"
+2548 = "Nouvelle-Riviére"
 2551 = "Malanghelé"
 2553 = "Patoumek"
 2558 = "Ésope"
 2564 = "Socoquis"
 2639 = "Ambois"
 2665 = "Bidaye"
-2669 = "Assinaïs"
+2669 = "Assinaés"
 
 178 = { "Angou" "Anjou" }
 174 = { "Bordeaulx" "Bordeaux" }
@@ -192,7 +192,7 @@
 103 = "Piémont"
 104 = "Lombardie"
 105 = "Parme"
-106 = "Modène"
+106 = "Modéne"
 108 = "Vérone"
 109 = "Mantoue"
 111 = "Frioul"
@@ -218,14 +218,14 @@
 
 197 = "Roussillon"
 207 = { "Asturies" "Oviede" }
-208 = "León"
+208 = "Leén"
 211 = "Pyrénées"
 212 = "Gironne"
 213 = "Barcelone"
 214 = "Aragon"
 215 = "Castille"
 216 = "Salamanque"
-219 = "Tolède"
+219 = "Toléde"
 214 = "Saragosse"
 220 = "Valence"
 221 = "Murcie"
@@ -255,8 +255,8 @@
 
 227 = "Lisbonne"
 232 = "Bragance"
-367 = "Açores"
-368 = "Madère"
+367 = "Aéores"
+368 = "Madére"
 1096 = "Cap-Vert"
 
 126 = "Malte"
@@ -267,7 +267,7 @@
 43 = { "Dantzick" "Dantzig" }
 44 = "Hambourg"
 46 = "Mecklembourg"
-2975 = "Clèves"
+2975 = "Cléves"
 47 = "Poméranie antérieure"
 48 = "Poméranie ultérieure"
 50 = "Berlin"
@@ -279,7 +279,7 @@
 59 = "Wittemberg"
 61 = "Dresde"
 #63 = "Thuringe"
-#64 = "Basse-Bavière"
+#64 = "Basse-Baviére"
 65 = "Munich"
 67 = "Nuremberg"
 68 = "Memmingue"
@@ -296,7 +296,7 @@
 76 = "Salzbourg"
 78 = "Mayence"
 79 = "Wurtzbourg"
-80 = "Trèves"
+80 = "Tréves"
 81 = "Hesse"
 82 = "Westphalie"
 85 = "Cologne"
@@ -322,9 +322,9 @@
 134 = "Vienne"
 1863 = "Gratz"
 1768 = "Lintz"
-4710 = { "Br?gence" "Brigance" }
+4710 = { "Brégence" "Brigance" }
 165 = "Berne"
-166 = "Waldstätten"
+166 = "Waldstétten"
 181 = "Rethélois"
 188 = "Metz" #"Trois Evechés"
 189 = "Nancy"
@@ -342,7 +342,7 @@
 1868 = "Augsbourg"
 1872 = "Ulm"
 1873 = "Coire"
-1874 = "Brême"
+1874 = "Bréme"
 1869 = "Zurich"
 1870 = "Saint-Gall"
 1876 = { "Francfort" "Francfort-sur-le-Main" }
@@ -353,7 +353,7 @@
 1931 = "Frise orientale"
 2753 = "Narbonnais"
 3003 = "Negroponte"
-4720 = "Genève"
+4720 = "Genéve"
 
 193 = "Besançon"
 
@@ -368,12 +368,12 @@
 4751 = "Cilley"
 129 = "Kraimbourg"
 
-101 = "Gênes"
+101 = "Génes"
 102 = "Nice"
 103 = "Turin"
 104 = "Milan"
 105 = "Parme"
-106 = "Modène"
+106 = "Modéne"
 108 = "Vérone"
 109 = "Mantoue"
 111 = "Frioul"
@@ -384,7 +384,7 @@
 116 = "Florence"
 117 = "Sienne"
 118 = "Rome"
-119 = "Ancône"
+119 = "Ancéne"
 120 = "Abruzzes"
 121 = "Naples"
 122 = "Salente"
@@ -410,7 +410,7 @@
 4728 = "Pavie"
 4729 = "Padoue"
 4730 = "Bologne"
-4731 = "Spolète"
+4731 = "Spoléte"
 4732 = "Terracine"
 4736 = "Drépane"
 4738 = "Trieste"
@@ -562,18 +562,18 @@
 
 5240 = "Bitbourg"
 
-4980 = "Bâle"
+4980 = "Béle"
 
 5387 = "Grammont"
 
-182 = "Valois" #Compiègne
+182 = "Valois" #Compiégne
 184 = "Orleanais" #Orléans
 4389 = "Touraine" #Tours
 179 = "Berry" #Bourges
 180 = { "Hault-Poitou" "Poictiers" }
-4386 = "Bas-Poitou" #Luçon
+4386 = "Bas-Poitou" #Luéon
 4111 = { "Xaintonge" "Xaintonge" } #Saintes
-4387 = "Angoumois" #Angoulême
+4387 = "Angoumois" #Angouléme
 204 = "Dauphiné" #Grenoble
 203 = "Lyonnais" #Lyon
 4777 = "Forez" #Montbrisons
@@ -587,6 +587,8 @@
 1877 = "Charolais" #Charolles
 192 = "Dijonnais" #Dijon
 4384 = "Rennais" #Rennes
+4388 = "Chartrain"
+4949 = "Aunis"
 171 = "Vannetais" #Vannes
 88 = "Artois" #Arras
 181 = "Rethélois" #Rethel
@@ -604,6 +606,7 @@
 121 = { "Napples" "Naples" }
 1860 = "Nordvich"
 177 = "Maine"
+202 = "Comtat Venaissin"
 
 186 = "Rémois"
 4948 = "Courtrai"

@@ -26,6 +26,22 @@ socialist_government_reform = {
 	modifiers = {
 		max_absolutism = 10
 	}
+
+	factions = {
+		cr_mensheviks
+		cr_bolshevists
+		cr_stalinists
+		bgm_liberals
+	}
+
+	effect = {
+		hidden_effect = {
+			add_faction_influence = {
+				faction = bgm_liberals
+				influence = -50
+			}
+		}
+	}
 }
 
 socialist_juche = {
@@ -54,6 +70,22 @@ socialist_juche = {
 	modifiers = {
 		max_absolutism = 15
 	}
+
+	factions = {
+		cr_mensheviks
+		cr_bolshevists
+		cr_stalinists
+		bgm_liberals
+	}
+
+	effect = {
+		hidden_effect = {
+			add_faction_influence = {
+				faction = bgm_liberals
+				influence = -50
+			}
+		}
+	}
 }
 
 revolutionary_socialism = {
@@ -72,6 +104,22 @@ revolutionary_socialism = {
 		land_forcelimit_modifier = 0.5
 		global_manpower_modifier = 0.5
 	}
+
+	factions = {
+		cr_mensheviks
+		cr_bolshevists
+		cr_stalinists
+		bgm_liberals
+	}
+
+	effect = {
+		hidden_effect = {
+			add_faction_influence = {
+				faction = bgm_liberals
+				influence = -50
+			}
+		}
+	}
 }
 
 socialist_republic = {
@@ -88,4 +136,20 @@ socialist_republic = {
 	}
 	duration = 4
 	has_term_election = yes
+
+	factions = {
+		cr_mensheviks
+		cr_bolshevists
+		cr_stalinists
+		bgm_liberals
+	}
+
+	effect = {
+		hidden_effect = {
+			add_faction_influence = {
+				faction = bgm_liberals
+				influence = -50
+			}
+		}
+	}
 }

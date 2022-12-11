@@ -36,3 +36,110 @@ var_effect = { #var #effect #sign ##positive only
     var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=0.2 }
     var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=0.1 }
 }
+
+bgm_post_revolution = {
+    if = {
+        limit = {
+            is_revolutionary = yes
+            has_parliament = no
+        }
+        change_government = futurist_government
+        #add_government_reform = socialist_republic
+    }
+    if = {
+        limit = {
+            is_revolutionary = yes
+            has_parliament = yes
+        }
+        change_government = democracy_govt
+        add_government_reform = bgm_dem_parliament
+        add_faction_influence = {
+            faction = dm_social_democrat
+            influence = 40
+        }
+        add_faction_influence = {
+            faction = dm_communist
+            influence = 30
+        }
+        add_faction_influence = {
+            faction = dm_monarchist
+            influence = -100
+        }
+    }
+    
+
+
+    if = {
+        limit = {
+            is_revolutionary = no
+            has_parliament = yes
+            government = monarchy
+        }
+        change_government = democracy_govt
+        add_government_reform = parliamentary_monarchism
+        add_government_reform = bgm_dem_parliament
+        add_faction_influence = {
+            faction = dm_social_conservative
+            influence = 20
+        }
+        add_faction_influence = {
+            faction = dm_monarchist
+            influence = -10
+        }
+    }
+    if = {
+        limit = {
+            is_revolutionary = no
+            has_parliament = yes
+            government = republic
+        }
+        change_government = democracy_govt
+        add_government_reform = parliamentary_republic_reform
+        add_government_reform = bgm_dem_parliament
+        add_faction_influence = {
+            faction = dm_social_liberal
+            influence = 20
+        }
+        add_faction_influence = {
+            faction = dm_social_conservative
+            influence = 20
+        }
+        add_faction_influence = {
+            faction = dm_monarchist
+            influence = -100
+        }
+    }
+
+
+
+
+    if = {
+        limit = {
+            is_revolutionary = no
+            has_parliament = no
+            government = monarchy
+        }
+        change_government = authoritarian_government
+        add_government_reform = auth_monarchism
+    }
+    if = {
+        limit = {
+            is_revolutionary = no
+            has_parliament = no
+            government = republic
+            NOT = { has_reform = enlightened_republicanism_principle }
+        }
+        change_government = authoritarian_government
+        add_government_reform = auth_republic_reform
+    }
+    if = {
+        limit = {
+            is_revolutionary = no
+            has_parliament = no
+            government = republic
+            has_reform = enlightened_republicanism_principle
+        }
+        change_government = futurist_government
+        #add_government_reform = auth_republic_reform
+    }
+}

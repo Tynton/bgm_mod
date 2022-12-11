@@ -471,7 +471,14 @@ on_war_won = {
 		log = "zollverein victorious"
 	}
 
-	
+	if = {
+		limit = {
+			NOT = {
+				has_global_flag = bgm_hre_league
+			}
+		}
+		set_hre_religion_treaty = yes
+	}
 	
 	if = {
 		limit = {
@@ -566,6 +573,15 @@ on_war_lost = {
 		}
 		change_government_to_monarchy = yes
     }
+
+	if = {
+		limit = {
+			NOT = {
+				has_global_flag = bgm_hre_league
+			}
+		}
+		set_hre_religion_treaty = yes
+	}
 
 	if = {
 		limit = {
@@ -1258,6 +1274,19 @@ on_monarch_death = {
 			50 = {
 				
 			}
+		}
+	}
+
+	if = {
+		limit = {
+			OR = {
+				has_reform = fascist_mechanic
+				has_reform = authoritarian_mechanic
+				has_reform = futurist_mechanic
+			}
+		}
+		country_event = { 
+			id = BGM_GOV.2
 		}
 	}
 
@@ -2329,6 +2358,18 @@ on_dismantle_revolution = {
 		}
 	}
 	set_country_flag = last_revolutionary_country
+
+	every_subject_country = {
+		limit = {
+            is_subject_of_type = sister_republic
+        }
+        ROOT = {
+            create_subject = {
+                subject_type = vassal
+                subject = PREV
+            }
+        }
+	}
 }
 
 # province

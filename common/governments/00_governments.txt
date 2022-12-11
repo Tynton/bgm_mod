@@ -701,7 +701,7 @@ fascist_government = {
 		}
 		fascist_foreign_policy = {
 			reforms = {
-				isolationism_reform
+				#isolationism_reform
 				expansionism_reform
 				protectionism_reform
 			}
@@ -715,7 +715,7 @@ fascist_government = {
 		}
 		fascist_deliberative_assembly = {
 			reforms = {
-				bgm_parliament
+				#bgm_parliament
 				dictatorial_dominance
 				monarchist_autocracy
 				government_council
@@ -723,7 +723,7 @@ fascist_government = {
 		}
 		fascist_economy = {
 			reforms = {
-				socialist_economy_reform
+				#socialist_economy_reform
 				social_economy
 				syndicalism
 				corporatism
@@ -763,6 +763,7 @@ fascist_government = {
 				counter_espionage_reform
 				policing_intermediary
 				large_policing_bureaucracy
+				suppress_nationalism
 			}
 		}
 	}
@@ -952,6 +953,7 @@ authoritarian_government = {
 				counter_espionage_reform
 				policing_intermediary
 				large_policing_bureaucracy
+				suppress_nationalism
 			}
 		}
 	}
@@ -1070,6 +1072,7 @@ futurist_government = {
 				counter_espionage_reform
 				policing_intermediary
 				large_policing_bureaucracy
+				suppress_nationalism
 			}
 		}
 	}

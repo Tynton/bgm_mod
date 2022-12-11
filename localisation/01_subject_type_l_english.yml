@@ -41,9 +41,16 @@
  pact_member_title:0 "Allied in a Pact"
  pact_member_title_plural:0 "Allies in a Pact"
  pact_member_long_desc:0 "Global geopolitics is a dangerous thing. Our nation has decided to seek close ties to allies to secure our independence and grow our countries."
- italic_league_is_our:0 "$NAME|Y$ is a member our Allied Pact."
- italic_league_overlord_title:0 "Leader of an Alliance-Pact"
+ pact_member_is_our:0 "$NAME|Y$ is a member in our Allied Pact."
+ pact_member_overlord_title:0 "Leader of an Alliance-Pact"
  pact_member_overlord_title:0 "Pact Member"
+ 
+ sister_republic_title:0 "Sister Republic"
+ sister_republic_title_plural:0 "Sister Republics"
+ sister_republic_long_desc:0 "The Revolution has sprung into being. Support from within and abroad has enabled us to secure secure Sister Republics under our alignment."
+ sister_republic_is_our:0 "$NAME|Y$ is a Sister Republic."
+ sister_republic_overlord_title:0 "Leader of an Alliance-Pact"
+ sister_republic_overlord_title:0 "Pact Member"
  
  
  subject_only_fight_same_overlord:0 "As a $MYSUBJECTTYPE$, we may only fight $THEIRSUBJECTTYPES$ under the same overlord"

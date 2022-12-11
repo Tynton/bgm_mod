@@ -362,6 +362,7 @@ celestial_empire = {
 		nobles_influence_modifier = -0.1
 		burghers_influence_modifier = -0.1
 		state_governing_cost = -0.5
+		governing_capacity = 500
 	}
 	
 	ai = {

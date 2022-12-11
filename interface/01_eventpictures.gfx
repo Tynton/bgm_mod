@@ -291,4 +291,16 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/SPECOPS_eventPicture.dds"
 		allwaystransparent = yes
 	}
+
+	spriteType = {
+		name = "MARCH_eventPicture"
+		texturefile = "gfx/event_pictures/MARCH_eventPicture.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "DAWNING_ERA_eventPicture"
+		texturefile = "gfx/event_pictures/DAWNING_ERA_eventPicture.dds"
+		allwaystransparent = yes
+	}
 }

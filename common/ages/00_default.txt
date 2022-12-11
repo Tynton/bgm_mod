@@ -247,13 +247,15 @@ age_of_reformation = {
 	can_start = {
 		OR = {
 			is_religion_enabled = protestant
-			any_country = {
-				is_great_power = yes
-				OR = {
-					religion = fraticelli
-					religion = waldensian
-					religion = lollard
-					religion = hussite
+			calc_true_if = {
+				amount = 8
+				all_country = {
+					OR = {
+						religion = fraticelli
+						religion = waldensian
+						religion = lollard
+						religion = hussite
+					}
 				}
 			}
 			has_global_flag = preprot_heresy

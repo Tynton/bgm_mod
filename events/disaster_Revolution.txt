@@ -85,6 +85,17 @@ country_event = {
 			}
 		}
 		add_stability = -3
+
+		if = {
+			limit = {
+				NOT = { has_global_flag = first_revolution_center_spawned }
+			}
+			capital_scope = {
+				spawn_center_of_revolution = capital
+				set_province_flag = first_revolution_center
+				set_global_flag = first_revolution_center_spawned #to check time since spawn for backup center
+			}
+		}
 	
 		set_country_flag = had_revolution
 		if = {
@@ -186,6 +197,18 @@ country_event = {
 						unrest = 10
 					}
 				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					tag = PAP
+					tag = NTI
+				}
+			}
+			change_tag = ITA
+			italy_region = {
+				add_core = ITA
 			}
 		}
 		end_disaster = revolution

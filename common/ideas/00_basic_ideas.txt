@@ -293,6 +293,11 @@ innovativeness_ideas = {
 		}
 
 		modifier = {
+			factor = 50
+			culture_group = east_slavic
+		}
+
+		modifier = {
 			factor = 3
 			OR = {
 				capital_scope = {
@@ -796,6 +801,11 @@ economic_ideas = {
 		}
 
 		modifier = {
+			factor = 50
+			culture_group = east_slavic
+		}
+
+		modifier = {
 			factor = 20
 			has_reform = free_city
 		}
@@ -905,9 +915,9 @@ exploration_ideas = {
 		}
 		modifier = {
 			factor = 1000
-			adm_tech = 10
+			adm_tech = 5
 			capital_scope = {
-				superregion = europe_superregion
+				region = iberia_region
 			}
 		}
 		modifier = {
@@ -1265,35 +1275,28 @@ quantity_ideas = {
 	}
 
 	bonus = {
-		land_forcelimit_modifier  = 0.05
-		general_cost = -0.25
-		free_leader_pool = 1
+		land_forcelimit_modifier  = 0.25
 	}
 	mass_army = {
-		global_manpower_modifier = 0.1
-		army_tradition_decay = -0.005
+		global_manpower_modifier = 0.25
 	}
 	the_young_can_serve = {
-		manpower_recovery_speed = 0.25
+		manpower_recovery_speed = 0.20
 	}
 	enforced_service = {
-		land_forcelimit_modifier  = 0.05
-		infantry_cost = -0.3
-		artillery_cost = -0.15
-		free_leader_pool = 1
-	}
-	the_old_and_infirm = {
-		army_tradition = 0.5
+		global_regiment_cost = -0.1
 	}
 	camp_followers = {
-		global_supply_limit_modifier = 0.25
+		global_supply_limit_modifier = 0.33
 	}
 	garrison_conscription = {
-		garrison_size = 0.2
-		fort_maintenance_modifier = -0.1
+		garrison_size = 0.25
+	}
+	the_old_and_infirm = {
+		land_maintenance_modifier = -0.05
 	}
 	expanded_supply_trains = {
-		land_attrition = -0.25
+		land_attrition = -0.1
 	}
 
 	ai_will_do = {

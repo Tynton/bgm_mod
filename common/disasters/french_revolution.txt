@@ -1,5 +1,6 @@
 french_revolution = {
 	potential = {
+		always = no
 		NOT = { has_country_flag = had_revolution }
 		tag = FRA
 		#is_free_or_tributary_trigger = yes

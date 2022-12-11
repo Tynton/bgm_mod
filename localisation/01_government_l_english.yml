@@ -38,6 +38,9 @@
  dem_ideology:0 "Democratic Ideology"
  dem_ideology_desc:0 "Democratic Ideology" 
  
+ suppress_nationalism:0 "Suppress Foreign Nationalism"
+ suppress_nationalism_desc:0 "Suppress Foreign Nationalism"
+ 
  post_hre_free_city:0 "Free City"
  post_hre_free_city_desc:0 "This nation is a Free City in either the German Confederation or the Zollverein."
  

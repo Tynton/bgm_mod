@@ -11,11 +11,11 @@ country_decisions = {
 				is_playing_custom_nation = no
 			}
 			NOT = { tag = HLR }
-			NOT = { tag = FRA }
-			NOT = { tag = FRE }
-			NOT = { tag = FRR }
-			NOT = { tag = FRC }
-			NOT = { tag = FRF }
+			NOT = { exists = FRA }
+			NOT = { exists = FRE }
+			NOT = { exists = FRR }
+			NOT = { exists = FRC }
+			NOT = { exists = FRF }
 			NOT = { tag = PAP }
 			NOT = { tag = SPA }		# Basque is a valid culture for both FRA and SPA
 			OR = {
@@ -26,6 +26,7 @@ country_decisions = {
 				culture_group = french
 				culture_group = occitan
 				culture_group = franco_provencal
+				primary_culture = swiss
 				primary_culture = basque
 				primary_culture = breton
 			}
@@ -55,7 +56,7 @@ country_decisions = {
 		}
 		allow = {
 			is_at_war = no
-			is_free_or_tributary_trigger = yes
+			#is_free_or_tributary_trigger = yes
 			is_nomad = no			
 			NOT = { exists = FRA }
 			owns_core_province = 177	# Maine
@@ -67,10 +68,49 @@ country_decisions = {
 			owns_core_province = 186	# Champagne		
 		}
 		effect = {
+			if = {
+				limit = { primary_culture = swiss }
+				183 = { change_culture = swiss }
+			}
 			183 = { #Paris
 				move_capital_effect = yes
 			}
-			change_tag = FRA
+			if = {
+				limit = {
+					NOT = { primary_culture = swiss }
+				}
+				change_tag = FRA
+
+				france_region = {
+					limit = {
+						NOT = { owned_by = ROOT }
+					}
+					add_permanent_claim = FRA
+				}
+			}
+			if = {
+				limit = {
+					primary_culture = swiss
+				}
+				change_tag = SFR
+
+				france_region = {
+					limit = {
+						NOT = { owned_by = ROOT }
+					}
+					add_permanent_claim = SFR
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = { culture_group = french }
+				}
+				country_event = {
+					id = franceunity.9
+				}
+			}
+			
 			#namechange = yes
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
@@ -79,12 +119,6 @@ country_decisions = {
 					NOT = { government_rank = 2 }
 				}
 				set_government_rank = 2
-			}
-			france_region = {
-				limit = {
-					NOT = { owned_by = ROOT }
-				}
-				add_permanent_claim = FRA
 			}
 			add_country_modifier = {
 				name = "centralization_modifier"

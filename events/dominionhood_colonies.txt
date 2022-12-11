@@ -8,6 +8,7 @@ country_event = {
 	picture = BUREAU_eventPicture
 
 	trigger = {
+		always = no
 		is_colonial_nation = yes
 		overlord = { 
 			has_reform = democratic_mechanic 
@@ -110,6 +111,7 @@ country_event = {
 	picture = BUREAU_eventPicture
 
 	trigger = {
+		always = no
 		is_subject_of_type = dominion
 		overlord = { 
 			has_reform = democratic_mechanic

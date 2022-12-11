@@ -2108,100 +2108,6 @@ country_event = {
 	}
 }
 
-#dec war on small country with same culture if revolutionary
-country_event = {
-	id = general_ai.34
-	title = none
-	desc = none
-	picture = GREAT_BUILDING_eventPicture
-
-	is_triggered_only = yes
-
-	trigger = {
-		ai = yes
-		is_at_war = no
-		any_neighbor_country = {
-			ai = yes
-			military_strength = {
-				who = ROOT
-				value = 2
-			}
-			culture_group = ROOT
-			NOT = {
-				marriage_with = ROOT
-				truce_with = ROOT
-				alliance_with = ROOT
-				is_subject_of = ROOT
-				overlord_of = ROOT
-			}
-			OR = {
-				ROOT = {
-					is_part_of_hre = no
-				}
-				ROOT = {
-					is_part_of_hre = yes
-					emperor = {
-						any_ally = {
-							NOT = {
-								military_strength = {
-									who = ROOT
-									value = 1
-								}
-							}
-						}
-						NOT = {
-							military_strength = {
-								who = ROOT
-								value = 1
-							}
-						}
-					}
-				}
-			}
-		}
-		OR = {
-			NOT = {
-				any_ally = {
-					military_strength = {
-						who = ROOT
-						value = 1
-					}
-				}
-			}
-			NOT = {
-				num_of_allies = 1
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 90
-	}
-	option = {
-		random_neighbor_country = {
-			limit = {
-				is_at_war = no
-				military_strength = {
-					who = ROOT
-					value = 2
-				}
-				culture_group = ROOT
-				NOT = {
-					marriage_with = ROOT
-					truce_with = ROOT
-					alliance_with = ROOT
-					is_subject_of = ROOT
-					overlord_of = ROOT
-				}
-			}
-			declare_war_with_cb = {
-				casus_belli = cb_imperial
-				who = ROOT
-			}
-		}
-	}
-}
-
 #BUILDINGS
 province_event = {
 	id = general_ai.35
@@ -2520,6 +2426,9 @@ province_event = {
 		owner = {
 			ai = yes
 			treasury = 500
+			adm_tech = 16
+			dip_tech = 16
+			mil_tech = 16
 		}
 		
 	}
@@ -2658,6 +2567,133 @@ province_event = {
 				building = weapons
 				speed = 1.0
 				cost = 0.9
+			}
+		}
+	}
+}
+
+#use balance of power CB
+country_event = {
+	id = general_ai.39
+	title = none
+	desc = none
+	picture = GREAT_BUILDING_eventPicture
+
+	hidden = yes
+
+	trigger = {
+		any_country = {
+			ai = yes
+			OR = {
+				ai_attitude = {
+					who = ROOT
+					attitude = attitude_threatened
+				}
+				ai_attitude = {
+					who = ROOT
+					attitude = attitude_outraged
+				}
+				ai_attitude = {
+					who = ROOT
+					attitude = attitude_hostile
+				}
+			}
+			is_subject = no
+			has_casus_belli = {
+				type = cb_balance_power
+				target = ROOT
+			}
+			military_strength = {
+				who = ROOT
+				value = 0.2
+			}
+			NOT = { 
+				OR = {
+					truce_with = ROOT
+					alliance_with = ROOT
+					marriage_with = ROOT
+					is_subject_of = ROOT
+					overlord_of = ROOT
+					religion = anabaptist
+				}
+			}
+			capital_scope = {
+				continent = ROOT
+				NOT = {
+					ROOT = {
+						capital_scope = {
+							region = british_isles_region
+						}
+						any_owned_province = {
+							OR = {
+								superregion = eastern_europe_superregion
+								region = low_countries_region
+								region = france_region
+								region = north_german_region
+								region = south_german_region
+								region = italy_region
+								region = iberia_region
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 250
+
+		modifier = {
+			factor = 0.001
+			ROOT = {
+				is_in_war = {
+					defender_leader = ROOT
+				}
+			}
+		}
+	}
+	option = {
+		
+		random_country = {
+			limit = {
+				ai = yes
+				OR = {
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_threatened
+					}
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_outraged
+					}
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_hostile
+					}
+				}
+				is_subject = no
+				has_casus_belli = {
+					type = cb_balance_power
+					target = ROOT
+				}
+				NOT = { 
+					OR = {
+						truce_with = ROOT
+						alliance_with = ROOT
+						marriage_with = ROOT
+						is_subject_of = ROOT
+						overlord_of = ROOT
+						religion = anabaptist
+					}
+				}
+				capital_scope = {
+					continent = ROOT
+				}
+			}
+			declare_war_with_cb = {
+				casus_belli = cb_balance_power
+				who = ROOT
 			}
 		}
 	}

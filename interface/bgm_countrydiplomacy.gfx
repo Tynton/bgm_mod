@@ -40,5 +40,19 @@ spriteTypes = {
 		name = "GFX_diplomacy_weakgeremp"
 		texturefile = "gfx//interface//subject_geremp_icon.dds"
 	}
+
+	spriteType = {
+		name = "GFX_subject_sisterrepublic_icon"
+		texturefile = "gfx//interface//subject_sisterrepublic_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_diplomacy_leadsisterrepublic"
+		texturefile = "gfx//interface//subject_sisterrepublic_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_diplomacy_weaksisterrepublic"
+		texturefile = "gfx//interface//subject_sisterrepublic_icon.dds"
+	}
 	
 }

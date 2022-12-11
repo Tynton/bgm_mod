@@ -1,0 +1,105 @@
+bgm_liberal = {
+	potential = {
+		has_faction = bgm_liberals
+	}
+
+	
+	
+	can_start = {
+		OR = {
+			faction_influence = {
+				faction = bgm_liberals
+				influence = 45
+			}
+			overlord = {
+				has_disaster = bgm_liberal
+			}
+		}
+	}
+	
+	can_stop = {
+		NOT = {
+			faction_influence = {
+				faction = bgm_liberals
+				influence = 45
+			}
+		}
+		overlord = {
+			has_disaster = bgm_liberal
+		}
+	}
+	
+	
+	progress = {
+		modifier = {
+			factor = 50
+			overlord = {
+				has_disaster = bgm_liberal
+			}
+		}
+		modifier = {
+			factor = 2
+			is_bankrupt = yes
+		}
+		modifier = {
+			factor = 1
+			NOT = {
+				stability = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			war_exhaustion = 1
+		}
+		modifier = {
+			factor = 1
+			war_exhaustion = 2
+		}
+		modifier = {
+			factor = 1
+			war_exhaustion = 4
+		}
+		modifier = {
+			factor = 1
+			war_exhaustion = 8
+		}
+	}
+	
+
+	
+	can_end = {
+		OR = {
+			AND = {
+				NOT = {
+					faction_influence = {
+						faction = bgm_liberals
+						influence = 45
+					}
+				}
+				overlord = {
+					NOT = { has_disaster = bgm_liberal }
+				}
+			}
+			
+			has_reform = democratic_mechanic
+		}
+	}
+	
+
+	modifier = {
+		global_unrest = 25
+		all_power_cost = 0.25
+		stability_cost_to_declare_war = 1
+		global_autonomy = 0.25
+
+		diplomatic_reputation = -5
+		war_exhaustion = 0.5
+
+		liberty_desire_from_subject_development = 0.25
+	}
+	
+	
+	on_start = bgm_liberal.1
+	on_end = bgm_liberal.6
+}
+

@@ -928,6 +928,20 @@ state_win = {
 	ae_impact = -0.25
 }
 
+#############influence#############
+
+communist_influence = {
+	dm_communist_influence = 0.25
+}
+
+futurist_influence = {
+	dm_nationalist_influence = 0.25
+}
+
+fascist_influence = {
+	dm_fascist_influence = 0.25
+}
+
 #############culture/nation unity#############
 
 uniting_culture_group = {

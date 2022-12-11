@@ -322,3 +322,70 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = TEST_EVENTS.12
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		every_country = {
+			limit = {
+				war_with = ROOT
+			}
+			every_owned_province = {
+				change_controller = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = TEST_EVENTS.13
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		change_government = democracy_govt
+	}
+	option = {
+		name = none
+		change_government = fascist_government
+	}
+	option = {
+		name = none
+		change_government = futurist_government
+		add_government_reform = socialist_republic
+	}
+	option = {
+		name = none
+		change_government = futurist_government
+		add_government_reform = futurist_government_reform
+	}
+	option = {
+		name = none
+		change_government = authoritarian_government
+	}
+}
+
+country_event = {
+	id = TEST_EVENTS.14
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		set_hre_religion_treaty = yes
+	}
+}

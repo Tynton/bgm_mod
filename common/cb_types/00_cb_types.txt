@@ -481,10 +481,31 @@ cb_nationalist = {
 	prerequisites = {
 		is_free_or_tributary_trigger = yes
 		culture_group_claim = FROM
-		NOT = {
-			any_country = {
-				is_part_of_hre = yes
+		OR = {
+			AND = {
+				culture_group = germanic
+				NOT = {
+					any_country = {
+						is_part_of_hre = yes
+					}
+				}
 			}
+			AND = {
+				culture_group = benelux
+				NOT = {
+					any_country = {
+						is_part_of_hre = yes
+					}
+				}
+			}
+			AND = {
+				culture_group = latin
+				NOT = {
+					any_country = {
+						is_part_of_hre = yes
+					}
+				}
+			}	
 		}
 		OR = {
 			is_revolutionary = yes

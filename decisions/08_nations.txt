@@ -701,10 +701,11 @@ country_decisions = {
 			NOT = { tag = AUE }
 			NOT = { tag = GER }
 			government_rank = 3
+			is_emperor = no
 		}
 		allow = {
 			primary_culture = austrian
-			total_development = 1000
+			adm_tech = 20
 			government_rank = 3
 		}
 		effect = {
@@ -1047,6 +1048,8 @@ country_decisions = {
 			NOT = {
 				bgm_comgovt = yes
 			}
+			adm_tech = 30
+			has_institution = enlightenment
 			OR = {
 				tag = FRA
 				tag = FRE
@@ -1121,7 +1124,11 @@ country_decisions = {
 	
 		potential = {
 			
-			has_reform = authoritarian_mechanic
+			OR = {
+				has_reform = authoritarian_mechanic
+				has_reform = emperor_of_the_revolution_reform
+			}
+			NOT = { has_reform = auth_republic_reform }
 			OR = {
 				tag = FRA
 				tag = FRR
@@ -1765,6 +1772,64 @@ country_decisions = {
 		effect = {
 			change_tag = CDI
 			colonial_ivory_coast = {
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_tns = {
+		major = yes
+		potential = {
+			capital_scope = {
+				colonial_region = colonial_tunis
+			}
+			NOT = { exists = TNS }
+		}
+		allow = {
+			OR = {
+				is_former_colonial_nation = yes
+				AND = {
+					has_institution = nationalism_institution
+					culture_group = maghrebi
+				}
+			}
+			NOT = { tag = TNS }
+			is_subject = no
+		}
+		effect = {
+			change_tag = TNS
+			colonial_tunis = {
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_mro = {
+		major = yes
+		potential = {
+			capital_scope = {
+				colonial_region = colonial_safi
+			}
+			NOT = { exists = MRO }
+		}
+		allow = {
+			OR = {
+				is_former_colonial_nation = yes
+				AND = {
+					has_institution = nationalism_institution
+					culture_group = maghrebi
+				}
+			}
+			NOT = { tag = MRO }
+			is_subject = no
+		}
+		effect = {
+			change_tag = MRO
+			colonial_safi = {
 				add_permanent_claim = ROOT
 			}
 		}

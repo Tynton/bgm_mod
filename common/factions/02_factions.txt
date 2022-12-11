@@ -81,7 +81,6 @@ cr_mensheviks = {
 		improve_relation_modifier = 0.2 
 		reelection_cost = -0.1
 		republican_tradition = 0.5
-		
 	}
 }
 
@@ -119,6 +118,7 @@ pl_social_liberal = {
 		global_unrest = -1
 		global_manpower_modifier = 0.2
 		land_morale = 0.1
+		max_absolutism = -5
 	}
 }
 
@@ -136,6 +136,7 @@ pl_social_conservative = {
 		legitimacy = 0.5
 		prestige = 0.5
 		discipline = 0.025
+		max_absolutism = 5
 	}
 }
 
@@ -153,9 +154,8 @@ dm_social_liberal = {
 	{
 		republican_tradition = 0.5
 		legitimacy = -0.5
-		global_unrest = -2
-		improve_relation_modifier = 0.2
 		land_morale = 0.1
+		max_absolutism = -5
 	}
 }
 
@@ -170,7 +170,7 @@ dm_social_conservative = {
 	modifier = 
 	{
 		stability_cost_modifier = -0.1
-		prestige = 0.5
+		max_absolutism = 5
 		discipline = 0.025
 	}
 }
@@ -185,8 +185,9 @@ dm_social_democrat = {
 
 	modifier = 
 	{
-		global_tax_modifier = 0.3
-		global_unrest = -3
+		global_tax_modifier = 0.25
+		stability_cost_modifier = -0.15
+		max_absolutism = 10
 	}
 }
 
@@ -200,10 +201,10 @@ dm_nationalist = {
 
 	modifier = 
 	{
+		all_power_cost = 0.1
 		diplomatic_reputation = -1
-		naval_morale = 0.15
-		land_morale = 0.15
-		may_recruit_female_generals = yes
+		land_forcelimit_modifier = 0.25
+		global_manpower_modifier = 0.25
 		female_advisor_chance = 0.15
 		state_maintenance_modifier = -0.25
 	}
@@ -219,13 +220,11 @@ dm_fascist = {
 
 	modifier = 
 	{
-		discipline = 0.05
-		land_forcelimit_modifier = 0.1
-		global_tax_modifier = 0.05
-		naval_morale = 0.15
-		land_morale = 0.15
+		all_power_cost = 0.1
 		diplomatic_reputation = -1
-		culture_conversion_cost = -0.25
+		land_forcelimit_modifier = 0.25
+		global_manpower_modifier = 0.25
+		max_absolutism = 15
 	}
 }
 
@@ -239,11 +238,11 @@ dm_communist = {
 
 	modifier = 
 	{
-		global_tax_modifier = 0.35
+		all_power_cost = 0.1
 		diplomatic_reputation = -1
 		land_forcelimit_modifier = 0.25
 		global_manpower_modifier = 0.25
-		may_recruit_female_generals = yes
+		max_absolutism = 15
 	}
 }
 
@@ -260,8 +259,11 @@ dm_monarchist = {
 		republican_tradition = -0.5
 		prestige = 1.0
 		yearly_absolutism = 0.5
+		max_absolutism = 15
 	}
 }
+
+##########################################
 
 at_monarchist = {
 	allow = {
@@ -309,5 +311,64 @@ at_dictatorial = {
 		global_spy_defence = 0.2
 		spy_offence = 0.2
 		yearly_absolutism = 2.5
+	}
+}
+
+bgm_status_quo = {
+	allow = {
+		has_dlc = "Rights of Man"
+	}
+
+	monarch_power = ADM
+	always = yes
+
+	modifier = 
+	{
+		all_power_cost = -0.05
+	}
+}
+
+bgm_liberals = {
+	allow = {
+		has_dlc = "Rights of Man"
+	}
+
+	monarch_power = ADM
+	always = yes
+
+	modifier = 
+	{
+		all_power_cost = 0.25
+	}
+}
+
+bgm_futurist_loyalist = {
+	allow = {
+		has_dlc = "Rights of Man"
+	}
+
+	monarch_power = ADM
+	always = yes
+
+	modifier = 
+	{
+		all_power_cost = -0.05
+		reelection_cost = -0.15
+	}
+}
+
+bgm_futurist_republican = {
+	allow = {
+		has_dlc = "Rights of Man"
+	}
+
+	monarch_power = MIL
+	always = yes
+
+	modifier = 
+	{
+		land_forcelimit_modifier = 0.1
+		global_manpower_modifier = 0.1
+		province_warscore_cost = -0.1
 	}
 }

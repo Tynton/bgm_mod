@@ -192,6 +192,19 @@ revolutionary_rebels = {
 				hidden = yes
 			}
 		}
+		if = {
+			limit = {
+				OR = {
+					tag = PAP
+					tag = NTI
+				}
+				has_disaster = revolution
+			}
+			change_tag = ITA
+			italy_region = {
+				add_core = ITA
+			}
+		}
 		add_prestige = -50
 		if = {
 			limit = {
@@ -229,8 +242,11 @@ revolutionary_rebels = {
 				country_event = { id = revolution.41 } #Indians
 			}
 		}
-		else_if = {
-			limit = { has_disaster = french_revolution }
+		if = {
+			limit = {
+				tag = FRA
+				government = monarchy
+			}
 			country_event = { id = french_revolution.2 }
 		}
 		else = {

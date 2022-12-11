@@ -133,6 +133,23 @@ country_event = {
 			}
 		}
 		add_karma = -5
+
+		if = {
+			limit = {
+				has_reform = parliamentary_republic_reform
+				NOT = { republican_tradition = 66 }
+			}
+			add_absolutism = 5
+		}
+
+		if = {
+			limit = {
+				has_reform = parliamentary_republic_reform
+				NOT = { republican_tradition = 33 }
+			}
+			change_government = authoritarian_government
+			add_government_reform = auth_republic_reform
+		}
 	}
 	option = {
 		name = "EVTOPTB700"	# An administrator type

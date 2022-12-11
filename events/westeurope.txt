@@ -116,12 +116,13 @@ country_event = {
 			country_event = {
 				id = westeurope.8 #Futurist manifesto
 			}
+			set_global_flag = futurist_manifesto_written
 		}
 		else = {
-			
 			country_event = {
 				id = westeurope.6 #Communism
 			}
+			set_global_flag = communist_manifesto_written
 		}
 	}
 	
@@ -158,21 +159,7 @@ country_event = {
 			}
 		}
 
-		if = {
-			limit = {
-			  government = republic
-			}
-			change_government = authoritarian_government
-			add_government_reform = auth_republic_reform
-		}
-
-		if = {
-			limit = {
-			  government = monarchy
-			}
-			change_government = authoritarian_government
-			add_government_reform = auth_monarchism
-		}
+		bgm_post_revolution
 
 		add_stability = -1
 		
@@ -233,7 +220,7 @@ country_event = {
 			}
 		}
 		
-		change_government = democracy_govt
+		change_government = futurist_government
 		
 		set_country_flag = responded_rev
 		
@@ -638,8 +625,6 @@ country_event = {
 	
 	option = {
 		name = "westeurope.6.a"
-		
-		set_global_flag = communist_manifesto_written
 		custom_tooltip = communist_manifesto_tooltip
 	}
 }
@@ -754,8 +739,6 @@ country_event = {
 	
 	option = {
 		name = "westeurope.8.a"
-		
-		set_global_flag = futurist_manifesto_written
 		custom_tooltip = futurist_manifesto_tooltip
 	}
 }

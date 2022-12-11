@@ -7,6 +7,16 @@
  easteuropemoderngfx:0 "Modernist (Eastern)"
  italianategfx:0 "Italianate"
  
+ cb_balance_power:0 "Balance of Power"
+ cb_balance_power_desc:0 "Balance of Power"
+ 
+ ww1_right:0 "World War 1: Reactionary Aggressor"
+ ww1_left:0 "World War 1: Revolutionary Aggressor"
+ ww2_right:0 "World War 2: Reactionary Aggressor"
+ ww2_left:0 "World War 2: Revolutionary Aggressor"
+ ww3_right:0 "World War 3: Reactionary Aggressor"
+ ww3_left:0 "World War 3: Revolutionary Aggressor"
+ 
  cb_dynastic_enforcement:0 "Enforce Dynasty"
  cb_dynastic_enforcement_desc:0 "Enforce Dynasty"
  
@@ -17,6 +27,7 @@
  
  rome:0 "Rome"
  british_isles_node:0 "British Isles"
+ occitan_node:0 "Occitania"
  
  high_manpower:0 "High Manpower"
  satisfactory_manpower:0 "Satisfactory Manpower Reserve"
@@ -261,11 +272,11 @@
  COLONIAL_AFRICA_timbuktu:0 "[Root.GetAdjective] Mali"
  COLONIAL_AFRICA_timbuktu_ADJ:0 "[Root.GetAdjective] Malian"
  
- COLONIAL_AFRICA_tunis:0 "Tunisia"
- COLONIAL_AFRICA_tunis_ADJ:0 "Tunisian"
+ COLONIAL_AFRICA_morocco:0 "[Root.GetAdjective] Morocco"
+ COLONIAL_AFRICA_morocco_ADJ:0 "[Root.GetAdjective] Moroccan"
  
- COLONIAL_AFRICA_tunis:0 "Tunisia"
- COLONIAL_AFRICA_tunis_ADJ:0 "Tunisian"
+ COLONIAL_AFRICA_tunis:0 "[Root.GetAdjective] Tunisia"
+ COLONIAL_AFRICA_tunis_ADJ:0 "[Root.GetAdjective] Tunisian"
  
  COLONIAL_AFRICA_alexandria:0 "[Root.GetAdjective] Egypt"
  COLONIAL_AFRICA_alexandria_ADJ:0 "[Root.GetAdjective] Egyptian"
@@ -930,8 +941,10 @@
  form_nigeria_desc:0 "Form Nigeria"
  form_ivco_title:0 "Form Ivory Coast"
  form_ivco_desc:0 "Form Ivory Coast"
- form_tunisia_title:0 "Form Tunisia"
- form_tunisia_desc:0 "Form Tunisia"
+ form_tns_title:0 "Form Tunisia"
+ form_tns_desc:0 "Form Tunisia"
+ form_mro_title:0 "Form Morocco"
+ form_mro_desc:0 "Form Morocco"
  form_congo_title:0 "Form Congo"
  form_congo_desc:0 "Form Congo"
  form_angola_title:0 "Form Angola"
@@ -1029,6 +1042,8 @@
  DEFAULT_BGM:0 "Base"
  
  
+ 
+ 
  PEACE_po_zollverein:0 "Establish the Zollverein"
  po_zollverein_desc:0 "Expel the leader from the Germanic realms and let us establish our own unions!"
  
@@ -1055,6 +1070,9 @@
  
  PEACE_po_demobilize:0 "Enforced Demobilization"
  po_demobilize_desc:0 "$COUNTRY$ will be forced to demobilize to roughly 25% of their former army capacity."
+ 
+ PEACE_po_sisterrepublic:0 "Enforce Sister Republic"
+ po_sisterrepublic_desc:0 "$COUNTRY$ will be mandated to become a Sister Republic in our sphere of influence."
  
  enforced_demobilization:0 "Enforced Demobilization"
  
@@ -1117,6 +1135,8 @@
  
  empire_china:0 "Chinese Empire"
  
+ bgm_liberal:0 "Liberalism"
+ 
  intranational_cultural_tension:0 "Intranational Sociopolitical Tension"
  cultural_dissimilarity_disaster:0 "Our nation has a sizeable population or number of populations whose language and/or culture is not that of the ruling class. As they cannot communicate with the ruling demographic without the aid of translators this heavily exacerbates nationalist tensions in our realm. We need to convert culture in provinces which these communities reside."
  
@@ -1125,6 +1145,8 @@
  fascist_revolution:0 "Reactionary Revolution"
  march_on_rome:0 "The March on Rome"
  soviet_revolution:0 "The Soviet Revolution"
+ 
+ 
  
  demand_suffrage:0 "Demands for Suffrage Rights"
  grant_womens_rights_title:0 "Grant rights for Suffragettes"
@@ -1930,6 +1952,40 @@
  dm_monarchist_influence:0 "Monarchist Influence"
  dm_monarchist_FACTION_DESC:0 "Monarchism is the advocacy of monarchy or monarchical rule. A monarchist is an individual who supports this form of government, independent of any specific monarch."
  
+ bgm_liberals:0 "Liberals"
+ bgm_liberals_influence:0 "Liberal Influence"
+ bgm_liberals_FACTION_DESC:0 "Liberals intend to overthrow our current government by any means necessary. They will create a democratic government if allowed too much power."
+ 
+ cr_bolshevists:0 "Radical Revolutionaries"
+ cr_bolshevists_influence:0 "Radical Revolutionary Influence"
+ cr_bolshevists_FACTION_DESC:0 "Radical Revolutionaries are supporters of a non-capitalist, planned economy. They also support exporting the Revolution abroad to other nations, most notably industrialized countries."
+ 
+ cr_mensheviks:0 "Socialist Democrats"
+ cr_mensheviks_influence:0 "Socialist Democrat Influence"
+ cr_mensheviks_FACTION_DESC:0 "These are supporters of a centralized economy but with more liberal democratic characteristics. In general they have been described at least in the case of the Russian Revolution as more moderate than the Bolshevist faction."
+ 
+ cr_stalinists:0 "Collectivist Totalitarianism"
+ cr_stalinists_influence:0 "Collectivist Totalitarian Influence"
+ cr_stalinists_FACTION_DESC:0 "There are always politicians that seek full control for themselves. Our current leadership is always at odds with the executive committee and other subfactions in the government. This faction represents the power one has over society."
+ 
+ bgm_status_quo:0 "Status Quo"
+ bgm_status_quo_influence:0 "Status Quo Influence"
+ bgm_status_quo_FACTION_DESC:0 "The adherents to the current traditions of our society. It matters not who we are but who we are not. We are not liberals."
+ 
+ bgm_futurist_loyalist:0 "Loyalists"
+ bgm_futurist_loyalist_influence:0 "Loyalist Influence"
+ bgm_futurist_loyalist_FACTION_DESC:0 "These are supporters of our current rulership. If they gain power it will be easier on the government to take on various responsibilities."
+ 
+ bgm_futurist_republican:0 "Republicans"
+ bgm_futurist_republican_influence:0 "Republican Influence"
+ bgm_futurist_republican_FACTION_DESC:0 "These are supporters of a nationalist, futurist republic. To strive for violence as a manner of which to purify the world and most essential, our own country. Into the future as a golden age."
+ 
+ bgm_repsoc:0 "Collectivist Republicans"
+ bgm_repsoc_influence:0 "Collectivist Republican Influence"
+ bgm_repsoc_FACTION_DESC:0 "Collectivist Republicans prefer a collectivist government guided first and foremost by an executive committee (most often known as Politburo) instead of a dictatorship."
+ 
+ 
+ 
  at_monarchist:0 "Monarchist Faction"
  at_monarchist_influence:0 "Monarchist Influence"
  at_monarchist_FACTION_DESC:0 "Monarchism is the advocacy of monarchy or monarchical rule. A monarchist is an individual who supports this form of government, independent of any specific monarch."
@@ -2024,6 +2080,10 @@
  
  no_futurism:0 "No Futurist Manifesto"
  no_communism:0 "No Communist Manifesto"
+ no_fascism:0 "No Reactionary Movements"
+ 
+ return_to_previous_title:0 "Return to Previous Religion"
+ return_to_previous_desc:0 "Return to Previous Religion"
  
  EST_PROLE_REV:0 "Revolutionary Proletariat"
  

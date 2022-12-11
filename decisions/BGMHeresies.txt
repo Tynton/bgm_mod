@@ -496,10 +496,20 @@ country_decisions = {
 			NOT = { tag = PAP }
 			OR = {
 				AND = {
-					NOT = { religion = cathar }
-					NOT = { is_subject = yes }
+					NOT = {
+						any_country = {
+							religion = cathar
+						}
+					}
+					OR = {
+						culture_group = french
+						culture_group = occitan
+						culture_group = franco_provencal
+					}
 				}
-				has_global_flag = cathar_lea
+				any_owned_province = {
+					religion = cathar
+				}
 			}
 			religion_group = christian
 			is_emperor = no
@@ -570,6 +580,13 @@ country_decisions = {
 				factor = 0
 				NOT = {
 					religion = catholic
+				}
+			}
+
+			modifier = {
+				factor = 0
+				NOT = {
+					ruler_has_personality = sinner_personality
 				}
 			}
 

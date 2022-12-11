@@ -88,6 +88,9 @@ ASE = "countries/AlsaceCountry.txt"
 SGC = "countries/SouthGermany.txt"
 NGC = "countries/NorthGermany.txt"
 UMB = "countries/Umbria.txt"
+SFR = "countries/SwissFra.txt"
+MRO = "countries/BGMMorocco.txt"
+
 
 
 #ESN = "countries/Essen.txt"

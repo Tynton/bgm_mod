@@ -1,0 +1,64 @@
+namespace = BGM_GOV
+
+
+#ruler death election
+
+country_event = {
+	id = BGM_GOV.1
+	title = "BGM_GOV.1.t"
+	desc = "BGM_GOV.1.d"
+	picture = BUREAU_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_GOV.1.a"
+		
+		
+	}
+}
+
+#ideology change
+
+country_event = {
+	id = BGM_GOV.2
+	title = "BGM_GOV.2.t"
+	desc = "BGM_GOV.2.d"
+	picture = BUREAU_eventPicture
+	
+	is_triggered_only = yes
+
+	#Remain
+	
+	option = {
+		name = "BGM_GOV.2.a"
+		
+		
+	}
+
+	#Change
+
+	option = {
+		name = "BGM_GOV.2.b"
+		
+		change_government = democracy_govt
+		add_government_reform = parliamentary_republic_reform
+
+		ai_chance = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				NOT = {
+					calc_true_if = {
+						amount = 5
+						all_country = {
+							is_great_power = yes
+							has_reform = democratic_mechanic
+						}
+					}
+				}
+			}
+		}
+	}
+}

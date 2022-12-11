@@ -56,6 +56,20 @@ postmodernist_reform = {
 	modifiers = {
 		all_power_cost = -0.25
 	}
+	factions = {
+		bgm_futurist_loyalist
+		bgm_futurist_republican
+		bgm_liberals
+	}
+
+	effect = {
+		hidden_effect = {
+			add_faction_influence = {
+				faction = bgm_liberals
+				influence = -50
+			}
+		}
+	}
 }
 
 futurist_government_reform = {
@@ -80,6 +94,20 @@ futurist_government_reform = {
 		idea_cost = -0.1
 		
 		female_advisor_chance = 0.25
+	}
+	factions = {
+		bgm_futurist_loyalist
+		bgm_futurist_republican
+		bgm_liberals
+	}
+
+	effect = {
+		hidden_effect = {
+			add_faction_influence = {
+				faction = bgm_liberals
+				influence = -50
+			}
+		}
 	}
 }
 
@@ -110,6 +138,20 @@ futurist_empire = {
 		yearly_absolutism = 0.5
 	}
 	fixed_rank = 3
+	factions = {
+		bgm_futurist_loyalist
+		bgm_futurist_republican
+		bgm_liberals
+	}
+
+	effect = {
+		hidden_effect = {
+			add_faction_influence = {
+				faction = bgm_liberals
+				influence = -50
+			}
+		}
+	}
 }
 
 technocracy = {
@@ -134,5 +176,20 @@ technocracy = {
 		idea_cost = -0.1
 		land_forcelimit_modifier = 0.25
 		global_manpower_modifier = 0.25
+	}
+
+	factions = {
+		bgm_futurist_loyalist
+		bgm_futurist_republican
+		bgm_liberals
+	}
+
+	effect = {
+		hidden_effect = {
+			add_faction_influence = {
+				faction = bgm_liberals
+				influence = -50
+			}
+		}
 	}
 }
