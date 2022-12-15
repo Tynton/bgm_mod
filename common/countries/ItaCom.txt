@@ -1,4 +1,4 @@
-graphical_culture = westerngfx
+graphical_culture = brutalistgfx
 
 color = { 125  171  84 }
 

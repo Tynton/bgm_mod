@@ -1407,7 +1407,8 @@ in_golden_era = {
 
 absolutism = {
 	all_estate_influence_modifier = -0.25
-	administrative_efficiency = 0.3
+	province_warscore_cost = -0.175
+	core_creation = -0.175
 	discipline = 0.05
 	yearly_corruption = 0.25
 	core_decay_on_your_own = -0.5
@@ -2062,7 +2063,7 @@ revolutionary_guard_regiment = {
 innovativeness = {
 	army_tradition_decay = -0.01
 	navy_tradition_decay = -0.01
-	global_institution_spread = 0.5
+	#global_institution_spread = 0.5
 	technology_cost = -0.02
 	idea_cost = -0.03
 

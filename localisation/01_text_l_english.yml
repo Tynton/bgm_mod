@@ -29,6 +29,8 @@
  british_isles_node:0 "British Isles"
  occitan_node:0 "Occitania"
  
+ bgm_zeal:0 "Religious Zeal"
+ 
  high_manpower:0 "High Manpower"
  satisfactory_manpower:0 "Satisfactory Manpower Reserve"
  bgm_infrastructure:0 "Growth of Infrastructure"

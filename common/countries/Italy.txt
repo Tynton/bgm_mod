@@ -1,4 +1,4 @@
-graphical_culture = westerngfx
+graphical_culture = italianategfx
 
 color = { 125  171  84 } #185 219 138
 

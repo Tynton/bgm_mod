@@ -35,24 +35,24 @@ country_decisions = {
 				id = westeurope.5
 			}
 
-			if = {
-				limit = {
-					primary_culture = irish
-				}
-				override_country_name = "An Ríocht Aontaithe"
-			}
-			if = {
-				limit = {
-					primary_culture = highland_scottish
-				}
-				override_country_name = "Unitit Kinrick"
-			}
-			if = {
-				limit = {
-					primary_culture = cornish
-				}
-				override_country_name = "Gwlaskor Kesunyes"
-			}
+			#if = {
+			#	limit = {
+			#		primary_culture = irish
+			#	}
+			#	override_country_name = "An Ríocht Aontaithe"
+			#}
+			#if = {
+			#	limit = {
+			#		primary_culture = highland_scottish
+			#	}
+			#	override_country_name = "Unitit Kinrick"
+			#}
+			#if = {
+			#	limit = {
+			#		primary_culture = cornish
+			#	}
+			#	override_country_name = "Gwlaskor Kesunyes"
+			#}
 		}
 		ai_will_do = {
 			factor = 1
@@ -1227,33 +1227,33 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = FRC
-			if = {
-				limit = {
-					culture_group = occitan
-				}
-				override_country_name = França
-			}
-			if = {
-				limit = {
-					primary_culture = breton
-				}
-				override_country_name = Frañs
-			}
-			if = {
-				limit = {
-					OR = {
-						primary_culture = burgundian
-						primary_culture = frainc_comtou
-					}
-				}
-				override_country_name = Gaule
-			}
-			if = {
-				limit = {
-					primary_culture = basque
-				}
-				override_country_name = Frantzia
-			}
+			#if = {
+			#	limit = {
+			#		culture_group = occitan
+			#	}
+			#	override_country_name = França
+			#}
+			#if = {
+			#	limit = {
+			#		primary_culture = breton
+			#	}
+			#	override_country_name = Frañs
+			#}
+			#if = {
+			#	limit = {
+			#		OR = {
+			#			primary_culture = burgundian
+			#			primary_culture = frainc_comtou
+			#		}
+			#	}
+			#	override_country_name = Gaule
+			#}
+			#if = {
+			#	limit = {
+			#		primary_culture = basque
+			#	}
+			#	override_country_name = Frantzia
+			#}
 		}
 		ai_will_do = {
 			factor = 1

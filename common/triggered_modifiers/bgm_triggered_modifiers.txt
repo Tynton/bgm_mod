@@ -192,7 +192,7 @@ ai_final_ideas = {
 national_prosperity = {
 	potential = {
 		all_core_province = {
-			same_continent = ROOT
+			continent = ROOT
 			#is_island = no
 			#is_in_capital_area = yes
 			is_prosperous = yes
@@ -200,7 +200,7 @@ national_prosperity = {
 	}
 	trigger = {
 		all_core_province = {
-			same_continent = ROOT
+			continent = ROOT
 			#is_island = no
 			#is_in_capital_area = yes
 			is_prosperous = yes

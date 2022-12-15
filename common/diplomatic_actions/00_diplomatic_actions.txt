@@ -116,6 +116,21 @@ declarewar = {
 	#		}
 	#	}
 	#}
+
+	condition = {
+		potential = {
+			ai = yes
+		}
+		allow = { 
+			NOT = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_diplomat
+				}
+				}
+		}
+	}
+
 	effect = {
 		if = {
 			limit = { 
@@ -251,6 +266,20 @@ allianceaction = {
 						who = ROOT
 						value = 3.6
 					}
+				}
+			}
+		}
+	}
+
+	condition = {
+		potential = {
+			ai = yes
+		}
+		allow = {
+			NOT = {
+				has_casus_belli = {
+					type = cb_nationalist
+					target = FROM
 				}
 			}
 		}

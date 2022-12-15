@@ -1419,6 +1419,11 @@ lollard_politics = {
 	tolerance_heathen = -2
 }
 
+bgm_zeal = {
+	global_missionary_strength = 0.1
+	missionary_maintenance_cost = -0.5
+}
+
 #############Estates, BGM#############
 
 mil_corrupt = {
@@ -1464,4 +1469,8 @@ stop_dev = {
 
 allow_idea = {
 	idea_cost = -1000
+}
+
+allow_dev = {
+	development_cost = -1000
 }

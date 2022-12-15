@@ -429,7 +429,16 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 64
+		months = 600
+
+		modifier = {
+			factor = 0.1
+			
+			has_casus_belli = {
+				type = cb_nationalist
+				target = event_target:any_country
+			}
+		}
 		
 		modifier = {
 			factor = 0.1
@@ -461,6 +470,10 @@ country_event = {
 		name = "german_confederation.7.b"
 		
 		set_country_flag = no_gercon
+
+		ai_chance = {
+			factor = 0
+		}
 	}
 }
 

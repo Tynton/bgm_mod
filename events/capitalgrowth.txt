@@ -56,6 +56,59 @@ province_event = {
 
 		modifier = {
 			factor = 0.9
+			has_building = university
+		}
+
+		modifier = {
+			factor = 0.75
+			is_prosperous = yes
+		}
+
+		modifier = {
+			factor = 0.8
+			OR = {
+				has_building = marketplace
+				has_building = trade_depot
+				has_building = stock_exchange
+			}
+		}
+
+		modifier = {
+			factor = 0.9
+			OR = {
+				has_building = workshop
+				has_building = counting_house
+			}
+		}
+
+		modifier = {
+			factor = 0.9
+			OR = {
+				has_building = textile
+				has_building = plantations
+				has_building = wharf
+				has_building = weapons
+				has_building = tradecompany
+				has_building = farm_estate
+				has_building = mills
+			}
+		}
+
+		modifier = {
+			factor = 0.9
+			OR = {
+				has_building = courthouse
+				has_building = town_hall
+			}
+		}
+
+		modifier = {
+			factor = 0.75
+			has_building = furnace
+		}
+
+		modifier = {
+			factor = 0.9
 			owner = {
 				NOT = { num_of_loans = 1 }
 				full_idea_group = economic_ideas

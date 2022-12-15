@@ -5,21 +5,19 @@ cb_balance_power = {
 			NOT = { great_power_rank = 2 }
 			OR = {
 				any_subject_country = {
-					is_subject_of_type = personal_union
-					OR = {
-						total_development = 750
-						num_of_cities = 40
-						military_strength = {
-							who = FROM
-							value = 0.5
-						}
+					military_strength = {
+						who = FROM
+						value = 0.5
 					}
 				}
-				NOT = {
-					any_country = {
+				any_country = {
+					capital_scope = {
+						continent = ROOT
+					}
+					NOT = {
 						military_strength = {
 							who = FROM
-							value = 0.36
+							value = 0.3
 						}
 					}
 				}

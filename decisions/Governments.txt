@@ -37,7 +37,7 @@ country_decisions = {
 			change_religion = cult_of_reason
 			add_stability = -4
 			add_country_modifier = {
-				name = "conversion_zeal"
+				name = "bgm_zeal"
 				duration = 1825
 			}
 		}

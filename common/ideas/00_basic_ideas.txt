@@ -52,12 +52,55 @@ aristocracy_ideas = {
 	
 
 	ai_will_do = {
-		factor = 0.45
+		factor = 1
 		
 		modifier = {
 			factor = 0.5
 			is_subject = yes
-		}	
+		}
+		modifier = {
+			factor = 2
+			calc_true_if = {
+				amount = 5
+				all_owned_province = {
+					OR = {
+						trade_goods = wine
+						trade_goods = grain
+						trade_goods = livestock
+						trade_goods = fish
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			calc_true_if = {
+				amount = 10
+				all_owned_province = {
+					OR = {
+						trade_goods = wine
+						trade_goods = grain
+						trade_goods = livestock
+						trade_goods = fish
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			num_of_cities = 20
+		}
+		modifier = {
+			factor = 2
+			capital_scope = {
+				OR = {
+					superregion = europe_superregion
+					region = poland_region
+					region = ruthenia_region
+					region = russia_region
+				}
+			}
+		}
 	}
 }
 
@@ -354,6 +397,11 @@ religious_ideas = {
 			factor = 0
 			has_idea_group = humanist_ideas
 		}
+
+		modifier = {
+			factor = 10
+			num_accepted_cultures = 5
+		}
 		
 		modifier = {
 			factor = 0
@@ -459,6 +507,11 @@ spy_ideas = {
 			capital_scope = {
 				continent = europe
 			}
+		}
+
+		modifier = {
+			factor = 10
+			num_accepted_cultures = 5
 		}
 		
 		modifier = {
@@ -790,7 +843,7 @@ economic_ideas = {
  	}
 
 	ai_will_do = {
-		factor = 0.85
+		factor = 1
 		modifier = {
 			factor = 1.5
 			inflation = 5
@@ -808,11 +861,6 @@ economic_ideas = {
 		modifier = {
 			factor = 20
 			has_reform = free_city
-		}
-
-		modifier = {
-			factor = 0.5
-			colony = 1
 		}
 		
 		modifier = {
@@ -917,7 +965,11 @@ exploration_ideas = {
 			factor = 1000
 			adm_tech = 5
 			capital_scope = {
-				region = iberia_region
+				OR = {
+					region = british_isles_region
+					region = low_countries_region
+					region = iberia_region
+				}
 			}
 		}
 		modifier = {
@@ -1370,6 +1422,7 @@ expansion_ideas = {
 				tag = SPA
 			}
 		}
+
 		modifier = {
 			factor = 10
 			NOT = { has_dlc = "Third Rome" } # Has siberian frontier instead
@@ -1404,10 +1457,7 @@ expansion_ideas = {
 
 		modifier = {
 			factor = 1000
-			adm_tech = 10
-			capital_scope = {
-				superregion = europe_superregion
-			}
+			has_idea_group = exploration_ideas
 		}
 	}
 }

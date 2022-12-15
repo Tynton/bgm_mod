@@ -2698,3 +2698,60 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = general_ai.33
+	title = none
+	desc = none
+	picture = GREAT_BUILDING_eventPicture
+
+	
+
+	trigger = {
+		ai = yes
+		any_country = {
+			has_casus_belli = {
+				type = cb_nationalist
+				target = ROOT
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 18
+
+		modifier = {
+			factor = 0.0001
+			OR = {
+				AND = {
+					has_idea_group = postmodern_ideas
+					NOT = { full_idea_group = postmodern_ideas }
+				}
+				AND = {
+					has_idea_group = exploration_ideas
+					NOT = { full_idea_group = exploration_ideas }
+				}
+				AND = {
+					has_idea_group = expansion_ideas
+					NOT = { full_idea_group = expansion_ideas }
+				}
+				AND = {
+					has_idea_group = quantity_ideas
+					NOT = { full_idea_group = quantity_ideas }
+				}
+			}
+		}
+	}
+	option = {
+		every_country = {
+			limit = {
+				alliance_with = ROOT
+				has_casus_belli = {
+					type = cb_nationalist
+					target = ROOT
+				}
+			}
+			break_alliance = ROOT
+		}
+	}
+}

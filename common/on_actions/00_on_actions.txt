@@ -4751,6 +4751,19 @@ on_province_owner_change = {
 		}
 		change_province_name = "Kortrijk"
 	}
+
+	if = {
+		limit = {
+			province_id = 4383
+			owner = {
+				culture_group = french
+			}
+			NOT = {
+				has_global_flag = mod_dutch
+			}
+		}
+		change_province_name = "La Haye"
+	}
 	
 	if = {
 		limit = {

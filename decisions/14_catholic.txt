@@ -4,6 +4,7 @@ country_decisions = {
 		potential = {
 			has_country_modifier = catholic_rome
 			NOT = { has_country_modifier = sovereignty_vatican }
+			always = no
 		}
 		allow = {
 			has_country_modifier = catholic_rome

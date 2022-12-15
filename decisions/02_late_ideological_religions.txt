@@ -183,7 +183,15 @@ country_decisions = {
 				overlord = {
 					religion = secular
 				}
+				AND = {
+					is_revolutionary = no
+					OR = {
+						religion = cult_of_reason
+						religion = cult_of_the_supreme_being
+					}
+				}
 			}
+			
 		}
 		effect = {
 			hidden_effect = {

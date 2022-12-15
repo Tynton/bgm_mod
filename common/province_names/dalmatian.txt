@@ -1,1 +1,3 @@
-136 = "Spalatro"
+136 = "Splato"
+127 = "Raugia"
+4753 = "Jadera"
