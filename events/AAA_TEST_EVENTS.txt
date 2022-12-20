@@ -2,7 +2,7 @@ namespace = TEST_EVENTS
 
 
 country_event = {
-	id = TEST_EVENTS.1
+	id = TEST_EVENTS.1          #cheat event
 	title = none
 	desc = none
 	picture = ANGRY_MOB_eventPicture
@@ -387,5 +387,148 @@ country_event = {
 	option = {
 		name = none
 		set_hre_religion_treaty = yes
+	}
+}
+
+country_event = {
+	id = TEST_EVENTS.15
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		set_revolution_target = ROOT
+		change_government = republic
+		add_government_reform = revolutionary_republic_reform
+	}
+}
+
+country_event = {
+	id = TEST_EVENTS.16
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		if = {
+			limit = { has_custom_ideas = no }
+			country_event = { id = ideagroups.1 } #Swap Ideas
+		}
+	}
+}
+
+country_event = {
+	id = TEST_EVENTS.17
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		random_country = {
+			limit = {
+				culture_group = latin
+			}
+			declare_war = ROOT
+		}
+		random_country = {
+			limit = {
+				culture_group = latin
+			}
+			declare_war = ROOT
+		}
+		random_country = {
+			limit = {
+				culture_group = latin
+			}
+			declare_war = ROOT
+		}
+		random_country = {
+			limit = {
+				culture_group = latin
+			}
+			declare_war = ROOT
+		}
+		random_country = {
+			limit = {
+				culture_group = latin
+			}
+			declare_war = ROOT
+		}
+
+		random_country = {
+			limit = {
+				culture_group = germanic
+			}
+			declare_war = ROOT
+		}
+		random_country = {
+			limit = {
+				culture_group = germanic
+			}
+			declare_war = ROOT
+		}
+		random_country = {
+			limit = {
+				culture_group = germanic
+			}
+			declare_war = ROOT
+		}
+		random_country = {
+			limit = {
+				culture_group = germanic
+			}
+			declare_war = ROOT
+		}
+		random_country = {
+			limit = {
+				culture_group = germanic
+			}
+			declare_war = ROOT
+		}
+	}
+}
+
+country_event = {
+	id = TEST_EVENTS.18          #cheat event
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		every_country = {
+			limit = {
+				war_with = ROOT
+			}
+			create_subject = {
+				subject_type = sister_republic
+				who = PREV
+			}
+		}
+	}
+}
+
+country_event = {
+	id = TEST_EVENTS.19
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		change_tag = NED
 	}
 }

@@ -3812,6 +3812,42 @@ gov_free_city = {
 	}
 }
 
+tradecompany_bgm = {
+	rank = {
+		1 = TRADECOMPANY
+	}
+
+	ruler_male = {
+		1 = GOVERNOR
+	}
+
+	ruler_female = {
+		1 = GOVERNOR
+	}
+
+	trigger = {
+		OR = {
+			is_subject_of_type = colony
+			is_subject_of_type = crown_colony
+			is_subject_of_type = private_enterprise
+			is_subject_of_type = self_governing_colony
+		}
+		NOT = {
+			capital_scope = {
+				OR = {
+					continent = north_america
+					continent = south_america
+				}
+			}
+		}
+		NOT = {
+			overlord = {
+				has_institution = nationalism_institution
+			}
+		}
+	}
+}
+
 colonial_governments = {
 	rank = {
 		1 = COLONY
@@ -3836,6 +3872,17 @@ colonial_governments = {
 			OR = {
 				culture_group = iberian
 				primary_culture = dutch
+			}
+		}
+		OR = {
+			capital_scope = {
+				OR = {
+					continent = north_america
+					continent = south_america
+				}
+			}
+			overlord = {
+				has_institution = nationalism_institution
 			}
 		}
 	}
@@ -3863,6 +3910,12 @@ iberian_colonial_government = {
 			has_reform = private_enterprise_colony_government
 			has_reform = self_governing_colony_government
 		}
+		capital_scope = {
+			OR = {
+				continent = north_america
+				continent = south_america
+			}
+		}
 	}
 }
 #If only two first levels used then reorder so that only 2 and 3 are used
@@ -3886,6 +3939,12 @@ dutch_colonial_government = {
 			has_reform = crown_colony_government
 			has_reform = private_enterprise_colony_government
 			has_reform = self_governing_colony_government
+		}
+		capital_scope = {
+			OR = {
+				continent = north_america
+				continent = south_america
+			}
 		}
 	}
 }

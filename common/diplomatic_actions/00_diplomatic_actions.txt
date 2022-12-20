@@ -127,7 +127,70 @@ declarewar = {
 					personality = ai_capitalist
 					personality = ai_diplomat
 				}
+			}
+		}
+	}
+
+	condition = {
+		tooltip = NO_AFRICA_WAR
+		potential = {
+			ai = yes
+			NOT = {
+                capital_scope = {
+                    continent = africa
+                }
+            }
+            FROM = {
+                capital_scope = {
+                    continent = africa
+					NOT = {
+						OR = {
+							region = maghreb_region
+							region = egypt_region
+						}
+					}
+                }
+            }
+		}
+		allow = {
+			OR = {
+				has_institution = nationalism_institution
+				AND = {
+					any_country = {
+						#ai = no
+						any_subject_country = {
+							capital_scope = {
+								continent = africa
+								NOT = {
+									OR = {
+										colonial_region = colonial_south_africa
+										colonial_region = colonial_ivory_coast
+									}
+								}
+							}
+							OR = {
+								is_former_colonial_nation = yes
+								is_subject_of_type = colony
+								is_subject_of_type = private_enterprise
+								is_subject_of_type = crown_colony
+								is_subject_of_type = self_governing_colony
+							}
+						}
+					}
 				}
+				FROM = {
+					capital_scope = {
+						continent = africa
+					}
+					OR = {
+						is_former_colonial_nation = yes
+						is_subject_of_type = colony
+						is_subject_of_type = private_enterprise
+						is_subject_of_type = crown_colony
+						is_subject_of_type = self_governing_colony
+					}
+				}
+			}
 		}
 	}
 
@@ -243,6 +306,23 @@ declarewar = {
 	}
 }
 
+guaranteeaction = {
+	condition = {
+		tooltip = OVERSEAS_COLONIAL_CAPITAL
+		potential = { 
+			always = yes
+		}
+		allow = {
+			FROM = {
+				capital_scope = {
+					bgm_colonial = no
+				}
+				is_former_colonial_nation = no
+			}
+		}
+	}
+}
+
 allianceaction = {
 
 	condition = {
@@ -266,6 +346,32 @@ allianceaction = {
 						who = ROOT
 						value = 3.6
 					}
+				}
+			}
+		}
+	}
+
+	condition = {
+		tooltip = DDD
+		potential = {
+			ai = yes
+		}
+		allow = {
+			ROOT = {
+				capital_scope = {
+					continent = europe
+				}
+				NOT = { adm_tech = 45 }
+			}
+			FROM = {
+				capital_scope = {
+					NOT = {
+						OR = {
+							continent = africa
+							superregion = india_superregion
+							superregion = oceania_superregion
+						}
+					}	
 				}
 			}
 		}
@@ -423,9 +529,28 @@ annexationaction = {
 					who = ROOT
 					value = 190
 				}
+				NOT = { is_subject_of_type = sister_republic }
 			}
 		}
 	}
+	condition = {
+		tooltip = FOREIGN_SISTERREPUBLIC
+		potential = {
+			FROM = {
+				is_subject_of_type = sister_republic
+				#is_subject_of = ROOT
+			}
+		}
+		allow = {
+			
+			FROM = { 
+				is_subject_of_type = sister_republic
+				is_subject_of = ROOT
+				culture_group = ROOT 
+			}
+		}
+	}
+
 	#condition = {
 	#	tooltip = ANNEXINVALID
 	#	potential = {

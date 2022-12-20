@@ -111,6 +111,9 @@
  REF_ADJ:0 "Russian"
  FRF:0 "French Empire"
  FRF_ADJ:0 "French"
+  
+ NME:0 "Nemecko"
+ NME_ADJ:0 "Czecho-German"
  
  SPD:0 "Spain"
  SPD_ADJ:0 "Spanish"
@@ -169,6 +172,14 @@
  
  MRO:0 "Morocco"
  MRO_ADJ:0 "Moroccan"
+ 
+ IRN:0 "Iran"
+ IRN_ADJ:0 "Iranian"
+ BRM:0 "Burma"
+ BRM_ADJ:0 "Burmese"
+ 
+ INDIA:0 "India"
+ INDIA_ADJ:0 "Indian"
  
  
  

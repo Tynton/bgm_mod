@@ -302,6 +302,7 @@ categories =  {
 			4853 4852 4864
 
 			4953 #Saint-Dizier
+			4954 #Arlon
 		}
 	}
 	

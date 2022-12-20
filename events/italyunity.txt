@@ -150,12 +150,12 @@ country_event = {
 	option = {
 		name = "italyunity.4.a"
 		ITA = {
-			inherit = ROOT
 			ROOT = {
 				every_owned_province = {
 					add_core = ITA
 				}
 			}
+			inherit = ROOT
 		}
 	}
 }
@@ -195,8 +195,66 @@ country_event = {
 	option = {
 		name = "italyunity.5.a"
 		change_tag = ITA
-		change_government = monarchy
-		add_government_reform = autocracy_reform
-		add_government_reform = parliamentary_reform
+		#change_government = monarchy
+		#add_government_reform = autocracy_reform
+		#add_government_reform = parliamentary_reform
+	}
+}
+
+country_event = {
+	id = italyunity.6
+	title = "italyunity.n.6"
+	desc = "italyunity.d.6"
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "italyunity.6.a"
+		set_country_flag = preeminent_sisterrepublic
+		if = {
+			limit = {
+				NOT = {
+					primary_culture = venetian
+					OR = {
+						exists = ITA
+						exists = VIY
+					}
+				}
+			}
+			change_tag = ITA
+		}
+		if = {
+			limit = {
+				primary_culture = venetian
+				NOT = {
+					OR = {
+						exists = ITA
+						exists = VIY
+					}
+				}
+			}
+			change_tag = VIY
+		}
+	}
+}
+
+country_event = {
+	id = italyunity.7
+	title = none
+	desc = none
+	picture = none
+	
+	is_triggered_only = yes
+
+	
+	option = {
+		name = none
+		random_country = {
+			limit = {
+				has_country_flag = preeminent_sisterrepublic
+			}
+			inherit = ROOT
+		}
 	}
 }

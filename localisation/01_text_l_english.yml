@@ -46,6 +46,8 @@
  
  PEACE_po_enforce_dynasty:0 "Enforce Dynasty"
  
+ form_ukraine_title:0 "Form Ukraine"
+ form_ukraine_desc:0 "Form Ukraine"
  form_occitania_title:0 "Form Occitania"
  form_occitania_desc:0 "Form Occitania"
  form_wallonia_title:0 "Form Wallonia"
@@ -246,6 +248,12 @@
  
  british_nation_stuarts_title:0 "Scottish Britain"
  british_nation_stuarts_desc:0 "Scottish Britain"
+ 
+ fold_sisterrepublics_italy_title:0 "Fold Italian Sister Republics"
+ fold_sisterrepublics_italy_desc:0 "Fold Italian Sister Republics"
+ 
+ fold_sisterrepublics_ger_title:0 "Fold German Sister Republics"
+ fold_sisterrepublics_ger_desc:0 "Fold German Sister Republics"
  
  
  
@@ -943,6 +951,18 @@
  form_nigeria_desc:0 "Form Nigeria"
  form_ivco_title:0 "Form Ivory Coast"
  form_ivco_desc:0 "Form Ivory Coast"
+ form_egypt_title:0 "Form Egypt"
+ form_egypt_desc:0 "Form Egypt"
+ form_arabia_title:0 "Form Arabia"
+ form_arabia_desc:0 "Form Arabia"
+ form_iran_title:0 "Form Iran"
+ form_iran_desc:0 "Form Iran"
+ form_burma_title:0 "Form Burma"
+ form_burma_desc:0 "Form Burma"
+ form_vin_title:0 "Form Vietnam"
+ form_vin_desc:0 "Form Vietnam"
+ form_india_title:0 "Form India"
+ form_india_desc:0 "Form India"
  form_tns_title:0 "Form Tunisia"
  form_tns_desc:0 "Form Tunisia"
  form_mro_title:0 "Form Morocco"
@@ -1036,6 +1056,11 @@
  gercon_final:0 "Centralization of the German Confederation"
  gercon_final_member:0 "Centralization of the German Confederation (Member)"
  
+ german_nation_hre_title:0 "Form German Nation"
+ german_nation_hre_desc:0 "Regardless of the absence of a strong, central authority, our nation is prospering. The Hanseatic League, formed by hundreds of towns in northern Germany, has contributed to the prosperity of our nation. Intellectual growth, combined with sea and overland trading, has also helped spur the development and transform our country into a wealthy manufacturing center."
+ 
+ FOREIGN_SISTERREPUBLIC:0 "[From.GetName] is not a Sister Republic in our culture group."
+ 
  
  
  
@@ -1074,7 +1099,7 @@
  po_demobilize_desc:0 "$COUNTRY$ will be forced to demobilize to roughly 25% of their former army capacity."
  
  PEACE_po_sisterrepublic:0 "Enforce Sister Republic"
- po_sisterrepublic_desc:0 "$COUNTRY$ will be mandated to become a Sister Republic in our sphere of influence."
+ po_sisterrepublic_desc:0 "[From.GetName] will be mandated to become a Sister Republic in the [Root.GetAdjective] sphere of influence."
  
  enforced_demobilization:0 "Enforced Demobilization"
  

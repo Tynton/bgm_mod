@@ -47,6 +47,26 @@ province_event = {
 			continent = europe
 		}
 		modifier = {
+			factor = 5.0
+			owner = {
+				is_great_power = no
+			}
+		}
+		modifier = {
+			factor = 2.5
+			owner = {
+				is_great_power = yes
+				is_hegemon = no
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				is_great_power = yes
+				is_hegemon = yes
+			}
+		}
+		modifier = {
 			factor = 0.75
 			is_capital = yes
 		}

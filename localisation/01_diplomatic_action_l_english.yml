@@ -149,3 +149,10 @@
  request_independence_tooltip:0 "Request Independence."
  request_independence_dialog:0 "A nation has joined the Zollverein."
  request_independence_tooltip:0 "Request Independence. We are entitled liberty in all political sectors, including foreign policy."
+ 
+ integrate_colonial:0 "Integrate into Colony"
+ integrate_colonial_title:0 "Integrate into Colony"
+ integrate_colonial_desc:0 "This country is a princely state that we can leave to a colonial administration."
+ integrate_colonial_tooltip:0 "Integrate this country into our colonial subject."
+ integrate_colonial_dialog:0 "Colonial Integration"
+ integrate_colonial_tooltip:0 "This country is a princely state that we can leave to a colonial administration."

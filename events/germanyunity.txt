@@ -638,3 +638,39 @@ country_event = {
 		}
 	}
 }
+
+
+country_event = {
+	id = germanyunity.11
+	title = "germanyunity.n.11"
+	desc = "germanyunity.d.11"
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "italyunity.11.a"
+		set_country_flag = preeminent_sisterrepublic_ger
+		change_tag = GER
+	}
+}
+
+country_event = {
+	id = germanyunity.12
+	title = none
+	desc = none
+	picture = none
+	
+	is_triggered_only = yes
+
+	
+	option = {
+		name = none
+		random_country = {
+			limit = {
+				has_country_flag = preeminent_sisterrepublic_ger
+			}
+			inherit = ROOT
+		}
+	}
+}

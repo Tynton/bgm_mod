@@ -194,7 +194,7 @@ trade_company_champagne = {
 		181 186 4390 4952 4953 #champagne_area
 		187 188 189 #lorraine_area
 		165 1867 1871 #romandie_area
-		91 93 94 1866 #wallonia_area
+		91 93 94 1866 4954 #wallonia_area
 		191 192 193 1877 4392 #bourgogne_area
 		203 204 205 4719 #savoy_dauphine_area
 		4720 4721 4764 4766 

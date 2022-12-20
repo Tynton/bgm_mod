@@ -29,7 +29,7 @@ country_event = {
 			}
 			AND = {
 				has_ruler = "Charles"
-				dynasty = "de Bourgogne"
+				dynasty = "de Valois-Bourgogne"
 				ruler_age = 43
 				NOT = {
 					heir_age = 15
@@ -109,6 +109,20 @@ country_event = {
 	
 	immediate = {
 		hidden_effect = {
+			BUR = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = france_region
+							AND = {
+								culture_group = french
+								continent = europe
+							}
+						}
+					}
+					add_core = FRA
+				}
+			}
 			set_country_flag = burgundian_succession_start
 			add_country_modifier = { 
 				name = mary_is_on_the_throne
@@ -138,6 +152,16 @@ country_event = {
 	
 	option = { #stand alone
 		name = "incidents_bur_inheritance.1.a"
+
+		BUR = {
+			every_owned_province = {
+				limit = {
+					region = france_region
+				}
+				add_core = FRA
+			}
+		}
+
 		ai_chance = {
 			factor = 30
 			modifier = {
@@ -194,7 +218,7 @@ country_event = {
 			}
 		}
 		trigger = {
-			FRA = { 
+			FRA = {
 				exists = yes
 				government = monarchy
 				is_emperor = no
@@ -770,6 +794,17 @@ country_event = {
 					value = 0.8
 				}
 			}
+
+			modifier = {
+				factor = 0
+				NOT = {
+					army_strength = {
+						who = emperor
+						value = 0.25
+					}
+				}
+			}
+
 			modifier = {
 				factor = 7.5
 				NOT = {
@@ -802,11 +837,11 @@ country_event = {
 		ai_chance = { 
 			factor = 1
 			modifier = {
-				factor = 5
+				factor = 200
 				NOT = {
 					army_strength = {
 						who = emperor
-						value = 0.8
+						value = 0.25
 					}
 				}
 			}
@@ -923,7 +958,7 @@ country_event = { #Great Privelege event (emperor)
 	option = { # Declare war for the lowlands
 		name = "incidents_bur_inheritance.104.b"
 		ai_chance = { 
-			factor = 10
+			factor = 100
 			modifier = {
 				factor = 2
 				BUR = {
@@ -1076,7 +1111,7 @@ country_event = {
 		ai_chance = { 
 			factor = 1
 			modifier = {
-				factor = 2
+				factor = 2000
 				BUR = {
 					liberty_desire = 50
 				}
@@ -1140,6 +1175,12 @@ country_event = {
 				factor = 10
 				BUR = {
 					liberty_desire = 50
+				}
+			}
+			modifier = {
+				factor = 5000
+				emperor = {
+					has_country_flag = wants_hre
 				}
 			}
 		}
@@ -1699,7 +1740,7 @@ country_event = {
 		hidden_effect = {
 			BUR = {
 				define_ruler = {
-					dynasty = "de Bourgogne"
+					dynasty = "de Valois-Bourgogne"
 				}
 			}
 		}
@@ -1718,7 +1759,7 @@ country_event = {
 		hidden_effect = {
 			BUR = {
 				define_ruler = {
-					dynasty = "de Bourgogne"
+					dynasty = "de Valois-Bourgogne"
 				}
 			}
 		}

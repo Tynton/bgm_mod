@@ -1,9 +1,9 @@
 po_sisterrepublic = {
 	category = 6
 	power_projection = humiliated_rival
-	power_cost_base = 2.5
-	prestige_base = 2.0
-	ae_base = 1.5
+	power_cost_base = 0
+	prestige_base = 0.1
+	ae_base = 0.25
 	warscore_cost = {
 		all_provinces = 0.0
 		no_provinces = 75.0
@@ -25,6 +25,36 @@ po_sisterrepublic = {
 		is_revolution_target = yes
 	}
 	effect = {
+		FROM = {
+			if = {
+				limit = {
+					OR = {
+						has_subject_of_type = vassal
+						has_subject_of_type = client_march
+						has_subject_of_type = client_vassal
+						has_subject_of_type = march
+						has_subject_of_type = personal_union
+					}
+				}
+				every_subject_country = {
+					limit = {
+						OR = {
+							is_subject_of_type = vassal
+							is_subject_of_type = client_march
+							is_subject_of_type = client_vassal
+							is_subject_of_type = march
+							is_subject_of_type = personal_union
+						}
+						NOT = {
+							liberty_desire = 50
+						}
+					}
+					FROM = {
+						inherit = PREV
+					}
+				}
+			}
+		}
 		create_subject = {
 			subject_type = sister_republic
 			who = FROM
@@ -48,7 +78,7 @@ po_sisterrepublic = {
 	ai_weight = { # Defaults to always evaluate to 0
 		export_to_variable = {
 			variable_name = ai_value
-			value = 500
+			value = 1000
 		}
 	}
 }

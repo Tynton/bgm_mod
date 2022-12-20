@@ -471,14 +471,14 @@ on_war_won = {
 		log = "zollverein victorious"
 	}
 
-	if = {
-		limit = {
-			NOT = {
-				has_global_flag = bgm_hre_league
-			}
-		}
-		set_hre_religion_treaty = yes
-	}
+	#if = {
+	#	limit = {
+	#		NOT = {
+	#			has_global_flag = bgm_hre_league
+	#		}
+	#	}
+	#	set_hre_religion_treaty = yes
+	#}
 	
 	if = {
 		limit = {
@@ -574,14 +574,14 @@ on_war_lost = {
 		change_government_to_monarchy = yes
     }
 
-	if = {
-		limit = {
-			NOT = {
-				has_global_flag = bgm_hre_league
-			}
-		}
-		set_hre_religion_treaty = yes
-	}
+	#if = {
+	#	limit = {
+	#		NOT = {
+	#			has_global_flag = bgm_hre_league
+	#		}
+	#	}
+	#	set_hre_religion_treaty = yes
+	#}
 
 	if = {
 		limit = {
@@ -4859,7 +4859,7 @@ on_province_owner_change = {
 				has_global_flag = mod_dutch
 			}
 		}
-		change_province_name = "ZÃ©lande"
+		change_province_name = "Zélande"
 	}
 	if = {
 		limit = {

@@ -11,6 +11,7 @@ eng_british_naval_conq = {
 		OR = {
 			tag = ENG
 			tag = GBR
+			tag = SGB
 		}
 		has_dlc = "Rule Britannia"
 		NOT = { map_setup = map_setup_random }
@@ -62,6 +63,7 @@ eng_rb_gibraltar = {
 		OR = {
 			tag = ENG
 			tag = GBR
+			tag = SGB
 		}
 		has_dlc = "Rule Britannia"
 		NOT = { map_setup = map_setup_random }
@@ -125,6 +127,7 @@ eng_rb_islands_med = {
 		OR = {
 			tag = ENG
 			tag = GBR
+			tag = SGB
 		}
 		has_dlc = "Rule Britannia"
 		NOT = { map_setup = map_setup_random }
@@ -223,6 +226,7 @@ eng_rb_egypt = {
 		OR = {
 			tag = ENG
 			tag = GBR
+			tag = SGB
 		}
 		has_dlc = "Rule Britannia"
 		NOT = { map_setup = map_setup_random }
@@ -317,6 +321,7 @@ eng_rb_stability = {
 		OR = {
 			tag = ENG
 			tag = GBR
+			tag = SGB
 		}
 		has_dlc = "Rule Britannia"
 		NOT = { map_setup = map_setup_random }
@@ -407,6 +412,7 @@ eng_rb_burgundy = {
 		OR = {
 			tag = ENG
 			tag = GBR
+			tag = SGB
 		}
 		has_dlc = "Rule Britannia"
 		NOT = { map_setup = map_setup_random }
@@ -485,6 +491,7 @@ gbr_rb_canada_group = {
 	}
 	potential = {
 		tag = GBR
+		tag = SGB
 		has_dlc = "Rule Britannia"
 		is_random_new_world = no
 		NOT = { map_setup = map_setup_random }
@@ -538,6 +545,7 @@ eng_rb_trade_value_group = {
 	}
 	potential = {
 		tag = GBR
+		tag = SGB
 		has_dlc = "Rule Britannia"
 		NOT = { map_setup = map_setup_random }
 	}
@@ -580,6 +588,7 @@ eng_rb_buildings_group = {
 		OR = {
 			tag = ENG
 			tag = GBR
+			tag = SGB
 		}
 		has_dlc = "Rule Britannia"
 		NOT = { map_setup = map_setup_random }
@@ -796,6 +805,7 @@ eng_rb_conquest_europe = {
 		OR = {
 			tag = ENG
 			tag = GBR
+			tag = SGB
 		}
 		has_dlc = "Rule Britannia"
 		NOT = { map_setup = map_setup_random }
@@ -1088,6 +1098,7 @@ gbr_rb_spice_islands_group = {
 		OR = {
 			tag = ENG
 			tag = GBR
+			tag = SGB
 		}
 		has_dlc = "Rule Britannia"
 		NOT = { map_setup = map_setup_random }
@@ -1178,6 +1189,7 @@ gbr_rb_indian_group = {
 	}
 	potential = {
 		tag = GBR
+		tag = SGB
 		has_dlc = "Rule Britannia"
 		NOT = { map_setup = map_setup_random }
 	}
@@ -1379,6 +1391,7 @@ gbr_rb_india_princes = {
 	}
 	potential = {
 		tag = GBR
+		tag = SGB
 		has_dlc = "Rule Britannia"
 		NOT = { map_setup = map_setup_random }
 	}
@@ -1477,6 +1490,7 @@ gbr_rb_northern_colonial = {
 	}
 	potential = {
 		tag = GBR
+		tag = SGB
 		has_dlc = "Rule Britannia"
 		is_random_new_world = no
 		NOT = { map_setup = map_setup_random }
@@ -1639,6 +1653,7 @@ eng_rb_thirteen_colonies_group = {
 		OR = {
 			tag = ENG
 			tag = GBR
+			tag = SGB
 		}
 		is_random_new_world = no
 		has_dlc = "Rule Britannia"
@@ -1686,6 +1701,7 @@ eng_rb_trade_in_home_cot_group = {
 		OR = {
 			tag = ENG
 			tag = GBR
+			tag = SGB
 		}
 		has_dlc = "Rule Britannia"
 		NOT = { map_setup = map_setup_random }
@@ -1699,38 +1715,18 @@ eng_rb_trade_in_home_cot_group = {
 		provinces_to_highlight = {
 			if = {
 				limit = { is_random_new_world = no }
-				OR = {
-					province_id = 1500
-					province_id = 1269
-				}
+				province_id = 245
 				has_discovered = ROOT
-			}
-			else = {
-				province_id = 1269
 			}
 		}
 		
 		trigger = {
 			if = {
 				limit = { is_random_new_world = no }
-				1500 = {
+				245 = {
 					trade_share = {
 						country = ROOT
-						share = 25
-					}
-				}
-				1269 = {
-					trade_share = {
-						country = ROOT
-						share = 85
-					}
-				}
-			}
-			else = {
-				1269 = {
-					trade_share = {
-						country = ROOT
-						share = 85
+						share = 75
 					}
 				}
 			}

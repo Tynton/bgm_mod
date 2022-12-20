@@ -90,6 +90,10 @@ NGC = "countries/NorthGermany.txt"
 UMB = "countries/Umbria.txt"
 SFR = "countries/SwissFra.txt"
 MRO = "countries/BGMMorocco.txt"
+NME = "countries/Nemecko.txt"
+IRN = "countries/Iran.txt"
+BRM = "countries/Burma.txt"
+VIN = "countries/Vietnam.txt"
 
 
 

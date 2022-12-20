@@ -24,4 +24,229 @@ country_decisions = {
 			factor = 1
 		}
 	}
+
+	fold_sisterrepublics_italy = {
+		potential = {
+			NOT = { culture_group = latin }
+			OR = {
+				NOT = {
+					any_country = {
+						has_country_flag = preeminent_sisterrepublic
+					}
+				}
+				any_subject_country = {
+					has_country_flag = preeminent_sisterrepublic
+				}
+			}
+			calc_true_if = {
+				all_subject_country = { 
+					is_subject_of_type = sister_republic
+					culture_group = latin
+				}
+				amount = 2
+			}
+		}
+		allow = {
+			calc_true_if = {
+				all_subject_country = { 
+					is_subject_of_type = sister_republic
+					culture_group = latin
+				}
+				amount = 2
+			}
+		}
+		effect = {
+
+			if = { 
+				limit = {
+					any_subject_country = {
+						is_subject_of_type = sister_republic
+						culture_group = latin
+						ai = no
+						NOT = { has_country_flag = preeminent_sisterrepublic }
+					}
+				}
+				random_subject_country = {
+					limit = {
+						is_subject_of_type = sister_republic
+						culture_group = latin
+						ai = no
+					}
+					country_event = {
+						id = italyunity.6
+					}
+				}
+			}
+			if = { 
+				limit = {
+					NOT = {
+						any_subject_country = {
+							is_subject_of_type = sister_republic
+							culture_group = latin
+							ai = no
+							has_country_flag = preeminent_sisterrepublic
+						}
+					}
+				}
+				random_subject_country = {
+					limit = {
+						is_subject_of_type = sister_republic
+						culture_group = latin
+					}
+					country_event = {
+						id = italyunity.6
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					any_subject_country = {
+						is_subject_of_type = sister_republic
+						culture_group = latin
+						ai = no
+						has_country_flag = preeminent_sisterrepublic
+					}
+				}
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = sister_republic
+						culture_group = latin
+						ai = yes
+						NOT = { has_country_flag = preeminent_sisterrepublic }
+					}
+					country_event = {
+						id = italyunity.7
+					}
+				}
+			}
+			else = {
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = sister_republic
+						culture_group = latin
+						ai = yes
+						NOT = { has_country_flag = preeminent_sisterrepublic }
+					}
+					country_event = {
+						id = italyunity.7
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	fold_sisterrepublics_ger = {
+		potential = {
+			NOT = { culture_group = germanic }
+			OR = {
+				NOT = {
+					any_country = {
+						has_country_flag = preeminent_sisterrepublic
+					}
+				}
+				any_subject_country = {
+					has_country_flag = preeminent_sisterrepublic
+				}
+			}
+			calc_true_if = {
+				all_subject_country = { 
+					is_subject_of_type = sister_republic
+					culture_group = germanic
+				}
+				amount = 2
+			}
+		}
+		allow = {
+			calc_true_if = {
+				all_subject_country = { 
+					is_subject_of_type = sister_republic
+					culture_group = germanic
+				}
+				amount = 2
+			}
+		}
+		effect = {
+
+			if = { 
+				limit = {
+					any_subject_country = {
+						is_subject_of_type = sister_republic
+						culture_group = germanic
+						ai = no
+						NOT = { has_country_flag = preeminent_sisterrepublic_ger }
+					}
+				}
+				random_subject_country = {
+					limit = {
+						is_subject_of_type = sister_republic
+						culture_group = germanic
+						ai = no
+					}
+					country_event = {
+						id = germanyunity.11
+					}
+				}
+			}
+			if = { 
+				limit = {
+					NOT = {
+						any_subject_country = {
+							is_subject_of_type = sister_republic
+							culture_group = germanic
+							ai = no
+							has_country_flag = preeminent_sisterrepublic_ger
+						}
+					}
+				}
+				random_subject_country = {
+					limit = {
+						is_subject_of_type = sister_republic
+						culture_group = germanic
+					}
+					country_event = {
+						id = germanyunity.11
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					any_subject_country = {
+						is_subject_of_type = sister_republic
+						culture_group = germanic
+						ai = no
+						has_country_flag = preeminent_sisterrepublic_ger
+					}
+				}
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = sister_republic
+						culture_group = germanic
+						ai = yes
+						NOT = { has_country_flag = preeminent_sisterrepublic_ger }
+					}
+					country_event = {
+						id = germanyunity.12
+					}
+				}
+			}
+			else = {
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = sister_republic
+						culture_group = germanic
+						ai = yes
+						NOT = { has_country_flag = preeminent_sisterrepublic_ger }
+					}
+					country_event = {
+						id = germanyunity.12
+					}
+				}
+			}
+		}
+	}
 }

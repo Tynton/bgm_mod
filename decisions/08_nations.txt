@@ -218,6 +218,7 @@ country_decisions = {
 			OR = {
 				AND = {
 					tag = BUR
+					adm_tech = 20
 					NOT = { exists = FLA }
 					NOT = { exists = BRB }
 					OR = {
@@ -226,8 +227,10 @@ country_decisions = {
 					}
 					mission_completed = emp_bur_secure_succession
 				}
-				adm_tech = 15
-				has_reform = peasants_republic
+				AND = {
+					adm_tech = 15
+					has_reform = peasants_republic
+				}
 			}
 			is_at_war = no
 			NOT = {
@@ -362,6 +365,48 @@ country_decisions = {
 				add_permanent_claim = ROOT
 			}
 			massif_central_area = {
+				add_permanent_claim = ROOT
+			}
+			country_event = {
+				id = ideagroups.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	form_ukraine = {
+	
+		major = yes
+	
+		potential = {
+			primary_culture = ruthenian
+			##is_subject = no
+		}
+		allow = {
+			#is_subject = no
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					culture_group = ruthenian_g
+					region = ruthenia_region
+				}
+			}
+			owns = 280
+			#owns = 282
+			adm_tech = 25
+			NOT = {
+				exists = UKN
+			}
+		}
+		effect = {
+			change_tag = UKN
+			every_province = {
+				limit = {
+					continent = europe
+					culture = ruthenian
+				}
 				add_permanent_claim = ROOT
 			}
 			country_event = {
@@ -1954,31 +1999,214 @@ country_decisions = {
 			factor = 1
 		}
 	}
-	form_abyssinia = {
+	form_egypt = {
 	
 		major = yes
 	
 		potential = {
 			capital_scope = {
-				colonial_region = colonial_ethiopia
+				colonial_region = colonial_alexandria
 			}
-			NOT = { tag = ABY }
+			NOT = { tag = EGY }
 		}
 		allow = {
 			OR = {
 				is_former_colonial_nation = yes
 				AND = {
 					has_institution = nationalism_institution
-					culture_group = cushitic
+					primary_culture = al_misr_arabic
 				}
 			}
 			is_subject = no
 		}
 		effect = {
-			change_tag = ABY
+			change_tag = EGY
 			
-			colonial_ethiopia = {
+			colonial_alexandria = {
 				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_arabia = {
+	
+		major = yes
+	
+		potential = {
+			capital_scope = {
+				colonial_region = colonial_basra
+			}
+			NOT = { tag = ARB }
+		}
+		allow = {
+			OR = {
+				is_former_colonial_nation = yes
+				AND = {
+					has_institution = nationalism_institution
+					culture_group = turko_semitic
+				}
+			}
+			is_subject = no
+		}
+		effect = {
+			change_tag = ARB
+			
+			colonial_basra = {
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_iran = {
+	
+		major = yes
+	
+		potential = {
+			capital_scope = {
+				colonial_region = colonial_persia
+			}
+			NOT = { tag = IRN }
+		}
+		allow = {
+			OR = {
+				is_former_colonial_nation = yes
+				AND = {
+					has_institution = nationalism_institution
+					culture_group = iranian
+				}
+			}
+			is_subject = no
+		}
+		effect = {
+			change_tag = IRN
+			
+			colonial_persia = {
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_burma = {
+	
+		major = yes
+	
+		potential = {
+			capital_scope = {
+				colonial_region = colonial_burma
+			}
+			NOT = { tag = BRM }
+		}
+		allow = {
+			OR = {
+				is_former_colonial_nation = yes
+				AND = {
+					has_institution = nationalism_institution
+					culture_group = burman
+				}
+			}
+			is_subject = no
+		}
+		effect = {
+			change_tag = BRM
+			
+			colonial_burma = {
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_vin = {
+	
+		major = yes
+	
+		potential = {
+			capital_scope = {
+				colonial_region = colonial_indochina
+			}
+			NOT = { tag = VIN }
+		}
+		allow = {
+			OR = {
+				is_former_colonial_nation = yes
+				AND = {
+					has_institution = nationalism_institution
+					culture_group = southeastasian_group
+				}
+			}
+			is_subject = no
+		}
+		effect = {
+			change_tag = VIN
+			
+			colonial_indochina = {
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_india = {
+	
+		major = yes
+	
+		potential = {
+			capital_scope = {
+				superregion = india_superregion
+			}
+			NOT = { tag = BHA }
+		}
+		allow = {
+			OR = {
+				is_former_colonial_nation = yes
+				AND = {
+					has_institution = nationalism_institution
+					OR = {
+						culture_group = eastern_aryan
+						culture_group = hindusthani
+						culture_group = western_aryan
+						culture_group = dravidian
+						culture_group = central_indic
+					}
+				}
+			}
+			is_subject = no
+		}
+		effect = {
+			change_tag = BHA
+			override_country_name = "INDIA"
+			set_country_flag = india
+			
+			india_superregion = {
+				add_permanent_claim = ROOT
+			}
+
+			hidden_effect = {
+				every_country = {
+					limit = {
+						capital_scope = {
+							OR = {
+								colonial_region = colonial_coromandel
+								colonial_region = colonial_north_india
+								colonial_region = colonial_east_india
+								colonial_region = colonial_deccan
+								colonial_region = colonial_east_india
+							}
+						}
+						ai = yes
+					}
+					country_event = {
+						id = dominionhood_colonies.8
+					}
+				}
 			}
 		}
 		ai_will_do = {
@@ -2003,12 +2231,13 @@ country_decisions = {
 				is_former_colonial_nation = yes
 				AND = {
 					has_institution = nationalism_institution
-					culture_group = cushitic
+					culture_group = malay
 				}
 			}
 			is_subject = no
 		}
 		effect = {
+			set_country_flag = indonesia
 			change_tag = IDN
 			
 			colonial_indonesia = {
@@ -2016,6 +2245,23 @@ country_decisions = {
 			}
 			colonial_moluccas = {
 				add_permanent_claim = ROOT
+			}
+
+			hidden_effect = {
+				every_country = {
+					limit = {
+						capital_scope = {
+							OR = {
+								colonial_region = colonial_moluccas
+								colonial_region = colonial_indonesia
+							}
+						}
+						ai = yes
+					}
+					country_event = {
+						id = dominionhood_colonies.9
+					}
+				}
 			}
 		}
 		ai_will_do = {

@@ -10,7 +10,7 @@ ai_dev_cost = {
 
 	set_variable = {
 		which = dev_base_cost
-		value = 150
+		value = 100
 	}
 
 	if = {
@@ -214,7 +214,7 @@ ai_dev_cost_dip = {
 
 	set_variable = {
 		which = dev_base_cost
-		value = 150
+		value = 100
 	}
 
 	if = {
@@ -418,7 +418,7 @@ ai_dev_cost_mil = {
 
 	set_variable = {
 		which = dev_base_cost
-		value = 150
+		value = 100
 	}
 
 	if = {

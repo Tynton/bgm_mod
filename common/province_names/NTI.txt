@@ -309,6 +309,7 @@
 1866 = "Namurcum"
 1878 = "Aquisgranum"
 2974 = "Borchlonium"
+4954 = "Orolaunum"
 
 #Germania Inferior
 80 = "Augusta Treveronum"

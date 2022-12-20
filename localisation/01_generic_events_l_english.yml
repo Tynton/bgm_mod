@@ -13,11 +13,27 @@
  americanindependence.n.5:0 "The American Revolution!"
  americanindependence.d.5:0 "-AWAITING LOCALIZATION-"
  
+ incidents_german_con.1.t:0 "Secularization of the HRE"
+ incidents_german_con.1.d:0 "Recent turbulence in the political landscape of our continent have forced our hand. The Holy Roman Empire may come under threat of prominent German states and it is time for us to take action. We are forced to convene the Imperial Diet for an address and deliberation."
+ incidents_german_con.1.a:0 "This can decide the fate of Europe."
+ 
+ incidents_german_con.2.t:0 "Secularization of the HRE"
+ incidents_german_con.2.d:0 "Recent turbulence in the political landscape of our continent have forced our hand. The Holy Roman Empire may come under threat of prominent German states and it is time for us to take action. We are forced to convene the Imperial Diet for an address and deliberation."
+ incidents_german_con.2.a:0 "This can decide the fate of Europe."
+ 
  incidents_german_con.3.t:0 "Secularization of the HRE"
  incidents_german_con.3.d:0 "Recent turbulence in the political landscape of our continent have forced our hand. The Holy Roman Empire may come under threat of angry masses and it is time for us to take action. We are forced to convene the Imperial Diet for an address and deliberation."
  incidents_german_con.3.a:0 "Use this opportunity to reinvent the HRE."
  incidents_german_con.3.b:0 "Reform the government to emphasize freedom."
  incidents_german_con.3.c:0 "The reformers and liberals must be destroyed."
+ 
+ italyunity.n.6:0 "Folding of Italian Republics"
+ italyunity.d.6:0 "Our overlord has decided to construct a new Italian government in their vision using us as its head!"
+ italyunity.6.a:0 "Lovely!"
+ 
+ germanyunity.n.11:0 "Folding of German Republics"
+ germanyunity.d.11:0 "Our overlord has decided to construct a new German government in their vision using us as its head!"
+ germanyunity.11.a:0 "Lovely!"
  
  
  

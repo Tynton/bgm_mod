@@ -1,0 +1,194 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 186 126 52 } #153 56 37
+revolutionary_colors = { 4  0  15 }
+
+preferred_religion = protestant
+
+historical_idea_groups = {
+	economic_ideas
+	defensive_ideas
+	diplomatic_ideas
+	offensive_ideas
+	innovativeness_ideas
+	quantity_ideas
+	administrative_ideas
+	religious_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	swiss_landsknechten
+	dutch_maurician
+	austrian_tercio
+	austrian_grenzer
+	austrian_hussar
+	austrian_white_coat
+	austrian_jaeger
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Václav #4" = 50
+	"Jirí #0" = 25
+	"Karel #5" = 40
+	"Premysl #0" = 10
+	"Premysl Otakar #3" = 25
+	"Zikmund #0" = 0
+	"Frantisek #0" = 0
+	"Jindrich #0" = 5
+	"Josef #0" = 5
+	"Frantisek Josef #0" = 0
+	"Bocek #0" = 0
+	"Jan Jirí #0" = 5
+	"Ludvík #0" = 0
+	"Vladislav #0" = 20
+	"Vladimír #0" = 10
+	"Petr #0" = 5
+	"Jan Petr #0" = 5
+	"Viktorín #0" = 0
+	"Jan Václav #0" = 0
+	"Josef Václav #0" = 0
+	"Karel Josef #0" = 0
+	"Matyáš #0" = 0
+	"Ferdinand #0" = 5
+	"Otakar #0" = 10
+	"Vratislav #3" = 5
+	"Boleslav #4" = 10
+	"Vilém #0" = 5
+	"Viktor #0" = 0
+	"Jaromír #0" = 5
+	"Jaroslav #0" = 1
+	"Friedrich #2" = 35
+	"Albrecht #1" = 35
+	"Friedrich #2 Wilhelm" = 35
+	"Friedrich #2 August" = 35
+	"Ferdinand #0" = 30
+	"Wilhelm #0" = 25
+	"Karl #4" = 20
+	"Christian #0" = 20
+	"Johann #0 Georg" = 20
+	"Maximilian #0" = 20
+	"Franz #0" = 20
+	"Joseph #0" = 20
+	"Heinrich #7" = 15
+	"Karl #4 Albrecht" = 15
+	"Karl #4 Theodor" = 15
+	"Friedrich #2 Albrecht" = 15
+	"Friedrich #2 Christian" = 15
+	"Albrecht #1 Achilles" = 15
+	"August #0" = 15
+	"Ernest #0" = 15
+	"Ferdinand #0 Maria" = 15
+	"Franz #0 Stefan" = 15
+	"Georg #0" = 15
+	"Georg #0 Wilhelm" = 15
+	"Joachim #0 Hector" = 15
+	"Joachim #0 Nestor" = 15
+	"Johann #0" = 15
+	"Johann #0 Cicero" = 15
+	"Johann #0 Friedrich" = 15
+	"Johann #0 Siegmund" = 15
+	"Ladislav #0" = 15
+	"Leopold #0" = 15
+	"Matthias #0" = 15
+	"Mortiz #0" = 15
+	"Siegmund #0" = 15
+	"Karl #4 Joseph" = 10
+	"Ludwig #4" = 10
+	"August #0 Wilhelm" = 10
+	"Wilhelm #0 Friedrich" = 10
+	"Alexander #0" = 10
+	"Anton #0" = 10
+	"Christian #0 Albrecht" = 10
+	"Hektor #0" = 10
+	"Johann #0 Karl" = 10
+	"Johann #0 Leopold" = 10
+	"Leopold #0 Ferdinand" = 10 
+	"Leopold #0 Johann" = 10
+	"Maximilian #0 Philipp" = 10
+	"Ruprecht #0" = 10
+	"Wenzel #0" = 10
+
+
+	"Anezka #0" = -1
+	"Eliska #0" = -1
+	"Katerina #0" = -1
+	"Marie #0" = -1
+	"Ludmila #0" = -1
+	"Alzbeta #0" = -1
+}
+
+leader_names = {
+	Zajíc
+	Jiskra
+	Zelezný
+	Capek
+	Thurn
+	Kolowrat
+	Schwarzenberg
+	"z Rozmberka"
+	Velen
+	Sokol
+	"ze Zerotína"
+	"z Husi"
+	"z Polzic"
+	Harant
+	"z Brandýsa"
+	Purkyne
+	"z Veleslavína"
+	"z Rozmitálu"
+	Berka
+	"z Pardubic"
+	"ze Lvovic"
+	Kaspar
+	Reiner
+	"ze Svamberka"
+	"z Vartemberka"
+	"z Mitrovic"
+	Píka
+	Mansfeld
+	Veliký
+	Syrový
+	"z Otradovic"
+	"z Falkensteina"
+}
+
+ship_names = {
+	"Svatý Vaclav"
+	"Svatá Ludmila"
+	"Svatý Jan Nepomucký"
+	"Svatý Mikulás"
+	"Svatý Jirí"
+	"Svatá Anezká"
+	"Nejsvetejsí Trojice"
+	"Král Karel"
+	"Král Boleslav"
+	"Král Premysl"
+	"Panna Maria Vitezná"
+	"Jan Hus"
+	"Jan Zizka"
+	"Prokop Holý"
+	"Kníze Bretislav"
+	"Premysl Orac"
+	Ctirad
+	Cechy
+	Morava
+	Libuse
+	Odvázný
+	Neporazitelný
+	Rychlý
+	Bystrý
+	Orel
+	Sokol
+	Slezsko
+	Sipka
+	Hvezda
+}

@@ -93,6 +93,17 @@ country_event = {
 			add_province_triggered_modifier = standardized_language_spanish
 		}
 
+		random_list = {
+			50 = {
+				HAB = {
+					set_country_flag = wants_hre
+				}
+			}
+			50 = {
+				
+			}
+		}
+
 		if = {
 			limit = {
 				FRA = {

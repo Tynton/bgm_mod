@@ -1206,23 +1206,103 @@ plot_government_replacement =  {
 	}
 }
 
+integrate_colonial = {
+	category = alliance
+	require_acceptance = no
+	is_visible = {
+		OR = {
+			full_idea_group = exploration_ideas
+		}
+		FROM = {
+			is_subject_of = ROOT
+			capital_scope = {
+				bgm_colonial = yes
+			}
+			is_former_colonial_nation = no
+			ai = yes
+			NOT = {
+				OR = {
+					is_subject_of_type = colony
+					is_subject_of_type = private_enterprise
+					is_subject_of_type = crown_colony
+					is_subject_of_type = self_governing_colony
+				}
+			}
+		}
+	}
+	is_allowed = {
+		always = yes
+	}
+	ai_acceptance = {
+		
+	}
+	on_accept = {
+		FROM = {
+			every_owned_province = {
+				add_core = ROOT
+			}
+		}
+		ROOT = {
+			inherit = FROM
+		}
+	}
+	ai_will_do = {
+		always = yes
+	}
+}
+
 demand_integration = {
 	category = influence
 	require_acceptance = yes
 	is_visible = {
 		OR = {
 			AND = {
-				has_institution = global_imperialism
+				has_institution = nationalism_institution
 				FROM = {
 					capital_scope = {
-						NOT = {
-							continent = ROOT
+						bgm_colonial = no
+					}
+				}
+			}
+			AND = {
+				OR = {
+					FROM = {
+						capital_scope = {
+							superregion = china_superregion
+						}
+						ROOT = {
+							has_country_flag = claim_china
+						}
+					}
+					FROM = {
+						capital_scope = {
+							superregion = india_superregion
+						}
+						ROOT = {
+							has_country_flag = claim_india
+						}
+					}
+					FROM = {
+						capital_scope = {
+							region = burma_region
+						}
+						ROOT = {
+							has_country_flag = claim_burma
+						}
+					}
+					FROM = {
+						capital_scope = {
+							region = indo_china_region
+						}
+						ROOT = {
+							has_country_flag = claim_indochina
 						}
 					}
 				}
 			}
 			AND = {
 				full_idea_group = expansion_ideas
+				full_idea_group = exploration_ideas
 				FROM = {
 					capital_scope = {
 						OR = {
@@ -1232,6 +1312,7 @@ demand_integration = {
 					}
 				}
 			}
+			has_reform = authoritarian_mechanic
 			has_reform = fascist_mechanic
 			has_reform = communist_mechanic
 			has_reform = socialist_mechanic
@@ -1710,6 +1791,59 @@ demand_integration = {
 				capital_scope = {
 					NOT = {
 						continent = ROOT
+					}
+				}
+			}
+		}
+		AND = {
+			NOT = {
+				FROM = {
+					capital_scope = {
+						superregion = india_superregion
+					}
+				}
+				has_global_flag = india_claim
+			}
+			has_country_flag = claim_india
+		}
+		AND = {
+			NOT = {
+				FROM = {
+					capital_scope = {
+						superregion = china_superregion
+					}
+				}
+				has_global_flag = china_claim
+			}
+			has_country_flag = claim_china
+		}
+		AND = {
+			NOT = {
+				FROM = {
+					capital_scope = {
+						superregion = indo_china_region
+					}
+				}
+				has_global_flag = indochina_claim
+			}
+			has_country_flag = claim_indochina
+		}
+		NOT = {
+			AND = {
+				FROM = {
+					capital_scope = {
+						continent = europe
+					}
+				}
+				ROOT = {
+					NOT = {
+						capital_scope = {
+							continent = europe
+						}
+					}
+					OR = {
+						is_great_power = no
+						great_power_rank = 4
 					}
 				}
 			}

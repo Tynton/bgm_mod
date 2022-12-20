@@ -248,7 +248,7 @@ age_of_reformation = {
 		OR = {
 			is_religion_enabled = protestant
 			calc_true_if = {
-				amount = 8
+				amount = 12
 				all_country = {
 					OR = {
 						religion = fraticelli
@@ -258,7 +258,7 @@ age_of_reformation = {
 					}
 				}
 			}
-			has_global_flag = preprot_heresy
+			#has_global_flag = preprot_heresy
 			has_global_flag = rome_converted_bgm
 		}
 	}

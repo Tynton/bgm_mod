@@ -240,3 +240,102 @@ country_event = {
 		grant_independence = yes
 	}
 }
+
+country_event = {
+	id = dominionhood_colonies.8
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		ai = yes
+		is_former_colonial_nation = yes
+		exists = BHA
+		BHA = { has_country_flag = india }
+		capital_scope = {
+			OR = {
+				colonial_region = colonial_coromandel
+				colonial_region = colonial_north_india
+				colonial_region = colonial_east_india
+				colonial_region = colonial_deccan
+				colonial_region = colonial_east_india
+			}
+		}
+	}	
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = none
+		BHA = {
+			inherit = ROOT
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {
+		name = none
+		trigger = {
+			OR = {
+				is_rival = BHA
+				BHA = { is_rival = ROOT }
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = dominionhood_colonies.9
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		ai = yes
+		is_former_colonial_nation = yes
+		exists = IDN
+		IDN = { has_country_flag = indonesia }
+		capital_scope = {
+			OR = {
+				colonial_region = colonial_indonesia
+				colonial_region = colonial_moluccas
+			}
+		}
+	}	
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = none
+		IDN = {
+			inherit = ROOT
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {
+		name = none
+		trigger = {
+			OR = {
+				is_rival = IDN
+				IDN = { is_rival = ROOT }
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
