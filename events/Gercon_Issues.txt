@@ -535,6 +535,14 @@ country_event = { #Final Consensus on Issue
 	option = {
 		name = "Gercon_issues.6.a" #victory
 
+		hidden_effect = {
+			country_event = {
+				id = german_confederation.16
+				days = 3650
+			}
+			set_country_flag = gercon_cooldown
+		}
+
 		trigger = {
 			check_variable = {
 				which = gercon_yes

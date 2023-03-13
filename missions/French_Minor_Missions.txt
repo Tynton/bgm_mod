@@ -12,6 +12,7 @@ french_minor_missions = {
 		NOT = { tag = PRO }
 		NOT = { tag = FRA }
 		NOT = { tag = BUR }
+		NOT = { tag = BFR }
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
@@ -113,7 +114,10 @@ french_minor_missions = {
 			add_mil_power = 200
 			france_region = {
 				limit = {
-					owned_by = FRA
+					OR = {
+						owned_by = FRA
+						owned_by = BFR
+					}
 				}
 				add_permanent_claim = ROOT
 			}
@@ -123,13 +127,26 @@ french_minor_missions = {
 		icon = mission_monarch_in_throne_room
 		required_missions = { french_minors_paris }
 		provinces_to_highlight = {
-			owned_by = FRA
+			OR = {
+				owned_by = FRA
+				owned_by = BFR
+			}
 		}
 		trigger = {
 			is_subject = no
 			owns_core_province = 183
 			NOT = {
-				exists = FRA
+				OR = {
+					exists = FRA
+					exists = FRR
+					exists = FRE
+					exists = FRC
+					exists = FRF
+					exists = SFR
+					exists = BFR
+					exists = BUP
+					exists = BFE
+				}
 			}
 			is_at_war = no
 		}
@@ -168,8 +185,34 @@ french_minor_missions = {
 				}
 			}
 			if = {
-				limit = { is_playing_custom_nation = no }
+				limit = { 
+					is_playing_custom_nation = no 
+					NOT = {
+						OR = {
+							primary_culture = swiss
+							primary_culture = burgundian
+							primary_culture = frainc_comtou
+						}
+					}
+				}
 				change_tag = FRA
+			}
+			if = {
+				limit = { 
+					is_playing_custom_nation = no 
+					OR = {
+						primary_culture = burgundian
+						primary_culture = frainc_comtou
+					}
+				}
+				change_tag = BFR
+			}
+			if = {
+				limit = { 
+					is_playing_custom_nation = no 
+					primary_culture = swiss
+				}
+				change_tag = SFR
 			}
 			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes

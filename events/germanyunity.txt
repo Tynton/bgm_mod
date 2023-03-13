@@ -168,18 +168,14 @@ country_event = {
 	trigger = {
 		exists = GER
 		OR = {
+			culture_group = germanic
 			AND = {
-				OR = {
-					culture_group = germanic
-					AND = {
-						culture_group = benelux
-						is_revolutionary = yes
-					}
-				}
-				NOT = {
-					total_development = 500
-				}
+				culture_group = benelux
+				bgm_rev = yes
 			}
+		}
+		NOT = {
+			total_development = GER
 		}
 		NOT = { tag = GER }
 		NOT = { tag = GRD }
@@ -213,6 +209,9 @@ country_event = {
 	
 	option = {
 		name = "germanyunity.4.a"
+
+		set_country_flag = denied_annexation #do it anyway because if you're inherited once and spat out it won't happen again
+
 		GER = {
 			inherit = ROOT
 			ROOT = {
@@ -226,7 +225,7 @@ country_event = {
 			
 			modifier = {
 				factor = 500
-				is_revolutionary = yes
+				bgm_rev = yes
 			}
 		}
 	}
@@ -252,7 +251,7 @@ country_event = {
 					culture = austrian
 					culture = swiss
 				}
-				is_revolutionary = no
+				bgm_rev = no
 			}
 		}
 	}
@@ -436,7 +435,7 @@ country_event = {
 			
 			
 		}
-		is_revolutionary = yes
+		bgm_rev = yes
 		NOT = {
 			exists = GER
 		}
@@ -649,9 +648,21 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = "italyunity.11.a"
+		name = "germanyunity.11.a"
 		set_country_flag = preeminent_sisterrepublic_ger
-		change_tag = GER
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						any_country = {
+							is_subject_of_type = german_confederation_member
+						}
+						exists = GER
+					}
+				}
+			}
+			change_tag = GER
+		}
 	}
 }
 
@@ -670,6 +681,23 @@ country_event = {
 			limit = {
 				has_country_flag = preeminent_sisterrepublic_ger
 			}
+			inherit = ROOT
+		}
+	}
+}
+
+country_event = {
+	id = germanyunity.13
+	title = none
+	desc = none
+	picture = none
+	
+	is_triggered_only = yes
+
+	
+	option = {
+		name = none
+		FROM = {
 			inherit = ROOT
 		}
 	}

@@ -2,7 +2,7 @@
 
 owner = MLO
 controller = MLO
-culture = lombard
+culture = ticinese
 religion = catholic
 hre = yes
 base_tax = 4

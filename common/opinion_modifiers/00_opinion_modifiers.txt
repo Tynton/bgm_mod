@@ -61,7 +61,7 @@ republic_misguided_heretic_border = {
 }
 
 defender_of_faith = {
-	opinion = 30
+	opinion = 25
 }
 
 same_religion = {
@@ -101,14 +101,14 @@ at_war = {
 }
 
 same_dynasty = {
-	opinion = 30
+	opinion = 25
 }
 royal_marriage = {
-	opinion = 40
+	opinion = 25
 }
 
 guaranteed = {
-	opinion = 20
+	opinion = 50
 }
 
 alliance = {
@@ -120,11 +120,11 @@ in_war_together = {
 }
 
 have_core = {
-	opinion = -20
+	opinion = -50
 }
 
 have_claim = {
-	opinion = -10
+	opinion = -25
 }
 
 getting_subsidies = {
@@ -142,7 +142,7 @@ creating_claim = {
 }
 
 is_vassal = {
-	opinion = 80
+	opinion = 25
 }
 in_union = {
 	opinion = 25
@@ -208,17 +208,17 @@ picked_right_incident_option = {
 ##################################
 
 want_your_provinces = {
-	opinion = -15
+	opinion = -25
 	min = -200
 }
 
 want_subject_provinces = {
-	opinion = -15
+	opinion = -25
 	min = -200
 }
 
 border_friction = {
-	opinion = -1
+	opinion = -5
 	min = -200
 }
 
@@ -243,7 +243,7 @@ religious_friend = {
 }
 
 embargo = {
-	opinion = -15
+	opinion = -50
 }
 
 opinion_military_access = {
@@ -265,7 +265,7 @@ pirated_us = {
 }
 
 converted_our_culture = {
-	opinion = -30
+	opinion = -75
 	yearly_decay = 1
 }
 
@@ -514,18 +514,18 @@ removed_our_freecity = {
 }
 
 honored_alliance = {
-	opinion = 10
+	opinion = 25
 	yearly_decay = 1
 	max = 10
 }
 
 break_alliance = {
-	opinion = -50
+	opinion = -100
 	yearly_decay = 1
 }
 
 break_marriage = {
-	opinion = -75
+	opinion = -50
 	yearly_decay = 3
 }
 
@@ -536,12 +536,12 @@ break_alliance_war = {
 }
 
 dishonoured_alliance = {
-	opinion = -50
+	opinion = -200
 	yearly_decay = 5
 }
 
 declared_war_on_us = {
-	opinion = -25
+	opinion = -50
 	yearly_decay = 1
 }
 
@@ -551,31 +551,31 @@ had_war_with_us = {
 }
 
 declared_war_on_neighbor = {
-	opinion = -10
+	opinion = -5
 	months = 120
 	yearly_decay = 1
 }
 
 violated_truce_us = {
-	opinion = -100
+	opinion = -200
 	months = 1200
 	yearly_decay = 1
 }
 
 violated_truce_neighbor = {
-	opinion = -25
+	opinion = -100
 	months = 300
 	yearly_decay = 1
 }
 
 separate_peace = {
-	opinion = -30
+	opinion = -50
 	months = 360
 	yearly_decay = 1
 }
 
 fought_to_the_end = {
-	opinion = 10
+	opinion = 25
 	months = 120
 	yearly_decay = 1
 	max = 20
@@ -601,7 +601,7 @@ conquered_province_same_religion_group = {
 }
 
 conquered_province_us = {
-	opinion = -25
+	opinion = -100
 	months = 0
 	yearly_decay = 1
 }
@@ -613,13 +613,13 @@ conquered_rival_province = {
 }
 
 gave_province_in_peace = {
-	opinion = 10
+	opinion = 25
 	months = 0
 	yearly_decay = 1
 }
 
 declared_war_on_enemy = {
-	opinion = 10
+	opinion = 25
 	months = 0
 	yearly_decay = 1
 }
@@ -632,7 +632,7 @@ discovery_of_evil = {
 }
 
 warned = {
-	opinion = -10
+	opinion = -50
 	months = 0
 	yearly_decay = 1
 }
@@ -658,13 +658,13 @@ aggressive_expansion = {
 }
 
 enforced_peace_against = {
-	opinion = -10
+	opinion = -75
 	months = 0
 	yearly_decay = 1
 }
 
 enforced_peace_for = {
-	opinion = 10
+	opinion = 50
 	months = 0
 	yearly_decay = 1
 }
@@ -676,7 +676,7 @@ improved_imperial_relations = {
 }
 
 returned_core_to_me = {
-	opinion = 40
+	opinion = 50
 	yearly_decay = 1
 }
 
@@ -717,7 +717,7 @@ broke_march = {
 
 
 violated_tordesillas = {
-	opinion = -50
+	opinion = -10
 	yearly_decay = 1
 }
 

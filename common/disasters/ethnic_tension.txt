@@ -111,7 +111,7 @@ intranational_cultural_tension = {
 						}
 					}
 					divide_variable = { which = num_of_provs_with_trigger which = num_of_provs_total }
-					check_variable = { which = num_of_provs_with_trigger value = 0.5 } # 50%
+					check_variable = { which = num_of_provs_with_trigger value = 0.8 } # 50%
 				}
 			}
 		}
@@ -180,17 +180,9 @@ intranational_cultural_tension = {
 
 	modifier = {
 		global_unrest = 25
-		stability_cost_modifier = 0.25
-		
-		stability_cost_to_declare_war = 2
-
-		min_autonomy = 25
-		global_autonomy = 0.15
-
-		diplomatic_reputation = -1
-		war_exhaustion = 2
-
-		reduced_liberty_desire = -10
+		stability_cost_modifier = 0.5
+		stability_cost_to_declare_war = 1
+		governing_capacity_modifier = -0.5
 	}
 	
 	

@@ -6,10 +6,6 @@ country_decisions = {
 			normal_or_historical_nations = yes
 			NOT = { has_country_flag = restored_rome_flag }
 			owns = 118
-			OR = {
-				ai = no
-				is_playing_custom_nation = no
-			}
 			NOT = { tag = HLR }
 			NOT = { tag = ROM }
 			NOT = { tag = PAP }
@@ -23,35 +19,38 @@ country_decisions = {
 		provinces_to_highlight = {
 			OR = {
 				region = italy_region
-				province_id = 183
-				province_id = 217
-				#region = france_region
-				#region = iberia_region
+				region = france_region
+				region = iberia_region
+				region = balkan_region
 				#province_id = 96 # Zeeland
 				#province_id = 151 #constantinople
 			}
 			NOT = { country_or_subject_holds  = ROOT }
 		}
 		allow = {
-			italy_region = {
-				type = all
-				country_or_subject_holds  = ROOT
-			}
-			#france_region = {
-			#	type = all
-			#	country_or_subject_holds  = ROOT
-			#}
-			#iberia_region = {
-			#	type = all
-			#	country_or_subject_holds  = ROOT
-			#}
-			#owns = 96 # Zeeland
-			#owns = 151
 			OR = {
-				owns = 183
-				owns = 217
+				religion = catholic
+				religion = fraticelli
+				culture_group = french
+				culture_group = occitan
+				culture_group = latin
+				culture_group = iberian
+				culture_group = romanian_group
 			}
-			
+			num_of_owned_provinces_with = {
+				is_core = ROOT
+				region = italy_region
+				value = 40
+			}
+			num_of_owned_provinces_with = {
+				is_core = ROOT
+				OR = {
+					region = france_region
+					region = iberia_region
+					region = balkan_region
+				}
+				value = 100
+			}
 			is_at_war = no
 			is_free_or_tributary_trigger = yes
 			is_nomad = no

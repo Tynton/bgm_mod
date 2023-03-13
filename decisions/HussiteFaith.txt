@@ -15,11 +15,17 @@ country_decisions = {
 				}
 			}
 			religion_group = christian
+			NOT = { religion = orthodox }
 			is_emperor = no
 		}
 		allow = {
+			is_at_war = no
 			NOT = { has_country_modifier = recent_conversion }
-			dominant_religion = hussite
+			OR = {
+				dominant_religion = hussite
+				has_global_flag = rome_converted_bgm
+				has_global_flag = preprot_heresy
+			}
 			stability = 1
 		}
 		effect = {
@@ -57,6 +63,13 @@ country_decisions = {
 		}
 		ai_will_do = {
 			factor = 1
+
+			modifier = {
+				factor = 0
+				NOT = {
+					dominant_religion = hussite
+				}
+			}
 
 			modifier = {
 				factor = 0

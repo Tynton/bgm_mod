@@ -379,7 +379,7 @@ ai_militarist = {
 		modifier = {
 			factor = 6
 			revolution_target_exists = yes
-			is_revolutionary = no
+			bgm_rev = no
 		}
 		modifier = {
 			factor = 3

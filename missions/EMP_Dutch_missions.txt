@@ -1258,7 +1258,7 @@ emp_ned_slot5_branch = { # Orangists
 						current_age = age_of_revolutions
 					}
 					NOT = { absolutism = 99 }
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				add_absolutism = 20
 			}

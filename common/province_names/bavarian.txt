@@ -14,7 +14,7 @@
 #5148 = "Kaufbeiren"
 
 #austria
-34 = "Wean"
+134 = "Wean"
 73 = "Innschbruck"
 4761 = "Steia"
 4762 = "St. Pödn"

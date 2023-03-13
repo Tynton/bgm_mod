@@ -2,8 +2,8 @@ po_enforce_dynasty = {
 	category = 6
 	power_projection = humiliated_rival
 	power_cost_base = 0.0
-	prestige_base = 0.25
-	ae_base = 0.5
+	prestige_base = 0.1
+	ae_base = 0.075
 	warscore_cost = {
 		all_provinces = 0.0
 		no_provinces = 50.0
@@ -39,6 +39,11 @@ po_enforce_dynasty = {
 					dynasty = ROOT
 				}
 			}
+		}
+		ROOT = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
 		}
 	}
 	ai_weight = { # Defaults to always evaluate to 0

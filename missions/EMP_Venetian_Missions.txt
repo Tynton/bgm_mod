@@ -197,7 +197,7 @@ emp_ven_slot_2 = {
 		trigger = {
 			if = {
 				limit = {
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				absolutism = 30
 			}
@@ -245,7 +245,7 @@ emp_ven_slot_2 = {
 						current_age = age_of_revolutions
 					}
 					NOT = { absolutism = 80 }
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				add_absolutism = 20
 			}

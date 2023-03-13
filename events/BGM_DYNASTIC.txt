@@ -932,7 +932,7 @@ country_event = {
 		name = "BGM_DYNASTIC.18.a"
 		add_casus_belli = {
 			target = FROM
-			type = cb_dynastic_enforcement
+			type = cb_restore_personal_union
 			months = 120
 		}
 	}

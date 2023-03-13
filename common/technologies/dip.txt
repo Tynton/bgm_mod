@@ -133,7 +133,7 @@ technology  = { #Docks
 		printing_press = 0.25
 	}
 	
-	num_accepted_cultures = 1
+	#num_accepted_cultures = 1
 	shipyard = yes
 
 	trade_range				=	10
@@ -237,7 +237,7 @@ technology = { #The Galleass
 	}
 	
 	tradecompany = yes
-	num_accepted_cultures = 1
+	#num_accepted_cultures = 1
 
 	
 	enable = galleass
@@ -358,7 +358,7 @@ technology = { #Naval Professionalization
 
 	trade_efficiency 		= 	0.01
 	trade_range				=	20
-	num_accepted_cultures = 1
+	#num_accepted_cultures = 1
 	
 }
 
@@ -484,7 +484,7 @@ technology = { #The Eastindiaman
 	
 	range					=	200
 	global_colonial_growth  = 	75
-	num_accepted_cultures = 2
+	#num_accepted_cultures = 2
 	
 	enable = eastindiaman
 	enable = great_frigate
@@ -523,7 +523,7 @@ technology = { #Joint Stock Companies
 		manufactories = 0.0
 		enlightenment = 1
 		global_imperialism = 1
-		industrialization = 0.15
+		industrialization = 0.1
 	}
 	
 	trade_efficiency 		= 	0.01
@@ -542,7 +542,7 @@ technology = { #Midshipmen Cadets
 		manufactories = 0.0
 		enlightenment = 1
 		global_imperialism = 1
-		industrialization = 0.25
+		industrialization = 0.175
 	}
 	
 	naval_morale			=	0.5
@@ -561,7 +561,7 @@ technology = { #Insurance Companies
 		manufactories = 0.0
 		enlightenment = 1
 		global_imperialism = 1
-		industrialization = 0.35
+		industrialization = 0.25
 	}
 	
 	trade_efficiency 		= 	0.01
@@ -587,7 +587,7 @@ technology = { #Superior Ship Design
 	
 	naval_morale			=	0.5
 	naval_maintenance		= 	0.1	
-	num_accepted_cultures = 5
+	#num_accepted_cultures = 5
 }
 
 technology = { #The Gold Standard
@@ -848,7 +848,7 @@ technology = {
 
 	#Trade Globalization
 	trade_efficiency 	= 0.08
-	num_accepted_cultures = 10
+	#num_accepted_cultures = 10
 	trade_range = 2500
 	
 }
@@ -996,7 +996,7 @@ technology = {
 	
 	trade_efficiency = 0.02
 	
-	num_accepted_cultures = 25
+	#num_accepted_cultures = 25
 }
 
 technology = {

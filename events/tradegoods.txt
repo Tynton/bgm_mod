@@ -1537,7 +1537,7 @@ country_event = {
 		change_price = {
 			trade_goods = cloth
 			key = INDUSTRIALIZATION_BGM
-			value = -0.5
+			value = 0.25
 			duration = -1
 		}
 		change_price = {
@@ -1567,7 +1567,7 @@ country_event = {
 		change_price = {
 			trade_goods = livestock
 			key = INDUSTRIALIZATION_BGM
-			value = -0.25
+			value = -0.5
 			duration = -1
 		}
 		change_price = {
@@ -1591,7 +1591,7 @@ country_event = {
 		change_price = {
 			trade_goods = cotton
 			key = INDUSTRIALIZATION_BGM
-			value = -0.25
+			value = 0.25
 			duration = -1
 		}
 		change_price = {
@@ -1603,13 +1603,13 @@ country_event = {
 		change_price = {
 			trade_goods = fur
 			key = INDUSTRIALIZATION_BGM
-			value = -0.25
+			value = 0.25
 			duration = -1
 		}
 		change_price = {
 			trade_goods = wool
 			key = INDUSTRIALIZATION_BGM
-			value = -0.5
+			value = 0.5
 			duration = -1
 		}
 	}

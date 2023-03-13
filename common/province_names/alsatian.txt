@@ -9,10 +9,10 @@
 
 #alsatian
 
-1880 = "Àltkìrech"
+1880 = { "Sundgau" "Àltkìrech" }
 4765 = "Milhüse"
 75 = { "Strossburi" "Strossburig" }
-#4968 = "Colmer"
+4955 = "Colmer"
 
 #swiss
 

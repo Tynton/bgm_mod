@@ -103,7 +103,7 @@ trade_company_english_channel = {
 		90 1744 1865 #flanders_area
 		4769 4770 1742
 		
-		4948 4951
+		4948 4951 4962 4963 4964 4965
 	}
 	
 	# Specific
@@ -130,7 +130,7 @@ trade_company_bordeaux = {
 		2989
 		4694 4697 4777 # new for 1.30
 		
-		4949
+		4949 4957 5076
 	}
 	
 	# Specific
@@ -150,6 +150,7 @@ trade_company_sevilla = {
 		206 207 208 1746 215 216 231 232 217 218 219 221 222 223 224 225 226 227 228 229 230 367 1745 1747 1748 1749 1851 2754 2755 2751 4150 
 		4546 4547 4548 4551 4552 4553 4554 4555 4556 4558
 		368 366 4565 4787 4788 4789
+		5077 5079 5080
 	}
 	
 	# Specific
@@ -165,7 +166,7 @@ trade_company_sevilla = {
 
 
 trade_company_valencia = {
-	color = { 87 70 168 }
+	color = { 130 127 189 }
 	
 	provinces = {
 		197 212 213 2987 2988 #catalonia_area
@@ -173,6 +174,7 @@ trade_company_valencia = {
 		211 214 2990 4557 #aragon_area
 		333 4559 4560 # Baleares
 		196 200 2753 4391 4695 #languedoc_area
+		5078
 	}
 	
 	# Specific
@@ -198,7 +200,7 @@ trade_company_champagne = {
 		191 192 193 1877 4392 #bourgogne_area
 		203 204 205 4719 #savoy_dauphine_area
 		4720 4721 4764 4766 
-		4947
+		4947 4961 5075
 	}
 	
 	# Specific
@@ -227,7 +229,7 @@ trade_company_genua = {
 		118 2976 4731 4732 # lazio-umbria
 		
 		104 1862 2979 4728 4740 # Lombardy
-		4946
+		4946 4959
 	}
 	
 	# Specific
@@ -248,7 +250,7 @@ trade_company_rome = {
 		123 1934 2984 #calabria_area
 		124 125 126 2982 #sicily_area
 		118 2976 4731 4732 # lazio-umbria
-		119 120 122 1933 2977 2985 4733 4942
+		119 120 122 1933 2977 2985 4733 4942 4960
 	}
 	
 	# Specific
@@ -269,7 +271,7 @@ trade_company_rheinland = {
 		4714 4718 4715 4716 4717 71 69
 		4722 4765 4767 4768 4774 4775
 		
-		4944 4950
+		4944 4950 4956
 	}
 	
 	# Specific
@@ -310,7 +312,7 @@ trade_company_wien = {
 		265 4237 4726 # Moravia
 		266 2967 2968 2970 4724 4725
 		267 1771
-
+		4955
 	}
 	
 	# Specific

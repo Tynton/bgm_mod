@@ -37,12 +37,6 @@ country_event = {
 						RELIGION = protestant
 					}
 				}
-				NOT = {
-					OR = {
-						has_global_flag = rome_converted_bgm
-						has_global_flag = preprot_heresy
-					}
-				}
 			}
 			AND = {
 				current_age = age_of_reformation
@@ -75,6 +69,14 @@ country_event = {
 				culture_group = scandinavian
 				culture_group = british
 				culture_group = west_slavic
+			}
+		}
+		modifier = {
+			factor = 2
+			PAP = { is_part_of_hre = yes }
+			OR = {
+				has_global_flag = rome_converted_bgm
+				has_global_flag = preprot_heresy
 			}
 		}
 		modifier = {

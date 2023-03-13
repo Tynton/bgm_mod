@@ -1,8 +1,8 @@
 #Country Name: Please see filename.
 
-graphical_culture = westerngfx
+graphical_culture = italianategfx
 
-color = { 214 15 91 } #231  181  12 / 209 183 43 / 214 15 91
+color = { 171 26 103 } #231  181  12 / 209 183 43 / 214 15 91
 
 revolutionary_colors = { 5  8  5 }
 

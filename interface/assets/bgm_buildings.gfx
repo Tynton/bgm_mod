@@ -709,4 +709,122 @@ objectTypes = {
 		file = "gfx/models/Buildings/Italianate/italianate_buildings_4_04.mesh"
 		scale = 0.4
 	}
+
+	#####################################################FRENCH#####################################################
+
+	pdxmesh = {
+		name = "frenchgfx_city_0"
+		file = "gfx/models/Buildings/Italianate/french_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_city_1"
+		file = "gfx/models/Buildings/french/french_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_city_2"
+		file = "gfx/models/Buildings/french/french_citycenter_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_city_3"
+		file = "gfx/models/Buildings/french/french_citycenter_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_castle_1"
+		file = "gfx/models/Buildings/french/french_citycenter_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_castle_2"
+		file = "gfx/models/Buildings/french/french_citycenter_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_castle_3"
+		file = "gfx/models/Buildings/french/french_citycenter_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_house_1_1"
+		file = "gfx/models/Buildings/french/french_buildings_1_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_house_1_2"
+		file = "gfx/models/Buildings/french/french_buildings_1_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_house_1_3"
+		file = "gfx/models/Buildings/french/french_buildings_1_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_house_1_4"
+		file = "gfx/models/Buildings/french/french_buildings_1_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_house_2_1"
+		file = "gfx/models/Buildings/french/french_buildings_2_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_house_2_2"
+		file = "gfx/models/Buildings/french/french_buildings_2_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_house_2_3"
+		file = "gfx/models/Buildings/french/french_buildings_2_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_house_2_4"
+		file = "gfx/models/Buildings/french/french_buildings_2_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_house_3_1"
+		file = "gfx/models/Buildings/french/french_buildings_3_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_house_3_2"
+		file = "gfx/models/Buildings/french/french_buildings_3_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_house_3_3"
+		file = "gfx/models/Buildings/french/french_buildings_3_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_house_3_4"
+		file = "gfx/models/Buildings/french/french_buildings_3_04.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_house_4_1"
+		file = "gfx/models/Buildings/french/french_buildings_4_01.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_house_4_2"
+		file = "gfx/models/Buildings/french/french_buildings_4_02.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_house_4_3"
+		file = "gfx/models/Buildings/french/french_buildings_4_03.mesh"
+		scale = 0.4
+	}
+	pdxmesh = {
+		name = "frenchgfx_house_4_4"
+		file = "gfx/models/Buildings/french/french_buildings_4_04.mesh"
+		scale = 0.4
+	}
 }

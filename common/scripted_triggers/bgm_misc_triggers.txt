@@ -1,0 +1,106 @@
+bgm_colonial = {
+	OR = {
+		colonial_region = colonial_aden
+		colonial_region = colonial_alaska
+		colonial_region = colonial_alexandria
+		colonial_region = colonial_astrakhan
+		colonial_region = colonial_aleppo
+		colonial_region = colonial_angola
+		colonial_region = colonial_australia
+		colonial_region = colonial_basra
+		colonial_region = colonial_brazil
+		colonial_region = colonial_burma
+		colonial_region = colonial_california
+		colonial_region = colonial_canada
+		colonial_region = colonial_chengdu
+		colonial_region = colonial_colombia
+		colonial_region = colonial_coromandel
+		colonial_region = colonial_deccan
+		colonial_region = colonial_east_africa
+		colonial_region = colonial_east_china
+		colonial_region = colonial_east_india
+		colonial_region = colonial_eastern_america
+		colonial_region = colonial_ethiopia
+		colonial_region = colonial_girin
+		colonial_region = colonial_great_lakes
+		colonial_region = colonial_hormuz
+		colonial_region = colonial_indochina
+		colonial_region = colonial_indonesia
+		colonial_region = colonial_ivory_coast
+		colonial_region = colonial_katsina
+		colonial_region = colonial_kongo
+		colonial_region = colonial_korea
+		colonial_region = colonial_la_plata
+		colonial_region = colonial_lahore
+		colonial_region = colonial_lhasa
+		colonial_region = colonial_louisiana
+		colonial_region = colonial_mexico
+		colonial_region = colonial_moluccas
+		colonial_region = colonial_nippon
+		colonial_region = colonial_north_china
+		colonial_region = colonial_north_india
+		colonial_region = colonial_persia
+		colonial_region = colonial_peru
+		colonial_region = colonial_philippines
+		colonial_region = colonial_polynesia
+		colonial_region = colonial_safi
+		colonial_region = colonial_samarkand
+		colonial_region = colonial_siberia
+		colonial_region = colonial_south_africa
+		colonial_region = colonial_south_china
+		colonial_region = colonial_the_carribean
+		colonial_region = colonial_tunis
+		colonial_region = colonial_timbuktu
+		colonial_region = colonial_west_india
+		colonial_region = colonial_xian
+		colonial_region = colonial_yumen
+		colonial_region = colonial_zambezi
+	}
+}
+
+bgm_colonial_subject = {
+	OR = {
+		has_subject_of_type = colony
+		has_subject_of_type = self_governing_colony
+		has_subject_of_type = crown_colony
+		has_subject_of_type = private_enterprise
+	}
+}
+
+bgm_adm_tech_check = {
+	any_country = {
+		adm_tech = ROOT
+	}
+}
+
+bgm_mil_tech_check = {
+	any_country = {
+		mil_tech = ROOT
+	}
+}
+
+bgm_mil_export = {
+	OR = {
+		trade_goods = fish
+		trade_goods = wine
+		trade_goods = grain
+		trade_goods = livestock
+		trade_goods = naval_supplies
+		trade_goods = naval_equipment
+		trade_goods = steel
+	}
+}
+
+bgm_industry_export = {
+	OR = {
+		trade_goods = cloth
+		trade_goods = silk
+		trade_goods = iron
+		trade_goods = coal
+		trade_goods = copper
+		trade_goods = electronics
+		trade_goods = steel
+		trade_goods = naval_supplies
+		trade_goods = naval_equipment
+	}
+}

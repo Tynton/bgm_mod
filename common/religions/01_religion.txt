@@ -23,14 +23,8 @@ atheist_group = {
 			local_missionary_strength = 0.0
 		}
 		country = {
-			tolerance_heretic = 4
-			tolerance_heathen = 6 
-			legitimacy = 0.25
-			republican_tradition = 0.125
-			global_missionary_strength = -100.0
-			idea_cost = -0.1
-			global_tax_modifier = 0.05
-			development_cost = -0.075
+			no_religion_penalty = yes
+			stability_cost_modifier = -0.1
 		}
 		country_as_secondary = {
 			global_unrest = 0
@@ -53,11 +47,11 @@ revolutionary_group = {
 			local_missionary_strength = 0.0
 		}
 		country = {
-			technology_cost = -0.1
-			innovativeness_gain = 1.0
+			technology_cost = -0.05
+			innovativeness_gain = 0.5
 		}
 		country_as_secondary = {
-			technology_cost = -0.1 
+			technology_cost = -0.025
 		}
 		
 		heretic = { SECULAR AGNOSTIC }

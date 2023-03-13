@@ -62,3 +62,138 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = BGM_GOV.3
+	title = none
+	desc = none
+	picture = none
+
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		every_subject_country = {
+			limit = {
+				is_subject_other_than_tributary_trigger = yes
+				NOT = {
+					OR = {
+						is_subject_of_type = crown_colony
+						is_subject_of_type = private_enterprise
+						is_subject_of_type = self_governing_colony
+						is_subject_of_type = colony
+					}
+				}
+			}
+			save_event_target_as = subj
+			if = {
+				limit = {
+					NOT = {
+						ROOT = {
+							any_subject_country = {
+								culture_group = event_target:subj
+								NOT = { event_target:subj = { total_development = PREV } }
+								NOT = { tag = event_target:subj }
+								is_subject_other_than_tributary_trigger = yes
+								NOT = {
+									OR = {
+										is_subject_of_type = crown_colony
+										is_subject_of_type = private_enterprise
+										is_subject_of_type = self_governing_colony
+										is_subject_of_type = colony
+									}
+								}
+							}
+						}
+					}
+				}
+				ROOT = {
+					every_subject_country = {
+						limit = {
+							culture_group = event_target:subj
+							NOT = { tag = event_target:subj }
+							is_subject_other_than_tributary_trigger = yes
+							NOT = {
+								OR = {
+									is_subject_of_type = crown_colony
+									is_subject_of_type = private_enterprise
+									is_subject_of_type = self_governing_colony
+									is_subject_of_type = colony
+								}
+							}
+						}
+						event_target:subj = {
+							inherit = PREV
+							ROOT = {
+								add_republican_tradition = 5
+								add_legitimacy = 5
+							}
+						}
+					}
+					every_subject_country = {
+						limit = {
+							NOT = { culture_group = event_target:subj }
+							any_owned_province = {
+								culture_group = event_target:subj
+							}
+							is_subject_other_than_tributary_trigger = yes
+							NOT = {
+								OR = {
+									is_subject_of_type = crown_colony
+									is_subject_of_type = private_enterprise
+									is_subject_of_type = self_governing_colony
+									is_subject_of_type = colony
+								}
+							}
+						}
+						every_owned_province = {
+							limit = {
+								culture_group = event_target:subj
+							}
+							cede_province = event_target:subj
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					culture_group = germanic
+					NOT = { exists = GER }
+				}
+				change_tag = GER
+			}
+			else_if = {
+				limit = {
+					culture_group = latin
+					NOT = { exists = ITA }
+				}
+				change_tag = ITA
+			}
+			else_if = {
+				limit = {
+					culture_group = occitan
+					NOT = { exists = OCC }
+				}
+				change_tag = OCC
+			}
+
+			if = {
+				limit = {
+					any_subject_country = {
+						is_subject_of_type = sister_republic
+						culture_group = ROOT
+					}
+				}
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = sister_republic
+						culture_group = ROOT
+					}
+					ROOT = { inherit = PREV }
+				}
+			}
+		}
+	}
+}

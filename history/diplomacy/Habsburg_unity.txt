@@ -3,7 +3,7 @@ union = {
 	first = HAB
 	second = STY
 	#start_date = 1397.6.17
-	start_date = 1424.1.1
+	start_date = 1396.1.1
 	end_date = 1452.1.1
 }
 
@@ -11,6 +11,6 @@ vassal = {
 	first = HAB
 	second = TIR
 	#start_date = 1397.6.17
-	start_date = 1424.1.1
+	start_date = 1379.1.1
 	end_date = 1452.1.1
 }

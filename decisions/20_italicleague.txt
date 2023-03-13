@@ -100,7 +100,7 @@ country_decisions = {
 			has_country_modifier = italea_3
 		}
 		allow = {
-			all_country = {
+			all_subject_country = {
 				is_subject_of = ROOT
 				is_subject_of_type = italic_league_member
 				has_opinion = {
@@ -124,6 +124,13 @@ country_decisions = {
 			add_country_modifier = { #Perma modifier
 				name = italea_4
 				duration = -1
+			}
+			add_country_modifier = {
+				name = italea_start
+				duration = 9125
+			}
+			country_event = {
+				id = italic_league.5
 			}
 			every_country = {
 				limit = {

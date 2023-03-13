@@ -27,6 +27,7 @@ country_decisions = {
 
 	fold_sisterrepublics_italy = {
 		potential = {
+			always = no
 			NOT = { culture_group = latin }
 			OR = {
 				NOT = {
@@ -141,6 +142,7 @@ country_decisions = {
 
 	fold_sisterrepublics_ger = {
 		potential = {
+			always = no
 			NOT = { culture_group = germanic }
 			OR = {
 				NOT = {
@@ -170,7 +172,6 @@ country_decisions = {
 			}
 		}
 		effect = {
-
 			if = { 
 				limit = {
 					any_subject_country = {
@@ -246,6 +247,32 @@ country_decisions = {
 						id = germanyunity.12
 					}
 				}
+			}
+		}
+	}
+	fold_sisterrepublics = {
+		potential = {
+			calc_true_if = {
+				all_subject_country = { 
+					is_subject_of_type = sister_republic
+					#culture_group = germanic
+				}
+				amount = 2
+			}
+			any_subject_country = {
+				is_subject_other_than_tributary_trigger = yes
+				any_country = {
+					is_subject_other_than_tributary_trigger = yes
+					overlord = { tag = ROOT }
+					culture_group = PREV
+				}
+			}
+		}
+		allow = {
+		}
+		effect = {
+			country_event = {
+				id = BGM_GOV.3
 			}
 		}
 	}

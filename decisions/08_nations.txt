@@ -66,8 +66,9 @@ country_decisions = {
 		potential = {
 			adm_tech = 28
 			culture_group = iberian
-			has_parliament = yes 
-			government = monarchy 
+			capital_scope = {
+				region = british_isles_region
+			}
 			NOT = {
 				was_tag = GBR
 			}
@@ -231,6 +232,13 @@ country_decisions = {
 					adm_tech = 15
 					has_reform = peasants_republic
 				}
+				AND = {
+					adm_tech = 10
+					OR = {
+						primary_culture = wallonian
+						primary_culture = picard
+					}
+				}
 			}
 			is_at_war = no
 			NOT = {
@@ -325,6 +333,9 @@ country_decisions = {
 		potential = {
 			culture_group = occitan
 			##is_subject = no
+			NOT = {
+				exists = OCC
+			}
 		}
 		allow = {
 			#is_subject = no
@@ -343,9 +354,6 @@ country_decisions = {
 			owns = 174
 			owns = 201
 			adm_tech = 10
-			NOT = {
-				exists = OCC
-			}
 		}
 		effect = {
 			change_tag = OCC
@@ -418,6 +426,51 @@ country_decisions = {
 		}
 	}
 
+	bri_rep = {
+	
+		major = yes
+	
+		potential = {
+			tag = UNK
+			government = republic
+			NOT = {
+				has_country_flag = brirep_name
+			}
+		}
+		allow = {
+			tag = UNK
+			government = republic
+		}
+		effect = {
+			set_country_flag = brirep_name
+			override_country_name = "BRIREP"
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	unk_name = {
+	
+		major = yes
+	
+		potential = {
+			tag = UNK
+			government = monarchy
+			has_country_flag = brirep_name
+		}
+		allow = {
+			tag = UNK
+			government = monarchy
+		}
+		effect = {
+			restore_country_name = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	form_wallonia = {
 	
 		major = yes
@@ -430,6 +483,17 @@ country_decisions = {
 				primary_culture = champenois
 			}
 			##is_subject = no
+			NOT = {
+				OR = {
+					tag = LOT
+					tag = FRA
+					tag = FRR
+					tag = FRE
+					tag = FRF
+					tag = FRC
+					tag = BEL
+				}
+			}
 		}
 		allow = {
 			#is_subject = no
@@ -472,6 +536,7 @@ country_decisions = {
 					tag = GRD
 					tag = NGC
 					tag = SGC
+					tag = HLR
 				}
 			}
 			##is_subject = no
@@ -482,7 +547,7 @@ country_decisions = {
 		allow = {
 			#is_subject = no
 			num_of_owned_provinces_with = {
-				value = 2
+				value = 3
 				area = alsace_area
 			}
 			#adm_tech = 10
@@ -514,6 +579,7 @@ country_decisions = {
 					tag = NTI
 					tag = ITA
 					tag = VIY
+					tag = MIT
 					tag = ITD
 					tag = ITC
 					tag = ITF
@@ -569,8 +635,12 @@ country_decisions = {
 					tag = GRD
 				}
 			}
+			NOT = { tag = HLR }
 			NOT = {
-				exists = SGC
+				OR = {
+					exists = SGC
+					exists = NGC
+				}
 			}
 		}
 		allow = {
@@ -640,8 +710,12 @@ country_decisions = {
 					tag = GRD
 				}
 			}
+			NOT = { tag = HLR }
 			NOT = {
-				exists = SGC
+				OR = {
+					exists = SGC
+					exists = NGC
+				}
 			}
 		}
 		allow = {
@@ -706,6 +780,7 @@ country_decisions = {
 			#is_subject = no
 			NOT = { tag = AHU }
 			NOT = { tag = GER }
+			NOT = { tag = HLR }
 		}
 		allow = {
 			owns = 134
@@ -745,6 +820,7 @@ country_decisions = {
 			NOT = { tag = AHU }
 			NOT = { tag = AUE }
 			NOT = { tag = GER }
+			NOT = { tag = HLR }
 			government_rank = 3
 			is_emperor = no
 		}
@@ -893,17 +969,20 @@ country_decisions = {
 		major = yes
 	
 		potential = {
-			adm_tech = 29
+			#adm_tech = 29
 			culture_group = east_asian
 			OR = {
 				is_emperor_of_china = yes 
 				total_development = 1400
 			}
-			NOT = { tag = ROC }
+			NOT = { exists = ROC }
 			NOT = { bgm_comgovt = yes }
 		}
 		allow = {
-			adm_tech = 30
+			OR = {
+				is_revolutionary = yes
+				adm_tech = 35
+			}
 			#is_subject = no
 		}
 		effect = {
@@ -1109,15 +1188,34 @@ country_decisions = {
 					}
 				}
 			}
-			NOT = {
-				tag = FRR
-			}
+			NOT = { exists = FRR }
+			NOT = { exists = BUP }
 		}
 		allow = {
 			#is_subject = no
 		}
 		effect = {
-			change_tag = FRR
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							primary_culture = burgundian
+							primary_culture = frainc_comtou
+						}
+					}
+				}
+				change_tag = FRR
+			}
+
+			if = {
+				limit = {
+					OR = {
+						primary_culture = burgundian
+						primary_culture = frainc_comtou
+					}
+				}
+				change_tag = BUP
+			}
 
 			if = {
 				limit = {
@@ -1179,6 +1277,8 @@ country_decisions = {
 				tag = FRR
 				tag = FRC
 				tag = FRF
+				tag = BFR
+				tag = BUP
 				AND = {
 					tag = AEV
 					NOT = {
@@ -1188,22 +1288,41 @@ country_decisions = {
 					}
 				}
 			}
-			NOT = {
-				tag = FRE
-			}
+			NOT = { exists = FRE }
+			NOT = { exists = BFE }
 		}
 		allow = {
 			#is_subject = no
 		}
 		effect = {
 			set_government_rank = 3
-			change_tag = FRE
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							primary_culture = burgundian
+							primary_culture = frainc_comtou
+						}
+					}
+				}
+				change_tag = FRE
+			}
 
 			if = {
 				limit = {
 					NOT = {
-						tag = FRR
+						primary_culture = burgundian
+						primary_culture = frainc_comtou
 					}
+				}
+				change_tag = BFE
+			}
+
+			if = {
+				limit = {
+					NOT = { tag = FRR }
+					NOT = { tag = BUP }
+					NOT = { tag = BFE }
 				}
 				country_event = {
 					id = ideagroups.1
@@ -1254,6 +1373,9 @@ country_decisions = {
 				tag = FRR
 				tag = FRE
 				tag = FRF
+				tag = BFR
+				tag = BUP
+				tag = BFE
 				AND = {
 					tag = AEV
 					NOT = {
@@ -1316,6 +1438,9 @@ country_decisions = {
 				tag = FRR
 				tag = FRE
 				tag = FRC
+				tag = BFR
+				tag = BUP
+				tag = BFE
 				AND = {
 					tag = AEV
 					NOT = {

@@ -1,0 +1,1017 @@
+
+FNE_ideas = {
+
+	trigger = {
+		tag = FNE
+	}
+
+	start = {
+		defensiveness = 0.25
+		manpower_recovery_speed = 0.2
+	}
+	
+	bonus = {
+		global_manpower_modifier = 0.33
+	}
+	free = yes
+	
+	support_visconti = {
+		diplomatic_reputation = 2
+	}
+	reconquest_finale = {
+		legitimacy = 1.0
+	}
+	ally_andrea_doria = {
+		improve_relation_modifier = 0.2
+	}
+	economic_recovery = {
+		production_efficiency = 0.15
+	}
+	autonomy_of_marquisate = {
+		enemy_core_creation = 0.5
+	}
+	genoese_persistence = {
+		discipline = 0.05
+	}
+	monarchy_of_finale = {
+		max_absolutism = 10
+	}
+}
+
+ANA_ideas = {
+
+	trigger = {
+		tag = ANA
+	}
+
+	start = {
+		all_power_cost = 9999
+		land_forcelimit = -9999
+	}
+	
+	bonus = {
+		global_tax_modifier = -9999
+		production_efficiency = -9999
+		trade_efficiency = -9999
+	}
+	free = yes
+	
+	one_ana = {
+		governing_capacity_modifier = -0.99
+	}
+	two_ana = {
+		stability_cost_modifier = 9999
+	}
+	three_ana = {
+		manpower_recovery_speed = -9999
+	}
+	four_ana = {
+		global_unrest = -9999
+	}
+	five_ana = {
+		min_autonomy = 100
+	}
+	six_ana = {
+		global_spy_defence = 9999
+	}
+	seven_ana = {
+		global_trade_power = -9999
+	}
+}
+
+AEV_ideas = {
+
+	trigger = {
+		tag = AEV
+	}
+
+	start = {
+		global_autonomy = -0.05
+		land_morale = 0.1
+	}
+	
+	bonus = {
+		discipline = 0.05
+	}
+	free = yes
+	
+	composite_monarchy_aev = {
+		governing_capacity_modifier = 0.1
+		num_accepted_cultures = 2
+	}
+	subjugation_france = {
+		prestige = 0.25
+		legitimacy = 0.5
+	}
+	legacy_of_war = {
+		development_cost = -0.1
+		stability_cost_modifier = -0.1
+	}
+	southern_economy = {
+		global_manpower_modifier = 0.15
+		production_efficiency = 0.05
+	}
+	rekindle_religious_favor = { #Crusading
+		tolerance_own = 1
+		papal_influence = 0.5
+		church_power_modifier = 0.25
+		monthly_fervor_increase = 0.25
+	}
+	security_angers = {
+		fort_maintenance_modifier = -0.1
+		defensiveness = 0.05
+	}
+	anglofrench_amalgam = {
+		culture_conversion_cost = -0.15
+	}
+}
+
+SVU_ideas = {
+
+	trigger = {
+		tag = SVU
+	}
+
+	start = {
+		development_cost_modifier = -0.35
+		global_manpower_modifier = 0.35
+	}
+	
+	bonus = {
+		hostile_attrition = 2
+	}	
+
+	free = yes
+	
+	communist_consolidation = {
+		yearly_absolutism = 1
+		max_absolutism = 20
+	}
+	flagship_of_communism = {
+		stability_cost_modifier = -0.25
+		land_morale = 0.15
+	}
+	socialist_mass_production = {
+		infantry_cost = -0.25
+		cavalry_cost = -0.25
+		artillery_cost = -0.25
+	}
+	world_egalitarianism = {
+		num_accepted_cultures = 25
+		promote_culture_cost = -0.5
+	}
+	world_revolution = {
+		years_of_nationalism = -10
+		manpower_recovery_speed = 0.25
+	}
+	simplify_production = {
+		global_trade_goods_size = 0.25
+		land_maintenance_modifier = -0.2
+		naval_maintenance_modifier = -0.2
+	}
+	international_pact = {
+		diplomatic_upkeep = 2
+		diplomats = 2
+	}
+}
+
+GRF_ideas = {
+
+	trigger = {
+		tag = GRF
+	}
+
+	start = {
+		years_of_nationalism = -10
+		province_warscore_cost = -0.5
+	}
+	
+	bonus = {
+		development_cost_modifier = -0.25
+	}
+	free = yes
+	
+	one_party_one_people = {
+		stability_cost_modifier = -0.25
+		max_absolutism = 25
+	}
+	gau_system = {
+		state_governing_cost = -0.25
+		yearly_absolutism = 2
+	}
+	militarization_ger = {
+		land_forcelimit_modifier = 0.5
+		manpower_recovery_speed = 0.35
+	}
+	strongman_foreign_policy = {
+		accept_vassalization_reasons = 50
+		transfer_trade_power_reasons = 50
+	}
+	totalitarian_politics = {
+		national_focus_years = -5
+		unjustified_demands = -0.5
+	}
+	purge_the_east = {
+		global_unrest = 2
+		culture_conversion_cost = -0.5
+	}
+	germania = {
+		prestige = 1
+		prestige_decay = -0.1
+	}
+}
+
+EUU_ideas = {
+
+	trigger = {
+		tag = EUU
+	}
+
+	start = {
+		min_autonomy_in_territories = -0.25
+		reduced_liberty_desire_on_same_continent = -25
+	}
+	
+	bonus = {
+		legitimacy = 1
+		republican_tradition = 0.5
+		devotion = 1
+		horde_unity = 1
+		meritocracy = 1
+	}
+	free = yes
+	
+	capital_for_the_west = {
+		prestige_decay = -0.2
+		governing_capacity_modifier = 0.5
+	}
+	grainaries_france = {
+		land_maintenance_modifier = -0.25
+		global_manpower_modifier = 0.1
+	}
+	german_industry = {
+		global_trade_goods_size = 0.25
+		production_efficiency = 0.15
+	}
+	develop_east = {
+		build_cost = -0.25
+		development_cost_modifier = -0.25
+	}
+	european_parliament = {
+		num_accepted_cultures = 20
+		promote_culture_cost = -0.5
+	}
+	acceptance_all = {
+		advisor_pool = 1
+		female_advisor_chance = 0.5
+		may_recruit_female_generals = yes
+	}
+	supernational_admin = {
+		state_governing_cost = -0.5
+		global_autonomy = -0.05
+	}
+}
+
+FRR_ideas = {
+
+	trigger = {
+		OR = {
+			tag = FRR
+			tag = FRE
+			tag = BUP
+			tag = BFE
+		}
+	}
+
+	start = {
+		discipline = 0.05
+		global_manpower_modifier = 0.5
+	}
+	
+	bonus = {
+		legitimacy = 1
+		republican_tradition = 0.5
+		devotion = 1
+		horde_unity = 1
+		meritocracy = 1
+	}
+	free = yes
+	
+	freedom_france = {
+		no_religion_penalty = yes
+		innovativeness_gain = 0.5
+	}
+	irredentism_french = {
+		province_warscore_cost = -0.1
+		unjustified_demands = -0.1
+	}
+	constitutionalism_french = {
+		global_unrest = -2
+		idea_cost = -0.1
+	}
+	mandate_language = {
+		culture_conversion_cost = -0.2
+		global_institution_spread = 0.25
+	}
+	militaristic_tradition = {
+		land_forcelimit_modifier = 0.35
+		naval_forcelimit_modifier = 0.35
+	}
+	international_aspiration = {
+		diplomatic_upkeep = 2
+		diplomats = 1
+	}
+	tradition_revolution = {
+		reform_progress_growth = 0.25
+		production_efficiency = 0.1
+	}
+}
+
+ROC_ideas = {
+
+	trigger = {
+		tag = ROC
+	}
+
+	start = {
+		global_supply_limit_modifier = 0.25
+		global_manpower_modifier = 0.5
+	}
+	
+	bonus = {
+		global_institution_spread = 0.25
+	}
+	free = yes
+	
+	legacy_wuchang = {
+		global_unrest = -2
+		religious_unity = 0.25
+	}
+	overtake_warlords = {
+		global_autonomy = -0.05
+		stability_cost_modifier = -0.15
+	}
+	constitution_china = { #Decentralized state
+		state_governing_cost = -0.25
+		development_cost_modifier = -0.25
+	}
+	cleanse_warlords = {
+		yearly_corruption = -0.05
+	}
+	military_government = {
+		land_forcelimit_modifier = 0.25
+		discipline = 0.05
+	}
+	nationalist_state = {
+		same_culture_advisor_cost = -0.5
+		culture_conversion_cost = -0.25
+	}
+	democratization = {
+		reform_progress_growth = 0.25
+	}
+}
+
+PRC_ideas = {
+
+	trigger = {
+		tag = PRC
+	}
+
+	start = {
+		global_supply_limit_modifier = 0.25
+		global_manpower_modifier = 0.5
+	}
+	
+	bonus = {
+		diplomatic_reputation = 2
+	}
+	free = yes
+	
+	legacy_long_march = {
+		land_morale = 0.25
+		land_attrition = -0.25
+	}
+	five_year_plan = {
+		development_cost_modifier = -0.325
+		build_cost = -0.25
+	}
+	cultural_revolution = {
+		embracement_cost = -0.25
+		culture_conversion_cost = -0.35
+	}
+	sino_soviet_split = {
+		yearly_corruption = -0.1
+		land_forcelimit_modifier = 0.25
+	}
+	economic_reforms = {
+		global_trade_goods_size_modifier = 0.25
+	}
+	flirt_the_west = {
+		merchants = 3
+		global_trade_power = 0.25
+	}
+	socialism_chinese_characteristics = {
+		production_efficiency = 0.15
+	}
+}
+
+AHU_ideas = {
+
+	trigger = {
+		tag = AHU
+	}
+
+	start = {
+		diplomatic_reputation = 1
+		cavalry_power = 0.05
+	}
+	
+	bonus = {
+		diplomatic_reputation = 2
+	}
+	free = yes
+	
+	multiethnic_composition = {
+		num_accepted_cultures = 5
+	}
+	dual_monarchy = {
+		governing_capacity_modifier = 0.2
+		legitimacy = 1
+		republican_tradition = 0.5
+		devotion = 1
+		horde_unity = 1
+		meritocracy = 1
+	}
+	the_imperial_council = {
+		global_unrest = -2 
+		global_autonomy = -0.025
+	}
+	abolition_serfdom = {
+		production_efficiency = 0.1
+		global_manpower_modifier = 0.125
+	}
+	united_economies = {
+		global_own_trade_power = 0.25
+		global_tax_modifier = 0.1
+	}
+	free_nobility = {
+		army_tradition = 0.5
+		diplomats = 1
+	}
+	minority_divisions = {
+		land_forcelimit_modifier = 0.15
+	}
+}
+
+BEL_ideas = {
+
+	trigger = {
+		tag = BEL
+	}
+
+	start = {
+		num_accepted_cultures = 2
+		production_efficiency = 0.1
+	}
+	
+	bonus = {
+		army_tradition = 0.5
+	}
+	free = yes
+	
+	united_religion = {
+		global_missionary_strength = 0.01
+		tolerance_own = 1
+	}
+	dominant_language = {
+		culture_conversion_cost = -0.05
+		legitimacy = 1
+		republican_tradition = 0.5
+		devotion = 1
+		horde_unity = 1
+		meritocracy = 1
+	}
+	colonial_adventure = {
+		reduced_liberty_desire = 10
+		cb_on_primitives = yes
+	}
+	seek_guarantor = {
+		diplomatic_reputation = 1
+		diplomatic_upkeep = 1
+	}
+	legacy_pre_industrialization = {
+		global_trade_goods_size_modifier = 0.1
+		development_cost_modifier = -0.25
+	}
+	la_monnaie = {
+		stability_cost_modifier = -0.2
+		land_morale = 0.15
+	}
+	close_ties_bel = {
+		improve_relation_modifier = 0.3
+	}
+}
+
+OCC_ideas = {
+
+	trigger = {
+		tag = OCC
+	}
+
+	start = {
+		army_tradition = 1
+		discipline = 0.05
+	}
+	
+	bonus = {
+		prestige = 0.25
+	}
+	free = yes
+	
+	troubadour_history = {
+		prestige_decay = -0.01
+	}
+	reassert_sovereignty = {
+		land_morale = 0.15
+	}
+	occitan_economy = {
+		development_cost_modifier = -0.1
+		global_manpower_modifier = 0.1
+	}
+	defensive_geography = {
+		defensiveness = 0.1
+		fort_maintenance_modifier = -0.1
+	}
+	standard_occitan = {
+		same_culture_advisor_cost = -0.25
+		culture_conversion_cost = -0.1
+	}
+	reclaim_catalonia = {
+		galley_power = 0.25
+		naval_maintenance_modifier = -0.15
+	}
+	occitan_poetry = {
+		improve_relation_modifier = 0.05
+	}
+}
+
+SGC_ideas = {
+
+	trigger = {
+		tag = SGC
+	}
+
+	start = {
+		improve_relation_modifier = 0.25
+		global_manpower_modifier = 0.175
+	}
+	
+	bonus = {
+		prestige = 0.25
+	}
+	free = yes
+	
+	austrobav_dip = {
+		diplomatic_reputation = 1
+	}
+	south_german_farmlands = {
+		development_cost_modifier = -0.15
+	}
+	expand_manufacturing = {
+		production_efficiency = 0.1
+		trade_goods_size_modifier = 0.1
+	}
+	alpine_terrain = {
+		defensiveness = 0.25
+		fort_maintenance_modifier = -0.2
+	}
+	integrated_free_cities = {
+		merchants = 1
+		global_trade_power = 0.15
+	}
+	merc_bastion = {
+		mercenary_discipline = 0.05
+		merc_maintenance_modifier = -0.25
+	}
+	northern_ambition = {
+		ae_impact = -0.15
+		fabricate_claims_cost = -0.2 
+	}
+}
+
+NGC_ideas = {
+
+	trigger = {
+		tag = NGC
+	}
+
+	start = {
+		discipline = 0.05
+		technology_cost = -0.05
+	}
+	
+	bonus = {
+		vassal_forcelimit_bonus = 0.25
+		vassal_income = 0.25
+	}
+	free = yes
+	
+	brandenburger_mil = {
+		land_morale = 0.15
+		infantry_power = 0.1
+	}
+	north_german_industry = {
+		production_efficiency = 0.15
+		trade_goods_size_modifier = 0.15
+	}
+	diverse_industries = {
+		global_trade_power = 0.15
+		embargo_efficiency = 0.25
+	}
+	leverage_power = {
+		diplomatic_reputation = 1
+		accept_vassalization_reasons = 10
+	}
+	excellent_ministries = {
+		advisor_cost = -0.25
+		general_cost = -0.15
+	}
+	general_staff = {
+		army_tradition = 1
+		army_tradition_decay = -0.015
+	}
+	southern_ambition = {
+		ae_impact = -0.15
+		fabricate_claims_cost = -0.2
+	}
+}
+
+UMB_ideas = {
+
+	trigger = {
+		tag = UMB
+	}
+
+	start = {
+		prestige = 0.25
+		technology_cost = -0.05
+	}
+	
+	bonus = {
+		discipline = 0.05
+	}
+	free = yes
+	
+	roman_capital = {
+		development_cost_modifier = -0.1
+		build_cost = -0.1
+	}
+	bishopric_of_rome = {
+		tolerance_own = 1
+		global_missionary_strength = 0.01
+	}
+	giostra_della_quintana = {
+		army_tradition = 0.5
+		mil_tech_cost_modifier = -0.05
+	}
+	italian_legitimation = {
+		fabricate_claims_cost = -0.1
+		diplomatic_reputation = 1
+	}
+	resolve_baron_struggle = {
+		legitimacy = 1
+		republican_tradition = 0.5
+		horde_unity = 1
+		devotion = 1
+		meritocracy = 1
+		stability_cost_modifier = -0.2
+	}
+	agrarian_economy = {
+		global_tax_modifier = 0.1
+		global_manpower_modifier = 0.15
+	}
+	italian_geography = {
+		land_morale = 0.1
+		defensiveness = 0.2
+	}
+}
+
+NME_ideas = {
+
+	trigger = {
+		tag = NME
+	}
+
+	start = {
+		prestige = 1
+		stability_cost_modifier = -0.25
+	}
+	
+	bonus = {
+		legitimacy = 1
+		devotion = 1
+		horde_unity = 1
+		republican_tradition = 0.5
+	}
+	free = yes
+	
+	cultural_integration = {
+		culture_conversion_cost = -0.2
+	}
+	settle_religion = {
+		missionary_maintenance_cost = -0.1
+		global_missionary_strength = 0.01
+	}
+	restore_bohemian_golden_age = {
+		global_prosperity_growth = 0.5
+		development_cost = -0.15
+	}
+	diplomatic_heritage = {
+		improve_relation_modifier = 0.25
+		diplomatic_reputation = 1
+	}
+	two_economies = {
+		global_manpower_modifier = 0.1
+		production_efficiency = 0.1
+		global_tax_modifier = 0.1
+	}
+	federated_state = {
+		governing_cost = -0.25
+		land_forcelimit_modifier = 0.2
+	}
+	intellectual_golden_age = {
+		advisor_pool = 2
+		idea_cost = -0.15
+	}
+}
+
+UKN_ideas = {
+
+	trigger = {
+		tag = UKN
+	}
+
+	start = {
+		global_manpower_modifier = 0.25
+		infantry_cost = -0.15
+	}
+	
+	bonus = {
+		global_tax_modifier = 0.15
+	}
+	free = yes
+	
+	kievan_golden_age = {
+		build_cost = -0.1
+		prestige = 0.25
+	}
+	cossack_revolt_legacy = {
+		stability_cost_modifier = -0.1
+		global_unrest = -2
+	}
+	new_ukrainian_identity = {
+		innovativeness_gain = 1
+		development_cost = -0.15
+	}
+	army_zaporizhia = {
+		army_tradition = 0.5
+		cavalry_power = 0.1
+	}
+	grain_belt = {
+		land_forcelimit_modifier = 0.2
+		manpower_recovery_speed = 0.2
+	}
+	leverage_trade = {
+		trade_steering = 0.25
+	}
+	natural_energy = {
+		trade_goods_size_modifier = 0.1
+		production_efficiency = 0.1
+	}
+}
+
+SMA_ideas = {
+
+	trigger = {
+		tag = SMA
+	}
+
+	start = {
+		prestige = 0.25
+		hostile_attrition = 2 #Account for Arengo
+	}
+
+	bonus = {
+		legitimacy = 1
+		devotion = 1
+		horde_unity = 1
+		republican_tradition = 0.5
+	}	
+	free = yes
+
+	town_confederation = {
+		development_cost = -0.25
+	}
+	papal_struggle = {
+		defensiveness = 0.25
+	}
+	san_marinese_constitution = {
+		stability_cost_modifier = -0.25
+	}
+	seek_guarantees = {
+		diplomatic_reputation = 2
+	}
+	value_of_friendships = {
+		improve_relation_modifier = 0.5
+	}
+	refuge_state = {
+		global_tax_modifier = 0.25
+	}
+	cooperation_with_italy = {
+		diplomats = 1
+	}
+}
+
+MNC_ideas = {
+
+	trigger = {
+		tag = MNC
+	}
+
+	start = {
+		heir_chance = 0.25
+		diplomatic_reputation = 1
+	}
+
+	bonus = {
+		reform_progress_growth = 0.25
+	}
+	free = yes
+
+	independence_aragon = {
+		prestige = 0.25
+	}
+	loyalty_to_powers = {
+		improve_relation_modifier = 0.15
+	}
+	foreign_courts = {
+		dip_advisor_cost = -0.25
+		global_spy_defence = 0.5
+	}
+	franco_italian_intermediary = {
+		monarch_diplomatic_power = 1
+	}
+	development_focus = {
+		development_cost_modifier = -0.15
+	}
+	styled_as_prince = {
+		legitimacy = 1
+		devotion = 1
+		horde_unity = 1
+		republican_tradition = 0.5
+	}
+	franco_italian_protectorate = {
+		stability_cost_modifier = -0.25
+	}
+}
+
+FAN_ideas = {
+
+	trigger = {
+		tag = FAN
+	}
+
+	start = {
+		global_manpower_modifier = 0.25
+		discipline = 0.05
+	}
+
+	bonus = {
+		core_creation = -0.25
+	}
+	free = yes
+
+	palace_mayor = {
+		advisor_cost = -0.1
+		reform_progress_growth = 0.25
+	}
+	codified_laws = {
+		free_adm_policy = 1
+		stability_cost_modifier = -0.1
+	}
+	frankish_religion = {
+		tolerance_own = 1
+		diplomatic_reputation = 1
+	}
+	monastic_cities = {
+		development_cost = -0.1
+		innovativeness_gain = 0.25
+	}
+	memory_charles_martel = {
+		army_tradition = 0.5
+		land_morale = 0.15
+	}
+	papal_emperor = {
+		legitimacy = 1
+		devotion = 1
+		horde_unity = 1
+		republican_tradition = 0.5
+	}
+	never_dissolved = {
+		prestige_decay = -0.01
+		prestige = 0.5
+	}
+}
+
+FRA_ideas = {
+	start = {
+		diplomatic_reputation = 1
+		global_manpower_modifier = 0.2
+	}
+	
+	bonus = {
+		development_cost = -0.1
+		#discipline = 0.05
+	}	
+
+	trigger = {
+		OR = {
+			tag = FRA
+			tag = BFR
+		}
+		is_revolutionary = no
+	}
+	free = yes		#will be added at load.
+	
+	lessons_hundred_years_war = {
+		army_tradition = 0.5
+		land_morale = 0.15
+	}
+	fra_taille = {
+		global_tax_modifier = 0.1
+		war_taxes_cost_modifier = -0.5
+	}
+	estates_general = {
+		reform_progress_growth = 0.1
+		stability_cost_modifier = -0.05
+	}
+	europes_first_standing_army = {
+		discipline = 0.05
+	}
+	divine_right_to_rule = {
+		max_absolutism = 5
+		tolerance_own = 1
+	}
+	the_philosophes = {
+		idea_cost = -0.1
+	}
+	vauban_fortifications = {
+		defensiveness = 0.15
+	}
+}
+
+FRA_ideas_2 = {
+	start = {
+		max_revolutionary_zeal = 5
+		harsh_treatment_cost = -0.5
+	}
+	
+	bonus = {
+		siege_ability = 0.2
+	}	
+
+	trigger = {
+		OR = {
+			tag = FRA
+			tag = BFR
+		}
+		is_revolutionary = yes
+	}
+	free = yes		#will be added at load.
+	
+	revolutionary_tribunal = {
+		years_of_nationalism = -10
+	}
+	elan = {
+		land_morale = 0.15
+		morale_damage = 0.05
+	}
+	mandats_territoriaux = {
+		production_efficiency = 0.15
+		inflation_reduction = 0.05
+	}
+	liberty_egalite_fraternity = {
+		tolerance_heretic = 1
+		tolerance_heathen = 1
+	}
+	jourdan_law = {
+		manpower_recovery_speed = 0.2
+	}
+	napoleonic_tactics = {
+		military_tactics = 0.05
+		drill_gain_modifier = 0.5
+	}
+	european_ambitions = {
+		core_creation = -0.2
+	}
+}

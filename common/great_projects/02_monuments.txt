@@ -416,165 +416,6 @@ pentagon = {
 	}
 }
 
-brandenburg_gate = {
-	# province it starts in
-	start = 50
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 0
-	
-	type = monument
-	
-	build_trigger = {
-		OR = {
-			owner = {
-				adm_tech = 28
-			}
-			owner = {
-				government_rank = 2
-			}
-		}
-		owner = {
-			OR = {
-				culture_group = germanic
-				culture_group = benelux
-			}
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {	
-		OR = {
-			owner = {
-				adm_tech = 28
-			}
-			owner = {
-				government_rank = 2
-			}
-		}
-		owner = {
-			OR = {
-				culture_group = germanic
-				culture_group = benelux
-			}
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				adm_tech = 28
-			}
-			owner = {
-				government_rank = 2
-			}
-		}
-		owner = {
-			OR = {
-				culture_group = germanic
-				culture_group = benelux
-			}
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_development_cost = -0.05
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			stability_cost_modifier = -0.1
-			improve_relation_modifier = 0.1
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			local_development_cost = -0.1
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			stability_cost_modifier = -0.15
-			improve_relation_modifier = 0.15
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			local_development_cost = -0.25
-		}
-		area_modifier = {
-			local_development_cost = -0.1
-		}
-		country_modifiers = {
-			stability_cost_modifier = -0.15
-			legitimacy = 1
-			republican_tradition = 0.5
-			improve_relation_modifier = 0.25
-		}
-		on_upgraded = {
-		}
-	}
-}
-
 louvre = {
 	# province it starts in
 	start = 183
@@ -589,17 +430,22 @@ louvre = {
 	
 	move_days_per_unit_distance = 10
 	
-	starting_tier = 0
+	starting_tier = 1
 	
 	type = monument
 	
 	build_trigger = {
-		OR = {
-			owner = {
-				adm_tech = 29
+		has_owner_accepted_culture = yes
+		owner = {
+			OR = {
+				government = monarchy
+				has_reform = auth_monarchism
 			}
-			owner = {
-				government_rank = 3
+			OR = {
+				culture_group = french
+				culture_group = occitan
+				culture_group = franco_provencal
+				full_idea_group = aristocracy_ideas
 			}
 		}
 	}
@@ -607,23 +453,33 @@ louvre = {
 	}
 	on_destroyed = {
 	}
-	can_use_modifiers_trigger = {	
-		OR = {
-			owner = {
-				adm_tech = 29
+	can_use_modifiers_trigger = {
+		has_owner_accepted_culture = yes
+		owner = {
+			OR = {
+				government = monarchy
+				has_reform = auth_monarchism
 			}
-			owner = {
-				government_rank = 3
+			OR = {
+				culture_group = french
+				culture_group = occitan
+				culture_group = franco_provencal
+				full_idea_group = aristocracy_ideas
 			}
 		}
 	}
 	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				adm_tech = 29
+		has_owner_accepted_culture = yes
+		owner = {
+			OR = {
+				government = monarchy
+				has_reform = auth_monarchism
 			}
-			owner = {
-				government_rank = 3
+			OR = {
+				culture_group = french
+				culture_group = occitan
+				culture_group = franco_provencal
+				full_idea_group = aristocracy_ideas
 			}
 		}
 	}
@@ -659,15 +515,21 @@ louvre = {
 		}
 		province_modifiers = {
 			local_development_cost = -0.15
+			local_defensiveness = 0.25
+			local_garrison_size = 0.5
 		}
 		area_modifier = {
+			local_manpower_modifier = 0.25
+			local_tax_modifier = 0.1
 		}
 		country_modifiers = {
 			prestige = 0.05
+			governing_capacity = 50
 		}
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
+			owner = { add_prestige = 10 }
 		}
 	}
 
@@ -679,17 +541,23 @@ louvre = {
 			factor = 2500
 		}
 		province_modifiers = {
+			local_garrison_size = 1
 			local_development_cost = -0.15
-			local_tax_modifier = 0.05
+			local_defensiveness = 0.5
 		}
 		area_modifier = {
 			local_development_cost = -0.25
+			local_tax_modifier = 0.25
+			local_manpower_modifier = 0.25
 		}
 		country_modifiers = {
+			yearly_absolutism = 0.5
 			prestige = 0.1
 			global_tax_modifier = 0.025
+			governing_capacity = 100
 		}
 		on_upgraded = {
+			owner = { add_prestige = 10 }
 		}
 	}
 
@@ -701,17 +569,26 @@ louvre = {
 			factor = 5000
 		}
 		province_modifiers = {
+			local_garrison_size = 2.5
+			local_defensiveness = 1
 			local_development_cost = -0.25
 			local_tax_modifier = 0.1
 		}
 		area_modifier = {
 			local_development_cost = -0.5
+			local_tax_modifier = 0.5
+			local_manpower_modifier = 0.5
 		}
 		country_modifiers = {
+			yearly_absolutism = 1
 			prestige = 0.15
 			global_tax_modifier = 0.05
+			free_policy = 1
+			possible_policy = 1
+			governing_capacity = 200
 		}
 		on_upgraded = {
+			owner = { add_prestige = 10 }
 		}
 	}
 }
@@ -868,7 +745,7 @@ eiffel_tower_bgm = {
 	}
 	build_cost = 0
 	
-	can_be_moved = no
+	can_be_moved = yes
 	
 	move_days_per_unit_distance = 10
 	
@@ -880,7 +757,7 @@ eiffel_tower_bgm = {
 		owner = {
 			OR = {
 				has_reform = peasants_republic
-				is_revolutionary = yes
+				bgm_rev = yes
 				has_reform = democratic_mechanic
 			}
 		}
@@ -893,7 +770,7 @@ eiffel_tower_bgm = {
 		owner = {
 			OR = {
 				has_reform = peasants_republic
-				is_revolutionary = yes
+				bgm_rev = yes
 				has_reform = democratic_mechanic
 			}
 		}
@@ -902,7 +779,7 @@ eiffel_tower_bgm = {
 		owner = {
 			OR = {
 				has_reform = peasants_republic
-				is_revolutionary = yes
+				bgm_rev = yes
 				has_reform = democratic_mechanic
 			}
 		}
@@ -947,10 +824,12 @@ eiffel_tower_bgm = {
 			diplomatic_reputation = 0.25
 			land_forcelimit_modifier = 0.025
 			global_manpower_modifier = 0.025
+			max_revolutionary_zeal = 5
 		}
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
+			add_base_manpower = 1
 		}
 	}
 
@@ -972,8 +851,10 @@ eiffel_tower_bgm = {
 			improve_relation_modifier = 0.05
 			land_forcelimit_modifier = 0.025
 			global_manpower_modifier = 0.025
+			max_revolutionary_zeal = 10
 		}
 		on_upgraded = {
+			add_base_manpower = 1
 		}
 	}
 
@@ -995,155 +876,10 @@ eiffel_tower_bgm = {
 			improve_relation_modifier = 0.075
 			land_forcelimit_modifier = 0.05
 			global_manpower_modifier = 0.05
+			max_revolutionary_zeal = 20
 		}
 		on_upgraded = {
-		}
-	}
-}
-
-schwerin_palace = {
-	# province it starts in
-	start = 2996
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 0
-	
-	type = monument
-	
-	build_trigger = {
-		OR = {
-			religion_group = christian
-			religion_group = muslim
-		}
-		OR = {
-			culture_group = germanic
-			culture_group = west_slavic
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {	
-		OR = {
-			owner = {
-				OR = {
-					religion_group = christian
-					religion_group = muslim
-				}
-			}
-		}
-		OR = {
-			culture_group = germanic
-			culture_group = west_slavic
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					religion_group = christian
-					religion_group = muslim
-				}
-			}
-		}
-		OR = {
-			culture_group = germanic
-			culture_group = west_slavic
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_development_cost = -0.1
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			global_unrest = -0.25
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			local_development_cost = -0.2
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			global_unrest = -0.5
-			stability_cost_modifier = -0.025
-			num_accepted_cultures = 1
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			local_development_cost = -0.3
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			global_unrest = -1
-			stability_cost_modifier = -0.075
-			num_accepted_cultures = 1
-		}
-		on_upgraded = {
+			add_base_manpower = 2
 		}
 	}
 }
@@ -1214,7 +950,7 @@ ststephen_cathedral = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			tolerance_own = 1
+			tolerance_own = 0.25
 			religious_unity = 0.025
 			imperial_authority = 0.025
 		}
@@ -1237,7 +973,7 @@ ststephen_cathedral = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			tolerance_own = 1
+			tolerance_own = 0.25
 			religious_unity = 0.05
 			missionary_maintenance_cost = -0.1
 			imperial_authority = 0.05
@@ -1259,7 +995,7 @@ ststephen_cathedral = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			tolerance_own = 1
+			tolerance_own = 0.5
 			religious_unity = 0.1
 			missionary_maintenance_cost = -0.15
 			imperial_authority = 0.075
@@ -1334,7 +1070,7 @@ state_opera = {
 			factor = 1000
 		}
 		province_modifiers = {
-			local_development_cost = -0.75
+			local_development_cost = -0.5
 		}
 		area_modifier = {
 		}
@@ -1361,7 +1097,7 @@ state_opera = {
 			local_development_cost = -0.25
 		}
 		country_modifiers = {
-			prestige_decay = -0.01
+			prestige_decay = -0.005
 			advisor_cost = -0.025
 		}
 		on_upgraded = {
@@ -1382,154 +1118,9 @@ state_opera = {
 			local_development_cost = -0.5
 		}
 		country_modifiers = {
-			prestige_decay = -0.01
+			prestige_decay = -0.005
 			advisor_cost = -0.025
-			monthly_splendor = 1 
-		}
-		on_upgraded = {
-		}
-	}
-}
-
-teatro_fenice = {
-	# province it starts in
-	start = 112
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 0
-	
-	type = monument
-	
-	build_trigger = {
-		owner = {
-			adm_tech = 28
-		}
-		OR = {
-			owner = {
-				OR = {
-					culture_group = latin
-					
-				}
-			}
-			has_owner_culture = yes
-			
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = latin
-					
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = latin
-					
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_institution_spread = 0.1
-			local_unrest = -1
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			local_institution_spread = 0.25
-			local_unrest = -1
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			prestige = 0.025
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			local_institution_spread = 0.5
-			local_unrest = -1
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			prestige = 0.1
-			advisor_cost = -0.025
+			monthly_splendor = 0.25
 		}
 		on_upgraded = {
 		}
@@ -1556,43 +1147,40 @@ sforza_castle = {
 	
 	build_trigger = {
 		OR = {
+			fort_level = 1
 			owner = {
 				OR = {
-					culture_group = latin
-					
+					full_idea_group = aristocracy_ideas
+					full_idea_group = quantity_ideas
 				}
 			}
-			has_owner_culture = yes
 		}
-		fort_level = 1
 	}
 	on_built = {
 	}
 	on_destroyed = {
 	}
-	can_use_modifiers_trigger = {	
+	can_use_modifiers_trigger = {
 		OR = {
+			fort_level = 1
 			owner = {
 				OR = {
-					culture_group = latin
-					
+					full_idea_group = aristocracy_ideas
+					full_idea_group = quantity_ideas
 				}
 			}
-			has_owner_culture = yes
 		}
-		fort_level = 1
 	}
 	can_upgrade_trigger = {
 		OR = {
+			fort_level = 1
 			owner = {
 				OR = {
-					culture_group = latin
-					
+					full_idea_group = aristocracy_ideas
+					full_idea_group = quantity_ideas
 				}
 			}
-			has_owner_culture = yes
 		}
-		fort_level = 1
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -1625,10 +1213,11 @@ sforza_castle = {
 			factor = 1000
 		}
 		province_modifiers = {
-			local_defensiveness = 0.5
-			local_production_efficiency = 0.025
+			local_defensiveness = 0.25
+			local_tax_modifier = 0.5
 		}
 		area_modifier = {
+			local_manpower_modifier = 0.1
 		}
 		country_modifiers = {
 		}
@@ -1646,10 +1235,11 @@ sforza_castle = {
 			factor = 2500
 		}
 		province_modifiers = {
-			local_defensiveness = 0.75
-			local_production_efficiency = 0.025
+			local_defensiveness = 0.5
+			local_tax_modifier = 0.25
 		}
 		area_modifier = {
+			local_tax_modifier = 0.25
 			local_manpower_modifier = 0.25
 		}
 		country_modifiers = {
@@ -1667,9 +1257,10 @@ sforza_castle = {
 			factor = 5000
 		}
 		province_modifiers = {
-			local_defensiveness = 1.5
+			local_defensiveness = 1
 		}
 		area_modifier = {
+			local_tax_modifier = 0.5
 			local_production_efficiency = 0.05
 			local_manpower_modifier = 0.5
 		}
@@ -1677,6 +1268,15 @@ sforza_castle = {
 			global_autonomy = -0.025
 		}
 		on_upgraded = {
+			owner = {
+				every_owned_province = {
+					limit = {
+						area = lombardy_area
+					}
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+			}
 		}
 	}
 }
@@ -1782,6 +1382,7 @@ wilanow_palace = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
+			add_base_production = 1
 		}
 	}
 
@@ -1802,6 +1403,7 @@ wilanow_palace = {
 			num_accepted_cultures = 1
 		}
 		on_upgraded = {
+			add_base_production = 1
 		}
 	}
 
@@ -1823,6 +1425,7 @@ wilanow_palace = {
 			advisor_cost = -0.025
 		}
 		on_upgraded = {
+			add_base_production = 1
 		}
 	}
 }
@@ -1955,7 +1558,7 @@ hollywood = {
 	}
 }
 
-buckingham = {
+westminster_palace = {
 	# province it starts in
 	start = 236
 	
@@ -1969,7 +1572,7 @@ buckingham = {
 	
 	move_days_per_unit_distance = 10
 	
-	starting_tier = 0
+	starting_tier = 1
 	
 	type = monument
 	
@@ -1977,8 +1580,9 @@ buckingham = {
 		owner = {
 			OR = {
 				culture_group = british
-				culture_group = french
-				culture_group = gaelic
+				primary_culture = anglo_norman
+				primary_culture = normand
+				has_parliament = yes
 			}
 		}
 	}
@@ -1990,8 +1594,9 @@ buckingham = {
 		owner = {
 			OR = {
 				culture_group = british
-				culture_group = french
-				culture_group = gaelic
+				primary_culture = anglo_norman
+				primary_culture = normand
+				has_parliament = yes
 			}
 		}
 	}
@@ -1999,8 +1604,9 @@ buckingham = {
 		owner = {
 			OR = {
 				culture_group = british
-				culture_group = french
-				culture_group = gaelic
+				primary_culture = anglo_norman
+				primary_culture = normand
+				has_parliament = yes
 			}
 		}
 	}
@@ -2035,12 +1641,18 @@ buckingham = {
 			factor = 1000
 		}
 		province_modifiers = {
-			province_trade_power_modifier = 0.15
-			local_sailors_modifier = 0.25
+			local_development_cost = -0.1
+			local_manpower_modifier = 0.1
 		}
 		area_modifier = {
+			local_tax_modifier = 0.25
+			local_sailors_modifier = 0.25
 		}
 		country_modifiers = {
+			stability_cost_modifier = -0.05
+			adm_advisor_cost = -0.05
+
+			reform_progress_growth = 0.05
 		}
 
 		#what effects happen when this tier is achieved
@@ -2056,17 +1668,21 @@ buckingham = {
 			factor = 2500
 		}
 		province_modifiers = {
-			province_trade_power_modifier = 0.25
-			local_sailors_modifier = 0.5
+			local_manpower_modifier = 0.25
+			local_tax_modifier = 0.25
 		}
 		area_modifier = {
-			local_development_cost = -0.5
+			local_development_cost = -0.1
+			local_manpower_modifier = 0.25
+			local_tax_modifier = 0.25
+			local_sailors_modifier = 0.25
 		}
 		country_modifiers = {
-			legitimacy = 0.25
-			republican_tradition = 0.125
-			improve_relation_modifier = 0.025
-			liberty_desire_from_subject_development = -0.025
+			stability_cost_modifier = -0.05
+			adm_advisor_cost = -0.025
+			advisor_cost = -0.025
+
+			reform_progress_growth = 0.1 
 		}
 		on_upgraded = {
 		}
@@ -2080,17 +1696,25 @@ buckingham = {
 			factor = 5000
 		}
 		province_modifiers = {
-			province_trade_power_modifier = 0.5
-			local_sailors_modifier = 1.0
+			local_manpower_modifier = 0.5
+			local_tax_modifier = 0.5
 		}
 		area_modifier = {
-			local_development_cost = -1.0
+			local_development_cost = -0.25
+			local_manpower_modifier = 0.25
+			local_tax_modifier = 0.25
+			local_sailors_modifier = 0.25
 		}
 		country_modifiers = {
-			legitimacy = 0.5
-			republican_tradition = 0.25
-			improve_relation_modifier = 0.05
-			liberty_desire_from_subject_development = -0.05
+			local_development_cost = -0.1
+			advisor_cost = -0.05
+
+			reform_progress_growth = 0.2
+
+			legitimacy = 0.25
+			devotion = 0.25
+			horde_unity = 0.25
+			republican_tradition = 0.125
 		}
 		on_upgraded = {
 		}
@@ -2217,7 +1841,7 @@ dome_rock = {
 			stability_cost_modifier = -0.25
 			legitimacy = 1.5
 			republican_tradition = 1
-			tolerance_own = 2
+			tolerance_own = 1
 		}
 		on_upgraded = {
 		}
@@ -2305,12 +1929,12 @@ reichstag = {
 			factor = 1000
 		}
 		province_modifiers = {
-			local_development_cost = -0.1
+			local_development_cost = -0.5
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
-			prestige_decay = -0.005
+			#prestige_decay = -0.005
 		}
 
 		#what effects happen when this tier is achieved
@@ -2326,14 +1950,16 @@ reichstag = {
 			factor = 2500
 		}
 		province_modifiers = {
-			local_development_cost = -0.2
+			local_development_cost = -1
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
-			prestige_decay = -0.01
+			#prestige_decay = -0.01
 			free_adm_policy = 1
 			advisor_pool = 1
+
+			advisor_cost = -0.025
 		}
 		on_upgraded = {
 		}
@@ -2347,14 +1973,17 @@ reichstag = {
 			factor = 5000
 		}
 		province_modifiers = {
-			local_development_cost = -0.3
+			local_development_cost = -2
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
-			prestige_decay = -0.01
+			#prestige_decay = -0.01
 			free_policy = 1
 			advisor_pool = 2
+
+			advisor_cost = -0.05
+			
 		}
 		on_upgraded = {
 		}
@@ -2448,7 +2077,7 @@ castel_nuovo = {
 			local_defensiveness = 0.25
 		}
 		country_modifiers = {
-			army_tradition = 0.05
+			army_tradition_from_battle = 0.25
 		}
 		on_upgraded = {
 		}
@@ -2469,7 +2098,7 @@ castel_nuovo = {
 			local_defensiveness = 0.5
 		}
 		country_modifiers = {
-			army_tradition = 0.1
+			army_tradition_from_battle = 0.5
 		}
 		on_upgraded = {
 		}
@@ -2986,320 +2615,6 @@ puerta_alcala = {
 	}
 }
 
-marienplatz = {
-	# province it starts in
-	start = 65
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 1
-	
-	type = monument
-	
-	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			trade_value = 2.5
-			local_development_cost = -0.25
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			trade_value = 5
-			local_development_cost = -0.5
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			war_exhaustion_cost = -0.05
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			trade_value = 10
-			local_development_cost = -1
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			war_exhaustion_cost = -0.1
-			war_exhaustion = -0.025
-		}
-		on_upgraded = {
-		}
-	}
-}
-
-palais_garnier = {
-	# province it starts in
-	start = 183
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 0
-	
-	type = monument
-	
-	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = french
-					culture_group = occitan
-				}
-			}
-			has_owner_culture = yes
-		}
-		owner = {
-			OR = {
-				adm_tech = 40
-				AND = {
-					government_rank = 3
-					total_development = 1500
-				}
-			}
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = french
-					culture_group = occitan
-				}
-			}
-			has_owner_culture = yes
-		}
-		owner = {
-			OR = {
-				adm_tech = 40
-				AND = {
-					government_rank = 3
-					total_development = 1500
-				}
-			}
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = french
-					culture_group = occitan
-				}
-			}
-			has_owner_culture = yes
-		}
-		owner = {
-			OR = {
-				adm_tech = 40
-				AND = {
-					government_rank = 3
-					total_development = 1500
-				}
-			}
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_unrest = -1
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			improve_relation_modifier = 0.025
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			local_unrest = -3
-			local_tax_modifier = 0.25
-			local_production_efficiency = 0.1
-		}
-		area_modifier = {
-			institution_growth = 2
-		}
-		country_modifiers = {
-			ae_impact = -0.025
-			improve_relation_modifier = 0.025
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			local_unrest = -5
-			local_tax_modifier = 0.5
-			local_production_efficiency = 0.15
-		}
-		area_modifier = {
-			institution_growth = 5
-		}
-		country_modifiers = {
-			ae_impact = -0.05
-			improve_relation_modifier = 0.05
-		}
-		on_upgraded = {
-		}
-	}
-}
-
 rijksmuseum = {
 	# province it starts in
 	start = 97
@@ -3413,7 +2728,7 @@ rijksmuseum = {
 			factor = 1000
 		}
 		province_modifiers = {
-			development_cost = -0.25
+			local_development_cost = -0.25
 		}
 		area_modifier = {
 		}
@@ -3434,14 +2749,14 @@ rijksmuseum = {
 			factor = 2500
 		}
 		province_modifiers = {
-			development_cost = -0.5
+			local_development_cost = -0.5
 		}
 		area_modifier = {
 			development_cost = -0.1
 		}
 		country_modifiers = {
 			prestige = 0.15
-			idea_cost = -0.05
+			idea_cost = -0.01
 		}
 		on_upgraded = {
 			
@@ -3456,15 +2771,15 @@ rijksmuseum = {
 			factor = 5000
 		}
 		province_modifiers = {
-			development_cost = -1
+			local_development_cost = -1
 		}
 		area_modifier = {
 			development_cost = -0.25
 		}
 		country_modifiers = {
-			prestige = 0.3
-			idea_cost = -0.1
-			technology_cost = -0.05
+			prestige = 0.25
+			idea_cost = -0.025
+			technology_cost = -0.01
 		}
 		on_upgraded = {
 			
@@ -3957,7 +3272,7 @@ theater_aachen = {
 		}
 		country_modifiers = {
 			advisor_pool = 1
-			monthly_splendor = 1
+			monthly_splendor = 0.5
 		}
 		on_upgraded = {
 			
@@ -4057,7 +3372,7 @@ palazzo_pitti = {
 			local_tax_modifier = 0.05
 		}
 		country_modifiers = {
-			interest = -0.5
+			interest = -0.25
 		}
 
 		#what effects happen when this tier is achieved
@@ -4079,11 +3394,11 @@ palazzo_pitti = {
 			local_tax_modifier = 0.1
 		}
 		country_modifiers = {
-			interest = -1.0
+			interest = -0.25
 			advisor_cost = -0.025
 			heir_chance = 0.25
-			prestige = 0.25
-			monthly_splendor = 1
+			prestige = 0.1
+			monthly_splendor = 0.5
 		}
 		on_upgraded = {
 			
@@ -4104,157 +3419,11 @@ palazzo_pitti = {
 			local_tax_modifier = 0.25
 		}
 		country_modifiers = {
-			interest = -1.5
+			interest = -0.5
 			advisor_cost = -0.05
 			heir_chance = 0.5
-			prestige = 0.5
-			monthly_splendor = 2
-		}
-		on_upgraded = {
-			
-		}
-	}
-}
-
-palazzo_napoli = {
-	# province it starts in
-	start = 121
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 0
-	
-	type = monument
-	
-	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = latin
-					
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = latin
-					
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = latin
-					
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_tax_modifier = 0.1
-			local_development_cost = -0.5
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			local_tax_modifier = 0.1
-			local_development_cost = -0.75
-		}
-		area_modifier = {
-			local_tax_modifier = 0.05
-		}
-		country_modifiers = {
-			reduced_liberty_desire = 5
-		}
-		on_upgraded = {
-			
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			local_tax_modifier = 0.25
-			local_development_cost = -1.25
-		}
-		area_modifier = {
-			local_tax_modifier = 0.1
-		}
-		country_modifiers = {
-			reduced_liberty_desire = 10
-			legitimacy = 0.5
-			republican_tradition = 0.25
+			prestige = 0.25
+			monthly_splendor = 0.5
 		}
 		on_upgraded = {
 			
@@ -4520,7 +3689,7 @@ la_monnaie = {
 		country_modifiers = {
 			advisor_cost = -0.05
 			prestige = 0.1
-			monthly_splendor = 1
+			monthly_splendor = 0.25
 		}
 		on_upgraded = {
 		}
@@ -4541,154 +3710,8 @@ la_monnaie = {
 		country_modifiers = {
 			advisor_cost = -0.05
 			prestige = 0.2
-			monthly_splendor = 2
+			monthly_splendor = 0.5
 			stability_cost_modifier = -0.1
-		}
-		on_upgraded = {
-		}
-	}
-}
-
-koningsplein = {
-	# province it starts in
-	start = 92
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 0
-	
-	type = monument
-	
-	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_tax_modifier = 0.1
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			ae_impact = -0.05
-			diplomatic_annexation_cost = -0.05
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			local_tax_modifier = 0.25
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			ae_impact = -0.075
-			diplomatic_annexation_cost = -0.1
-			legitimacy = 0.5
-			republican_tradition = 0.25
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			local_tax_modifier = 0.5
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			ae_impact = -0.1
-			diplomatic_annexation_cost = -0.2
-			legitimacy = 1.0
-			republican_tradition = 0.5
-			power_projection_from_insults = 0.25
 		}
 		on_upgraded = {
 		}
@@ -4984,441 +4007,6 @@ rua_augusta_arch = {
 	}
 }
 
-hotel_de_ville = {
-	# province it starts in
-	start = 203
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 0
-	
-	type = monument
-	
-	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = french
-					culture_group = occitan
-				}
-			}
-			has_owner_culture = yes
-		}
-		owner = {
-			adm_tech = 10
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = french
-					culture_group = occitan
-				}
-			}
-			has_owner_culture = yes
-		}
-		owner = {
-			adm_tech = 10
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = french
-					culture_group = occitan
-				}
-			}
-			has_owner_culture = yes
-		}
-		owner = {
-			adm_tech = 10
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_tax_modifier = 0.1
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			governing_capacity_modifier = 0.025
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-			local_tax_modifier = 0.2
-		}
-		country_modifiers = {
-			governing_capacity_modifier = 0.075
-			free_adm_policy = 1 
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			development_cost = -0.2
-		}
-		area_modifier = {
-			local_tax_modifier = 0.5
-			development_cost = -0.1
-		}
-		country_modifiers = {
-			governing_capacity_modifier = 0.15
-			free_adm_policy = 1 
-			free_dip_policy = 1
-		}
-		on_upgraded = {
-		}
-	}
-}
-
-palace_of_dukes = {
-	# province it starts in
-	start = 192
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 1
-	
-	type = monument
-	
-	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = french
-					culture_group = occitan
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = french
-					culture_group = occitan
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = french
-					culture_group = occitan
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_tax_modifier = 0.1
-		}
-		area_modifier = {
-			local_tax_modifier = 0.025
-			local_manpower_modifier = 0.025
-		}
-		country_modifiers = {
-			diplomatic_reputation = 1
-			diplomatic_upkeep = 1 
-			improve_relation_modifier = 0.05
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			local_tax_modifier = 0.2
-		}
-		area_modifier = {
-			local_tax_modifier = 0.075
-			local_manpower_modifier = 0.075
-		}
-		country_modifiers = {
-			diplomatic_reputation = 2
-			diplomatic_upkeep = 1
-			improve_relation_modifier = 0.075
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			local_tax_modifier = 0.4
-		}
-		area_modifier = {
-			local_tax_modifier = 0.15
-			local_manpower_modifier = 0.15
-		}
-		country_modifiers = {
-			diplomatic_reputation = 2
-			diplomatic_upkeep = 2
-			diplomats = 2
-			improve_relation_modifier = 0.15
-			ae_impact = -0.05
-		}
-		on_upgraded = {
-		}
-	}
-}
-
-bordeaux_cathedral = {
-	# province it starts in
-	start = 174
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 1
-	
-	type = monument
-	
-	build_trigger = {
-		owner = {
-			religion_group = christian
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		owner = {
-			religion_group = christian
-		}
-	}
-	can_upgrade_trigger = {
-		owner = {
-			religion_group = christian
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-			local_tax_modifier = 0.1
-		}
-		country_modifiers = {
-			papal_influence = 0.5
-			church_power_modifier = 0.5
-			monthly_fervor_increase = 0.5
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			development_cost = -0.05
-		}
-		area_modifier = {
-			local_tax_modifier = 0.15
-		}
-		country_modifiers = {
-			papal_influence = 1
-			church_power_modifier = 1
-			monthly_fervor_increase = 1 
-			warscore_cost_vs_other_religion = -0.15
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			development_cost = -0.2
-		}
-		area_modifier = {
-			local_tax_modifier = 0.5
-		}
-		country_modifiers = {
-			papal_influence = 1.5
-			church_power_modifier = 1.5
-			monthly_fervor_increase = 1.5
-			warscore_cost_vs_other_religion = -0.3
-			global_tax_modifier = 0.25
-		}
-		on_upgraded = {
-		}
-	}
-}
-
 galleria_uffizi = {
 	# province it starts in
 	start = 116
@@ -5440,12 +4028,12 @@ galleria_uffizi = {
 	build_trigger = {
 		OR = {
 			owner = {
-				OR = {
-					culture_group = latin
-					
-				}
+				culture_group = latin
 			}
 			has_owner_culture = yes
+		}
+		owner = {
+			full_idea_group = innovativeness_ideas
 		}
 	}
 	on_built = {
@@ -5455,23 +4043,23 @@ galleria_uffizi = {
 	can_use_modifiers_trigger = {
 		OR = {
 			owner = {
-				OR = {
-					culture_group = latin
-					
-				}
+				culture_group = latin
 			}
 			has_owner_culture = yes
+		}
+		owner = {
+			full_idea_group = innovativeness_ideas
 		}
 	}
 	can_upgrade_trigger = {
 		OR = {
 			owner = {
-				OR = {
-					culture_group = latin
-					
-				}
+				culture_group = latin
 			}
 			has_owner_culture = yes
+		}
+		owner = {
+			full_idea_group = innovativeness_ideas
 		}
 	}
 
@@ -5536,8 +4124,8 @@ galleria_uffizi = {
 			local_development_cost = -0.25
 		}
 		country_modifiers = {
-			prestige = 0.25
-			diplomatic_reputation = 1.0
+			prestige = 0.15
+			diplomatic_reputation = 0.5
 			advisor_cost = -0.05
 			adm_advisor_cost = -0.025
 		}
@@ -5560,124 +4148,11 @@ galleria_uffizi = {
 			local_development_cost = -0.5
 		}
 		country_modifiers = {
-			prestige = 0.5
-			diplomatic_reputation = 2.0
+			prestige = 0.25
+			diplomatic_reputation = 0.5
 			advisor_cost = -0.075
 			adm_advisor_cost = -0.025
 			dip_advisor_cost = -0.025
-		}
-		on_upgraded = {
-		}
-	}
-}
-
-porte_de_mars = {
-	# province it starts in
-	start = 186
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 1
-	
-	type = monument
-	
-	build_trigger = {
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-	}
-	can_upgrade_trigger = {
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-			local_manpower_modifier = 0.1
-		}
-		country_modifiers = {
-			land_forcelimit_modifier = 0.05
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			local_manpower_modifier = 0.25
-		}
-		area_modifier = {
-			local_manpower_modifier = 0.25
-		}
-		country_modifiers = {
-			land_forcelimit_modifier = 0.10
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-			local_manpower_modifier = 0.5
-		}
-		country_modifiers = {
-			global_manpower_modifier = 0.1
-			land_forcelimit_modifier = 0.2
 		}
 		on_upgraded = {
 		}
@@ -5743,21 +4218,29 @@ reims_cathedral = {
 			factor = 1000
 		}
 		province_modifiers = {
-			local_development_cost = -0.6
+			local_development_cost = -0.1
 		}
 		area_modifier = {
 			local_tax_modifier = 0.05
 		}
 		country_modifiers = {
-			religious_unity = 0.1
-			enforce_religion_cost = -0.15
-			papal_influence = 0.25
-			tolerance_own = 1
-			max_absolutism = 10
+			enforce_religion_cost = -0.025
+			papal_influence = 0.1
+			monthly_church_power = 0.1
+			monthly_fervor_increase = 0.1
+			tolerance_own = 0.5
+			max_absolutism = 5
 		}
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
+			add_base_tax = 1
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 10
+				}
+			}
 		}
 	}
 
@@ -5769,21 +4252,29 @@ reims_cathedral = {
 			factor = 2500
 		}
 		province_modifiers = {
-			local_development_cost = -1
+			local_development_cost = -0.1
 		}
 		area_modifier = {
-			local_tax_modifier = 0.15
+			local_tax_modifier = 0.25
 		}
 		country_modifiers = {
-			religious_unity = 0.25
-			enforce_religion_cost = -0.2
-			papal_influence = 0.5
-			tolerance_own = 2
+			enforce_religion_cost = -0.05
+			papal_influence = 0.1
+			monthly_church_power = 0.1
+			monthly_fervor_increase = 0.1
+			tolerance_own = 0.5
 			missionaries = 1
 			global_heretic_missionary_strength = 0.01
-			max_absolutism = 15
+			max_absolutism = 5
 		}
 		on_upgraded = {
+			add_base_tax = 1
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 10
+				}
+			}
 		}
 	}
 
@@ -5795,22 +4286,29 @@ reims_cathedral = {
 			factor = 5000
 		}
 		province_modifiers = {
-			
+			local_development_cost = -0.25
 		}
 		area_modifier = {
-			local_tax_modifier = 0.3
-			local_development_cost = -1
+			local_tax_modifier = 0.5
 		}
 		country_modifiers = {
-			religious_unity = 0.5
-			enforce_religion_cost = -0.25
-			papal_influence = 1
-			tolerance_own = 4
-			missionaries = 2
-			global_heretic_missionary_strength = 0.03
-			max_absolutism = 25
+			enforce_religion_cost = -0.05
+			papal_influence = 0.25
+			monthly_church_power = 0.25
+			monthly_fervor_increase = 0.25
+			tolerance_own = 0.5
+			missionaries = 1
+			global_heretic_missionary_strength = 0.02
+			max_absolutism = 10
 		}
 		on_upgraded = {
+			add_base_tax = 2
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 10
+				}
+			}
 		}
 	}
 }
@@ -5960,6 +4458,129 @@ palace_tau = {
 			adm_advisor_cost = -0.075
 			dip_advisor_cost = -0.05
 			mil_advisor_cost = -0.025
+		}
+		on_upgraded = {
+		}
+	}
+}
+
+porte_de_mars = {
+	# province it starts in
+	start = 186
+	
+	date = 1444.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	
+	can_be_moved = no
+	
+	move_days_per_unit_distance = 10
+	
+	starting_tier = 1
+	
+	type = monument
+	
+	build_trigger = {
+		owner = {
+			religion_group = pagan
+		}
+	}
+	on_built = {
+	}
+	on_destroyed = {
+	}
+	can_use_modifiers_trigger = {
+		owner = {
+			religion_group = pagan
+		}
+	}
+	can_upgrade_trigger = {
+		owner = {
+			religion_group = pagan
+		}
+	}
+
+	#can our country keep it or is it destroyed when we get hold of it?
+	keep_trigger = {
+	}
+
+	#tier data
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+			local_manpower_modifier = 0.1
+		}
+		country_modifiers = {
+			land_forcelimit_modifier = 0.05
+		}
+
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_manpower_modifier = 0.25
+		}
+		area_modifier = {
+			local_manpower_modifier = 0.25
+		}
+		country_modifiers = {
+			global_manpower_modifier = 0.05
+			land_forcelimit_modifier = 0.10
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+			local_manpower_modifier = 0.5
+		}
+		country_modifiers = {
+			global_manpower_modifier = 0.1
+			land_forcelimit_modifier = 0.2
 		}
 		on_upgraded = {
 		}
@@ -6457,7 +5078,7 @@ st_basil = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			tolerance_own = 1
+			tolerance_own = 0.25
 			religious_unity = 0.05
 		}
 
@@ -6479,7 +5100,7 @@ st_basil = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			tolerance_own = 2
+			tolerance_own = 0.25
 			religious_unity = 0.15
 		}
 		on_upgraded = {
@@ -6499,130 +5120,8 @@ st_basil = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			tolerance_own = 3
+			tolerance_own = 0.5
 			religious_unity = 0.25
-		}
-		on_upgraded = {
-		}
-	}
-}
-
-winter_palace = {
-	# province it starts in
-	start = 33
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 0
-	
-	type = monument
-	
-	build_trigger = {
-		owner = {
-			adm_tech = 24
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		owner = {
-			adm_tech = 24
-		}
-	}
-	can_upgrade_trigger = {
-		owner = {
-			adm_tech = 24
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			development_cost = -0.05
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			stability_cost_modifier = -0.1
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			development_cost = -0.15
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			stability_cost_modifier = -0.2
-			advisor_cost = -0.025
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			development_cost = -0.35
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			stability_cost_modifier = -0.3
-			advisor_cost = -0.05
 		}
 		on_upgraded = {
 		}
@@ -6751,129 +5250,6 @@ kyiv_university = {
 		country_modifiers = {
 			technology_cost = -0.05
 			idea_cost = -0.3
-		}
-		on_upgraded = {
-		}
-	}
-}
-
-horodecki_house = {
-	# province it starts in
-	start = 280
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 0
-	
-	type = monument
-	
-	build_trigger = {
-		owner = {
-			adm_tech = 36
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		owner = {
-			adm_tech = 36
-		}
-	}
-	can_upgrade_trigger = {
-		owner = {
-			adm_tech = 36
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			prestige_decay = -0.01
-			monthly_splendor = 1
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			prestige_decay = -0.02
-			monthly_splendor = 2
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			prestige_decay = -0.03
-			monthly_splendor = 2
-			legitimacy = 1
-			republican_tradition = 0.5
-			devotion = 1
 		}
 		on_upgraded = {
 		}
@@ -7086,6 +5462,7 @@ prague_castle = {
 		province_modifiers = {
 			local_manpower_modifier = 0.25
 			local_tax_modifier = 0.1
+			local_defensiveness = 0.5
 		}
 		area_modifier = {
 		}
@@ -7106,6 +5483,7 @@ prague_castle = {
 		}
 		province_modifiers = {
 			local_tax_modifier = 0.25
+			local_defensiveness = 1.0
 		}
 		area_modifier = {
 			local_manpower_modifier = 0.25
@@ -7127,6 +5505,7 @@ prague_castle = {
 		}
 		province_modifiers = {
 			local_tax_modifier = 0.25
+			local_defensiveness = 1.0
 		}
 		area_modifier = {
 			local_manpower_modifier = 0.5
@@ -7228,12 +5607,11 @@ national_theatre = {
 		}
 		province_modifiers = {
 			local_tax_modifier = 0.1
-			local_development_cost = -0.8
+			local_development_cost = -0.25
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
-			advisor_cost = -0.05
 		}
 
 		#what effects happen when this tier is achieved
@@ -7252,11 +5630,10 @@ national_theatre = {
 		}
 		area_modifier = {
 			local_tax_modifier = 0.25
-			local_development_cost = -1.25
+			local_development_cost = -0.25
 		}
 		country_modifiers = {
-			advisor_cost = -0.075
-			land_morale = 0.05
+			advisor_cost = -0.025
 		}
 		on_upgraded = {
 		}
@@ -7273,12 +5650,10 @@ national_theatre = {
 		}
 		area_modifier = {
 			local_tax_modifier = 0.5
-			local_development_cost = -1.25
+			local_development_cost = -0.5
 		}
 		country_modifiers = {
-			advisor_cost = -0.1
-			land_morale = 0.1
-			development_cost = -0.25
+			advisor_cost = -0.05
 		}
 		on_upgraded = {
 		}
@@ -7430,304 +5805,6 @@ grassalkovich_palace = {
 	}
 }
 
-buda_castle = {
-	# province it starts in
-	start = 153
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 1
-	
-	type = monument
-	
-	build_trigger = {
-		OR = {
-			owner = {
-				primary_culture = hungarian
-			}
-			has_owner_culture = yes
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				primary_culture = hungarian
-			}
-			has_owner_culture = yes
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				primary_culture = hungarian
-			}
-			has_owner_culture = yes
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_defensiveness = 0.1
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			global_tax_modifier = 0.05
-			garrison_size = 0.1
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			fort_level = 2
-			local_defensiveness = 0.15
-		}
-		area_modifier = {
-			local_manpower_modifier = 0.05
-		}
-		country_modifiers = {
-			global_tax_modifier = 0.1
-			garrison_size = 0.15
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			fort_level = 3
-			local_defensiveness = 0.25
-		}
-		area_modifier = {
-			local_manpower_modifier = 0.15
-		}
-		country_modifiers = {
-			global_tax_modifier = 0.25
-			global_autonomy = -0.05 
-			stability_cost_modifier = -0.1
-			global_unrest = -1
-			garrison_size = 0.2
-		}
-		on_upgraded = {
-		}
-	}
-}
-
-heroes_square = {
-	# province it starts in
-	start = 153
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 0
-	
-	type = monument
-	
-	build_trigger = {
-		OR = {
-			owner = {
-				primary_culture = hungarian
-			}
-			has_owner_culture = yes
-		}
-		owner = {
-			OR = {
-				adm_tech = 25
-				has_parliament = yes
-				has_reform = democratic_mechanic
-				is_revolutionary = yes
-			}
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				primary_culture = hungarian
-			}
-			has_owner_culture = yes
-		}
-		owner = {
-			OR = {
-				adm_tech = 25
-				has_parliament = yes
-				has_reform = democratic_mechanic
-				is_revolutionary = yes
-			}
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				primary_culture = hungarian
-			}
-			has_owner_culture = yes
-		}
-		owner = {
-			OR = {
-				adm_tech = 25
-				has_parliament = yes
-				has_reform = democratic_mechanic
-				is_revolutionary = yes
-			}
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			prestige = 0.1
-			land_morale = 0.1
-			discipline = 0.025
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			prestige = 0.25
-			land_morale = 0.15
-			discipline = 0.05
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			stability_cost_modifier = -0.05
-			prestige = 0.5
-			land_morale = 0.25
-			discipline = 0.05
-			infantry_power = 0.05
-			cavalry_power = 0.10
-		}
-		on_upgraded = {
-		}
-	}
-}
-
 house_of_nation = {
 	# province it starts in
 	start = 153
@@ -7753,7 +5830,7 @@ house_of_nation = {
 				OR = {
 					has_parliament = yes
 					has_reform = democratic_mechanic
-					is_revolutionary = yes
+					bgm_rev = yes
 				}
 			}
 			has_owner_culture = yes
@@ -7770,7 +5847,7 @@ house_of_nation = {
 				OR = {
 					has_parliament = yes
 					has_reform = democratic_mechanic
-					is_revolutionary = yes
+					bgm_rev = yes
 				}
 			}
 			has_owner_culture = yes
@@ -7783,7 +5860,7 @@ house_of_nation = {
 				OR = {
 					has_parliament = yes
 					has_reform = democratic_mechanic
-					is_revolutionary = yes
+					bgm_rev = yes
 				}
 			}
 			has_owner_culture = yes
@@ -7854,6 +5931,7 @@ house_of_nation = {
 			land_morale = 0.1
 			global_tax_modifier = 0.075
 			manpower_recovery_speed = 0.025
+			reform_progress_growth = 0.05
 		}
 		on_upgraded = {
 		}
@@ -7877,6 +5955,7 @@ house_of_nation = {
 			land_morale = 0.15
 			global_tax_modifier = 0.15
 			manpower_recovery_speed = 0.1
+			reform_progress_growth = 0.1
 		}
 		on_upgraded = {
 		}
@@ -8251,8 +6330,8 @@ nymphenburg = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			diplomatic_reputation = 1
-			improve_relation_modifier = 0.05
+			diplomatic_reputation = 0.25
+			improve_relation_modifier = 0.025
 		}
 
 		#what effects happen when this tier is achieved
@@ -8272,10 +6351,9 @@ nymphenburg = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			diplomatic_reputation = 1
-			diplomatic_upkeep = 1
-			improve_relation_modifier = 0.1
-			ae_impact = -0.05
+			diplomatic_reputation = 0.25
+			improve_relation_modifier = 0.025
+			ae_impact = -0.025
 			unjustified_demands = -0.05
 		}
 		on_upgraded = {
@@ -8294,10 +6372,9 @@ nymphenburg = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			diplomatic_reputation = 2
-			diplomatic_upkeep = 2
-			improve_relation_modifier = 0.175
-			ae_impact = -0.125
+			diplomatic_reputation = 0.5
+			improve_relation_modifier = 0.05
+			ae_impact = -0.05
 			unjustified_demands = -0.1
 		}
 		on_upgraded = {
@@ -8397,7 +6474,7 @@ glyptothek = {
 		}
 		country_modifiers = {
 			heir_chance = 0.1
-			monthly_splendor = 1
+			monthly_splendor = 0.5
 		}
 
 		#what effects happen when this tier is achieved
@@ -8420,7 +6497,7 @@ glyptothek = {
 		}
 		country_modifiers = {
 			heir_chance = 0.25
-			monthly_splendor = 2
+			monthly_splendor = 0.5
 		}
 		on_upgraded = {
 		}
@@ -8441,7 +6518,7 @@ glyptothek = {
 		}
 		country_modifiers = {
 			heir_chance = 0.5
-			monthly_splendor = 3
+			monthly_splendor = 1
 		}
 		on_upgraded = {
 		}
@@ -8545,7 +6622,7 @@ residenz = {
 			reduced_liberty_desire = 5
 			prestige = 0.1
 			inflation_reduction = 0.05
-			interest = -0.5
+			interest = -0.25
 		}
 
 		#what effects happen when this tier is achieved
@@ -8568,11 +6645,11 @@ residenz = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			reduced_liberty_desire = 10
+			reduced_liberty_desire = 7.5
 			prestige = 0.2
 			yearly_corruption = -0.05
 			inflation_reduction = 0.1
-			interest = -1
+			interest = -0.25
 		}
 		on_upgraded = {
 		}
@@ -8593,310 +6670,11 @@ residenz = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			reduced_liberty_desire = 20
-			prestige = 0.5
+			reduced_liberty_desire = 10
+			prestige = 0.25
 			yearly_corruption = -0.1
 			inflation_reduction = 0.15
-			interest = -2
-		}
-		on_upgraded = {
-		}
-	}
-}
-
-eschenheimer_turm = {
-	# province it starts in
-	start = 1876
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 1
-	
-	type = monument
-	
-	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_defensiveness = 0.1
-			local_manpower_modifier = 0.1
-			local_tax_modifier = 0.1
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			land_forcelimit_modifier = 0.05
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			local_defensiveness = 0.2
-			local_manpower_modifier = 0.2
-			local_tax_modifier = 0.2
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			land_forcelimit_modifier = 0.1
-			land_maintenance_modifier = -0.075
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			local_defensiveness = 0.3
-			local_manpower_modifier = 0.5
-			local_tax_modifier = 0.5
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			land_forcelimit_modifier = 0.2
-			land_maintenance_modifier = -0.15
-		}
-		on_upgraded = {
-		}
-	}
-}
-
-romer = {
-	# province it starts in
-	start = 1876
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 1
-	
-	type = monument
-	
-	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_development_cost = -0.25
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			legitimacy = 0.5
-			devotion = 0.5
-			republican_tradition = 0.25
-			reelection_cost = -0.05
-			
-			max_revolutionary_zeal = 5
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			local_development_cost = -0.4
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			legitimacy = 1
-			devotion = 1
-			republican_tradition = 0.5
-			reelection_cost = -0.1
-			
-			max_revolutionary_zeal = 15
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			local_development_cost = -0.75
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			legitimacy = 1.5
-			devotion = 1.5
-			republican_tradition = 0.75
-			reelection_cost = -0.15
-			
-			max_revolutionary_zeal = 30
+			interest = -0.25
 		}
 		on_upgraded = {
 		}
@@ -9053,298 +6831,6 @@ altare_patria = {
 	}
 }
 
-villa_borghese = {
-	# province it starts in
-	start = 118
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 0
-	
-	type = monument
-	
-	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = latin
-					
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = latin
-					
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = latin
-					
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_development_cost = -0.3
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			prestige = 0.1
-			improve_relation_modifier = 0.1
-			monthly_splendor = 1
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			local_development_cost = -0.6
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			prestige = 0.25
-			improve_relation_modifier = 0.2
-			advisor_cost = -0.025
-			monthly_splendor = 2
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			local_development_cost = -0.9
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			prestige = 0.5
-			improve_relation_modifier = 0.4
-			advisor_cost = -0.05
-			monthly_splendor = 2
-		}
-		on_upgraded = {
-		}
-	}
-}
-
-campo_fiori = {
-	# province it starts in
-	start = 118
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 0
-	
-	type = monument
-	
-	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = latin
-					
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = latin
-					
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = latin
-					
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			province_trade_power_modifier = 0.25
-			province_trade_power_value = 0.25
-			local_development_cost = -0.5
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			province_trade_power_modifier = 0.5
-			province_trade_power_value = 0.5
-			local_development_cost = -0.75
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			global_trade_power = 0.1
-			trade_efficiency = 0.1
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			province_trade_power_modifier = 1.0
-			province_trade_power_value = 1.0
-			local_development_cost = -1.5
-		}
-		area_modifier = {
-			province_trade_power_modifier = 0.15
-		}
-		country_modifiers = {
-			global_trade_power = 0.2
-			trade_efficiency = 0.2
-		}
-		on_upgraded = {
-		}
-	}
-}
-
 quirinal_palace = {
 	# province it starts in
 	start = 118
@@ -9492,150 +6978,6 @@ quirinal_palace = {
 	}
 }
 
-palazzo_corsini = {
-	# province it starts in
-	start = 118
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 0
-	
-	type = monument
-	
-	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = latin
-					
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = latin
-					
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = latin
-					
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_development_cost = -0.25
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			prestige = 0.1
-			advisor_cost = -0.025
-			advisor_pool = 1
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			local_development_cost = -0.5
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			prestige = 0.25
-			advisor_cost = -0.05
-			advisor_pool = 2
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			local_development_cost = -0.75
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			prestige = 0.5
-			advisor_cost = -0.05
-			advisor_pool = 3
-		}
-		on_upgraded = {
-		}
-	}
-}
-
 federal_chancellery = {
 	# province it starts in
 	start = 50
@@ -9746,11 +7088,10 @@ federal_chancellery = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			legitimacy = 0.5
-			republican_tradition = 0.25
-			stability_cost_modifier = -0.1
-			improve_relation_modifier = 0.15
-			ae_impact = -0.075
+			legitimacy = 0.25
+			devotion = 0.25
+			republican_tradition = 0.1
+			stability_cost_modifier = -0.01
 		}
 
 		#what effects happen when this tier is achieved
@@ -9767,16 +7108,15 @@ federal_chancellery = {
 		}
 		province_modifiers = {
 			local_development_cost = -1.5
-			local_tax_modifier = 0.3
+			local_tax_modifier = 0.5
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
-			legitimacy = 1
-			republican_tradition = 0.5
-			stability_cost_modifier = -0.2
-			improve_relation_modifier = 0.3
-			ae_impact = -0.15
+			legitimacy = 0.25
+			devotion = 0.25
+			republican_tradition = 0.1
+			stability_cost_modifier = -0.025
 		}
 		on_upgraded = {
 		}
@@ -9797,11 +7137,11 @@ federal_chancellery = {
 			local_tax_modifier = 0.5
 		}
 		country_modifiers = {
-			legitimacy = 1.5
-			republican_tradition = 0.75
-			stability_cost_modifier = -0.25
-			improve_relation_modifier = 0.5
-			ae_impact = -0.3
+			legitimacy = 0.25
+			devotion = 0.25
+			republican_tradition = 0.1
+			stability_cost_modifier = -0.05
+			advisor_cost = -0.025
 		}
 		on_upgraded = {
 		}
@@ -9900,9 +7240,9 @@ humboldt_university = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			advisor_cost = -0.025
-			technology_cost = -0.025
-			idea_cost = -0.025
+			advisor_cost = -0.01
+			technology_cost = -0.01
+			idea_cost = -0.01
 		}
 
 		#what effects happen when this tier is achieved
@@ -9924,9 +7264,9 @@ humboldt_university = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			advisor_cost = -0.05
-			technology_cost = -0.025
-			idea_cost = -0.05
+			advisor_cost = -0.025
+			technology_cost = -0.01
+			idea_cost = -0.01
 		}
 		on_upgraded = {
 		}
@@ -9943,187 +7283,12 @@ humboldt_university = {
 			local_development_cost = -1.5
 		}
 		area_modifier = {
-			local_tax_modifier = 0.35
-		}
-		country_modifiers = {
-			advisor_cost = -0.075
-			technology_cost = -0.05
-			idea_cost = -0.05
-		}
-		on_upgraded = {
-		}
-	}
-}
-
-bnd_headquarters = {
-	# province it starts in
-	start = 50
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 0
-	
-	type = monument
-	
-	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
-		}
-		owner = {
-			OR = {
-				total_development = 1000
-				government_rank = 3
-			}
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
-		}
-		owner = {
-			OR = {
-				total_development = 1000
-				government_rank = 3
-			}
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
-		}
-		owner = {
-			OR = {
-				total_development = 1000
-				government_rank = 3
-			}
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_development_cost = -0.25
-			local_tax_modifier = 0.1
-		}
-		area_modifier = {
-			local_manpower_modifier = 0.05
-		}
-		country_modifiers = {
-			spy_offence = 0.1
-			global_spy_defence = 0.1
-			stability_cost_modifier = -0.05
-			global_unrest = -1
-			diplomats = 1
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			local_development_cost = -0.5
-			local_tax_modifier = 0.2
-		}
-		area_modifier = {
-			local_manpower_modifier = 0.15
-		}
-		country_modifiers = {
-			spy_offence = 0.2
-			global_spy_defence = 0.2
-			stability_cost_modifier = -0.1
-			global_unrest = -2
-			diplomats = 3
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			
-		}
-		area_modifier = {
-			local_development_cost = -0.5
 			local_tax_modifier = 0.25
 		}
 		country_modifiers = {
-			spy_offence = 0.4
-			global_spy_defence = 0.4
-			stability_cost_modifier = -0.25
-			global_unrest = -4
-			global_manpower_modifier = 0.25
-			diplomats = 5
+			advisor_cost = -0.025
+			technology_cost = -0.025
+			idea_cost = -0.025
 		}
 		on_upgraded = {
 		}
@@ -10217,12 +7382,11 @@ hamburg_port = {
 		}
 		province_modifiers = {
 			local_sailors_modifier = 0.1
-			local_ship_cost = -0.15
+			local_ship_cost = -0.1
 			local_ship_repair = 0.25
-			trade_value_modifier = 0.2
+			trade_value_modifier = 0.25
 		}
 		area_modifier = {
-			trade_value_modifier = 0.05
 		}
 		country_modifiers = {
 			global_trade_power = 0.05
@@ -10242,12 +7406,11 @@ hamburg_port = {
 		}
 		province_modifiers = {
 			local_sailors_modifier = 0.25
-			local_ship_cost = -0.3
+			local_ship_cost = -0.25
 			local_ship_repair = 0.5
-			trade_value_modifier = 0.3
+			trade_value_modifier = 0.5
 		}
 		area_modifier = {
-			trade_value_modifier = 0.1
 		}
 		country_modifiers = {
 			global_trade_power = 0.1
@@ -10265,164 +7428,16 @@ hamburg_port = {
 		}
 		province_modifiers = {
 			local_sailors_modifier = 0.5
-			local_ship_cost = -0.6
+			local_ship_cost = -0.5
 			local_ship_repair = 0.5
-			trade_value_modifier = 0.6
-		}
-		area_modifier = {
-			trade_value_modifier = 0.2
-		}
-		country_modifiers = {
-			global_trade_power = 0.3
-		}
-		on_upgraded = {
-		}
-	}
-}
-
-berenberg_bank = {
-	# province it starts in
-	start = 44
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 0
-	
-	type = monument
-	
-	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
+			trade_value_modifier = 1
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
+			global_trade_power = 0.15
 		}
 		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_tax_modifier = 0.15
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			interest = -1
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			local_tax_modifier = 0.25
-			local_development_cost = -0.575
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			interest = -1
-			inflation_reduction = 0.05
-			development_cost = -0.1
-			production_efficiency = 0.05
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			local_development_cost = -1.25
-		}
-		area_modifier = {
-			local_tax_modifier = 0.5
-		}
-		country_modifiers = {
-			interest = -2
-			inflation_reduction = 0.1
-			development_cost = -0.25
-			production_efficiency = 0.1
-		}
-		on_upgraded = {
-			
 		}
 	}
 }
@@ -10651,12 +7666,13 @@ royal_opera = {
 			factor = 1000
 		}
 		province_modifiers = {
-			local_tax_modifier = 0.15
+			local_tax_modifier = 0.25
+			local_development_cost = -0.5
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
-			monthly_splendor = 1
+			monthly_splendor = 0.25
 			advisor_pool = 1
 		}
 
@@ -10673,179 +7689,14 @@ royal_opera = {
 			factor = 2500
 		}
 		province_modifiers = {
-			local_tax_modifier = 0.3
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			monthly_splendor = 2
-			advisor_pool = 2
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
 			local_tax_modifier = 0.5
+			local_development_cost = -0.5
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
-			monthly_splendor = 3
-			advisor_pool = 4
-			advisor_cost = -0.025
-		}
-		on_upgraded = {
-			
-		}
-	}
-}
-
-kingston = {
-	# province it starts in
-	start = 236
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 0
-	
-	type = monument
-	
-	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = british
-					primary_culture = anglo_norman
-				}
-			}
-			has_owner_culture = yes
-		}
-		owner = {
-			OR = {
-				total_development = 1000
-				government_rank = 3
-			}
-			adm_tech = 44
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = british
-					primary_culture = anglo_norman
-				}
-			}
-			has_owner_culture = yes
-		}
-		owner = {
-			OR = {
-				total_development = 1000
-				government_rank = 3
-			}
-			adm_tech = 44
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = british
-					primary_culture = anglo_norman
-				}
-			}
-			has_owner_culture = yes
-		}
-		owner = {
-			OR = {
-				total_development = 1000
-				government_rank = 3
-			}
-			adm_tech = 44
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			advisor_cost = -0.05
-			innovativeness_gain = 0.5
-			technology_cost = -0.025
-			idea_cost = -0.05
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			advisor_cost = -0.075
-			innovativeness_gain = 1
-			technology_cost = -0.025
-			idea_cost = -0.1
+			monthly_splendor = 0.25
+			advisor_pool = 1
 		}
 		on_upgraded = {
 		}
@@ -10859,14 +7710,15 @@ kingston = {
 			factor = 5000
 		}
 		province_modifiers = {
+			local_tax_modifier = 1
+			local_development_cost = -1
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
-			advisor_cost = -0.1
-			innovativeness_gain = 1.25
-			technology_cost = -0.05
-			idea_cost = -0.1
+			monthly_splendor = 0.5
+			advisor_pool = 2
+			advisor_cost = -0.01
 		}
 		on_upgraded = {
 			
@@ -10975,6 +7827,9 @@ balliol = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
+			owner = {
+				change_innovativeness = 1
+			}
 		}
 	}
 
@@ -10999,6 +7854,9 @@ balliol = {
 			advisor_cost = -0.025
 		}
 		on_upgraded = {
+			owner = {
+				change_innovativeness = 1
+			}
 		}
 	}
 
@@ -11024,7 +7882,9 @@ balliol = {
 			production_efficiency = 0.025
 		}
 		on_upgraded = {
-			
+			owner = {
+				change_innovativeness = 2
+			}
 		}
 	}
 }
@@ -11122,7 +7982,10 @@ canterbury = {
 		country_modifiers = {
 			global_tax_modifier = 0.05
 			global_missionary_strength = 0.01
-			tolerance_own = 1
+			tolerance_own = 0.5
+			papal_influence = 0.25
+			church_power_modifier = 0.05
+			monthly_fervor_increase = 0.05
 		}
 
 		#what effects happen when this tier is achieved
@@ -11145,7 +8008,10 @@ canterbury = {
 		country_modifiers = {
 			global_tax_modifier = 0.1
 			global_missionary_strength = 0.01
-			tolerance_own = 2
+			tolerance_own = 0.5
+			papal_influence = 0.5
+			church_power_modifier = 0.1
+			monthly_fervor_increase = 0.1
 		}
 		on_upgraded = {
 		}
@@ -11166,7 +8032,10 @@ canterbury = {
 		country_modifiers = {
 			global_tax_modifier = 0.125
 			global_missionary_strength = 0.02
-			tolerance_own = 4
+			tolerance_own = 1
+			papal_influence = 1
+			church_power_modifier = 0.15
+			monthly_fervor_increase = 0.15
 		}
 		on_upgraded = {
 			
@@ -11261,12 +8130,15 @@ yorkmin = {
 		}
 		province_modifiers = {
 			local_tax_modifier = 0.05
-			local_development_cost = -0.375
+			local_development_cost = -0.25
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
-			tolerance_own = 1
+			tolerance_own = 0.25
+			papal_influence = 0.25
+			church_power_modifier = 0.05
+			monthly_fervor_increase = 0.05
 		}
 
 		#what effects happen when this tier is achieved
@@ -11283,12 +8155,15 @@ yorkmin = {
 		}
 		province_modifiers = {
 			local_tax_modifier = 0.1
-			local_development_cost = -0.625
+			local_development_cost = -0.25
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
-			tolerance_own = 1
+			tolerance_own = 0.25
+			papal_influence = 0.5
+			church_power_modifier = 0.1
+			monthly_fervor_increase = 0.1
 		}
 		on_upgraded = {
 		}
@@ -11302,13 +8177,17 @@ yorkmin = {
 			factor = 5000
 		}
 		province_modifiers = {
+			local_development_cost = -0.5
 		}
 		area_modifier = {
-			local_development_cost = -1.25
+			
 		}
 		country_modifiers = {
 			global_tax_modifier = 0.1
-			tolerance_own = 2
+			tolerance_own = 0.5
+			papal_influence = 1
+			church_power_modifier = 0.2
+			monthly_fervor_increase = 0.2
 		}
 		on_upgraded = {
 			
@@ -11387,7 +8266,7 @@ das_parlament = {
 			factor = 1000
 		}
 		province_modifiers = {
-			local_development_cost = -0.75
+			local_development_cost = -0.25
 		}
 		area_modifier = {
 		}
@@ -11411,7 +8290,7 @@ das_parlament = {
 			factor = 2500
 		}
 		province_modifiers = {
-			local_development_cost = -1.5
+			local_development_cost = -0.5
 		}
 		area_modifier = {
 		}
@@ -11433,294 +8312,16 @@ das_parlament = {
 			factor = 5000
 		}
 		province_modifiers = {
-			local_development_cost = -2.25
+			local_development_cost = -0.5
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
-			republican_tradition = 0.5
-			legitimacy = 0.75
+			republican_tradition = 0.25
+			legitimacy = 0.5
+			devotion = 0.5
 			governing_capacity_modifier = 0.2
 			advisor_cost = -0.05
-		}
-		on_upgraded = {
-		}
-	}
-}
-
-museum_art_history = {
-	# province it starts in
-	start = 134
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 0
-	
-	type = monument
-	
-	build_trigger = {
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {	
-	}
-	can_upgrade_trigger = {
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_tax_modifier = 0.25
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			improve_relation_modifier = 0.15
-			diplomatic_reputation = 1
-			global_tax_modifier = 0.075
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			local_tax_modifier = 0.5
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			improve_relation_modifier = 0.3
-			diplomatic_reputation = 2
-			global_tax_modifier = 0.15
-			advisor_pool = 1
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			local_tax_modifier = 1.0
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			improve_relation_modifier = 0.45
-			diplomatic_reputation = 2
-			global_tax_modifier = 0.3
-			advisor_pool = 2
-			advisor_cost = -0.05
-		}
-		on_upgraded = {
-		}
-	}
-}
-
-christiansborg_palace = {
-	# province it starts in
-	start = 12
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 0
-	
-	type = monument
-	
-	build_trigger = {
-		OR = {
-			owner = {
-				primary_culture = danish
-			}
-			has_owner_culture = yes
-		}
-		owner = {
-			OR = {
-				has_parliament = yes
-				government_rank = 3
-			}
-		}
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {	
-		OR = {
-			owner = {
-				primary_culture = danish
-			}
-			has_owner_culture = yes
-		}
-		owner = {
-			OR = {
-				has_parliament = yes
-				government_rank = 3
-			}
-		}
-	}
-	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				primary_culture = danish
-			}
-			has_owner_culture = yes
-		}
-		owner = {
-			OR = {
-				has_parliament = yes
-				government_rank = 3
-			}
-		}
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_tax_modifier = 0.25
-			province_trade_power_modifier = 0.1
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-			global_unrest = -2
-			liberty_desire_from_subject_development = -0.1
-			stability_cost_modifier = -0.1
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			province_trade_power_modifier = 0.25
-		}
-		area_modifier = {
-			local_tax_modifier = 0.5
-		}
-		country_modifiers = {
-			global_unrest = -4
-			liberty_desire_from_subject_development = -0.15
-			stability_cost_modifier = -0.15
-			local_defensiveness = 0.125
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			province_trade_power_modifier = 0.375
-		}
-		area_modifier = {
-			local_tax_modifier = 0.75
-		}
-		country_modifiers = {
-			global_tax_modifier = 0.25
-			global_unrest = -4
-			liberty_desire_from_subject_development = -0.2
-			stability_cost_modifier = -0.2
-			local_defensiveness = 0.25
 		}
 		on_upgraded = {
 		}
@@ -12825,145 +9426,6 @@ poznan_cityhall = {
 	}
 }
 
-wawel_cathedral = {
-	# province it starts in
-	start = 262
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 1
-	
-	type = monument
-	
-	build_trigger = {
-		has_owner_culture = yes
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {	
-		has_owner_culture = yes
-	}
-	can_upgrade_trigger = {
-		has_owner_culture = yes
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_development_cost = -0.25
-		}
-		area_modifier = {
-			local_tax_modifier = 0.1
-		}
-		country_modifiers = {
-			papal_influence = 0.25
-			church_power_modifier = 0.25
-			monthly_fervor_increase = 0.5
-			legitimacy = 0.25
-			republican_tradition = 0.125
-			devotion = 0.5
-			relation_with_heretics = 10
-			curia_powers_cost = -0.05
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			local_development_cost = -0.5
-		}
-		area_modifier = {
-			local_tax_modifier = 0.2
-		}
-		country_modifiers = {
-			papal_influence = 0.5
-			church_power_modifier = 0.5
-			monthly_fervor_increase = 1
-			legitimacy = 0.5
-			republican_tradition = 0.25
-			devotion = 1
-			relation_with_heretics = 10
-			curia_powers_cost = -0.075
-		}
-
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			local_development_cost = -0.5
-		}
-		area_modifier = {
-			local_tax_modifier = 0.2
-		}
-		country_modifiers = {
-			papal_influence = 1
-			church_power_modifier = 1
-			monthly_fervor_increase = 1
-			legitimacy = 1
-			republican_tradition = 0.5
-			devotion = 1.5
-			relation_with_heretics = 10
-			curia_powers_cost = -0.1
-		}
-		on_upgraded = {
-		}
-	}
-}
-
 wawel_castle = {
 	# province it starts in
 	start = 262
@@ -13094,138 +9556,6 @@ wawel_castle = {
 	}
 }
 
-krakow_cloth_hall = {
-	# province it starts in
-	start = 262
-	
-	date = 1444.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	
-	can_be_moved = no
-	
-	move_days_per_unit_distance = 10
-	
-	starting_tier = 1
-	
-	type = monument
-	
-	build_trigger = {
-		has_owner_culture = yes
-	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
-	can_use_modifiers_trigger = {	
-		has_owner_culture = yes
-	}
-	can_upgrade_trigger = {
-		has_owner_culture = yes
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_production_efficiency = 0.15
-			trade_goods_size = 0.25
-			province_trade_power_modifier = 0.5
-			local_development_cost = -0.25
-		}
-		area_modifier = {
-			
-		}
-		country_modifiers = {
-			global_prosperity_growth = 1
-			merchants = 1 
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			trade_goods_size = 0.25
-			province_trade_power_modifier = 0.75
-		}
-		area_modifier = {
-			local_production_efficiency = 0.25
-			local_development_cost = -0.5
-		}
-		country_modifiers = {
-			global_prosperity_growth = 2
-			trade_efficiency = 0.1
-			global_trade_power = 0.15
-			merchants = 2
-		}
-
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			province_trade_power_modifier = 1.5
-		}
-		area_modifier = {
-			trade_goods_size = 0.5
-			local_production_efficiency = 0.5
-			local_development_cost = -1.0
-		}
-		country_modifiers = {
-			global_prosperity_growth = 2
-			trade_efficiency = 0.15
-			global_trade_power = 0.2
-			merchants = 3
-		}
-		on_upgraded = {
-		}
-	}
-}
-
 university_orleans = {
 	# province it starts in
 	start = 184
@@ -13240,11 +9570,12 @@ university_orleans = {
 	
 	move_days_per_unit_distance = 10
 	
-	starting_tier = 1
+	starting_tier = 2
 	
 	type = monument
 	
 	build_trigger = {
+		has_owner_religion = yes
 		OR = {
 			owner = {
 				OR = {
@@ -13260,6 +9591,7 @@ university_orleans = {
 	on_destroyed = {
 	}
 	can_use_modifiers_trigger = {	
+		has_owner_religion = yes
 		OR = {
 			owner = {
 				OR = {
@@ -13271,6 +9603,7 @@ university_orleans = {
 		}
 	}
 	can_upgrade_trigger = {
+		has_owner_religion = yes
 		OR = {
 			owner = {
 				OR = {
@@ -13312,23 +9645,25 @@ university_orleans = {
 			factor = 1000
 		}
 		province_modifiers = {
-			local_development_cost = -0.25
+			local_development_cost = -0.05
 		}
 		area_modifier = {
-			local_tax_modifier = 0.15
+			local_tax_modifier = 0.05
 		}
 		country_modifiers = {
-			prestige = 0.15
-			idea_cost = -0.05
-			technology_cost = -0.025
-			advisor_cost = -0.05
-			advisor_pool = 1
-			global_institution_spread = 0.1
-			innovativeness_gain = 0.25
+			#prestige = 0.15
+			idea_cost = -0.01
+			technology_cost = -0.01
+			advisor_cost = -0.01
+			global_institution_spread = 0.025
+			innovativeness_gain = 0.1
 		}
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
+			owner = {
+				change_innovativeness = 1
+			}
 		}
 	}
 
@@ -13340,22 +9675,25 @@ university_orleans = {
 			factor = 2500
 		}
 		province_modifiers = {
-			local_development_cost = -0.375
+			local_development_cost = -0.075
 		}
 		area_modifier = {
-			local_tax_modifier = 0.25
+			local_tax_modifier = 0.1
 		}
 		country_modifiers = {
-			prestige = 0.3
-			idea_cost = -0.075
-			technology_cost = -0.05
-			advisor_cost = -0.05
-			advisor_pool = 3
-			global_institution_spread = 0.15
-			innovativeness_gain = 0.375
+			#prestige = 0.3
+			idea_cost = -0.025
+			technology_cost = -0.025
+			advisor_cost = -0.025
+			advisor_pool = 1
+			global_institution_spread = 0.05
+			innovativeness_gain = 0.15
 		}
 
 		on_upgraded = {
+			owner = {
+				change_innovativeness = 1
+			}
 		}
 	}
 
@@ -13369,20 +9707,23 @@ university_orleans = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.5
+			local_development_cost = -0.1
+			local_tax_modifier = 0.1
 		}
 		country_modifiers = {
-			development_cost = -0.45
-			prestige = 1.25
-			global_tax_modifier = 0.25
-			idea_cost = -0.1
-			technology_cost = -0.075
+			prestige = 0.1
+			global_tax_modifier = 0.025
+			idea_cost = -0.05
+			technology_cost = -0.05
 			advisor_cost = -0.05
-			advisor_pool = 6
-			global_institution_spread = 0.2
-			innovativeness_gain = 0.5
+			advisor_pool = 2
+			global_institution_spread = 0.1
+			innovativeness_gain = 0.2
 		}
 		on_upgraded = {
+			owner = {
+				change_innovativeness = 2
+			}
 		}
 	}
 }

@@ -84,14 +84,21 @@
  kick_from_pact_title:0 "Kick from Pact"
  kick_from_pact_desc:0 "Kick the other nation out of our alliance. They are not needed for our interests."
  kick_from_pact_tooltip:0 "Remove the other nation from our alliance-pact."
- kick_from_pact_dialog:0 "A nation is has been kicked out of another nation's alliance."
+ kick_from_pact_dialog:0 "A nation has been kicked out of another nation's alliance."
  kick_from_pact_tooltip:0 "Kick the other nation out of our alliance. They are not needed for our interests."
+ 
+ integrate_direct:0 "Reunite Administrations"
+ integrate_direct_title:0 "Reunite Administrations"
+ integrate_direct_desc:0 "Our capitals are once again united. We can now assume direct control over our subject again."
+ integrate_direct_tooltip:0 "Reunite Administrations."
+ integrate_direct_dialog:0 "A country has been reintegrated into its overlord."
+ integrate_direct_tooltip:0 "Our capitals are once again united. We can now assume direct control over our subject again."
  
  leave_pact:0 "Leave Pact"
  leave_pact_title:0 "Leave Pact"
  leave_pact_desc:0 "Leave the other nation's pact. They are not needed for our interests."
  leave_pact_tooltip:0 "Leave this nation's alliance."
- leave_pact_dialog:0 "A nation is has left another nation's alliance."
+ leave_pact_dialog:0 "A nation has left another nation's alliance."
  leave_pact_tooltip:0 "Leave the other nation's pact. They are not needed for our interests."
  
  plot_dynastic_replacement:0 "Plot Palace Coup"
@@ -135,6 +142,13 @@
  join_zollverein_tooltip:0 "Join the Zollverein."
  join_zollverein_dialog:0 "A nation has joined the Zollverein."
  join_zollverein_tooltip:0 "Join the Zollverein. We are granted security this way from foreign invaders, but take a risk with the rising nation's sphere of influence."
+ 
+ join_gercon:0 "Join the German Confederation"
+ join_gercon_title:0 "Join the German Confederation"
+ join_gercon_desc:0 "Join the German Confederation. We are granted security this way from foreign invaders, but take a risk with the rising nation's sphere of influence."
+ join_gercon_tooltip:0 "Join the German Confederation."
+ join_gercon_dialog:0 "A nation has joined the German Confederation."
+ join_gercon_tooltip:0 "Join the German Confederation. We are granted security this way from foreign invaders, but take a risk with the rising nation's sphere of influence."
  
  request_dominion:0 "Request Dominionship"
  request_dominion_title:0 "Request Dominionship"

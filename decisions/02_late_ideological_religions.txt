@@ -164,6 +164,12 @@ country_decisions = {
 					religion = secular
 				}
 			}
+			NOT = {
+				AND = {
+					hre_religion_locked = yes
+					is_part_of_hre = yes
+				}
+			}
 		}
 		allow = {
 			stability = 1
@@ -184,7 +190,7 @@ country_decisions = {
 					religion = secular
 				}
 				AND = {
-					is_revolutionary = no
+					bgm_rev = no
 					OR = {
 						religion = cult_of_reason
 						religion = cult_of_the_supreme_being
@@ -201,7 +207,10 @@ country_decisions = {
 				}
 			}
 			change_religion = secular
-			add_stability = -2
+			add_stability = 1
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
 		}
 		ai_will_do = {
 			factor = 1
@@ -209,6 +218,17 @@ country_decisions = {
 			modifier = {
 				factor = 0
 				NOT = { stability = 3 }
+			}
+
+			modifier = {
+				factor = 0
+				tag = GBR
+			}
+
+			modifier = {
+				factor = 0
+				religion_group = muslim
+				NOT = { has_reform = democratic_mechanic }
 			}
 		}
 	}

@@ -61,6 +61,8 @@
 1875 = { "Couni" "Coni" }
 5020 = "Pineròl"
 
+4957 = "Andorra la Vella"
+4959 = "Mónegue"
 
 
 213 = "Barcelona"

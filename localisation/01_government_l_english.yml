@@ -24,11 +24,14 @@
  enlightened_republicanism_principle:0 "Enlightened Republicanism"
  enlightened_republicanism_principle_desc:0 "Enlightened Republicanism"
  
- enlightened_monarchy_principles:0 "Enlightened Monarchism"
- enlightened_monarchy_principles_desc:0 "Enlightened Monarchism"
+ enlightened_monarchy_principles:0 "Liberalizing Monarchy"
+ enlightened_monarchy_principles_desc:0 "In the olden days there were three forces in society struggling for dominion: Clergy, Nobility, and the Crown. Others may be tempted to fall into the trap of absolutism but we prove ourselves better. We can create a duality of parliament and king so our populace will be happy."
  
- traditionalist_principles:0 "Traditionalist Principles"
- traditionalist_principles_desc:0 "Traditionalist Principles"
+ traditionalist_principles:0 "Enlightened Absolutism"
+ traditionalist_principles_desc:0 "The Enlightenment has informed the basis of justifying absolutist monarchism with new, progressive rhetoric. Instead of relying purely on the old order for the regime's support, we can appeal to the public instead. The reigning monarchy will have no restraints like nobility or clerical orders hindering its convictions."
+ 
+ revolutionary_hre_reform:0 "Revolutionary Holy Roman Empire"
+ revolutionary_hre_reform_desc:0 "Revolutionary Holy Roman Empire"
  
  dem_reform_monarchy:0 "Liberal Monarchism"
  dem_reform_monarchy_desc:0 "Liberal Monarchism"
@@ -424,6 +427,11 @@
  four_years_elections_reform_desc:0 "Elections per Four Years"
  
  addressing_enlightenment:0 "Address Enlightenment Values"
+ 
+ departments_reform:0 "Administrative Departments"
+ departments_reform_desc:0 "In France, Départments are the lowest level of administrative division with its own authority. This system is suggested for use in larger or more developed countries where granted local autonomy allows the local governments to administrate more effectively than directly from our capital."
+ arrondisements_reform:0 "The Arrondisements"
+ arrondisements_reform_desc:0 "Arrondisements take political primacy from the central government. They are operated by prefects appointed from the state at large and are advisable for realms seeking to establish unity of culture."
  
  anti_enlightenment_reform:0 "Fraternité"
  anti_enlightenment_reform_desc:0 "Fraternité"

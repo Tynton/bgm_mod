@@ -29,6 +29,7 @@ is_dominion = {
 
 embraced_revolution = {
 	opinion = -150
+	yearly_decay = 0.5
 }
 
 no_zollverein = {
@@ -73,6 +74,16 @@ kicked_from_pact = {
 annexed_neighbor_bgm = {
 	opinion = -50
 	yearly_decay = 1
+}
+
+no_gercon = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+troublesome_frat = {
+	opinion = -50
+	yearly_decay = 1.5
 }
 
 #province_damaged = {

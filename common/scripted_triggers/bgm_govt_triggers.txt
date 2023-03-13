@@ -13,3 +13,10 @@ bgm_mon = {
 		has_reform = auth_monarchism
 	}
 }
+
+bgm_rev = {
+	OR = {
+		is_revolutionary = yes
+		has_reform = revolutionary_hre_reform
+	}
+}

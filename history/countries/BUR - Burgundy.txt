@@ -15,8 +15,8 @@ add_army_professionalism = 0.1
 
 1363.1.1 = {
 	monarch = {
-		name = "Philippe II"
-		dynasty = "de Valois-Bourgogne"
+		name = "Phelipe II"
+		dynasty = "de Valois-Bregogne"
 		birth_date = 1342.1.17
 		adm = 2
 		dip = 3
@@ -26,9 +26,9 @@ add_army_professionalism = 0.1
 
 1371.5.28 = {
 	heir = {
-		name = "Jean"
-		monarch_name = "Jean II"
-		dynasty = "de Valois-Bourgogne"
+		name = "Jan"
+		monarch_name = "Jan II"
+		dynasty = "de Valois-Bregogne"
 		birth_date = 1371.5.28
 		death_date = 1419.9.10
 		claim = 95
@@ -41,8 +41,8 @@ add_army_professionalism = 0.1
 
 1404.1.1 = {
 	monarch = {
-		name = "Jean II"
-		dynasty = "de Valois-Bourgogne"
+		name = "Jan II"
+		dynasty = "de Valois-Bregogne"
 		birth_date = 1371.5.28
 		adm = 2
 		dip = 2
@@ -53,9 +53,9 @@ add_army_professionalism = 0.1
 
 1404.1.1 = {
 	heir = {
-		name = "Philippe"
-		monarch_name = "Philippe III"
-		dynasty = "de Valois-Bourgogne"
+		name = "Phelipe"
+		monarch_name = "Phelipe III"
+		dynasty = "de Valois-Bregogne"
 		birth_date = 1396.7.31
 		death_date = 1467.6.15
 		claim = 95
@@ -70,13 +70,13 @@ add_army_professionalism = 0.1
 
 1419.9.11 = {
 	monarch = {
-		name = "Philippe III"
-		dynasty = "de Valois-Bourgogne"
+		name = "Phelipe III"
+		dynasty = "de Valois-Bregogne"
 		birth_date = 1396.7.31
 		adm = 5
 		dip = 5
 		mil = 5
-		leader = { name = "Philippe III"   	type = general	fire = 3	shock = 3	manuever = 3	siege = 1 }
+		leader = { name = "Phelipe III"   	type = general	fire = 3	shock = 3	manuever = 3	siege = 1 }
 	}
 	clear_scripted_personalities = yes
 	add_ruler_personality = calm_personality
@@ -102,9 +102,9 @@ add_army_professionalism = 0.1
 
 1433.11.10 = {
 	heir = {
-		name = "Charles"
-		monarch_name = "Charles I"
-		dynasty = "de Valois-Bourgogne"
+		name = "Charle"
+		monarch_name = "Charle I"
+		dynasty = "de Valois-Bregogne"
 		birth_date = 1433.11.10
 		death_date = 1477.1.5
 		claim = 95
@@ -120,13 +120,13 @@ add_army_professionalism = 0.1
 
 1467.6.16 = {
 	monarch = {
-		name = "Charles I"
-		dynasty = "de Valois-Bourgogne"
+		name = "Charle I"
+		dynasty = "de Valois-Bregogne"
 		birth_date = 1433.11.10
 		adm = 2
 		dip = 0
 		mil = 4
-		leader = { name = "Charles I le Téméraire"	type = general	fire = 3	shock = 3	manuever = 3	siege = 1}
+		leader = { name = "Charle I le Téméraire"	type = general	fire = 3	shock = 3	manuever = 3	siege = 1}
 	}
 	set_ruler_flag = is_charles_of_burg_flag
 	add_country_modifier = {
@@ -140,7 +140,7 @@ add_army_professionalism = 0.1
 	heir = {
 		name = "Marie"
 		monarch_name = "Marie I"
-		dynasty = "de Valois-Bourgogne"
+		dynasty = "de Valois-Bregogne"
 		birth_date = 1457.2.13
 		death_date = 1482.3.27
 		claim = 50
@@ -168,7 +168,7 @@ add_army_professionalism = 0.1
 1477.1.6 = {
 	monarch = {
 		name = "Marie I"
-		dynasty = "de Valois-Bourgogne"
+		dynasty = "de Valois-Bregogne"
 		birth_date = 1457.2.13
 		adm = 3
 		dip = 4
@@ -184,8 +184,8 @@ add_army_professionalism = 0.1
 
 1478.7.22 = {
 	heir = {
-		name = "Philippe"
-		monarch_name = "Philippe IV"
+		name = "Phelipe"
+		monarch_name = "Phelipe IV"
 		dynasty = "von Habsburg"
 		birth_date = 1478.7.22
 		death_date = 1506.9.25
@@ -198,7 +198,7 @@ add_army_professionalism = 0.1
 
 1482.3.28 = {
 	monarch = {
-		name = "Philippe IV"
+		name = "Phelipe IV"
 		dynasty = "von Habsburg"
 		birth_date = 1478.7.22
 		adm = 0
@@ -209,8 +209,8 @@ add_army_professionalism = 0.1
 
 1500.2.24 = {
 	heir = {
-		name = "Charles"
-		monarch_name = "Charles II"
+		name = "Charle"
+		monarch_name = "Charle II"
 		dynasty = "von Habsburg"
 		birth_date = 1500.2.24
 		death_date = 1558.9.21
@@ -226,7 +226,7 @@ add_government_reform = autocracy_reform }
 
 1506.9.26 = {
 	monarch = {
-		name = "Charles II"
+		name = "Charle II"
 		dynasty = "von Habsburg"
 		birth_date = 1500.2.24
 		adm = 4

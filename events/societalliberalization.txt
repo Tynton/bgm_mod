@@ -13,7 +13,7 @@ country_event = {
 		}
 		NOT = { has_country_modifier = demand_child_labor_abolition }
 		NOT = { has_country_modifier = abolished_child_labor }
-		is_revolutionary = no
+		bgm_rev = no
 		has_institution = industrialization
 	}	
 
@@ -43,7 +43,7 @@ country_event = {
 		}
 		NOT = { has_country_modifier = demand_suffrage }
 		NOT = { has_country_modifier = womens_suffrage_demands_met }
-		is_revolutionary = no
+		bgm_rev = no
 		has_institution = electrification
 	}
 
@@ -73,7 +73,7 @@ country_event = {
 			}
 		NOT = { has_country_modifier = demand_minority_rights }
 		NOT = { has_country_modifier = minority_rights }
-		is_revolutionary = no
+		bgm_rev = no
 		has_institution = nationalism_institution
 	}
 
@@ -103,7 +103,7 @@ country_event = {
 			}
 			NOT = { has_country_modifier = demand_right_adequate_living }
 			NOT = { has_country_modifier = right_to_adequate_living_standards }
-			is_revolutionary = no
+			bgm_rev = no
 			has_institution = electrification
 	}	
 

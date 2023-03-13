@@ -1,0 +1,44 @@
+papal_sanction_for_church_taxes = {
+	global_tax_modifier = 0.05
+	build_cost = -0.05
+	religion = yes
+}
+
+papal_indulgence = {
+	legitimacy = 0.5
+	horde_unity = 0.5
+	meritocracy = 0.5
+	devotion = 0.5
+	republican_tradition = 0.25
+	stability_cost_modifier = -0.1
+	religion = yes
+}
+
+usury_forgiven = {
+	interest = -0.25
+	inflation_reduction = 0.05
+	yearly_corruption = -0.02
+	religion = yes
+}
+
+severe_tax_reduction = {
+	local_tax_modifier = -0.5
+}
+
+papal_blessing = {
+	prestige = 0.5
+	land_morale = 0.05
+	religion = yes
+}
+
+papal_sanction_for_holy_war = {
+	manpower_recovery_speed = 0.1
+	land_maintenance_modifier = -0.1
+	religion = yes
+}
+
+papal_legate = {
+	diplomatic_reputation = 1
+	diplomatic_annexation_cost = -0.1
+	religion = yes
+}

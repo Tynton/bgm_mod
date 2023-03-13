@@ -211,10 +211,10 @@
 4965 = "Cortraco"
 4966 = "Lovanio"
 
-4959 = "Lavalle"
+#4959 = "Lavalle"
 189 = "Nanci"
 4991 = "San Lo"
-4960 = "Coleto"
+#4960 = "Coleto"
 5037 = "Monlussone"
 4969 = "Dola"
 5045 = "Droge"
@@ -223,7 +223,7 @@
 4956 = "Suassone"
 5044 = "Montargì"
 4961 = { "Autuno" "Aitone di Borgogna" }
-4957 = { "Scialona" "Cialone sulla Marna" }
+#4957 = { "Scialona" "Cialone sulla Marna" }
 5039 = "Versaglia"
 4968 = "Colmaria"
 4980 = "Basilea"

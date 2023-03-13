@@ -569,7 +569,7 @@ PixelShader =
 				
 				vTerrainDiffuseSample.rgb = ApplySnow( vTerrainDiffuseSample.rgb, Input.prepos, vHeightNormalSample, vFoWColor, FoWDiffuse );
 				
-				float2 vBlend = float2( 0.8f, 0.25f ); //left side adjusts brightness, right side transparency?, 0.65f, 0.15f || 0.5f, 0.4f
+				float2 vBlend = float2( 0.66f, 0.33f ); //left side adjusts brightness, right side transparency?, 0.65f, 0.15f || 0.5f, 0.4f || 0.9f, 0.25f
 				vOut = ( vTerrainDiffuseSample.rgb * vBlend.x + vColorMapSample.rgb * vBlend.y); //this adds transparency to the map
 				vOut = CalculateMapLighting( vOut,  vHeightNormalSample );
 				vOut = calculate_secondary( Input.uv, vOut, Input.prepos.xz );

@@ -304,7 +304,7 @@ catholic_rome = {
 	trigger = {	
 		NOT = { overlord_of = PAP }
 		owns_or_vassal_of = 118 # Roma		
-		NOT = { OR = { tag = ITA tag = VIY tag = UMB } }
+		NOT = { OR = { tag = ITA tag = VIY tag = MIT tag = UMB } }
 		NOT = { tag = HLR }
 		NOT = { tag = ROM }
 		NOT = { full_idea_group = religious_ideas }
@@ -426,7 +426,7 @@ submission_to_emperor = {
 counter_revolution = {
 	potential = {
 		revolution_target_exists = yes
-		is_revolutionary = no
+		bgm_rev = no
 		any_country = {
 			is_revolution_target = yes
 			OR = {
@@ -440,7 +440,7 @@ counter_revolution = {
 
 	trigger = {
 		revolution_target_exists = yes
-		is_revolutionary = no
+		bgm_rev = no
 		is_free_or_tributary_trigger = yes
 		NOT = {
 			revolution_target = {
@@ -466,7 +466,7 @@ counter_revolution = {
 reaction = {
 	potential = {
 		revolution_target_exists = yes
-		is_revolutionary = no
+		bgm_rev = no
 		any_country = {
 			is_revolution_target = yes
 			capital_scope = {
@@ -477,7 +477,7 @@ reaction = {
 
 	trigger = {
 		revolution_target_exists = yes
-		is_revolutionary = no
+		bgm_rev = no
 		is_free_or_tributary_trigger = yes
 		government = monarchy
 		revolution_target = {

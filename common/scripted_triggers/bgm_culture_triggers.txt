@@ -9,3 +9,34 @@ low_german = { # self-explanatory
 		primary_culture = brandenburgian
 	}
 }
+
+native = {
+	OR = {
+		culture_group = maya
+		culture_group = central_american
+		culture_group = aridoamerican
+		culture_group = otomanguean
+		culture_group = andean_group
+		culture_group = eastern_algonquian
+		culture_group = iroquoian
+		culture_group = siouan
+		culture_group = caddoan
+		culture_group = muskogean
+		culture_group = sonoran
+		culture_group = apachean
+		culture_group = na_dene
+		culture_group = penutian
+		culture_group = je
+		culture_group = je_tupi
+		culture_group = maranon
+		culture_group = chibchan
+		culture_group = mataco
+		culture_group = araucanian
+		culture_group = carribean
+		culture_group = eskaleut
+		culture_group = central_algonquian
+		culture_group = plains_algonquian
+		culture_group = aboriginal_australian
+		culture_group = pacific
+	}
+}

@@ -1,0 +1,130 @@
+country_decisions = {
+
+	francia_nation = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_francia_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			OR = {
+				is_free_or_tributary_trigger = yes
+				ai = no
+			}
+			OR = {
+				culture_group = french
+				culture_group = occitan
+				culture_group = benelux
+				culture_group = germanic
+				culture_group = franco_provencal
+			}
+			NOT = { primary_culture = prussian }
+			is_revolutionary = no
+			OR = {
+				government = monarchy
+				has_reform = authoritarian_mechanic
+				has_reform = fascist_mechanic
+			}
+			OR = {
+				ai = no
+				NOT = { exists = FAN }
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			province_id = 1878
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no			
+			NOT = { exists = FAN }
+			num_of_owned_provinces_with = {
+				value = 25
+				region = france_region
+			}
+			num_of_owned_provinces_with = {
+				value = 50
+				OR = {
+					#region = france_region
+					region = low_countries_region
+					region = north_german_region
+					region = south_german_region
+					region = italy_region
+				}
+			}
+			owns_core_province = 1878
+			owns_core_province = 183
+			1878 = {
+				is_state = yes
+			}
+			183 = {
+				is_state = yes
+			}
+		}
+		effect = {
+			set_capital = 1878
+			1878 = {
+				move_capital_effect = yes
+				center_of_trade = 1
+			}
+			change_tag = FAN
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			every_province = {
+				limit = {
+					OR = {
+						region = france_region
+						region = low_countries_region
+						region = north_german_region
+						region = south_german_region
+						area = piedmont_area
+						area = lombardy_area
+						area = liguria_area
+						area = tuscany_area
+						area = emilia_romagna_area
+						area = venetia_area
+						area = po_valley_area
+					}
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 100
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = formed_francia_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}

@@ -10,6 +10,7 @@ emp_france_missions_1 = {
 		OR = {
 			tag = FRA
 			tag = SFR
+			tag = BFR
 		}
 		NOT = { map_setup = map_setup_random }
 	}
@@ -203,6 +204,16 @@ emp_france_missions_1 = {
 			}
 		}
 		effect = {
+			if = {
+				limit = {
+					236 = {
+						owned_by = FRA
+					}
+				}
+				236 = {
+					change_culture = anglo_norman
+				}
+			}
 			add_power_projection = {
 				type = mission_rewards_power_projection
 				amount = 25
@@ -281,6 +292,7 @@ emp_france_missions_1_b = {
 		OR = {
 			tag = FRA
 			tag = SFR
+			tag = BFR
 		}
 		NOT = { map_setup = map_setup_random }
 		is_random_new_world = no 
@@ -459,6 +471,7 @@ emp_france_missions_2 = {
 		OR = {
 			tag = FRA
 			tag = SFR
+			tag = BFR
 		}
 		NOT = { map_setup = map_setup_random }
 	}
@@ -964,6 +977,7 @@ emp_france_missions_2_b = {
 		OR = {
 			tag = FRA
 			tag = SFR
+			tag = BFR
 		}
 		NOT = { map_setup = map_setup_random }
 		is_random_new_world = no 
@@ -1066,6 +1080,7 @@ emp_france_missions_2_c = {
 		OR = {
 			tag = FRA
 			tag = SFR
+			tag = BFR
 		}
 		NOT = { map_setup = map_setup_random }
 	}
@@ -1097,20 +1112,9 @@ emp_france_missions_2_c = {
 			}
 		}
 		effect = {
-			if = {
-				limit = {
-					has_dlc = "Dharma"
-				}
-				add_country_modifier = {
-					name = "fra_master_of_india"
-					duration = -1
-				}
-			}
-			else = {
-				add_country_modifier = {
-					name = "fra_master_of_india_2"
-					duration = -1
-				}
+			add_country_modifier = {
+				name = "bgm_fra_india"
+				duration = -1
 			}
 		}
 		ai_weight = {
@@ -1131,6 +1135,7 @@ emp_france_missions_3 = {
 		OR = {
 			tag = FRA
 			tag = SFR
+			tag = BFR
 		}
 		NOT = { map_setup = map_setup_random }
 	}
@@ -1339,7 +1344,7 @@ emp_france_missions_3 = {
 		}
 		trigger = {
 			OR = {
-				is_revolutionary = yes
+				bgm_rev = yes
 				has_institution = nationalism_institution
 			}
 		}
@@ -1586,6 +1591,7 @@ emp_france_missions_4 = {
 		OR = {
 			tag = FRA
 			tag = SFR
+			tag = BFR
 		}
 		NOT = { map_setup = map_setup_random }
 	}
@@ -1934,6 +1940,7 @@ emp_france_missions_5 = {
 		OR = {
 			tag = FRA
 			tag = SFR
+			tag = BFR
 		}
 		NOT = { map_setup = map_setup_random }
 	}
@@ -2025,7 +2032,7 @@ emp_france_missions_5 = {
 			}
 			if = {
 				limit = {
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				add_absolutism = 10
 			}
@@ -2163,6 +2170,7 @@ french_mexico_slots = {
 		OR = {
 			tag = FRA
 			tag = SFR
+			tag = BFR
 		}
 		NOT = { map_setup = map_setup_random }
 	}

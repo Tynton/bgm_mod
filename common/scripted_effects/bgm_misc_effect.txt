@@ -40,7 +40,7 @@ var_effect = { #var #effect #sign ##positive only
 bgm_post_revolution = {
     if = {
         limit = {
-            is_revolutionary = yes
+            bgm_rev = yes
             has_parliament = no
         }
         change_government = futurist_government
@@ -48,7 +48,7 @@ bgm_post_revolution = {
     }
     if = {
         limit = {
-            is_revolutionary = yes
+            bgm_rev = yes
             has_parliament = yes
         }
         change_government = democracy_govt
@@ -71,7 +71,7 @@ bgm_post_revolution = {
 
     if = {
         limit = {
-            is_revolutionary = no
+            bgm_rev = no
             has_parliament = yes
             government = monarchy
         }
@@ -89,7 +89,7 @@ bgm_post_revolution = {
     }
     if = {
         limit = {
-            is_revolutionary = no
+            bgm_rev = no
             has_parliament = yes
             government = republic
         }
@@ -115,7 +115,7 @@ bgm_post_revolution = {
 
     if = {
         limit = {
-            is_revolutionary = no
+            bgm_rev = no
             has_parliament = no
             government = monarchy
         }
@@ -124,7 +124,7 @@ bgm_post_revolution = {
     }
     if = {
         limit = {
-            is_revolutionary = no
+            bgm_rev = no
             has_parliament = no
             government = republic
             NOT = { has_reform = enlightened_republicanism_principle }
@@ -134,7 +134,7 @@ bgm_post_revolution = {
     }
     if = {
         limit = {
-            is_revolutionary = no
+            bgm_rev = no
             has_parliament = no
             government = republic
             has_reform = enlightened_republicanism_principle

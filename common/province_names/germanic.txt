@@ -11,6 +11,8 @@
 361 = "Kairo"
 358 = "Alexandria"
 
+4758 = "Meran"
+
 4142 = { "Arenhusen" "Aarhaus" }
 
 5185 = { "Bastnach" "Bastenach" }
@@ -157,7 +159,7 @@
 114 = "Raben"
 116 = "Florenz"
 118 = "Rom"
-120 = "Abruzzen"
+120 = {"Pescara" "Abruzzen"}
 121 = "Neapel"
 123 = "Kalabrien"
 130 = "Istrien"
@@ -381,7 +383,7 @@
 2737 = "Hastings"
 
 4954 = "Arel"
-4955 = "Kladen"
+4955 = "Kolmar"
 
 4963 = "Arel"
 4966 = "Löwen"

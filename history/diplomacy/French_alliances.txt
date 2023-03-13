@@ -59,6 +59,15 @@ vassal = {
 
 ##################
 
+# France-Andorra (Co-Prince system)
+
+union = {
+	first = FOI
+	second = ADO
+	start_date = 1396.1.1
+	end_date = 2044.1.1
+}
+
 # France-Brittany
 union = {
 	first = FRA

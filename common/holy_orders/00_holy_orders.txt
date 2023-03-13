@@ -2,6 +2,10 @@ jesuit_order = {
     icon = GFX_holy_order_jesuits
     trigger = {
         religion = catholic
+        OR = {
+            government = theocracy
+            full_idea_group = religious_ideas
+        }
     }
     cost = 50
     cost_type = adm_power
@@ -28,6 +32,10 @@ dominican_order = {
     icon = GFX_holy_order_dominicans
     trigger = {
         religion = catholic
+        OR = {
+            government = theocracy
+            full_idea_group = religious_ideas
+        }
     }
     cost = 50
     cost_type = dip_power
@@ -69,6 +77,10 @@ franciscan_order = {
     icon = GFX_holy_order_franciscans
     trigger = {
         religion = catholic
+        OR = {
+            government = theocracy
+            full_idea_group = religious_ideas
+        }
     }
     cost = 50
     cost_type = mil_power

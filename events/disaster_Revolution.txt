@@ -710,35 +710,35 @@ country_event = {
 	desc = {
 		desc = revolution.9.won_revolution
 		trigger = {
-			is_revolutionary = yes
+			bgm_rev = yes
 			has_country_flag = revolution_disaster_revolutionary
 		}
 	}
 	desc = {
 		desc = revolution.9.lost_revolution
 		trigger = {
-			is_revolutionary = no
+			bgm_rev = no
 			has_country_flag = revolution_disaster_revolutionary
 		}
 	}
 	desc = {
 		desc = revolution.9.won_reactionary
 		trigger = {
-			is_revolutionary = no
+			bgm_rev = no
 			has_country_flag = revolution_disaster_reactionary
 		}
 	}
 	desc = {
 		desc = revolution.9.lost_reactionary
 		trigger = {
-			is_revolutionary = yes
+			bgm_rev = yes
 			has_country_flag = revolution_disaster_reactionary
 		}
 	}
 	picture = {
 		trigger = {
 			has_dlc = "Emperor"
-			is_revolutionary = no
+			bgm_rev = no
 		}
 		picture = FAILED_REVOLUTION_eventPicture
 	}
@@ -746,7 +746,7 @@ country_event = {
 		trigger = {
 			NOT = { government = republic }
 			OR = {
-				is_revolutionary = yes
+				bgm_rev = yes
 				NOT = { has_dlc = "Emperor" }
 			}
 		}
@@ -778,11 +778,11 @@ country_event = {
 			has_dlc = "Emperor"
 			OR = {
 				AND = {
-					is_revolutionary = no
+					bgm_rev = no
 					has_country_flag = revolution_disaster_revolutionary
 				}
 				AND = {
-					is_revolutionary = yes
+					bgm_rev = yes
 					has_country_flag = revolution_disaster_reactionary
 				}
 			}
@@ -790,7 +790,7 @@ country_event = {
 		add_stability_or_adm_power = yes
 		if = {
 			limit = {
-				is_revolutionary = no
+				bgm_rev = no
 			}
 			capital_scope = {
 				region = {
@@ -815,11 +815,11 @@ country_event = {
 			has_dlc = "Emperor"
 			OR = {
 				AND = {
-					is_revolutionary = yes
+					bgm_rev = yes
 					has_country_flag = revolution_disaster_revolutionary
 				}
 				AND = {
-					is_revolutionary = no
+					bgm_rev = no
 					has_country_flag = revolution_disaster_reactionary
 				}
 			}
@@ -828,7 +828,7 @@ country_event = {
 		
 		if = {
 			limit = {
-				is_revolutionary = no
+				bgm_rev = no
 			}
 			add_country_modifier = {
 				name = no_revolution_here_country_dummy

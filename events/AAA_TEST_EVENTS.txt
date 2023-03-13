@@ -516,6 +516,7 @@ country_event = {
 				who = PREV
 			}
 		}
+		override_country_name = BRIREP
 	}
 }
 
@@ -529,6 +530,259 @@ country_event = {
 	
 	option = {
 		name = none
-		change_tag = NED
+		change_tag = FAN
+		every_country = {
+			limit = {
+				capital_scope = {
+					OR = {
+						region = france_region
+						region = south_german_region
+						region = north_german_region
+						region = low_countries_region
+					}
+				}
+			}
+			ROOT = {
+				inherit = PREV
+			}
+		}
+		every_province = {
+			limit = {
+				region = france_region
+				NOT = { owner = FAN }
+			}
+			cede_province = FAN
+		}
+	}
+	
+}
+
+country_event = {
+	id = TEST_EVENTS.20
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		change_religion = anabaptist
+		every_owned_province = {
+			change_religion = anabaptist
+		}
+	}
+	option = {
+		name = none
+		change_religion = protestant
+		every_owned_province = {
+			change_religion = protestant
+		}
+	}
+	option = {
+		name = none
+		change_religion = reformed
+		every_owned_province = {
+			change_religion = reformed
+		}
+	}
+	option = {
+		name = none
+		change_religion = unitarian
+		every_owned_province = {
+			change_religion = unitarian
+		}
+	}
+	option = {
+		name = none
+		change_religion = anglican
+		every_owned_province = {
+			change_religion = anglican
+		}
+	}
+	option = {
+		name = none
+		change_religion = hussite
+		every_owned_province = {
+			change_religion = hussite
+		}
+	}
+	option = {
+		name = none
+		change_religion = lollard
+		every_owned_province = {
+			change_religion = lollard
+		}
+	}
+	option = {
+		name = none
+		change_religion = cathar
+		every_owned_province = {
+			change_religion = cathar
+		}
+	}
+	option = {
+		name = none
+		change_religion = waldensian
+		every_owned_province = {
+			change_religion = waldensian
+		}
+	}
+	option = {
+		name = none
+		change_religion = fraticelli
+		every_owned_province = {
+			change_religion = fraticelli
+		}
+	}
+	option = {
+		name = none
+		change_religion = bogomilist
+		every_owned_province = {
+			change_religion = bogomilist
+		}
+	}
+}
+
+country_event = {
+	id = TEST_EVENTS.21
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		BUR = {
+			inherit = FRA
+			inherit = ENG
+			inherit = BER
+			inherit = ORL
+		}
+	}
+}
+
+country_event = {
+	id = TEST_EVENTS.22
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		highlight = yes
+	}
+
+	option = {
+		goto = 183 # Paris
+	}
+}
+
+country_event = {
+	id = TEST_EVENTS.23
+	title = "TEST_EVENTS.23.t"
+	desc = "TEST_EVENTS.23.d"
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "TEST_EVENTS.23.a"
+		highlight = yes
+	}
+
+	option = {
+		name = "TEST_EVENTS.23.b"
+		goto = 183 # Paris
+	}
+
+	option = {
+		name = "TEST_EVENTS.23.c"
+		
+	}
+
+	option = {
+		name = "TEST_EVENTS.23.d"
+		goto = 183 # Paris
+	}
+
+	option = {
+		name = "TEST_EVENTS.23.e"
+		
+	}
+
+	option = {
+		name = "TEST_EVENTS.23.f"
+		
+	}
+
+	option = {
+		name = "TEST_EVENTS.23.g"
+		
+	}
+}
+
+province_event = {
+	id = TEST_EVENTS.24
+	title = "TEST_EVENTS.23.t"
+	desc = "TEST_EVENTS.23.d"
+	picture = ANGRY_MOB_eventPicture
+	
+	goto = 183
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "TEST_EVENTS.23.a"
+		highlight = yes
+	}
+
+	option = {
+		name = "TEST_EVENTS.23.b"
+		goto = 183 # Paris
+	}
+
+	option = {
+		name = "TEST_EVENTS.23.c"
+		
+	}
+
+	option = {
+		name = "TEST_EVENTS.23.d"
+		goto = 183 # Paris
+	}
+}
+
+province_event = {
+	id = TEST_EVENTS.25
+	title = "TEST_EVENTS.23.t"
+	desc = "TEST_EVENTS.23.d"
+	picture = ANGRY_MOB_eventPicture
+	
+	goto = 183
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "TEST_EVENTS.23.a"
+		every_country = {
+			add_corruption = -100
+		}
+	}
+}
+
+country_event = {
+	id = TEST_EVENTS.26
+	title = "TEST_EVENTS.23.t"
+	desc = "TEST_EVENTS.23.d"
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "TEST_EVENTS.23.a"
+		add_innovativeness_small_effect = yes
 	}
 }

@@ -31,6 +31,7 @@ monarchy = {
 				english_monarchy
 				mandala_reform
 				revolutionary_empire_reform
+				revolutionary_hre_reform
 				holy_state_reform
 				austrian_archduchy_reform
 				siamese_absolutism
@@ -144,11 +145,10 @@ monarchy = {
 				dyanstic_administration_reform
 				permanent_marathas_council_reform
 				governmental_purbias_register_reform
-				revolutionary_principle_reform
-				equality_principle_reform
-				imperial_principle_reform
 				sakdina_system_reform
 				allotment_system
+				departments_reform
+				arrondisements_reform
 			}
 		}
 		deliberative_assembly = {
@@ -203,6 +203,12 @@ monarchy = {
 			reforms = {
 				political_principle_reform
 				moral_principle_reform
+				stability_principle_reform
+				enlightened_principle_reform
+				military_principle_reform
+				revolutionary_principle_reform
+				equality_principle_reform
+				imperial_principle_reform
 			}
 		}
 		office_selection = {
@@ -496,6 +502,8 @@ republic = {
 				union_of_states_reform
 				penal_colonies_reform
 				cultural_administration_reform
+				departments_reform
+				arrondisements_reform
 			}
 		}
 		parliamentary_vs_presidential = {

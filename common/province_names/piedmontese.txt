@@ -20,7 +20,7 @@
 4730 = "Bològna"
 2977 = "Urbin"
 1933 = "Bari"
-5021 = "San Marin"
+4960 = "San Marin"
 4739 = "Bérghem"
 107 = "Bressia"
 4729 = "Pàdoa"

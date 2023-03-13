@@ -49,7 +49,7 @@ country_event = {
 		}
 		is_great_power = yes
 		
-		is_revolutionary = no
+		bgm_rev = no
 		
 		OR = {
 			any_country = {
@@ -221,7 +221,7 @@ country_event = {
 		hidden_effect = {
 			every_country = {
 				limit = {
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				add_opinion = {
 					who = ROOT
@@ -234,7 +234,7 @@ country_event = {
 
 			every_country = {
 				limit = {
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				add_trust = {
 					who = ROOT
@@ -260,7 +260,7 @@ country_event = {
 				is_revolution_target = yes
 				
 				any_country = {
-					is_revolutionary = yes
+					bgm_rev = yes
 					has_opinion_modifier = {
 						who = ROOT
 						modifier = embraced_revolution
@@ -272,7 +272,7 @@ country_event = {
 				is_revolution_target = no
 				
 				any_country = {
-					is_revolutionary = no
+					bgm_rev = no
 					has_opinion_modifier = {
 						who = ROOT
 						modifier = embraced_revolution
@@ -299,7 +299,7 @@ country_event = {
 		hidden_effect = {
 			every_country = {
 				limit = {
-					is_revolutionary = yes
+					bgm_rev = yes
 				}
 				remove_opinion = {
 					who = ROOT
@@ -311,7 +311,7 @@ country_event = {
 
 			every_country = {
 				limit = {
-					is_revolutionary = yes
+					bgm_rev = yes
 				}
 				add_trust = {
 					who = ROOT

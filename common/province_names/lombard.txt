@@ -14,7 +14,7 @@
 101 = "Genua"
 109 = "Mantua"
 4971 = "Tisin"
-5021 = "San Marin"
+4960 = "San Marin"
 4729 = "Padoa"
 111 = "Friul"
 

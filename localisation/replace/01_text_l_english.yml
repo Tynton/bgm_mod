@@ -22,8 +22,11 @@
  scottish:0 "Lowland Scottish"
  british:0 "English"
  dutch:0 "Hollandic"
+
+ french:0 "Langues d'Oïl" #Langues d'O�l
  
  english_channel:0 "Holland"
  wien:0 "Vienna"
  rheinland:0 "Rhineland"
- 
+ sevilla:0 "Seville"
+ valencia:0 "Occitania"

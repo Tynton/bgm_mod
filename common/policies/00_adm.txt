@@ -988,7 +988,7 @@ the_transportation_act = {
 	production_efficiency = 0.1
 	
 	ai_will_do = {
-		factor = 0.6
+		factor = 3
 		modifier = {
 			factor = 0
 			NOT = { production_income_percentage = 0.1 }
@@ -1219,7 +1219,7 @@ the_statute_of_monopolies = {
 
 
 	ai_will_do = {
-		factor = 1
+		factor = 5
 		modifier = {
 			factor = 0.6
 			NOT = { trade_income_percentage = 0.1 }

@@ -791,7 +791,7 @@ technology = {
 		manufactories = 0.0
 		enlightenment = 1
 		global_imperialism = 1
-		industrialization = 0.15
+		industrialization = 0.1
 	}
 	
 	#Cuirassier
@@ -829,7 +829,7 @@ technology = {
 		manufactories = 0.0
 		enlightenment = 1
 		global_imperialism = 1
-		industrialization = 0.25
+		industrialization = 0.175
 	}
 	
 	#Defense in Depth
@@ -849,7 +849,7 @@ technology = {
 		manufactories = 0.0
 		enlightenment = 1
 		global_imperialism = 1
-		industrialization = 0.35
+		industrialization = 0.25
 	}
 	
 	#Impulse Warfare

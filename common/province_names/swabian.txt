@@ -1,4 +1,4 @@
-4714 = "Kallsruh"
+4714 = { "Durlach" "Kallsruh" }
 4713 = { "Urach" "Dibenga" }
 70 = "Schduagert"
 1868 = "Augschburg"

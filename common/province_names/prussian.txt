@@ -1,6 +1,6 @@
 183 = "Seinfurt"
 4388 = "Aturach"
-4957 = "Niedermarnheim"
+#4957 = "Niedermarnheim"
 186 = "Reimkirchen"
 1877 = "Scharollen"
 4392 = "Asser"
@@ -11,7 +11,7 @@
 4961 = "Niederhaldenburg"
 182 = "Warbrück"
 89 = "Sommbach"
-4956 = "Neubühlburg"
+#4956 = "Neubühlburg"
 185 = { "Mittelreuth" "Mittelhagen" }
 191 = "Newerstetten"
 184 = "Ligerbrück"
@@ -27,9 +27,9 @@
 4389 = "Sankt Martin"
 4385 = "Konstantinshafen"
 178 = "Juliansmarkt"
-4960 = "Meunbrück"
+#4960 = "Meunbrück"
 177 = "Sankt Liborius"
-4959 = "Talburg"
+#4959 = "Talburg"
 
 41 = { "Königsberg" "Twanksta" }
 50 = { "Berlin" "Berlins" }

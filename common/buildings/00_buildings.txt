@@ -826,9 +826,9 @@ university = {
 	cost = 300
 	time = 12
 	modifier = {
-		local_development_cost = -0.15
-		local_culture_conversion_cost = -0.05
-		local_institution_spread = 0.2
+		local_development_cost = -0.1
+		local_culture_conversion_cost = -0.1
+		local_institution_spread = 0.25
 		allowed_num_of_buildings = 1
 	}
 
@@ -1997,10 +1997,10 @@ soldier_households = {
 	}
 
 	modifier = {
-		local_manpower = 0.75
+		local_manpower = 0.5
 	}
 	bonus_modifier = {
-		local_manpower = 0.75
+		local_manpower = 0.5
 	}
 	onmap = no
 	show_separate = yes # Means as a manufactory it will be shown according to the old way

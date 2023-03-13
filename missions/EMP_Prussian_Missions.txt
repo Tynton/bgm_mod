@@ -386,6 +386,18 @@ emp_bra_pru_2 = {
 				name = "prussian_ambition"
 				duration = 7300
 			}
+			every_owned_province = {
+				limit = {
+					area = lusatia_area
+				}
+				change_culture = sorbisch
+			}
+			every_owned_province = {
+				limit = {
+					area = silesia_area
+				}
+				change_culture = schlesisch
+			}
 			wielkopolska_area = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -506,7 +518,7 @@ emp_bra_pru_2 = {
 		trigger = {
 			if = {
 				limit = {
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				absolutism = 80
 			}

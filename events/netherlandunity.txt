@@ -105,6 +105,9 @@ country_event = {
 		NOT = {
 			num_of_cities = 45
 		}
+		NOT = {
+			has_country_flag = inherited
+		}
 		OR = {
 			is_subject = no
 			is_subject_of = NED
@@ -121,6 +124,9 @@ country_event = {
 	
 	option = {
 		name = "netherlandunity.4.a"
+		ROOT = {
+			set_country_flag = inherited
+		}
 		NED = {
 			inherit = ROOT
 			ROOT = {

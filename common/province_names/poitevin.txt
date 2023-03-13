@@ -1,3 +1,4 @@
 4387 = "Engoulaeme"
-180 = "Poetàe"
-4949 = "La Rochéle"
+180 = { "Haut-Poetou" "Poetàe" }
+4386 = "Bas-Poetou"
+4949 = { "Aunis" "La Rochéle" }

@@ -460,6 +460,25 @@ eng_rb_burgundy = {
 		}
 		
 		effect = {
+
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							exists = FRA
+							exists = BFR
+							exists = FRR
+							exists = FRE
+							exists = FRF
+							exists = FRC
+						}
+					}
+				}
+				country_event = {
+					id = angevin.2
+				}
+			}
+
 			picardy_area = {
 				add_province_modifier = {
 					name = "eng_rb_local_conv"
@@ -477,6 +496,10 @@ eng_rb_burgundy = {
 					name = "eng_rb_local_conv"
 					duration = 5475
 				}
+			}
+
+			hidden_effect = {
+				complete_mission = eng_rb_burgundy
 			}
 		}
 	}
@@ -788,7 +811,7 @@ eng_rb_buildings_group = {
 		effect = {
 			add_country_modifier = {
 				name = britain_prosperity
-				duration = 27375
+				duration = 18250
 			}
 		}
 	}

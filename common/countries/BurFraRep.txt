@@ -1,0 +1,117 @@
+#Country Name: Please see filename.
+
+graphical_culture = frenchgfx
+
+color = { 171 0 44 } #36 51 173
+revolutionary_colors = { 13 8 5 } #Shared w/Romania
+
+historical_score = 650
+
+historical_idea_groups = {
+	administrative_ideas
+	defensive_ideas
+	trade_ideas
+	economic_ideas
+	offensive_ideas
+	diplomatic_ideas
+	innovativeness_ideas
+	expansion_ideas
+}
+
+historical_units = {
+	halberd_infantry
+	western_medieval_knights
+	western_men_at_arms
+	swiss_landsknechten
+	dutch_maurician
+	french_caracolle
+	anglofrench_line
+	french_dragoon
+	french_bluecoat
+	french_cuirassier
+	french_impulse
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Phelipe #1" = 30
+	"Charle #0" = 30
+	"Françoi #0" = 30
+	"Joseph #0" = 50
+	"Luison #0" = 10
+	"Jan #0" = 40
+	"Henri #1" = 40
+	"Antoine #0" = 10
+	"Hughes #5" = 1
+	"Eudes #4" = 1
+	"Robert #2" = 1
+	"Armand #0" = 0
+	"Barthélemy #0" = 0
+	"Benoît #0" = 0
+	"Bernard #0" = 0
+	"Claude #0" = 0
+	"Denis #0" = 0
+	"Étienne #0" = 0
+	"Eugène #0" = 0
+	"Eustache #0" = 0
+	"Georges #0" = 0
+	"Guy #0" = 0
+	"Guillaume #0" = 0
+	"Isidore #0" = 0
+	"Jules #0" = 0
+	"Marc #0" = 0
+	"Maurice #0" = 0
+	"Michel #0" = 0
+	"Nicolas #0" = 0
+	"Pascal #0" = 0
+	"Pierre #0" = 0
+	"Raoul #0" = 70
+	"René #0" = 70
+	"Sébastien #0" = 70
+	"Simon #0" = 0
+	
+	"Marie #0" = -10
+	"Geneviève #0" = -2
+	"Anne #0" = -1
+	"Louise #0" = -1
+	"Charlotte #0" = -1
+	"Hélène #0" = -1
+	"Éléonore #0" = -1
+	"Isabelle #0" = -1
+	"Catherine #0" = -2
+	"Marguerite #0" = -2 # La Pléiade
+	"Janne #0" = -1 # La Pléiade
+	"Agnès #0" = -1 # La Pléiade
+}
+
+leader_names = {
+    Arbelot Anselme Brunet Biron Dumerbion Montesquiou Dumas Massena Berthier Aucureau Joubert Brueys Brune
+	Serurier Murat Beauharnais Marmont Menou Lapoype Reynier Laharpe Rampon Belliard Chasseloup Cantheaume
+	Vaubois Chamorin Georges Matthieu
+	Évrard Roze
+}
+
+ship_names = {
+	"l'Armançon" "l'Arroux"
+	"le Bourgogne" "le Bruges"
+	"le Cambrai" "le Castrum Divionense" "le Childebert" "le Childebert II" "le Chilpéric" "le Cîteaux" "le Clotaire" "le Cluny" "la Comtesse" "le Côte-d'Or" 
+	"le Dijon" "le Duc-de-Bourgogne" "la Duchesse"
+	"le Gibica" "le Giselher" "le Godégisel" "le Gondéric" "le Gondebaud" "le Gondemar" "le Gondemar II" "le Gunther" "le Gontran"
+	"le Jean-sans-Peur"
+	"la Marie-de-Bourgogne"
+	"le Philippe-le-Bon" "le Philippe-le-Hardi"
+	"la Saône" "le Sigismond"
+	"le Théodebert" "le Theudéric II"
+	"le Vézelay"
+}
+
+army_names = {
+         "Armée du Charolais"     "Armée de Chalon"
+         "Armée de l'Autunois"    "Armée du Mâconnais" "Armée de l'Auxerrois"
+         "Armée de l'Avallonnais" "Armée de l'Auxonnois"
+         "Armée de la Saône"      
+	 "Armée de $PROVINCE$" 
+}

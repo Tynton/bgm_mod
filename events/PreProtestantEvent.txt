@@ -476,8 +476,12 @@ country_event = {
 		NOT = {
 			owns = 118
 		}
+		NOT = {
+			has_country_modifier = fraticelli_clerics
+		}
 		normal_or_historical_nations = yes
 		total_development = 65
+		num_of_cities = 2
 		religion = fraticelli
 		NOT = { tag = ITA }
 		NOT = { tag = ROM }
@@ -604,30 +608,35 @@ country_event = {
 		if = {
 			limit = {
 				lollard_ref_trigger = yes
+				religion = lollard
 			}
 			set_global_flag = lol_lea
 		}
 		if = {
 			limit = {
 				cathar_ref_trigger = yes
+				religion = cathar
 			}
 			set_global_flag = cathar_lea
 		}
 		if = {
 			limit = {
 				wald_ref_trigger = yes
+				religion = waldensian
 			}
 			set_global_flag = wald_lea
 		}
 		if = {
 			limit = {
 				hussite_ref_trigger = yes
+				religion = hussite
 			}
 			set_global_flag = hus_lea
 		}
 		if = {
 			limit = {
 				frat_ref_trigger = yes
+				religion = fraticelli
 			}
 			set_global_flag = frat_lea
 		}
@@ -645,6 +654,7 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
+		adm_tech = 14
 		OR = {
 			religion = lollard
 			religion = waldensian
@@ -659,19 +669,19 @@ country_event = {
 					is_part_of_hre = yes
 					religion = ROOT
 				}
-				amount = 7
+				amount = 10
 			}
 		}
-		any_country = {
-			adm_tech = 16
+		OR = {
+			has_global_flag = preprot_heresy
+			has_global_flag = rome_converted_bgm
 		}
-		has_global_flag = preprot_heresy
 		is_at_war = no
 		NOT = { has_country_flag = evangelical_union }
 	}
 	
 	mean_time_to_happen = {
-		months = 40
+		months = 250
 	}
 	
 	option = {
@@ -856,5 +866,600 @@ country_event = {
 		ai_chance = {
 			factor = 1
 		}
+	}
+}
+
+# Fraticelli Plot Line (initiation)
+country_event = {
+	id = PreProtestantEvent.19
+	title = PreProtestantEvent.19.t
+	desc = PreProtestantEvent.19.d
+	picture = RELIGIOUS_WARS_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+	
+	trigger = {
+		119 = { religion = fraticelli }
+		current_age = age_of_discovery
+		NOT = { has_global_flag = fraticelli_line }
+		OR = {
+			primary_culture = tuscan
+			AND = {
+				NOT = { government = monarchy }
+				NOT = {
+					has_opinion = {
+						who = PAP
+						value = -100
+					}
+				}
+			}
+		}
+		OR = {
+			NOT = {
+				dominant_religion = catholic
+			}
+			is_excommunicated = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 150
+
+		modifier = {
+			factor = 0.001
+			NOT = {
+				has_opinion = {
+					who = PAP
+					value = -150
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "PreProtestantEvent.19.a" #Convert to Fraticelli
+
+		add_country_modifier = {
+			name = fraticelli_clerics
+   			duration = 5475 
+		}
+		custom_tooltip = 15_YEARS_FRAT
+
+		set_global_flag = fraticelli_line
+
+		add_yearly_manpower = 0.33
+		add_years_of_income = 0.33
+
+		change_religion = fraticelli
+		add_stability = -3
+		add_prestige = -100
+		remove_country_modifier = counter_reformation
+		remove_country_modifier = the_statue_in_restraint_of_appeals
+		remove_country_modifier = revocation_of_restraint_of_appeals
+		remove_country_modifier = bavarian_jesuits
+		remove_country_modifier = the_societas_jesu
+		remove_country_modifier = the_declaration_of_indulgence
+		remove_country_modifier = de_heretico_comburendo
+		remove_country_modifier = the_conventicle_act
+		add_country_modifier = {
+			name = "conversion_zeal"
+			duration = 3650
+		}
+		every_known_country = {
+				limit = {
+				reverse_has_opinion_modifier = {
+					who = ROOT
+					modifier = opinion_demote_pope
+				}
+			}
+			reverse_remove_opinion = {
+					who = ROOT
+				modifier = opinion_demote_pope
+			}
+		}
+
+		capital_scope = {
+			change_religion = fraticelli
+		}
+
+		PAP = {
+			capital_scope = {
+				add_claim = ROOT
+			}
+		}
+		
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_opinion = {
+					who = PAP
+					value = 50
+				}
+			}
+		}
+	}
+	option = {
+		name = "PreProtestantEvent.19.b" #Remain Catholic
+		set_global_flag = fraticelli_line
+		
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+# Rome Falls to the Fraticellis
+country_event = {
+	id = PreProtestantEvent.20
+	title = PreProtestantEvent.20.t
+	desc = PreProtestantEvent.20.d
+	picture = ROME_DESTROYED_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "PreProtestantEvent.20.a" #The Pope is dead, long live the Fraticellis
+
+		add_treasury = 150
+		add_stability = 3
+		add_prestige = 50
+
+		capital_scope = {
+			add_base_tax = 2
+			add_base_production = 2
+			add_base_manpower = 2
+		}
+
+		add_reform_desire = 0.1
+
+		if = {
+			limit = {
+				LAN = {
+					NOT = {
+						OR = {
+							is_rival = PAP
+							is_enemy = PAP
+						}
+					}
+				}
+			}
+			LAN = {
+				if = {
+					limit = {
+						religion = catholic
+					}
+					country_event = {
+						id = PreProtestantEvent.21
+					}
+				}
+			}
+		}
+
+		every_country = {
+			limit = {
+				religion = catholic
+				OR = {
+					is_rival = PAP
+					is_enemy = PAP
+					is_excommunicated = yes
+					NOT = {
+						has_opinion = {
+							who = PAP
+							value = -100
+						}
+					}
+				}
+			}
+			country_event = {
+				id = PreProtestantEvent.21
+			}
+		}
+
+		PAP = {
+			white_peace = ROOT
+			add_truce_with = ROOT
+			add_treasury = -150
+			kill_ruler = yes
+
+			capital_scope = {
+				add_devastation = 100
+
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+			}
+
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = { province_id = 118 }
+					}
+				}
+				capital_scope = {
+					change_religion = fraticelli
+				}
+			}
+			if = {
+				limit = {
+					owns = 118
+				}
+				118 = { 
+					change_religion = fraticelli 
+					add_reform_center = fraticelli
+				}
+			}
+
+
+
+			
+			every_owned_province = {
+				limit = {
+					region = italy_region
+				}
+				add_core = NTI
+				cede_province = NTI
+				remove_core = PAP
+			}
+
+			118 = {
+				add_permanent_claim = PAP
+			}
+
+			set_global_flag = rome_converted_bgm
+		}
+		NTI = {
+			if = {
+				limit = { 
+					owns = 118
+				}
+				set_capital = 118
+			}
+			hidden_effect = {
+				change_religion = fraticelli
+			}
+			create_alliance = ROOT
+		}
+
+		custom_tooltip = COMING_CRISIS_FRAT
+	}
+}
+
+# Rivals of the Pope see what's happening
+country_event = {
+	id = PreProtestantEvent.21
+	title = PreProtestantEvent.21.t
+	desc = PreProtestantEvent.21.d
+	picture = ROME_DESTROYED2_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "PreProtestantEvent.21.a" #Join the Fraticellis
+
+		if = {
+			limit = {
+				is_excommunicated = yes
+			}
+			excommunicate = ROOT
+		}
+
+		change_religion = fraticelli
+		add_stability = -1
+		add_prestige = -25
+		remove_country_modifier = counter_reformation
+		remove_country_modifier = the_statue_in_restraint_of_appeals
+		remove_country_modifier = revocation_of_restraint_of_appeals
+		remove_country_modifier = bavarian_jesuits
+		remove_country_modifier = the_societas_jesu
+		remove_country_modifier = the_declaration_of_indulgence
+		remove_country_modifier = de_heretico_comburendo
+		remove_country_modifier = the_conventicle_act
+		add_country_modifier = {
+			name = "conversion_zeal"
+			duration = 3650
+		}
+		every_known_country = {
+				limit = {
+				reverse_has_opinion_modifier = {
+					who = ROOT
+					modifier = opinion_demote_pope
+				}
+			}
+			reverse_remove_opinion = {
+					who = ROOT
+				modifier = opinion_demote_pope
+			}
+		}
+
+		capital_scope = {
+			change_religion = fraticelli
+			add_reform_center = fraticelli
+		}
+
+		ai_chance = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				stability = 1
+			}
+		}
+	}
+
+	option = {
+		name = "PreProtestantEvent.21.b" #Tney are crazy
+
+		ai_chance = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				NOT = {
+					stability = 0
+				}
+			}
+		}
+	}
+}
+
+# Generic Fraticelli Events
+
+#Vanity in the Nobility
+
+country_event = {
+	id = PreProtestantEvent.22
+	title = PreProtestantEvent.22.t
+	desc = PreProtestantEvent.22.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		religion = fraticelli
+		has_estate = estate_nobles
+	}
+	
+	mean_time_to_happen = {
+		months = 150
+
+		modifier = {
+			factor = 0.001
+			NOT = {
+				has_opinion = {
+					who = PAP
+					value = -150
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "PreProtestantEvent.22.a" #Punishment to the Nobility
+		
+		add_years_of_income = 0.15
+
+		random_list = {
+			50 = {
+				random_owned_province = {
+					spawn_rebels = {
+						size = 1
+						type = noble_rebels
+					}
+				}
+			}
+			50 = {
+
+			}
+		}
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -10
+		}
+		add_estate_influence_modifier = {
+			estate = estate_nobles
+			influence = -10
+			duration = 3650
+		}
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
+		add_estate_influence_modifier = {
+			estate = estate_church
+			influence = 10
+			duration = 3650
+		}
+	}
+	option = {
+		name = "PreProtestantEvent.22.b" #Best not to do
+
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -5
+		}
+		add_estate_influence_modifier = {
+			estate = estate_church
+			influence = -5
+			duration = 3650
+		}
+	}
+}
+
+#Vanity in the Burghers
+
+country_event = {
+	id = PreProtestantEvent.23
+	title = PreProtestantEvent.23.t
+	desc = PreProtestantEvent.23.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		religion = fraticelli
+		has_estate = estate_nobles
+	}
+	
+	mean_time_to_happen = {
+		months = 150
+
+		modifier = {
+			factor = 0.001
+			NOT = {
+				has_opinion = {
+					who = PAP
+					value = -150
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "PreProtestantEvent.23.a" #Punishment to the Bourgeois
+		
+		add_years_of_income = 0.2
+
+		add_estate_loyalty = {
+			estate = estate_burghers
+			loyalty = -15
+		}
+		add_estate_influence_modifier = {
+			estate = estate_burghers
+			influence = -10
+			duration = 3650
+		}
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
+		add_estate_influence_modifier = {
+			estate = estate_church
+			influence = 10
+			duration = 3650
+		}
+	}
+	option = {
+		name = "PreProtestantEvent.23.b" #Best not to do
+
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -5
+		}
+		add_estate_influence_modifier = {
+			estate = estate_church
+			influence = -5
+			duration = 3650
+		}
+	}
+}
+
+#Arm against the Catholics
+
+country_event = {
+	id = PreProtestantEvent.24
+	title = PreProtestantEvent.24.t
+	desc = PreProtestantEvent.24.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		is_at_war = no
+		religion = fraticelli
+		has_estate = estate_nobles
+		any_neighbor_country = {
+			religion = catholic
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 150
+
+		modifier = {
+			factor = 0.001
+			NOT = {
+				has_opinion = {
+					who = PAP
+					value = -150
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "PreProtestantEvent.24.a" #Punishment to the Bourgeois
+		
+		add_papal_influence = 5
+
+		add_yearly_manpower = 0.15
+		add_years_of_income = 0.15
+
+		every_neighbor_country = {
+			limit = {
+				religion = catholic
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = troublesome_frat
+			}
+			add_casus_belli = {
+				type = cb_insult
+				target = ROOT
+			}
+		}
+
+		add_estate_loyalty = {
+			estate = estate_burghers
+			loyalty = -15
+		}
+		add_estate_influence_modifier = {
+			estate = estate_burghers
+			influence = -10
+			duration = 3650
+		}
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
+		add_estate_influence_modifier = {
+			estate = estate_church
+			influence = 10
+			duration = 3650
+		}
+	}
+	option = {
+		name = "PreProtestantEvent.24.b" #Best not to do
+
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -5
+		}
+		add_estate_influence_modifier = {
+			estate = estate_church
+			influence = -5
+			duration = 3650
+		}
+	}
+}
+
+country_event = {
+	id = PreProtestantEvent.25
+
+	hidden = yes
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { has_global_flag = hre_war_started }
+		any_country = {
+			is_in_war = {
+				casus_belli = cb_bgm_league
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		set_global_flag = hre_war_started
 	}
 }

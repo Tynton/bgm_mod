@@ -127,6 +127,7 @@ country_event = {
 		}
 		NOT = { tag = ITA }
 		NOT = { tag = VIY }
+		NOT = { tag = MIT }
 		NOT = { tag = ITF }
 		NOT = { tag = ITD }
 		NOT = { tag = ITC }
@@ -216,13 +217,29 @@ country_event = {
 			limit = {
 				NOT = {
 					primary_culture = venetian
+					has_country_flag = monaco_c
 					OR = {
 						exists = ITA
 						exists = VIY
+						exists = MIT
 					}
 				}
 			}
 			change_tag = ITA
+		}
+		if = {
+			limit = {
+				NOT = { primary_culture = venetian }
+				has_country_flag = monaco_c
+				NOT = {
+					OR = {
+						exists = ITA
+						exists = VIY
+						exists = MIT
+					}
+				}
+			}
+			change_tag = VIY
 		}
 		if = {
 			limit = {
@@ -231,10 +248,35 @@ country_event = {
 					OR = {
 						exists = ITA
 						exists = VIY
+						exists = MIT
 					}
 				}
 			}
 			change_tag = VIY
+		}
+
+		if = {
+			limit = {
+				exists = ITA
+				OR = {
+					AND = {
+						exists = VIY
+						VIY = {
+							is_subject_of = ROOT
+						}
+					}
+					AND = {
+						exists = MIT
+						MIT = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+			ITA = {
+				inherit = VIY
+				inherit = MIT
+			}
 		}
 	}
 }

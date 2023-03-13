@@ -28,6 +28,30 @@
 #	unjustified_demands = -0.25
 #}
 
+hre_threatened = {
+	potential = {
+		any_country = {
+			is_great_power = yes
+			is_part_of_hre = no
+			num_of_owned_provinces_with = {
+				value = 5
+				is_part_of_hre = yes
+			}
+		}
+		OR = {
+			is_emperor = yes
+			is_elector = yes
+		}
+	}
+
+	trigger = {
+		
+	}
+
+	improve_relation_modifier = 0.05
+	ae_impact = 0.05
+}
+
 rev_trad_m = {
 	potential = {
 		has_country_flag = rev_trad
@@ -129,14 +153,15 @@ ai_get_tech = {
 			}
 			AND = {
 				OR = {
-					NOT = {
-						has_country_modifier = adm_tech_plateaued
-						has_country_modifier = dip_tech_plateaued
-						has_country_modifier = mil_tech_plateaued
-					}
+					#NOT = { has_country_modifier = adm_tech_plateaued }
+					#NOT = { has_country_modifier = dip_tech_plateaued }
+					#NOT = { has_country_modifier = mil_tech_plateaued }
 					is_lacking_institutions = no
 				}
 			}
+			adm_power = 1200
+			dip_power = 1200
+			mil_power = 1200
 			full_idea_group = postmodern_ideas
 		}
 	}
@@ -155,18 +180,19 @@ ai_get_tech = {
 			}
 			AND = {
 				OR = {
-					NOT = {
-						has_country_modifier = adm_tech_plateaued
-						has_country_modifier = dip_tech_plateaued
-						has_country_modifier = mil_tech_plateaued
-					}
+					#NOT = { has_country_modifier = adm_tech_plateaued }
+					#NOT = { has_country_modifier = dip_tech_plateaued }
+					#NOT = { has_country_modifier = mil_tech_plateaued }
 					is_lacking_institutions = no
 				}
 			}
 			full_idea_group = postmodern_ideas
+			adm_power = 1200
+			dip_power = 1200
+			mil_power = 1200
 		}
 	}
-	development_cost_modifier = 1000
+	#development_cost_modifier = 1000
 	idea_cost = 1000
 }
 
@@ -191,29 +217,35 @@ ai_final_ideas = {
 
 national_prosperity = {
 	potential = {
-		all_core_province = {
-			continent = ROOT
-			#is_island = no
-			#is_in_capital_area = yes
-			is_prosperous = yes
+		capital_scope = {
+			region_for_scope_province = {
+				type = all
+				OR = {
+					NOT = { owned_by = ROOT }
+					is_prosperous = yes
+				}
+			}
 		}
 	}
 	trigger = {
-		all_core_province = {
-			continent = ROOT
-			#is_island = no
-			#is_in_capital_area = yes
-			is_prosperous = yes
+		capital_scope = {
+			region_for_scope_province = {
+				type = all
+				OR = {
+					NOT = { owned_by = ROOT }
+					is_prosperous = yes
+				}
+			}
 		}
 	}
 	
 	stability_cost_modifier = -0.05
 	idea_cost = -0.05
-	development_cost = -0.025
-	adm_tech_cost_modifier = -0.075
-	dip_tech_cost_modifier = -0.05
-	mil_tech_cost_modifier = -0.025
-	global_trade_power = 0.075
+	development_cost = -0.1
+	technology_cost = -0.05
+	global_trade_power = 0.1
+	innovativeness_gain = 0.25
+	global_trade_goods_size_modifier = 0.1
 }
 
 ww1_right = {
@@ -376,8 +408,8 @@ no_fascism = {
 		}
 	}
 
-	dm_communist_influence = -1.0
-	dm_social_democrat_influence = -0.75
+	dm_fascist_influence = -1.0
+	dm_nationalist_influence = -0.75
 }
 
 industrial_medicine = {
@@ -1021,7 +1053,7 @@ illiberal_society = {
 			NOT = {
 				has_reform = democratic_mechanic
 			}
-			is_revolutionary = no
+			bgm_rev = no
 		}
 		has_parliament = no
 	}
@@ -1031,7 +1063,7 @@ illiberal_society = {
 			NOT = {
 				has_reform = democratic_mechanic
 			}
-			is_revolutionary = no
+			bgm_rev = no
 		}
 		has_parliament = no
 	}
@@ -1055,6 +1087,20 @@ liberal_society = {
 	technology_cost = -0.025
 	idea_cost = -0.025
 	global_tax_modifier = 0.05
+}
+
+hre_elector = {
+	potential = {
+		is_elector = yes
+	}
+	trigger = {
+		is_elector = yes
+	}
+	diplomatic_reputation = 1
+	global_manpower_modifier = 0.1
+	land_forcelimit_modifier = 0.1
+	ae_impact = -0.05
+	improve_relation_modifier = 0.05
 }
 
 #cheat_reform = {

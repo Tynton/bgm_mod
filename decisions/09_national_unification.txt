@@ -6,28 +6,29 @@ country_decisions = {
 	
 		potential = {
 			adm_tech = 21
+			NOT = { has_global_flag = claimed_italy }
 			OR = {
 				culture_group = latin
 				
 			}
+			OR = {
+				government_rank = 2
+				total_development = 300
+			}
 			NOT = { has_country_modifier = "uniting_culture_group" }
-			NOT = { has_country_modifier = "intention_to_unite" }
 			NOT = { has_country_flag = uniting_home_nation }
-			NOT = { OR = { exists = ITA exists = VIY } }
+			NOT = { OR = { exists = ITA exists = VIY exists = MIT } }
 			capital_scope = { continent = europe }
 		}
 		allow = {
 			adm_tech = 22
 			OR = {
 				culture_group = latin
-				
 			}
-			NOT = { has_country_modifier = "uniting_culture_group" }
-			NOT = { has_country_modifier = "intention_to_unite" }
 			is_at_war = no
 		}
 		effect = {
-		
+			set_global_flag = claimed_italy
 			add_prestige = 25
 			
 			add_country_modifier = {
@@ -54,35 +55,38 @@ country_decisions = {
 	
 		potential = {
 			adm_tech = 21
+			NOT = { has_global_flag = claimed_germany }
 			OR = {
 				culture_group = germanic
 			}
-			NOT = { has_country_modifier = "uniting_culture_group" }
-			NOT = { has_country_modifier = "intention_to_unite" }
+			OR = {
+				government_rank = 2
+				total_development = 300
+			}
+			NOT = {
+				OR = {
+					exists = GER
+					exists = HLR
+				}
+			}
 			NOT = { has_country_flag = uniting_home_nation }
 			capital_scope = { continent = europe }
-			NOT = { exists = GER }
 		}
 		allow = {
 			adm_tech = 22
 			OR = {
 				culture_group = germanic
 			}
-			NOT = { has_country_modifier = "uniting_culture_group" }
-			NOT = { has_country_modifier = "intention_to_unite" }
 			is_at_war = no
 		}
 		effect = {
-		
+			set_global_flag = claimed_germany
+			set_country_flag = wants_germany
 			add_prestige = 25
 			
 			add_country_modifier = {
 				name = "uniting_culture_group"
 				duration = 5475
-			}
-			add_country_modifier = {
-				name = "intention_to_unite"
-				duration = -1
 			}
 			
 			north_german_region = {

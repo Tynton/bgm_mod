@@ -303,4 +303,22 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/DAWNING_ERA_eventPicture.dds"
 		allwaystransparent = yes
 	}
+
+	spriteType = {
+		name = "ROME_DESTROYED_eventPicture"
+		texturefile = "gfx/event_pictures/ROME_DESTROYED_eventPicture.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "ROME_DESTROYED2_eventPicture"
+		texturefile = "gfx/event_pictures/ROME_DESTROYED2_eventPicture.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "BGM_PROSPERITY_eventPicture"
+		texturefile = "gfx/event_pictures/BGM_PROSPERITY_eventPicture.dds"
+		allwaystransparent = yes
+	}
 }

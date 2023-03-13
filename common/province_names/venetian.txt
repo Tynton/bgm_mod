@@ -5,7 +5,7 @@
 108 = { "Veròna" "Verona" }
 107 = "Bressa"
 
-120 = "Abruzso"
+120 = {"Pescara" "Abruzso"}
 4946 = { "La Spesia" "La Spezsia" }
 116 = { "Firense" "Firenzse" }
 115 = "Pixa"
@@ -14,7 +14,7 @@
 104 = "Milàn"
 2981 = "Monferà"
 103 = "Turìn"
-5021 = "San Marin"
+4960 = "San Marin"
 2977 = "Urbìn"
 113 = "Ferara"
 2978 = { "Arezso" "Arezo" }
@@ -59,7 +59,7 @@
 5070 = "Costanzsa"
 148 = "Salonico"
 146 = "Atene"
-201 = "Aix-en-Provence"
+201 = "Marseja"
 196 = "Toloxa"
 203 = "Lion"
 236 = "Londra"
@@ -69,7 +69,7 @@
 
 44 = "Anburgo"
 
-484 = "L’Avana"
+484 = "L'Avana"
 
 5070 = "Constanzsa"
 1766 = "Cosovo"
@@ -78,8 +78,6 @@
 
 5393 = "Pordenon"
 5396 = "Vicensa"
-
-201 = "Aix-en-Provence"
 
 227 = "Lisbóna"
 

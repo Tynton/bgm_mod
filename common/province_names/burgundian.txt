@@ -1,38 +1,49 @@
 183 = { "Pairi" "Pairis" }
 192 = { "Dijonnoi" "Divio" }
 191 = { "Niévreu" "Niévrou" }
+
+#CONJECTURE BEGINS
+4392 = "Auxerroi"
+1877 = "Charoloi"
+186 = "Rémoi"
+185 = "Nemôrs"
+179 = { "Berry" "Bôrges" }
+4389 = "Tôraine"
+178 = "Angô"
+180 = "Hau-Poitô"
+4386 = "Bâ-Poitô"
+203 = "Lyonnoi"
+4391 = "Vivarai"
+4696 = "Tôlon"
+2753 = "Narbonnâ"
+196 = "Tôlôse"
+195 = "Limôsin"
+4387 = "Angômoi"
+167 = "Rôen"
+1743 = "Cambrési"
+88 = "Artoi"
+187 = "Barroi"
+4384 = "Rennoi"
+171 = "Vannetoi"
+181 = "Rethéloi"
+172 = "Nantai"
+198 = "Rôergue" #Rodez
+
+75 = "Strasbôrg"
+4765 = "Mulhôse"
+4621 = "Fribôrg"
+94 = "Luxembôrg"
+4948 = "Côrtrai"
+4718 = "Aschaffenbôrg"
+4767 = "Deuz-Pons"
+#CONJECTURE ENDS
+
 5103 = "Leingres"
-190 = { "Barbonnais" "Borbounâ" }
+190 = { "Borbounâ" "Barbonnais" }
 118 = "Rôme"
 
 
-182 = "Valois" #Compiègne
-184 = "Orleanais" #Orléans
-4389 = "Touraine" #Tours
-179 = "Berry" #Bourges
-180 = "Haut-Poitou" #Poitiers
-4386 = "Bas-Poitou" #Luçon
-4111 = "Saintonge" #Saintes
-4387 = "Angoumois" #Angoulême
-204 = "Dauphiné" #Grenoble
-203 = "Lyonnais" #Lyon
-4777 = "Forez" #Montbrisons
-4391 = "Vivarais" #Viviers
-2753 = "Narbonnais" #Narbonne
-194 = "Périgord" #Bergerac
-4697 = "La Marche" #Guéret
-187 = "Barrois" #Bar-le-Duc
-4392 = "Auxerrois" #Auxerre
-1877 = "Charolais" #Charolles
-4384 = "Rennais" #Rennes
-171 = "Vannetais" #Vannes
-88 = "Artois" #Arras
-181 = "Rethélois" #Rethel
-1743 = "Cambrésis" #Cambrai
-172 = "Nantais" #Nantes
-4112 = "Quercy" #Cahors
-198 = "Rouergue" #Rodez
 
-183 = { "Pairis" "Pairi" }
+183 = { "Pairi" "Pairis" }
 
 379 = { "Jérusalem" "Jéruzaulla" }

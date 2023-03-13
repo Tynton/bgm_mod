@@ -46,7 +46,7 @@
 112 = { "Venecia" "Venecia" }
 114 = { "Rávena" "Rávena" }
 116 = { "Florencia" "Florencia" }
-120 = { "Abruzos" "Abruzos" }
+120 = { "Pescara" "Abruzos" }
 121 = { "Nápoles" "Nápoles" }
 124 = { "Mesina" "Mesina" }
 1247 = { "Córcega" "Bastia" }
@@ -63,7 +63,7 @@
 93 = { "Lieja" "Lieja" }
 94 = { "Luxemburgo" "Luxemburgo" }
 167 = { "Ruán" "Ruán" }
-168 = "Normandía"
+168 = { "Caen" "Normandía" }
 173 = "Labort"
 174 = { "Burdeos" "Burdeos" }
 175 = "Armañac"
@@ -81,8 +81,9 @@
 196 = { "Tolosa" "Tolosa" }
 198 = "Ruergüe"
 199 = "Auvernia"
-200 = "Lenguadoc"
-201 = "Provenza"
+200 = { "Montpellier" "Lenguadoc" }
+4949 = "La Rochela"
+201 = "Marsella"
 202 = "Aviñón"
 203 = "Léon de Francia"
 204 = "Delfinado"

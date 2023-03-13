@@ -184,7 +184,7 @@ emp_germany_hlr_2 = {
 						current_age = age_of_revolutions
 					}
 					NOT = { absolutism = 99 }
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				add_absolutism = 20
 			}
@@ -361,7 +361,7 @@ emp_germany_hlr_2_ger = {
 			}
 			if = {
 				limit = { 
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				absolutism = 100
 			}

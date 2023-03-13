@@ -1,10 +1,10 @@
 #Country Name: Please see filename.
 
-graphical_culture = westerngfx
+graphical_culture = frenchgfx
 
-color = { 92  122  172 }
+color = { 36 51 173 } #92  122  172
 
-revolutionary_colors = { 15  2  16 }
+revolutionary_colors = { 15  0  16 }
 
 historical_score = 6722
 

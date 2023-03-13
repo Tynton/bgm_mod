@@ -3,8 +3,14 @@
 1878 = "Åxhe"
 4768 = "Djulé"
 93 = "Lidje"
+92 = "Brussele"
+90 = "Brudje"
 5385 = "Waterlô"
 4963 = "Årlon"
+
+4770 = "Bos-el-Duc"
+
+2974 = "Hôt-Gueldre"
 
 98 = "Utrek"
 1744 = "Anviesse"

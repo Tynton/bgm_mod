@@ -1,0 +1,5 @@
+government = monarchy
+primary_culture = poitevin
+religion = catholic
+technology_group = western
+capital = 4949

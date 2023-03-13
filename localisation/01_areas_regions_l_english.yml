@@ -1,4 +1,55 @@
 ﻿l_english:
+ bengbu_area:0 "Anhui - Bengbu"
+ jinzhai_area:0 "Anhui - Jinzhai"
+ huainan_area:0 "Anhui - Huainan"
+ changde_area:0 "Hebei - Changde"
+ east_hebei_area:0 "Hebei - East"
+ east_chongqing_area:0 "East Chonqing"
+ chongqing_area:0 "Chonqing"
+ quanzhou_area:0 "Fujian - Quanzhou"
+ jianou_area:0 "Fujian - Jian'Ou"
+ jianyang_area:0 "Fujian - Jianyang"
+ hainan_area:0 "Hainan"
+ east_guangdong_area:0 "Guangdong - East"
+ north_guangdong_area:0 "Guangdong - North"
+ bgm_west_guangdong_area:0 "Guangdong - West"
+ north_canton_area:0 "Guangdong - North Canton"
+ cangzhou_area:0 "Hebei - Cangzhou"
+ baoding_area:0 "Hebei - Baoding"
+ xiangyang_area:0 "Hubei - Xiangyang"
+ yangzhou_area:0 "Jiangsu - Yangzhou"
+ north_shandong_peninsula_area:0 "Shandong - North Shandong Peninsula"
+ south_shandong_peninsula_area:0 "Shandong - South Shandong Peninsula"
+ north_shandong_area:0 "Shandong - North Shandong"
+ south_shandong_area:0 "Shandong - South Shandong"
+ nanyang_area:0 "Henan - Nanyang"
+ zhengzhou_area:0 "Henan - Zhengzhou"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ #Old below
  prague_area:0 "Prague"
  west_silesia_area:0 "West Silesia"
  south_switzerland_area:0 "South Switzerland"

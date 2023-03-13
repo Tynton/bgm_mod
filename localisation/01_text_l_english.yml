@@ -42,6 +42,11 @@
  rising_force:0 "Rising Power"
  intergenerational_stability:0 "Intergenerational Stability"
  
+ urban_prosperity:0 "Urban Prosperity"
+ 
+ PREPROT_HERESY_TOOLTIP:0 "§YA reformational denomination other than the Protestant varieties has§! §Rpopularized.§!"
+ ROME_FALLEN_T:0 "§RRome has fallen.§!"
+ 
  reg_dom:0 "Our country is the largest nation by development in [Root.Capital.GetRegionName]."
  
  PEACE_po_enforce_dynasty:0 "Enforce Dynasty"
@@ -72,7 +77,7 @@
 
  high_income_missionag_title:0 "High Income"
  high_income_missionag_desc:0 "We must increase state income by any means necessary. Money is a requirement for any endeavor of the state, from the daily expenses of the government to the maintenance of armies to invade our enemies."
- high_income_missionindag_title:0 "High Income"
+ high_income_missionind_title:0 "High Income"
  high_income_missionind_desc:0 "We must increase state income by any means necessary. Money is a requirement for any endeavor of the state, from the daily expenses of the government to the maintenance of armies to invade our enemies."
  
  high_manpower_mission_title:0 "Fill Reserves"
@@ -112,6 +117,8 @@
  exert_far_influence_desc:0 "Far-Reaching Influence"
  
  trade_company_rome:0 "Roman Charter"
+
+ port_rome:0 "Civitavecchia - Roman Port"
  
  calcString:0 "current value: [This.local_dev_cost.GetValue]"
  
@@ -119,9 +126,23 @@
  StringTwo:0 "local_dev_cost is [This.local_dev_cost.GetValue]"
  StringThree:0 "algorithm resultant cost: [Root.local_dev_cost.GetValue]"
  
- incident_german_confederation:0 "Secularization of the HRE"
+ incident_german_confederation:0 "Secularization of the Holy Roman Empire"
  incident_german_confederation_emperor_alert:0 "Recent turbulence in the political landscape of our continent have forced our hand. The Holy Roman Empire may come under threat of angry masses and it is time for us to take action. We are forced to convene the Imperial Diet for an address and deliberation."
  incident_german_confederation_member_alert:0 "Recent turbulence in the political landscape of our continent have forced our hand. The Holy Roman Empire may come under threat of angry masses and it is time for us to take action. We are forced to convene the Imperial Diet for an address and deliberation."
+ 
+ incident_bgm_rev:0 "The Revolution and the Empire"
+ incident_bgm_rev_emperor_alert:0 "Sympathizers to the Revolution have found homes in states of the Holy Roman Empire. They have seized influential positions in the Empire and now the issue at hand must be addressed."
+ incident_bgm_rev_member_alert:0 "Sympathizers to the Revolution have found homes in states of the Holy Roman Empire. They have seized influential positions in the Empire and now the issue at hand must be addressed."
+ 
+ incident_bgm_nationalism:0 "Germanic Nationalism in the Empire"
+ incident_bgm_nationalism_emperor_alert:0 "The Revolution has spread throughout the German states in the Holy Roman Empire. Calls for a nation-state have appeared as a consequence though the current states have been talked into a compromise. A sub-confederation within the Empire may be arranged but for it to occur it requires the assent of the Emperor."
+ incident_bgm_nationalism_member_alert:0 "The Revolution has spread throughout the German states in the Holy Roman Empire. Calls for a nation-state have appeared as a consequence though the current states have been talked into a compromise. A sub-confederation within the Empire may be arranged but for it to occur it requires the assent of the Emperor."
+ 
+ incident_legitimation_final:0 "Fate of the Empire"
+ incident_legitimation_final_emperor_alert:0 "The Holy Roman Empire has persevered for a millenium. Now it is in a state of crisis. Forces from within and without have evolved into states and ideologies not compatible with the order of the Empire."
+ incident_legitimation_final_member_alert:0 "The Revolution has spread throughout the German states in the Holy Roman Empire. Calls for a nation-state have appeared as a consequence though the current states have been talked into a compromise. A sub-confederation within the Empire may be arranged but for it to occur it requires the assent of the Emperor."
+ 
+ bgm_hre_rev_tooltip:0 "Our government will co-opt the Revolution. §RThere may still yet be some revolutionaries dissatisfied with the new status quo and wish for a full Republic.§!"
  
  
  political_reorganization:0 "Political Reorganization"
@@ -694,7 +715,7 @@
  wtc:0 "World Trade Center"
  statue_liberty:0 "Statue of Liberty"
  eiffel_tower_bgm:0 "Eiffel Tower"
- louvre:0 "Louvre Museum"
+ louvre:0 "Louvre Palace"
  reichstag:0 "Reichstag"
  dome_rock:0 "Dome of the Rock"
  castel_nuovo:0 "Castel Nuovo"
@@ -788,9 +809,22 @@
  five_harbors:0 "Cinque Ports | Five Harbors"
  genoese_palace:0 "Palazzo Ducale di Genova"
  port_genoa:0 "Porto di Genova"
+ holstentor:0 "Holstentor-Altstadt"
+ university_poitiers:0 "Université de Poitiers"
+ monument_le_havre:0 "Le Havre Port Infrastructure"
+ westminster_palace:0 "Westminster Palace"
  
+ port_le_havre:0 "Port of Le Havre"
+ LE_HAVRE_CONDITION:0 "§TThe Port of Le Havre has been established.§!"
  factory_dev:0 "Industrial Terrain"
  desc_factory_dev:0 "The terrain here was not conducive to much development before the advent of industrial era occupations. Now the age has dawned and the residents of this area now have new job opportunities that will further develop this province."
+ 
+ fraticelli_clerics:0 "Fraticelli Clerical Zeal"
+ 
+ troublesome_frat:0 "Troublesome Fraticelli State"
+ 
+ frat_rein_in:0 "Reined in the Estates"
+ rein_in_estates:0 "Rein in the Estates"
  
  tax_dev:0 "Local Administrative Center"
  desc_tax_dev:0 "Our local administrative centers in this area have aided the government immensely in plotting the urban planning in this province."
@@ -840,6 +874,7 @@
  IS_ELECTOR:0 "Is an HRE Elector"
  
  annexed_neighbor_bgm:0 "Annexed Neighbor"
+ no_gercon:0 "Disallowed Confederation"
  
  cadet_branch_one:0 "Cadet Branch"
  cadet_branch_two:0 "Secondary Cadet Branch"
@@ -888,6 +923,14 @@
  po_enforce_dynasty:0 "Enforce Dynasty"
  po_enforce_dynasty_desc:0 "We have a member of our dynasty with a claim to their throne which we've recently lost. We will enforce their return."
  
+ DIVREE:0 "d'Ivrée"
+ placeholder_culture:0 "Placeholder"
+ 
+ GERCON_COOLDOWN_T:0 "§RWe must not have conducted a successful reform session in the Diet in the past ten years.§!"
+ 
+ bgm_fra_india:0 "Master of India"
+ bgm_por_surat:0 "Indian Investment Boom"
+ 
  ticinese:0 "Ticinese"
  benelux:0 "Dutch"
  limburgish:0 "Limburgish"
@@ -897,16 +940,16 @@
  rome_converted_bgm:0 "Rome Fallen"
  
  major_war:0 "Major Wars"
- anglo_norman:0 "Anglo-Norman"
+ anglo_norman:0 "Anglois" #Anglo-Norman
  northumbrian:0 "Northumbrian"
  kentish:0 "Kentish"
  west_midlander:0 "West Midlander"
  southern_english:0 "Southern English"
  
- lengadocian:0 "Lengadocian"
+ lengadocian:0 "Languedocian" #Lengadocian
  nicard:0 "Niçard"
- auvergnat:0 "Auvernhat"
- limousin:0 "Lemosin"
+ auvergnat:0 "Auvergnat" #Auvernhat
+ limousin:0 "Limousin" #Lemosin
  
  ruthenian_g:0 "Ruthenian"
  
@@ -971,14 +1014,23 @@
  form_congo_desc:0 "Form Congo"
  form_angola_title:0 "Form Angola"
  form_angola_desc:0 "Form Angola"
+ form_sa_title:0 "Form South Africa"
+ form_sa_desc:0 "Form South Africa"
  form_kenya_title:0 "Form Kenya"
  form_kenya_desc:0 "Form Kenya"
  form_indonesia_title:0 "Form Indonesia"
  form_indonesia_desc:0 "Form Indonesia"
  
+ francia_nation_title:0 "Reclaim Carolingian Legacy"
+ francia_nation_desc:0 "Francia was once a kingdom ruled by the Frankish peoples. France, as the logical evolution of West Francia, owns a valid claim to the Frankish realm. Now we can press our claim and name ourselves the true heirs of Charlemagne and his predecessors in the Old Frankish Realm. We will proclaim ourselves the Second Frankish realm or the New Frankish Kingdom."
+ 
+ fold_sisterrepublics_title:0 "Fold Sister Republics"
+ fold_sisterrepublics_desc:0 "Every sister republic we own will be integrated into the largest one of their culture group(s). This simplifies our administration and will improve our government's legitimacy as we seek to establish new nation-states."
+ 
+ hre_threatened:0 "HRE Compromised"
  
  
- form_rdi:0 "Form Inglaterra"
+ form_rdi_title:0 "Form Inglaterra"
  form_rdi_desc:0 "Form Inglaterra"
  
  romance_english:0 "Romance English"
@@ -997,6 +1049,7 @@
  italea_2:0 "Collaborating Italic League"
  italea_3:0 "Centralized Italic League"
  italea_4:0 "Italic Union"
+ italea_start:0 "Italic League - Phase 2"
  
  centralize_1_title:0 "Reform the Italic League (1)"
  centralize_1_desc:0 "Among the great nations of Europe, Italy has a chance to come together. Other realms such as that of the French have came to be a great threat to us and this must be dealt with. By taking the leadership role in the Italic League we can guide along the other member states of the League to cooperate with us further and, thus, centralize the Italian states."
@@ -1060,6 +1113,11 @@
  german_nation_hre_desc:0 "Regardless of the absence of a strong, central authority, our nation is prospering. The Hanseatic League, formed by hundreds of towns in northern Germany, has contributed to the prosperity of our nation. Intellectual growth, combined with sea and overland trading, has also helped spur the development and transform our country into a wealthy manufacturing center."
  
  FOREIGN_SISTERREPUBLIC:0 "[From.GetName] is not a Sister Republic in our culture group."
+ 
+ bri_rep_title:0 "British Republican Name"
+ bri_rep_desc:0 "British Republican Name"
+ unk_name_title:0 "British Monarchist Name"
+ unk_name_desc:0 "British Monarchist Name"
  
  
  
@@ -1793,7 +1851,8 @@
  raise_crusaders:0 "Raise Crusader Militias"
  fraticelli_proselytizing:0 "Fraticelli Proselytizing"
  
- occitan:0 "Occitan"
+ #french:0 "Langues d'oil"
+ occitan:0 "Langues d'Oc" #Occitan
  east_south_slavic:0 "East South Slavic"
  albanian_g:0 "Albanian"
  basque_g:0 "Basque"
@@ -1908,17 +1967,19 @@
  
  austriaco:0 "Austriaco"
  
+ same_continent_institution:0 "The province is on the same continent as the relevant Institution Origin."
+ 
  adm_tech_plateaued:0 "Maximum Administrative Tech by Institution"
- adm_tech_ii:0 "Administrative Tech Difficulty II"
- adm_tech_i:0 "Administrative Tech Difficulty I"
+ adm_tech_ii:0 "Administrative Tech Pioneer II"
+ adm_tech_i:0 "Administrative Tech Pioneer I"
  
  dip_tech_plateaued:0 "Maximum Diplomatic Tech by Institution"
- dip_tech_ii:0 "Diplomatic Tech Difficulty II"
- dip_tech_i:0 "Diplomatic Tech Difficulty I"
+ dip_tech_ii:0 "Diplomatic Tech Pioneer II"
+ dip_tech_i:0 "Diplomatic Tech Pioneer I"
  
  mil_tech_plateaued:0 "Maximum Military Tech by Institution"
- mil_tech_ii:0 "Military Tech Difficulty II"
- mil_tech_i:0 "Military Tech Difficulty I"
+ mil_tech_ii:0 "Military Tech Pioneer II"
+ mil_tech_i:0 "Military Tech Pioneer I"
  
  artificial_rebels_title:0 "Automaton"
  artificial_rebels_name:0 "$COUNTRY$ Automatons"
@@ -2053,6 +2114,8 @@
  atheism:0 "Atheism"
  atheism_religion_desc:0 "Atheism"
  
+ monegasque:0 "Monegasque"
+
  northern_french:0 "Anglo-Gallic"
  occitanian:0 "Anglo-Occitanian"
  english_gascon:0 "Anglo-Gascon"
@@ -2757,5 +2820,7 @@
  
  british_india:0 "British India"
  britain_prosperity:0 "Era of Prosperity"
+ 
+ hre_elector:0 "Holy Roman Elector Privilege"
  
  

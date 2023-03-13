@@ -314,7 +314,7 @@ christian = {
 	}
 
 	anglican = {
-		color = { 135 45 50 }
+		color = { 130 85 189 } #135 45 50
 		icon = 28
 		allow_female_defenders_of_the_faith = yes
 
@@ -322,8 +322,8 @@ christian = {
 			catholic
 		}
 		country = {
-			development_cost = -0.125
-			innovativeness_gain = 0.75
+			innovativeness_gain = 0.25
+			advisor_cost = -0.1
 		}
 		
 		country_as_secondary = {
@@ -351,7 +351,7 @@ christian = {
 	}
 	
 	hussite = {
-		color = { 214 90 171 } #180 50 17
+		color = { 196 81 43 } #180 50 17 #214 90 171
 		icon = 22
 
 		allowed_center_conversion = {
@@ -386,7 +386,7 @@ christian = {
 	}
 	
 	unitarian = {
-		color = { 11 48 135 } #209 63 44
+		color = { 66 61 133 } #209 63 44 #11 48 135
 		icon = 39
 
 		allowed_center_conversion = {
@@ -418,7 +418,7 @@ christian = {
 	}
 	
 	anabaptist = {
-		color = { 208 86 232 } #209 63 44
+		color = { 187 160 242 } #209 63 44 #208 86 232
 		icon = 40
 
 		allowed_center_conversion = {
@@ -449,7 +449,7 @@ christian = {
 	}
 	
 	waldensian = {
-		color = { 116 79 161 } #127 100 65 - #127 70 10 - #127 140 130
+		color = { 120 60 32 } #127 100 65 - #127 70 10 - #127 140 130 #116 79 161 #161 115 51
 		icon = 36
 		
 		allowed_center_conversion = {
@@ -479,7 +479,7 @@ christian = {
 	}
 	
 	fraticelli = {
-		color = { 217 148 52 } #217 148 52 - 156 6 6 - 194 8 147
+		color = { 252 198 121 } #217 148 52 - 156 6 6 - 194 8 147
 		icon = 38
 
 		allowed_center_conversion = {
@@ -508,12 +508,26 @@ christian = {
 					
 				}
 				allow = {
-					
+					NOT = {
+						has_country_modifier = frat_tax
+					}
+					NOT = {
+						war_with = NTI
+					}
 				}
 				effect = {
 					add_country_modifier = {
 						name = "frat_tax"
 						duration = 9125
+					}
+					if = {
+						limit = {
+							has_estate = estate_burghers
+						}
+						add_estate_loyalty = {
+							estate = estate_burghers
+							loyalty = -10
+						}
 					}
 				}
 				ai_will_do = {
@@ -526,7 +540,12 @@ christian = {
 					#government = monarchy
 				}
 				allow = {
-					
+					NOT = {
+						has_country_modifier = frat_humility
+					}
+					NOT = {
+						war_with = NTI
+					}
 				}
 				effect = {
 					add_country_modifier = {
@@ -544,7 +563,12 @@ christian = {
 					#government = monarchy
 				}
 				allow = {
-					
+					NOT = {
+						has_country_modifier = frat_asceticism
+					}
+					NOT = {
+						war_with = NTI
+					}
 				}
 				effect = {
 					add_country_modifier = {
@@ -562,7 +586,12 @@ christian = {
 					#government = monarchy
 				}
 				allow = {
-					
+					NOT = {
+						has_country_modifier = frat_convention
+					}
+					NOT = {
+						war_with = NTI
+					}
 				}
 				effect = {
 					add_country_modifier = {
@@ -580,7 +609,12 @@ christian = {
 					#government = monarchy
 				}
 				allow = {
-					
+					NOT = {
+						has_country_modifier = frat_gifts_for_poor
+					}
+					NOT = {
+						war_with = NTI
+					}
 				}
 				effect = {
 					add_country_modifier = {
@@ -599,7 +633,12 @@ christian = {
 					#government = monarchy
 				}
 				allow = {
-					
+					NOT = {
+						has_country_modifier = frat_crusaders
+					}
+					NOT = {
+						war_with = NTI
+					}
 				}
 				effect = {
 					add_country_modifier = {
@@ -617,11 +656,40 @@ christian = {
 					government = theocracy
 				}
 				allow = {
-					
+					NOT = {
+						has_country_modifier = frat_proselytizing
+					}
+					NOT = {
+						war_with = NTI
+					}
 				}
 				effect = {
 					add_country_modifier = {
 						name = "frat_proselytizing"
+						duration = 9125
+					}
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			rein_in_estates = {
+				cost = 50
+				potential = {
+					
+				}
+				allow = {
+					NOT = {
+						has_country_modifier = frat_rein_in
+					}
+					NOT = {
+						war_with = NTI
+					}
+				}
+				effect = {
+					add_years_of_income = 0.1
+					add_country_modifier = {
+						name = "frat_rein_in"
 						duration = 9125
 					}
 				}
@@ -636,7 +704,7 @@ christian = {
 	}
 
 	cathar = {
-		color = { 150 117 50 } #
+		color = { 227 128 86 } #150 117 50
 		icon = 42
 
 		allowed_center_conversion = {
@@ -665,7 +733,7 @@ christian = {
 	}
 	
 	lollard = {
-		color = { 117 60 76 } #40 45 121
+		color = { 235 158 52 } #40 45 121 #117 60 76
 		icon = 37
 
 		allowed_center_conversion = {
@@ -699,7 +767,7 @@ christian = {
 	}
 	
 	protestant = {
-		color = { 3 69 222 } #50 100 176 // 173 225 255
+		color = { 55 41 150 } #50 100 176 // 173 225 255 #3 69 222
 		icon = 2
 
 		allowed_conversion = {
@@ -841,7 +909,7 @@ christian = {
 	}
 
 	reformed = {
-		color = { 120 225 255 } #200 215 230 - 200 155 230 - 200 225 255 - 20 40 95
+		color = { 114 114 224 } #200 215 230 - 200 155 230 - 200 225 255 - 20 40 95 #120 225 255
 		icon = 3
 		allowed_conversion = {
 			protestant

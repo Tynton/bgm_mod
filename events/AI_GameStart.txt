@@ -14,8 +14,63 @@ country_event = {
 	
 	option = {
 		name = "AI_GameStart.1.a"
+
+		if = { #in 1.35 England appears to get rather powerful, Burgundy has no ambitions to conquer Castile in mission trees that I am aware of
+			limit = {
+				CAS = {
+					ai = yes
+					is_rival = BUR
+				}
+				BUR = {
+					ai = yes
+					is_rival = CAS
+				}
+			}
+			CAS = { 
+				remove_rival = BUR
+				random_list = {
+					67 = { add_rival = FRA }
+					33 = { }
+				}
+			}
+			BUR = { remove_rival = CAS }
+		}
+
+		if = {
+			limit = {
+				AND = {
+					BRA = {
+						ai = yes
+						NOT = {
+							is_rival = POL
+						}
+					}
+					POL = {
+						ai = yes
+						NOT = {
+							is_rival = BRA
+						}
+					}
+				}
+				any_country = {
+					is_enemy = POL
+					is_enemy = BRA
+				}
+			}
+			BRA = {
+				create_marriage = POL
+			}
+		}
 		
 		set_global_flag = game_start_bgmevent
+
+		MNC = { set_country_flag = monaco_c }
+
+		every_country = {
+			country_event = {
+				id = AI_GameStart.2
+			}
+		}
 
 		if = {
 			limit = {
@@ -104,65 +159,14 @@ country_event = {
 			}
 		}
 
-		if = {
-			limit = {
+		random_list = {
+			50 = {
 				FRA = {
-					ai = yes
-					NOT = {
-						is_rival = CAS
-					}
-					NOT = {
-						is_rival = VEN
-					}
-				}
-				CAS = {
-					ai = yes
-					NOT = {
-						is_rival = VEN
-					}
-				}
-				VEN = {
-					ai = yes
+					set_country_flag = fra_europe #goes for europe
 				}
 			}
-			FRA = {
-				create_alliance = CAS
-				create_alliance = VEN
-			}
-			CAS = {
-				create_alliance = VEN
-			}
-		}
-
-		if = {
-			limit = {
-				CAS = {
-					ai = yes
-					NOT = {
-						is_rival = ENG
-					}
-					NOT = {
-						is_rival = BUR
-					}
-				}
-				BUR = {
-					ai = yes
-					NOT = {
-						is_rival = ENG
-					}
-				}
-				ENG = {
-					ai = yes
-					NOT = { is_rival = HAB }
-				}
-			}
-			CAS = {
-				create_alliance = BUR
-				create_alliance = ENG
-			}
-			ENG = {
-				create_alliance = BUR
-				create_alliance = HAB
+			50 = {
+				set_country_flag = fra_america #goes for america
 			}
 		}
 		
@@ -182,13 +186,102 @@ country_event = {
 				}
 			}
 			random_list = {
-				95 = {
+				90 = {
 					BUR = {
 						create_alliance = ENG
 					}
 				}
 				5 = {
 					
+				}
+			}
+		}
+		if = {
+			limit = {
+				ENG = { ai = yes }
+				CAS = { ai = yes }
+				NOT = {
+					OR = {
+						ENG = {
+							is_rival = CAS
+						}
+						CAS = {
+							is_rival = ENG
+						}
+					}
+				}
+			}
+			random_list = {
+				90 = {
+					CAS = {
+						create_alliance = ENG
+					}
+				}
+				5 = {
+					
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				HAB = { ai = yes }
+				BUR = { ai = yes }
+				NOT = {
+					OR = {
+						HAB = {
+							is_rival = BUR
+						}
+						BUR = {
+							is_rival = HAB
+						}
+					}
+				}
+			}
+			random_list = {
+				75 = {
+					HAB = {
+						create_alliance = BUR
+					}
+				}
+				5 = {
+					
+				}
+			}
+		}
+
+		if = { #Complete first mission for Emperor
+			limit = {
+				has_dlc = "Emperor"
+				BUR = {
+					OR = {
+						is_rival = FRA
+						is_enemy = FRA
+					}
+				}
+			}
+			FRA = {
+				add_opinion = {
+					who = BUR
+					modifier = insulted
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				has_dlc = "Emperor"
+				BUR = {
+					OR = {
+						is_rival = ENG
+						is_enemy = ENG
+					}
+				}
+			}
+			ENG = {
+				add_opinion = {
+					who = BUR
+					modifier = insulted
 				}
 			}
 		}
@@ -332,6 +425,29 @@ country_event = {
 		}
 		norrland_area = {
 			set_local_autonomy = 50
+		}
+	}
+}
+
+country_event = {
+	id = AI_GameStart.2
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	option = {
+		every_country = {
+			limit = {
+				historical_rival_with = ROOT
+			}
+			remove_historical_rival = ROOT
+		}
+		every_country = {
+			limit = {
+				historical_friend_with = ROOT
+			}
+			remove_historical_friend = ROOT
 		}
 	}
 }

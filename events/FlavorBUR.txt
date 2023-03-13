@@ -35,11 +35,7 @@ country_event = { # changed from province to country event
 		random_owned_province = {
 			limit = {
 				region = low_countries_region
-				OR = {
-					culture = dutch
-					culture = frisian
-					culture = flemish
-				}
+				culture_group = benelux
 			}
 			spawn_rebels = {
 				type = nationalist_rebels
@@ -52,11 +48,7 @@ country_event = { # changed from province to country event
 			limit = {
 				NOT = { has_province_flag = ned_rebels_start_flag }
 				region = low_countries_region
-				OR = {
-					culture = dutch
-					culture = frisian
-					culture = flemish
-				}
+				culture_group = benelux
 			}
 			spawn_rebels = {
 				type = nationalist_rebels
@@ -72,9 +64,7 @@ country_event = { # changed from province to country event
 				limit = {
 					owned_by = ROOT
 					OR = {
-						culture = dutch
-						culture = frisian
-						culture = flemish
+						culture_group = benelux
 						NOT = { religion = ROOT }
 					}
 				}
@@ -103,11 +93,7 @@ country_event = {
 			NOT = { controlled_by = REB }
 			NOT = { has_province_flag = dutch_revolt }
 			NOT = { has_province_flag = no_dutch_revolt }
-			OR = {
-				culture = frisian
-				culture = dutch
-				culture = flemish
-			}
+			culture_group = benelux
 		}
 	}
 	
@@ -119,11 +105,7 @@ country_event = {
 					NOT = { controlled_by = REB }
 					NOT = { has_province_flag = dutch_revolt }
 					NOT = { has_province_flag = no_dutch_revolt }
-					OR = {
-						culture = frisian
-						culture = dutch
-						culture = flemish
-					}
+					culture_group = benelux
 				}
 				save_event_target_as = dutch_rebels_target
 			}
@@ -187,9 +169,7 @@ country_event = {
 				limit = {
 					region = low_countries_region
 					OR = {
-						culture = dutch
-						culture = flemish
-						culture = frisian
+						culture_group = benelux
 						is_core = NED
 					}
 					is_capital = no
@@ -408,11 +388,7 @@ country_event = {
 		any_owned_province = {
 			region = low_countries_region
 		}
-		OR = {
-			primary_culture = dutch
-			primary_culture = flemish
-			primary_culture = frisian
-		}
+		culture_group = benelux
 		NOT = {
 			has_country_flag = state_joined_netherlands
 		}
@@ -474,21 +450,13 @@ country_event = {
 		NOT = { exists = NED }
 		current_age = age_of_reformation
 		NOT = { 
-			OR = {
-				primary_culture = dutch 
-				primary_culture = frisian 
-				primary_culture = flemish
-			}
+			culture_group = benelux
 		}
 		NOT = { has_global_flag = dutch_revolt }
 		num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 			value = 5
 			owner = {
-				OR = {
-					primary_culture = dutch 
-					primary_culture = frisian 
-					primary_culture = flemish
-				}
+				culture_group = benelux
 			}
 		}	
 	}
@@ -503,22 +471,14 @@ country_event = {
 				limit = {
 					any_country = {
 						ai = no
-						OR = {
-							primary_culture = dutch 
-							primary_culture = frisian 
-							primary_culture = flemish
-						}
+						culture_group = benelux
 						is_subject_of = ROOT
 					}
 				}
 				random_country = {
 					limit = {
 						ai = no
-						OR = {
-							primary_culture = dutch 
-							primary_culture = frisian 
-							primary_culture = flemish
-						}
+						culture_group = benelux
 						is_subject_of = ROOT
 					}
 					save_event_target_as = dutch_unification_country
@@ -527,11 +487,7 @@ country_event = {
 			else = {
 				random_country = {
 					limit = {
-						OR = {
-							primary_culture = dutch 
-							primary_culture = frisian 
-							primary_culture = flemish
-						}
+						culture_group = benelux
 						is_subject_of = ROOT
 					}
 					save_event_target_as = dutch_unification_country
@@ -730,7 +686,7 @@ country_event = {
 				}
 				define_ruler = {
 					name = "Marie"
-					dynasty = "de Valois-Bourgogne"
+					dynasty = "de Valois-Bregogne"
 					culture = burgundian
 					age = 20
 					claim = 95

@@ -3,7 +3,7 @@ po_sisterrepublic = {
 	power_projection = humiliated_rival
 	power_cost_base = 0
 	prestige_base = 0.1
-	ae_base = 0.25
+	ae_base = 0.1
 	warscore_cost = {
 		all_provinces = 0.0
 		no_provinces = 75.0
@@ -20,11 +20,20 @@ po_sisterrepublic = {
 	
 	is_visible = {
 		is_revolution_target = yes
+
+		FROM = {
+			is_great_power = no
+		}
 	}
 	is_allowed = {
 		is_revolution_target = yes
 	}
 	effect = {
+		ROOT = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+		}
 		FROM = {
 			if = {
 				limit = {
@@ -55,6 +64,24 @@ po_sisterrepublic = {
 				}
 			}
 		}
+		if = {
+			limit = {
+				FROM = {
+					any_owned_province = {
+						culture_group = ROOT
+					}
+				}
+				
+			}
+			FROM = {
+				every_owned_province = {
+					limit = {
+						culture_group = ROOT
+					}	
+					cede_province = ROOT
+				}
+			}
+		}
 		create_subject = {
 			subject_type = sister_republic
 			who = FROM
@@ -68,7 +95,7 @@ po_sisterrepublic = {
 			}
 			if = {
 				limit = {
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				add_government_reform = junior_revolutionary_republic_reform
 				#add_government_reform = parliamentary_reform

@@ -28,8 +28,11 @@ factory_infrastructure = {
 	time = 24
 	
 	modifier = {
-		local_production_efficiency = 2.0
+		local_production_efficiency = 1.5
+		local_manpower_modifier = 0.5
 	}
+
+	make_obsolete = counting_house
 	
 	allow_in_gold_provinces = no
 
@@ -80,12 +83,14 @@ factory_infrastructure = {
 }
 
 tax_center = {
-	cost = 350
+	cost = 500
 	time = 12
 	modifier = {
 		local_tax_modifier = 1.0
-		local_state_maintenance_modifier = -0.3
+		local_governing_cost = -0.25
 	}
+
+	make_obsolete = cathedral
 
 	on_built = {
 		add_development_from_building = {

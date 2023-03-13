@@ -65,6 +65,13 @@ province_event = {
 		}
 
 		modifier = {
+			factor = 0.75
+			owner = {
+				has_reform = free_city
+			}
+		}
+
+		modifier = {
 			factor = 0.8
 			OR = {
 				has_building = marketplace
@@ -231,25 +238,16 @@ province_event = {
 		}
 		
 		modifier = {
-			factor = 1.1
+			factor = 10
 			NOT = {
 				owner = {
-					adm_tech = 10
+					adm_tech = 16
 				}
 			}
 		}
 		
 		modifier = {
-			factor = 1.1
-			NOT = {
-				owner = {
-					adm_tech = 14
-				}
-			}
-		}
-		
-		modifier = {
-			factor = 1.1
+			factor = 7.5
 			NOT = {
 				owner = {
 					adm_tech = 18
@@ -258,25 +256,34 @@ province_event = {
 		}
 		
 		modifier = {
-			factor = 1.1
+			factor = 5
 			NOT = {
 				owner = {
-					adm_tech = 22
+					adm_tech = 20
 				}
 			}
 		}
 		
 		modifier = {
-			factor = 1.1
+			factor = 2.5
 			NOT = {
 				owner = {
-					adm_tech = 26
+					adm_tech = 24
 				}
 			}
 		}
 		
 		modifier = {
-			factor = 1.1
+			factor = 1.75
+			NOT = {
+				owner = {
+					adm_tech = 28
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.5
 			NOT = {
 				owner = {
 					adm_tech = 30
@@ -285,7 +292,7 @@ province_event = {
 		}
 		
 		modifier = {
-			factor = 1.1
+			factor = 1.25
 			NOT = {
 				owner = {
 					adm_tech = 34
@@ -294,7 +301,7 @@ province_event = {
 		}
 		
 		modifier = {
-			factor = 1.1
+			factor = 1.125
 			NOT = {
 				owner = {
 					adm_tech = 38
@@ -324,6 +331,7 @@ province_event = {
 			factor = 0.65
 			owner = {
 				is_hegemon = yes 
+				adm_tech = 32
 			}
 		}
 		

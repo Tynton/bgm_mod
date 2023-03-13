@@ -2312,7 +2312,11 @@ french_culture_ideas = {
 	}
 	
 	trigger = {
-		culture_group = french
+		OR = {
+			culture_group = french
+			culture_group = occitan
+			culture_group = franco_provencal
+		}
 		NOT = { tag = AEV }
 	}
 	free = yes

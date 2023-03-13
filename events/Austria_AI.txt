@@ -68,13 +68,18 @@ country_event = {
 				any_ally = {
 					army_strength = {
 						who = HAB
-						value = 0.8
+						value = 0.5
 					}
 				}
 				
 				army_strength = {
 					who = HAB
-					value = 0.8
+					value = 0.5
+				}
+			}
+			NOT = {
+				any_country = {
+					has_guaranteed = ROOT
 				}
 			}
 		}
@@ -86,7 +91,15 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 2
+		months = 48
+		modifier = {
+			factor = 0.01
+			NOT = {
+				any_country = {
+					alliance_with = ROOT
+				}
+			}
+		}
 	}
 	
 	#austria attacks
@@ -103,7 +116,7 @@ country_event = {
 	}
 }
 
-#ally electors
+#ally electors - no longer specific to austria but is now for all emperors
 
 country_event = {
 	id = Austria_AI.3
@@ -114,21 +127,40 @@ country_event = {
 	hidden = yes
 	
 	trigger = {
-		HAB = {
+		emperor = {
+			num_of_free_diplomatic_relations = 1
 			ai = yes
 			is_emperor = yes
+			NOT = { truce_with = ROOT }
 			NOT = {
-				is_rival = ROOT
+				OR = {
+					is_rival = ROOT
+					is_enemy = ROOT
+				}
+			}
+			NOT = {
+				calc_true_if = {
+					all_country = {
+						is_elector = yes
+						alliance_with = emperor
+					}
+					amount = 2
+				}
 			}
 		}
 		ROOT = {
+			num_of_free_diplomatic_relations = 1
 			ai = yes
 			is_elector = yes 
+			NOT = { truce_with = emperor }
 			NOT = {
-				has_country_flag = allied_aus
+				has_country_flag = allied_emperor
 			}
 			NOT = {
-				is_rival = HAB
+				OR = {
+					is_rival = emperor
+					is_enemy = emperor
+				}
 			}
 		}
 	}
@@ -142,12 +174,12 @@ country_event = {
 	option = {
 		name = "Austria_AI.3.a"
 		
-		HAB = {
+		emperor = {
 			create_alliance = ROOT
 		}
 		
 		ROOT = {
-			set_country_flag = allied_aus
+			set_country_flag = allied_emperor
 		}
 	}
 }

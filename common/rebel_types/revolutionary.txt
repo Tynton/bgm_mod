@@ -23,7 +23,7 @@ revolutionary_rebels = {
 	infantry = 0.6
 	cavalry = 0.3
 	
-	morale = 1.1
+	morale = 1.0
 	
 	# Possible handle actions
 	handle_action_negotiate = no
@@ -43,7 +43,7 @@ revolutionary_rebels = {
 		modifier = {
 			factor = 0
 			owner = {
-				is_revolutionary = yes
+				bgm_rev = yes
 			}
 		}	
 		modifier = {

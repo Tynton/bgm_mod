@@ -28,7 +28,7 @@ force_peasant_republic = {
 	is_allowed = { # Defaults to equivalent of "always = yes"
 		FROM = {
 			NOT = { tag = PAP }
-			is_revolutionary = no
+			bgm_rev = no
 			NOT = { has_reform = celestial_empire }
 			#is_part_of_hre = yes
 		}

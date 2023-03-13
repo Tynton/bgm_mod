@@ -9,6 +9,7 @@ incident_german_confederation = {
 	
 	can_stop = {
 		exists = GER
+		hre_reform_passed = emperor_perpetual_diet
 	}
 
 	0 = { #Reform into the German Confederation
@@ -21,5 +22,152 @@ incident_german_confederation = {
 	
 	2 = { #Stay the way we are
 		factor = 5
+	}
+}
+
+incident_bgm_rev = { #should we embrace the revolution
+    event = incidents_bgm_rev.2
+	default_option = 0
+	
+	can_stop = {
+		NOT = {
+			any_country = {
+				is_revolution_target = yes
+			}
+		}
+	}
+
+	0 = { #Endorse the revolution
+		factor = 1
+
+		modifier = {
+			factor = 100
+			bgm_rev = yes
+		}
+
+		modifier = {
+			factor = 1000
+			any_country = {
+				war_with = ROOT
+				bgm_rev = no
+			}
+			bgm_rev = yes
+		}
+
+		modifier = {
+			factor = 5
+			NOT = {
+				absolutism = 50
+			}
+		}
+	}
+	
+	1 = { #banish the revolutionaries
+		factor = 1
+
+		modifier = {
+			factor = 5
+			absolutism = 50
+		}
+
+		modifier = {
+			factor = 1000
+			any_country = {
+				war_with = ROOT
+				bgm_rev = yes
+			}
+			bgm_rev = no
+		}
+	}
+}
+
+incident_bgm_nationalism = { #should we let the german confederation exist
+    event = incidents_bgm_rev.4
+	default_option = 0
+	
+	can_stop = {
+		OR = {
+			exists = HLR
+			hre_reform_passed = emperor_perpetual_diet
+		}
+		NOT = {
+			any_country = {
+				culture_group = germanic
+				government_rank = 2
+			}
+		}
+	}
+
+	0 = { #allow it
+		factor = 1
+
+		modifier = {
+			factor = 100
+			bgm_rev = yes
+		}
+
+		modifier = {
+			factor = 5
+			NOT = {
+				absolutism = 50
+			}
+		}
+	}
+	
+	1 = { #no
+		factor = 1
+
+		modifier = {
+			factor = 5
+			absolutism = 50
+		}
+	}
+}
+
+incident_legitimation_final = { #should the HRE continue?
+    event = incidents_bgm_rev.6
+	default_option = 0
+	
+	can_stop = {
+		OR = {
+			exists = HLR
+			exists = GER
+			exists = GRF
+			exists = GRD
+			exists = GRC
+			hre_reform_passed = privilegia_de_non_appelando
+		}
+	}
+
+	0 = { #yes
+		factor = 1
+
+		modifier = {
+			factor = 100
+			imperial_influence = 50
+		}
+
+		modifier = {
+			factor = 0.5
+			bgm_rev = yes
+		}
+	}
+	
+	1 = { #no
+		factor = 1
+
+		modifier = {
+			factor = 50
+			bgm_rev = yes
+		}
+	}
+
+	1 = { #german confederation
+		factor = 1
+
+		modifier = {
+			factor = 50
+			bgm_rev = yes
+		}
 	}
 }

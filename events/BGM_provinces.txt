@@ -1,0 +1,109 @@
+namespace = BGM_provinces
+
+#Founding of Le Havre
+
+province_event = {
+	id = BGM_provinces.1
+	title = "BGM_provinces.n.1"
+	desc = "BGM_provinces.d.1"
+	picture = SHIP_SAILING_eventPicture
+	
+	trigger = {
+		NOT = { has_province_flag = le_havre_made }
+		has_province_modifier = seine_estuary_modifier
+		OR = {
+			province_trade_power = 15
+			development = 20
+			has_building = drydock
+			has_building = grand_shipyard
+		}
+		OR = {
+			has_building = dock
+			has_building = drydock
+			has_building = shipyard
+			has_building = grand_shipyard
+		}
+		owner = {
+			OR = {
+				bgm_colonial_subject = yes
+				has_institution = new_world_i
+			}
+		}
+		OR = {
+			owner = {
+				OR = {
+					culture_group = french
+					culture_group = occitan
+				}
+				capital_scope = {
+					region = france_region
+				}
+			}
+			owner = {
+				culture_group = benelux
+				capital_scope = {
+					OR = {
+						region = france_region
+						region = low_countries_region
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 28
+
+		modifier = {
+			factor = 0.75
+			owner = {
+				treasury = 1000
+			}
+		}
+	}
+	
+	option = {
+		name = "BGM_provinces.1.a"
+
+		set_province_flag = le_havre_made
+
+		custom_tooltip = le_havre_tooltip
+
+		center_of_trade = 1
+		add_base_production = 2
+		add_base_tax = 2
+		add_base_manpower = 2
+
+		add_province_modifier = {
+			name = port_le_havre
+			duration = -1
+		}
+
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						OR = {
+							primary_culture = anglo_norman
+							primary_culture = normand
+							primary_culture = angevin
+						}
+					}
+				}
+			}
+			change_province_name = "Le Havre"
+		}
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						primary_culture = anglo_norman
+						primary_culture = normand
+						primary_culture = angevin
+					}
+				}
+			}
+			change_province_name = "Lé Hâvre"
+		}
+	}
+}

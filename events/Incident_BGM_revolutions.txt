@@ -1,0 +1,525 @@
+namespace = incidents_bgm_rev
+normal_or_historical_nations = yes
+
+# HRE and the Revolution
+country_event = {
+	id = incidents_bgm_rev.1
+	title = "incidents_bgm_rev.1.t"
+	desc = "incidents_bgm_rev.1.d"
+	picture = HRE_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		calc_true_if = {
+			amount = 4
+			all_country = {
+				is_elector = yes
+				bgm_rev = yes
+			}
+		}
+		is_emperor = yes
+		has_institution = enlightenment
+		OR = {
+			has_disaster = revolution
+			any_owned_province = {
+				is_capital = yes
+				has_revolution_in_province = yes
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 10
+	}
+	
+	option = {
+		name = "incidents_bgm_rev.1.a" #Endorse
+		ai_chance = { 
+			factor = 1
+
+			modifier = {
+				factor = 5
+				NOT = {
+					absolutism = 50
+				}
+			}
+
+			modifier = {
+				factor = 10
+				has_idea_group = humanist_ideas
+			}
+		}
+		set_global_flag = incident_rev_bgm
+		set_imperial_incident = incident_bgm_rev
+
+		add_prestige = -10
+	}
+	option = {
+		name = "incidents_bgm_rev.1.b" #Banish revolutionaries
+		ai_chance = { 
+			factor = 1
+
+			modifier = {
+				factor = 5
+				absolutism = 50
+			}
+
+			modifier = {
+				factor = 100
+				bgm_rev = no
+				has_disaster = revolution
+			}
+
+			modifier = {
+				factor = 10
+				has_idea_group = religious_ideas
+			}
+		}
+		set_global_flag = incident_rev_bgm
+		set_imperial_incident = incident_bgm_rev
+
+		add_prestige = 10
+	}
+}
+
+# Resolution
+country_event = {
+	id = incidents_bgm_rev.2
+	title = "incidents_bgm_rev.2.t"
+	desc = "incidents_bgm_rev.2.d"
+	picture = HRE_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_global_flag = revolutions_year_start
+	}
+	
+	option = {
+		name = "incidents_bgm_rev.2.a" #Endorse
+		ai_chance = { 
+			factor = 10
+		}
+
+		add_stability = 2
+		add_prestige = -25
+
+
+		hidden_effect = {
+			add_government_reform = revolutionary_hre_reform
+		}
+		set_global_flag = coopted_rev
+
+		clr_global_flag = incident_rev_bgm
+		set_hre_religion_treaty = yes
+
+		custom_tooltip = bgm_hre_rev_tooltip
+	}
+	option = {
+		name = "incidents_bgm_rev.2.b" #Banish revolutionaries
+		ai_chance = { 
+			factor = 10
+		}
+
+		set_global_flag = banished_rev
+
+		clr_global_flag = incident_rev_bgm
+		every_country = {
+			limit = {
+				is_part_of_hre = yes
+				bgm_rev = yes
+			}
+			every_owned_province = {
+				limit = {
+					is_part_of_hre = yes
+				}
+				add_claim = emperor
+			}
+			set_in_empire = no
+		}
+		#set_imperial_incident = incident_german_confederation
+	}
+}
+
+# German Confederation in the HRE
+country_event = {
+	id = incidents_bgm_rev.3
+	title = "incidents_bgm_rev.3.t"
+	desc = "incidents_bgm_rev.3.d"
+	picture = HRE_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_global_flag = coopted_rev
+		calc_true_if = {
+			amount = 10
+			is_revolutionary = yes
+			capital_scope = {
+				OR = {
+					region = north_german_region
+					region = south_german_region
+				}	
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 10
+	}
+	
+	option = {
+		name = "incidents_bgm_rev.3.a" #we will address it
+		ai_chance = { 
+			factor = 1
+
+			modifier = {
+				factor = 5
+				NOT = {
+					absolutism = 50
+				}
+			}
+
+			modifier = {
+				factor = 10
+				has_idea_group = humanist_ideas
+			}
+		}
+		set_global_flag = incident_gercon_bgm
+		set_imperial_incident = incident_bgm_nationalism
+	}
+}
+
+# Resolution
+country_event = {
+	id = incidents_bgm_rev.4
+	title = "incidents_bgm_rev.4.t"
+	desc = "incidents_bgm_rev.4.d"
+	picture = HRE_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_global_flag = coopted_rev
+		calc_true_if = {
+			amount = 10
+			is_revolutionary = yes
+			capital_scope = {
+				OR = {
+					region = north_german_region
+					region = south_german_region
+				}	
+			}
+		}
+	}
+	
+	option = {
+		name = "incidents_bgm_rev.4.a" #Endorse
+		ai_chance = { 
+			factor = 1
+
+			modifier = {
+				factor = 100
+				culture_group = germanic
+			}
+		}
+		clr_global_flag = incident_gercon_bgm
+
+
+		if = {
+			limit = {
+				culture_group = germanic
+			}
+			country_event = {
+				id = german_confederation.3
+			}
+		}
+		else = {
+			random_country = {
+				limit = {
+					culture_group = germanic
+					government_rank = 2
+				}
+				country_event = {
+					id = german_confederation.3
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				NOT = {
+					culture_group = germanic
+				}
+			}
+			add_stability = -1
+			add_prestige = -10
+		}
+
+	}
+	option = {
+		name = "incidents_bgm_rev.4.b" #No
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 100
+				NOT = {
+					culture_group = germanic
+				}
+			}
+		}
+		clr_global_flag = incident_gercon_bgm
+		every_country = {
+			limit = {
+				bgm_rev = yes
+				culture_group = germanic
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = no_gercon
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					culture_group = germanic
+				}
+			}
+			add_stability = 1
+			add_prestige = 10
+		}
+		#set_imperial_incident = incident_german_confederation
+	}
+}
+
+
+
+# Continuation of the HRE?
+country_event = {
+	id = incidents_bgm_rev.5
+	title = "incidents_bgm_rev.5.t"
+	desc = "incidents_bgm_rev.5.d"
+	picture = HRE_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		
+		NOT = {
+			hre_reform_passed = privilegia_de_non_appelando
+		}
+		OR = {
+			current_age = age_of_industrialization
+			current_age = age_of_great_wars
+			current_age = modern_age
+		}
+		OR = {
+			calc_true_if = {
+				amount = 2
+				is_great_power = yes
+				is_part_of_hre = yes
+				total_development = 1000
+			}
+			AND = {
+				adm_tech = 40
+				NOT = {
+					calc_true_if = {
+						amount = 25
+						all_country = {
+							is_part_of_hre = yes
+						}
+					}
+				}
+			}
+			
+		}
+		is_at_war = no
+		NOT = {
+			had_recent_war = 10
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = {
+		name = "incidents_bgm_rev.5.a" #we will address it
+		set_global_flag = incident_legitimation_bgm
+		set_imperial_incident = incident_legitimation_final
+	}
+}
+
+# Resolution
+country_event = {
+	id = incidents_bgm_rev.6
+	title = "incidents_bgm_rev.6.t"
+	desc = "incidents_bgm_rev.6.d"
+	picture = HRE_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+			any_country = {
+				OR = {
+					is_subject_of_type = german_confederation_member
+					is_subject_of_type = german_empire_member
+				}
+			}
+		}
+		NOT = {
+			calc_true_if = {
+				amount = 25
+				all_country = {
+					is_part_of_hre = yes
+				}
+			}
+		}
+		adm_tech = 40
+		is_at_war = no
+		NOT = {
+			had_recent_war = 10
+		}
+	}
+	
+	option = {
+		name = "incidents_bgm_rev.6.a" #disband it
+		ai_chance = { 
+			factor = 1
+
+			modifier = {
+				factor = 100
+				culture_group = germanic
+			}
+		}
+		clr_global_flag = incident_legitimation_bgm
+
+
+		every_country = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			set_in_empire = no
+		}
+
+	}
+	option = {
+		name = "incidents_bgm_rev.6.b" #it must continue
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 100
+				NOT = {
+					culture_group = germanic
+				}
+			}
+		}
+		clr_global_flag = incident_legitimation_bgm
+		every_country = {
+			limit = {
+				bgm_rev = yes
+				culture_group = germanic
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = no_gercon
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					culture_group = germanic
+				}
+			}
+			add_stability = 1
+			add_prestige = 10
+		}
+
+		every_country = {
+			limit = {
+				NOT = {
+					has_opinion = {
+						who = emperor
+						value = -25
+					}
+				}
+				military_strength = {
+					who = emperor
+					value = 0.25
+				}
+				is_elector = no
+				is_emperor = no
+			}
+			set_in_empire = no
+		}
+
+		#set_imperial_incident = incident_german_confederation
+	}
+
+	option = {
+		name = "incidents_bgm_rev.6.c" #reform it
+		ai_chance = { 
+			factor = 1
+
+			modifier = {
+				factor = 100
+				culture_group = germanic
+			}
+		}
+		clr_global_flag = incident_legitimation_bgm
+
+
+		if = {
+			limit = {
+				culture_group = germanic
+			}
+			country_event = {
+				id = german_confederation.3
+			}
+		}
+		else = {
+			random_country = {
+				limit = {
+					culture_group = germanic
+					government_rank = 2
+				}
+				country_event = {
+					id = german_confederation.3
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				NOT = {
+					culture_group = germanic
+				}
+			}
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_prestige = 10
+		}
+
+	}
+}
+
+country_event = {
+	id = incidents_bgm_rev.7
+	title = none
+	desc = none
+	picture = HRE_eventPicture
+
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		ROOT = {
+			set_emperor = yes
+		}
+	}
+}

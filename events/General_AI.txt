@@ -26,7 +26,7 @@ province_event = {
 					}
 				}
 				AND = {
-					adm_power = 1100
+					adm_power = 950
 					adm_tech = 30
 				}
 			}
@@ -351,7 +351,7 @@ province_event = {
 					}
 				}
 				AND = {
-					dip_power = 1100
+					dip_power = 950
 					dip_tech = 30
 				}
 			}
@@ -686,7 +686,7 @@ province_event = {
 					}
 				}
 				AND = {
-					mil_power = 1100
+					mil_power = 950
 					mil_tech = 30
 				}
 			}
@@ -1075,6 +1075,7 @@ province_event = {
 	trigger = {
 		owner = {
 			treasury = 300
+			NOT = { num_of_loans = 1 }
 			ai = yes
 			adm_tech = 23
 		}
@@ -1158,7 +1159,7 @@ country_event = {
 	}
 }
 
-##############succession crisis
+##############strengthen govt
 
 country_event = {
 	id = general_ai.14
@@ -1170,9 +1171,31 @@ country_event = {
 	
 	trigger = {
 		ai = yes
-		has_country_flag = has_power_struggle
-		NOT = {
-			legitimacy = 75
+		OR = {
+			AND = {
+				mil_power = 950
+				OR = {
+					NOT = { legitimacy = 99 }
+					NOT = { devotion = 99 }
+					NOT = { republican_tradition = 99 }
+					NOT = { horde_unity = 99 }
+				}
+			}
+			AND = {
+				has_country_flag = has_power_struggle
+				NOT = {
+					legitimacy = 75
+				}
+			}
+			AND = {
+				NOT = { absolutism = 100 }
+				NOT = {
+					OR = {
+						current_age = age_of_discovery
+						current_age = age_of_reformation
+					}
+				}
+			}
 		}
 		mil_power = 75
 	}
@@ -1184,6 +1207,9 @@ country_event = {
 	option = {
 		name = "general_ai.11.a"
 		add_legitimacy = 10
+		add_devotion = 10
+		add_horde_unity = 10
+		add_republican_tradition = 3
 		add_mil_power = -75
 	}
 }
@@ -1417,6 +1443,7 @@ country_event = {
 		war_exhaustion = 2
 		
 		dip_power = 100
+		
 	}
 
 	mean_time_to_happen = {
@@ -1430,8 +1457,8 @@ country_event = {
 	
 	option = {
 		name = "general_ai.18.a"
-		add_war_exhaustion = -2
-		add_dip_power = -50
+		add_war_exhaustion = -5
+		add_dip_power = -75
 	}
 }
 
@@ -1449,8 +1476,12 @@ country_event = {
 		ai = yes
 		
 		#dip_power = 100
-		
-		NOT = { adm_tech = 30 }
+		NOT = {
+			OR = {
+				mercantilism = 100
+				adm_tech = 20
+			}
+		}
 	}
 
 	mean_time_to_happen = {
@@ -1460,7 +1491,7 @@ country_event = {
 	option = {
 		name = "general_ai.19.a"
 		add_mercantilism = 4
-		add_years_of_income = 2
+		add_years_of_income = -0.5
 	}
 }
 
@@ -1479,8 +1510,7 @@ country_event = {
 		NOT = {
 			mercantilism = 100
 		}
-		dip_power = 1150
-		NOT = { adm_tech = 30 }
+		dip_power = 950
 	}
 
 	mean_time_to_happen = {
@@ -1490,7 +1520,7 @@ country_event = {
 	option = {
 		name = "general_ai.19.a"
 		add_mercantilism = 1
-		add_dip_power = -95
+		add_dip_power = -100
 	}
 }
 
@@ -1510,50 +1540,19 @@ country_event = {
 		has_heir = yes
 		heir_age = 15
 		variable_arithmetic_trigger = {
-			export_to_variable = {
-				which = heirskill
-				value = heir_adm
-			}
-			export_to_variable = {
-				which = heirskill_dip
-				value = heir_dip
-			}
-			export_to_variable = {
-				which = heirskill_mil
-				value = heir_mil
-			}
-			change_variable = { which = heirskill which = heirskill_dip }
-			change_variable = { which = heirskill which = heirskill_mil }
-
-			check_variable = {
-				which = heirskill
-				value = 9
-			}
-
-
-			#######Check Monarch
-			export_to_variable = {
-				which = rulerskill
-				value = adm
-			}
-			export_to_variable = {
-				which = rulerskill_dip
-				value = dip
-			}
-			export_to_variable = {
-				which = rulerskill_mil
-				value = mil
-			}
-			change_variable = { which = rulerskill which = rulerskill_dip }
-			change_variable = { which = rulerskill which = rulerskill_mil }
-
-			NOT = {
-				check_variable = {
-					which = rulerskill
-					value = 9
-				}
-			}
-		}
+            export_to_variable = { which = diff value = heir_adm }
+            export_to_variable = { which = temp value = heir_dip }
+            change_variable = { which = diff value = temp }
+            export_to_variable = { which = temp value = heir_mil }
+            change_variable = { which = diff value = temp }
+            export_to_variable = { which = temp value = adm }
+            subtract_variable = { which = diff value = temp }
+            export_to_variable = { which = temp value = dip }
+            subtract_variable = { which = diff value = temp }
+            export_to_variable = { which = temp value = mil }
+            subtract_variable = { which = diff value = temp }
+            check_variable = { which = diff value = 6 }
+        }
 	}
 
 	mean_time_to_happen = {
@@ -1562,7 +1561,7 @@ country_event = {
 	
 	option = {
 		name = none
-		add_prestige = -25
+		add_prestige = -50
 		kill_ruler = yes
 	}
 }
@@ -1578,6 +1577,7 @@ province_event = {
 	trigger = {
 		owner = {
 			treasury = 100
+			NOT = { num_of_loans = 1 }
 			ai = yes
 			dip_tech = 5
 		}
@@ -1631,7 +1631,8 @@ province_event = {
 	
 	trigger = {
 		owner = {
-			treasury = 700
+			treasury = 500
+			NOT = { num_of_loans = 1 }
 			ai = yes
 			adm_tech = 30
 		}
@@ -1903,6 +1904,15 @@ country_event = {
 		NOT = { has_heir_flag = is_charles_of_burg_flag }
 		prestige = 0
 		has_heir = yes
+
+		NOT = {
+			OR = {
+				ruler_age = 38
+				ruler_has_personality = infertile_personality
+			}
+		}
+
+		heir_dynasty = ROOT
 		variable_arithmetic_trigger = {
 			export_to_variable = {
 				which = heirskill
@@ -2116,8 +2126,30 @@ province_event = {
 	picture = GREAT_BUILDING_eventPicture
 
 	trigger = {
+		OR = {
+			AND = {
+				NOT = {
+					owner = {
+						adm_tech = 24
+					}
+				}
+				NOT = {
+					has_building = workshop
+				}
+			}
+			AND = {
+				owner = {
+					adm_tech = 24
+				}
+				NOT = {
+					has_building = counting_house
+				}
+			}
+		}
 		owner = {
 			ai = yes
+			treasury = 500
+			NOT = { num_of_loans = 1 }
 		}
 		OR = {
 			AND = {
@@ -2228,9 +2260,30 @@ province_event = {
 	picture = GREAT_BUILDING_eventPicture
 
 	trigger = {
+		OR = {
+			AND = {
+				NOT = {
+					owner = {
+						adm_tech = 19
+					}
+				}
+				NOT = {
+					has_building = temple
+				}
+			}
+			AND = {
+				owner = {
+					adm_tech = 19
+				}
+				NOT = {
+					has_building = cathedral
+				}
+			}
+		}
 		owner = {
 			ai = yes
-			NOT = { adm_tech = 20 }
+			treasury = 500
+			NOT = { num_of_loans = 1 }
 		}
 		OR = {
 			AND = {
@@ -2317,8 +2370,30 @@ province_event = {
 	picture = GREAT_BUILDING_eventPicture
 
 	trigger = {
+		OR = {
+			AND = {
+				NOT = {
+					owner = {
+						mil_tech = 16
+					}
+				}
+				NOT = {
+					has_building = barracks
+				}
+			}
+			AND = {
+				owner = {
+					mil_tech = 16
+				}
+				NOT = {
+					has_building = training_fields
+				}
+			}
+		}
 		owner = {
 			ai = yes
+			treasury = 500
+			NOT = { num_of_loans = 1 }
 		}
 		OR = {
 			AND = {
@@ -2426,11 +2501,24 @@ province_event = {
 		owner = {
 			ai = yes
 			treasury = 500
+			NOT = { num_of_loans = 1 }
 			adm_tech = 16
 			dip_tech = 16
 			mil_tech = 16
 		}
-		
+		NOT = {
+			OR = {
+				has_building = wharf
+				has_building = soldier_households
+				has_building = impressment_offices
+				has_building = mills
+				has_building = furnace
+				has_building = tradecompany
+				has_building = plantations
+				has_building = textile
+				has_building = weapons
+			}
+		}
 	}
 
 	mean_time_to_happen = {
@@ -2700,7 +2788,7 @@ country_event = {
 }
 
 country_event = {
-	id = general_ai.33
+	id = general_ai.40
 	title = none
 	desc = none
 	picture = GREAT_BUILDING_eventPicture
@@ -2752,6 +2840,1130 @@ country_event = {
 				}
 			}
 			break_alliance = ROOT
+		}
+	}
+}
+
+province_event = {
+	id = general_ai.41
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+
+	
+	
+	trigger = {
+		owner = {
+			treasury = 300
+			NOT = { num_of_loans = 1 }
+			ai = yes
+			adm_tech = 19
+		}
+		NOT = { has_building = cathedral }
+		has_building = temple
+		NOT = {
+			OR = {
+				has_construction = core
+				has_construction = building
+				has_construction = culture
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+		
+		modifier = {
+			factor = 0.5
+			has_terrain = farmlands
+		}
+	}
+	
+	option = {
+		name = none
+		add_building_construction = {
+			building = cathedral
+			speed = 1.0
+			cost = 0.95
+		}
+	}
+}
+
+province_event = {
+	id = general_ai.42
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+
+	
+	
+	trigger = {
+		owner = {
+			treasury = 500
+			NOT = { num_of_loans = 1 }
+			ai = yes
+			adm_tech = 29
+		}
+		NOT = { has_building = tax_center }
+		has_building = cathedral
+		NOT = {
+			OR = {
+				has_construction = core
+				has_construction = building
+				has_construction = culture
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+		
+		modifier = {
+			factor = 0.5
+			has_terrain = farmlands
+		}
+	}
+	
+	option = {
+		name = none
+		add_building_construction = {
+			building = tax_center
+			speed = 1.0
+			cost = 0.95
+		}
+	}
+}
+
+province_event = {
+	id = general_ai.43
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+
+	
+	
+	trigger = {
+		owner = {
+			treasury = 500
+			NOT = { num_of_loans = 1 }
+			ai = yes
+			adm_tech = 24
+		}
+		NOT = { has_building = counting_house }
+		has_building = workshop
+		NOT = {
+			OR = {
+				has_construction = core
+				has_construction = building
+				has_construction = culture
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+		
+		modifier = {
+			factor = 0.5
+			has_terrain = farmlands
+		}
+	}
+	
+	option = {
+		name = none
+		add_building_construction = {
+			building = counting_house
+			speed = 1.0
+			cost = 0.95
+		}
+	}
+}
+
+province_event = {
+	id = general_ai.44
+	title = none
+	desc = none
+	picture = ANGRY_MOB_eventPicture
+
+	
+	
+	trigger = {
+		owner = {
+			treasury = 800
+			NOT = { num_of_loans = 1 }
+			ai = yes
+			adm_tech = 30
+		}
+		NOT = { has_building = factory_infrastructure }
+		has_building = counting_house
+		NOT = {
+			OR = {
+				has_construction = core
+				has_construction = building
+				has_construction = culture
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+		
+		modifier = {
+			factor = 0.5
+			has_terrain = farmlands
+		}
+	}
+	
+	option = {
+		name = none
+		add_building_construction = {
+			building = factory_infrastructure
+			speed = 1.0
+			cost = 0.85
+		}
+	}
+}
+
+#Break alliance if has nationalist CB
+
+country_event = {
+	id = general_ai.45
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		any_country = {
+			has_casus_belli = {
+				type = cb_nationalist
+				target = ROOT
+			}
+		}
+		ROOT = {
+			ai = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	option = {
+		name = "none"
+		
+		random_country = {
+			limit = {
+				has_casus_belli = {
+					type = cb_nationalist
+					target = ROOT
+				}
+			}
+			break_alliance = ROOT
+		}
+	}
+}
+
+country_event = {
+	id = general_ai.46
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		ai = yes
+		inflation = 2
+		adm_power = 75
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	option = {
+		name = "none"
+		
+		add_adm_power = -72
+		add_inflation = -2
+	}
+}
+
+#Build alliances with similar sized powers who are also friendly
+
+country_event = {
+	id = general_ai.47
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		is_at_war = no
+		ai = yes
+		num_of_free_diplomatic_relations = 1 
+
+		any_country = {
+			is_great_power = no
+			is_at_war = no
+			ai = yes
+			army_size = 35
+			num_of_free_diplomatic_relations = 1 
+
+			NOT = { truce_with = ROOT } #closest approximation to annulled treaties
+			NOT = { alliance_with = ROOT }
+			has_opinion = {
+				who = ROOT
+				value = -25
+			}
+			OR = {
+				has_opinion = {
+					who = ROOT
+					value = 100
+				}
+				ai_attitude = {
+					who = ROOT
+					attitude = attitude_friendly
+				}
+			}
+			army_strength = {
+				who = ROOT
+				value = 0.45
+			}
+			NOT = {
+				army_strength = {
+					who = ROOT
+					value = 4
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 15
+
+		modifier = {
+			factor = 5
+			is_great_power = yes
+			NOT = {
+				num_of_allies = 3
+			}
+		}
+
+		modifier = {
+			factor = 100
+			any_country = {
+				has_opinion_modifier = {
+					who = ROOT
+					modifier = allied_to_rival
+				}
+
+				ai = yes
+				army_size = 35
+				num_of_free_diplomatic_relations = 1 
+
+				NOT = { truce_with = ROOT } #closest approximation to annulled treaties
+				NOT = { alliance_with = ROOT }
+				has_opinion = {
+					who = ROOT
+					value = -25
+				}
+				OR = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_friendly
+					}
+				}
+				army_strength = {
+					who = ROOT
+					value = 0.45
+				}
+				NOT = {
+					army_strength = {
+						who = ROOT
+						value = 4
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "none"
+		
+		random_country = {
+			limit = {
+				is_great_power = no
+				is_at_war = no
+				ai = yes
+				num_of_free_diplomatic_relations = 1
+				NOT = { truce_with = ROOT } #closest approximation to annulled treaties
+				NOT = { alliance_with = ROOT }
+				has_opinion = {
+					who = ROOT
+					value = -25
+				}
+				OR = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_friendly
+					}
+				}
+				army_strength = {
+					who = ROOT
+					value = 0.45
+				}
+				NOT = {
+					army_strength = {
+						who = ROOT
+						value = 4
+					}
+				}
+			}
+			create_alliance = ROOT
+		}
+	}
+}
+
+#however if the AI spots a high value target it may disregard upkeep
+
+country_event = {
+	id = general_ai.48
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		ai = yes
+		is_at_war = no
+		OR = {
+			is_great_power = yes
+			is_emperor = yes
+		}
+		any_country = {
+			ai = yes
+			OR = {
+				is_great_power = yes
+				is_emperor = yes
+			}
+			NOT = { truce_with = ROOT } #closest approximation to annulled treaties
+			NOT = { alliance_with = ROOT }
+			NOT = {
+				any_ally = {
+					OR = {
+						is_rival = ROOT
+						is_enemy = ROOT
+					}
+				}
+			}
+			has_opinion = {
+				who = ROOT
+				value = -25
+			}
+			OR = {
+				has_opinion = {
+					who = ROOT
+					value = 100
+				}
+				ai_attitude = {
+					who = ROOT
+					attitude = attitude_friendly
+				}
+			}
+			army_strength = {
+				who = ROOT
+				value = 1
+			}
+			NOT = {
+				army_strength = {
+					who = ROOT
+					value = 4
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+
+		modifier = {
+			factor = 0.0001
+			NOT = {
+				is_year = 1445 #start trying to build alliances ASAP
+			}
+		}
+
+		modifier = {
+			factor = 12
+			NOT = { num_of_free_diplomatic_relations = 1 }
+		}
+	}
+	
+	option = {
+		name = "none"
+		
+		random_country = {
+			limit = {
+				ai = yes
+				OR = {
+					is_great_power = yes
+					is_emperor = yes
+				}
+				NOT = { truce_with = ROOT } #closest approximation to annulled treaties
+				NOT = { alliance_with = ROOT }
+				has_opinion = {
+					who = ROOT
+					value = -25
+				}
+				OR = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_friendly
+					}
+				}
+				army_strength = {
+					who = ROOT
+					value = 1
+				}
+				NOT = {
+					army_strength = {
+						who = ROOT
+						value = 4
+					}
+				}
+			}
+			create_alliance = ROOT
+		}
+
+		if = {
+			limit = {
+				NOT = { num_of_free_diplomatic_relations = 1 }
+				any_ally = {
+					ai = yes
+					NOT = {
+						military_strength = {
+							who = ROOT
+							value = 0.33
+						}
+					}
+				}
+			}
+			random_ally = {
+				limit = {
+					ai = yes
+					NOT = {
+						military_strength = {
+							who = ROOT
+							value = 0.33
+						}
+					}
+				}
+				break_alliance = ROOT
+			}
+		}
+	}
+}
+
+#seek independence using all of the overlord's enemies for assistance
+
+country_event = {
+	id = general_ai.49
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		is_year = 1450 #so as to not be unfair right off the bat
+		liberty_desire = 50
+		ai = yes
+		is_subject = yes
+		NOT = {
+			OR = {
+				is_subject_of_type = tributary_state
+				is_subject_of_type = pact_member
+				is_subject_of_type = sister_republic
+			}
+		}
+		is_at_war = no
+		overlord = {
+			any_known_country = {
+				NOT = {
+					is_supporting_independence_of = ROOT
+				}
+				ai = yes
+				OR = {
+					is_rival = PREV
+					ai_attitude = {
+						who = PREV
+						attitude = attitude_outraged
+					}
+					ai_attitude = {
+						who = PREV
+						attitude = attitude_hostile
+					}
+				}
+				#is_at_war = no
+				NOT = { truce_with = ROOT }
+				NOT = { truce_with = PREV }
+				has_opinion = {
+					who = ROOT
+					value = -25
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 36
+
+		modifier = {
+			factor = 0.001
+			overlord = {
+				is_hegemon = yes
+			}
+		}
+		modifier = {
+			factor = 0.1
+			overlord = {
+				NOT = {
+					great_power_rank = 6
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "none"
+		overlord = {
+            save_event_target_as = root_overlord
+        }
+		random_known_country = {
+			limit = {
+				NOT = {
+					is_supporting_independence_of = ROOT
+				}
+				ai = yes
+				OR = {
+					is_rival = event_target:root_overlord
+					ai_attitude = {
+						who = event_target:root_overlord
+						attitude = attitude_outraged
+					}
+					ai_attitude = {
+						who = event_target:root_overlord
+						attitude = attitude_hostile
+					}
+				}
+				is_at_war = no
+				NOT = { truce_with = ROOT }
+				NOT = { truce_with = event_target:root_overlord }
+				has_opinion = {
+					who = ROOT
+					value = -25
+				}
+			}
+			support_independence_of = ROOT
+		}
+	}
+}
+
+#if the country who has the fraticelli clerical zeal modifier is ai, it will seek to kill the pope ASAP
+
+country_event = {
+	id = general_ai.50
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		ai = yes
+		has_country_modifier = fraticelli_clerics
+		is_at_war = no
+		
+		PAP = {
+			NOT = {
+				army_strength = {
+					who = ROOT
+					value = 0.75
+				}
+			}
+			OR = {
+				NOT = {
+					any_ally = {
+						army_strength = {
+							who = ROOT
+							value = 0.5
+						}
+					}
+				}
+				NOT = {
+					num_of_allies = 1
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "none"
+		
+		ROOT = {
+			declare_war_with_cb = {
+				casus_belli = cb_conquest
+				who = PAP
+				war_goal_province = 118
+			}
+		}
+	}
+}
+
+#if liberty desire is high enough, declare independence war
+
+country_event = {
+	id = general_ai.51
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		ai = yes
+		liberty_desire = 100
+		is_at_war = no
+		
+		overlord = {
+			OR = {
+				any_country = {
+					is_supporting_independence_of = ROOT
+					military_strength = {
+						who = PREV
+						value = 2
+					}
+				}
+				calc_true_if = {
+					amount = 2
+					all_country = {
+						is_supporting_independence_of = ROOT
+						military_strength = {
+							who = PREV
+							value = 1
+						}
+					}
+				}
+				calc_true_if = {
+					amount = 3
+					all_country = {
+						is_supporting_independence_of = ROOT
+						military_strength = {
+							who = PREV
+							value = 0.75
+						}
+					}
+				}
+				calc_true_if = {
+					amount = 4
+					all_country = {
+						is_supporting_independence_of = ROOT
+						military_strength = {
+							who = PREV
+							value = 0.5
+						}
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "none"
+		
+		ROOT = {
+			declare_war_with_cb = {
+				casus_belli = cb_independence_war
+				who = overlord
+			}
+			every_country = {
+				limit = {
+					is_supporting_independence_of = ROOT
+				}
+				join_all_offensive_wars_of = ROOT
+			}
+		}
+	}
+}
+
+#remove alliances with countries whose army is far weaker than ours
+
+country_event = {
+	id = general_ai.52
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		ai = yes
+		is_at_war = no
+		NOT = {
+			num_of_free_diplomatic_relations = 1
+		}
+		
+		any_ally = {
+			ai = yes
+			NOT = {
+				military_strength = {
+					who = ROOT
+					value = 0.1
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "none"
+		
+		random_ally = {
+			limit = {
+				ai = yes
+				NOT = {
+					military_strength = {
+						who = ROOT
+						value = 0.1
+					}
+				}
+			}
+			break_alliance = ROOT
+		}
+	}
+}
+
+#set in empire if emperor and a neighbor is part of HRE
+
+country_event = {
+	id = general_ai.53
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		ai = yes
+		is_emperor = yes
+		is_part_of_hre = no
+		any_neighbor_country = {
+			is_part_of_hre = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "none"
+		
+		ROOT = {
+			set_in_empire = yes
+		}
+	}
+}
+
+#Fortress events
+
+province_event = {
+	id = general_ai.54
+	title = none
+	desc = none
+	picture = none
+	
+	#hidden = yes
+	
+	trigger = {
+		OR = {
+			num_free_building_slots = 1
+			NOT = {
+				AND = {
+					num_free_building_slots = 1
+					owner = {
+						NOT = {
+							tax_income_percentage = 0.25
+						}
+					}
+					OR = {
+						has_building = temple
+						has_building = cathedral
+					}
+				}
+			}
+		}
+		owner = {
+			ai = yes
+			NOT = { num_of_loans = 1 }
+			current_income_balance = 2
+			years_of_income = 1.5
+		}
+		OR = {
+			any_neighbor_province = {
+				NOT = {
+					owner = {
+						tag = ROOT
+					}
+				}
+			}
+			has_terrain = mountain
+		}
+		OR = {
+			AND = {
+				owner = { 
+					NOT = { mil_tech = 14 }
+					treasury = 200
+					current_income_balance = 2
+				}
+				NOT = { has_building = fort_16th }
+			}
+			AND = {
+				owner = { 
+					mil_tech = 14
+					NOT = { mil_tech = 19 }
+					treasury = 400
+					current_income_balance = 4
+				}
+				NOT = { has_building = fort_16th }
+			}
+			AND = {
+				owner = { 
+					mil_tech = 19
+					NOT = { mil_tech = 24 }
+					treasury = 600
+					current_income_balance = 6
+				}
+				NOT = { has_building = fort_17th }
+			}
+			AND = {
+				owner = { 
+					mil_tech = 24
+					treasury = 800
+					current_income_balance = 8
+				}
+				NOT = { has_building = fort_18th }
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+
+		modifier = {
+			factor = 0.01
+			OR = {
+				has_terrain = hills
+				has_terrain = woods
+				has_terrain = highlands
+				has_terrain = marsh
+				has_terrain = mountain
+			}
+		}
+
+		modifier = {
+			factor = 0.1
+			any_neighbor_province = {
+				owner = {
+					OR = { 
+						is_rival = ROOT 
+						is_enemy = ROOT 
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+
+		if = {
+			limit = { 
+				NOT = { num_free_building_slots = 1 }
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+			remove_building = temple
+			remove_building = cathedral
+		}
+
+		if = {
+			limit = { 
+				AND = {
+					owner = { 
+						NOT = { mil_tech = 14 }
+						treasury = 200
+						current_income_balance = 2
+					}
+					NOT = { has_building = fort_15th }
+				}
+			}
+			add_building_construction = {
+				building = fort_15th
+				cost = 0.9
+			}
+		}
+
+		if = {
+			limit = { 
+				AND = {
+					owner = { 
+						mil_tech = 14
+						NOT = { mil_tech = 19 }
+						treasury = 400
+						current_income_balance = 4
+					}
+					NOT = { has_building = fort_16th }
+				}
+			}
+			add_building_construction = {
+				building = fort_16th
+				cost = 0.9
+			}
+		}
+
+		if = {
+			limit = { 
+				AND = {
+					owner = { 
+						mil_tech = 19
+						NOT = { mil_tech = 24 }
+						treasury = 600
+						current_income_balance = 6
+					}
+					NOT = { has_building = fort_17th }
+				}
+			}
+			add_building_construction = {
+				building = fort_17th
+				cost = 0.9
+			}
+		}
+
+		if = {
+			limit = { 
+				AND = {
+					owner = { 
+						mil_tech = 24
+						treasury = 800
+						current_income_balance = 8
+					}
+					NOT = { has_building = fort_18th }
+				}
+			}
+			add_building_construction = {
+				building = fort_18th
+				cost = 0.9
+			}
+		}
+	}
+}
+
+country_event = {
+	id = general_ai.55
+	title = none
+	desc = none
+	picture = none
+	
+	#hidden = yes
+	
+	trigger = {
+		ai = yes
+		is_great_power = yes
+		treasury = 500
+		NOT = { num_of_loans = 1 }
+		has_regency = no
+		is_subject = no
+		OR = {
+			is_female = no
+			religion = anglican
+		}
+		OR = {
+			religion_group = christian
+			religion_group = muslim
+		}
+		is_defender_of_faith = no
+		NOT = {
+			any_country = {
+				religion = ROOT
+				military_strength = {
+					who = ROOT
+					value = 1
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				amount = 25
+				all_country = {
+					religion = ROOT
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.25
+			calc_true_if = {
+				amount = 45
+				all_country = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "none"
+		
+		add_treasury = -500
+		set_defender_of_the_faith = {
+			who = ROOT
+			religion = ROOT
 		}
 	}
 }

@@ -271,7 +271,7 @@ feudalism = {
 renaissance = {
 
 	bonus = {
-		development_cost = -0.075
+		development_cost = -0.05
 		build_cost = -0.05
 	}
 
@@ -370,6 +370,7 @@ renaissance = {
 
 	
 	embracement_speed = {
+
 		modifier = {
 			scale = yes
 			factor = 0.6
@@ -409,8 +410,6 @@ renaissance = {
 				region = italy_region
 				culture_group = latin
 			}
-			
-			
 		}
 		modifier = {
 			factor = 0.05
@@ -542,7 +541,8 @@ renaissance = {
 printing_press = {
 
 	bonus = {
-		global_institution_spread = 0.175
+		global_institution_spread = 0.1
+		global_missionary_strength = 0.005
 	}
 
 	trade_company_efficiency = 0.0
@@ -631,19 +631,11 @@ printing_press = {
 		is_in_capital_area = yes
 		is_island = no
 		is_state = yes
+		trade_goods = paper
+		province_has_center_of_trade_of_level = 1
 		OR = {
-			development = 15
-			is_capital = yes
-			trade_goods = paper
-		}
-		OR = {
-			AND = {
-				is_prosperous = yes
-				development = 30
-			}
 			region = north_german_region
 			region = south_german_region
-			
 		}
 		owner = {
 			adm_tech = 4
@@ -651,7 +643,7 @@ printing_press = {
 			mil_tech = 4
 		}
 	}
-	start_chance = 5		#in 100 for when a province can_start
+	start_chance = 20		#in 100 for when a province can_start
 	
 	
 	on_start = institution_events.4
@@ -663,6 +655,24 @@ printing_press = {
 
 	
 	embracement_speed = {
+
+		modifier = {
+			factor = 0.15
+			scale = yes
+			potential = {
+				any_province = {
+					is_institution_origin = renaissance
+					continent = PREV
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = same_continent_institution
+				any_province = {
+					is_institution_origin = renaissance
+					continent = PREV
+				}
+			}
+		}
 	
 		modifier = {
 			factor = 0.15 #Not Scaled
@@ -904,7 +914,8 @@ printing_press = {
 new_world_i = {
 
 	bonus = {
-		global_prov_trade_power_modifier = 0.10
+		global_colonial_growth = 25
+		range = 0.33
 	}
 
 	trade_company_efficiency = 0.0
@@ -992,15 +1003,11 @@ new_world_i = {
 		owner = {
 			has_idea_group = exploration_ideas
 		}
-		continent = europe
+		#continent = europe
 		has_port = yes
 		is_island = no
 		is_state = yes
-		OR = {
-			province_has_center_of_trade_of_level = 1
-			development = 25
-			is_capital = yes
-		}
+		province_has_center_of_trade_of_level = 2
 		is_in_capital_area = yes
 		owner = { 
 			OR = {
@@ -1212,8 +1219,8 @@ new_world_i = {
 global_trade = {
 
 	bonus = {
-		trade_efficiency = 0.1
-		embracement_cost = -0.15
+		center_of_trade_upgrade_cost = -0.1
+		embracement_cost = -0.1
 	}
 
 	trade_company_efficiency = 0.1
@@ -1335,6 +1342,24 @@ global_trade = {
 
 	
 	embracement_speed = {
+
+		modifier = {
+			factor = 0.15
+			scale = yes
+			potential = {
+				any_province = {
+					is_institution_origin = global_trade
+					continent = PREV
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = same_continent_institution
+				any_province = {
+					is_institution_origin = global_trade
+					continent = PREV
+				}
+			}
+		}
 	
 		modifier = {
 			factor = 0.4 #Not scaled
@@ -1414,7 +1439,6 @@ global_trade = {
 				has_port = no
 				any_neighbor_province = {
 					global_trade = 100
-					
 				}
 			}
 		}
@@ -1430,7 +1454,6 @@ global_trade = {
 				has_port = yes
 				any_neighbor_province = {
 					global_trade = 100
-					
 				}
 			}
 		}
@@ -1530,6 +1553,7 @@ global_trade = {
 manufactories = {
 
 	bonus = {
+		development_cost = -0.05
 		global_trade_goods_size_modifier = 0.1
 	}
 
@@ -1640,6 +1664,25 @@ manufactories = {
 
 	
 	embracement_speed = {
+
+		modifier = {
+			factor = 0.15
+			scale = yes
+			potential = {
+				any_province = {
+					is_institution_origin = manufactories
+					continent = PREV
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = same_continent_institution
+				any_province = {
+					is_institution_origin = manufactories
+					continent = PREV
+				}
+			}
+		}
+
 		modifier = {
 			factor = 0.35
 			scale = yes
@@ -2022,8 +2065,8 @@ manufactories = {
 enlightenment = {
 
 	bonus = {
-		reform_progress_growth = 2.0
-		max_absolutism = 10
+		reform_progress_growth = 0.2
+		free_adm_policy = 1
 	}
 
 	trade_company_efficiency = 0.3
@@ -2122,6 +2165,25 @@ enlightenment = {
 
 	
 	embracement_speed = {
+
+		modifier = {
+			factor = 0.15
+			scale = yes
+			potential = {
+				any_province = {
+					is_institution_origin = enlightenment
+					continent = PREV
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = same_continent_institution
+				any_province = {
+					is_institution_origin = enlightenment
+					continent = PREV
+				}
+			}
+		}
+
 		modifier = {
 			factor = 0.1
 			scale = yes

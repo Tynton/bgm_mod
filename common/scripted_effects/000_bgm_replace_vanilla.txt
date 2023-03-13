@@ -1,0 +1,29 @@
+#Innovativeness
+
+add_innovativeness_small_effect = {
+	if = {
+		limit = { has_dlc = "Rule Britannia" }
+		change_innovativeness = 0.5
+	}
+}
+
+add_innovativeness_big_effect = {
+	if = {
+		limit = { has_dlc = "Rule Britannia" }
+		change_innovativeness = 1
+	}
+}
+
+reduce_innovativeness_small_effect = {
+	if = {
+		limit = { has_dlc = "Rule Britannia" }
+		change_innovativeness = -0.5
+	}
+}
+
+reduce_innovativeness_big_effect = {
+	if = {
+		limit = { has_dlc = "Rule Britannia" }
+		change_innovativeness = -1
+	}
+}

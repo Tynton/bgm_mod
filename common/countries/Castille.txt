@@ -2,7 +2,7 @@
 
 graphical_culture = italianategfx
 
-color = { 156 3 84 } #163 153 41 / 156 3 84
+color = { 140 17 82 } #163 153 41 / 156 3 84
 
 revolutionary_colors = { 5  8  5 }
 

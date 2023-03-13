@@ -20,7 +20,11 @@ country_decisions = {
 		}
 		allow = {
 			NOT = { has_country_modifier = recent_conversion }
-			dominant_religion = waldensian
+			OR = {
+				dominant_religion = waldensian
+				has_global_flag = rome_converted_bgm
+				has_global_flag = preprot_heresy
+			}
 			stability = 1
 		}
 		effect = {
@@ -269,9 +273,12 @@ country_decisions = {
 		}
 		allow = {
 			NOT = { has_country_modifier = recent_conversion }
-			dominant_religion = lollard
+			OR = {
+				dominant_religion = lollard
+				has_global_flag = rome_converted_bgm
+				has_global_flag = preprot_heresy
+			}
 			stability = 1
-			is_at_war = no
 		}
 		effect = {
 			change_religion = lollard
@@ -347,11 +354,16 @@ country_decisions = {
 					is_emperor = no
 				}
 				has_global_flag = frat_lea
+				has_global_flag = rome_converted_bgm
 			}
 		}
 		allow = {
 			NOT = { has_country_modifier = recent_conversion }
-			dominant_religion = fraticelli
+			OR = {
+				dominant_religion = fraticelli
+				has_global_flag = rome_converted_bgm
+				has_global_flag = preprot_heresy
+			}
 			stability = 1
 		}
 		effect = {

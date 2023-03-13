@@ -16,4 +16,5 @@ brutalistgfx
 artdecogfx
 easteuropemoderngfx
 italianategfx
+frenchgfx
 #planvoisingfx

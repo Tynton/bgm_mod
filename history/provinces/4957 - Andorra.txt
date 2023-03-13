@@ -1,0 +1,23 @@
+#118 - Roma
+
+owner = ADO
+controller = ADO
+culture = catalan
+religion = catholic 
+hre = no
+base_tax = 2
+base_production = 1
+trade_goods = iron
+base_manpower = 2
+capital = "Andorra la Vella"
+is_city = yes
+#fort_15th = yes #Castel Sant'Angelo
+add_core = ADO
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman
+extra_cost = 8
+
+
+1408.1.1 = { owner = ADO controller = ADO add_core = ADO }

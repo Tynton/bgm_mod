@@ -1,6 +1,6 @@
 #Country Name: Please see filename.
 
-graphical_culture = westerngfx
+graphical_culture = frenchgfx
 
 color = { 153 24 57 } #148  30  70
 revolutionary_colors = { 1  8  5 } #Belgium
@@ -37,17 +37,17 @@ historical_units = {
 }
 
 monarch_names = {
-	"Philippe #1" = 80
-	"Charles #0" = 60
-	"Louis #0" = 30
-	"Jean #0" = 20
-	"Louis-Henri #0" = 20
-	"Louis-Joseph #0" = 20
+	"Phelipe #1" = 80
+	"Charle #0" = 60
+	"Luison #0" = 30
+	"Jan #0" = 20
+	"Luison-Henri #0" = 20
+	"Luison-Joseph #0" = 20
 	"Henri #1" = 10
 	"Antoine #0" = 10
 	"Henri-Jules #0" = 10
 	"Joseph #0" = 10
-	"François #0" = 5
+	"Françoi #0" = 5
 	"Hughes #5" = 1
 	"Eudes #4" = 1
 	"Robert #2" = 1
@@ -87,7 +87,7 @@ monarch_names = {
 	"Isabelle #0" = -1
 	"Catherine #0" = -2
 	"Marguerite #0" = -2 # La Pléiade
-	"Jeanne #0" = -1 # La Pléiade
+	"Janne #0" = -1 # La Pléiade
 	"Agnès #0" = -1 # La Pléiade
 }
 

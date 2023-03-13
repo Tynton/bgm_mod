@@ -17,7 +17,7 @@ country_decisions = {
 		}
 
 		allow = {
-			is_revolutionary = no
+			bgm_rev = no
 			
 		}
 
@@ -43,7 +43,7 @@ country_decisions = {
 		}
 
 		allow = {
-			is_revolutionary = no
+			bgm_rev = no
 		}
 
 		effect = {
@@ -142,14 +142,14 @@ country_decisions = {
 					NOT = {
 						government = republic
 					}
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				change_government_to_monarchy = yes
 				add_government_reform = prussian_monarchy
 			}
 			else_if = {
 				limit = {
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				add_government_reform = prussian_republic_reform
 			}
@@ -260,7 +260,7 @@ country_decisions = {
 			add_prestige = 25
 			if =  {
 				limit = {
-					is_revolutionary = no
+					bgm_rev = no
 					NOT = {
 						government = republic
 					}
@@ -270,7 +270,7 @@ country_decisions = {
 			}
 			else_if = {
 				limit = {
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				add_government_reform = prussian_republic_reform
 			}
@@ -398,7 +398,7 @@ country_decisions = {
 			}
 			if =  {
 				limit = {
-					is_revolutionary = no
+					bgm_rev = no
 					NOT = {
 						government = republic
 					}
@@ -408,7 +408,7 @@ country_decisions = {
 			}
 			else_if = {
 				limit = {
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				add_government_reform = prussian_republic_reform
 			}

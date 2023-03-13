@@ -5,8 +5,13 @@
 481 = "Bèrmude"
 373 = "Dublîn"
 1095 = "Îles Falkland"
-1876 = "Francfort-sur-le-Main"
+1876 = { "Francfort" "Francfort-sur-le-Main" }
 226 = "Dgibrâltar"
+
+376 = "Counachie"
+4121 = "Ouotonîn"
+
+201 = { "Aix" "Marsêle" }
 
 4371 = "Sussex"
 4374 = "Dorset"
@@ -19,10 +24,18 @@
 1861 = "Derby"
 4785 = "Sheffield"
 
-168 = "Kaem"
+195 = "Limouosin"
+
+167 = { "Rouen" "Lé Hâvre" }
+
+#168 = "Kaem"
 1879 = "Alençoun"
 
-237 = { "Oxneford" "Oxenford" }
+379 = { "Ierusalem" "Jérusalem" }
+
+
+235 = { "Kent" "Cantorbéry" }
+237 = { "Oxford" "Oxenford" }
 239 = "Gloucestreschire"
 4370 = { "Bedefordschire" "Cantebrigge" }
 1860 = "Northfolk"

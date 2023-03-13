@@ -196,7 +196,7 @@ superiority_revolution = {
 	type = superiority
 	
 	attacker = {
-		badboy_factor = 0.5
+		badboy_factor = 1
 		prestige_factor = 1.5
 		peace_cost_factor = 0.5		
 		
@@ -217,7 +217,7 @@ superiority_revolution = {
 	}
 	
 	defender = {
-		badboy_factor = 0.5
+		badboy_factor = 1
 		prestige_factor = 1.5
 		peace_cost_factor = 0.5		
 	
@@ -244,7 +244,7 @@ superiority_annex_revolution = {
 	type = superiority
 	
 	attacker = {
-		badboy_factor = 0.25
+		badboy_factor = 0.75
 		prestige_factor = 1.5
 		peace_cost_factor = 0.25		
 		
@@ -264,7 +264,7 @@ superiority_annex_revolution = {
 	}
 	
 	defender = {
-		badboy_factor = 0.25
+		badboy_factor = 0.75
 		prestige_factor = 1.5
 		peace_cost_factor = 0.25		
 	
@@ -289,7 +289,7 @@ take_capital_revolution = {
 	type = take_capital
 	
 	attacker = {
-		badboy_factor = 0.5
+		badboy_factor = 1
 		prestige_factor = 1.5
 		peace_cost_factor = 0.5		
 		
@@ -889,7 +889,7 @@ take_province_nationalist = {
 	attacker = {
 		badboy_factor = 0.5
 		prestige_factor = 1.5
-		peace_cost_factor = 0.5
+		peace_cost_factor = 0.1
 		
 		allowed_provinces = {
 			culture_group = ROOT
@@ -904,9 +904,9 @@ take_province_nationalist = {
 	}
 	
 	defender = {
-		badboy_factor = 0.5
+		badboy_factor = 0.25
 		prestige_factor = 1.5
-		peace_cost_factor = 0.5
+		peace_cost_factor = 0.25
 		
 		allowed_provinces = {
 			culture_group = FROM
@@ -929,7 +929,7 @@ take_capital_imperial = {
 	attacker = {
 		badboy_factor = 0.75
 		prestige_factor = 1
-		peace_cost_factor = 0.75	
+		peace_cost_factor = 0.5
 		
 		
 		allowed_provinces = {
@@ -947,7 +947,7 @@ take_capital_imperial = {
 	defender = {
 		badboy_factor = 0.75
 		prestige_factor = 1
-		peace_cost_factor = 0.75	
+		peace_cost_factor = 0.5
 		
 		
 		allowed_provinces = {
@@ -1054,9 +1054,9 @@ take_province_revolutionary = {
 	
 	
 	attacker = {
-		badboy_factor = 0.75
-		prestige_factor = 1
-		peace_cost_factor = 0.75
+		badboy_factor = 0.35
+		prestige_factor = 2
+		peace_cost_factor = 0.1
 		
 		allowed_provinces = {
 			always = yes
@@ -1071,9 +1071,9 @@ take_province_revolutionary = {
 	}
 	
 	defender = {
-		badboy_factor = 0.75
-		prestige_factor = 1
-		peace_cost_factor = 0.75
+		badboy_factor = 0.35
+		prestige_factor = 2
+		peace_cost_factor = 0.1
 		
 		allowed_provinces = {
 			always = yes
@@ -1095,7 +1095,7 @@ take_colony = {
 	
 	attacker = {
 		badboy_factor = 0.25
-		prestige_factor = 0.5
+		prestige_factor = 0.25
 		peace_cost_factor = 0.25
 		peace_cost_factor_non_allowed_treaty = 1.25
 		
@@ -1112,7 +1112,7 @@ take_colony = {
 	
 	defender = {
 		badboy_factor = 0.25
-		prestige_factor = 1
+		prestige_factor = 0.25
 		peace_cost_factor = 0.5	
 		
 		allowed_provinces = {
@@ -1392,7 +1392,7 @@ take_province_excommunication = {
 	
 	attacker = {
 		badboy_factor = 0.5
-		prestige_factor = 1.25
+		prestige_factor = 1.1
 		peace_cost_factor = 1.0	
 
 		allowed_provinces = {
@@ -1424,7 +1424,7 @@ take_province_excommunication = {
 	
 	defender = {
 		badboy_factor = 1
-		prestige_factor = 1
+		prestige_factor = 0.75
 		peace_cost_factor = 1
 
 		is_excommunication = yes

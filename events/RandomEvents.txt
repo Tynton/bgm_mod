@@ -5088,7 +5088,7 @@ country_event = {
 	trigger = {
 		government = monarchy
 		is_lesser_in_union = no
-		is_revolutionary = no
+		bgm_rev = no
 	}
 
 	mean_time_to_happen = {

@@ -10,7 +10,7 @@ country_event = {
 	trigger = {
 		religion = catholic
 		dominant_religion = waldensian
-		
+		NOT = { tag = PAP }
 		NOT = {
 			has_country_flag = no_waldensian
 		}

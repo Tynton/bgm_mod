@@ -1,8 +1,7 @@
 173 = "Lapurdi"
 209 = "Bizkaia"
 210 = "Nafarroa"
-
-197 = "Rosselló"
+197 = "Ipar Katalunia"
 207 = "Asturias"
 208 = "Leon"
 211 = "Pirinioak"
@@ -23,22 +22,24 @@
 
 1878 = "Akisgran"
 
-89 = "Pikardia"
+4947 = "Valentzia"
+4949 = "Arroxela"
+89 = "Amiens"
 93 = "Lieja"
 94 = "Luxenburgo"
-168 = "Normandia"
+168 = "Caen"
 174 = { "Bordele" "Burdigala" }
-175 = "Armañac"
-176 = "Bearno"
-184 = "Orleanerria"
+175 = { "Armagnac" "Armañac" }
+176 = { "Biarno" "Bearno" }
+184 = { "Orleans" "Orleanerria" }
 186 = "Xanpaina"
-189 = "Lorrena"
+189 = "Nancy"
 190 = "Borboierria"
-192 = "Borgoina"
+192 = "Dijon"
 196 = "Tolosa"
 199 = "Auvernia"
-200 = "Lengadòc"
-201 = { "Provença" "Marzella" }
+200 = { "Montpellier" "Lengadòc" }
+201 = { "Marseilla" "Marzella" }
 203 = { "Lyonerria" "Lione" }
 204 = "Dofinerria"
 4389 = "Turena"
@@ -54,7 +55,7 @@
 1502 = "Arkaizo"
 4694 = "Fox"
 #5101 = "Arroxela"
-183 = "Parise"
+183 = { "Paris" "Parise" }
 167 = "Erruan"
 75 = "Estrasburgo"
 #4976 = "Aiacciu"

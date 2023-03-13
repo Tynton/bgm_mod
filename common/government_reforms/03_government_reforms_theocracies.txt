@@ -898,7 +898,7 @@ crown_leader_reform = {
 		change_government = monarchy
 	}
 	ai = {
-		factor = 0
+		factor = 100
 	}
 }
 
@@ -915,7 +915,7 @@ proclaim_republic_reform = {
 		change_government = republic
 	}
 	ai = {
-		factor = 0
+		factor = 100
 	}
 }
 

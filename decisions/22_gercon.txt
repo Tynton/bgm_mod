@@ -17,6 +17,12 @@ country_decisions = {
 			}
 		}
 		allow = {
+			custom_trigger_tooltip = {
+				tooltip = GERCON_COOLDOWN_T
+				NOT = {
+					has_country_flag = gercon_cooldown
+				}
+			}
 			adm_power = 150
 			dip_power = 150
 			mil_power = 150
@@ -57,6 +63,12 @@ country_decisions = {
 			}
 		}
 		allow = {
+			custom_trigger_tooltip = {
+				tooltip = GERCON_COOLDOWN_T
+				NOT = {
+					has_country_flag = gercon_cooldown
+				}
+			}
 			adm_power = 200
 			dip_power = 200
 			mil_power = 200
@@ -65,9 +77,9 @@ country_decisions = {
 		}
 		effect = {
 			set_global_flag = gercon_mil_deliberation
-			add_adm_power = -150
-			add_dip_power = -150
-			add_mil_power = -150
+			add_adm_power = -200
+			add_dip_power = -200
+			add_mil_power = -200
 			add_treasury = -750
 			country_event = {
 				id = Gercon_issues.4
@@ -96,6 +108,12 @@ country_decisions = {
 			}
 		}
 		allow = {
+			custom_trigger_tooltip = {
+				tooltip = GERCON_COOLDOWN_T
+				NOT = {
+					has_country_flag = gercon_cooldown
+				}
+			}
 			adm_power = 200
 			dip_power = 200
 			mil_power = 200
@@ -104,9 +122,9 @@ country_decisions = {
 		}
 		effect = {
 			set_global_flag = gercon_dip_delib
-			add_adm_power = -150
-			add_dip_power = -150
-			add_mil_power = -150
+			add_adm_power = -200
+			add_dip_power = -200
+			add_mil_power = -200
 			add_treasury = -750
 			country_event = {
 				id = Gercon_issues.4
@@ -135,6 +153,12 @@ country_decisions = {
 			}
 		}
 		allow = {
+			custom_trigger_tooltip = {
+				tooltip = GERCON_COOLDOWN_T
+				NOT = {
+					has_country_flag = gercon_cooldown
+				}
+			}
 			adm_power = 200
 			dip_power = 200
 			mil_power = 200
@@ -143,9 +167,9 @@ country_decisions = {
 		}
 		effect = {
 			set_global_flag = gercon_trade_delib
-			add_adm_power = -150
-			add_dip_power = -150
-			add_mil_power = -150
+			add_adm_power = -200
+			add_dip_power = -200
+			add_mil_power = -200
 			add_treasury = -750
 			country_event = {
 				id = Gercon_issues.4
@@ -178,7 +202,12 @@ country_decisions = {
 			}
 		}
 		allow = {
-			
+			custom_trigger_tooltip = {
+				tooltip = GERCON_COOLDOWN_T
+				NOT = {
+					has_country_flag = gercon_cooldown
+				}
+			}
 			adm_power = 200
 			dip_power = 200
 			mil_power = 200
@@ -187,9 +216,9 @@ country_decisions = {
 		}
 		effect = {
 			set_global_flag = gercon_final_delib
-			add_adm_power = -150
-			add_dip_power = -150
-			add_mil_power = -150
+			add_adm_power = -200
+			add_dip_power = -200
+			add_mil_power = -200
 			add_treasury = -750
 			country_event = {
 				id = Gercon_issues.4
@@ -220,6 +249,11 @@ country_decisions = {
 			country_event = {
 				id = german_confederation.14
 			}
+			add_adm_power = -500
+			add_dip_power = -500
+			add_mil_power = -500
+			add_legitimacy = -50
+			add_republican_tradition = -50
 			add_stability = -2
 			add_prestige = 100
 			set_government_rank = 3
@@ -229,7 +263,7 @@ country_decisions = {
 					is_dynamic_tag = no
 				}
 				change_tag = GER
-				override_country_name = "Deutscher Bund"
+				#override_country_name = "Deutscher Bund"
 			}
 			every_subject_country = {
 				limit = {

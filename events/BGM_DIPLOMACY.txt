@@ -216,6 +216,72 @@ country_event = {
 		ROOT = {
 			exile_heir_as = heir_imprisoned
 		}
+
+		if = {
+			limit = {
+				NOT = {
+					total_development = 100
+				}
+			}
+			add_treasury = -50
+		}
+		
+		if = {
+			limit = {
+				total_development = 100
+				NOT = {
+					total_development = 250
+				}
+			}
+			add_treasury = -100
+		}
+		
+		if = {
+			limit = {
+				total_development = 250
+				NOT = {
+					total_development = 500
+				}
+			}
+			add_treasury = -225
+		}
+		
+		if = {
+			limit = {
+				total_development = 500
+				NOT = {
+					total_development = 1000
+				}
+			}
+			add_treasury = -550
+		}
+		
+		if = {
+			limit = {
+				total_development = 1000
+				NOT = {
+					total_development = 2000
+				}
+			}
+			add_treasury = -1200
+		}
+		
+		if = {
+			limit = {
+				total_development = 2000
+				NOT = {
+					total_development = 4000
+				}
+			}
+			add_treasury = -3000
+		}
+		
+		if = {
+			limit = {
+				total_development = 4000
+			}
+			add_treasury = -6000
+		}
 		
 		ai_chance = {
 			factor = 10
@@ -301,7 +367,6 @@ country_event = {
 							total_development = 100
 						}
 					}
-					add_treasury = -50
 					ROOT = {
 						add_treasury = 50
 					}
@@ -314,7 +379,6 @@ country_event = {
 							total_development = 250
 						}
 					}
-					add_treasury = -100
 					ROOT = {
 						add_treasury = 100
 					}
@@ -327,7 +391,6 @@ country_event = {
 							total_development = 500
 						}
 					}
-					add_treasury = -225
 					ROOT = {
 						add_treasury = 225
 					}
@@ -340,7 +403,6 @@ country_event = {
 							total_development = 1000
 						}
 					}
-					add_treasury = -550
 					ROOT = {
 						add_treasury = 550
 					}
@@ -353,7 +415,6 @@ country_event = {
 							total_development = 2000
 						}
 					}
-					add_treasury = -1200
 					ROOT = {
 						add_treasury = 1200
 					}
@@ -366,7 +427,6 @@ country_event = {
 							total_development = 4000
 						}
 					}
-					add_treasury = -3000
 					ROOT = {
 						add_treasury = 3000
 					}
@@ -376,7 +436,6 @@ country_event = {
 					limit = {
 						total_development = 4000
 					}
-					add_treasury = -6000
 					ROOT = {
 						add_treasury = 6000
 					}
@@ -700,9 +759,9 @@ country_event = {
 					is_rival = ROOT
 				}
 			}
-			add_adm_power = 125
-			add_dip_power = 125
-			add_mil_power = 125
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
 		}
 		
 		custom_tooltip = condemnation_neighbors
@@ -785,6 +844,20 @@ country_event = {
 			}
 			kill_ruler = yes
 		}
+
+		if = {
+			limit = {
+				has_ruler = "Charle"
+				dynasty = "de Valois-Bregogne"
+				NOT = {
+					has_country_flag = burgundian_succession_start
+				}
+			}
+			country_event = {
+				id = incidents_bur_inheritance.1
+			}
+		}
+
 	}
 }
 

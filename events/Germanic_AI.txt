@@ -11,16 +11,25 @@ country_event = {
 	
 	trigger = {
 		ai = yes
+		is_subject = no
+		NOT = {
+			OR = {
+				primary_culture = polish
+				primary_culture = cassubian
+			}
+		}
 		OR = {
 			culture_group = scandinavian
-			
-			culture_group = germanic
+			culture_group = west_slavic
+			capital_scope = {
+				region = north_german_region
+			}
 			tag = BRA
 			tag = TEU
 		}
 		is_subject = no
 		NOT = {
-			num_of_cities = 10
+			num_of_cities = 5
 		}
 		
 		NOT = {
@@ -352,5 +361,43 @@ country_event = {
 		name = "Germanic_AI.6.a"
 		add_adm_power = -91
 		add_stability = 1
+	}
+}
+
+#we want germany
+
+country_event = {
+	id = Germanic_AI.7
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		has_country_flag = wants_germany
+		ai = yes
+	}
+
+	mean_time_to_happen = {
+		years = 2
+	}
+	
+	option = {
+		name = none
+		every_country = {
+			limit = {
+				ai = yes
+				culture_group = germanic
+				capital_scope = {
+					OR = {
+						region = north_german_region
+						region = south_german_region
+					}
+				}
+				has_country_flag = wants_germany
+			}
+			break_alliance = ROOT
+		}
 	}
 }

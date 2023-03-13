@@ -482,6 +482,7 @@ cb_nationalist = {
 		is_free_or_tributary_trigger = yes
 		culture_group_claim = FROM
 		OR = {
+			has_country_modifier = uniting_culture_group
 			AND = {
 				culture_group = germanic
 				NOT = {
@@ -533,7 +534,6 @@ cb_imperial = {
 				OR = {
 					has_institution = global_imperialism
 					invasion_nation = yes
-					dip_tech = 23
 				}
 			}
 			AND = {
@@ -1207,7 +1207,7 @@ cb_support_rebels = {
 
 # Revolution
 cb_crush_the_revolution = {
-	ai_peace_desire = -50
+	ai_peace_desire = -75
 	valid_for_subject = no
 
 
@@ -1229,6 +1229,7 @@ cb_crush_the_revolution = {
 
 cb_spread_the_revolution = {
 	valid_for_subject = no
+	ai_peace_desire = -75
 
 	prerequisites = {
 		is_revolutionary = yes

@@ -1,0 +1,35 @@
+namespace = Italian_AI
+
+#we want italy
+
+country_event = {
+	id = Italian_AI.1
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		has_country_flag = wants_italy
+		ai = yes
+	}
+
+	mean_time_to_happen = {
+		years = 2
+	}
+	
+	option = {
+		name = none
+		every_country = {
+			limit = {
+				culture_group = latin
+				capital_scope = {
+					region = italy_region
+				}
+				has_country_flag = wants_italy
+			}
+			break_alliance = ROOT
+		}
+	}
+}

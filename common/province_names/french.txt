@@ -204,7 +204,7 @@
 117 = "Sienne"
 118 = "Rome"
 119 = "Ancône"
-120 = "Abruzzes"
+120 = {"Pescara" "Abruzzes"}
 121 = { "Napples" "Naples" }
 123 = "Calabre"
 124 = "Messine"
@@ -255,7 +255,7 @@
 
 227 = "Lisbonne"
 232 = "Bragance"
-367 = "Aéores"
+367 = "Açores"
 368 = "Madére"
 1096 = "Cap-Vert"
 
@@ -350,6 +350,7 @@
 60 = { "Budisse" "Haute-Lusace" }
 
 1878 = "Aix-la-Chapelle"
+201 = { "Marseille" "Aix-en-Provence" }
 1931 = "Frise orientale"
 2753 = "Narbonnais"
 3003 = "Negroponte"
@@ -384,7 +385,7 @@
 116 = "Florence"
 117 = "Sienne"
 118 = "Rome"
-119 = "Ancéne"
+119 = "Ancône"
 120 = "Abruzzes"
 121 = "Naples"
 122 = "Salente"
@@ -546,7 +547,7 @@
 
 
 5020 = "Pignerol"
-5021 = "Saint-Marin"
+4960 = "Saint-Marin"
 2977 = "Urbin"
 
 1871 = "Valais"
@@ -556,9 +557,9 @@
 5068 = "Néau"
 
 
-#4942 = "Andorre la-Vieille"
+4957 = "Andorre la-Vieille"
 
-91 = "Hainaut"
+91 = {"Tournai" "Mons" }
 
 5240 = "Bitbourg"
 
@@ -567,7 +568,7 @@
 5387 = "Grammont"
 
 182 = "Valois" #Compiégne
-184 = "Orleanais" #Orléans
+184 = "Orléanais" #Orléans
 4389 = "Touraine" #Tours
 179 = "Berry" #Bourges
 180 = { "Hault-Poitou" "Poictiers" }

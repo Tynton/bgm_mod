@@ -1,0 +1,18 @@
+owner = SMA
+controller = SMA
+culture = romagnan 
+religion = catholic 
+hre = no
+base_tax = 2
+base_production = 3
+trade_goods = wine
+base_manpower = 3
+capital = "San Marino"
+is_city = yes
+add_core = SMA
+
+
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman

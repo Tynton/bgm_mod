@@ -289,7 +289,7 @@ brittany_area = { #5
 }
 
 normandy_area = { #4
-	167 168 1879 4385
+	167 168 1879 4385 4961
 }
 
 provence_area = { #3
@@ -305,7 +305,7 @@ guyenne_area = { #4
 }
 
 pyrenees_area = { #4
-	175 173 176 4694
+	175 173 176 4694 4957
 }
 
 languedoc_area = { #5
@@ -339,7 +339,7 @@ picardy_area = { #4
 }
 
 ile_de_france_area = { #4
-	182 183 185 4388
+	182 183 185 4388 5075
 }
 
 champagne_area = { #3
@@ -348,7 +348,7 @@ champagne_area = { #3
 
 loire_area = { #5
 	color = { 231 143 5 }
-	177 178 4389
+	177 178 4389 5076
 }
 
 orleans_area = {
@@ -389,7 +389,7 @@ north_brabant_area = { #3
 ########################################
 
 aragon_area = { #4
-	211 214 2990 4557
+	211 214 2990 4557 5078
 }
 
 catalonia_area = { #5
@@ -418,11 +418,11 @@ toledo_area = { #5
 }
 
 asturias_area = { #4
-	 207 1745 4552 1746
+	 207 1745 4552 1746 5077
 }
 
 galicia_area = { #4
-	206 4554 4555 4558
+	206 4554 4555 4558 5079
 }
 
 baleares_area = {
@@ -435,7 +435,7 @@ basque_country = { #3
 
 leon_area = { #3
 	color = { 243 235 28 }
-	208 216 4553 
+	208 216 4553 5080
 }
 
 extremadura_area = {
@@ -480,7 +480,7 @@ tuscany_area = { #5
 }
 
 liguria_area = { #3
-	101 102 2992 4946
+	101 102 2992 4946 4959
 }
 
 corsica_sardinia_area = { #4
@@ -500,7 +500,7 @@ naples_area = { #3  #Campania
 }
 
 lazio_area = { #4 Lazio-Umbria
-	118 2976 4731 4732
+	118 2976 4731 4732 4956
 }
 
 calabria_area = { #3 (+Lucania)
@@ -517,7 +517,7 @@ emilia_romagna_area = { #5
 }
 
 central_italy_area = { #3
-	119 120 2977
+	119 120 2977 4960
 }
 
 ########################################
@@ -557,19 +557,19 @@ wales_area = { #4
 }
 
 scottish_marches_area = { #4
-	246 247 244 4375
+	246 247 244 4375 4962
 }
 
 yorkshire_area = { #4
-	245 4367 4368 4785
+	245 4367 4368 4785 4963
 }
 
 west_midlands_area = { #3
-	239 240 4372
+	239 240 4372 4965
 }
 
 east_midlands_area = { #3
-	243 1861 4376
+	243 1861 4376 4964
 }
 
 wessex_area = { #5
@@ -1001,7 +1001,7 @@ upper_rhineland_area = { #3 # now 'Baden'
 }
 
 alsace_area = { #3
-	75 1880 4765
+	75 1880 4765 4955
 }
 
 palatinate_area = { #3
@@ -2826,59 +2826,139 @@ ngari_area = { #3
 } #new!!
 
 hebei_area = { #4 (North Hebei)
-	703 1816 2136 4194
+	1816 4984 4990 4991
+}
+
+east_hebei_area = {
+	4194 4985 4986 4987 4988
+}
+
+changde_area = {
+	703 2136 4989
 }
 
 south_hebei_area = { #4
-	695 696 2137 4195
+	4195 5036 5037 5038
+}
+
+cangzhou_area = {
+	695 5031 5032 5033
+}
+
+baoding_area = {
+	696 5034 5035
 }
 
 shandong_area = { #5
-	690 691 2138 2139 2140
+	690 691 5060
+}
+
+north_shandong_area = {
+	2138 5057 5058 5059 5061
+}
+
+south_shandong_area = {
+	2140 5062 5063 5064 5065
+}
+
+north_shandong_peninsula_area = {
+	2139 5049 5052 5053
+}
+
+south_shandong_peninsula_area = {
+	5050 5051 5054 5055 5056
 }
 
 jiangsu_area = { #3
-	2141 2142 4196
+	2141 2142 4196 4981 4983 
+}
+
+yangzhou_area = {
+	685 5044 5045 5046
 }
 
 south_jiangsu_area = { #4
-	685 1821 1822 2145
+	1821 1822 2145 5047 5048
 }
 
 anhui_area = { #3 (North Anhui)
-	1838 2143 2144
+	1838 4973 4974
+}
+
+bengbu_area = {
+	2143 4978 4979 4980
+}
+
+huainan_area = {
+	2144 4966 4975 4976 4977
 }
 
 south_anhui_area = { #3
-	686 2146 2147
+	686 2146 2147 4970 4972
+}
+
+jinzhai_area = {
+	4967 4968 4969 4971 4982
 }
 
 zhejiang_area = { #5
-	684 1824 2148 2149 2150
+	684 1824 2148 2149
 }
 
 jiangxi_area = { #4
-	 670 683 1833 2151
+	670 683 1833 2151 5067
 }
 
 fujian_area = { #4
-	669 1829 2152 2153
+	669 4999 5000 5007
+}
+
+quanzhou_area = {
+	1829 2153 5001 5002 5003
+}
+
+jianou_area = {
+	5004 5006 5005
+}
+
+jianyang_area = {
+	2150 5008 5009 2152
 }
 
 taiwan_area = { #3
 	738 2154 2155
 }
 
+north_guangdong_area = {
+	2158 5019 5020 5021 5022
+}
+
+east_guangdong_area = {
+	2156 2157 5016 5017 5018
+}
+
+north_canton_area = {
+	5026 5027 5028
+}
+
 guangdong_area = { #5
-	667 668 2156 2157 2158
+	667 668 5023 5024 5025
 }
 
 west_guangdong_area = { #5
-	665 666 2159 2160 2161 
+	665 2159 5013 5014 5015
+}
+
+bgm_west_guangdong_area = {
+	2161 2162 5029 5030
+}
+
+hainan_area = {
+	666 2160 5010 5011 5012
 }
 
 guangxi_area = { #5
-	664 1840 2162 2163 2164
+	664 1840 2163 2164
 }
 
 yun_gui_area = { #5 (Yun-Gui Hinterland)
@@ -2890,7 +2970,15 @@ yun_gui_borderland_area = { #5
 }
 
 sichuan_area = { #3
-	679 680 4212
+	679 4212
+}
+
+east_chongqing_area = {
+	4992 4993 4998
+}
+
+chongqing_area = {
+	680 4994 4995 4996 4997
 }
 
 chuannan_area = { #4
@@ -2902,19 +2990,31 @@ chuanbei_area = { #3
 }
 
 huguang_area = { #5 (Hubei)
-	681 682 2171 2172 4197
+	681 682 2172 4197 5043
+}
+
+xiangyang_area = {
+	2171 5039 5040 5041 5042
 }
 
 hunan_area = { #4
-	671 672 2173 2174
+	671 672 2173 2174 5066
 }
 
 henan_area = { #3 (South Henan)
-	687 2175 2176
+	2176 2175 5068 5069
+}
+
+nanyang_area = {
+	687 5070 5071
 }
 
 north_henan_area = { #3
-	688 692 1836
+	688 692 2137 
+}
+
+zhengzhou_area = {
+	1836 5072 5073 5074
 }
 
 shanxi_area = { #5

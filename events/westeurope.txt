@@ -51,115 +51,18 @@ country_event = {
 	
 	#major = yes
 
-	trigger = {
-		has_global_flag = revolutions_year_start
-		current_age = age_of_revolutions
-		NOT = {
-			OR = {
-				has_reform = parliamentary_reform
-				has_reform = peasants_republic
-				is_revolutionary = yes 
-			}
-			has_country_flag = responded_rev
-		}
-
-		NOT = {
-			OR = {
-				any_subject_country = {
-					is_subject_of_type = german_confederation_member
-				}
-				is_subject_of_type = german_confederation_member
-			}
-		}
-
-		NOT = {
-			tag = FRA #will get an alt. event
-		}
-		NOT = { has_country_modifier = revolution_1848 }
-		capital_scope = {
-			continent = europe
-		}
-		#NOT = {
-		#	government = theocracy
-		#}
-	}	
-
-	mean_time_to_happen = {
-		months = 3
-	}
+	is_triggered_only = yes	
 
 	immediate = {
 		set_country_flag = responded_rev
-
-		if = {
-			limit = {
-				OR = {
-					any_owned_province = {
-						is_center_of_revolution = yes
-					}
-					is_revolution_target = yes
-				}
-				OR = {
-					religion = unitarian
-					religion_group = pagan
-					religion_group = muslim
-					dominant_religion = unitarian
-					dominant_religion = catholic
-					dominant_religion = orthodox
-					dominant_religion = shinto
-				}
-				NOT = {
-					any_country = { has_country_flag = responded_rev }
-				}
-			}
-			
-			country_event = {
-				id = westeurope.8 #Futurist manifesto
-			}
-			set_global_flag = futurist_manifesto_written
-		}
-		else = {
-			country_event = {
-				id = westeurope.6 #Communism
-			}
-			set_global_flag = communist_manifesto_written
-		}
 	}
 	
 	option = {
 		name = "westeurope.2.a"
 		
 		trigger = {
-			NOT = {
-				OR = {
-					culture_group = germanic
-					is_subject_of_type = german_confederation_member
-					bgm_comgovt = yes
-					has_reform = futurist_mechanic
-					has_reform = democratic_mechanic
-					has_reform = authoritarian_mechanic
-					has_reform = fascist_mechanic
-				}
-			}
+			is_revolutionary = no
 		}
-
-		hidden_effect = {
-			every_neighbor_country = {
-				limit = {
-					capital_scope = {
-						continent = europe
-					}
-					NOT = { has_country_flag = responded_rev }
-				}
-				country_event = {
-					id = westeurope.2 
-					days = 10
-					random = 5
-				}
-			}
-		}
-
-		bgm_post_revolution
 
 		add_stability = -1
 		
@@ -176,51 +79,48 @@ country_event = {
 				size = 3
 			}
 		}
+
+		change_government = authoritarian_government
+
+		if = {
+			limit = {
+				government = republic
+			}
+			add_government_reform = auth_republic_reform
+		}
+		if = {
+			limit = {
+				government = monarchy
+			}
+			add_government_reform = auth_monarchism
+		}
 		
 		set_country_flag = responded_rev
 		
-		ai_chance = { factor = 2 }
+		ai_chance = { factor = 10 }
 	}
 	
 	option = {
 		name = "westeurope.2.b"
 		
 		trigger = {
-			NOT = {
-				OR = {
-					
-					culture_group = germanic
-					
-					culture_group = benelux
-					primary_culture = czech
-					primary_culture = moravian
-					is_subject_of_type = german_confederation_member
-					bgm_comgovt = yes
-					has_reform = futurist_mechanic
-					has_reform = democratic_mechanic
-					has_reform = authoritarian_mechanic
-					has_reform = fascist_mechanic
-				}
-			}
-		}
-
-		hidden_effect = {
-			every_neighbor_country = {
-				limit = {
-					capital_scope = {
-						continent = europe
-					}
-					NOT = { has_country_flag = responded_rev }
-				}
-				country_event = {
-					id = westeurope.2 
-					days = 10
-					random = 5
-				}
-			}
+			is_revolutionary = yes
 		}
 		
-		change_government = futurist_government
+		change_government = democracy_govt
+		
+		if = {
+			limit = {
+				government = republic
+			}
+			add_government_reform = parliamentary_republic_reform
+		}
+		if = {
+			limit = {
+				government = monarchy
+			}
+			add_government_reform = parliamentary_monarchism
+		}
 		
 		set_country_flag = responded_rev
 		
@@ -231,113 +131,27 @@ country_event = {
 		name = "westeurope.2.c"
 		
 		trigger = {
-			OR = {
-				culture_group = germanic
-				is_subject_of_type = german_confederation_member
-			}
-			NOT = {
-				OR = {
-					bgm_comgovt = yes
-					has_reform = futurist_mechanic
-					has_reform = democratic_mechanic
-					has_reform = authoritarian_mechanic
-					has_reform = fascist_mechanic
-				}
-			}
+			always = no #Redundant
 		}
 
-		hidden_effect = {
-			every_neighbor_country = {
-				limit = {
-					capital_scope = {
-						continent = europe
-					}
-					NOT = { has_country_flag = responded_rev }
-				}
-				country_event = {
-					id = westeurope.2 
-					days = 10
-					random = 5
-				}
-			}
-		}
-
-		add_government_reform = parliamentary_reform
-		add_government_reform = bgm_egalite_reform
+		change_government = democracy_govt
 		
 		set_country_flag = responded_rev
 		
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 2 }
 	}
 	
 	option = {
 		name = "westeurope.2.d"
 		
 		trigger = {
-			OR = {
-				culture_group = germanic
-				german_confederation_member = 1
-			}
-			NOT = {
-				OR = {
-					bgm_comgovt = yes
-					has_reform = futurist_mechanic
-					has_reform = democratic_mechanic
-					has_reform = authoritarian_mechanic
-					has_reform = fascist_mechanic
-				}
-			}
+			is_revolutionary = yes
+			revolutionary_zeal = 50
 		}
 		
 		change_government = futurist_government
-		add_government_reform = socialist_republic
-		every_country = {
-			limit = {
-				is_subject_of_type = german_confederation_member
-			}
-			every_owned_province = {
-				add_core = ROOT
-			}
-		}
-		every_province = {
-			limit = {
-				OR = {
-					
-					culture_group = germanic
-					culture_group = benelux
-					
-				}
-				continent = europe
-			}
-			add_core = ROOT
-		}
-
-		hidden_effect = {
-			every_neighbor_country = {
-				limit = {
-					capital_scope = {
-						continent = europe
-					}
-					NOT = { has_country_flag = responded_rev }
-				}
-				country_event = {
-					id = westeurope.2 
-					days = 10
-					random = 5
-				}
-			}
-		}
 		
 		set_country_flag = responded_rev
-		
-		every_country = {
-			limit = {
-				is_subject_of_type = german_confederation_member
-			}
-			country_event = {
-				id = german_confederation.12
-			}
-		}
 		
 		ai_chance = { factor = 1 }
 	}
@@ -346,28 +160,8 @@ country_event = {
 		name = "westeurope.2.e"
 		
 		trigger = {
-			OR = {
-				culture_group = germanic
-				
-				
-				is_subject_of_type = german_confederation_member
-			}
-		}
-		
-		hidden_effect = {
-			every_neighbor_country = {
-				limit = {
-					capital_scope = {
-						continent = europe
-					}
-					NOT = { has_country_flag = responded_rev }
-				}
-				country_event = {
-					id = westeurope.2 
-					days = 10
-					random = 5
-				}
-			}
+			#is_subject_of_type = german_confederation_member
+			always = no #Redundant
 		}
 		
 		set_country_flag = responded_rev
@@ -407,27 +201,13 @@ country_event = {
 		name = "westeurope.2.f"
 		
 		trigger = {
+			always = no #Redundant
 			OR = {
 				bgm_comgovt = yes
 				has_reform = futurist_mechanic
 				has_reform = democratic_mechanic
 				has_reform = authoritarian_mechanic
 				has_reform = fascist_mechanic
-			}
-		}
-		hidden_effect = {
-			every_neighbor_country = {
-				limit = {
-					capital_scope = {
-						continent = europe
-					}
-					NOT = { has_country_flag = responded_rev }
-				}
-				country_event = {
-					id = westeurope.2 
-					days = 10
-					random = 5
-				}
 			}
 		}
 		set_country_flag = responded_rev
@@ -452,7 +232,7 @@ country_event = {
 			OR = {
 				has_reform = parliamentary_reform
 				has_reform = peasants_republic
-				is_revolutionary = yes 
+				bgm_rev = yes 
 			}
 			has_country_flag = responded_rev
 		}
@@ -581,16 +361,8 @@ country_event = {
 	major = yes
 
 	trigger = {
-		OR = {
-			AND = {
-				has_global_flag = revolutions_year_start
-				NOT = {
-					has_global_flag = futurist_manifesto_written
-				}
-			}
-			adm_tech = 40
-		}
-	}	
+		adm_tech = 40
+	}
 
 	mean_time_to_happen = {
 		months = 24
@@ -694,15 +466,7 @@ country_event = {
 	major = yes
 
 	trigger = {
-		OR = {
-			AND = {
-				has_global_flag = revolutions_year_start
-				NOT = {
-					has_global_flag = communist_manifesto_written
-				}
-			}
-			adm_tech = 40
-		}
+		adm_tech = 40
 	}	
 
 	mean_time_to_happen = {
@@ -794,8 +558,29 @@ country_event = {
 
 	immediate = {
 		set_global_flag = revolutions_year_start
-		country_event = {
-			id = westeurope.2
+		hidden_effect = {
+			every_country = {
+				limit = {
+					capital_scope = {
+						continent = ROOT
+					}
+					NOT = {
+						tag = ROOT
+					}
+				}
+				country_event = {
+					id = westeurope.2
+					days = 120
+					random = 120
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_revolution_target = yes
+			}
+			set_country_flag = rev_trad
+			set_country_flag = rev_target_tradition
 		}
 		if = {
 			limit = {
@@ -814,15 +599,53 @@ country_event = {
 					dominant_religion = orthodox
 					dominant_religion = shinto
 				}
+				NOT = {
+					any_country = { has_country_flag = responded_rev }
+				}
+				NOT = {
+					has_global_flag = a_manifesto_written
+				}
 			}
+			
 			country_event = {
-				id = westeurope.6
+				id = westeurope.8 #Futurist manifesto
 			}
+			set_global_flag = futurist_manifesto_written
+
+			set_global_flag = a_manifesto_written
 		}
-		else = {
-			country_event = {
-				id = westeurope.8
+		if = {
+			limit = {
+				OR = {
+					any_owned_province = {
+						is_center_of_revolution = yes
+					}
+					is_revolution_target = yes
+				}
+				NOT = {
+					OR = {
+						religion = unitarian
+						religion_group = pagan
+						religion_group = muslim
+						dominant_religion = unitarian
+						dominant_religion = catholic
+						dominant_religion = orthodox
+						dominant_religion = shinto
+					}
+				}
+				NOT = {
+					any_country = { has_country_flag = responded_rev }
+				}
+				NOT = {
+					has_global_flag = a_manifesto_written
+				}
 			}
+			country_event = {
+				id = westeurope.6 #Communism
+			}
+			set_global_flag = communist_manifesto_written
+
+			set_global_flag = a_manifesto_written
 		}
 	}
 	
@@ -830,49 +653,7 @@ country_event = {
 		name = "westeurope.2.a"
 		
 		trigger = {
-			NOT = {
-				OR = {
-					culture_group = germanic
-					is_subject_of_type = german_confederation_member
-					bgm_comgovt = yes
-					has_reform = futurist_mechanic
-					has_reform = democratic_mechanic
-					has_reform = authoritarian_mechanic
-					has_reform = fascist_mechanic
-				}
-			}
-		}
-
-		hidden_effect = {
-			every_neighbor_country = {
-				limit = {
-					capital_scope = {
-						continent = europe
-					}
-					NOT = { has_country_flag = responded_rev }
-				}
-				country_event = {
-					id = westeurope.2 
-					days = 10
-					random = 5
-				}
-			}
-		}
-
-		if = {
-			limit = {
-			  government = republic
-			}
-			change_government = authoritarian_government
-			add_government_reform = auth_republic_reform
-		}
-
-		if = {
-			limit = {
-			  government = monarchy
-			}
-			change_government = authoritarian_government
-			add_government_reform = auth_monarchism
+			is_revolutionary = no
 		}
 
 		add_stability = -1
@@ -890,89 +671,48 @@ country_event = {
 				size = 3
 			}
 		}
+
+		change_government = authoritarian_government
+
+		if = {
+			limit = {
+				government = republic
+			}
+			add_government_reform = auth_republic_reform
+		}
+		if = {
+			limit = {
+				government = monarchy
+			}
+			add_government_reform = auth_monarchism
+		}
 		
 		set_country_flag = responded_rev
 		
-		ai_chance = { factor = 2 }
+		ai_chance = { factor = 10 }
 	}
 	
 	option = {
 		name = "westeurope.2.b"
 		
 		trigger = {
-			NOT = {
-				OR = {
-					culture_group = germanic
-					is_subject_of_type = german_confederation_member
-					bgm_comgovt = yes
-					has_reform = futurist_mechanic
-					has_reform = democratic_mechanic
-					has_reform = authoritarian_mechanic
-					has_reform = fascist_mechanic
-				}
-			}
-		}
-
-		hidden_effect = {
-			every_neighbor_country = {
-				limit = {
-					capital_scope = {
-						continent = europe
-					}
-					NOT = { has_country_flag = responded_rev }
-				}
-				country_event = {
-					id = westeurope.2 
-					days = 10
-					random = 5
-				}
-			}
+			is_revolutionary = yes
 		}
 		
 		change_government = democracy_govt
 		
-		set_country_flag = responded_rev
-		
-		ai_chance = { factor = 1 }
-	}
-	
-	option = {
-		name = "westeurope.2.c"
-		
-		trigger = {
-			OR = {
-				culture_group = germanic
-				is_subject_of_type = german_confederation_member
+		if = {
+			limit = {
+				government = republic
 			}
-			NOT = {
-				OR = {
-					bgm_comgovt = yes
-					has_reform = futurist_mechanic
-					has_reform = democratic_mechanic
-					has_reform = authoritarian_mechanic
-					has_reform = fascist_mechanic
-				}
-			}
+			add_government_reform = parliamentary_republic_reform
 		}
-
-		hidden_effect = {
-			every_neighbor_country = {
-				limit = {
-					capital_scope = {
-						continent = europe
-					}
-					NOT = { has_country_flag = responded_rev }
-				}
-				country_event = {
-					id = westeurope.2 
-					days = 10
-					random = 5
-				}
+		if = {
+			limit = {
+				government = monarchy
 			}
+			add_government_reform = parliamentary_monarchism
 		}
-
-		add_government_reform = parliamentary_reform
-		add_government_reform = bgm_egalite_reform
 		
 		set_country_flag = responded_rev
 		
@@ -983,156 +723,14 @@ country_event = {
 		name = "westeurope.2.d"
 		
 		trigger = {
-			OR = {
-				culture_group = germanic
-				german_confederation_member = 1
-			}
-			NOT = {
-				OR = {
-					bgm_comgovt = yes
-					has_reform = futurist_mechanic
-					has_reform = democratic_mechanic
-					has_reform = authoritarian_mechanic
-					has_reform = fascist_mechanic
-				}
-			}
+			is_revolutionary = yes
+			revolutionary_zeal = 50
 		}
 		
 		change_government = futurist_government
-		add_government_reform = socialist_republic
-		every_country = {
-			limit = {
-				is_subject_of_type = german_confederation_member
-			}
-			every_owned_province = {
-				add_core = ROOT
-			}
-		}
-		every_province = {
-			limit = {
-				OR = {
-					
-					culture_group = germanic
-					culture_group = benelux
-					
-				}
-				continent = europe
-			}
-			add_core = ROOT
-		}
-
-		hidden_effect = {
-			every_neighbor_country = {
-				limit = {
-					capital_scope = {
-						continent = europe
-					}
-					NOT = { has_country_flag = responded_rev }
-				}
-				country_event = {
-					id = westeurope.2 
-					days = 10
-					random = 5
-				}
-			}
-		}
 		
 		set_country_flag = responded_rev
-		
-		every_country = {
-			limit = {
-				is_subject_of_type = german_confederation_member
-			}
-			country_event = {
-				id = german_confederation.12
-			}
-		}
 		
 		ai_chance = { factor = 1 }
-	}
-	
-	option = {
-		name = "westeurope.2.e"
-		
-		trigger = {
-			OR = {
-				culture_group = germanic
-				
-				
-				is_subject_of_type = german_confederation_member
-			}
-		}
-		
-		hidden_effect = {
-			every_neighbor_country = {
-				limit = {
-					capital_scope = {
-						continent = europe
-					}
-					NOT = { has_country_flag = responded_rev }
-				}
-				country_event = {
-					id = westeurope.2 
-					days = 10
-					random = 5
-				}
-			}
-		}
-		
-		set_country_flag = responded_rev
-
-		if = {
-			limit = {
-			  government = republic
-			}
-			change_government = authoritarian_government
-			add_government_reform = auth_republic_reform
-		}
-
-		if = {
-			limit = {
-			  government = monarchy
-			}
-			change_government = authoritarian_government
-			add_government_reform = auth_monarchism
-		}
-		
-		add_country_modifier = {
-			name = "revolution_1848"
-			duration = 1825
-		}
-		
-		ai_chance = { factor = 2 }
-	}
-
-	option = {
-		name = "westeurope.2.f"
-		
-		trigger = {
-			OR = {
-				bgm_comgovt = yes
-				has_reform = futurist_mechanic
-				has_reform = democratic_mechanic
-				has_reform = authoritarian_mechanic
-				has_reform = fascist_mechanic
-			}
-		}
-		hidden_effect = {
-			every_neighbor_country = {
-				limit = {
-					capital_scope = {
-						continent = europe
-					}
-					NOT = { has_country_flag = responded_rev }
-				}
-				country_event = {
-					id = westeurope.2 
-					days = 10
-					random = 5
-				}
-			}
-		}
-		set_country_flag = responded_rev
-		ai_chance = { factor = 100 }
 	}
 }

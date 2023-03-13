@@ -1,6 +1,10 @@
 cb_balance_power = {
 
 	prerequisites = {
+		OR = {
+			current_age = age_of_revolutions
+			current_age = age_of_industrialization
+		}
 		FROM = {
 			NOT = { great_power_rank = 2 }
 			OR = {

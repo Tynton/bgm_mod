@@ -35,7 +35,68 @@
  germanyunity.d.11:0 "Our overlord has decided to construct a new German government in their vision using us as its head!"
  germanyunity.11.a:0 "Lovely!"
  
+ german_confederation.n.15:0 "Assimilation into Germany"
+ german_confederation.d.15:0 "Because the Holy Roman Empire was transformed into the German Confederation it's been suggested, albeit controversially, that the government of $COUNTRY$ assimilate into the dominant Germanic demographic of our new union."
+ german_confederation.15.a:0 "We mustn't do so."
+ german_confederation.15.b:0 "It's the pragmatic option."
+
  
+ province_industrialization.n.1:0 "Railroad Construction"
+ province_industrialization.d.1:0 "Local governments and well-off individuals have collaborated in building a railroad on their own accord in $PROVINCE$ for $COUNTRY$. This may be of great service to the nation's economy."
+ province_industrialization.1.a:0 "Okay."
+
+ province_industrialization.2.t:0 "Rural Flight"
+ province_industrialization.2.d:0 "As time marches forward and prosperity is present more citizens flock to the cities for an opportunity for a new life. Recently an uptick in this phenomenon has occurred in one of our provinces and now our development is consolidating into one of the larger potential cities."
+ province_industrialization.2.a:0 "Okay."
+ 
+ province_industrialization.5.t:0 "Urban Development in $PROVINCENAME$"
+ province_industrialization.5.d:0 "As time marches forward and prosperity is present more citizens flock to the cities for an opportunity for a new life. Recently an uptick in this phenomenon has occurred in one of our provinces and now our development is consolidating into one of the larger potential cities."
+ province_industrialization.5.a:0 "Okay."
+ 
+ 
+ incidents_bgm_rev.1.t:0 "The Empire and the Revolution"
+ incidents_bgm_rev.1.d:0 "The Revolution has spread throughout Europe and most relevant to us is its place in the Holy Roman Empire. It's possible to reconcile with the Revolutionaries to create a more liberal vision of the Empire or we can act against them and attempt to expel the revolutionary states from our union."
+ incidents_bgm_rev.1.a:0 "Co-opting their ideology is vital."
+ incidents_bgm_rev.1.b:0 "The Revolution has no place in the Empire."
+ 
+ incidents_bgm_rev.2.t:0 "The Empire and the Revolution"
+ incidents_bgm_rev.2.d:0 "The Revolution has spread throughout Europe and most relevant to us is its place in the Holy Roman Empire. It's possible to reconcile with the Revolutionaries to create a more liberal vision of the Empire or we can act against them and attempt to expel the revolutionary states from our union."
+ incidents_bgm_rev.2.a:0 "Co-opting their ideology is vital."
+ incidents_bgm_rev.2.b:0 "The Revolution has no place in the Empire."
+ 
+ incidents_bgm_rev.3.t:0 "German Nationalism"
+ incidents_bgm_rev.3.d:0 "The Revolution has spread throughout the German states in the Holy Roman Empire. Calls for a nation-state have appeared as a consequence though the current states have been talked into a compromise. A sub-confederation within the Empire may be arranged but for it to occur it requires the assent of the Emperor."
+ incidents_bgm_rev.3.a:0 "We will see."
+ 
+ incidents_bgm_rev.4.t:0 "German Nationalism"
+ incidents_bgm_rev.4.d:0 "The Revolution has spread throughout the German states in the Holy Roman Empire. Calls for a nation-state have appeared as a consequence though the current states have been talked into a compromise. A sub-confederation within the Empire may be arranged but for it to occur it requires the assent of the Emperor."
+ incidents_bgm_rev.4.a:0 "Consent to the Confederation."
+ incidents_bgm_rev.4.b:0 "Nation-states are incompatible with the status quo."
+ 
+ incidents_bgm_rev.5.t:0 "The Fate of the Empire"
+ incidents_bgm_rev.5.d:0 "Once upon a time over a thousand years ago, Otto I was crowned Emperor of Rome. Now the Empire's legitimacy has been brought to question by way of absolutist ambitions of states within and abroad as well as parliamentarian factions. There is little holding the Empire together other than the Emperor's own will."
+ incidents_bgm_rev.5.a:0 "It's a conundrum to be investigated."
+ 
+ incidents_bgm_rev.6.t:0 "The Fate of the Empire"
+ incidents_bgm_rev.6.d:0 "Once upon a time over a thousand years ago, Otto I was crowned Emperor of Rome. Now the Empire's legitimacy has been brought to question by way of absolutist ambitions of states within and abroad as well as parliamentarian factions. There is little holding the Empire together other than the Emperor's own will."
+ incidents_bgm_rev.6.a:0 "The Empire is an antiquated institution."
+ incidents_bgm_rev.6.b:0 "The Empire stays together."
+ incidents_bgm_rev.6.c:0 "Use the context to justify the German Confederation."
+ 
+ easter_egg.1.t:0 "Restore the house of d'Ivrea?"
+ easter_egg.1.d:0 "$MONARCH$ has suggested to the court that the ruling house of $COUNTRY$ is an illegitimate cadet branch of the house of d'Ivrea and seeks to rectify the situation. By claiming lineage to the old house we can claim legitimation to the other countries being ruled by its cadet branches of de Trastámara, Enríquez and de la Cerda. The move may be considered unpopular since the last ruler of this house, Peter, was considered cruel by his constituents."
+ easter_egg.1.a:0 "Let's do so!"
+ easter_egg.1.b:0 "Let's not remind the court..."
+ 
+ DIVREE_ONCE:0 "§RThere won't be another opportunity to restore the old dynasty.§!"
+ 
+ easter_egg.2.t:0 "Eastern Orthodoxy?"
+ easter_egg.2.d:0 "$MONARCH$ has been conducive to questioning the Catholic faith. In the midst of the chaos caused by the Reformation the ruler of $COUNTRY$ has questioned reconciliation with the churches of the east instead in consideration that the protestant denominations are not for us."
+ easter_egg.2.a:0 "Let's do so!"
+ easter_egg.2.b:0 "Let's not destabilize the country."
+
+ easter_egg.3.t:0 "Restore the house of Capet?"
+ easter_egg.3.d:0 "$MONARCH$ has suggested to the court that the ruling house of $COUNTRY$ is an illegitimate cadet branch of the house of Capet and seeks to rectify the situation. By claiming lineage to the old house we can claim legitimation to the other countries being ruled by its cadet branches of de Valois. This move may be considered controversial as it does not comport to succession law and the house of Capet has been extinct for a century already by organic means."
  
  
  
@@ -43,12 +104,14 @@
  
  
  BGMHeresy.t.1:0 "The Teachings of Gregory Pauli"
- BGMHeresy.d.1:0 "Grzegorz Paweł z Brzezin, founder of the Polish Brethren, was a Socinian Polish religious scholar. The Unitarian movement do not believe in the Holy Trinity, or the Father, Son and Holy Spirit. Gregory would preach to an early iteration of utopianism, for he maintains a viewpoint of stateless egalitarianism. The Unitarians themselves also believed in Religious Liberalism and rationality as the forefront of their morality."
+ BGMHeresy.d.1:0 "Grzegorz Pawel z Brzezin, founder of the Polish Brethren, was a Socinian Polish religious scholar. The Unitarian movement do not believe in the Holy Trinity, or the Father, Son and Holy Spirit. Gregory would preach to an early iteration of utopianism, for he maintains a viewpoint of stateless egalitarianism. The Unitarians themselves also believed in Religious Liberalism and rationality as the forefront of their morality."
  BGMHeresy.1.a:0 "Okay."
  
  BGMHeresy.t.2:0 "The Anabaptist Movement"
  BGMHeresy.d.2:0 "There are several theories as to the origins of the Anabaptists. One maintains their foundation in Zurich. They did, however, begin movements strategically in large cities within Germany and the Netherlands. Although they did not seize control of any country, they may attempt to do so peacefully. However, they were persecuted in reality by most other notable denominations of Christianity in which they operated."
  BGMHeresy.2.a:0 "Okay."
+
+ 
 
  britainunity.n.1:0 "England Declares its Independence!"
  britainunity.1.a:0 "Destroy them!"
@@ -218,12 +281,12 @@
  bgm_liberal.1.a:0 "Shut them down."
  bgm_liberal.1.b:0 "The current regime stands down."
  
- bgm_liberal.2.t:0 "Liberals in $PROVINCE$ Revolt"
+ bgm_liberal.2.t:0 "Liberals in $PROVINCENAME$ Revolt"
  bgm_liberal.2.d:0 "In continuation of the liberal republicans' demands for a free society, residents in one of our provinces have sprung up their own revolt to add their pressure in creation of a state of their own design."
  bgm_liberal.2.a:0 "Fight them."
  bgm_liberal.2.b:0 "Grant local concessions."
  
- bgm_liberal.3.t:0 "Nationalists in $PROVINCE$ Revolt"
+ bgm_liberal.3.t:0 "Nationalists in $PROVINCENAME$ Revolt"
  bgm_liberal.3.d:0 "In continuation of the liberal republicans' demands for a free society, residents in one of our provinces have sprung up their own revolt to add their pressure in creation of a liberal country of their own design."
  bgm_liberal.3.a:0 "Fight them."
  bgm_liberal.3.b:0 "Grant local concessions."
@@ -363,6 +426,26 @@
  PreProtestantEvent.15.t:0 "The [Root.Religion.GetName] League"
  PreProtestantEvent.15.d:0 "The influence of [Root.Religion.GetName] has grown significant in the Holy Roman Empire. Recently it has came to light that the powers that follow the $RELIGION$ faith have aligned themselves together in a coalition to mandate a change of denomination in the greater Holy Roman Realm. The Emperor - as justified his terror may seem - has elected to do the same. This will ultimately create a crisis that some citizens of various realms may be surprised to know will involve the lion's share of Europe."
  PreProtestantEvent.15.a:0 "Oh dear"
+
+
+ 
+ PreProtestantEvent.19.t:0 "The Fraticelli League"
+ PreProtestantEvent.19.d:0 "Several 'anonymous' individuals have arrived in the court of $MONARCH$ to forward a strange proposition. Advocation of a dissenting movement within the Catholic Church known as the Fraticelli. They have been persecuted in Italy wherever found by the Church and have came to us with what appears to be a courier of some sort. It's most likely they came to us as we are hostile to the Petrine state in Rome. They will volunteer to proselytize the new religion in our lands if we can override the clerical institutions brought into being by the Catholic Church. In addition, they will propagandize the Fraticelli cause to the masses with the hope of inspiring new devout crusaders to overrule and defeat the false papacy."
+ PreProtestantEvent.19.a:0 "Let us do so."
+ PreProtestantEvent.19.b:0 "This sounds too good to be true."
+ 
+ 15_YEARS_FRAT:0 "§YWe will only have 15 years to take the capital of the Papacy to overthrow his rule and bring about a new Fraticelli Pope in his place.§!"
+ 
+ PreProtestantEvent.20.t:0 "THE FALL OF ROME"
+ PreProtestantEvent.20.d:0 "The armies of $COUNTRY$ have, in tandem with religious fighters, broken through the fortifications of the Petrine statehood in Rome. They have flooded the city of Rome itself and destroyed much of the infrastructure, pillaging what they could from the citizenry. In addition to this numerous war crimes of all varieties were committed in the name of God against heresy (although this may better manifest as but a microcosm of a vendetta between the Papacy and $MONARCH$). \nThe Vatican itself was invaded and numerous artifacts were stolen, clerics were slaughtered and eventually the Pope was found. The angered crowd did not spare any clemency; he was later found dead in a manner most reminiscent of the assassination of Julius Caesar himself. \nThe news was broken to $MONARCH$ whose response was nothing short of utter glee. A new Fraticelli Pope of their choice can now be installed in the Papal capital. A new Papacy has been declared whose ideals align with the Fraticelli instead of the supposed vanity they abhor in the Roman Catholic Church. \nThese were only the matters in Rome. There is much speculation as to how this will affect the religious unity in Europe in the long term. All of the predictions fall onto a gradation between the supremacy of the Fraticelli denomination to supremacy of the Catholics. Of course the only true predictions come from biding our time... \nWhat can we truly expect from the coming centuries? One thing can be clear: Religious Crisis across the lands."
+ PreProtestantEvent.20.a:0 "There will be a coming crisis of our day."
+ 
+ COMING_CRISIS_FRAT:0 "§RNow Rome has fallen, Europe will eventually see a great struggle.§!"
+ 
+ PreProtestantEvent.21.t:0 "Inspiration from the Roman Fraticellis"
+ PreProtestantEvent.21.d:0 "Rome has fallen to the Fraticelli religious cause. Since the Pope has been our government's nemesis for some time it's logical to review the Fraticelli cause as their replacement in religious circles around $COUNTRY$. On one hand there is the risk of a moral crisis in our realm but on the other hand it is possible that we can weaken our adversaries later by forwarding the Fraticellis' newfound fame. Nevertheless, it is $MONARCH$'s choice."
+ PreProtestantEvent.21.a:0 "We will add our ranks to the cause."
+ PreProtestantEvent.21.b:0 "This is insanity!"
  
  
  national_program.n.1:0 "Establishment of the National Standard Language"
@@ -451,8 +534,19 @@
  angevin.n.1:0 "French Language in England"
  angevin.d.1:0 "For centuries the English people have been subject to rule by a French aristocracy. English was replacing for a long time its germanic vocabulary with words of French origin. Now it seems the residents of $PROVINCENAME$ have slowly but surely assimilated into an Anglo-Norman dialect."
  angevin.1.a:0 "Okay."
+ 
+ angevin.n.2:0 "Proclaim the New Kingdom of France?"
+ angevin.d.2:0 "England has fought for the right to rule France for over one hundred years. Now that not only France is vanquished but its fiefs across the land, the Angevin Empire can claim its rightful ownership of the French lands and move the capital to Paris. The question remains as to if the Royal Court will maintain its Norman heritage or assimilate into the Paris metropolitan entirely."
+ angevin.2.a:0 "Let us form the new France."
+ angevin.2.b:0 "No."
 
  flavor_eng.EVTOPTC9100:0 "Take the fore ourselves."
+ 
+ BGM_provinces.n.1:0 "Founding of Le Havre"
+ BGM_provinces.d.1:0 "In 1517 King Francis I of France founded the port of Le Havre after the preceding Harfleur port was destroyed during the Hundred Years' War. Le Havre would go on to become one of France's most important naval ports in the coming centuries."
+ BGM_provinces.1.a:0 "Excellent."
+ 
+ le_havre_tooltip:0 "§TThe Great Project 'Le Havre Port Infrastructure' will come available for us to upgrade in addition to the baseline province modifier.§!"
 
 
  
@@ -2421,5 +2515,6 @@
  italic_league.10.a:0 "We are grateful for their gift."
  
  
- 
+ TEST_EVENTS.23.t:0 "Montjoie ! Saint Denis !"
+ TEST_EVENTS.23.d:0 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
  

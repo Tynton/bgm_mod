@@ -1,0 +1,176 @@
+namespace = easter_egg
+
+# Return of d'Ivrea
+country_event = {
+	id = easter_egg.1
+	title = easter_egg.1.t
+	desc = easter_egg.1.d
+	picture = RELIGIOUS_WARS_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+	
+	trigger = {
+		OR = {
+			dynasty = "de Trastámara"
+			#dynasty = "Enríquez"
+			dynasty = "de la Cerda"
+		}
+		culture_group = iberian
+		OR = {
+			is_great_power = yes
+			ai = no
+		}
+		NOT = {
+			dynasty = "d'Ivrée"
+		}
+		OR = {
+			ruler_has_personality = cruel_personality
+			ruler_has_personality = malevolent_personality
+			ruler_has_personality = scholar_personality
+			ruler_has_personality = reformist_personality
+			ruler_has_personality = naive_personality
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 450
+
+		modifier = {
+			factor = 0.25
+			ai = no
+		}
+	}
+	
+	option = {
+		name = easter_egg.1.a
+		set_dynasty = "d'Ivrée" #d'Ivrée
+
+		add_stability = -2
+	}
+
+	option = {
+		name = easter_egg.1.b
+		custom_tooltip = "DIVREE_ONCE"
+
+		ai_chance = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				stability = 1
+			}
+		}
+	}
+}
+
+# Orthodoxy?
+country_event = {
+	id = easter_egg.2
+	title = easter_egg.2.t
+	desc = easter_egg.2.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	major = yes
+	
+	trigger = {
+		adm = 5
+		stability = 2
+		religion = catholic
+		current_age = age_of_reformation
+		OR = {
+			ruler_has_personality = sinner_personality
+			ruler_has_personality = scholar_personality
+			ruler_has_personality = reformist_personality
+			ruler_has_personality = naive_personality
+		}
+		any_neighbor_country = {
+			religion = orthodox
+		}
+		NOT = {
+			has_country_flag = ortho
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 450
+	}
+	
+	option = {
+		name = easter_egg.2.a
+		change_religion = orthodox
+		add_stability = -4
+		add_prestige = -200
+		add_country_modifier = {
+			name = "conversion_zeal"
+			duration = 3650
+		}	
+	}
+
+	option = {
+		name = easter_egg.2.b
+		set_country_flag = ortho
+	}
+}
+
+# Return of Capet
+country_event = {
+	id = easter_egg.3
+	title = easter_egg.3.t
+	desc = easter_egg.3.d
+	picture = RELIGIOUS_WARS_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+	
+	trigger = {
+		dynasty = "de Valois"
+		culture_group = french
+		OR = {
+			is_great_power = yes
+			ai = no
+		}
+		NOT = {
+			dynasty = "Capet"
+		}
+		OR = {
+			ruler_has_personality = cruel_personality
+			ruler_has_personality = malevolent_personality
+			ruler_has_personality = scholar_personality
+			ruler_has_personality = reformist_personality
+			ruler_has_personality = naive_personality
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 450
+
+		modifier = {
+			factor = 0.25
+			ai = no
+		}
+	}
+	
+	option = {
+		name = easter_egg.1.a
+		set_dynasty = "Capet"
+
+		add_stability = -2
+	}
+
+	option = {
+		name = easter_egg.1.b
+		custom_tooltip = "DIVREE_ONCE"
+
+		ai_chance = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				stability = 1
+			}
+		}
+	}
+}

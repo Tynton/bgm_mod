@@ -1,3 +1,36 @@
+departments_reform = {
+	icon = "egalite_reform"
+	potential = {
+		is_revolutionary = yes
+	}
+	trigger = {
+	}
+	modifiers = {
+		state_maintenance_modifier = -0.1
+		state_governing_cost = -0.1
+		years_of_nationalism = -5
+	}
+}
+
+arrondisements_reform = {
+	icon = "revolutionary_republic"
+	potential = {
+		is_revolutionary = yes
+	}
+	trigger = {
+	}
+	modifiers = {
+		culture_conversion_cost = -0.25
+		global_missionary_strength = 0.01
+		state_maintenance_modifier = 0.25
+		global_autonomy = -0.05
+	}
+
+	#ai = {
+	#	factor = 0 #the AI won't culture convert
+	#}
+}
+
 anti_enlightenment_reform = {
 	icon = "religious_leader_highlighted"
 	potential = {
@@ -62,7 +95,7 @@ bgm_egalite_reform = {
 revolutionary_embracement_reform = {
 	icon = "rioting_burning_2"
 	potential = {
-		is_revolutionary = yes
+		bgm_rev = yes
 	}
 	trigger = {
 		has_institution = enlightenment
@@ -212,15 +245,24 @@ ceremonial_reform = {
 	icon = "king"
 	modifiers = {
 		stability_cost_modifier = -0.1
-		prestige = 0.5 
+		prestige = 0.25
+		heir_chance = 0.25
+		max_absolutism = -25
+
+		legitimacy = 0.5
+		devotion = 0.5
+		horde_unity = 0.5
+		meritocracy = 0.5
+		republican_tradition = 0.25
 	}
 }
 
 functional_reform = {
 	icon = "states_general"
 	modifiers = {
-		advisor_cost = -0.1
-		yearly_absolutism = 0.05
+		advisor_cost = -0.05
+		land_morale = 0.05
+		improve_relation_modifier = 0.05
 	}
 }
 
@@ -230,7 +272,7 @@ separated_branches_reform = {
 		OR = {
 			has_parliament = yes 
 			AND = {
-				is_revolutionary = yes
+				bgm_rev = yes
 				NOT = { 
 					OR = {
 						has_reform = absolute_president_reform 
@@ -244,6 +286,9 @@ separated_branches_reform = {
 	modifiers = {
 		advisor_cost = -0.1
 		stability_cost_modifier = -0.1
+		legitimacy = 0.5
+		devotion = 0.5
+		horde_unity = 0.5
 		republican_tradition = 0.25
 		#all_power_cost = 0.025
 	}
@@ -262,14 +307,14 @@ united_branches_reform = {
 			}
 			AND = {
 				absolutism = 90
-				is_revolutionary = no
+				bgm_rev = no
 			}
 		}
 		
 	}
 	modifiers = {
-		trade_goods_size_modifier = 0.05
-		stability_cost_modifier = -0.05
+		all_power_cost = -0.02
+		max_absolutism = 10
 	}
 }
 
@@ -279,8 +324,7 @@ subservient_branches_reform = {
 	#	absolutism = 35
 	#}
 	modifiers = {
-		global_tax_modifier = 0.1
-		interest = -1
+		all_power_cost = -0.01
 		yearly_corruption = 0.2
 	}
 }
@@ -301,8 +345,7 @@ small_bureaucracy_reform = {
 	}
 	modifiers = {
 		global_tax_modifier = -0.1
-		production_efficiency = 0.05
-		trade_efficiency = 0.05
+		trade_efficiency = 0.1
 	}
 
 	ai = {
@@ -321,7 +364,7 @@ small_bureaucracy_reform = {
 economic_bureaucracy_reform = {
 icon = "socialist_reform"
 	modifiers = {
-		global_tax_modifier = 0.1
+		global_tax_modifier = 0.25
 		stability_cost_modifier = -0.1
 		inflation_reduction = -0.1
 	}

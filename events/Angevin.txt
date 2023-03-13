@@ -1,6 +1,6 @@
 namespace = angevin
 
-#cores
+#culture conversion
 
 province_event = {
 	id = angevin.1
@@ -15,61 +15,85 @@ province_event = {
 			culture_group = french
 		}
 		owner = {
-			stability = 1
-			prestige = 30
+			prestige = 25
 		}
 		OR = {
 			owner = {
-				has_country_flag = angevin
-				tag = AEV
+				OR = {
+					has_country_flag = angevin
+					primary_culture = normand
+					primary_culture = anglo_norman
+					tag = AEV
+				}
 			}
 			owner = {
-				tag = FRA
-				yorkshire_area = {
-					all_province = {
-						owned_by = ROOT
-					}
-				}
-				east_midlands_area = {
-					all_province = {
-						owned_by = ROOT
-					}
-				}
-				west_midlands_area = {
-					all_province = {
-						owned_by = ROOT
-					}
-				}
-				wessex_area = {
-					all_province = {
-						owned_by = ROOT
-					}
-				}
-				home_counties_area = {
-					all_province = {
-						owned_by = ROOT
-					}
-				}
-				east_anglia_area = {
-					all_province = {
-						owned_by = ROOT
-					}
-				}
-				scottish_marches_area = {
-					all_province = {
-						owned_by = ROOT
-					}
-				}
+				culture_group = french
 			}
 		}
 	}	
 
 	mean_time_to_happen = {
-		months = 900 #75 years for each province
+		months = 420 #35 years for each province, was 900 months (70 years)
+
+		modifier = {
+			factor = 0.75
+			owner = {
+				government_rank = 3
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			owner = {
+				prestige = 75
+				stability = 2
+			}
+		}
+
+		modifier = {
+			factor = 0.25
+			owner = {
+				prestige = 95
+				stability = 3
+			}
+		}
 	}
 	
 	option = {
 		name = "angevin.1.a"
 		change_culture = anglo_norman
+	}
+}
+
+#proclaim new france?
+
+country_event = {
+	id = angevin.2
+	title = "angevin.n.2"
+	desc = "angevin.d.2"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "angevin.2.a"
+		set_country_flag = angevin #just in case
+		change_tag = FRA
+		country_event = {
+			id = ideagroups.1
+		}
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = "angevin.2.b"
+		set_country_flag = angevin #just in case
+
+		ai_chance = {
+			factor = 0
+		}
 	}
 }

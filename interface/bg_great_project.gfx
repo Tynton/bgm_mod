@@ -77,6 +77,11 @@ spriteTypes = {
 	}
 	
 	spriteType = {
+		name = "GFX_great_project_westminster_palace"
+		texturefile = "gfx//interface//great_projects//great_project_westminster.dds"
+	}
+	
+	spriteType = {
 		name = "GFX_great_project_dome_rock"
 		texturefile = "gfx//interface//great_projects//great_project_dome_rock.dds"
 	}
@@ -579,6 +584,26 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_great_project_port_genoa"
 		texturefile = "gfx//interface//great_projects//great_project_port_genoa.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_port_rome"
+		texturefile = "gfx//interface//great_projects//great_project_port_rome.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_holstentor"
+		texturefile = "gfx//interface//great_projects//great_project_holstentor.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_university_poitiers"
+		texturefile = "gfx//interface//great_projects//great_project_university_poitiers.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_monument_le_havre"
+		texturefile = "gfx//interface//great_projects//great_project_monument_le_havre.dds"
 	}
 
 }

@@ -12,12 +12,17 @@ base_production = 3
 trade_goods = salt
 base_manpower = 3
 add_core = FRA
+add_core = POI
 discovered_by = eastern
 discovered_by = western
 discovered_by = muslim
 discovered_by = ottoman
 extra_cost = 8
-center_of_trade = 1
+#center_of_trade = 1
+
+1444.1.1 = {
+	add_core = POI
+}
 
 1560.1.1 = { religion = reformed }
 1565.1.1 = { unrest = 8 } # France is restless once again as ultra-catholic intentions become clear

@@ -192,15 +192,19 @@ age_of_discovery = {
 			}
 		}
 		
-		ab_iberian_colonialism = {
+		ab_iberian_colonialism = { #Colonial Pioneers
 		
 			allow = {
-				culture_group = iberian
+				OR = {
+					full_idea_group = exploration_ideas
+					full_idea_group = expansion_ideas
+					culture_group = iberian
+				}
 			}
 			modifier = {
-				global_colonial_growth = 100
-				colonist_placement_chance = 0.375
-				range = 0.5
+				global_colonial_growth = 5
+				colonist_placement_chance = 0.25
+				range = 0.33
 			}
 			ai_will_do = {
 				factor = 100
@@ -247,19 +251,14 @@ age_of_reformation = {
 	can_start = {
 		OR = {
 			is_religion_enabled = protestant
-			calc_true_if = {
-				amount = 12
-				all_country = {
-					OR = {
-						religion = fraticelli
-						religion = waldensian
-						religion = lollard
-						religion = hussite
-					}
-				}
+			custom_trigger_tooltip = {
+				tooltip = PREPROT_HERESY_TOOLTIP
+				has_global_flag = preprot_heresy
 			}
-			#has_global_flag = preprot_heresy
-			has_global_flag = rome_converted_bgm
+			custom_trigger_tooltip = {
+				tooltip = ROME_FALLEN_T
+				has_global_flag = rome_converted_bgm
+			}
 		}
 	}
 	
@@ -592,7 +591,7 @@ age_of_absolutism = {
 	
 		ab_adm_efficiency = {
 			modifier = {
-				administrative_efficiency = 0.075
+				administrative_efficiency = 0.025
 				#province_warscore_cost = -0.2
 			}
 			ai_will_do = {
@@ -946,7 +945,7 @@ age_of_revolutions = {
 		}
 		ab_early_global_imperialism = {
 			modifier = {
-				administrative_efficiency = 0.15
+				administrative_efficiency = 0.05
 			}
 			ai_will_do = {
 				factor = 10

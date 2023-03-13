@@ -220,6 +220,14 @@ declarewar = {
 		}
 		if = {
 			limit = {
+				is_in_war = {
+					casus_belli = cb_bgm_league
+				}
+			}
+			set_global_flag = hre_war_started
+		}
+		if = {
+			limit = {
 				OR = {
 					has_reform = authoritarian_mechanic
 					has_reform = fascist_mechanic
@@ -310,7 +318,7 @@ guaranteeaction = {
 	condition = {
 		tooltip = OVERSEAS_COLONIAL_CAPITAL
 		potential = { 
-			always = yes
+			ai = yes
 		}
 		allow = {
 			FROM = {
@@ -321,35 +329,28 @@ guaranteeaction = {
 			}
 		}
 	}
-}
-
-allianceaction = {
 
 	condition = {
-		tooltip = WHAT
-		potential = {
+		tooltip = ROOT_HAS_CLAIM
+		potential = { 
 			ai = yes
 		}
 		allow = {
-			#NOT = {
-			#	any_neighbor_country = {
-			#		is_rival = FROM
-			#	}
-			#}
-			FROM = {
-				army_strength = {
-					who = ROOT
-					value = 0.25
-				}
-				NOT = {
-					army_strength = {
-						who = ROOT
-						value = 3.6
+			NOT = {
+				FROM = {
+					any_owned_province = {
+						OR = {
+							is_claim = ROOT
+							is_core = ROOT
+						}
 					}
 				}
 			}
 		}
 	}
+}
+
+allianceaction = {
 
 	condition = {
 		tooltip = DDD
@@ -469,7 +470,7 @@ allianceaction = {
 				has_government_attribute = cannot_ally_non_republics_or_non_rev
 			}
 			NOT = { government = republic }
-			is_revolutionary = no
+			bgm_rev = no
 		}
 		allow = {
 			OR = {

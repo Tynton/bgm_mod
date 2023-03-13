@@ -519,7 +519,7 @@ revolutionary_republic_reform = {
 			every_ally = {
 				limit = {
 					NOT = { government = republic }
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				ROOT = { break_alliance = PREV }
 			}
@@ -548,7 +548,7 @@ revolutionary_republic_reform = {
 			if = {
 				limit = {
 					has_country_flag = is_revolutionary_china_flag
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				clr_country_flag = is_revolutionary_china_flag
 				restore_country_name = yes
@@ -558,7 +558,7 @@ revolutionary_republic_reform = {
 			if = {
 				limit = {
 					has_country_flag = is_revolutionary_turkey_flag
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				clr_country_flag = is_revolutionary_turkey_flag
 				restore_country_name = yes
@@ -568,7 +568,7 @@ revolutionary_republic_reform = {
 			if = {
 				limit = {
 					has_country_flag = is_revolutionary_gurkani_flag
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				clr_country_flag = is_revolutionary_gurkani_flag
 				restore_country_name = yes
@@ -611,7 +611,7 @@ junior_revolutionary_republic_reform = {
 			every_ally = {
 				limit = {
 					NOT = { government = republic }
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				ROOT = { break_alliance = PREV }
 			}
@@ -630,7 +630,7 @@ junior_revolutionary_republic_reform = {
 			if = {
 				limit = {
 					has_country_flag = is_revolutionary_china_flag
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				clr_country_flag = is_revolutionary_china_flag
 				restore_country_name = yes
@@ -640,7 +640,7 @@ junior_revolutionary_republic_reform = {
 			if = {
 				limit = {
 					has_country_flag = is_revolutionary_turkey_flag
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				clr_country_flag = is_revolutionary_turkey_flag
 				restore_country_name = yes
@@ -650,7 +650,7 @@ junior_revolutionary_republic_reform = {
 			if = {
 				limit = {
 					has_country_flag = is_revolutionary_gurkani_flag
-					is_revolutionary = no
+					bgm_rev = no
 				}
 				clr_country_flag = is_revolutionary_gurkani_flag
 				restore_country_name = yes
@@ -1574,7 +1574,7 @@ republican_authoritarianism_reform = {
 			has_government_attribute = is_pirate_republic_reform
 		}
 		OR = {
-			is_revolutionary = no
+			bgm_rev = no
 			NOT = { has_dlc = "Emperor" }
 		}
 	}
@@ -1596,7 +1596,7 @@ nepotism_reform = {
 		}
 		NOT = { has_reform = signoria_reform }
 		OR = {
-			is_revolutionary = no
+			bgm_rev = no
 			NOT = { has_dlc = "Emperor" }
 		}
 	}
@@ -1634,7 +1634,7 @@ republicanism_reform = {
 			has_government_attribute = is_pirate_republic_reform
 		}
 		OR = {
-			is_revolutionary = no
+			bgm_rev = no
 			NOT = { has_dlc = "Emperor" }
 		}
 	}
@@ -1654,7 +1654,7 @@ democratic_values_reform = {
 			has_government_attribute = is_pirate_republic_reform
 		}
 		OR = {
-			is_revolutionary = no
+			bgm_rev = no
 			NOT = { has_dlc = "Emperor" }
 		}
 	}
@@ -1681,7 +1681,7 @@ aristocratic_values_reform = {
 			has_government_attribute = is_pirate_republic_reform
 		}
 		OR = {
-			is_revolutionary = no
+			bgm_rev = no
 			NOT = { has_dlc = "Emperor" }
 		}
 	}
@@ -1707,7 +1707,7 @@ religious_values_reform = {
 			has_government_attribute = is_pirate_republic_reform
 		}
 		OR = {
-			is_revolutionary = no
+			bgm_rev = no
 			NOT = { has_dlc = "Emperor" }
 		}
 	}
@@ -1851,7 +1851,7 @@ liberte_reform = {
 	icon = "liberte_reform"
 	allow_normal_conversion = yes
 	potential = {
-		is_revolutionary = yes
+		bgm_rev = yes
 		has_dlc = "Emperor"
 	}
 	modifiers = {
@@ -1868,7 +1868,7 @@ egalite_reform = {
 	icon = "egalite_reform"
 	allow_normal_conversion = yes
 	potential = {
-		is_revolutionary = yes
+		bgm_rev = yes
 		has_dlc = "Emperor"
 	}
 	modifiers = {
@@ -1887,7 +1887,7 @@ fraternite_reform = {
 	icon = "fraternite_reform"
 	allow_normal_conversion = yes
 	potential = {
-		is_revolutionary = yes
+		bgm_rev = yes
 		has_dlc = "Emperor"
 	}
 	modifiers = {
@@ -1909,7 +1909,7 @@ four_years_elections_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		OR = {
-			is_revolutionary = no
+			bgm_rev = no
 			NOT = { has_dlc = "Emperor" }
 		}
 	}
@@ -1932,7 +1932,7 @@ frequent_elections_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		OR = {
-			is_revolutionary = no
+			bgm_rev = no
 			NOT = { has_dlc = "Emperor" }
 		}
 	}
@@ -1959,7 +1959,7 @@ consolidation_of_power_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		OR = {
-			is_revolutionary = no
+			bgm_rev = no
 			NOT = { has_dlc = "Emperor" }
 		}
 	}
@@ -1978,7 +1978,7 @@ lottery_reform = {
 	potential = {
 		is_colonial_nation = no
 		OR = {
-			is_revolutionary = no
+			bgm_rev = no
 			NOT = { has_dlc = "Emperor" }
 		}
 		NOT = { has_government_attribute = is_pirate_republic_reform }
@@ -2016,7 +2016,7 @@ force_reelection_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		OR = {
-			is_revolutionary = no
+			bgm_rev = no
 			NOT = { has_dlc = "Emperor" }
 		}
 	}
@@ -2040,7 +2040,7 @@ devotee_to_the_people_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		OR = {
-			is_revolutionary = no
+			bgm_rev = no
 			NOT = { has_dlc = "Emperor" }
 		}
 		OR = {
@@ -2144,7 +2144,7 @@ legislative_assembly_reform = {
 	icon = "legislative_assembly_reform"
 	allow_normal_conversion = yes
 	potential = {
-		is_revolutionary = yes
+		bgm_rev = yes
 		has_dlc = "Emperor"
 	}
 	modifiers = {
@@ -2162,7 +2162,7 @@ national_constituent_reform = {
 	icon = "national_constituent_reform"
 	allow_normal_conversion = yes
 	potential = {
-		is_revolutionary = yes
+		bgm_rev = yes
 		has_dlc = "Emperor"
 	}
 	modifiers = {
@@ -2179,7 +2179,7 @@ national_assembly_reform = {
 	icon = "national_assembly"
 	allow_normal_conversion = yes
 	potential = {
-		is_revolutionary = yes
+		bgm_rev = yes
 		has_dlc = "Emperor"
 	}
 	modifiers = {
@@ -2441,7 +2441,7 @@ estate_council_reform = {
 		max_absolutism = -25
 	}
 	potential = {
-		is_revolutionary = no
+		bgm_rev = no
 		NOT = { has_government_attribute = is_pirate_republic_reform }
 	}
 	trigger = {
@@ -2539,7 +2539,7 @@ feuillant_reform = {
 	icon = "feuillant_reform"
 	allow_normal_conversion = yes
 	potential = {
-		is_revolutionary = yes
+		bgm_rev = yes
 		has_dlc = "Emperor"
 	}
 	modifiers = {
@@ -2575,7 +2575,7 @@ two_chamber_reform = {
 	icon = "parliament_hall"
 	allow_normal_conversion = yes
 	potential = {
-		is_revolutionary = yes
+		bgm_rev = yes
 		has_dlc = "Emperor"
 	}
 	modifiers = {
@@ -2669,7 +2669,7 @@ consolidate_power_to_the_ruler_reform = {
 	potential = {
 		NOT = { has_government_attribute = is_pirate_republic_reform }
 		OR = {
-			is_revolutionary = no
+			bgm_rev = no
 			NOT = { has_dlc = "Emperor" }
 		}
 	}
@@ -2792,7 +2792,7 @@ absolute_president_reform = {
 	icon = "king"
 	allow_normal_conversion = yes
 	potential = {
-		is_revolutionary = yes
+		bgm_rev = yes
 		has_dlc = "Emperor"
 	}
 	modifiers = {
@@ -2809,7 +2809,7 @@ revolutionary_council_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		has_dlc = "Emperor"
-		is_revolutionary = yes
+		bgm_rev = yes
 	}
 	modifiers = {
 		max_revolutionary_zeal = 10
@@ -3027,7 +3027,7 @@ revolutionary_principle_reform = {
 	icon = "revolutionary_republic"
 	allow_normal_conversion = yes
 	potential = {
-		is_revolutionary = yes
+		bgm_rev = yes
 		has_dlc = "Emperor"
 	}
 	modifiers = {
@@ -3044,7 +3044,7 @@ equality_principle_reform = {
 	icon = "equal_electorate_reform"
 	allow_normal_conversion = yes
 	potential = {
-		is_revolutionary = yes
+		bgm_rev = yes
 		has_dlc = "Emperor"
 	}
 	modifiers = {
@@ -3061,7 +3061,7 @@ imperial_principle_reform = {
 	icon = "imperial_nobility_reform"
 	allow_normal_conversion = yes
 	potential = {
-		is_revolutionary = yes
+		bgm_rev = yes
 		has_dlc = "Emperor"
 	}
 	modifiers = {
@@ -3081,7 +3081,7 @@ landholders_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		OR = {
-			is_revolutionary = no
+			bgm_rev = no
 			NOT = { has_dlc = "Emperor" }
 		}
 	}
@@ -3098,7 +3098,7 @@ citizenry_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		OR = {
-			is_revolutionary = no
+			bgm_rev = no
 			NOT = { has_dlc = "Emperor" }
 		}
 	}
@@ -3115,7 +3115,7 @@ admiralty_reform = {
 	allow_normal_conversion = yes
 	# no legacy equivalent. own Dharama or Emperor
 	potential = {
-		is_revolutionary = no
+		bgm_rev = no
 		NOT = { has_government_attribute = is_pirate_republic_reform }
 	}
 	trigger = {
@@ -3143,7 +3143,7 @@ military_rulership_reform = {
 	icon = "soldiers_2"
 	allow_normal_conversion = yes
 	potential = {
-		is_revolutionary = no
+		bgm_rev = no
 		NOT = { has_government_attribute = is_pirate_republic_reform }
 	}
 	modifiers = {
@@ -3166,7 +3166,7 @@ dynastic_rulership_reform = {
 	icon = "king"
 	allow_normal_conversion = yes
 	potential = {
-		is_revolutionary = no
+		bgm_rev = no
 	}
 	modifiers = {
 		diplomatic_reputation = 2
@@ -3204,7 +3204,7 @@ equal_electorate_reform = {
 	icon = "equal_electorate_reform"
 	allow_normal_conversion = yes
 	potential = {
-		is_revolutionary = yes
+		bgm_rev = yes
 		has_dlc = "Emperor"
 	}
 	modifiers = {
@@ -3223,7 +3223,7 @@ three_classes_reform = {
 	icon = "three_classes_reform"
 	allow_normal_conversion = yes
 	potential = {
-		is_revolutionary = yes
+		bgm_rev = yes
 		has_dlc = "Emperor"
 	}
 	modifiers = {
@@ -3240,7 +3240,7 @@ military_electorate_reform = {
 	icon = "military_dictatorship_reform"
 	allow_normal_conversion = yes
 	potential = {
-		is_revolutionary = yes
+		bgm_rev = yes
 		has_dlc = "Emperor"
 	}
 	modifiers = {
@@ -3412,7 +3412,7 @@ strengthen_executive_powers_reform = {
 	icon = "queen"
 	allow_normal_conversion = yes
 	potential = { 
-		is_revolutionary = no 
+		bgm_rev = no 
 	}
 	modifiers = {
 		max_absolutism = 25
@@ -3452,7 +3452,7 @@ president_for_life_reform = {
 	allow_normal_conversion = yes
 	has_term_election = no
 	potential = { 
-		is_revolutionary = yes
+		bgm_rev = yes
 		has_dlc = "Emperor"
 	}
 	modifiers = {
@@ -3512,7 +3512,7 @@ government_for_people_reform = {
 	icon = "government_for_people_reform"
 	allow_normal_conversion = yes
 	potential = { 
-		is_revolutionary = yes
+		bgm_rev = yes
 		has_dlc = "Emperor"
 	}
 	modifiers = {
@@ -3525,7 +3525,7 @@ become_rev_empire_reform = {
 	allow_normal_conversion = yes
 
 	potential = { 
-		is_revolutionary = yes
+		bgm_rev = yes
 	}
 	
 	trigger = {
@@ -3614,7 +3614,7 @@ maintain_oligarchic_principle = {
 	icon = "politician"
 	allow_normal_conversion = yes
 	potential = { 
-		is_revolutionary = no 
+		bgm_rev = no 
 	}
 	trigger = {
 		has_institution = enlightenment
@@ -3627,17 +3627,16 @@ maintain_oligarchic_principle = {
 }
 
 enlightened_republicanism_principle = {
-	icon = "become_rev_empire_reform"
+	icon = "enlightened_monarchy_reform"
 	allow_normal_conversion = yes
 	potential = { 
-		#is_revolutionary = no 
+		#bgm_rev = no 
 	}
 	trigger = {
 		has_institution = enlightenment
 	}
 	modifiers = {
-		global_manpower_modifier = 0.15
-		global_tax_modifier = 0.05
+		reform_progress_growth = 0.25
 		tolerance_heretic = 1 
 		tolerance_heathen = 1 
 	}
@@ -3650,7 +3649,7 @@ socialist_reform = {
 		#current_age = age_of_great_wars
 		OR = {
 			has_global_flag = communist_manifesto_written
-			is_revolutionary = yes
+			bgm_rev = yes
 		}
 	}
 	
@@ -3665,7 +3664,7 @@ socialist_reform = {
 			has_global_flag = communist_manifesto_written
 		}
 		OR = {
-			is_revolutionary = yes
+			bgm_rev = yes
 			has_reform = peasants_republic
 		}
 		#absolutism = 90
@@ -3686,7 +3685,7 @@ futurist_reform = {
 		#current_age = age_of_great_wars
 		OR = {
 			has_global_flag = futurist_manifesto_written
-			is_revolutionary = yes
+			bgm_rev = yes
 		}
 		
 	}
@@ -3702,7 +3701,7 @@ futurist_reform = {
 			has_global_flag = futurist_manifesto_written
 		}
 		OR = {
-			is_revolutionary = yes
+			bgm_rev = yes
 			has_reform = peasants_republic
 		}
 		#absolutism = 90
@@ -3726,7 +3725,7 @@ fascist_reform_republic = {
 		NOT = { has_reform = pro_enlightenment_reform }
 		#NOT = { has_country_modifier = socialist_government }
 		NOT = { has_reform = bgm_egalite_reform }
-		is_revolutionary = no
+		bgm_rev = no
 		OR = {
 			AND = {
 				adm_tech = 36

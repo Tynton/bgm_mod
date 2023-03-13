@@ -57,9 +57,9 @@ ZMB = "countries/Zimbabwe.txt"
 AIS = "countries/AIState.txt"
 RDI = "countries/Inglatierra.txt"
 NTI = "countries/Antipope.txt"
-#ADO = "countries/Andorra.txt"
-#CMA = "countries/Colmar.txt"
-#SMA = "countries/SanMarino.txt"
+ADO = "countries/Andorra.txt"
+CMA = "countries/Colmar.txt"
+SMA = "countries/SanMarino.txt"
 #OFF = "countries/Offenburg.txt"
 #HIL = "countries/Hildesheim.txt"
 FCO = "countries/FraincComtouNat.txt"
@@ -94,6 +94,16 @@ NME = "countries/Nemecko.txt"
 IRN = "countries/Iran.txt"
 BRM = "countries/Burma.txt"
 VIN = "countries/Vietnam.txt"
+BFR = "countries/BurFra.txt"
+BUP = "countries/BurFraRep.txt"
+BFE = "countries/BurFraEmpire.txt"
+
+POI = "countries/Poitou.txt"
+
+MNC = "countries/Monaco.txt"
+MIT = "countries/Monacitaly.txt"
+
+FAN = "countries/Francia.txt"
 
 
 

@@ -147,7 +147,7 @@ country_event = {
 		months = 100
 		modifier = {
 			factor = 0.75
-			dynasty = "vô Habsburg"
+			dynasty = "von Habsburg"
 		}
 	}
 
@@ -211,7 +211,7 @@ country_event = {
 		months = 100
 		modifier = {
 			factor = 0.75
-			dynasty = "vô Habsburg"
+			dynasty = "von Habsburg"
 		}
 		modifier = {
 			factor = 0.25
@@ -1066,7 +1066,7 @@ country_event = {
 #		tag = HAB
 #		NOT = { is_year = 1500 }
 #		is_emperor = yes
-#		dynasty = "vô Habsburg"
+#		dynasty = "von Habsburg"
 #		prestige = 50
 #	}
 #
@@ -1125,7 +1125,7 @@ country_event = {
 		months = 100
 		modifier = {
 			factor = 0.75
-			dynasty = "vô Habsburg"
+			dynasty = "von Habsburg"
 		}
 	}
 	
@@ -1157,7 +1157,7 @@ country_event = {
 		months = 100
 		modifier = {
 			factor = 0.75
-			dynasty = "vô Habsburg"
+			dynasty = "von Habsburg"
 		}
 	}
 	
@@ -1254,7 +1254,7 @@ country_event = {
 		is_free_or_tributary_trigger = yes
 		government = monarchy
 		NOT = { 
-			dynasty = "vô Habsburg" 
+			dynasty = "von Habsburg" 
 		}
 		NOT = { 
 			has_ruler_modifier = spurn_habsburgs
@@ -1313,7 +1313,7 @@ country_event = {
 					has_country_flag = habsburg_adm_heir
 				}
 				define_heir = {
-					dynasty = "vô Habsburg"
+					dynasty = "von Habsburg"
 					culture = austrian
 					ADM = 5
 					DIP = 1
@@ -1327,7 +1327,7 @@ country_event = {
 					has_country_flag = habsburg_dip_heir
 				}
 				define_heir = {
-					dynasty = "vô Habsburg"
+					dynasty = "von Habsburg"
 					culture = austrian
 					DIP = 5
 					ADM = 1
@@ -1341,7 +1341,7 @@ country_event = {
 					has_country_flag = habsburg_mil_heir
 				}
 				define_heir = {
-					dynasty = "vô Habsburg"
+					dynasty = "von Habsburg"
 					culture = austrian
 					MIL = 5
 					ADM = 1
@@ -1362,7 +1362,7 @@ country_event = {
 					has_country_flag = habsburg_adm_heir
 				}
 				define_heir = {
-					dynasty = "vô Habsburg"
+					dynasty = "von Habsburg"
 					female = yes
 					culture = austrian
 					ADM = 5
@@ -1377,7 +1377,7 @@ country_event = {
 					has_country_flag = habsburg_dip_heir
 				}
 				define_heir = {
-					dynasty = "vô Habsburg"
+					dynasty = "von Habsburg"
 					culture = austrian
 					female = yes
 					DIP = 5
@@ -1392,7 +1392,7 @@ country_event = {
 					has_country_flag = habsburg_mil_heir
 				}
 				define_heir = {
-					dynasty = "vô Habsburg"
+					dynasty = "von Habsburg"
 					culture = austrian
 					female = yes
 					MIL = 5

@@ -2464,7 +2464,7 @@ benelux = {
 }
 
 french = {
-	graphical_culture = westerngfx
+	graphical_culture = frenchgfx
 	
 	franceis = {
 		primary = FRA
@@ -2511,32 +2511,29 @@ french = {
 			Thierry Thomas Valeran Yves Marc Augustin Aubin Sylvain Maximilien Vespasien Damien Émeric Benjamin Hélier Edgard Valérian Adolphe
 			
 			Casimir Rémy Rémi Aldéric Aldric Baudouin Benjamin Barthélémy Christian Clément Corentin Corin Côme Émile Ernest Ludovic Marcel Matéo Marin Mathéo Maxime
-			
-			Leonardo Abbondanzio Achille Augusto Aurelio
-			Buoso Callisto Camillo Candido Cangrande Carlo Cassio Castore Cataldo Catone Cecco 
-			Chiaffredo Chiano Ciro Claudio Clemente Costanzo Cesare Cristoforo Ferdinando Ferruccio Filippo
-			Galeotto Gaspare Gastone Gelasio Gentile Geraldo Gerardo Germano Gerolamo Guglielmo Guido
-			Guigliadore Iacopo Igino Innocenzo Ippolito Isnardo
-			Lealdo Leonardo Leone Leonello Leopoldo Libero Lionello Livio Lodovico Manuele Marco Matteo 
-			Michelangelo Michele Napoleone Nestore Niccolò Nicola
-			Omero Onorio Ottavio Ottone 
-			Pagano Pancrazio Salinguerra Salvatore Salvestro
-			Silvano Silvestro Simone Simonetto Stefano
-			Taddeo Tedaldo Tedice Teodoro Tibaldo Tiziano Tommaso Vittorio Umberto Achille Annibale Ardito Aristide Arnaldo Aronne Augusto Battista
 		}
 		dynasty_names = {
 			"de Valois" "de Bourbon" Bonaparte "de la Tour" "d'Anjou" 
 			"de Lorraine" "de Foix" "de Montfort" "de Blois" "de Penthievre" "de Dreux"
 			"de Rohan" "de Bar" "d'Albert" "d'Escoubleau" "de Neufville" 
+
+			"de Valois" "de Bourbon" "de la Tour" "d'Anjou" 
+			"de Lorraine" "de Foix" "de Montfort" "de Blois" "de Penthievre" "de Dreux"
+			"de Rohan" "de Bar" "d'Albert" "d'Escoubleau" "de Neufville" "de Valois-Bregogne"
+			"de Castellane" "d'Auvergne" "de Montbéliard" "de Metz" 
+			#CKII Frankish
+			"de Laval" "de la Tour du Pin" "de La Trémoille" "de Créquy" "de Broglie"
+			"de Montesquiou" "de Courtenay" "d'Harcourt" "de La Croix" "Le Tellier"
+			"de Rochechouart" "d'Aumont" "de Vergy" "de Saboulin" "de Gramont" "de Bissy"
+			"de Barrau" "de La Fayette" "d'Armagnac" "de Rougé" "du Quenoy" "de Ficquelmont"
+			"de Talleyrand" "de Saintignon" "de Montmorency" "de Savoie"
+			"de Vaudemont" "de Nicolaÿ"
 			
-			"de' Medici" "di Savoia" "d'Este" Farnese Visconti Sforza Gonzaga "d'Ivrea" Orsini 
-			Colonna Caetani Ruspoli Aldobrandini Borghese Odescalchi Serlupi Crescenzi Massimo Patrizi Naro Montoro 
-			Theodoli Senni Ricci Rocchi Datti Pietromarchi Tuccimei Mazzetti 
-			Évrard
+			
 		}
 	}
 	anglo_norman = {
-		primary = NRM
+		primary = AEV
 		male_names = {
 			Ailred Airard Alvery Ansketil Filimor Galfrid Gower Mauger Osbern Ottiwell Pagan Thorold Richard Williame Stephen Geoffrey John Henry Edward Fulbert Herluin 
 			Williame Ralph Theobald Gllâome Hélyi
@@ -2566,10 +2563,10 @@ french = {
 		primary = BOU
 	}
 	poitevin = {
-		#primary = PIC
+		primary = POI
 	}
 	angevin = {
-		#primary = PIC
+		primary = AEV
 	}
 	orleanais = {
 		primary = ORL
@@ -2610,7 +2607,7 @@ french = {
 	dynasty_names = {
 		"de Valois" "de Bourbon" "de la Tour" "d'Anjou" 
 		"de Lorraine" "de Foix" "de Montfort" "de Blois" "de Penthievre" "de Dreux"
-		"de Rohan" "de Bar" "d'Albert" "d'Escoubleau" "de Neufville" "de Valois-Bourgogne"
+		"de Rohan" "de Bar" "d'Albert" "d'Escoubleau" "de Neufville" "de Valois-Bregogne"
 		"de Castellane" "d'Auvergne" "de Montbéliard" "de Metz" 
 		#CKII Frankish
 		"de Laval" "de la Tour du Pin" "de La Trémoille" "de Créquy" "de Broglie"
@@ -3557,6 +3554,23 @@ latin = {
 	
 	piedmontese = {
 		primary = SAV
+	}
+	monegasque = {
+		primary = MNC
+
+		male_names = {
+			Joseph Eugène Jean Henri Charles Louis Stéphane François Laurent Christophe
+		}
+
+		female_names = {
+			Brigitte Nathalie Corinne Michèle Marie Marine 
+		}
+
+		dynasty_names = {
+			"di Grimaldi" Flach Jaloustre "Le Bourdon" Piette Mauran Bouilloux-Lafont Roblot Blanchy "de Witasse" Rueff Voizard Soum Pelletier Reymond
+			Demange Gregh Saint-Mleux Herly Ausseil Dupont Dijout Lévêque Leclercq Proust Roger Tonelli Telle Dartout Valeri Marquet Marsan Settimo Bellando Aureglia
+			Simon Médecin Rey Campora Robillon Nouvion Steiner Boccone-Pagès Fresko-Rolfo Grinda
+		}
 	}
 	romagnan = {
 		primary = FER
@@ -12731,6 +12745,17 @@ lost_cultures_group = {
 		}
 		female_names = {
 			Brummelisa Ursa Brumma
+		}
+	}
+	placeholder_culture = { #where gone dynasties go to die
+		dynasty_names = {
+			"d'Ivrée" "de Valois-Bregogne" Capet
+		}
+		male_names = {
+			a
+		}
+		female_names = {
+			b
 		}
 	}
 	pruthenian = {

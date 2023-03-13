@@ -46,7 +46,7 @@ rev_dictatorship = {
 	}
 
 	trigger = {
-		is_revolutionary = yes
+		bgm_rev = yes
 		has_reform = republic_mechanic
 		OR = {
 			has_reform = enlightened_republicanism_principle
@@ -1574,7 +1574,7 @@ burgundian_monarchy = {
 middle_english_monarchy = {
 	rank = {
 		1 = ENG_DUCHE
-		2 = KINERICHE # KYNGDOM #Kinerice
+		2 = KYNGDOM # KYNGDOM #KINERICHE #Kinerice
 		3 = ENG_EMPIRE
 	}
 
@@ -1683,6 +1683,7 @@ anglosphere_monarchy = {
 			has_reform = parliamentary_monarchism
 			has_reform = monarchy_mechanic
 		}
+		has_country_flag = evolved_english
 		culture_group = british
 		adm_tech = 10
 		NOT = { has_country_flag = middle_english }

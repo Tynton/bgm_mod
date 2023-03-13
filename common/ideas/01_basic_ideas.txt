@@ -352,7 +352,7 @@ peasant_ideas = {
 	trigger = {
 		OR = {
 			has_reform = peasants_republic
-			is_revolutionary = yes
+			bgm_rev = yes
 		}
 		#full_idea_group = peasant_ideas
 	}
@@ -391,9 +391,10 @@ peasant_adm_ideas = {
 		global_autonomy = -0.05
 	}
 	trigger = {
+		always = no
 		OR = {
 			has_reform = peasants_republic
-			is_revolutionary = yes
+			bgm_rev = yes
 		}
 		full_idea_group = peasant_ideas
 	}
@@ -432,9 +433,10 @@ peasant_dip_ideas = {
 		province_warscore_cost = -0.15
 	}
 	trigger = {
+		always = no
 		OR = {
 			has_reform = peasants_republic
-			is_revolutionary = yes
+			bgm_rev = yes
 		}
 		full_idea_group = peasant_ideas
 	}

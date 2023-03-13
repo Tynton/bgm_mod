@@ -14,54 +14,164 @@ country_event = {
 	trigger = {
 		FRA = {
 			ai = yes
+			has_casus_belli = {
+				type = cb_imperial
+				target = ROOT
+			}
 			army_strength = {
 				who = ROOT
-				value = 2.5
-			}
-			NOT = {
-				personality = ai_capitalist
+				value = 2.25
 			}
 			is_at_war = no
-			truce_with = ROOT
+			NOT = { truce_with = ROOT }
 		}
-		any_owned_province = {
-			is_permanent_claim = FRA
+		OR = {
+			AND = {
+				any_owned_province = {
+					is_claim = FRA
+				}
+				capital_scope = {
+					continent = europe
+				}
+			}
+			AND = {
+				is_neighbor_of = FRA
+				capital_scope = {
+					continent = europe
+				}
+				FRA = {
+					has_country_flag = fra_europe
+				}
+			}
 		}
 		NOT = {
 			any_ally = {
 				army_strength = {
 					who = FRA
-					value = 0.75
+					value = 0.5
 				}
 			}
 		}
 		NOT = {
 			army_strength = {
 				who = FRA
-				value = 0.75
+				value = 0.5
 			}
 			truce_with = FRA 
 		}
 		NOT = {
+			any_country = {
+				has_guaranteed = ROOT
+			}
+		}
+		NOT = {
 			alliance_with = FRA 
 		}
-		is_part_of_hre = no
+		OR = {
+			is_part_of_hre = no
+			AND = {
+				is_part_of_hre = yes
+				emperor = {
+					NOT = {
+						army_strength = {
+							who = FRA
+							value = 0.35
+						}
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 2
+
+		modifier = {
+			factor = 0.75
+			capital_scope = {
+				region = italy_region
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			NOT = {
+				military_strength = {
+					who = FRA
+					value = 0.25
+				}
+			}
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				military_strength = {
+					who = FRA
+					value = 0.1
+				}
+			}
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				any_country = {
+					alliance_with = ROOT
+				}
+			}
+		}
+	}
+	
+	#buy land
+	
+	option = {
+		name = none
+		
+		FRA = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_imperial
+			}
+		}
+	}
+}
+
+#Break alliances
+
+country_event = {
+	id = French_AI.2
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		FRA = {
+			has_country_flag = fra_europe
+			is_neighbor_of = ROOT
+			ai = yes
+		}
+		ROOT = {
+			ai = yes
+			capital_scope = {
+				OR = {
+					region = north_german_region
+					region = south_german_region
+					region = italy_region
+				}
+			}
+		}
 	}
 
 	mean_time_to_happen = {
 		months = 3
 	}
 	
-	#buy land
-	
 	option = {
-		name = "French_AI.1.a"
+		name = "none"
 		
 		FRA = {
-			declare_war_with_cb = {
-				who = ROOT
-				casus_belli = cb_annex
-			}
+			break_alliance = ROOT
 		}
 	}
 }

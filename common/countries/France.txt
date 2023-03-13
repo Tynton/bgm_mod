@@ -1,6 +1,6 @@
 #Country Name: Please see filename.
 
-graphical_culture = westerngfx
+graphical_culture = frenchgfx
 
 color = { 24 52 153 } #22  36  176 | 20  50  210
 

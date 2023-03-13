@@ -7,7 +7,7 @@ estate_industrialist = {
 		has_institution = industrialization
 		adm_tech = 32
 		
-		is_revolutionary = no
+		bgm_rev = no
 		
 		NOT = {
 			OR = {

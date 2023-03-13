@@ -13,18 +13,31 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		france_region = {
-			any_country = { 
-				total_development = 300
+		any_country = {
+			OR = {
+				AND = {
+					NOT = { culture_group = latin }
+					calc_true_if = {
+						all_owned_province = {
+							OR = {
+								culture_group = latin
+								region = italy_region
+							}
+						}
+						amount = 5
+					}
+				}
+				capital_scope = {
+					OR = {
+						region = france_region
+						region = balkan_region
+					}
+				}
 			}
+			total_development = 300
 		}
 		is_subject = no
-		all_country = {
-			capital_scope = {
-				region = italy_region
-			}
-			is_at_war = no
-		}
+		NOT = { has_global_flag = italea_happened }
 		has_global_flag = italians_leave_hre
 		
 		NOT = {
@@ -40,16 +53,15 @@ country_event = {
 		}
 		OR = {
 			culture_group = latin
-			
 			tag = SAV
 		}
 		OR = {
-			total_development = 100
+			total_development = 66
 			capital_scope = {
-				development = 25
+				is_institution_origin = renaissance
 			}
 		}
-		NOT = { OR = { exists = ITA exists = VIY } }
+		NOT = { OR = { exists = ITA exists = VIY exists = MIT } }
 	}
 
 	mean_time_to_happen = {
@@ -75,6 +87,8 @@ country_event = {
 	
 	option = {
 		name = "italic_league.3.a"
+
+		set_global_flag = italea_happened
 		
 		set_country_flag = italea_leader
 		
@@ -82,10 +96,15 @@ country_event = {
 			limit = {
 				OR = {
 					culture_group = latin
-					
 					culture_group = franco_provencal
-					is_at_war = no
 				}
+				capital_scope = {
+					OR = {
+						region = italy_region
+						region = france_region
+					}
+				}
+				#is_at_war = no
 				is_subject = no
 			}
 			#total_development = 225
@@ -243,18 +262,42 @@ country_event = {
 	
 	option = {
 		name = "italic_league.5.a"
+
+		#add_country_modifier = {
+		#	name = abadoned_religious_rebels
+		#	duration = 9125
+		#}
 		
 		every_subject_country = {
 			limit = {
 				is_subject_of_type = italic_league_member
+				OR = {
+					total_development = ROOT
+					ai = no
+				}
 			}
+			set_country_flag = bigger_than_italea
 			country_event = {
 				id = italic_league.6
 			}
 		}
+		every_subject_country = {
+			limit = {
+				is_subject_of_type = italic_league_member
+				NOT = {
+					OR = {
+						total_development = ROOT
+						ai = no
+					}
+				}
+			}
+			country_event = {
+				id = italic_league.6
+				days = 2
+			}
+		}
 		
 		add_prestige = 100
-		add_stability = -3
 		if = {
 			limit = {
 				NOT = {
@@ -287,6 +330,22 @@ country_event = {
 					continent = europe
 				}
 				add_permanent_claim = VIY
+			}
+		}
+		if = {
+			limit = {
+				primary_culture = monegasque
+			}
+			change_tag = MIT
+			every_province = {
+				limit = {
+					OR = {
+						culture_group = latin
+						
+					}
+					continent = europe
+				}
+				add_permanent_claim = MIT
 			}
 		}
 		if = {
@@ -332,14 +391,7 @@ country_event = {
 
 		trigger = {
 			OR = {
-				VIY = {
-					OR = {
-						has_country_modifier = italea_2
-						has_country_modifier = italea_3
-						has_country_modifier = italea_4
-					}
-				}
-				ITA = {
+				FROM = {
 					OR = {
 						has_country_modifier = italea_2
 						has_country_modifier = italea_3
@@ -351,63 +403,25 @@ country_event = {
 
 		if = {
 			limit = {
-				exists = VIY
+				ai = yes
+				NOT = { 
+					has_country_flag = bigger_than_italea
+				}
 			}
-			VIY = {
+			FROM = {
 				inherit = ROOT
 				ROOT = {
 					every_owned_province = {
-						add_core = VIY
+						add_core = FROM
 					}
-				}
-				if = {
-					limit = {
-						has_country_modifier = italea_1
-					}
-					remove_country_modifier = italea_1
-				}
-				if = {
-					limit = {
-						has_country_modifier = italea_2
-					}
-					remove_country_modifier = italea_2
-				}
-				if = {
-					limit = {
-						has_country_modifier = italea_3
-					}
-					remove_country_modifier = italea_3
 				}
 			}
 		}
-		if = {
-			limit = {
-				exists = ITA
-			}
-			ITA = {
-				inherit = ROOT
-				ROOT = {
-					every_owned_province = {
-						add_core = ITA
-					}
-				}
-				if = {
-					limit = {
-						has_country_modifier = italea_1
-					}
-					remove_country_modifier = italea_1
-				}
-				if = {
-					limit = {
-						has_country_modifier = italea_2
-					}
-					remove_country_modifier = italea_2
-				}
-				if = {
-					limit = {
-						has_country_modifier = italea_3
-					}
-					remove_country_modifier = italea_3
+		else = {
+			FROM = {
+				create_subject = {
+					subject_type = vassal
+					who = ROOT
 				}
 			}
 		}
@@ -416,7 +430,7 @@ country_event = {
 			factor = 1 
 			
 			modifier = {
-				factor = 0
+				factor = 0.001
 				total_development = 150
 			}
 		}
@@ -426,55 +440,30 @@ country_event = {
 		name = "italic_league.6.b"
 
 		trigger = {
-			OR = {
-				VIY = {
-					OR = {
-						has_country_modifier = italea_1
-						has_country_modifier = italea_2
-					}
-				}
-				ITA = {
-					OR = {
-						has_country_modifier = italea_1
-						has_country_modifier = italea_2
-					}
+			NOT = {
+				has_subject_of_type = italic_league_member
+			}
+			FROM = {
+				OR = {
+					has_country_modifier = italea_1
+					has_country_modifier = italea_2
 				}
 			}
 		}
-
-		if = {
-			limit = {
-				exists = VIY
-			}
-			VIY = {
-				add_casus_belli = {
-					target = ROOT
-					type = cb_annex
-					months = 240
-				}
-			}
-			every_owned_province = {
-				add_claim = VIY
+		FROM = {
+			add_casus_belli = {
+				target = ROOT
+				type = cb_annex
+				months = 240
 			}
 		}
-		if = {
-			limit = {
-				exists = ITA
-			}
-			ITA = {
-				add_casus_belli = {
-					target = ROOT
-					type = cb_annex
-					months = 240
-				}
-			}
-			every_owned_province = {
-				add_claim = ITA
-			}
+		every_owned_province = {
+			add_claim = FROM
 		}
+		
 		grant_independence = yes
 		ai_chance = { 
-			factor = 1 
+			factor = 0
 			
 			modifier = {
 				factor = 10
@@ -497,6 +486,14 @@ country_event = {
 			}
 			change_tag = VIY
 			set_country_flag = venetian_italy
+		}
+
+		if = {
+			limit = {
+				has_country_flag = monaco_c
+			}
+			change_tag = MIT
+			set_country_flag = regular_italy
 		}
 
 		if = {

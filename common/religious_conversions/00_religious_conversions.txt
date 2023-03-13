@@ -107,10 +107,10 @@ hussite_center_of_reformation = {
 			is_empty = yes
 		}
 		modifier = {
-			factor = 25.0
+			factor = 100.0
 			owner = {
 				any_owned_province = {
-					is_reformation_center = yes
+					has_hostile_reformation_center = yes
 				}
 			}
 		}
@@ -168,27 +168,17 @@ hussite_center_of_reformation = {
 		}
 		modifier = {
 			factor = 0
-			religion = reformed
-		}
-		modifier = {
-			factor = 0
-			religion = protestant
-		}
-		modifier = {
-			factor = 0
-			religion = anglican
-		}
-		modifier = {
-			factor = 0
-			religion = waldensian
-		}
-		modifier = {
-			factor = 0
-			religion = fraticelli
-		}
-		modifier = {
-			factor = 0
-			religion = lollard
+			OR = {
+				religion = protestant
+				religion = reformed
+				religion = anglican
+				religion = hussite
+				religion = waldensian
+				religion = lollard
+				religion = anabaptist
+				religion = unitarian
+				religion = cathar
+			}
 		}
 		modifier = {
 			factor = 0
@@ -324,10 +314,10 @@ waldensian_center_of_reformation = {
 			is_empty = yes
 		}
 		modifier = {
-			factor = 25.0
+			factor = 100.0
 			owner = {
 				any_owned_province = {
-					is_reformation_center = yes
+					has_hostile_reformation_center = yes
 				}
 			}
 		}
@@ -385,27 +375,17 @@ waldensian_center_of_reformation = {
 		}
 		modifier = {
 			factor = 0
-			religion = reformed
-		}
-		modifier = {
-			factor = 0
-			religion = protestant
-		}
-		modifier = {
-			factor = 0
-			religion = anglican
-		}
-		modifier = {
-			factor = 0
-			religion = hussite
-		}
-		modifier = {
-			factor = 0
-			religion = fraticelli
-		}
-		modifier = {
-			factor = 0
-			religion = lollard
+			OR = {
+				religion = protestant
+				religion = reformed
+				religion = anglican
+				religion = hussite
+				religion = waldensian
+				religion = lollard
+				religion = anabaptist
+				religion = unitarian
+				religion = cathar
+			}
 		}
 		modifier = {
 			factor = 0
@@ -530,10 +510,10 @@ cathar_center_of_reformation = {
 			is_empty = yes
 		}
 		modifier = {
-			factor = 25.0
+			factor = 100.0
 			owner = {
 				any_owned_province = {
-					is_reformation_center = yes
+					has_hostile_reformation_center = yes
 				}
 			}
 		}
@@ -591,27 +571,17 @@ cathar_center_of_reformation = {
 		}
 		modifier = {
 			factor = 0
-			religion = reformed
-		}
-		modifier = {
-			factor = 0
-			religion = protestant
-		}
-		modifier = {
-			factor = 0
-			religion = anglican
-		}
-		modifier = {
-			factor = 0
-			religion = hussite
-		}
-		modifier = {
-			factor = 0
-			religion = fraticelli
-		}
-		modifier = {
-			factor = 0
-			religion = lollard
+			OR = {
+				religion = protestant
+				religion = reformed
+				religion = anglican
+				religion = hussite
+				religion = waldensian
+				religion = lollard
+				religion = anabaptist
+				religion = unitarian
+				religion = cathar
+			}
 		}
 		modifier = {
 			factor = 0
@@ -736,10 +706,10 @@ anglican_center_of_reformation = {
 			is_empty = yes
 		}
 		modifier = {
-			factor = 25.0
+			factor = 100.0
 			owner = {
 				any_owned_province = {
-					is_reformation_center = yes
+					has_hostile_reformation_center = yes
 				}
 			}
 		}
@@ -797,11 +767,17 @@ anglican_center_of_reformation = {
 		}
 		modifier = {
 			factor = 0
-			religion = reformed
-		}
-		modifier = {
-			factor = 0
-			religion = protestant
+			OR = {
+				religion = protestant
+				religion = reformed
+				religion = anglican
+				religion = hussite
+				religion = waldensian
+				religion = lollard
+				religion = anabaptist
+				religion = unitarian
+				religion = cathar
+			}
 		}
 		modifier = {
 			factor = 0
@@ -846,10 +822,6 @@ anglican_center_of_reformation = {
 			owner = {
 				religion = anglican
 			}
-		}
-		modifier = {
-			factor = 0
-			religion = hussite
 		}
 		modifier = {
 			factor = 2
@@ -911,10 +883,10 @@ protestant_center_of_reformation = {
 			is_empty = yes
 		}
 		modifier = {
-			factor = 25.0
+			factor = 100.0
 			owner = {
 				any_owned_province = {
-					is_reformation_center = yes
+					has_hostile_reformation_center = yes
 				}
 			}
 		}
@@ -972,19 +944,17 @@ protestant_center_of_reformation = {
 		}
 		modifier = {
 			factor = 0
-			religion = reformed
-		}
-		modifier = {
-			factor = 0
-			religion = anglican
-		}
-		modifier = {
-			factor = 0
-			religion = hussite
-		}
-		modifier = {
-			factor = 0
-			religion = waldensian
+			OR = {
+				religion = protestant
+				religion = reformed
+				religion = anglican
+				religion = hussite
+				religion = waldensian
+				religion = lollard
+				religion = anabaptist
+				religion = unitarian
+				religion = cathar
+			}
 		}
 		modifier = {
 			factor = 0
@@ -1127,10 +1097,10 @@ reformed_center_of_reformation = {
 			has_missionary = yes
 		}
 		modifier = {
-			factor = 25.0
+			factor = 100.0
 			owner = {
 				any_owned_province = {
-					is_reformation_center = yes
+					has_hostile_reformation_center = yes
 				}
 			}
 		}
@@ -1223,15 +1193,17 @@ reformed_center_of_reformation = {
 		}
 		modifier = {
 			factor = 0
-			religion = protestant
-		}
-		modifier = {
-			factor = 0
-			religion = anglican
-		}
-		modifier = {
-			factor = 0
-			religion = hussite
+			OR = {
+				religion = protestant
+				religion = reformed
+				religion = anglican
+				religion = hussite
+				religion = waldensian
+				religion = lollard
+				religion = anabaptist
+				religion = unitarian
+				religion = cathar
+			}
 		}
 		modifier = {
 			factor = 0
@@ -1355,10 +1327,10 @@ unitarian_center_of_reformation = {
 			has_missionary = yes
 		}
 		modifier = {
-			factor = 25.0
+			factor = 100.0
 			owner = {
 				any_owned_province = {
-					is_reformation_center = yes
+					has_hostile_reformation_center = yes
 				}
 			}
 		}
@@ -1415,6 +1387,20 @@ unitarian_center_of_reformation = {
 			has_province_modifier = religious_zeal_at_conv
 		}
 		modifier = {
+			factor = 0
+			OR = {
+				religion = protestant
+				religion = reformed
+				religion = anglican
+				religion = hussite
+				religion = waldensian
+				religion = lollard
+				religion = anabaptist
+				religion = unitarian
+				religion = cathar
+			}
+		}
+		modifier = {
 			factor = 5
 			OR = {
 				culture_group = east_slavic
@@ -1444,18 +1430,6 @@ unitarian_center_of_reformation = {
 				culture_group = iberian
 				culture_group = occitan
 			}
-		}
-		modifier = {
-			factor = 0
-			religion = protestant
-		}
-		modifier = {
-			factor = 0
-			religion = anglican
-		}
-		modifier = {
-			factor = 0
-			religion = hussite
 		}
 		modifier = {
 			factor = 0
@@ -1579,10 +1553,10 @@ anabaptist_center_of_reformation = {
 			has_missionary = yes
 		}
 		modifier = {
-			factor = 25.0
+			factor = 100.0
 			owner = {
 				any_owned_province = {
-					is_reformation_center = yes
+					has_hostile_reformation_center = yes
 				}
 			}
 		}
@@ -1669,17 +1643,16 @@ anabaptist_center_of_reformation = {
 			factor = 0.5
 			culture_group = occitan
 		}
-		modifier = {
-			factor = 0
+		OR = {
 			religion = protestant
-		}
-		modifier = {
-			factor = 0
+			religion = reformed
 			religion = anglican
-		}
-		modifier = {
-			factor = 0
 			religion = hussite
+			religion = waldensian
+			religion = lollard
+			religion = anabaptist
+			religion = unitarian
+			religion = cathar
 		}
 		modifier = {
 			factor = 0
@@ -1807,10 +1780,10 @@ fraticelli_center_of_reformation = {
 			is_empty = yes
 		}
 		modifier = {
-			factor = 25.0
+			factor = 100.0
 			owner = {
 				any_owned_province = {
-					is_reformation_center = yes
+					has_hostile_reformation_center = yes
 				}
 			}
 		}
@@ -1898,25 +1871,16 @@ fraticelli_center_of_reformation = {
 				
 			}
 		}
-		modifier = {
-			factor = 0
+		OR = {
 			religion = protestant
-		}
-		modifier = {
-			factor = 0
+			religion = reformed
 			religion = anglican
-		}
-		modifier = {
-			factor = 0
 			religion = hussite
-		}
-		modifier = {
-			factor = 0
-			religion = lollard
-		}
-		modifier = {
-			factor = 0
 			religion = waldensian
+			religion = lollard
+			religion = anabaptist
+			religion = unitarian
+			religion = cathar
 		}
 		modifier = {
 			factor = 0
@@ -2016,10 +1980,10 @@ lollard_center_of_reformation = {
 			has_missionary = yes
 		}
 		modifier = {
-			factor = 25.0
+			factor = 100.0
 			owner = {
 				any_owned_province = {
-					is_reformation_center = yes
+					has_hostile_reformation_center = yes
 				}
 			}
 		}
@@ -2123,23 +2087,17 @@ lollard_center_of_reformation = {
 		}
 		modifier = {
 			factor = 0
-			religion = protestant
-		}
-		modifier = {
-			factor = 0
-			religion = anglican
-		}
-		modifier = {
-			factor = 0
-			religion = hussite
-		}
-		modifier = {
-			factor = 0
-			religion = fraticelli
-		}
-		modifier = {
-			factor = 0
-			religion = waldensian
+			OR = {
+				religion = protestant
+				religion = reformed
+				religion = anglican
+				religion = hussite
+				religion = waldensian
+				religion = lollard
+				religion = anabaptist
+				religion = unitarian
+				religion = cathar
+			}
 		}
 		modifier = {
 			factor = 0

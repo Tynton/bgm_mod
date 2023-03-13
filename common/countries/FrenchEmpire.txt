@@ -1,8 +1,8 @@
 #Country Name: Please see filename.
 
-graphical_culture = westerngfx
+graphical_culture = frenchgfx
 
-color = { 90  110  150 }
+color = { 29 42 140 } #90  110  150
 
 revolutionary_colors = { 15  0  16 }
 

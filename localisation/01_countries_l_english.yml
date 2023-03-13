@@ -151,6 +151,8 @@
  AEV_ADJ:0 "Angevin"
  VIY:0 "Italy"
  VIY_ADJ:0 "Italian"
+ MIT:0 "Italy"
+ MIT_ADJ:0 "Italian"
  
  OCC:0 "Occitania"
  OCC_ADJ:0 "Occitanian"
@@ -159,6 +161,15 @@
  ASE:0 "Alsace"
  ASE_ADJ:0 "Alsatian"
  
+ BFR:0 "Gaule"
+ BFR_ADJ:0 "Gaulish"
+ 
+ BUP:0 "Republican Gaule"
+ BUP_ADJ:0 "Gaulish"
+ 
+ BFE:0 "Imperial Gaule"
+ BFE_ADJ:0 "Gaulish"
+ 
  NGC:0 "North German Confederation"
  NGC_ADJ:0 "North German"
  SGC:0 "South German Confederation"
@@ -166,6 +177,9 @@
  
  UMB:0 "Umbria"
  UMB_ADJ:0 "Umbrian"
+ 
+ MNC:0 "Monaco"
+ MNC_ADJ:0 "Monegasque"
  
  SFR:0 "France"
  SFR_ADJ:0 "French"
@@ -181,7 +195,17 @@
  INDIA:0 "India"
  INDIA_ADJ:0 "Indian"
  
+ HLR_GER:0 "Germany"
+ HLR_GER_ADJ:0 "German"
  
+ BRIREP:0 "British Republic"
+ BRIREP_ADJ:0 "British"
+ 
+ POI:0 "Poitou"
+ POI_ADJ:0 "Poitevin"
+ 
+ FAN:0 "Francia"
+ FAN_ADJ:0 "Frankish"
  
  
  
@@ -375,6 +399,9 @@
  
  Frans:0 "Frañs"
  Frans_ADJ:0 "Frañsizien"
+ 
+ GAUL_BUR_STRING:0 "Gaule"
+ GAUL_BUR_STRING_ADJ:0 "French"
  
  Gaule:0 "Gaule"
  Gaule_ADJ:0 "Française"

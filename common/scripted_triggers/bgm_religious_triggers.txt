@@ -15,9 +15,17 @@
 
 lollard_ref_trigger = { # Lollardy
 	OR = {
-		any_country = {
-			is_great_power = yes
-			religion = lollard
+		calc_true_if = {
+			amount = 10
+			all_country = {
+				OR = {
+					religion = lollard
+					religion = waldensian
+					religion = hussite
+					religion = cathar
+					religion = fraticelli
+				}
+			}
 		}
 		calc_true_if = {
 			any_province = {
@@ -27,18 +35,26 @@ lollard_ref_trigger = { # Lollardy
 			amount = 3
 		}
 	}
-	num_of_cities = 5
+	#num_of_cities = 5
 	religion = lollard
-	has_friendly_reformation_center = yes
+	#has_friendly_reformation_center = yes
 	NOT = { has_global_flag = preprot_heresy }
 }
 
 wald_ref_trigger = { # Waldensian
 	OR = {
 		OR = {
-			any_country = {
-				is_great_power = yes
-				religion = waldensian
+			calc_true_if = {
+				amount = 10
+				all_country = {
+					OR = {
+						religion = lollard
+						religion = waldensian
+						religion = hussite
+						religion = cathar
+						religion = fraticelli
+					}
+				}
 			}
 			calc_true_if = {
 				any_province = {
@@ -49,16 +65,25 @@ wald_ref_trigger = { # Waldensian
 			}
 		}
 	}
-	num_of_cities = 5
+	#num_of_cities = 5
 	religion = waldensian
-	has_friendly_reformation_center = yes
+	#has_friendly_reformation_center = yes
 	NOT = { has_global_flag = preprot_heresy }
 }
 
 hussite_ref_trigger = { # Hussite
 	OR = {
-		any_country = {
-			is_great_power = yes
+		calc_true_if = {
+			amount = 10
+			all_country = {
+				OR = {
+					religion = lollard
+					religion = waldensian
+					religion = hussite
+					religion = cathar
+					religion = fraticelli
+				}
+			}
 		}
 		calc_true_if = {
 			any_province = {
@@ -68,18 +93,26 @@ hussite_ref_trigger = { # Hussite
 			amount = 3
 		}
 	}
-	num_of_cities = 5
+	#num_of_cities = 5
 	religion = hussite
-	has_friendly_reformation_center = yes
+	#has_friendly_reformation_center = yes
 	NOT = { has_global_flag = preprot_heresy }
 }
 
 cathar_ref_trigger = { # Cathars
 	OR = {
 		OR = {
-			any_country = {
-				is_great_power = yes
-				religion = cathar
+			calc_true_if = {
+				amount = 10
+				all_country = {
+					OR = {
+						religion = lollard
+						religion = waldensian
+						religion = hussite
+						religion = cathar
+						religion = fraticelli
+					}
+				}
 			}
 			calc_true_if = {
 				any_province = {
@@ -90,18 +123,26 @@ cathar_ref_trigger = { # Cathars
 			}
 		}
 	}
-	num_of_cities = 5
+	#num_of_cities = 5
 	religion = cathar
-	has_friendly_reformation_center = yes
+	#has_friendly_reformation_center = yes
 	NOT = { has_global_flag = preprot_heresy }
 }
 
 frat_ref_trigger = { # Fraticelli
 	OR = {
 		OR = {
-			any_country = {
-				is_great_power = yes
-				religion = fraticelli
+			calc_true_if = {
+				amount = 10
+				all_country = {
+					OR = {
+						religion = lollard
+						religion = waldensian
+						religion = hussite
+						religion = cathar
+						religion = fraticelli
+					}
+				}
 			}
 			calc_true_if = {
 				any_province = {
@@ -112,8 +153,8 @@ frat_ref_trigger = { # Fraticelli
 			}
 		}
 	}
-	num_of_cities = 5
+	#num_of_cities = 5
 	religion = fraticelli
-	has_friendly_reformation_center = yes
+	#has_friendly_reformation_center = yes
 	NOT = { has_global_flag = preprot_heresy }
 }

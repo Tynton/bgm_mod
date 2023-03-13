@@ -211,6 +211,7 @@ vassal = {
 	restoration_cb = cb_disloyal_vassal
 
 	# Subject Interactions:
+	support_loyalists = yes
 	scutage = yes
 	place_relative_on_throne = yes
 	sacrifice_ruler = yes

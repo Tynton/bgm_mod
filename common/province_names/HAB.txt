@@ -1,6 +1,0 @@
-4710 = { "Voralberg" "Voralbärg" }
-4760 = { "Innviertel" "Innviadl" }
-#5023 = "Mostviertel"
-34 = { "Wien" "Wean" }
-4759 = "Oberkärnten"
-128 = { "Unterkärnten" "Klagnfuat" }

@@ -16,6 +16,10 @@ country_decisions = {
 			NOT = { exists = FRR }
 			NOT = { exists = FRC }
 			NOT = { exists = FRF }
+			NOT = { exists = BFR }
+			NOT = { exists = BUP }
+			NOT = { exists = BFE }
+			NOT = { tag = FAN }
 			NOT = { tag = PAP }
 			NOT = { tag = SPA }		# Basque is a valid culture for both FRA and SPA
 			OR = {
@@ -78,6 +82,8 @@ country_decisions = {
 			if = {
 				limit = {
 					NOT = { primary_culture = swiss }
+					NOT = { primary_culture = burgundian }
+					NOT = { primary_culture = frainc_comtou }
 				}
 				change_tag = FRA
 
@@ -100,6 +106,16 @@ country_decisions = {
 					}
 					add_permanent_claim = SFR
 				}
+			}
+
+			if = {
+				limit = {
+					OR = {
+						primary_culture = burgundian
+						primary_culture = frainc_comtou
+					}
+				}
+				change_tag = BFR
 			}
 
 			if = {

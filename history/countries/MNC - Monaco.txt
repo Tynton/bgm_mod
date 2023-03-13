@@ -1,0 +1,66 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = monegasque
+religion = catholic
+technology_group = western
+capital = 4959	# Monaco
+fixed_capital = 4959 # Cannot move capital away from this province & no power cost to move to it
+
+1297.1.1 = {
+	monarch = {
+		name = "François I"
+		dynasty = "di Grimaldi"
+		birth_date = 1265.1.1 #Unknown
+		death_date = 1309.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+
+1309.1.1 = {
+	monarch = {
+		name = "Rainier I"
+		dynasty = "di Grimaldi"
+		birth_date = 1267.1.1
+		death_date = 1314.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+#Genoese rule
+1331.1.1 = {
+	monarch = {
+		name = "Charles I"
+		dynasty = "di Grimaldi"
+		birth_date = 1300.1.1
+		death_date = 1357.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+#second Genoese rule
+1412.1.1 = {
+	monarch = {
+		name = "Jean I"
+		dynasty = "di Grimaldi"
+		birth_date = 1382.1.1
+		adm = 3
+		dip = 4
+		mil = 2
+	}
+	queen = { #Marriage on 1380.11.15
+		country_of_origin = MNC
+		name = "Pomellina"
+		dynasty = "Fregoso"
+		birth_date = 1387.1.1
+		death_date = 1468.1.1
+		female = yes
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+}

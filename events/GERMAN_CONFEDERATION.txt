@@ -121,12 +121,29 @@ country_event = {
 	
 	option = {
 		name = "german_confederation.3.a"
+
+		if = {
+			limit = {
+				NOT = {
+					culture_group = germanic
+				}
+			}
+			country_event = {
+				id = german_confederation.15
+			}
+		}
 		
 		#set_government_rank = 3 
 		
 		every_country = {
 			limit = {
 				is_part_of_hre = yes
+				capital_scope = {
+					OR = {
+						region = north_german_region
+						region = south_german_region
+					}
+				}
 				NOT = {
 					tag = ROOT
 				}
@@ -142,7 +159,7 @@ country_event = {
 		dismantle_hre = yes
 		every_country = {
 			limit = {
-				government = republic
+				has_reform = free_city
 				NOT = { num_of_cities = 2 }
 			}
 			add_government_reform = post_hre_free_city
@@ -661,7 +678,7 @@ country_event = {
 	
 	trigger = {
 		ai = yes
-		is_revolutionary = yes
+		bgm_rev = yes
 		any_country = {
 			is_subject_of_type = german_confederation_member
 		}
@@ -750,5 +767,54 @@ country_event = {
 	
 	option = {
 		name = "german_confederation.14.a"
+	}
+}
+
+country_event = {
+	id = german_confederation.15
+	title = "german_confederation.n.15"
+	desc = "german_confederation.d.15"
+	picture = HRE_eventPicture
+
+	#major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "german_confederation.15.a"
+		add_adm_power = 100
+		add_stability = 1
+		every_subject_country = {
+			limit = {
+				is_subject_of_type = german_confederation_member
+			}
+			add_liberty_desire = 10
+		}
+	}
+
+	option = {
+		name = "german_confederation.15.b"
+		add_dip_power = 100
+		change_primary_culture = austrian
+		capital_scope = {
+			change_culture = austrian
+		}
+		add_stability = -1
+	}
+}
+
+country_event = {
+	id = german_confederation.16
+	title = none
+	desc = none
+	picture = HRE_eventPicture
+
+	#major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		clr_country_flag = gercon_cooldown
 	}
 }

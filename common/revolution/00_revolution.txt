@@ -20,6 +20,50 @@ revolution = {
 			}
 		}
 		modifier = {
+			factor = 0.0
+			owner = {
+				has_country_flag = had_revolution
+			}
+		}
+		modifier = {
+			factor = 0.15
+			OR = {
+				has_global_flag = gpw_nobles_win_major
+				has_global_flag = gpw_nobles_win_minor
+			}
+			owner = {
+				is_part_of_hre = yes
+				bgm_rev = no
+			}
+		}
+
+		modifier = {
+			factor = 0.25
+			owner = {
+				has_reform = revolutionary_hre_reform
+			}
+		}
+
+		modifier = {
+			factor = 2.5
+			OR = {
+				has_global_flag = gpw_peasants_win_major
+				has_global_flag = gpw_peasants_win_minor
+			}
+			owner = {
+				is_part_of_hre = yes
+			}
+		}
+
+		modifier = {
+			factor = 2.0
+			has_global_flag = coopted_rev
+			owner = {
+				is_part_of_hre = yes
+			}
+		}
+
+		modifier = {
 			factor = 1.6
 			owner = {
 				is_subject_of_type = personal_union
@@ -35,16 +79,16 @@ revolution = {
 			factor = 1.5
 			controller = {
 				is_revolution_target = no
-				is_revolutionary = yes
+				bgm_rev = yes
 			}
 		}
 		modifier = {
 			factor = 1.25
 			owner = {
-				is_revolutionary = no
+				bgm_rev = no
 				is_subject = yes
 				overlord = {
-					is_revolutionary = yes
+					bgm_rev = yes
 				}
 			}
 		}
@@ -61,7 +105,7 @@ revolution = {
 					any_neighbor_province = {
 						has_revolution_in_province = yes
 					}
-					controller = { is_revolutionary = yes }
+					controller = { bgm_rev = yes }
 				}
 			}
 		}
@@ -224,12 +268,12 @@ revolution = {
 		
 		modifier = { #so that it stays gone once removed
 			factor = 0
-			controller = { NOT = { is_revolutionary = yes } }
+			controller = { NOT = { bgm_rev = yes } }
 			has_province_modifier = no_revolution_here_dummy
 		}
 		modifier = {
 			factor = 0
-			controller = { NOT = { is_revolutionary = yes } }
+			controller = { NOT = { bgm_rev = yes } }
 			owner = { has_country_modifier = no_revolution_here_country_dummy }
 		}
 		modifier = {

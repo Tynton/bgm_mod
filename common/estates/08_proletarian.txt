@@ -9,7 +9,7 @@ estate_proletarian = {
 				adm_tech = 32
 			}
 			has_reform = futurist_mechanic
-			is_revolutionary = yes
+			bgm_rev = yes
 		}
 	}
 
@@ -39,7 +39,7 @@ estate_proletarian = {
 	influence_modifier = {
 		desc = EST_PROLE_REV
 		trigger = {
-			is_revolutionary = yes
+			bgm_rev = yes
 		}	
 		influence = 15
 	}

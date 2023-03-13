@@ -1,0 +1,77 @@
+estate_nobles_french_strong_duchies = {
+	icon = privilege_french_strong_duchies
+	max_absolutism = -25
+	loyalty = 0.15
+	influence = 0.15
+	is_valid = {
+		OR = {
+			has_estate_privilege = estate_nobles_french_strong_duchies
+			AND = {
+				tag = FRA
+				NOT = { has_estate_privilege = estate_nobles_strong_duchies }
+			}
+		}
+		OR = {
+			any_subject_country = {
+				is_march = yes
+			}
+			vassal = 1
+		}
+	}
+	can_select = {
+		if = {
+			limit = {
+				has_dlc = "Art of War"
+			}
+			custom_trigger_tooltip = {
+				tooltip = estate_nobles_strong_duchies_trigger_tooltip
+				calc_true_if = {
+					amount = 2
+					all_subject_country = {
+						OR = {
+							is_march = yes
+							is_vassal = yes
+						}
+					}
+				}
+			}
+		}
+		else = {
+			vassal = 2
+		}
+	}
+	penalties = {
+		reform_progress_growth = -0.25
+	}
+	benefits = {
+		diplomatic_upkeep = 4
+		reduced_liberty_desire_on_same_continent = 25
+	}
+	ai_will_do = {
+		factor = 2
+		modifier = {
+			factor = 3
+			calc_true_if = {
+				amount = 1
+				all_subject_country = {
+					OR = {
+						is_march = yes
+						is_vassal = yes
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			calc_true_if = {
+				amount = 2
+				all_subject_country = {
+					OR = {
+						is_march = yes
+						is_vassal = yes
+					}
+				}
+			}
+		}
+	}
+}

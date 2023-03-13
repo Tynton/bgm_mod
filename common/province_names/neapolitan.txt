@@ -6,7 +6,7 @@
 122 = "Tarde"
 2985 = "Fògge"
 4733 = "Mulise"
-120 = { "Abbrùzze" "Abbrùzzu" }
+120 = { "Pescàrë" "Abbrùzze" }
 
 116 = "Sciorenza"
 118 = { "Romma" "Rómma" }

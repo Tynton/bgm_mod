@@ -20,8 +20,17 @@ province_event = {
 	trigger = {
 		has_dlc = "Emperor"
 		current_age = age_of_revolutions
-		development = 30
+		OR = {
+			development = 30
+			province_has_center_of_trade_of_level = 1
+			is_capital = yes
+		}
 		enlightenment = 100
+		OR = {
+			is_institution_origin = enlightenment
+			is_institution_origin = renaissance
+			owner = { full_idea_group = humanist_ideas }
+		}
 		owner = {
 			is_great_power = yes
 			has_institution = enlightenment
@@ -37,10 +46,26 @@ province_event = {
 		NOT = { has_province_modifier = religious_center }
 	}
 	mean_time_to_happen = {
-		years = 600
+		years = 24 #600
+		#modifier = {
+		#	factor = 20
+		#	NOT = { continent = europe }
+		#}
 		modifier = {
-			factor = 20
-			NOT = { continent = europe }
+			factor = 3
+			owner = {
+				full_idea_group = humanist_ideas
+				NOT = {
+					any_owned_province = {
+						is_institution_origin = enlightenment
+					}
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.66
+			is_institution_origin = enlightenment
 		}
 		modifier = {
 			factor = 0.5
@@ -64,6 +89,28 @@ province_event = {
 			owner = {
 				is_great_power = yes
 				is_hegemon = yes
+			}
+		}
+		modifier = {
+			factor = 0.85
+			owner = {
+				is_hegemon_of_type = naval_hegemon
+			}
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				is_hegemon_of_type = military_hegemon
+			}
+		}
+		modifier = {
+			factor = 0.1
+			any_country = {
+				OR = {
+					adm_tech = 30
+					dip_tech = 30
+					mil_tech = 30
+				}
 			}
 		}
 		modifier = {
@@ -471,7 +518,7 @@ province_event = {
 		modifier = {
 			factor = 0.75
 			is_capital = yes
-			owner = { is_revolutionary = yes }
+			owner = { bgm_rev = yes }
 		}
 		modifier = {
 			factor = 10
@@ -487,12 +534,12 @@ province_event = {
 		}
 		modifier = {
 			factor = 0.75
-			owner = { is_revolutionary = yes }
+			owner = { bgm_rev = yes }
 		}
 		modifier = {
 			factor = 0.75
 			owner = {
-				is_revolutionary = yes
+				bgm_rev = yes
 				revolutionary_zeal = 80
 			}
 		}
@@ -750,7 +797,7 @@ province_event = {
 		name = center_of_revolution.1001.A
 		trigger = {
 			owner = {
-				is_revolutionary = no
+				bgm_rev = no
 			}
 		}
 		spawn_center_of_revolution = root
@@ -759,7 +806,7 @@ province_event = {
 		name = center_of_revolution.1001.B
 		trigger = {
 			owner = {
-				is_revolutionary = yes
+				bgm_rev = yes
 			}
 		}
 		spawn_center_of_revolution = root
@@ -1304,7 +1351,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_revolutionary = yes
+		bgm_rev = yes
 		years_since_dismantle_revolution = 10
 		NOT = { has_country_flag = has_had_revolution_failure_warning }
 	}
@@ -1530,7 +1577,7 @@ country_event = {
 	option = {
 		name = center_of_revolution.3000.A
 		trigger = {
-			is_revolutionary = no
+			bgm_rev = no
 		}
 		custom_tooltip = center_of_revolution.3000.A.tt2
 		custom_tooltip = center_of_revolution.3000.A.tt
@@ -1538,7 +1585,7 @@ country_event = {
 	option = {
 		name = center_of_revolution.3000.B
 		trigger = {
-			is_revolutionary = yes
+			bgm_rev = yes
 		}
 		custom_tooltip = center_of_revolution.3000.A.tt2
 		custom_tooltip = center_of_revolution.3000.A.tt
@@ -2113,9 +2160,9 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Emperor"
-		is_revolutionary = yes
+		bgm_rev = yes
 		any_rival_country = {
-			is_revolutionary = no
+			bgm_rev = no
 			any_subject_country = {
 				is_colonial_nation = yes
 				liberty_desire = 30
@@ -2155,7 +2202,7 @@ country_event = {
 			}
 			random_rival_country = {
 				limit = {
-					is_revolutionary = no
+					bgm_rev = no
 					any_subject_country = {
 						is_colonial_nation = yes
 						liberty_desire = 30
@@ -2426,7 +2473,7 @@ country_event = {
 				days = 9125
 			}
 		}
-		is_revolutionary = no
+		bgm_rev = no
 		NOT = { any_province = { is_center_of_revolution = yes } }
 	}
 	mean_time_to_happen = {
@@ -2490,7 +2537,7 @@ country_event = {
 			has_revolution_in_province = yes
 			is_center_of_revolution = no
 		}
-		is_revolutionary = no
+		bgm_rev = no
 	}
 	is_triggered_only = yes
 
@@ -2553,7 +2600,7 @@ country_event = {
 
 	trigger = {
 		has_dlc = "Emperor"
-		is_revolutionary = yes
+		bgm_rev = yes
 		any_owned_province = {
 			has_revolution_in_province = yes
 			is_capital = no
@@ -2632,7 +2679,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Emperor"
-		is_revolutionary = yes
+		bgm_rev = yes
 		any_neighbor_country = {
 			NOT = { war_with = root }
 			any_owned_province = {
@@ -2746,10 +2793,10 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Emperor"
-		is_revolutionary = no
+		bgm_rev = no
 		revolution_target_exists = yes
 		any_neighbor_country = {
-			is_revolutionary = yes
+			bgm_rev = yes
 			NOT = {
 				had_country_flag = {
 					flag = revolutionary_republic_flag
@@ -2778,7 +2825,7 @@ country_event = {
 		hidden_effect = {
 			random_neighbor_country = {
 				limit = {
-					is_revolutionary = yes
+					bgm_rev = yes
 					NOT = {
 						had_country_flag = {
 							flag = revolutionary_republic_flag
@@ -2832,7 +2879,7 @@ country_event = {
 	
 	trigger = {
 		revolution_target_exists = yes
-		is_revolutionary = no
+		bgm_rev = no
 		any_subject_country = {
 			is_colonial_nation = yes
 		}
@@ -2857,7 +2904,7 @@ country_event = {
 			limit = {
 				is_colonial_nation = yes
 				overlord = {
-						is_revolutionary = no
+						bgm_rev = no
 				}
 			}
 			add_country_modifier = { # add 30 liberty desire

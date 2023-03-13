@@ -12,7 +12,7 @@ unitarian_jesus_exemplar_aspect = {
 unitarian_rationality_aspect = {
 	cost = 100
 	modifier = {
-		advisor_cost = -0.075
+		advisor_cost = -0.05
 		idea_cost = -0.05
 	}
 }

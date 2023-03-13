@@ -46,7 +46,7 @@ country_event = {
 		has_dlc = "Rule Britannia"
 		has_institution = enlightenment
 		NOT = { has_country_flag = atmospheric_engine_flag } #Newcomen Engine
-		innovativeness = 15
+		##innovativeness =15
 		any_owned_province = {
 			is_state = yes
 			is_in_capital_area = yes
@@ -139,7 +139,7 @@ country_event = {
 			factor = 0.6
 			OR = {
 				has_reform = democratic_mechanic
-				is_revolutionary = yes
+				bgm_rev = yes
 				has_parliament = yes
 			}
 		}
@@ -186,7 +186,7 @@ country_event = {
 		has_dlc = "Rule Britannia"
 		has_institution = enlightenment
 		NOT = { has_country_flag = coke_blast_furnaces_flag }
-		innovativeness = 20
+		##innovativeness =20
 		any_owned_province = {
 			is_state = yes
 			is_in_capital_area = yes
@@ -284,7 +284,7 @@ country_event = {
 			factor = 0.6
 			OR = {
 				has_reform = democratic_mechanic
-				is_revolutionary = yes
+				bgm_rev = yes
 				has_parliament = yes
 			}
 		}
@@ -354,7 +354,7 @@ country_event = {
 		has_institution = enlightenment
 		has_country_flag = atmospheric_engine_flag
 		NOT = { has_country_flag = watt_steam_engine_flag }
-		innovativeness = 20
+		##innovativeness =20
 		any_owned_province = {
 			is_state = yes
 			is_in_capital_area = yes
@@ -452,7 +452,7 @@ country_event = {
 			factor = 0.6
 			OR = {
 				has_reform = democratic_mechanic
-				is_revolutionary = yes
+				bgm_rev = yes
 				has_parliament = yes
 			}
 		}
@@ -486,7 +486,7 @@ country_event = {
 		has_dlc = "Rule Britannia"
 		has_institution = enlightenment
 		NOT = { has_country_flag = rotherham_plough_flag }
-		innovativeness = 15
+		#innovativeness =15
 		any_owned_province = {
 			is_state = yes
 			is_in_capital_area = yes
@@ -582,7 +582,7 @@ country_event = {
 			factor = 0.6
 			OR = {
 				has_reform = democratic_mechanic
-				is_revolutionary = yes
+				bgm_rev = yes
 				has_parliament = yes
 			}
 		}
@@ -616,7 +616,7 @@ country_event = {
 		has_dlc = "Rule Britannia"
 		has_institution = enlightenment
 		NOT = { has_country_flag = flying_shuttle_flag }
-		innovativeness = 20
+		#innovativeness =20
 		any_owned_province = {
 			is_state = yes
 			is_in_capital_area = yes
@@ -714,7 +714,7 @@ country_event = {
 			factor = 0.6
 			OR = {
 				has_reform = democratic_mechanic
-				is_revolutionary = yes
+				bgm_rev = yes
 				has_parliament = yes
 			}
 		}
@@ -749,7 +749,7 @@ country_event = {
 		has_institution = enlightenment
 		has_country_flag = flying_shuttle_flag
 		NOT = { has_country_flag = spinning_jenny_flag }
-		innovativeness = 20
+		#innovativeness =20
 		any_owned_province = {
 			is_state = yes
 			is_in_capital_area = yes
@@ -847,7 +847,7 @@ country_event = {
 			factor = 0.6
 			OR = {
 				has_reform = democratic_mechanic
-				is_revolutionary = yes
+				bgm_rev = yes
 				has_parliament = yes
 			}
 		}
@@ -1114,7 +1114,7 @@ country_event = {
 	trigger = {
 		has_dlc = "Rule Britannia"
 		has_institution = enlightenment
-		innovativeness = 25
+		#innovativeness =25
 		any_owned_province = {
 			NOT = { has_province_flag = agricultural_revolution_province }
 			NOT = { has_province_modifier = agricultural_revolution }
