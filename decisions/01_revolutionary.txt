@@ -276,4 +276,61 @@ country_decisions = {
 			}
 		}
 	}
+
+	continental_peace = {
+		potential = {
+			NOT = { has_global_flag = had_peace_bgm }
+			has_first_revolution_started = yes
+		}
+		allow = {
+			dip_tech = 32
+			OR = {
+				AND = {
+					is_revolutionary = no
+					NOT = {
+						any_great_power = {
+							same_continent = ROOT
+							is_revolutionary = yes
+						}
+					}
+				}
+				AND = {
+					is_revolutionary = yes
+					NOT = {
+						any_great_power = {
+							same_continent = ROOT
+							is_revolutionary = no
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			log = "peace in our time"
+			set_global_flag = had_peace_bgm
+			add_prestige = 100
+			add_stability = 1
+			add_mercantilism = 5
+			add_country_modifier = {
+				name = architect_of_peace
+				duration = -1
+			}
+			if = {
+				limit = {
+					is_revolutionary = no
+				}
+				country_event = {
+					id = world_war_events.7
+				}
+			}
+			if = {
+				limit = {
+					is_revolutionary = yes
+				}
+				country_event = {
+					id = world_war_events.9
+				}
+			}
+		}
+	}
 }

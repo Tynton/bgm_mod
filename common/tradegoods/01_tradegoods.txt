@@ -41,11 +41,11 @@ oil = {
 	}
 	
 	modifier = {
-		naval_maintenance_modifier = -0.1
+		global_trade_goods_size_modifier = 0.2
 	}
 	
 	province = {
-		province_trade_power_value = 0.15
+		local_development_cost_modifier = -0.2
 	}
 	
 	chance = {
@@ -95,11 +95,11 @@ tungsten = {
 	}
 	
 	modifier = {
-		artillery_levels_available_vs_fort = 1
+		artillery_levels_available_vs_fort = 2
 	}
 	
 	province = {
-		development_cost = -0.1
+		local_regiment_cost = -0.25
 	}
 	
 	chance = {
@@ -162,7 +162,7 @@ naval_equipment = {
 electronics = {
 	color = { 0.0 0.3 0.1 }
 	modifier = {
-		idea_cost = -0.4
+		idea_cost = -0.2
 	}
 	province = {
 		local_unrest = -1
@@ -188,11 +188,10 @@ automobile = {
 cinema = {
 	color = { 1.0 1.0 1.0 }
 	modifier = {
-		culture_conversion_cost = -0.25
 		all_power_cost = -0.1
 	}
 	province = {
-		local_development_cost = -1.0
+		local_development_cost = -0.33
 	}
 	chance = {
 		factor = 0

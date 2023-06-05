@@ -831,13 +831,26 @@ country_event = {
 		NOT = {
 			is_religion_enabled = anglican
 		}
-		religion = catholic
+		OR = {
+			AND = {
+				culture_group = british
+				religion = catholic
+			}
+			AND = {
+				NOT = {
+					any_country = {
+						culture_group = british
+						religion = catholic
+					}
+				}
+				culture_group = french
+			}
+		}
 		religion_group = christian
 		is_defender_of_faith = no
 		capital_scope = {
 			region = british_isles_region
 		}
-		culture_group = british
 		any_owned_province = {
 			region = british_isles_region
 			can_have_center_of_reformation_trigger = {
@@ -952,7 +965,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 10
+			factor = 50
 			modifier = {
 				factor = 100
 				any_country = {
@@ -1039,7 +1052,7 @@ country_event = {
 	option = { # dont convert
 		name = anglican_events.14.c
 		ai_chance = {
-			factor = 25
+			factor = 5
 			modifier = {
 				factor = 0
 				OR = {

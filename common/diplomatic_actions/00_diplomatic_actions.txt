@@ -88,7 +88,139 @@
 
 #Cut because the Grand Crusade war doesn't really have any place in the current content, but it could be very useful for the future.
 #Also modders should have the chance to just uncomment it all so they can experience the great 30 Years War like Crusade.
+
+support_independence_action = {
+	condition = {
+		tooltip = GAME_SETUP_TOOLTIP
+		potential = {
+			NOT = {
+				is_year = 1445
+			}
+		}
+		allow = { 
+			is_year = 1445
+		}
+	}
+
+	condition = {
+		
+		potential = {
+			ai = yes
+		}
+		allow = { 
+			OR = {
+				AND = {
+					tag = BUR
+					mission_completed = bur_subjects
+				}
+				is_year = 1470
+			}
+		}
+	}
+}
+
 declarewar = {
+
+	condition = { #to address a pet peeve
+		potential = { ai = yes }
+		allow = {
+			NOT = {
+				AND = {
+					OR = {
+						culture_group = west_slavic
+						culture_group = latin
+					}
+					FROM = {
+						culture_group = germanic
+						NOT = { primary_culture = prussian }
+					}
+				}
+			}
+		}
+	}
+
+	condition = { #france will remain pacifist until Charles of Burgundy dies
+		potential = { ai = yes }
+		allow = {
+			OR = {
+				NOT = {
+					AND = {
+						tag = FRA
+						BUR = {
+							has_ruler_flag = is_charles_of_burg_flag
+							ruler_age = 40
+						}
+					}
+				}
+				FRA = {
+					adm_tech = 11
+				}
+			}
+		}
+	}
+
+	condition = {
+		tooltip = CONTINENTAL_PEACE_TOOLTIP
+		potential = { 
+			has_country_flag = observing_peace
+		}
+		allow = {
+			OR = {
+				FROM = {
+					is_rival = ROOT
+				}
+				has_casus_belli = {
+					type = cb_nationalist
+					target = FROM
+				}
+			}
+		}
+	}
+
+	condition = {
+		tooltip = CRUSADE_TOOLTIP
+		potential = {
+			FROM = {
+				religion = ROOT
+			}
+			OR = {
+				religion = catholic
+				religion = fraticelli
+			}
+		}
+		allow = {
+			FROM = {
+				NOT = {
+					OR = {
+						is_in_war = {
+							casus_belli = cb_crusade
+						}
+						is_in_war = {
+							casus_belli = cb_crusade_pheasants
+						}
+					}
+				}
+			}
+		}
+	}
+
+	condition = {
+		tooltip = ITALIC_LEAGUE_WAR_TOOLTIP
+		potential = { 
+			is_subject_of_type = italic_league_member
+		}
+		allow = { 
+			NOT = {
+				FROM = {
+					OR = {
+						has_subject_of_type = italic_league_member
+						is_subject_of_type = italic_league_member
+					}
+				}
+			}
+		}
+	}
+
 	#condition = {
 	#	tooltip = GRAND_CRUSADE_NO_OTHER_WAR
 	#	potential = { }
@@ -117,82 +249,82 @@ declarewar = {
 	#	}
 	#}
 
-	condition = {
-		potential = {
-			ai = yes
-		}
-		allow = { 
-			NOT = {
-				OR = {
-					personality = ai_capitalist
-					personality = ai_diplomat
-				}
-			}
-		}
-	}
+	#condition = {
+	#	potential = {
+	#		ai = yes
+	#	}
+	#	allow = { 
+	#		NOT = {
+	#			OR = {
+	#				personality = ai_capitalist
+	#				personality = ai_diplomat
+	#			}
+	#		}
+	#	}
+	#}
 
-	condition = {
-		tooltip = NO_AFRICA_WAR
-		potential = {
-			ai = yes
-			NOT = {
-                capital_scope = {
-                    continent = africa
-                }
-            }
-            FROM = {
-                capital_scope = {
-                    continent = africa
-					NOT = {
-						OR = {
-							region = maghreb_region
-							region = egypt_region
-						}
-					}
-                }
-            }
-		}
-		allow = {
-			OR = {
-				has_institution = nationalism_institution
-				AND = {
-					any_country = {
-						#ai = no
-						any_subject_country = {
-							capital_scope = {
-								continent = africa
-								NOT = {
-									OR = {
-										colonial_region = colonial_south_africa
-										colonial_region = colonial_ivory_coast
-									}
-								}
-							}
-							OR = {
-								is_former_colonial_nation = yes
-								is_subject_of_type = colony
-								is_subject_of_type = private_enterprise
-								is_subject_of_type = crown_colony
-								is_subject_of_type = self_governing_colony
-							}
-						}
-					}
-				}
-				FROM = {
-					capital_scope = {
-						continent = africa
-					}
-					OR = {
-						is_former_colonial_nation = yes
-						is_subject_of_type = colony
-						is_subject_of_type = private_enterprise
-						is_subject_of_type = crown_colony
-						is_subject_of_type = self_governing_colony
-					}
-				}
-			}
-		}
-	}
+	#condition = {
+	#	tooltip = NO_AFRICA_WAR
+	#	potential = {
+	#		ai = yes
+	#		NOT = {
+    #            capital_scope = {
+    #                continent = africa
+    #            }
+    #        }
+    #        FROM = {
+    #            capital_scope = {
+    #                continent = africa
+	#				NOT = {
+	#					OR = {
+	#						region = maghreb_region
+	#						region = egypt_region
+	#					}
+	#				}
+    #            }
+    #        }
+	#	}
+	#	allow = {
+	#		OR = {
+	#			has_institution = nationalism_institution
+	#			AND = {
+	#				any_country = {
+	#					#ai = no
+	#					any_subject_country = {
+	#						capital_scope = {
+	#							continent = africa
+	#							NOT = {
+	#								OR = {
+	#									colonial_region = colonial_south_africa
+	#									colonial_region = colonial_ivory_coast
+	#								}
+	#							}
+	#						}
+	#						OR = {
+	#							is_former_colonial_nation = yes
+	#							is_subject_of_type = colony
+	#							is_subject_of_type = private_enterprise
+	#							is_subject_of_type = crown_colony
+	#							is_subject_of_type = self_governing_colony
+	#						}
+	#					}
+	#				}
+	#			}
+	#			FROM = {
+	#				capital_scope = {
+	#					continent = africa
+	#				}
+	#				OR = {
+	#					is_former_colonial_nation = yes
+	#					is_subject_of_type = colony
+	#					is_subject_of_type = private_enterprise
+	#					is_subject_of_type = crown_colony
+	#					is_subject_of_type = self_governing_colony
+	#				}
+	#			}
+	#		}
+	#	}
+	#}
 
 	effect = {
 		if = {
@@ -373,6 +505,37 @@ allianceaction = {
 							superregion = oceania_superregion
 						}
 					}	
+				}
+			}
+		}
+	}
+
+	condition = {
+		tooltip = FACILITATE_PRUSSIAN_EXPANSIONISM
+		potential = {
+			ai = yes
+			OR = {
+				culture_group = germanic
+				primary_culture = czech
+				primary_culture = sorbian
+			}
+		}
+		allow = {
+			FROM = {
+				NOT = {
+					army_strength = ROOT
+				}
+			}
+			any_neighbor_country = {
+				OR = {
+					AND = {
+						tag = BRA
+						ai = yes
+					}
+					AND = {
+						tag = PRU
+						ai = yes
+					}
 				}
 			}
 		}

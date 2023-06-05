@@ -141,59 +141,102 @@ ai_get_tech = {
 	potential = {
 		ai = yes
 		OR = {
-			AND = {
-				OR = {
-					any_neighbor_country = {
-						military_strength = {
-							who = ROOT
-							value = 1.5
-						}
-					}
+			any_neighbor_country = {
+				army_strength = {
+					who = ROOT
+					value = 0.75
 				}
 			}
-			AND = {
-				OR = {
-					#NOT = { has_country_modifier = adm_tech_plateaued }
-					#NOT = { has_country_modifier = dip_tech_plateaued }
-					#NOT = { has_country_modifier = mil_tech_plateaued }
-					is_lacking_institutions = no
-				}
+			NOT = {
+				has_country_modifier = general_pioneer
 			}
-			adm_power = 1200
-			dip_power = 1200
-			mil_power = 1200
+			adm_power = 999
+			dip_power = 999
+			mil_power = 999
 			full_idea_group = postmodern_ideas
 		}
 	}
 	trigger = {
 		ai = yes
 		OR = {
-			AND = {
-				OR = {
-					any_neighbor_country = {
-						military_strength = {
-							who = ROOT
-							value = 1.5
-						}
-					}
+			any_neighbor_country = {
+				army_strength = {
+					who = ROOT
+					value = 0.75
 				}
 			}
 			AND = {
-				OR = {
-					#NOT = { has_country_modifier = adm_tech_plateaued }
-					#NOT = { has_country_modifier = dip_tech_plateaued }
-					#NOT = { has_country_modifier = mil_tech_plateaued }
-					is_lacking_institutions = no
+				NOT = {
+					has_country_modifier = general_pioneer
 				}
 			}
 			full_idea_group = postmodern_ideas
-			adm_power = 1200
-			dip_power = 1200
-			mil_power = 1200
+			adm_power = 999
+			dip_power = 999
+			mil_power = 999
 		}
 	}
 	#development_cost_modifier = 1000
 	idea_cost = 1000
+}
+
+ai_fml = {
+	potential = {
+		ai = yes
+		is_at_war = no
+		OR = {
+			personality = ai_diplomat
+			personality = ai_capitalist
+		}
+		OR = {
+			NOT = {
+				any_neighbor_country = {
+					army_strength = {
+						who = ROOT
+						value = 0.5
+					}
+				}
+			}
+			calc_true_if = {
+				amount = 4
+				all_ally = {
+					is_great_power = yes
+				}
+			}
+		}
+		all_owned_province = {
+			NOT = { num_free_building_slots = 1 }
+		}
+	}
+	trigger = {
+		ai = yes
+		is_at_war = no
+		OR = {
+			personality = ai_diplomat
+			personality = ai_capitalist
+		}
+		OR = {
+			NOT = {
+				any_neighbor_country = {
+					army_strength = {
+						who = ROOT
+						value = 0.5
+					}
+				}
+			}
+			calc_true_if = {
+				amount = 4
+				all_ally = {
+					is_great_power = yes
+				}
+			}
+		}
+		all_owned_province = {
+			NOT = { num_free_building_slots = 1 }
+		}
+	}
+	
+	land_forcelimit_modifier = -0.33
 }
 
 ai_final_ideas = {
@@ -1099,8 +1142,8 @@ hre_elector = {
 	diplomatic_reputation = 1
 	global_manpower_modifier = 0.1
 	land_forcelimit_modifier = 0.1
-	ae_impact = -0.05
-	improve_relation_modifier = 0.05
+	ae_impact = -0.1
+	improve_relation_modifier = 0.1
 }
 
 #cheat_reform = {

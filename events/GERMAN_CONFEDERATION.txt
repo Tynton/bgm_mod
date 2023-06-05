@@ -230,7 +230,7 @@ country_event = {
 		ai_chance = {
 			factor = 1
 			modifier = {
-				factor = 500
+				factor = 20
 				OR = {
 					NOT = {
 						has_opinion = {
@@ -242,7 +242,7 @@ country_event = {
 				}
 			}
 			modifier = {
-				factor = 1
+				factor = 2
 				total_development = 500
 			}
 		}
@@ -371,7 +371,7 @@ country_event = {
 		grant_independence = yes
 
 		ai_chance = {
-			factor = 1
+			factor = 0
 			modifier = {
 				factor = 500
 				OR = {
@@ -408,6 +408,7 @@ country_event = {
 			current_age = age_of_industrialization
 			current_age = age_of_revolutions
 			current_age = age_of_enlightenment
+			diplomatic_reputation = 10
 		}
 		NOT = {
 			has_country_flag = no_gercon
@@ -436,11 +437,10 @@ country_event = {
 			is_part_of_hre = no
 		}
 		
-		OR = {
-			total_development = 500
-			AND = {
-				government_rank = 2
-				total_development = 300
+		NOT = {
+			any_neighbor_country = {
+				culture_group = ROOT
+				total_development = ROOT
 			}
 		}
 	}
@@ -474,7 +474,35 @@ country_event = {
 		
 		every_country = {
 			limit = {
-				culture_group = germanic
+				OR = {
+					AND = {
+						OR = {
+							culture_group = germanic
+							AND = {
+								NOT = { tag = NED }
+								culture_group = benelux
+								capital_scope = {
+									region = low_countries_region
+								}
+							}
+						}
+						capital_scope = {
+							OR = {
+								region = south_german_region
+								region = north_german_region
+								region = poland_region
+								area = west_prussia_area
+								area = east_prussia_area
+							}
+						}
+					}
+					capital_scope = {
+						OR = {
+							region = south_german_region
+							region = north_german_region
+						}
+					}
+				}
 			}
 			#total_development = 225
 			country_event = {

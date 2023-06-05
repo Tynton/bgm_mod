@@ -1,0 +1,66 @@
+#Country Name: Please see filename.
+
+graphical_culture = frenchgfx
+
+color = { 156 112 194 }
+revolutionary_colors = { 1 8 1 }
+
+historical_idea_groups = {
+	defensive_ideas
+	trade_ideas
+	economic_ideas
+	diplomatic_ideas
+	innovativeness_ideas
+	offensive_ideas
+	spy_ideas
+	religious_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	swiss_landsknechten
+	dutch_maurician
+	austrian_tercio
+	austrian_grenzer
+	austrian_hussar
+	austrian_white_coat
+	prussian_uhlan
+	french_impulse
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Charles #0" = 40
+	"François #0" = 40
+	"René #0" = 40
+	"Jean #1" = 40
+	"Antoine #0" = 40
+	"Nicolas #0" = 40
+	"Claude #0" = 15
+	"Léopold #0" = 15
+	"Louis #0" = 15
+	"Rodolphe #0" = 15
+	"Joseph #0" = 10
+	
+	"Isabelle #0" = -15
+	"Marie #0" = -5
+	"Marguerite #0" = -5
+}
+
+leader_names = { 
+	Bickling Braun Detemple "von Elsass" Fent Feyerabend
+	Forthober Freymuth Kathrein Krogloth Limburg Neubert
+	Oberlothringen Wolferseder
+}
+
+ship_names = {
+	"l'Empereur Lothaire" "le Lorraine"
+	"le René II de Lorraine" "le Barrois" "le Metz"
+	"Toul" "le Verdun" "le Warding" "le Skirmjan"
+	"le Bera" "le Scoc" "le Sekjan"
+}

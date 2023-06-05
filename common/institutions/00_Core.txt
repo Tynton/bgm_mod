@@ -1052,13 +1052,24 @@ new_world_i = {
 			#at least one province colonised or colonising, or have a subject colony
 			
 		}
+		OR = {
+			calc_true_if = {
+				amount = 5
+				all_country = {
+					adm_tech = 8
+					dip_tech = 8
+					mil_tech = 8
+				}
+			}
+			is_year = 1500
+		}
 		owner = {
 			adm_tech = 9
 			dip_tech = 9
 			mil_tech = 9
 		}
 	}
-	start_chance = 3		#in 100 for when a province can_start
+	start_chance = 25		#in 100 for when a province can_start
 	
 	
 	on_start = institution_events.3
@@ -1323,7 +1334,17 @@ global_trade = {
 			#province_has_center_of_trade_of_level = 2
 			is_capital = yes
 		}
-		
+		OR = {
+			calc_true_if = {
+				amount = 5
+				all_country = {
+					adm_tech = 14
+					dip_tech = 14
+					mil_tech = 14
+				}
+			}
+			is_year = 1600
+		}
 		owner = {
 			adm_tech = 15
 			dip_tech = 15
@@ -1645,6 +1666,17 @@ manufactories = {
 			has_building = plantations
 			has_building = tradecompany
 			has_building = mills
+		}
+		OR = {
+			calc_true_if = {
+				amount = 5
+				all_country = {
+					adm_tech = 19
+					dip_tech = 19
+					mil_tech = 19
+				}
+			}
+			is_year = 1650
 		}
 		owner = {
 			adm_tech = 20
@@ -2146,6 +2178,17 @@ enlightenment = {
 			}
 			has_building = university
 			province_has_center_of_trade_of_level = 1
+		}
+		OR = {
+			calc_true_if = {
+				amount = 5
+				all_country = {
+					adm_tech = 22
+					dip_tech = 22
+					mil_tech = 22
+				}
+			}
+			is_year = 1675
 		}
 		owner = {
 			adm_tech = 23

@@ -82,66 +82,60 @@ country_event = {
 	
 	mean_time_to_happen = {
 		months = 180
-		
+
 		modifier = {
-			factor = 0.75
-			capital_scope = {
-				OR = {
-					region = northeast_america_region
-					region = british_isles_region
-					region = france_region
-					region = low_countries_region
-				}
-			}
+			factor = 3
+			NOT = { has_institution = industrialization }
 		}
 		
 		modifier = {
 			factor = 0.8
 			mission_completed = new_england_industrialization
 		}
+
+		modifier = {
+			factor = 0.8
+			mission_completed = industrial_economy
+		}
 		
 		modifier = {
 			factor = 0.8
 			mission_completed = attract_immigrants
 		}
-
+		
 		modifier = {
-			factor = 0.9
-			OR = {
-				religion = anglican
-				religion = unitarian
-				religion = protestant
-				religion = reformed
-			}
+			factor = 0.8
+			innovativeness = 25
 		}
 
 		modifier = {
 			factor = 0.8
-			capital_scope = {
-				OR = {
-					has_terrain = grasslands
-					has_terrain = farmlands
-				}
-			}
+			innovativeness = 50
 		}
 
 		modifier = {
-			factor = 0.85
-			capital_scope = {
-				OR = {
-					has_terrain = woods
-					has_terrain = farmlands
-				}
-			}
+			factor = 0.8
+			innovativeness = 75
 		}
-		
+
 		modifier = {
-			factor = 0.6
-			OR = {
-				has_reform = democratic_mechanic
-				bgm_rev = yes
-				has_parliament = yes
-			}
+			factor = 0.8
+			innovativeness = 100
+		}
+
+		modifier = {
+			factor = 0.8
+			full_idea_group = innovativeness_ideas
+		}
+
+		modifier = {
+			factor = 0.8
+			full_idea_group = infrastructure_ideas
+		}
+
+		modifier = {
+			factor = 0.8
+			full_idea_group = economic_ideas
 		}
 	}
 	
@@ -229,64 +223,58 @@ country_event = {
 		months = 180
 		
 		modifier = {
-			factor = 0.75
-			capital_scope = {
-				OR = {
-					region = northeast_america_region
-					region = british_isles_region
-					region = france_region
-					region = low_countries_region
-				}
-			}
+			factor = 3
+			NOT = { has_institution = industrialization }
 		}
 		
 		modifier = {
 			factor = 0.8
 			mission_completed = new_england_industrialization
 		}
+
+		modifier = {
+			factor = 0.8
+			mission_completed = industrial_economy
+		}
 		
 		modifier = {
 			factor = 0.8
 			mission_completed = attract_immigrants
 		}
-
-		modifier = {
-			factor = 0.8
-			OR = {
-				religion = anglican
-				religion = unitarian
-				religion = protestant
-				religion = reformed
-			}
-		}
-
-		modifier = {
-			factor = 0.5
-			capital_scope = {
-				OR = {
-					has_terrain = grasslands
-					has_terrain = farmlands
-				}
-			}
-		}
-
-		modifier = {
-			factor = 0.8
-			capital_scope = {
-				OR = {
-					has_terrain = woods
-					has_terrain = farmlands
-				}
-			}
-		}
 		
 		modifier = {
-			factor = 0.6
-			OR = {
-				has_reform = democratic_mechanic
-				bgm_rev = yes
-				has_parliament = yes
-			}
+			factor = 0.8
+			innovativeness = 25
+		}
+
+		modifier = {
+			factor = 0.8
+			innovativeness = 50
+		}
+
+		modifier = {
+			factor = 0.8
+			innovativeness = 75
+		}
+
+		modifier = {
+			factor = 0.8
+			innovativeness = 100
+		}
+
+		modifier = {
+			factor = 0.8
+			full_idea_group = innovativeness_ideas
+		}
+
+		modifier = {
+			factor = 0.8
+			full_idea_group = infrastructure_ideas
+		}
+
+		modifier = {
+			factor = 0.8
+			full_idea_group = economic_ideas
 		}
 	}
 	
@@ -397,64 +385,58 @@ country_event = {
 		months = 180
 		
 		modifier = {
-			factor = 0.75
-			capital_scope = {
-				OR = {
-					region = northeast_america_region
-					region = british_isles_region
-					region = france_region
-					region = low_countries_region
-				}
-			}
+			factor = 3
+			NOT = { has_institution = industrialization }
 		}
 		
 		modifier = {
 			factor = 0.8
 			mission_completed = new_england_industrialization
 		}
+
+		modifier = {
+			factor = 0.8
+			mission_completed = industrial_economy
+		}
 		
 		modifier = {
 			factor = 0.8
 			mission_completed = attract_immigrants
 		}
-
-		modifier = {
-			factor = 0.8
-			OR = {
-				religion = anglican
-				religion = unitarian
-				religion = protestant
-				religion = reformed
-			}
-		}
-
-		modifier = {
-			factor = 0.5
-			capital_scope = {
-				OR = {
-					has_terrain = grasslands
-					has_terrain = farmlands
-				}
-			}
-		}
-
-		modifier = {
-			factor = 0.8
-			capital_scope = {
-				OR = {
-					has_terrain = woods
-					has_terrain = farmlands
-				}
-			}
-		}
 		
 		modifier = {
-			factor = 0.6
-			OR = {
-				has_reform = democratic_mechanic
-				bgm_rev = yes
-				has_parliament = yes
-			}
+			factor = 0.8
+			innovativeness = 25
+		}
+
+		modifier = {
+			factor = 0.8
+			innovativeness = 50
+		}
+
+		modifier = {
+			factor = 0.8
+			innovativeness = 75
+		}
+
+		modifier = {
+			factor = 0.8
+			innovativeness = 100
+		}
+
+		modifier = {
+			factor = 0.8
+			full_idea_group = innovativeness_ideas
+		}
+
+		modifier = {
+			factor = 0.8
+			full_idea_group = infrastructure_ideas
+		}
+
+		modifier = {
+			factor = 0.8
+			full_idea_group = economic_ideas
 		}
 	}
 	
@@ -527,64 +509,58 @@ country_event = {
 		months = 180
 		
 		modifier = {
-			factor = 0.75
-			capital_scope = {
-				OR = {
-					region = northeast_america_region
-					region = british_isles_region
-					region = france_region
-					region = low_countries_region
-				}
-			}
+			factor = 3
+			NOT = { has_institution = industrialization }
 		}
 		
 		modifier = {
 			factor = 0.8
 			mission_completed = new_england_industrialization
 		}
+
+		modifier = {
+			factor = 0.8
+			mission_completed = industrial_economy
+		}
 		
 		modifier = {
 			factor = 0.8
 			mission_completed = attract_immigrants
 		}
-
-		modifier = {
-			factor = 0.8
-			OR = {
-				religion = anglican
-				religion = unitarian
-				religion = protestant
-				religion = reformed
-			}
-		}
-
-		modifier = {
-			factor = 0.5
-			capital_scope = {
-				OR = {
-					has_terrain = grasslands
-					has_terrain = farmlands
-				}
-			}
-		}
-
-		modifier = {
-			factor = 0.8
-			capital_scope = {
-				OR = {
-					has_terrain = woods
-					has_terrain = farmlands
-				}
-			}
-		}
 		
 		modifier = {
-			factor = 0.6
-			OR = {
-				has_reform = democratic_mechanic
-				bgm_rev = yes
-				has_parliament = yes
-			}
+			factor = 0.8
+			innovativeness = 25
+		}
+
+		modifier = {
+			factor = 0.8
+			innovativeness = 50
+		}
+
+		modifier = {
+			factor = 0.8
+			innovativeness = 75
+		}
+
+		modifier = {
+			factor = 0.8
+			innovativeness = 100
+		}
+
+		modifier = {
+			factor = 0.8
+			full_idea_group = innovativeness_ideas
+		}
+
+		modifier = {
+			factor = 0.8
+			full_idea_group = infrastructure_ideas
+		}
+
+		modifier = {
+			factor = 0.8
+			full_idea_group = economic_ideas
 		}
 	}
 	
@@ -659,64 +635,58 @@ country_event = {
 		months = 180
 		
 		modifier = {
-			factor = 0.75
-			capital_scope = {
-				OR = {
-					region = northeast_america_region
-					region = british_isles_region
-					region = france_region
-					region = low_countries_region
-				}
-			}
+			factor = 3
+			NOT = { has_institution = industrialization }
 		}
 		
 		modifier = {
 			factor = 0.8
 			mission_completed = new_england_industrialization
 		}
+
+		modifier = {
+			factor = 0.8
+			mission_completed = industrial_economy
+		}
 		
 		modifier = {
 			factor = 0.8
 			mission_completed = attract_immigrants
 		}
-
-		modifier = {
-			factor = 0.8
-			OR = {
-				religion = anglican
-				religion = unitarian
-				religion = protestant
-				religion = reformed
-			}
-		}
-
-		modifier = {
-			factor = 0.5
-			capital_scope = {
-				OR = {
-					has_terrain = grasslands
-					has_terrain = farmlands
-				}
-			}
-		}
-
-		modifier = {
-			factor = 0.8
-			capital_scope = {
-				OR = {
-					has_terrain = woods
-					has_terrain = farmlands
-				}
-			}
-		}
 		
 		modifier = {
-			factor = 0.6
-			OR = {
-				has_reform = democratic_mechanic
-				bgm_rev = yes
-				has_parliament = yes
-			}
+			factor = 0.8
+			innovativeness = 25
+		}
+
+		modifier = {
+			factor = 0.8
+			innovativeness = 50
+		}
+
+		modifier = {
+			factor = 0.8
+			innovativeness = 75
+		}
+
+		modifier = {
+			factor = 0.8
+			innovativeness = 100
+		}
+
+		modifier = {
+			factor = 0.8
+			full_idea_group = innovativeness_ideas
+		}
+
+		modifier = {
+			factor = 0.8
+			full_idea_group = infrastructure_ideas
+		}
+
+		modifier = {
+			factor = 0.8
+			full_idea_group = economic_ideas
 		}
 	}
 	
@@ -792,64 +762,58 @@ country_event = {
 		months = 180
 		
 		modifier = {
-			factor = 0.75
-			capital_scope = {
-				OR = {
-					region = northeast_america_region
-					region = british_isles_region
-					region = france_region
-					region = low_countries_region
-				}
-			}
+			factor = 3
+			NOT = { has_institution = industrialization }
 		}
 		
 		modifier = {
 			factor = 0.8
 			mission_completed = new_england_industrialization
 		}
+
+		modifier = {
+			factor = 0.8
+			mission_completed = industrial_economy
+		}
 		
 		modifier = {
 			factor = 0.8
 			mission_completed = attract_immigrants
 		}
-
-		modifier = {
-			factor = 0.8
-			OR = {
-				religion = anglican
-				religion = unitarian
-				religion = protestant
-				religion = reformed
-			}
-		}
-
-		modifier = {
-			factor = 0.5
-			capital_scope = {
-				OR = {
-					has_terrain = grasslands
-					has_terrain = farmlands
-				}
-			}
-		}
-
-		modifier = {
-			factor = 0.8
-			capital_scope = {
-				OR = {
-					has_terrain = woods
-					has_terrain = farmlands
-				}
-			}
-		}
 		
 		modifier = {
-			factor = 0.6
-			OR = {
-				has_reform = democratic_mechanic
-				bgm_rev = yes
-				has_parliament = yes
-			}
+			factor = 0.8
+			innovativeness = 25
+		}
+
+		modifier = {
+			factor = 0.8
+			innovativeness = 50
+		}
+
+		modifier = {
+			factor = 0.8
+			innovativeness = 75
+		}
+
+		modifier = {
+			factor = 0.8
+			innovativeness = 100
+		}
+
+		modifier = {
+			factor = 0.8
+			full_idea_group = innovativeness_ideas
+		}
+
+		modifier = {
+			factor = 0.8
+			full_idea_group = infrastructure_ideas
+		}
+
+		modifier = {
+			factor = 0.8
+			full_idea_group = economic_ideas
 		}
 	}
 	

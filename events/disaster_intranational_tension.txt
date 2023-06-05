@@ -10,13 +10,65 @@ country_event = {
 	major = yes
 	
 	is_triggered_only = yes
-	
-	option = {
-		name = "intranational_tension.1.a"			# Dire times are ahead of us
+
+	immediate = {
 		add_prestige = -10
 
 		add_stability = -4
 		add_war_exhaustion = 10
+	}
+	
+	option = {
+		name = "intranational_tension.1.a"			# Dire times are ahead of us
+
+		if = {
+			limit = {
+				NOT = {
+					has_reform = democratic_mechanic
+				}
+			}
+			capital_scope = {
+				spawn_rebels = {
+					type = democratic_rebels
+					size = 3
+				}
+			}
+		}
+
+		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_group = ROOT
+				}
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 3
+			}
+		}
+
+		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_group = ROOT
+				}
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 1
+			}
+		}
+	}
+
+	option = {
+		name = "intranational_tension.1.a"			# Dire times are ahead of us
+		add_prestige = -100
+
+		add_stability = 1
+
+		every_owned_province = {
+			change_controller = REB
+		}
 
 		if = {
 			limit = {

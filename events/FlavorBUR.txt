@@ -377,8 +377,13 @@ country_event = {
 		NOT = { tag = NED }
 		NED = {
 			exists = yes
-			ai = yes
-			was_player = no
+			OR = {
+				AND = {
+					ai = yes
+					was_player = no
+				}
+				has_country_flag = swapped_to_dutch_republic
+			}
 			NOT = { truce_with = ROOT }
 			is_subject = no
 		}
@@ -541,6 +546,7 @@ country_event = {
 		}
 		event_target:dutch_unification_country = {
 			change_tag = NED
+			on_change_tag_effect = yes
 			hidden_effect = {
 				swap_non_generic_missions = yes
 				if = {
@@ -926,6 +932,7 @@ country_event = {
 	option = {
 		name = new_flavour_bur.4.A
 		change_tag = LOT
+		on_change_tag_effect = yes
 		if = {
 			limit = {
 				NOT = {
@@ -976,6 +983,13 @@ country_event = {
 			name = bur_prestigious_duchy_mod
 			duration = -1
 		}
+		if = {
+			limit = { NOT = { tag = AEV } }
+			add_permanent_power_projection = {
+				type = 25_permanent_power_projection
+				amount = 25
+			}
+		}
 	}
 }
 
@@ -1000,6 +1014,13 @@ country_event = {
 				add_permanent_claim = from
 			}
 			champagne_area = {
+				limit = {
+					NOT = { is_core = from }
+					NOT = { is_permanent_claim = from }
+				}
+				add_permanent_claim = from
+			}
+			north_champagne_area = {
 				limit = {
 					NOT = { is_core = from }
 					NOT = { is_permanent_claim = from }
@@ -1058,7 +1079,12 @@ country_event = {
 			hidden_effect = {
 				clr_country_flag = FRA_vassal_to_be_given_to_BUR
 				ROOT = { free_vassal = prev }
-				FROM = { vassalize = prev }
+				FROM = { 
+					create_subject = {
+						subject_type = appanage
+						who = PREV
+					}
+				}
 			}
 		}
 

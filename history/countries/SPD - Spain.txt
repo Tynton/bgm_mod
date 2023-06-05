@@ -1,0 +1,6 @@
+government = republic
+add_government_reform = oligarchic_republic
+primary_culture = castillian
+religion = secular
+technology_group = western
+capital = 217

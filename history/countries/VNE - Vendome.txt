@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = appanage_reform
+government_rank = 1
+primary_culture = orleanais
+religion = catholic
+technology_group = western
+capital = 5089	# Orléans
+fixed_capital = 5089 # Cannot move capital away from this province & no power cost to move to it
+
+1392.1.1 = {
+	monarch = {
+		name = "Louis I"
+		dynasty = "de Bourbon"
+		birth_date = 1376.11.24
+		adm = 4
+		dip = 2
+		mil = 4
+	}
+}

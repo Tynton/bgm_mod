@@ -7,6 +7,8 @@ french_missions_north = {
 			tag = FRA
 			tag = SFR
 			tag = BFR
+            tag = FAN
+			tag = FRW
 		}
 		NOT = { map_setup = map_setup_random }
 		NOT = { has_dlc = "Emperor" }
@@ -61,6 +63,13 @@ french_missions_north = {
 		}
 		effect = {
 			champagne_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			north_champagne_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
@@ -124,6 +133,10 @@ french_missions_north = {
 		}
 		trigger = {
 			champagne_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_champagne_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -213,6 +226,8 @@ french_mission_slot_2 = {
 			tag = FRA
 			tag = SFR
 			tag = BFR
+            tag = FAN
+			tag = FRW
 		}
 		NOT = { map_setup = map_setup_random }
 		NOT = { has_dlc = "Emperor" }
@@ -279,6 +294,8 @@ french_missions_colonial = {
 			tag = FRA
 			tag = SFR
 			tag = BFR
+            tag = FAN
+			tag = FRW
 		}
 		is_random_new_world = no
 		NOT = { map_setup = map_setup_random }
@@ -595,6 +612,8 @@ france_expand_south = {
 			tag = FRA
 			tag = SFR
 			tag = BFR
+            tag = FAN
+			tag = FRW
 		}
 		NOT = { map_setup = map_setup_random }
 		NOT = { has_dlc = "Emperor" }
@@ -796,6 +815,8 @@ france_expand_south_2 = {
 			tag = FRA
 			tag = SFR
 			tag = BFR
+            tag = FAN
+			tag = FRW
 		}
 		NOT = { has_dlc = "Emperor" }
 	}
@@ -886,6 +907,8 @@ french_liberalism = {
 			tag = FRA
 			tag = SFR
 			tag = BFR
+            tag = FAN
+			tag = FRW
 		}
 	}
 	has_country_shield = yes

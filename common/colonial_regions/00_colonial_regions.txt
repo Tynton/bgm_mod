@@ -938,12 +938,12 @@ colonial_peru = {
 #		}
 #		name = ""
 #	}
-	names = {
-		trigger = {
-			culture_group = french
-		}
-		name = "COLONIAL_COLOMBIA_Perou_Francaise"
-	}
+	#names = {
+	#	trigger = {
+	#		culture_group = french
+	#	}
+	#	name = "COLONIAL_COLOMBIA_Perou_Francaise"
+	#}
 	# Generic
 	names = {
 		name = "COLONIAL_PERU_Root_Culture_GetName_Peru"

@@ -148,7 +148,7 @@ revolution = {
 						days = 7300
 					}
 				}
-				stability = 3
+				stability = 2
 			}
 			NOT = { num_of_rebel_controlled_provinces = 1 }
 			NOT = { num_of_rebel_armies = 1 }

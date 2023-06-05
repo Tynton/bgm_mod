@@ -180,6 +180,12 @@
  
  MNC:0 "Monaco"
  MNC_ADJ:0 "Monegasque"
+
+ NIC:0 "Nice"
+ NIC_ADJ:0 "Nicard"
+ 
+ MTZ:0 "Metz"
+ MTZ_ADJ:0 "Messine"
  
  SFR:0 "France"
  SFR_ADJ:0 "French"
@@ -191,6 +197,9 @@
  IRN_ADJ:0 "Iranian"
  BRM:0 "Burma"
  BRM_ADJ:0 "Burmese"
+ 
+ VIN:0 "Vietnam"
+ VIN_ADJ:0 "Vietnamese"
  
  INDIA:0 "India"
  INDIA_ADJ:0 "Indian"
@@ -206,6 +215,23 @@
  
  FAN:0 "Francia"
  FAN_ADJ:0 "Frankish"
+ 
+ VNE:0 "Vendôme"
+ VNE_ADJ:0 "Vendomoise"
+ NEM:0 "Nemours"
+ NEM_ADJ:0 "Nemourais"
+ LIM:0 "Limoges-Ségur"
+ LIM_ADJ:0 "Ségurois"
+ SNC:0 "Sancerre"
+ SNC_ADJ:0 "Sancerrois"
+ 
+ LTN:0 "Latin Empire"
+ LTN_ADJ:0 "Imperial"
+ FKI:0 "Four Kingdoms"
+ FKI_ADJ:0 "Royal"
+ 
+ FRW:0 "France"
+ FRW_ADJ:0 "French"
  
  
  

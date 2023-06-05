@@ -47,7 +47,7 @@
 190 = "Borbonese"
 191 = "Nivernese"
 192 = "Digione"
-193 = { "Franca Contea" "Besanzone" }
+193 = { "Besanzone" "Besanzone" } #Franca Contea
 194 = "Perigordia"
 196 = "Tolosa"
 197 = "Rossiglione"
@@ -116,6 +116,23 @@
 1873 = "Coira"
 1871 = "Vallese"
 151 = "Costantinopoli"
+
+4112 = "Limosino"
+4385 = "Caroborgo"
+4694 = { "Fusso" "Foro" }
+4695 = "Carcasciona"
+169 = "San Malo"
+
+5092 = { "Aosta" "Valle d'Aosta" }
+
+4952 = { "Soassone" "Suassone" }
+5075 = { "Droco" "Durocassio" }
+5083 = { "Vesula" "Vesulo" }
+5084 = "Arcassone"
+5087 = { "Bulogna" "Bologna di mare" }
+5089 = { "Vendomo" "Vindocino" }
+5090 = "Tulo"
+
 
 4758 = "Meran"
 
@@ -224,27 +241,30 @@
 4965 = "Cortraco"
 4966 = "Lovanio"
 
-#4959 = "Lavalle"
+4961 = "Avro di Grazia"
+5076 = "Lavalle"
 189 = "Nanci"
-4991 = "San Lo"
+#4991 = "San Lo"
 #4960 = "Coleto"
-5037 = "Monlussone"
-4969 = "Dola"
-5045 = "Droge"
-5041 = "Meluno"
-5043 = "Seno"
+#5037 = "Monlussone"
+#4969 = "Dola"
+#5045 = "Droge"
+#5041 = "Meluno"
+#5043 = "Seno"
 #4956 = "Civitavecchia"
-5044 = "Montargì"
-4961 = { "Autuno" "Aitone di Borgogna" }
-#4957 = { "Scialona" "Cialone sulla Marna" }
-5039 = "Versaglia"
+#5044 = "Montargì"
+4953 = { "Cialone" "Cialone sulla Marna" }
+5081 = "Beona"
+5082 = "Monbeliardo"
+#5081 = Beona
+#5039 = "Versaglia"
 4968 = "Colmaria"
-4980 = "Basilea"
-4992 = "Duncherque"
+#4980 = "Basilea"
+4951 = "Duncherque"
 4769 = "Lilla"
 
 4949 = { "La Roccella" "La Roccelle" }
-4947 = { "Valenza" "Valenza nel Delfinato" }
+4947 = { "Anneci" "Anessi" }
 5102 = "Arcassone"
 4776 = "Blesa"
 
@@ -253,5 +273,7 @@
 5243 = "Marburgo"
 5244 = "Capodistria"
 5245 = "Tolmino"
+
+5093 = "Coleto"
 
 5398 = { "Gape" "Gapo" }

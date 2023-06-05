@@ -1,18 +1,18 @@
 # 185 Nemours
 
-owner = FRA
-controller = FRA
+owner = NEM
+controller = NEM
 capital = "Nemours"
 is_city = yes
 culture = champenois
 religion = catholic
 hre = no
-base_tax = 5
+base_tax = 4
 base_production = 5
 trade_goods = paper
-base_manpower = 5
+base_manpower = 4
 add_core = CHP
-add_core = FRA
+add_core = NEM
 discovered_by = eastern
 discovered_by = western
 discovered_by = muslim

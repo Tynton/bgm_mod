@@ -27,6 +27,14 @@
  POPULAR_REPUBLIC:0 "Popular Republic"
  POPULAR_REPUBLIC_ITA:0 "Repubblica Popolare"
  
+ COMTE:0 "Comté"
+ COMTE_RULER:0 "Comte"
+ COMTESSE:0 "Comtesse"
+
+ VICOMTE:0 "Vicomté"
+ VICOMTE_RULER:0 "Vicomte"
+ VICOMTESSE:0 "Vicomtesse"
+ 
  TRADECOMPANY:0 "Trade Company"
  
  SISTER:0 "Sister"

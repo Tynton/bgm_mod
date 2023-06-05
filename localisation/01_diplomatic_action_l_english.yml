@@ -41,9 +41,9 @@
  
  invite_dynasty: "Invite Dynasty"
  invite_dynasty_title: "Invite Dynasty"
- invite_dynasty_desc: "We will request an heir from the target nation's dynasty. They will be pleased by this development."
+ invite_dynasty_desc: "We will request an heir from the target nation's dynasty. They will be pleased by this development. This can only be done once every 75 years."
  invite_dynasty_dialog:0 "A foreign power has requested that we send an heir to their nation to become their heir apparent."
- invite_dynasty_tooltip: "We will request an heir from the target nation's dynasty. They will be pleased by this development."
+ invite_dynasty_tooltip: "We will request an heir from the target nation's dynasty. They will be pleased by this development. This can only be done once every 75 years."
  invite_dynasty_alert_tooltip: "Invite Dynasty Request"
  
  gift_adm_power:0 "Gift Adm Power"

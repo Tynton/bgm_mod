@@ -10,6 +10,7 @@
 4760 = "Innviadl"
 79 = { "Wüazburg" "Woizbuag" } #Wörtzburch
 4709 = "Båssa"
+5096 = "Traunstoa"
 #5141 = "Däiz"
 #5148 = "Kaufbeiren"
 

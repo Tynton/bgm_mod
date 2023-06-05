@@ -606,4 +606,24 @@ spriteTypes = {
 		texturefile = "gfx//interface//great_projects//great_project_monument_le_havre.dds"
 	}
 
+	spriteType = {
+		name = "GFX_great_project_chateau_dangers"
+		texturefile = "gfx//interface//great_projects//great_project_chateau_dangers.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_university_bologna"
+		texturefile = "gfx//interface//great_projects//great_project_university_bologna.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_chateau_sedan"
+		texturefile = "gfx//interface//great_projects//great_project_chateau_sedan.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_sorbonne"
+		texturefile = "gfx//interface//great_projects//great_project_sorbonne.dds"
+	}
+
 }

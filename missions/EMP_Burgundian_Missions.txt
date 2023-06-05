@@ -34,6 +34,9 @@ emp_burgundy_1 = {
 			181 = {
 				owned_by = ROOT
 			}
+			5097 = {
+				owned_by = ROOT
+			}
 		}
 		
 		effect = {
@@ -48,6 +51,9 @@ emp_burgundy_1 = {
 				add_permanent_claim = ROOT
 			}
 			4719 = {
+				add_permanent_claim = ROOT
+			}
+			4947 = {
 				add_permanent_claim = ROOT
 			}
 		}
@@ -391,6 +397,9 @@ emp_burgundy_2 = {
 				}
 			}
 		}
+		ai_weight = {
+			factor = 500	#Natural întegration
+		}
 	}
 	emp_bur_secure_the_lowlands = {
 		icon = mission_spanish_netherlands
@@ -427,6 +436,9 @@ emp_burgundy_2 = {
 					duration = 7300
 				}
 			}
+		}
+		ai_weight = {
+			factor = 500	#Natural conquest
 		}
 	}
 
@@ -600,6 +612,9 @@ emp_burgundy_3 = {
 				add_permanent_claim = ROOT
 			}
 		}
+		ai_weight = {
+			factor = 500	#Natural conquest
+		}
 	}
 	
 	emp_bur_liege = {
@@ -645,6 +660,9 @@ emp_burgundy_3 = {
 				add_permanent_claim = ROOT
 			}
 		}
+		ai_weight = {
+			factor = 500	#Natural conquest
+		}
 	}
 	
 	emp_bur_frisia = {
@@ -674,6 +692,9 @@ emp_burgundy_3 = {
 					key = bur_channel_ambition
 				}
 			}
+		}
+		ai_weight = {
+			factor = 500	#Natural conquest
 		}
 	}
 	
@@ -778,7 +799,19 @@ emp_burgundy_3 = {
 			has_regency = no
 		}
 		effect = {
-			country_event = { id = new_flavour_bur.5 }
+			country_event_with_insight = {
+				id = new_flavour_bur.5
+				insight_tooltip = INSIGHT_JUST_TOOLTIP
+				effect_tooltip = "
+				add_country_modifier = {
+					name = bur_prestigious_duchy_mod
+					duration = -1
+				}
+				add_permanent_power_projection = {
+					type = 25_permanent_power_projection
+					amount = 25
+				}"
+			}
 		}
 	}
 }
@@ -1017,6 +1050,9 @@ emp_burgundy_4 = {
 				duration = 7300
 			}
 		}
+		ai_weight = {
+			factor = 500	#Natural diplomacy
+		}
 	}
 	emp_bur_league_of_public_weal = {
 		icon = league_of_the_public_weal
@@ -1172,6 +1208,13 @@ emp_burgundy_4 = {
 					}
 					add_permanent_claim = root
 				}
+				north_champagne_area = {
+					limit = {
+						NOT = { is_core = from }
+						NOT = { is_permanent_claim = from }
+					}
+					add_permanent_claim = from
+				}
 				orleans_area = {
 					limit = {
 						NOT = { is_core = root }
@@ -1244,6 +1287,7 @@ emp_burgundy_4 = {
 			has_regency = no
 		}
 		effect = {
+
 			add_country_modifier = {
 				name = bur_king_of_franks
 				duration = 7300
@@ -1301,7 +1345,12 @@ emp_burgundy_4 = {
 						}
 					}
 					hidden_effect = { FRA = { free_vassal = prev } }
-					ROOT = { vassalize = prev }
+					ROOT = {
+						create_subject = {
+							subject_type = appanage
+							who = PREV
+						}
+					}
 				}
 			}
 		}

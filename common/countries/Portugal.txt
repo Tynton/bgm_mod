@@ -2,7 +2,7 @@
 
 graphical_culture = italianategfx
 
-color = { 115 153 90 }
+color = { 66 96 135 } #115 153 90
 
 historical_score = 4700
 

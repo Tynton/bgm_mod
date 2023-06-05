@@ -22,6 +22,8 @@
 4770 = "'s-Hertogenbosch"
 100 = "Leeuwarden"
 
+5087 = "Bonen"
+
 13 = "Sleeswijk"
 253 = "Buiten-Hebriden"
 4364 = "Innerlijke-Hebriden"

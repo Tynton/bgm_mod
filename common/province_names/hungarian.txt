@@ -174,11 +174,11 @@
 4532 = "Szörény"
 
 
-5027 = "Felsöör"
-5069 = "Déva"
-5095 = "Kassa"
-5096 = "Zsolna"
-5097 = "Besztercebánya"
+#5027 = "Felsöör"
+#5069 = "Déva"
+#5095 = "Kassa"
+#5096 = "Zsolna"
+#5097 = "Besztercebánya"
 5099 = "Toketerebes"
 5100 = "Alsókubin"
 

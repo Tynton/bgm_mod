@@ -14,11 +14,17 @@ country_event = {
 
 	trigger = {
 		OR = {
-			is_year = 1810
+			has_institution = nationalism_institution
 			has_disaster = dutch_revolt_disaster
 		}
 		any_core_province = {
 			culture_group = benelux
+		}
+		any_country = {
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 25
+				culture_group = benelux
+			}
 		}
 	}
 
@@ -28,11 +34,28 @@ country_event = {
 	
 	option = {
 		name = "netherlandunity.2.a"
-		every_province = {
+		if = {
 			limit = {
-				region = low_countries_region
+				NOT = { has_institution = nationalism_institution }
 			}
-			add_core = NED
+			every_province = {
+				limit = {
+					region = low_countries_region
+					owner = {
+						NOT = { culture_group = benelux }
+					}
+				}
+				add_core = NED
+			}
+		}
+		else = {
+			every_province = {
+				limit = {
+					region = low_countries_region
+					culture_group = benelux
+				}
+				add_core = NED
+			}
 		}
 	}
 }
@@ -150,6 +173,7 @@ country_event = {
 	major = yes
 	
 	trigger = {
+		always = no
 		#OR = {
 		#	all_country = {
 		#		limit = {

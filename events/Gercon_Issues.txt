@@ -64,7 +64,7 @@ country_event = {
 				government = republic
 			}
 			change_government = democracy_govt
-			add_government_reform = parliamentary_republic_reform
+			add_government_reform = parliamentary_republic_reform_bgm
 		}
 
 		if = {
@@ -172,7 +172,7 @@ country_event = { #Individual Voting
 				government = republic
 			}
 			change_government = democracy_govt
-			add_government_reform = parliamentary_republic_reform
+			add_government_reform = parliamentary_republic_reform_bgm
 		}
 
 		if = {

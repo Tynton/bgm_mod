@@ -51,11 +51,13 @@ cb_dynastic_enforcement = {
 		FROM = {
 			government = monarchy
 			marriage_with = ROOT
-			NOT = {
-				dynasty = ROOT
-				prestige = ROOT
+			NOT = { dynasty = ROOT }
+			NOT = { prestige = ROOT }
+			OR = {
+				has_heir = no
+				NOT = { heir_claim = 33 }
+				NOT = { legitimacy = 33 }
 			}
-			has_heir = no
 		}
 		government = monarchy
 	}

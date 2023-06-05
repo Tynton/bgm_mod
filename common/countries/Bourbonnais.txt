@@ -2,7 +2,7 @@
 
 graphical_culture = frenchgfx
 
-color = { 0 140 165 }
+color = { 17 81 138 } #0 140 165
 
 revolutionary_colors = { 13 5 13 }
 

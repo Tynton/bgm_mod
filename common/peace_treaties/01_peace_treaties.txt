@@ -34,7 +34,7 @@ po_enforce_democracy = {
 				}
 				change_government = democracy_govt
 			}
-			add_government_reform = parliamentary_republic_reform
+			add_government_reform = parliamentary_republic_reform_bgm
 		}
 	}
 	ai_weight = { # Defaults to always evaluate to 0

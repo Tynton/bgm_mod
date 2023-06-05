@@ -90,6 +90,16 @@ britain_prosperity = {
 	reform_progress_growth = 0.25
 }
 
+#############french estate privilege#############
+
+fra_feudalism = {
+	reduced_liberty_desire_on_same_continent = 50
+	diplomats = 2
+	diplomatic_upkeep = 4
+	vassal_forcelimit_bonus = 0.25
+	vassal_income = 0.25
+}
+
 #############buildings#############
 
 factory_dev = {
@@ -137,6 +147,15 @@ italea_start = { #absolute authority
 	#max_absolutism = 5
 	reform_progress_growth = -0.5
 	min_autonomy_in_territories = 1
+}
+
+italea_ai = {
+	advisor_cost = 1000
+	build_cost = 1000
+	adm_tech_cost_modifier = 1000
+	dip_tech_cost_modifier = 1000
+	idea_cost = 1000
+	development_cost = 1000
 }
 
 #############GERMAN CONFEDERATION & ZOLLVEREIN#############
@@ -288,6 +307,46 @@ local_crackdown = {
 	stability_cost_modifier = -0.1
 }
 
+architect_of_peace = {
+	prestige = 0.33
+	stability_cost_modifier = -0.05
+}
+
+ideological_primacy = {
+	rr_jacobins_influence = 0.1
+	dm_social_democrat_influence = 0.1
+	dm_social_liberal_influence = 0.075
+	dm_social_conservative_influence = 0.05
+	dm_communist_influence = 0.05
+	dm_nationalist_influence = 0.025
+	dm_monarchist_influence = -0.1
+	dm_fascist_influence = -0.1
+}
+
+not_observing = {
+	ae_impact = 0.25
+	improve_relation_modifier = -0.33
+}
+
+revolutionary_peace = {
+	war_exhaustion = -0.05
+	global_prosperity_growth = 0.1 
+	stability_cost_modifier = -0.1
+	global_tax_modifier = 0.1
+	global_unrest = -2
+	global_trade_goods_size_modifier = 0.05
+	idea_cost = -0.1
+	technology_cost = -0.1
+}
+
+traditionalist_peace = {
+	war_exhaustion = -0.05
+	global_prosperity_growth = 0.1
+	production_efficiency = 0.1
+	global_trade_goods_size_modifier = 0.1
+	idea_cost = -0.1
+	technology_cost = -0.1
+}
 
 #############fascism#############
 
@@ -420,7 +479,8 @@ sovereignty_vatican = {
 
 genocides = {
 	global_missionary_strength = 0.05
-	culture_conversion_cost = -0.5
+	culture_conversion_cost = -0.2
+	culture_conversion_time = -0.2
 	global_unrest = 5
 	global_tax_modifier = -0.25
 	global_trade_goods_size_modifier = -0.25
@@ -441,6 +501,13 @@ national_collapse = {
 	global_autonomy = 0.15
 	harsh_treatment_cost = 0.25
 	advisor_cost = 0.5
+}
+
+cleared_pretenders = {
+	legitimacy = 0.33
+	yearly_absolutism = 0.33
+	max_absolutism = 10
+	all_estate_influence_modifier = -0.05
 }
 
 #############societal modernization#############
@@ -783,6 +850,8 @@ artillery_one = {
 	land_forcelimit_modifier = 0.2
 	fire_damage_received = -0.10
 	land_maintenance_modifier = 0.05
+	naval_maintenance_modifier = 0.05
+	sailor_maintenance_modifer = -0.2
 }
 
 artillery_two = {
@@ -793,6 +862,8 @@ artillery_two = {
 	land_forcelimit_modifier = 0.2
 	fire_damage_received = -0.10
 	land_maintenance_modifier = 0.05
+	naval_maintenance_modifier = 0.05
+	sailor_maintenance_modifer = -0.2
 }
 
 artillery_three = {
@@ -803,6 +874,8 @@ artillery_three = {
 	land_forcelimit_modifier = 0.2
 	fire_damage_received = -0.10
 	land_maintenance_modifier = 0.05
+	naval_maintenance_modifier = 0.05
+	sailor_maintenance_modifer = -0.2
 }
 
 artillery_four = {
@@ -813,6 +886,8 @@ artillery_four = {
 	land_forcelimit_modifier = 0.2
 	fire_damage_received = -0.10
 	land_maintenance_modifier = 0.1
+	naval_maintenance_modifier = 0.1
+	sailor_maintenance_modifer = -0.2
 }
 
 artillery_five = {
@@ -823,6 +898,8 @@ artillery_five = {
 	land_forcelimit_modifier = 0.2
 	fire_damage_received = -0.10
 	land_maintenance_modifier = 0.15
+	naval_maintenance_modifier = 0.15
+	sailor_maintenance_modifer = -0.2
 }
 
 #############air force and nukes#############
@@ -976,6 +1053,10 @@ futurist_influence = {
 
 fascist_influence = {
 	dm_fascist_influence = 0.25
+}
+
+coalition_continent_hegemon = {
+	improve_relation_modifier = 0.33
 }
 
 #############culture/nation unity#############
@@ -1379,6 +1460,7 @@ standard_language_adm = {
 
 basic_language_ed = {
 	culture_conversion_cost = -0.1
+	culture_conversion_time = -0.1
 	min_autonomy_in_territories = -0.15
 }
 

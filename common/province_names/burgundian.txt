@@ -6,8 +6,8 @@
 4392 = "Auxerroi"
 1877 = "Charoloi"
 186 = "Rémoi"
-185 = "Nemôrs"
-179 = { "Berry" "Bôrges" }
+185 = "Nemôr"
+179 = { "Berry" "Bôrge" }
 4389 = "Tôraine"
 178 = "Angô"
 180 = "Hau-Poitô"
@@ -32,14 +32,54 @@
 75 = "Strasbôrg"
 4765 = "Mulhôse"
 4621 = "Fribôrg"
+91 = "Tôrnai"
+92 = "Bruxelle"
+5087 = { "Bôlogne" "Bôlogne-chu-Mar" }
+5094 = "Bitbôrg"
 94 = "Luxembôrg"
 4948 = "Côrtrai"
 4718 = "Aschaffenbôrg"
 4767 = "Deuz-Pons"
+4770 = "Bô-lu-Duque"
+89 = "Amien"
+4952 = "Soisson"
+182 = "Valoi"
+184 = "Orléannoi"
+4776 = "Bloi"
+4953 = "Châlon"
+90 = "Bruge"
+1744 = "Anver"
+4383 = "Ilai-Haye"
+1247 = "Ilai-Corse"
+484 = "Ilai-Havane"
+4948 = "Côrtrai"
+5086 = "Lôvain"
+173 = "Labôrd"
+
+5081 = "Beaune"
+5083 = "Vesôl"
+5090 = "Tôl"
+1742 = "Aute-Gueldre"
+5085 = "Las Orres"
+
+4719 = "Braisse"
+
+4949 = { "Auni" "Là Rochile" }
+
+200 = "Monpelliar"
+
+4957 = "Andorre Là-Vieille"
+4961 = "Harflieur"
+
+174 = "Bordiau"
+
+5098 = "Thionvelle"
+87 = "Calai"
+
 #CONJECTURE ENDS
 
 5103 = "Leingres"
-190 = { "Borbounâ" "Barbonnais" }
+190 = { "Barbonnais" "Borbounâ" }
 118 = "Rôme"
 
 

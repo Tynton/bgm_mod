@@ -104,3 +104,12 @@ bgm_industry_export = {
 		trade_goods = naval_equipment
 	}
 }
+
+bgm_building_owner = {
+	owner = {
+		ai = yes
+		is_at_war = no
+		NOT = { num_of_loans = 1 }
+		years_of_income = 0.4
+	}
+}

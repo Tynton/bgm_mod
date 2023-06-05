@@ -1,0 +1,8 @@
+government = republic
+add_government_reform = oligarchic_republic
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = lorrain
+capital = 188	# Metz
+fixed_capital = 188 # Cannot move capital away from this province & no power cost to move to it

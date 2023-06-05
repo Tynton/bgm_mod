@@ -283,7 +283,7 @@ country_event = {
 	
 	option = {			# We have lost our foothold in France
 		name = "flavor_eng.EVTOPTA9104"
-		ai_chance = { factor = 80 }
+		ai_chance = { factor = 30 }
 		add_stability_or_adm_power = yes
 		every_core_province = {
 			limit = {
@@ -301,8 +301,9 @@ country_event = {
 	}
 	option = {		# We will never give this up!
 		name = "flavor_eng.EVTOPTB9104"
-		ai_chance = { factor = 20 }
+		ai_chance = { factor = 30 }
 		add_stability = -1
+		set_country_flag = eng_claim_fra
 		FRA = {
 			add_opinion = {
 				who = ROOT
@@ -2608,7 +2609,10 @@ country_event = {
 		4370 = {
 			owned_by = ROOT
 		}
-		mission_completed = eng_rb_universities
+		OR = {
+			mission_completed = eng_rb_universities
+			mission_completed = gbr_ave_renovate_universities
+		}		
 	}
 	
 	immediate = {
@@ -2961,6 +2965,7 @@ country_event = {
 		OR = {
 			culture_group = british
 			culture_group = gaelic
+			primary_culture =  anglois
 			primary_culture = anglosaxon
 		}
 		has_reform = revolutionary_republic_reform

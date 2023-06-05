@@ -373,7 +373,7 @@ administrative_missions = {
 		icon = mission_empire
 		required_missions = { build_manufactories }
 		trigger = {
-			total_development = 1000
+			total_development = 1500
 		}
 		effect = {
 			add_prestige = 30

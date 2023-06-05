@@ -22,7 +22,7 @@
 
 1878 = "Akisgran"
 
-4947 = "Valentzia"
+#4947 = "Valentzia"
 4949 = "Arroxela"
 89 = "Amiens"
 93 = "Lieja"

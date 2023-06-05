@@ -1,8 +1,8 @@
 #4552 - Palencia
 
-owner = CAS		#Juan II of Castille
-controller = CAS
-add_core = CAS
+owner = GAL		#Juan II of Castille
+controller = GAL
+#add_core = CAS
 add_core = GAL
 culture = galician
 religion = catholic

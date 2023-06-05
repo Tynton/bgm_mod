@@ -3,7 +3,7 @@
 owner = TNT
 controller = TNT
 add_core = TNT
-culture = south_tyrolean
+culture = meranese
 religion = catholic
 hre = yes
 base_tax = 4 

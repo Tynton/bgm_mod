@@ -3799,14 +3799,16 @@ gov_free_city = {
 	trigger = {
 		has_reform = free_city
 		
-		OR = {
-			primary_culture = swabian
-			primary_culture = alsatian
-			primary_culture = bavarian
-			primary_culture = austrian
-			primary_culture = south_tyrolean
-			primary_culture = konstanzer
-			primary_culture = swiss
+		NOT = {
+			OR = {
+				primary_culture = swabian
+				primary_culture = alsatian
+				primary_culture = bavarian
+				primary_culture = austrian
+				primary_culture = south_tyrolean
+				primary_culture = konstanzer
+				primary_culture = swiss
+			}
 		}
 		bgm_comgovt = no
 	}
@@ -4137,15 +4139,15 @@ south_slavic_republic = {
 
 florentine_republic = {
 	rank = {
-		1 = REPUBLIC
-		2 = GRAND_REPUBLIC
-		3 = GREAT_REPUBLIC
+		1 = REPUBBLICA
+		2 = REPUBBLICA
+		3 = REPUBBLICA
 	}
 
 	ruler_male = {
 		1 = GONFALONIERE
-		2 = GRAND_CONSUL
-		3 = GREAT_CONSUL
+		2 = CONSOLE
+		3 = CONSOLE
 	}
 
 	ruler_female = {
@@ -4208,28 +4210,28 @@ ambrosian_republic = {
 
 german_republic = {
 	rank = {
-		1 = REPUBLIC
-		2 = GRAND_REPUBLIC
-		3 = FEDERAL_REPUBLIC
+		1 = REPUBLIK
+		2 = REPUBLIK
+		3 = BUNDESREPUBLIK
 	}
 
 	ruler_male = {
 		1 = SYNDIC
 		2 = GRAND_SYNDIC
-		3 = PRESIDENT
+		3 = PRASIDENT
 	}
 
 	ruler_female = {
 		1 = SYNDIC_fem
 		2 = GRAND_SYNDIC_fem
-		3 = PRESIDENT_fem
+		3 = PRASIDENT
 	}
 
 	trigger = {
 		NOT = { has_reform = parliamentary_republic_reform }
 		government = republic
 		culture_group = germanic
-		
+		NOT = { has_reform = free_city }
 		NOT = {
 			OR = {
 				bgm_comgovt = yes
@@ -4265,7 +4267,15 @@ italian_republic = {
 		government = republic
 		culture_group = latin
 		NOT = {
-			primary_culture = neapolitan
+			OR = {
+				primary_culture = neapolitan
+				primary_culture = venetian
+				primary_culture = lombard
+				primary_culture = romagnan
+				primary_culture = piedmontese
+				primary_culture = ligurian
+				primary_culture = monegasque
+			}
 		}
 		
 		NOT = {

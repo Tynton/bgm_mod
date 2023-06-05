@@ -223,7 +223,9 @@
 4956 = "Suassone"
 5044 = "Montargì"
 4961 = { "Autuno" "Aitone di Borgogna" }
-#4957 = { "Scialona" "Cialone sulla Marna" }
+4953 = { "Cialone" "Cialone sulla Marna" }
+5081 = "Beona"
+5082 = "Monbeliardo"
 5039 = "Versaglia"
 4968 = "Colmaria"
 4980 = "Basilea"

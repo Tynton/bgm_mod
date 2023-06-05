@@ -264,10 +264,12 @@ country_event = {
 	picture = PRAYING_eventPicture
 	
 	hidden = yes
+
+	is_triggered_only = yes
 	
-	trigger = {
+	#trigger = {
 	
-		always = no
+	#	always = no
 	
 	#	any_owned_province = {
 	#		OR = {
@@ -284,11 +286,11 @@ country_event = {
 	#	any_province = {
 	#		religion = protestant
 	#	}
-	}
+	#}
 	
-	mean_time_to_happen = {
-		days = 1
-	}
+	#mean_time_to_happen = {
+	#	days = 1
+	#}
 	
 	option = {
 		name = "PreProtestantEvent.10.a"
@@ -384,7 +386,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 2
+		months = 24
 		
 		modifier = {
 			factor = 0.95
@@ -490,7 +492,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 2
+		months = 24
 		
 		modifier = {
 			factor = 0.95
@@ -596,7 +598,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 2
+		months = 24
 	}
 
 	immediate = {
@@ -881,6 +883,7 @@ country_event = {
 	major = yes
 	
 	trigger = {
+		is_subject = no
 		119 = { religion = fraticelli }
 		current_age = age_of_discovery
 		NOT = { has_global_flag = fraticelli_line }
@@ -908,7 +911,7 @@ country_event = {
 		months = 150
 
 		modifier = {
-			factor = 0.001
+			factor = 0.1
 			NOT = {
 				has_opinion = {
 					who = PAP
@@ -1000,6 +1003,8 @@ country_event = {
 	picture = ROME_DESTROYED_eventPicture
 	
 	is_triggered_only = yes
+
+	major = yes
 	
 	option = {
 		name = "PreProtestantEvent.20.a" #The Pope is dead, long live the Fraticellis
@@ -1191,7 +1196,7 @@ country_event = {
 	}
 
 	option = {
-		name = "PreProtestantEvent.21.b" #Tney are crazy
+		name = "PreProtestantEvent.21.b" #They are crazy
 
 		ai_chance = {
 			factor = 1
@@ -1212,8 +1217,8 @@ country_event = {
 
 country_event = {
 	id = PreProtestantEvent.22
-	title = PreProtestantEvent.22.t
-	desc = PreProtestantEvent.22.d
+	title = "PreProtestantEvent.22.t"
+	desc = "PreProtestantEvent.22.d"
 	picture = GOOD_WITH_MONARCH_eventPicture
 	
 	trigger = {
@@ -1225,7 +1230,7 @@ country_event = {
 		months = 150
 
 		modifier = {
-			factor = 0.001
+			factor = 0.1
 			NOT = {
 				has_opinion = {
 					who = PAP
@@ -1291,13 +1296,13 @@ country_event = {
 
 country_event = {
 	id = PreProtestantEvent.23
-	title = PreProtestantEvent.23.t
-	desc = PreProtestantEvent.23.d
+	title = "PreProtestantEvent.23.t"
+	desc = "PreProtestantEvent.23.d"
 	picture = GOOD_WITH_MONARCH_eventPicture
 	
 	trigger = {
 		religion = fraticelli
-		has_estate = estate_nobles
+		has_estate = estate_burghers
 	}
 	
 	mean_time_to_happen = {
@@ -1357,8 +1362,8 @@ country_event = {
 
 country_event = {
 	id = PreProtestantEvent.24
-	title = PreProtestantEvent.24.t
-	desc = PreProtestantEvent.24.d
+	title = "PreProtestantEvent.24.t"
+	desc = "PreProtestantEvent.24.d"
 	picture = GOOD_WITH_MONARCH_eventPicture
 	
 	trigger = {
@@ -1374,7 +1379,7 @@ country_event = {
 		months = 150
 
 		modifier = {
-			factor = 0.001
+			factor = 0.33
 			NOT = {
 				has_opinion = {
 					who = PAP
@@ -1389,8 +1394,8 @@ country_event = {
 		
 		add_papal_influence = 5
 
-		add_yearly_manpower = 0.15
-		add_years_of_income = 0.15
+		add_yearly_manpower = 0.1
+		add_years_of_income = 0.1
 
 		every_neighbor_country = {
 			limit = {
@@ -1437,29 +1442,5 @@ country_event = {
 			influence = -5
 			duration = 3650
 		}
-	}
-}
-
-country_event = {
-	id = PreProtestantEvent.25
-
-	hidden = yes
-	fire_only_once = yes
-
-	trigger = {
-		NOT = { has_global_flag = hre_war_started }
-		any_country = {
-			is_in_war = {
-				casus_belli = cb_bgm_league
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	option = {
-		set_global_flag = hre_war_started
 	}
 }

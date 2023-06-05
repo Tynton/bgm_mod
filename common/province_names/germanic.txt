@@ -39,9 +39,13 @@
 5010 = "Egersee"
 5011 = "Körösch"
 
+5090 = "Tull"
+
+5092 = { "Ougstalland" "Augshtalann" }
+
 5110 = "Munkács"
 5109 = "Ungwar"
-5095 = "Kaschau"
+#5095 = "Kaschau"
 5108 = "Lizenz"
 
 89 = "Amiens"
@@ -111,7 +115,7 @@
 193 = "Bisanz"
 5313 = { "Beffert" "Beffort" }
 5305 = "Cawallen"
-5309 = "Mömpelgard"
+5082 = "Mömpelgard"
 4969 = "Doll"
 5310 = "Bünterlin"
 5311 = "Wesul"
@@ -278,7 +282,7 @@
 
 174 = "Bordeaulx"
 204 = "Graswalde"
-4947 = "Valenz"
+#4947 = "Valenz"
 
 
 493 = "Sankt Thomas"
@@ -382,13 +386,13 @@
 1108 = "Tauranga"
 2737 = "Hastings"
 
-4954 = "Arel"
+#4954 = "Arel"
 4955 = "Kolmar"
 
-4963 = "Arel"
-4966 = "Löwen"
-4967 = "Lünstadt"
-4992 = "Dünkirchen"
+#4963 = "Arel"
+#4966 = "Löwen"
+#4967 = "Lünstadt"
+4951 = "Dünkirchen"
 
 4971 = "Tessin"
 4972 = "Martinach"
@@ -397,9 +401,9 @@
 4977 = "Bastia"
 1247 = "Corsica"
 
-167 = "Rudaburg"
+5088 = "Gerhardsbergen"
 
-4968 = "Kolmar"
+167 = "Rudaburg"
 
 5047 = "Sankt Didel"
 5048 = "Gdingen"
@@ -421,9 +425,9 @@
 
 
 5069 = { "Diemrich" "Denburg" }
-5095 = "Kaschau"
-5096 = "Sillein"
-5097 = "Altsohl"
+#5095 = "Kaschau"
+#5096 = "Sillein"
+#5097 = "Altsohl"
 5099 = "Trebischau"
 5100 = "Unterkubin"
 
@@ -433,7 +437,7 @@
 5244 = "Gafers"
 5245 = "Tolmein"
 
-5246 = "Diedenhofen"
+5098 = "Diedenhofen"
 
 4962 = "Hirschberg im Riesengebirge"
 

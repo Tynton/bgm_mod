@@ -132,11 +132,11 @@ paper = {
 }
 
 coal = {
-	base_price = 5
+	base_price = 6.5
 }
 
 cloves = {
-	base_price = 8
+	base_price = 4
 }
 
 unknown = {

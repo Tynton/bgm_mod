@@ -257,7 +257,10 @@ italian_republics = {
 		}
 		government = republic
 		NOT = {
-			primary_culture = neapolitan
+			OR = {
+				primary_culture = neapolitan
+				primary_culture = venetian
+			}
 		}
 	}
 }
@@ -321,7 +324,13 @@ gallo_italian_republic = {
 		NOT = {
 			primary_culture = venetian
 		}
-		culture_group = latin
+		OR = {
+			primary_culture = lombard
+			primary_culture = piedmontese
+			primary_culture = ligurian
+			primary_culture = monegasque
+			primary_culture = romagnan
+		}
 		NOT  = {
 			OR = {
 				has_reform = democratic_mechanic
@@ -566,11 +575,7 @@ german_republics = {
 
 	trigger = {
 		government = republic
-		OR = {
-			
-			culture_group = germanic
-			
-		}
+		culture_group = germanic
 		NOT  = {
 			OR = {
 				has_reform = democratic_mechanic
@@ -599,13 +604,16 @@ german_free_cities = {
 
 	trigger = {
 		government = republic
-		OR = {
-			
-			culture_group = germanic
-		}
+		culture_group = germanic
 		NOT = {
 			OR = {
-				
+				primary_culture = bavarian
+				primary_culture = austrian
+				primary_culture = south_tyrolean
+				primary_culture = swiss
+				primary_culture = konstanzer
+				primary_culture = swabian
+				primary_culture = alsatian
 				primary_culture = palatine
 			}
 		}
@@ -647,7 +655,6 @@ high_german_free_cities = {
 	}
 
 	trigger = {
-		government = republic
 		
 		OR = {
 			primary_culture = bavarian
@@ -684,11 +691,7 @@ german_theocracies = {
 
 	trigger = {
 		government = theocracy
-		OR = {
-			
-			culture_group = germanic
-			
-		}
+		culture_group = germanic
 		has_reform = leading_clergy_reform
 		NOT = {
 			has_reform = monastic_order_reform
@@ -1363,6 +1366,126 @@ hre_county = {
 	}
 }
 
+fre_county = {
+	rank = {
+		1 = COMTE #Comté
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+
+	ruler_male = {
+		1 = COMTE_RULER #Comte
+		2 = KING
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = COMTESSE
+		2 = QUEEN
+		3 = EMPRESS
+	}
+
+	consort_male  = {
+		1 = PRINCE_CONSORT
+		2 = PRINCE_CONSORT
+		3 = PRINCE_CONSORT
+	}
+
+	consort_female = {
+		1 = COUNTESS
+		2 = QUEEN_CONSORT
+		3 = EMPRESS_CONSORT
+	}
+
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	heir_female = {
+		1 = HEIR_fem
+		2 = HEIR_fem
+		3 = HEIR_fem
+	}
+
+	government_reform = monarchy_mechanic
+
+	trigger = {
+		has_reform = monarchy_mechanic
+		culture_group = french
+		is_subject_of_type = vassal
+		NOT = {
+			OR = {
+				tag = BER
+				tag = NEM
+				tag = BOU
+			}
+		}
+		NOT = { total_development = 10 }
+	}
+}
+
+fre_viscounty = {
+	rank = {
+		1 = VICOMTE #Comté
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+
+	ruler_male = {
+		1 = VICOMTE_RULER #Comte
+		2 = KING
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = VICOMTESSE
+		2 = QUEEN
+		3 = EMPRESS
+	}
+
+	consort_male  = {
+		1 = PRINCE_CONSORT
+		2 = PRINCE_CONSORT
+		3 = PRINCE_CONSORT
+	}
+
+	consort_female = {
+		1 = COUNTESS
+		2 = QUEEN_CONSORT
+		3 = EMPRESS_CONSORT
+	}
+
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	heir_female = {
+		1 = HEIR_fem
+		2 = HEIR_fem
+		3 = HEIR_fem
+	}
+
+	government_reform = monarchy_mechanic
+
+	trigger = {
+		has_reform = monarchy_mechanic
+		culture_group = french
+		is_subject_of_type = vassal
+		NOT = {
+			OR = {
+				tag = BER
+				tag = NEM
+				tag = BOU
+			}
+		}
+		total_development = 10
+		NOT = { total_development = 20 }
+	}
+}
 
 #Ikko-Ikki Peasants
 

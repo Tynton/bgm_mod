@@ -33,7 +33,10 @@
 		icon = mission_italian_condottiere
 		required_missions = { high_income_missionag }
 		trigger = {
-			barracks = 10
+			OR = {
+				barracks = 10
+				training_fields = 10
+			}
 		}
 		effect = {
 			add_mil_power = 50
@@ -61,7 +64,10 @@
 		required_missions = { high_manpower_mission }
 		trigger = {
 			OR = {
-				barracks = 20
+				OR = {
+					barracks = 20
+					training_fields = 20
+				}
 				soldier_households = 5
 			}
 			temple = 15

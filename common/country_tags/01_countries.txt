@@ -97,6 +97,13 @@ VIN = "countries/Vietnam.txt"
 BFR = "countries/BurFra.txt"
 BUP = "countries/BurFraRep.txt"
 BFE = "countries/BurFraEmpire.txt"
+VNE = "countries/Vendome.txt"
+NEM = "countries/Nemours.txt"
+LIM = "countries/Limoges.txt"
+SNC = "countries/Sancerre.txt"
+LTN = "countries/LatinEmpire.txt"
+FKI = "countries/FourKingdoms.txt"
+FRW = "countries/FranceWhite.txt"
 
 POI = "countries/Poitou.txt"
 
@@ -105,6 +112,8 @@ MIT = "countries/Monacitaly.txt"
 
 FAN = "countries/Francia.txt"
 
+NIC = "countries/Nice.txt"
+MTZ = "countries/Metz.txt"
 
 
 #ESN = "countries/Essen.txt"

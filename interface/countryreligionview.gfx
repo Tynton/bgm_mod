@@ -30,6 +30,11 @@ spriteTypes = {
 
 	
 	spriteType = {
+		name = "GFX_fetishist_overlay_bg"
+		texturefile = "gfx/interface/fetishist_overlay_bg.dds"
+	}
+	
+	spriteType = {
 		name = "GFX_icon_none"
 		texturefile = "gfx/interface/icon_none.dds"
 	}	
@@ -156,18 +161,13 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_jewish_aspects_icon"
+		texturefile = "gfx/interface/jewish_aspects_icon.dds"
+	}
+
+	spriteType = {
 		name = "GFX_hussite_aspects_icon"
 		texturefile = "gfx/interface/hussite_aspects_icon.dds"
-	}
-	
-	spriteType = {
-		name = "GFX_waldensian_aspects_icon"
-		texturefile = "gfx/interface/waldensian_aspects_icon.dds"
-	}
-	
-	spriteType = {
-		name = "GFX_lollard_aspects_icon"
-		texturefile = "gfx/interface/lollard_aspects_icon.dds"
 	}
 	
 	spriteType = {
@@ -175,35 +175,45 @@ spriteTypes = {
 		texturefile = "gfx/interface/protestant_aspects_icon_slot.dds"
 	}		
 	
-		spriteType = {
+	spriteType = {
 		name = "GFX_anglican_aspects_icon"
 		texturefile = "gfx/interface/anglican_aspects_icon.dds"
 	}	
 	
-			spriteType = {
+	spriteType = {
 		name = "GFX_divorce_consort_icon"
 		texturefile = "gfx/interface/divorce_consort_icon.dds"
 	}	
 	
-				spriteType = {
+	spriteType = {
 		name = "GFX_marry_local_suitor_icon"
 		texturefile = "gfx/interface/marry_local_suitor_icon.dds"
 	}	
 	
-				spriteType = {
+	spriteType = {
 		name = "GFX_dissolve_monasteries_icon"
 		texturefile = "gfx/interface/dissolve_monasteries_icon.dds"
 	}	
 	
-				spriteType = {
+	spriteType = {
 		name = "GFX_grant_monopoly_icon"
 		texturefile = "gfx/interface/grant_monopoly_icon.dds"
 	}	
 	
-				spriteType = {
+	spriteType = {
 		name = "GFX_progress_of_the_supreme_governor_icon"
 		texturefile = "gfx/interface/progress_of_the_supreme_governor_icon.dds"
 	}	
+	
+		spriteType = {
+		name = "GFX_low_harmony"
+		texturefile = "gfx/interface/low_harmony.dds"
+	}
+
+		spriteType = {
+		name = "GFX_high_harmony"
+		texturefile = "gfx/interface/high_harmony.dds"
+	}
 	
 		spriteType = {
 		name = "GFX_low_harmony"
@@ -335,7 +345,20 @@ spriteTypes = {
 		name = "GFX_country_religion_view_fervor_bg"
 		texturefile = "gfx//interface//country_religion_view_fervor_bg.dds"
 		loadType = "INGAME"
-	}		
+	}
+	
+	### New Fervor Container ###
+	spriteType = {
+		name = "GFX_fervor_container_bg"
+		texturefile = "gfx//interface//defender_of_the_faith/fervor/fervor_buttons_container.dds"
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_fervor_container_bg_s"
+		texturefile = "gfx//interface//defender_of_the_faith/fervor/fervor_buttons_container_s.dds"
+		loadType = "INGAME"
+	}
 		
 	spriteType = {
 		name = "GFX_country_religion_view_allreligion_bg"
@@ -393,7 +416,7 @@ spriteTypes = {
 		texturefile = "gfx//interface//fervor_power_enabled.dds"
 		loadType = "INGAME"
 		transparencecheck = yes
-		allwaystransparent = yes
+		alwaystransparent = yes
 	}
 
 	spriteType = {
@@ -710,6 +733,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/church_aspects_anglicanism/icons_of_the_church_icon.dds"
 	}
 	
+	spriteType = {
+		name = "GFX_spread_the_book_of_common_prayer"
+		texturefile = "gfx/interface/church_aspects_anglicanism/spread_the_book_of_common_prayer_icon.dds"
+	}
 }	
 
 

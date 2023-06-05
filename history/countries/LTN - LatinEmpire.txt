@@ -1,0 +1,9 @@
+government = monarchy
+add_government_reform = autocracy_reform
+government_rank = 3
+technology_group = western
+religion = catholic
+primary_culture = greek
+capital = 151	# Constantinople
+fixed_capital = 151 # Cannot move capital away from this province & no power cost to move to it
+

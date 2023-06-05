@@ -15,6 +15,9 @@
 1869 = "Tsurique"
 199 = "Ôvèrgne"
 
+4947 = "Èneci"
+5092 = { "Outa" "Val d'Outa" }
+
 
 257 = "Varsovie"
 165 = "Bèrna"

@@ -1,0 +1,33 @@
+government = monarchy
+add_government_reform = appanage_reform
+government_rank = 1
+technology_group = western
+primary_culture = limousin
+religion = catholic
+capital = 199	# Clermont
+#fixed_capital = 199 # Cannot move capital away from this province & no power cost to move to it
+
+
+1393.1.1 = {
+	monarch = {
+		name = "Guillaume I"
+		dynasty = "de Châtillon"
+		#female = yes
+		birth_date = 1393.1.1
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+
+
+
+1531.3.28 = { government = monarchy
+add_government_reform = autocracy_reform }
+
+1560.1.1 = { religion = reformed }
+
+1562.11.18 = { set_legacy_government = administrative_monarchy }
+
+1661.3.9 = { government = monarchy
+add_government_reform = autocracy_reform }

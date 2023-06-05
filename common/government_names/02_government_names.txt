@@ -651,9 +651,9 @@ occitan_monarchy = {
 			has_reform = parliamentary_monarchism
 			has_reform = monarchy_mechanic
 		}
-		OR = {
-			primary_culture = gascon
-			primary_culture = occitain
+		culture_group = occitan
+		NOT = {
+			primary_culture = catalan
 		}
 	}
 }
@@ -2903,7 +2903,7 @@ provisional_gov = {
 		}
 		NOT = {
 			OR = {
-				has_reform = parliamentary_republic_reform
+				has_reform = parliamentary_republic_reform_bgm
 				has_reform = parliamentary_monarchism
 				has_reform = liberal_dictatorship
 				has_reform = socialist_government_reform
@@ -2949,7 +2949,7 @@ parliamentary_republic_bgm = {
 
 	trigger = {
 		has_reform = democratic_mechanic
-		has_reform = parliamentary_republic_reform
+		has_reform = parliamentary_republic_reform_bgm
 	}
 }
 

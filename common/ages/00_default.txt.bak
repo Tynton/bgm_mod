@@ -160,7 +160,7 @@ age_of_discovery = {
 		}
 		ab_colony_boost_development = {
 			modifier = {
-				can_colony_boost_development = yes
+				colony_development_boost = 1
 			}
 			ai_will_do = {
 				factor = 10
@@ -173,7 +173,7 @@ age_of_discovery = {
 		
 		ab_attack_bonus_in_capital_terrain = {
 			modifier = {
-				attack_bonus_in_capital_terrain = yes
+				attack_bonus_in_capital_terrain = 1
 			}
 			ai_will_do = {
 				factor = 10
@@ -185,22 +185,26 @@ age_of_discovery = {
 				primary_culture = turkish
 			}
 			modifier = {
-				siege_ability = 0.33
+				leader_siege = 1 
 			}
 			ai_will_do = {
 				factor = 100
 			}
 		}
 		
-		ab_iberian_colonialism = {
+		ab_iberian_colonialism = { #Colonial Pioneers
 		
 			allow = {
-				culture_group = iberian
+				OR = {
+					full_idea_group = exploration_ideas
+					full_idea_group = expansion_ideas
+					culture_group = iberian
+				}
 			}
 			modifier = {
-				global_colonial_growth = 100
-				colonist_placement_chance = 0.375
-				range = 0.5
+				global_colonial_growth = 25
+				#colonist_placement_chance = 0.25
+				range = 0.33
 			}
 			ai_will_do = {
 				factor = 100
@@ -247,17 +251,14 @@ age_of_reformation = {
 	can_start = {
 		OR = {
 			is_religion_enabled = protestant
-			any_country = {
-				is_great_power = yes
-				OR = {
-					religion = fraticelli
-					religion = waldensian
-					religion = lollard
-					religion = hussite
-				}
+			custom_trigger_tooltip = {
+				tooltip = PREPROT_HERESY_TOOLTIP
+				has_global_flag = preprot_heresy
 			}
-			has_global_flag = preprot_heresy
-			has_global_flag = rome_converted_bgm
+			custom_trigger_tooltip = {
+				tooltip = ROME_FALLEN_T
+				has_global_flag = rome_converted_bgm
+			}
 		}
 	}
 	
@@ -271,6 +272,10 @@ age_of_reformation = {
 				religion = protestant
 				religion = reformed
 				religion = anglican
+				religion = fraticelli
+				religion = waldensian
+				religion = lollard
+				religion = hussite
 			}
 		}
 		
@@ -400,12 +405,12 @@ age_of_reformation = {
 		}
 
 	
-		ab_spain_tercio = {
+		ab_spain_shock_tactics = {
 			allow = {
 				tag = SPA
 			}
 			modifier = {
-				shock_damage_received = -0.3
+				leader_land_shock = 1
 			}
 			ai_will_do = {
 				factor = 100
@@ -416,7 +421,7 @@ age_of_reformation = {
 				tag = MUG
 			}
 			modifier = {
-				artillery_cost = -0.5
+				artillery_power = 0.15
 			}
 			ai_will_do = {
 				factor = 100
@@ -428,6 +433,10 @@ age_of_reformation = {
 				OR = {
 					tag = PLC
 					tag = POL
+					custom_trigger_tooltip = {
+						tooltip = enable_this_ability_tt
+						has_country_flag = unlock_polish_ability_flag
+					}
 				}
 			}
 			modifier = {
@@ -438,12 +447,12 @@ age_of_reformation = {
 			}
 		}
 		
-		ab_persia_reinforce = {
+		ab_persia_development = {
 			allow = {
 				tag = PER
 			}
 			modifier = {
-				reinforce_cost_modifier = -0.3
+				development_cost = -0.2
 			}
 			ai_will_do = {
 				factor = 100
@@ -489,7 +498,8 @@ age_of_absolutism = {
 		increase_autonomy_command = -2
 		debase_currency = -1
 		execute_rebel_acceptance_command = -10
-		seat_in_parliament = -3
+		automatic_seat_in_parliament = -2
+		manual_seat_in_parliament = -2
 		war_exhaustion = -1
 	}
 	
@@ -497,11 +507,21 @@ age_of_absolutism = {
 	
 	objectives = {
 		obj_3_trade_companies = {
-			num_of_trade_companies = 3
+			calc_true_if = {
+				all_country = {
+					is_subject_of = ROOT
+					bgm_colonial = yes
+					bgm_colonial_subject = yes
+				}
+				amount = 3
+			}
 		}
 		
 		obj_universities = {
-			university = 5
+			num_of_owned_provinces_with = {
+				has_building = university 
+				value = 5 
+			}
 		}
 	
 		obj_large_forcelimit = {
@@ -586,7 +606,7 @@ age_of_absolutism = {
 	
 		ab_adm_efficiency = {
 			modifier = {
-				administrative_efficiency = 0.075
+				administrative_efficiency = 0.025
 				#province_warscore_cost = -0.2
 			}
 			ai_will_do = {
@@ -604,23 +624,23 @@ age_of_absolutism = {
 		}
 	
 	
-		ab_france_fire_damage = {
+		ab_french_absolutism = {
 			allow = {
 				tag = FRA
 			}
 			modifier = {
-				fire_damage = 0.2
+				max_absolutism_effect = 0.3
 			}
 			ai_will_do = {
 				factor = 100
 			}
 		}
-		ab_dutch_anti_corruption = {
+		ab_dutch_trade = {
 			allow = {
 				tag = NED
 			}
 			modifier = {
-				yearly_corruption = -0.2
+				trade_steering = 0.33
 			}
 			ai_will_do = {
 				factor = 100
@@ -646,6 +666,16 @@ age_of_absolutism = {
 				OR = {
 					tag = MCH
 					tag = QNG
+				}
+			}
+			effect = {
+				if = {
+					limit = {
+						NOT = { primary_culture = manchu }
+						NOT = { primary_culture = manchu_new }
+						NOT = { has_government_attribute = allow_banners }
+					}
+					custom_tooltip = ab_manchu_banner_tt
 				}
 			}
 			modifier = {
@@ -676,7 +706,8 @@ age_of_enlightenment = {
 		increase_autonomy_command = -2
 		debase_currency = -1
 		execute_rebel_acceptance_command = -10
-		seat_in_parliament = -3
+		automatic_seat_in_parliament = -2
+		manual_seat_in_parliament = -2
 		war_exhaustion = -1
 	}
 	
@@ -906,7 +937,7 @@ age_of_revolutions = {
 		}
 		ab_napoleonic_warfare = {
 			modifier = {
-				artillery_bonus_vs_fort = 3
+				artillery_levels_available_vs_fort = 3
 			}
 			ai_will_do = {
 				factor = 10
@@ -930,7 +961,7 @@ age_of_revolutions = {
 		}
 		ab_early_global_imperialism = {
 			modifier = {
-				administrative_efficiency = 0.15
+				administrative_efficiency = 0.05
 			}
 			ai_will_do = {
 				factor = 10
@@ -952,13 +983,15 @@ age_of_revolutions = {
 				factor = 15
 			}
 		}
-		ab_aus_diplomacy = {
+		ab_austrian_morale = {
 			allow = {
-				tag = HAB
+				OR = {
+					tag = HAB
+					tag = HLR
+				}
 			}
 			modifier = {
-				diplomatic_upkeep = 2
-				diplomatic_reputation = 2
+				morale_damage_received = -0.2
 			}
 			ai_will_do = {
 				factor = 100
@@ -983,9 +1016,8 @@ age_of_revolutions = {
 				tag = RUS
 			}
 			modifier = {
-				hostile_attrition = 5
-				land_attrition = -0.5
-			}
+				min_autonomy_in_territories = -0.1
+			}	
 			ai_will_do = {
 				factor = 100
 			}

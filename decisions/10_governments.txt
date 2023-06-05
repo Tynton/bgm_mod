@@ -11,7 +11,7 @@ country_decisions = {
 				faction_in_power = dm_social_democrat
 				faction_in_power = dm_communist
 			}
-			NOT = { has_reform = parliamentary_republic_reform }
+			NOT = { has_reform = parliamentary_republic_reform_bgm }
 		}
 		allow = {
 			OR = {
@@ -39,7 +39,7 @@ country_decisions = {
 			}
 		}
 		effect = {
-			add_government_reform = parliamentary_republic_reform
+			add_government_reform = parliamentary_republic_reform_bgm
 			
 			add_stability = -3
 		}
@@ -264,6 +264,33 @@ country_decisions = {
 				absolutism = 65
 				adm = 3
 			}
+		}
+	}
+
+	wartime_abdication = {
+		major = yes
+
+		potential = {
+			is_at_war = yes
+			government = monarchy
+		}
+
+		allow = {
+			prestige = 0
+			has_heir = yes
+			heir_age = 15
+		}
+
+		effect = {
+			custom_tooltip = RULER_ABDICATION
+			add_prestige = -100
+			hidden_effect = {
+				kill_ruler = yes
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
 		}
 	}
 }

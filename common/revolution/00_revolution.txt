@@ -295,9 +295,12 @@ revolution = {
 
 	# Values at 100 Revolutionary Zeal
 	zeal_modifiers = {
+		reform_progress_growth = 1
 		global_manpower_modifier = 0.25
 		land_morale = 0.25
 		naval_morale = 0.25
+		reinforce_cost_modifier = -0.5
+		reinforce_speed = 0.5
 		war_exhaustion = -0.3
 		unjustified_demands = -0.5
 		land_maintenance_modifier = -0.25

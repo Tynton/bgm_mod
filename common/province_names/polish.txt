@@ -242,7 +242,7 @@
 1768 = "Liniec"
 4710 = "Bregencja"
 
-5096 = "Zylina"
+#5096 = "Zylina"
 
 5265 = "Welawa"
 

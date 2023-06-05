@@ -214,7 +214,7 @@ country_event = {
 	
 
 	trigger = {
-		always = yes			#
+		always = yes
 	}
 
 	option = {
@@ -245,7 +245,21 @@ country_event = {
 	major = yes
 
 	trigger = {
-		always = yes			#
+		always = yes
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						has_global_flag = continental_sys
+						has_global_flag = concert_continent
+					}
+				}
+			}
+			set_global_flag = concert_continent
+		}
 	}
 
 	option = {

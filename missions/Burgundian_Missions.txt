@@ -217,6 +217,9 @@ bur_arles = {
 			181 = {
 				owned_by = ROOT
 			}
+			5097 = {
+				owned_by = ROOT
+			}
 		}
 		
 		effect = {

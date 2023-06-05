@@ -800,6 +800,7 @@ spriteTypes = {
 		name = "government_reform_self_governing_colony_government"
 		texturefile = "gfx/interface/government_reform_icons/self_governing_colony_government.dds"
 	}
+	
 	### LON / 1.34 Reforms
 
 	spriteType = {

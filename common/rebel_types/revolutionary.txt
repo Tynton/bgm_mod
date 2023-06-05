@@ -342,11 +342,9 @@ revolutionary_rebels = {
 		}
 		if = {
 			limit = {
-				owner = {
-					has_reform = futurist_mechanic
-				}
+				has_reform = futurist_mechanic
 			}
-			change_government = democratic_government
+			change_government = democracy_govt
 		}
 	}
 }

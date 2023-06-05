@@ -160,7 +160,7 @@ age_of_discovery = {
 		}
 		ab_colony_boost_development = {
 			modifier = {
-				can_colony_boost_development = yes
+				colony_development_boost = 1
 			}
 			ai_will_do = {
 				factor = 10
@@ -173,7 +173,7 @@ age_of_discovery = {
 		
 		ab_attack_bonus_in_capital_terrain = {
 			modifier = {
-				attack_bonus_in_capital_terrain = yes
+				attack_bonus_in_capital_terrain = 1
 			}
 			ai_will_do = {
 				factor = 10
@@ -185,7 +185,7 @@ age_of_discovery = {
 				primary_culture = turkish
 			}
 			modifier = {
-				siege_ability = 0.33
+				leader_siege = 1 
 			}
 			ai_will_do = {
 				factor = 100
@@ -202,8 +202,8 @@ age_of_discovery = {
 				}
 			}
 			modifier = {
-				global_colonial_growth = 5
-				colonist_placement_chance = 0.25
+				global_colonial_growth = 25
+				#colonist_placement_chance = 0.25
 				range = 0.33
 			}
 			ai_will_do = {
@@ -405,12 +405,12 @@ age_of_reformation = {
 		}
 
 	
-		ab_spain_tercio = {
+		ab_spain_shock_tactics = {
 			allow = {
 				tag = SPA
 			}
 			modifier = {
-				shock_damage_received = -0.3
+				leader_land_shock = 1
 			}
 			ai_will_do = {
 				factor = 100
@@ -421,7 +421,7 @@ age_of_reformation = {
 				tag = MUG
 			}
 			modifier = {
-				artillery_cost = -0.5
+				artillery_power = 0.15
 			}
 			ai_will_do = {
 				factor = 100
@@ -433,6 +433,10 @@ age_of_reformation = {
 				OR = {
 					tag = PLC
 					tag = POL
+					custom_trigger_tooltip = {
+						tooltip = enable_this_ability_tt
+						has_country_flag = unlock_polish_ability_flag
+					}
 				}
 			}
 			modifier = {
@@ -443,12 +447,12 @@ age_of_reformation = {
 			}
 		}
 		
-		ab_persia_reinforce = {
+		ab_persia_development = {
 			allow = {
 				tag = PER
 			}
 			modifier = {
-				reinforce_cost_modifier = -0.3
+				development_cost = -0.2
 			}
 			ai_will_do = {
 				factor = 100
@@ -494,7 +498,8 @@ age_of_absolutism = {
 		increase_autonomy_command = -2
 		debase_currency = -1
 		execute_rebel_acceptance_command = -10
-		seat_in_parliament = -3
+		automatic_seat_in_parliament = -2
+		manual_seat_in_parliament = -2
 		war_exhaustion = -1
 	}
 	
@@ -502,11 +507,21 @@ age_of_absolutism = {
 	
 	objectives = {
 		obj_3_trade_companies = {
-			num_of_trade_companies = 3
+			calc_true_if = {
+				all_country = {
+					is_subject_of = ROOT
+					bgm_colonial = yes
+					bgm_colonial_subject = yes
+				}
+				amount = 3
+			}
 		}
 		
 		obj_universities = {
-			university = 5
+			num_of_owned_provinces_with = {
+				has_building = university 
+				value = 5 
+			}
 		}
 	
 		obj_large_forcelimit = {
@@ -609,23 +624,23 @@ age_of_absolutism = {
 		}
 	
 	
-		ab_france_fire_damage = {
+		ab_french_absolutism = {
 			allow = {
 				tag = FRA
 			}
 			modifier = {
-				fire_damage = 0.2
+				max_absolutism_effect = 0.3
 			}
 			ai_will_do = {
 				factor = 100
 			}
 		}
-		ab_dutch_anti_corruption = {
+		ab_dutch_trade = {
 			allow = {
 				tag = NED
 			}
 			modifier = {
-				yearly_corruption = -0.2
+				trade_steering = 0.33
 			}
 			ai_will_do = {
 				factor = 100
@@ -691,7 +706,8 @@ age_of_enlightenment = {
 		increase_autonomy_command = -2
 		debase_currency = -1
 		execute_rebel_acceptance_command = -10
-		seat_in_parliament = -3
+		automatic_seat_in_parliament = -2
+		manual_seat_in_parliament = -2
 		war_exhaustion = -1
 	}
 	
@@ -967,27 +983,29 @@ age_of_revolutions = {
 				factor = 15
 			}
 		}
-		ab_aus_diplomacy = {
+		ab_austrian_morale = {
 			allow = {
-				tag = HAB
+				OR = {
+					tag = HAB
+					tag = HLR
+				}
 			}
 			modifier = {
-				diplomatic_upkeep = 2
-				diplomatic_reputation = 2
+				morale_damage_received = -0.2
 			}
 			ai_will_do = {
 				factor = 100
 			}
 		}
-		ab_france_army_size = {
+		ab_gbr_fleet = {
 			allow = {
 				OR = {
-					tag = FRE
-					tag = FRR
+					tag = AEV
+					tag = GBR
 				}
 			}
 			modifier = {
-				land_forcelimit_modifier = 0.25
+				max_admiral_fire = 1
 			}
 			ai_will_do = {
 				factor = 100
@@ -998,9 +1016,8 @@ age_of_revolutions = {
 				tag = RUS
 			}
 			modifier = {
-				hostile_attrition = 5
-				land_attrition = -0.5
-			}
+				min_autonomy_in_territories = -0.1
+			}	
 			ai_will_do = {
 				factor = 100
 			}

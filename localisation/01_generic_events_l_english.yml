@@ -12,6 +12,10 @@
  americanindependence.d.4:0 "-AWAITING LOCALIZATION-"
  americanindependence.n.5:0 "The American Revolution!"
  americanindependence.d.5:0 "-AWAITING LOCALIZATION-"
+
+ AI_Gamestart.t.3:0 "Alert"
+ AI_Gamestart.d.3:0 "Warning: Feudal Liberty Desire (Feudal Institutions) modifier will expire in 30 years' time."
+ AI_Gamestart.3.a:0 "Acknowledged"
  
  incidents_german_con.1.t:0 "Secularization of the HRE"
  incidents_german_con.1.d:0 "Recent turbulence in the political landscape of our continent have forced our hand. The Holy Roman Empire may come under threat of prominent German states and it is time for us to take action. We are forced to convene the Imperial Diet for an address and deliberation."
@@ -2310,6 +2314,23 @@
  world_war_events.d.5:0 "A diplomatic crisis between $FROMCOUNTRY$ and $COUNTRY$ has not resulted in a successful mediation. Demand for a war with our enemies has resulted in a World War, only inevitable now. Our nations have mobilized for a duel to the death."
  world_war_events.5.a:0 "End our enemies once and for all!"
  
+ world_war_events.n.7:0 "Establishment of the Concert of Europe"
+ world_war_events.d.7:0 "The titanic bloodshed in recent years has brought the powers of [Root.Capital.GetContinentName] to the negotiating table. Not only should large wars be disallowed but a diplomatic conference should be called whenever diplomatic crises arise. The Concert of [Root.Capital.GetContinentName] is established and war is disallowed between its observing members...with some exceptions..."
+ world_war_events.7.a:0 "Okay."
+ 
+ world_war_events.n.8:0 "The Peace of [Root.Capital.GetContinentName]?"
+ world_war_events.d.8:0 "The establishment of a diplomatic union between the powers of our continent has resulted in many nations pledging support for a newfound era of peace. Naturally our own opinion is mandated. Will we observe this trend or not?"
+ world_war_events.8.a:0 "Yes."
+ world_war_events.8.b:0 "No."
+
+ world_war_events.n.9:0 "Establishment of the Continental System"
+ world_war_events.d.9:0 "The titanic bloodshed in recent years has brought the powers of [Root.Capital.GetContinentName] to the negotiating table. Not only should large wars be disallowed but a diplomatic conference should be called whenever diplomatic crises arise. The Continental System is established and war is disallowed between its observing members...with some exceptions..."
+ world_war_events.9.a:0 "Okay."
+ 
+ world_war_events.n.10:0 "Breakdown of the Peace"
+ world_war_events.d.10:0 "Patriotic fervor in tandem with a prolonged diplomatic peace has caused immense strain on the diplomatic system maintaining peace in [Root.Capital.GetContinentName]. Countries have placed their own desires above the will to peace. The path to further violence has been paved."
+ world_war_events.10.a:0 "Oh dear.."
+ 
  
  
  
@@ -2503,6 +2524,8 @@
  italic_league.d.5:0 "The Italic League was initially created as a defensive arrangement and political union between major Italian states. Over time its initial supporters have since passed, and a new generation has to decide whether the Italic League should continue or be dismantled."
  italic_league.5.a:0 "The path to greatness lies in unity!"
  italic_league.5.b:0 "The Italic League is no longer necessitated."
+ 
+ italea_coalesced:0 "We will form the Italian nation. The appearance may depend on our culture. Tough times may be ahead, though, as we have to consolidate and fight those conservative nobles who'd rather remain a part of their own minor state."
  
  italic_league.n.6:0 "Unification of the Italic League"
  italic_league.d.6:0 "Through nifty political maneuvering, $COUNTRY$ has united the Italic League into an Italian state. Not all of Italy may be pleased by this development, but we have been lunged into a unique and unparalleled opportunity to the grand stage of European geopolitics. Our unique position south of the Alps and with a large coastline should guarantee us control of the Mediterranean trade."

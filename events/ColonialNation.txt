@@ -4547,7 +4547,9 @@ country_event = {
 	
 	option = { #pick a new governor
 		name = colonial_nation.183.a
-		exile_ruler_as = colonial_exiled_governor
+		exile_ruler_as = {
+			name = colonial_exiled_governor
+		}
 		define_ruler = {
 			culture = ROOT
 			ADM = 4
@@ -4621,7 +4623,7 @@ country_event = {
 		name = colonial_nation.184.a
 		add_adm_power = -100
 		add_dip_power = -100
-		area = {
+		random_owned_area = {
 			limit = { owned_by = ROOT }
 			add_unrest = -1
 		}

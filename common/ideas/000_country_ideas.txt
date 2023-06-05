@@ -212,8 +212,8 @@ GRF_ideas = {
 		unjustified_demands = -0.5
 	}
 	purge_the_east = {
-		global_unrest = 2
-		culture_conversion_cost = -0.5
+		culture_conversion_time = -0.1
+		culture_conversion_cost = -0.1
 	}
 	germania = {
 		prestige = 1
@@ -310,7 +310,7 @@ FRR_ideas = {
 		idea_cost = -0.1
 	}
 	mandate_language = {
-		culture_conversion_cost = -0.2
+		culture_conversion_cost = -0.1
 		global_institution_spread = 0.25
 	}
 	militaristic_tradition = {
@@ -324,6 +324,58 @@ FRR_ideas = {
 	tradition_revolution = {
 		reform_progress_growth = 0.25
 		production_efficiency = 0.1
+	}
+}
+
+GBR_ideas = {
+	start = {
+		global_ship_cost = -0.25
+		heavy_ship_power = 0.15
+	}
+
+	bonus = {
+		land_attrition = -0.2
+	}
+	
+	trigger = {
+		OR = {
+			tag = GBR
+			tag = SGB
+		}
+	}
+	free = yes		#will be added at load.
+
+	gbr_acts_of_union = {
+		global_tax_modifier = 0.1
+		global_manpower_modifier = 0.1
+	}
+	city_upon_a_hill = {
+		#global_colonial_growth = 25
+		colonists = 1
+	}
+	british_merchant_navy = {
+		global_ship_trade_power = 0.25
+		navy_tradition = 0.5
+	}
+	gbr_the_royal_society = {
+		technology_cost = -0.05
+		advisor_cost = -0.1
+	}
+	reform_of_comission_buying = {
+		army_tradition = 0.5
+	}
+	british_industrialization = {
+		development_cost_modifier = -0.1
+		build_cost = -0.1
+	}
+	britanna_rules_the_waves = {
+		naval_morale = 0.2
+		legitimacy = 0.5
+		republican_tradition = 0.25
+		devotion = 0.5
+		horde_unity = 0.5
+		meritocracy = 0.5
+		allowed_marine_fraction = 0.10
 	}
 }
 
@@ -364,7 +416,7 @@ ROC_ideas = {
 	}
 	nationalist_state = {
 		same_culture_advisor_cost = -0.5
-		culture_conversion_cost = -0.25
+		culture_conversion_cost = -0.1
 	}
 	democratization = {
 		reform_progress_growth = 0.25
@@ -397,7 +449,7 @@ PRC_ideas = {
 	}
 	cultural_revolution = {
 		embracement_cost = -0.25
-		culture_conversion_cost = -0.35
+		culture_conversion_cost = -0.2
 	}
 	sino_soviet_split = {
 		yearly_corruption = -0.1
@@ -484,7 +536,7 @@ BEL_ideas = {
 		tolerance_own = 1
 	}
 	dominant_language = {
-		culture_conversion_cost = -0.05
+		culture_conversion_cost = -0.1
 		legitimacy = 1
 		republican_tradition = 0.5
 		devotion = 1
@@ -716,7 +768,8 @@ NME_ideas = {
 	free = yes
 	
 	cultural_integration = {
-		culture_conversion_cost = -0.2
+		culture_conversion_cost = -0.15
+		culture_conversion_time = -0.15
 	}
 	settle_religion = {
 		missionary_maintenance_cost = -0.1
@@ -875,6 +928,48 @@ MNC_ideas = {
 	}
 }
 
+BFR_ideas = {
+	start = {
+		diplomatic_reputation = 1
+		global_manpower_modifier = 0.2
+	}
+	
+	bonus = {
+		development_cost = -0.1
+		#discipline = 0.05
+	}	
+
+	trigger = {
+		tag = BFR
+		is_revolutionary = no
+	}
+	free = yes		#will be added at load.
+	
+	golden_fleece = {
+		prestige = 1
+	}
+	fra_taille = {
+		global_tax_modifier = 0.1
+		war_taxes_cost_modifier = -0.5
+	}
+	estates_general = {
+		reform_progress_growth = 0.1
+		stability_cost_modifier = -0.05
+	}
+	reform_of_feudal_army = {
+		discipline = 0.05
+	}
+	integrated_towns = {
+		trade_efficiency = 0.10
+	}
+	freedom_of_worship = {
+		tolerance_heretic = 2
+	}
+	vauban_fortifications = {
+		defensiveness = 0.15
+	}
+}
+
 FAN_ideas = {
 
 	trigger = {
@@ -935,10 +1030,7 @@ FRA_ideas = {
 	}	
 
 	trigger = {
-		OR = {
-			tag = FRA
-			tag = BFR
-		}
+		tag = FRA
 		is_revolutionary = no
 	}
 	free = yes		#will be added at load.
@@ -967,6 +1059,7 @@ FRA_ideas = {
 	}
 	vauban_fortifications = {
 		defensiveness = 0.15
+		garrison_damage = 0.5
 	}
 }
 
@@ -984,6 +1077,8 @@ FRA_ideas_2 = {
 		OR = {
 			tag = FRA
 			tag = BFR
+			tag = SFR
+			tag = FRW
 		}
 		is_revolutionary = yes
 	}

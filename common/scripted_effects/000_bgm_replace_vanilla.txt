@@ -3,7 +3,7 @@
 add_innovativeness_small_effect = {
 	if = {
 		limit = { has_dlc = "Rule Britannia" }
-		change_innovativeness = 0.5
+		change_innovativeness = 1
 	}
 }
 
@@ -17,7 +17,7 @@ add_innovativeness_big_effect = {
 reduce_innovativeness_small_effect = {
 	if = {
 		limit = { has_dlc = "Rule Britannia" }
-		change_innovativeness = -0.5
+		change_innovativeness = -1
 	}
 }
 

@@ -113,7 +113,7 @@ country_event = {
 			limit = {
 				government = republic
 			}
-			add_government_reform = parliamentary_republic_reform
+			add_government_reform = parliamentary_republic_reform_bgm
 		}
 		if = {
 			limit = {
@@ -705,7 +705,7 @@ country_event = {
 			limit = {
 				government = republic
 			}
-			add_government_reform = parliamentary_republic_reform
+			add_government_reform = parliamentary_republic_reform_bgm
 		}
 		if = {
 			limit = {

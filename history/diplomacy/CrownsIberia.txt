@@ -1,0 +1,34 @@
+union = {
+	first = CAS
+	second = LON
+	#start_date = 1397.6.17
+	start_date = 1444.1.1
+	end_date = 1744.1.1
+}
+union = {
+	first = CAS
+	second = GAL
+	#start_date = 1397.6.17
+	start_date = 1444.1.1
+	end_date = 1744.1.1
+}
+union = {
+	first = CAS
+	second = FKI
+	#start_date = 1397.6.17
+	start_date = 1444.1.1
+	end_date = 1744.1.1
+}
+union = {
+	first = CAS
+	second = ASU
+	start_date = 1444.1.1
+	end_date = 1744.1.1
+}
+
+union = {
+	first = ARA
+	second = CAT
+	start_date = 1444.1.1
+	end_date = 1744.1.1
+}

@@ -12,12 +12,33 @@ country_event = {
 	hidden = yes
 	
 	trigger = {
-		FRA = {
-			ai = yes
-			has_casus_belli = {
-				type = cb_imperial
-				target = ROOT
+		is_subject = no
+		NOT = {
+			has_opinion_modifier = {
+				who = FRA
+				modifier = aggressive_expansion
+				value = 35
 			}
+		}
+		OR = {
+			AND = {
+				any_owned_province = {
+					is_claim = FRA
+				}
+				ai = yes
+			}
+			FRA = {
+				has_casus_belli = {
+					type = cb_imperial
+					target = ROOT
+				}
+			}
+		}
+		FRA = {
+			manpower_percentage = 0.9
+			army_size_percentage = 0.9
+			NOT = { num_of_loans = 1 }
+			ai = yes
 			army_strength = {
 				who = ROOT
 				value = 2.25
@@ -53,11 +74,13 @@ country_event = {
 			}
 		}
 		NOT = {
-			army_strength = {
-				who = FRA
-				value = 0.5
+			AND = {
+				army_strength = {
+					who = FRA
+					value = 0.5
+				}
+				truce_with = FRA
 			}
-			truce_with = FRA 
 		}
 		NOT = {
 			any_country = {
@@ -87,7 +110,7 @@ country_event = {
 		years = 2
 
 		modifier = {
-			factor = 0.75
+			factor = 0.33
 			capital_scope = {
 				region = italy_region
 			}
@@ -121,15 +144,29 @@ country_event = {
 		}
 	}
 	
-	#buy land
+	#he decs
 	
 	option = {
 		name = none
 		
 		FRA = {
-			declare_war_with_cb = {
-				who = ROOT
-				casus_belli = cb_imperial
+			if = {
+				limit = {
+					has_casus_belli = {
+						type = cb_imperial
+						target = ROOT
+					}
+				}
+				declare_war_with_cb = {
+					casus_belli = cb_imperial
+					who = ROOT
+				}
+			}
+			else = {
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_bgmai_conquest
+				}
 			}
 		}
 	}
@@ -172,6 +209,63 @@ country_event = {
 		
 		FRA = {
 			break_alliance = ROOT
+		}
+	}
+}
+
+#For both france and britain/england
+
+country_event = {
+	id = French_AI.3
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		ai = yes
+		treasury = 50
+		is_in_deficit = no
+		NOT = { num_of_loans = 1 }
+		OR = {
+			tag = ENG
+			tag = GBR
+			tag = UNK
+			tag = FRA
+			tag = FRR
+			tag = FRE
+			tag = FRW
+			tag = FAN
+			tag = CAS
+			tag = SPA
+			tag = NED
+			tag = POR
+		}
+		NOT = {
+			navy_size_percentage = 1
+		}
+		NOT = {
+			heavy_ship_fraction = 0.4
+		}
+		any_rival_country = {
+			num_of_heavy_ship = ROOT
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	option = {
+		name = "none"
+		
+		random_owned_province = {
+			limit = { has_port = yes }
+			ROOT = {
+				heavy_ship = PREV
+				add_treasury = -40
+			}
 		}
 	}
 }

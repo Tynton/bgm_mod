@@ -75,6 +75,7 @@ intranational_cultural_tension = {
 			NOT = {
 				stability = 1
 			}
+			num_of_rebel_controlled_provinces = 5
 		}
 	}
 	

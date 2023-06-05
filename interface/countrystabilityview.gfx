@@ -6,6 +6,45 @@ spriteTypes = {
 	}
 	
 	spriteType = {
+		name = "GFX_disaster_coup_attempt_disaster"
+		texturefile = "gfx//interface//disasters//coup_attempt.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+
+
+	spriteType = {
+		name = "GFX_disaster_siamese_revolution"
+		texturefile = "gfx//interface//disasters//siamese_revolution.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+
+
+	spriteType = {
+		name = "GFX_disaster_northern_and_southern_dynasties"
+		texturefile = "gfx//interface//disasters//northern_and_southern_dynasties.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+
+
+	spriteType = {
+		name = "GFX_disaster_fall_of_majapahit"
+		texturefile = "gfx//interface//disasters//fall_of_majapahit.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_disaster_dark_age_of_cambodia"
+		texturefile = "gfx//interface//disasters//dark_age_of_cambodia.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+
+
+	spriteType = {
 		name = "GFX_disaster_pol_struggle_for_royal_power_disaster"
 		texturefile = "gfx//interface//disasters//pol_struggle_for_royal_power_disaster.dds"
 		noOfFrames = 3
@@ -339,7 +378,7 @@ spriteTypes = {
 		texturefile = "gfx//interface//handle_rebels_glow.dds"
 
 		effectFile = "gfx/FX/buttonstate.lua"
-		allwaystransparent = yes
+		alwaystransparent = yes
 	}
 
 	spriteType = {
@@ -368,22 +407,22 @@ spriteTypes = {
 		texturefile = "gfx/interface/government_reduce_warex.dds"
 	}
 
-		spriteType = {
+	spriteType = {
 		name = "GFX_reform_government_bg_large"
 		texturefile = "gfx//interface//reform_government_bg_large.dds"
 	}
 
-			spriteType = {
+	spriteType = {
 		name = "GFX_reform_government_bg_huge"
 		texturefile = "gfx//interface//reform_government_bg_huge.dds"
 	}
 
-			spriteType = {
+	spriteType = {
 		name = "GFX_reform_government_bg_legacy"
 		texturefile = "gfx//interface//reform_government_bg_legacy.dds"
 	}
 
-			spriteType = {
+	spriteType = {
 		name = "GFX_reform_government_bg"
 		texturefile = "gfx//interface//reform_government_bg.dds"
 	}
@@ -510,7 +549,7 @@ spriteTypes = {
 		texturefile = "gfx//interface//religion_convert_button.dds"
 		loadType = "INGAME"
 		transparencecheck = yes
-		allwaystransparent = yes
+		alwaystransparent = yes
 	}
 
 	progressbartype = {
@@ -638,5 +677,86 @@ spriteTypes = {
 		texturefile = "gfx//interface//ideas_EU4//governing_capacity.dds"
 		loadType = "INGAME"
 	}
+	spriteType = {
+		name = "GFX_disaster_decline_of_mali"
+		texturefile = "gfx//interface//disasters//decline_of_mali.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+	#spriteType = {
+	#	name = "GFX_disaster_collapse_of_clans"
+	#	texturefile = "gfx//interface//disasters//collapse_of_clans.dds"
+	#	noOfFrames = 3
+	#	loadType = "INGAME"
+	#}
+	#spriteType = {
+	#	name = "GFX_disaster_era_of_princes"
+	#	texturefile = "gfx//interface//disasters//era_of_princes.dds"
+	#	noOfFrames = 3
+	#	loadType = "INGAME"
+	#}
+	spriteType = {
+		name = "GFX_disaster_prussian_confederation_disaster"
+		texturefile = "gfx//interface//disasters//prussian_confederation_disaster.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
 
+	### DOMINATION DLC ###
+
+	spriteType = {
+		name = "GFX_disaster_tur_disaster_ottoman_power_struggle"
+		texturefile = "gfx//interface//disasters//dlc//domination//tur_disaster_ottoman_power_struggle.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_disaster_tur_disaster_janissary_coup"
+		texturefile = "gfx//interface//disasters//dlc//domination//tur_disaster_janissary_coup.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_disaster_tur_disaster_plot_of_the_harem"
+		texturefile = "gfx//interface//disasters//dlc//domination//tur_disaster_plot_of_the_harem.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_disaster_tur_disaster_eyalet_rebellion"
+		texturefile = "gfx//interface//disasters//dlc//domination//tur_disaster_eyalet_rebellion.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_disaster_tur_disaster_pasha_decadence"
+		texturefile = "gfx//interface//disasters//dlc//domination//tur_disaster_pasha_decadence.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_disaster_estate_janissary_disaster"
+		texturefile = "gfx//interface//disasters//dlc//domination//estate_janissary_disaster.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_disaster_estate_eunuchs_disaster"
+		texturefile = "gfx//interface//disasters//dlc//domination//estate_eunuchs_disaster.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_disaster_infantes_of_aragon"
+		texturefile = "gfx//interface//disasters//dlc//domination//infantes_of_aragon.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
 }

@@ -31,7 +31,7 @@ standardized_language_germanic = {
 		has_building = university
 	}
 
-	local_culture_conversion_cost = -0.75
+	local_culture_conversion_time = -0.25
 	local_autonomy = -0.05
 	
 	#Province scope
@@ -67,8 +67,7 @@ standardized_language_french = {
 		}
 		has_building = university
 	}
-
-	local_culture_conversion_cost = -0.75
+	local_culture_conversion_time = -0.25
 	local_autonomy = -0.05
 	
 	#Province scope
@@ -103,7 +102,7 @@ standardized_language_italian = {
 		has_building = university
 	}
 
-	local_culture_conversion_cost = -0.75
+	local_culture_conversion_time = -0.25
 	local_autonomy = -0.05
 	
 	#Province scope
@@ -138,7 +137,7 @@ standardized_language_spanish = {
 		has_building = university
 	}
 
-	local_culture_conversion_cost = -0.75
+	local_culture_conversion_time = -0.25
 	local_autonomy = -0.05
 	
 	#Province scope

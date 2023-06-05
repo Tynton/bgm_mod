@@ -2,7 +2,11 @@ age_of_industrialization = {
 	start = 1850
 	
 	can_start = {
-		has_global_flag = revolutions_year_start
+		OR = {
+			has_global_flag = concert_continent
+			has_global_flag = continental_sys
+		}
+		#has_global_flag = revolutions_year_start
 	}
 	
 	absolutism = {
@@ -14,7 +18,8 @@ age_of_industrialization = {
 		increase_autonomy_command = -2
 		debase_currency = 1
 		execute_rebel_acceptance_command = -10
-		seat_in_parliament = -1
+		automatic_seat_in_parliament = -1
+		manual_seat_in_parliament = -1
 		war_exhaustion = 0
 	}
 	
@@ -23,8 +28,9 @@ age_of_industrialization = {
 		obj_great_power = {
 			is_great_power = yes
 		}
-		obj_colonial_regions = {
-			num_of_strong_trade_companies = 2
+		obj_nationalism = {
+			is_subject = no
+			has_unified_culture_group = yes 
 		}
 		obj_factories = {
 			factory_infrastructure = 10
@@ -182,8 +188,12 @@ age_of_great_wars = {
 	start = 1890
 	
 	can_start = {
-		is_institution_enabled = electrification
-		is_institution_enabled = nationalism_institution
+		custom_trigger_tooltip = {
+			tooltip = BGM_peace
+			has_global_flag = had_peace_bgm
+			NOT = { has_global_flag = concert_continent }
+			NOT = { has_global_flag = continental_sys }
+		}
 	}
 	
 	absolutism = {
@@ -195,7 +205,8 @@ age_of_great_wars = {
 		increase_autonomy_command = -2
 		debase_currency = 1
 		execute_rebel_acceptance_command = -10
-		seat_in_parliament = 0
+		automatic_seat_in_parliament = -1
+		manual_seat_in_parliament = -1
 		war_exhaustion = 0
 	}
 	
@@ -243,7 +254,7 @@ age_of_great_wars = {
 
 		ab_tech_politic = {
 			modifier = {
-				culture_conversion_cost = -0.25
+				stability_cost_modifier = -0.1
 				global_unrest = -4
 			}
 			ai_will_do = {
@@ -440,7 +451,8 @@ modern_age = {
 		increase_autonomy_command = -2
 		debase_currency = 1
 		execute_rebel_acceptance_command = -10
-		seat_in_parliament = 0
+		automatic_seat_in_parliament = 0
+		manual_seat_in_parliament = 0
 		war_exhaustion = 0
 	}
 	

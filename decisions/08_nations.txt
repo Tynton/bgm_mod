@@ -162,12 +162,13 @@ country_decisions = {
 					tag = FRE
 					tag = FRR
 					tag = NED
+					tag = FRW
 				}
 			}
 			#adm_tech = 31
 			OR = {
-				primary_culture = flemish
-				primary_culture = wallonian
+				culture_group = benelux
+				culture_group = french
 				tag = BUR
 				AND = {
 					has_institution = nationalism_institution
@@ -219,7 +220,7 @@ country_decisions = {
 			OR = {
 				AND = {
 					tag = BUR
-					adm_tech = 20
+					adm_tech = 25
 					NOT = { exists = FLA }
 					NOT = { exists = BRB }
 					OR = {
@@ -229,14 +230,32 @@ country_decisions = {
 					mission_completed = emp_bur_secure_succession
 				}
 				AND = {
-					adm_tech = 15
+					adm_tech = 25
 					has_reform = peasants_republic
 				}
 				AND = {
-					adm_tech = 10
+					adm_tech = 20
 					OR = {
+						primary_culture = flemish
+						primary_culture = brabantian
+						primary_culture = limburgish
 						primary_culture = wallonian
 						primary_culture = picard
+					}
+				}
+				AND = {
+					OR = {
+						has_institution = nationalism_institution
+						bgm_rev = yes
+					}
+					NOT = {
+						OR = {
+							primary_culture = flemish
+							primary_culture = brabantian
+							primary_culture = limburgish
+							primary_culture = wallonian
+							primary_culture = picard
+						}
 					}
 				}
 			}
@@ -259,14 +278,14 @@ country_decisions = {
 				}
 				add_accepted_culture = flemish
 			}
-			if = {
-				limit = {
-					NOT = {
-						accepted_culture = west_flemish
-					}
-				}
-				add_accepted_culture = west_flemish
-			}
+			#if = {
+			#	limit = {
+			#		NOT = {
+			#			accepted_culture = west_flemish
+			#		}
+			#	}
+			#	add_accepted_culture = west_flemish
+			#}
 			if = {
 				limit = {
 					NOT = {
@@ -494,6 +513,9 @@ country_decisions = {
 					tag = BEL
 				}
 			}
+			NOT = {
+				exists = WLO
+			}
 		}
 		allow = {
 			#is_subject = no
@@ -504,9 +526,6 @@ country_decisions = {
 			owns = 93
 			owns = 1866
 			#adm_tech = 10
-			NOT = {
-				exists = WLO
-			}
 		}
 		effect = {
 			change_tag = WLO

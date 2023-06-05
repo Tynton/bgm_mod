@@ -19,6 +19,7 @@ country_decisions = {
 			}
 		}
 		allow = {
+			is_at_war = no
 			NOT = { has_country_modifier = recent_conversion }
 			OR = {
 				dominant_religion = waldensian
@@ -70,6 +71,12 @@ country_decisions = {
 					is_emperor = yes
 				}
 			}
+			modifier = {
+				factor = 0
+				NOT = {
+					dominant_religion = waldensian
+				}
+			}
 		}
 	}
 	
@@ -101,9 +108,7 @@ country_decisions = {
 				}
 				AND = {
 					OR = {
-						any_province = {
-							religion = unitarian
-						}
+						has_global_flag = unitarian_exists
 						ai = no
 					}
 					stability = 1
@@ -272,6 +277,7 @@ country_decisions = {
 			
 		}
 		allow = {
+			is_at_war = no
 			NOT = { has_country_modifier = recent_conversion }
 			OR = {
 				dominant_religion = lollard
@@ -358,6 +364,7 @@ country_decisions = {
 			}
 		}
 		allow = {
+			is_at_war = no
 			NOT = { has_country_modifier = recent_conversion }
 			OR = {
 				dominant_religion = fraticelli
@@ -407,6 +414,11 @@ country_decisions = {
 				OR = {
 					is_elector = yes
 					is_emperor = yes
+					AND = {
+						religion = catholic
+						is_excommunicated = no
+					}
+					NOT = { dominant_religion = fraticelli }
 				}
 			}
 		}
@@ -527,6 +539,14 @@ country_decisions = {
 			is_emperor = no
 		}
 		allow = {
+			is_at_war = no
+			NOT = { has_country_modifier = recent_conversion }
+			OR = {
+				dominant_religion = waldensian
+				has_global_flag = rome_converted_bgm
+				has_global_flag = preprot_heresy
+			}
+			stability = 1
 			OR = {
 				AND = {
 					NOT = { has_country_modifier = recent_conversion }
@@ -534,9 +554,7 @@ country_decisions = {
 					OR = {
 						culture_group = french
 						culture_group = occitan
-						any_neighbor_country = {
-							religion = cathar
-						}
+						has_global_flag = cathar_exists
 					}
 					NOT = { any_country = { religion = cathar } }
 				}
@@ -545,6 +563,14 @@ country_decisions = {
 			is_at_war = no
 		}
 		effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = cathar_exists
+					}
+				}
+				set_global_flag = cathar_exists
+			}
 			change_religion = cathar
 			add_stability = -3
 			add_prestige = -100

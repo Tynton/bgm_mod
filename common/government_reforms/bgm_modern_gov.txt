@@ -62,6 +62,7 @@ chauvinism = {
 	modifiers = {
 		province_warscore_cost = -0.15
 		land_morale = 0.1
+		monthly_mobilized_society = 0.1
 	}
 }
 
@@ -74,10 +75,9 @@ radicalism_reform = {
 		has_reform = futurist_mechanic
 	}
 	modifiers = {
-		land_maintenance_modifier = -0.2
-		global_manpower_modifier = 0.5
+		monthly_mobilized_society = 0.25
 		land_morale = 0.15
-		ae_impact = 0.2 
+		ae_impact = 0.1
 	}
 }
 
@@ -89,6 +89,7 @@ protectionism_reform = {
 	}
 	modifiers = {
 		fort_maintenance_modifier = -0.2
+		monthly_mobilized_society = 0.1
 		naval_morale = 0.1
 		land_morale = 0.1
 	}
@@ -125,6 +126,7 @@ isolationism_reform = {
 		global_trade_power = 0.1
 		production_efficiency = 0.1
 		stability_cost_to_declare_war = 1
+		monthly_mobilized_society = -0.1
 	}
 }
 
@@ -132,10 +134,8 @@ expansionism_reform = {
 	icon = "map"
 	allow_normal_conversion = yes
 	modifiers = {
-		land_maintenance_modifier = -0.05
-		global_manpower_modifier = 0.1
-		land_forcelimit_modifier = 0.1
-		ae_impact = 0.2
+		monthly_mobilized_society = 0.25
+		ae_impact = 0.1
 	}
 }
 
@@ -442,6 +442,7 @@ expansionist_bureaucracy = {
 	}
 	allow_normal_conversion = yes
 	modifiers = {
+		monthly_mobilized_society = 0.1
 		core_creation = -0.5
 		governing_capacity_modifier = 0.15
 	}
@@ -470,9 +471,10 @@ colossal_bureaucracy = {
 	}
 	allow_normal_conversion = yes
 	modifiers = {
-		core_creation = -0.5
+		monthly_mobilized_society = 0.06
+		core_creation = -0.33
 		global_tax_modifier = -0.3
-		governing_capacity_modifier = 0.15
+		governing_capacity_modifier = 0.1
 		inflation_reduction = 0.05
 	}
 }
@@ -502,7 +504,10 @@ political_propaganda = {
 				has_reform = democratic_mechanic
 				is_at_war = yes
 			}
-			has_reform = anarchy
+			has_reform = communist_mechanic
+			has_reform = futurist_mechanic
+			has_reform = fascist_mechanic
+			has_reform = authoritarian_mechanic
 		}
 	}
 	allow_normal_conversion = yes
@@ -523,6 +528,7 @@ war_propaganda = {
 	}
 	allow_normal_conversion = yes
 	modifiers = {
+		monthly_mobilized_society = 0.25
 		land_morale = 0.05
 		naval_morale = 0.05
 		army_tradition = 0.25
@@ -560,6 +566,7 @@ no_propaganda = {
 	}
 	allow_normal_conversion = yes
 	modifiers = {
+		monthly_mobilized_society = -0.1
 		technology_cost = -0.05
 		stability_cost_modifier = 0.15
 	}
@@ -580,8 +587,9 @@ purge_foreigners_reform = {
 	}
 	allow_normal_conversion = yes
 	modifiers = {
-		culture_conversion_cost = -0.95
-		global_missionary_strength = 0.08
+		culture_conversion_cost = -0.2
+		culture_conversion_time = -0.2
+		country_military_power = -3
 		years_of_nationalism = -20
 	}
 }
@@ -599,6 +607,8 @@ intolerance_reform = {
 	allow_normal_conversion = yes
 	modifiers = {
 		culture_conversion_cost = -0.1
+		culture_conversion_time = -0.1
+		country_military_power = -1
 		years_of_nationalism = -5
 	}
 }
@@ -619,7 +629,7 @@ abolish_secret_police = {
 	allow_normal_conversion = yes
 	potential = {
 		OR = {
-			bgm_comgovt = no
+			has_reform = futurist_mechanic
 			has_reform = anarchy
 		}
 	}
@@ -645,6 +655,7 @@ enforce_loyalty_reform = {
 		bgm_comgovt = no
 	}
 	modifiers = {
+		monthly_mobilized_society = 0.1
 		liberty_desire_from_subject_development = -0.15
 		global_autonomy = -0.2
 	}
@@ -706,6 +717,7 @@ large_policing_bureaucracy = {
 		}
 	}
 	modifiers = {
+		monthly_mobilized_society = 0.06
 		liberty_desire_from_subject_development = -0.5
 		global_autonomy = -0.2
 		global_spy_defence = 0.5
@@ -737,7 +749,8 @@ suppress_nationalism = {
 		}
 	}
 	modifiers = {
-		culture_conversion_cost = -0.2
+		culture_conversion_cost = -0.1
+		culture_conversion_time = -0.1
 		trade_goods_size_modifier = -0.2
 	}
 }

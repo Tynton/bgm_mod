@@ -2,7 +2,7 @@
 
 4963 = "Arel"
 5240 = "Béibreg"
-5246 = "Diddenuewen"
+5098 = "Diddenuewen"
 
 
 94 = "Lëtzebuerg"

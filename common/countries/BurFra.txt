@@ -2,7 +2,7 @@
 
 graphical_culture = frenchgfx
 
-color = { 138 0 35 } #148  30  70
+color = { 105 44 94 } #138 0 35
 revolutionary_colors = { 13 8 5 } #Shared w/Romania
 
 historical_score = 650
@@ -49,7 +49,7 @@ monarch_names = {
 	"Henri #1" = 10
 	"Antoine #0" = 10
 	"Henri-Jules #0" = 10
-	"Hughes #5" = 1
+	"Heugue #5" = 1
 	"Eudes #4" = 1
 	"Robert #2" = 1
 	"Armand #0" = 0

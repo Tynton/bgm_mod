@@ -14,8 +14,12 @@ country_event = {
 	option = {
 		name = BGM_DYNASTIC.1.a
 
-		government = monarchy
-		has_parliament = no
+		if = {
+			limit = { 
+				government = monarchy
+				has_parliament = no
+			}
+		}
 		
 		set_country_flag = has_power_struggle
 		
@@ -83,7 +87,24 @@ country_event = {
 	option = {
 		name = BGM_DYNASTIC.2.a
 		clr_country_flag = has_power_struggle
+
+		add_ruler_modifier = {
+			name = cleared_pretenders
+			duration = -1
+		}
 		
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						current_age = age_of_discovery
+						current_age = age_of_reformation
+					}
+				}
+			}
+			add_absolutism = 10
+		}
+
 		add_adm_power = 25
 		add_dip_power = 25
 		add_mil_power = 25
@@ -935,5 +956,20 @@ country_event = {
 			type = cb_restore_personal_union
 			months = 120
 		}
+	}
+}
+
+country_event = {
+	id = BGM_DYNASTIC.19
+	title = none
+	desc = none
+	picture = none
+	
+	is_triggered_only = yes
+	
+	#get cb
+	option = {
+		name = "BGM_DYNASTIC.18.a"
+		clr_country_flag = invited_dynasty_root
 	}
 }

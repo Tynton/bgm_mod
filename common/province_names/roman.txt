@@ -71,7 +71,7 @@
 202 = "Avenio"
 4390 = "Augustobona Tricassium"
 
-4947 = { "Valentia" "Valentia Julia" }
+#4947 = { "Valentia" "Valentia Julia" }
 4944 = "Bonna"
 4950 = "Assindia"
 

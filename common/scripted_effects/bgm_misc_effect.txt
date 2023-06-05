@@ -94,7 +94,7 @@ bgm_post_revolution = {
             government = republic
         }
         change_government = democracy_govt
-        add_government_reform = parliamentary_republic_reform
+        add_government_reform = parliamentary_republic_reform_bgm
         add_government_reform = bgm_dem_parliament
         add_faction_influence = {
             faction = dm_social_liberal
@@ -142,4 +142,10 @@ bgm_post_revolution = {
         change_government = futurist_government
         #add_government_reform = auth_republic_reform
     }
+}
+
+clear_advisors = {
+    remove_advisor_by_category = adm
+    remove_advisor_by_category = DIP
+    remove_advisor_by_category = MIL
 }

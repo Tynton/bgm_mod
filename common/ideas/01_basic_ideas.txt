@@ -451,7 +451,7 @@ peasant_dip_ideas = {
 		spy_offence = 0.15
 	}
 	popular_cause = {
-		ae_impact = -0.15
+		ae_impact = -0.1
 	}
 	all_are_free = {
 		fabricate_claims_cost = -0.5

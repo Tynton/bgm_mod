@@ -619,6 +619,27 @@
  
  usa_navy_soi:0 "Naval Sphere of Influence"
  
+ fra_feudalism:0 "Feudal Institutions"
+ GAME_SETUP_TOOLTIP:0 "Supporting Independence is disallowed during set-up time. It will be available in 1445 and after."
+ CONTINENTAL_PEACE_TOOLTIP:0 "We have established peace-time coordination by virtue of either the Concert of [Root.Capital.GetContinentName] or institution of the Continental System. We need to break down the peace coordination."
+
+ architect_of_peace:0 "Architect of the Peace"
+ 
+ continental_peace_title:0 "Create The Continental Peace"
+ continental_peace_desc:0 "Unending bloodshed has wracked our continent for many years at this point. Ministers of our government have proposed an international agreement to coordinate diplomatic interactions between powers in [Root.Capital.GetContinentName]. Being the Designer of the Peace will give us great prestige over our peers."
+ 
+ had_peace_bgm:0 "Had Diplomatic Coordination"
+ 
+ ideological_primacy:0 "Ideological Primacy"
+ not_observing:0 "Doesn't Coordinate Diplomacy"
+ revolutionary_peace:0 "Revolutionary Peacetime"
+ traditionalist_peace:0 "Traditionalist Peacetime"
+ 
+ BGM_peace:0 "§RThe diplomatic coordinating organization has broken down.§!"
+
+ continental_sys:0 "Continental System"
+ concert_continent:0 "Diplomatic Concert"
+ 
  usa_dip_one:0 "Diplomatic Security"
  usa_dip_temp:0 "Emerging Amercian Power"
  
@@ -794,7 +815,7 @@
  wawel_cathedral:0 "Wawel Cathedral"
  wawel_castle:0 "Wawel Castle"
  krakow_cloth_hall:0 "Kraków Cloth Hall"
- chateau_bretagne:0 "Chateau des Ducs de Bretagne"
+ chateau_bretagne:0 "Château des Ducs de Bretagne"
  university_orleans:0 "University of Orléans"
  zollverein:0 "Zollverein Coal Complex"
  dresden_castle:0 "Dresdner Schloss"
@@ -813,6 +834,10 @@
  university_poitiers:0 "Université de Poitiers"
  monument_le_havre:0 "Le Havre Port Infrastructure"
  westminster_palace:0 "Westminster Palace"
+ chateau_dangers:0 "Château d'Angers"
+ university_bologna:0 "University of Bologna"
+ chateau_sedan:0 "Château de Sedan"
+ sorbonne:0 "The Sorbonne"
  
  port_le_havre:0 "Port of Le Havre"
  LE_HAVRE_CONDITION:0 "§TThe Port of Le Havre has been established.§!"
@@ -822,6 +847,23 @@
  fraticelli_clerics:0 "Fraticelli Clerical Zeal"
  
  troublesome_frat:0 "Troublesome Fraticelli State"
+
+ wartime_abdication_title:0 "Wartime Abdication"
+ wartime_abdication_desc:0 "Abdicate our monarch and allow the heir to take control."
+ RULER_ABDICATION:0 "Our ruler will abdicate. They cannot rule again."
+ 
+ cleared_pretenders:0 "Cleared Pretenders"
+ 
+ ai_fml:0 "AI - fml budgeting smh"
+ 
+ french_aesthetic_title:0 "France - White Aesthetic"
+ french_aesthetic_desc:0 "France - White Aesthetic"
+ fra_custom:0 "Our map color changes to white and the flag will change."
+ 
+ revert_aesthetic_title:0 "Revert Aesthetic"
+ revert_aesthetic_desc:0 "Revert Aesthetic"
+ fra_vanilla:0 "Our map color reverts as will the flag."
+ 
  
  frat_rein_in:0 "Reined in the Estates"
  rein_in_estates:0 "Rein in the Estates"
@@ -1043,7 +1085,29 @@
  WORLD_WAR_NAME:0 "World War"
  GERCON_WAR_NAME:0 "War for the German Confederation"
  
+ ITALIC_LEAGUE_WAR_TOOLTIP:0 "As the Italic League is a defensive pact, we cannot declare wars against one another."
+ 
+ BGM_CLAIM_WAR_NAME:0 "$ORDER$$FIRST$ Conquest of $CAPITAL$"
+ 
  CB_ALLOWED_po_zollverein:0 "Establish the Zollverein"
+ 
+ cb_proto_nationalist:0 "Proto-Nationalism"
+ cb_proto_nationalist_desc:0 "They hold provinces of our culture group."
+ take_province_proto_nationalist:0 "Take a province"
+ take_province_proto_nationalist_desc:0 "War goal is to take a province."
+
+ cb_bgm_hundred_years_war:0 "Claim the French Throne"
+ cb_bgm_hundred_years_war_desc:0 "The claim to the French throne will not be thwarted by a defeat in the Hundred Years' War. Eventually we will return to the continent."
+ 
+ CRUSADE_TOOLTIP:0 "While they are on a crusade their peace is otherwise guaranteed by religious decree."
+
+ cb_bgmai_nationalist:0 "Nationalism"
+ cb_bgmai_nationalist_desc:0 "They hold provinces of our culture group."
+ take_capital_nationalist:0 "Take a province"
+ take_capital_nationalist_desc:0 "War goal is to take a province."
+ 
+ cb_bgmai_conquest:0 "Conquest"
+ cb_bgmai_conquest_desc:0 "They hold provinces that we have claims on."
  
  italea_1:0 "Decentralized Italic League"
  italea_2:0 "Collaborating Italic League"
@@ -1113,6 +1177,8 @@
  german_nation_hre_desc:0 "Regardless of the absence of a strong, central authority, our nation is prospering. The Hanseatic League, formed by hundreds of towns in northern Germany, has contributed to the prosperity of our nation. Intellectual growth, combined with sea and overland trading, has also helped spur the development and transform our country into a wealthy manufacturing center."
  
  FOREIGN_SISTERREPUBLIC:0 "[From.GetName] is not a Sister Republic in our culture group."
+ 
+ meranese:0 "Meranese"
  
  bri_rep_title:0 "British Republican Name"
  bri_rep_desc:0 "British Republican Name"
@@ -1980,6 +2046,13 @@
  mil_tech_plateaued:0 "Maximum Military Tech by Institution"
  mil_tech_ii:0 "Military Tech Pioneer II"
  mil_tech_i:0 "Military Tech Pioneer I"
+
+ general_pioneer:0 "General Tech Pioneer I"
+ general_pioneer_ii:0 "General Tech Pioneer II"
+ general_pioneer_iii:0 "General Tech Pioneer III"
+ general_pioneer_iv:0 "General Tech Pioneer IV"
+ 
+ demand_annex:0 "Recently Demanded Annexation"
  
  artificial_rebels_title:0 "Automaton"
  artificial_rebels_name:0 "$COUNTRY$ Automatons"
@@ -2587,7 +2660,7 @@
  
  romanian_group:0 "Romanian"
  
- anglais:0 "Anglais"
+ anglois:0 "Anglois"
  ecossaise:0 "Écossais"
  souabe:0 "Souabe"
  du_rhin:0 "Du Rhin"

@@ -11,7 +11,7 @@
 ##############
 
 rival = {
-	opinion = -150
+	opinion = -100
 }
 
 enemy = {
@@ -19,12 +19,12 @@ enemy = {
 }
 
 allied_to_rival = {
-	opinion = -75
+	opinion = -50
 }
 
 enemy_of_my_enemy = {
 	opinion = 1
-	max = 75
+	max = 50
 }
 
 opinion_invasion = {
@@ -108,7 +108,7 @@ royal_marriage = {
 }
 
 guaranteed = {
-	opinion = 50
+	opinion = 25
 }
 
 alliance = {
@@ -120,11 +120,11 @@ in_war_together = {
 }
 
 have_core = {
-	opinion = -50
+	opinion = -40
 }
 
 have_claim = {
-	opinion = -25
+	opinion = -20
 }
 
 getting_subsidies = {
@@ -145,6 +145,9 @@ is_vassal = {
 	opinion = 25
 }
 in_union = {
+	opinion = 10
+}
+is_eyalet = {
 	opinion = 25
 }
 
@@ -243,7 +246,7 @@ religious_friend = {
 }
 
 embargo = {
-	opinion = -50
+	opinion = -25
 }
 
 opinion_military_access = {
@@ -265,7 +268,7 @@ pirated_us = {
 }
 
 converted_our_culture = {
-	opinion = -75
+	opinion = -50
 	yearly_decay = 1
 }
 
@@ -450,6 +453,11 @@ liberated_province =
 	max = 25
 }
 
+subject_called_to_arms = {
+	opinion = -1
+	yearly_decay = 5
+	min = -200
+}
 defended_allied_territory =
 {
 	opinion = 10
@@ -653,12 +661,12 @@ sabotage_reputation = {
 aggressive_expansion = {
 	opinion = -1
 	months = 0
-	yearly_decay = 1.75
+	yearly_decay = 1.5
 	min = -250
 }
 
 enforced_peace_against = {
-	opinion = -75
+	opinion = -100
 	months = 0
 	yearly_decay = 1
 }
@@ -969,6 +977,30 @@ eng_opposes_lollards = {
 	yearly_decay = 1
 }
 
+eng_papal_support = {
+	opinion = 100
+	yearly_decay = 2
+}
+
+eng_turned_back_to_the_pope = {
+	opinion = -50
+	yearly_decay = 2
+}
+
+eng_turned_back_to_the_reformation = {
+	opinion = -50
+	yearly_decay = 2
+}
+
+eng_pro_catholicism = {
+	opinion = 50
+	yearly_decay = 2
+}
+
+eng_pro_reformation = {
+	opinion = 50
+	yearly_decay = 2
+}
 
 
 eng_no_english_in_france = {
@@ -983,6 +1015,15 @@ eng_refuse_to_give_up_france = {
 	yearly_decay = 1
 }
 
+gbr_english_diplomats = {
+	opinion = 50
+	yearly_decay = 1
+}
+
+ave_unification_of_the_french_region = {
+	opinion = 50
+	yearly_decay = 1
+}
 accepted_supremacy_of_rome = {
 	opinion = 25
 	years = 25
@@ -1035,6 +1076,10 @@ eng_didnt_support_rebels = {
 	yearly_decay = 1
 }
 
+french_english_reconciliation_act_opinion = {
+	opinion = 25
+	years = 50
+}
 swedish_hats = {
 	opinion = 25
 	years = 25
@@ -1905,9 +1950,9 @@ opinion_annex_part_of_empire = {
 }
 
 opinion_annex_vassal = {
-	opinion = -30
+	opinion = -10
 	years = 20
-	yearly_decay = 1
+	yearly_decay = 3
 }
 
 opinion_denying_the_holy_mother = {
@@ -3667,6 +3712,13 @@ is_tributary = {
 	opinion = 15
 }
 
+is_trade_protectorate = {
+	opinion = 20
+}
+
+is_trade_company = {
+	opinion = 50
+}
 they_forced_tributary = {
 	opinion = -100
 	yearly_decay = 2
@@ -4000,6 +4052,20 @@ opinion_KOR_supported_war_for_north = {
 	yearly_decay = 1.5
 }
 
+has_stolen_the_tripitaka_koreana = {
+	opinion = -75
+	yearly_decay = 1
+}
+
+has_destroyed_the_tripitaka_koreana = {
+	opinion = -200
+	yearly_decay = 1
+}
+
+has_spared_the_tripitaka_koreana = {
+	opinion = 50
+	yearly_decay = 1
+}
 opinion_gen_spanish_alliance = {
 	opinion = 100
 	yearly_decay = 1
@@ -4917,6 +4983,10 @@ dan_have_same_king = {
 	yearly_decay = 1
 }
 
+dan_early_victories = {
+	opinion = 200
+	yearly_decay = 2
+}
 nor_refuses_to_aid = {
 	opinion = -50
 	yearly_decay = 2
@@ -5030,6 +5100,10 @@ got_executed_our_king = {
 papal_embassy = {
 	opinion = 25
 }
+religious_delegation = {
+	opinion = 25
+	years = 20
+}
 pol_annexed_ruthenia_opinion_modifier = {
 	opinion = -100 
 	yearly_decay = 2
@@ -5067,5 +5141,97 @@ hsa_refused_the_treaty_of_danzig_modifier = {
 }
 hsa_moved_the_staple_port = {
 	opinion = -100
+	yearly_decay = 2
+}
+
+tur_accepted_trade_agreement = {
+	opinion = 25
+	yearly_decay = 1
+}
+
+tur_declined_trade_agreement = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+tur_granted_subject_autonomy = {
+	opinion = 100
+	yearly_decay = 2
+}
+
+tur_allied_with_the_ottomans = {
+	opinion = -25
+	yearly_decay = 2
+}
+
+tur_refused_to_ally_ottomans = {
+	opinion = 50
+	yearly_decay = 2
+}
+
+#France 
+fra_charlemagne_legacy_opinion_modifier = {
+	opinion = 30 
+	yearly_decay = 1 
+}
+fra_renounced_treaty_of_cooperation_modifier = { 
+	opinion = -150
+	yearly_decay = 2.5
+}
+fra_sanctions_modifier = {
+	opinion = -75 
+	yearly_decay = 10
+}
+fra_drew_war_to_the_empire_modifier = {
+	opinion = -100
+	yearly_decay = 10
+}
+
+#England
+eng_revokes_clerical_privileges = {
+	opinion = -25
+	yearly_decay = 5
+}
+eng_restores_clerical_privileges = {
+	opinion = 10
+	yearly_decay = 5
+}
+eng_reconcilation_with_the_holy_see = {
+	opinion = 25
+	yearly_decay = 2
+}
+
+act_of_imperial_diplomacy_opinion = {
+	opinion = 25
+	years = 10
+}
+
+trade_protectorate_called_into_war = {
+	opinion = -50
+	yearly_decay = 2
+	min = -1000
+}
+
+#Idea Group Events
+granted_sanctuary_to_our_banished_noble = {
+	opinion = -50
+	yearly_decay = 2
+}
+denied_sanctuary_to_our_banished_noble = {
+	opinion = 25
+	yearly_decay = 1
+}
+
+#Generic
+succesful_province_purchase = {
+	opinion = 25
+	yearly_decay = 2
+}
+failed_province_purchase = {
+	opinion = -25
+	yearly_decay = 2
+}
+revoked_our_right_to_war = {
+	opinion = -50
 	yearly_decay = 2
 }

@@ -19,6 +19,7 @@ france_region = {
 		savoy_dauphine_area
 		lorraine_area
 		picardy_area
+		north_champagne_area
 		champagne_area
 		ile_de_france_area
 		loire_area
@@ -53,6 +54,7 @@ scandinavia_region = {
 
 low_countries_region = {
 	areas = {
+		luxemburg_area
 		wallonia_area
 		flanders_area
 		holland_area

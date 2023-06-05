@@ -649,7 +649,7 @@ swabian_group_2 = {
 				}
 			}
 			owns_core_province = 118
-			total_development = 1000
+			total_development = 1500
 			custom_trigger_tooltip = {
 				tooltip = swa_supremacy_trigger_tooltip
 				NOT = {

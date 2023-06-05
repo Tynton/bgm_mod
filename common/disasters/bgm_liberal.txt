@@ -11,22 +11,31 @@ bgm_liberal = {
 				faction = bgm_liberals
 				influence = 45
 			}
-			overlord = {
-				has_disaster = bgm_liberal
+			AND = {
+				is_subject = yes
+				overlord = {
+					has_disaster = bgm_liberal
+				}
 			}
 		}
 	}
 	
 	can_stop = {
 		NOT = {
-			faction_influence = {
-				faction = bgm_liberals
-				influence = 45
+			OR = {
+				faction_influence = {
+					faction = bgm_liberals
+					influence = 45
+				}
+				AND = {
+					is_subject = yes
+					overlord = {
+						has_disaster = bgm_liberal
+					}
+				}
 			}
 		}
-		overlord = {
-			has_disaster = bgm_liberal
-		}
+		
 	}
 	
 	

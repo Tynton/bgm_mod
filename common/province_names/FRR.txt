@@ -3,7 +3,7 @@
 4389 = "Tours"
 179 = "Bourges"
 180 = "Poitiers"
-4386 = "Luçon"
+4386 = { "Vendée" "Luçon" }
 4111 = "Saintes"
 4387 = "Angoulême"
 204 = "Grenoble"

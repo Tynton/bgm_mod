@@ -293,7 +293,7 @@ normandy_area = { #4
 }
 
 provence_area = { #3
-	201 202 2991 4696
+	201 202 2991 4696 5085
 }
 
 poitou_area = { #4
@@ -301,7 +301,7 @@ poitou_area = { #4
 }
 
 guyenne_area = { #4
-	194 198 4112 174
+	194 198 4112 174 5084
 }
 
 pyrenees_area = { #4
@@ -314,11 +314,11 @@ languedoc_area = { #5
 
 bourgogne_area = { #3
 	color = { 144 0 32 }
-	192 193 4764
+	193 4764 5082 5083
 }
 
 west_burgundy_area = { #3
-	191 1877 4392
+	191 192 1877 4392 5081
 }
 
 massif_central_area = { #3
@@ -331,28 +331,32 @@ savoy_dauphine_area = { #3 Savoy and Dauphiné, Upper Burgundy
 }
 
 lorraine_area = { #4
-	187 188 189 4766
+	187 188 189 4766 5090
 }
 
 picardy_area = { #4
-	87 88 89 1743
+	87 88 89 1743 5087
 }
 
 ile_de_france_area = { #4
 	182 183 185 4388 5075
 }
 
+north_champagne_area = {
+	181 4953 5097
+}
+
 champagne_area = { #3
-	181 186 4390 4952 4953
+	186 4390 4952
 }
 
 loire_area = { #5
 	color = { 231 143 5 }
-	177 178 4389 5076
+	177 178 4389 5076 5093
 }
 
 orleans_area = {
-	184 179 4776
+	184 179 4776 5089 5091
 }
 
 ########################################
@@ -361,6 +365,10 @@ orleans_area = {
 
 wallonia_area = { #4
 	91 93 94 1866 4954
+}
+
+luxemburg_area = {
+	94 4954 5094 5098
 }
 
 holland_area = { #4
@@ -377,7 +385,7 @@ frisia_area = { #5
 
 brabant_area = { #3
 	color = { 118 193 153 }
-	92 1744 2974
+	92 1744 2974 5086 5088
 }
 
 north_brabant_area = { #3
@@ -472,7 +480,7 @@ po_valley_area = { #3
 }
 
 piedmont_area = { #4
-	103 1875 2981 4727
+	103 1875 2981 4727 5092
 }
 
 tuscany_area = { #5
@@ -916,7 +924,7 @@ south_saxony_area = { #4
 
 upper_bavaria_area = { #4
 	color = { 180 220 220 }
-	65 2955 4707 4708
+	65 2955 4707 4708 5096
 }
 
 lower_bavaria_area = { #4
@@ -933,7 +941,7 @@ lower_swabia_area = { #3 (West Swabia)
 
 franconia_area = { #4 (Lower Franconia)
 	color = { 121 49 117 }
-	4718 4715 71 79
+	4718 4715 71 79 5095
 }
 
 upper_franconia_area = { #4

@@ -159,8 +159,13 @@ country_event = {
 		ai_chance = {
 			factor = 30
 			modifier = {
-				factor = 2
+				factor = 10
 				is_great_power = yes
+				NOT = {
+					any_ally = {
+						is_great_power = yes
+					}
+				}
 			}
 			modifier = {
 				factor = 2
@@ -505,6 +510,12 @@ country_event = {
 		ai_chance = {
 			factor = 40
 			modifier = {
+				factor = 10
+				any_ally = {
+					is_great_power = yes
+				}
+			}
+			modifier = {
 				factor = 2
 				NOT = {
 					has_opinion = {
@@ -701,6 +712,17 @@ country_event = {
 		name = "incidents_bur_inheritance.101.a"
 		ai_chance = {
 			factor = 90
+
+			modifier = {
+				factor = 0
+				any_neighbor_country = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = aggressive_expansion
+						value = 10
+					}
+				}
+			}
 		}
 		if = {
 			limit = {

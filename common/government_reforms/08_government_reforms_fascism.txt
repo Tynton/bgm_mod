@@ -12,7 +12,9 @@ fascist_mechanic = {
 	}
 	conditional = {
 		allow = { has_dlc = "Rights of Man" }
-		militarised_society = yes
+		government_abilities = {
+			mobilization_mechanic
+		}
 	}
 
 	factions = {
@@ -98,9 +100,7 @@ rexism = {
 	potential = {
 		OR = {
 			culture_group = french
-			any_country = {
-				has_reform = rexism
-			}
+			has_global_flag = rexist_flag
 		}
 		NOT = {
 			is_subject_of_type = personal_union
@@ -116,6 +116,7 @@ rexism = {
 	}
 	effect = {
 		change_religion = catholic
+		set_global_flag = rexist_flag
 	}
 }
 
@@ -125,10 +126,7 @@ austrofascism = {
 	potential = {
 		OR = {
 			culture_group = germanic
-			
-			any_country = {
-				has_reform = austrofascism
-			}
+			has_global_flag = austrofascist_flag
 		}
 		NOT = {
 			is_subject_of_type = personal_union
@@ -144,6 +142,7 @@ austrofascism = {
 	}
 	effect = {
 		change_religion = catholic
+		set_global_flag = austrofascist_flag
 	}
 }
 
@@ -155,9 +154,7 @@ falanghism = {
 		OR = {
 			culture_group = iberian
 			culture_group = occitan
-			any_country = {
-				has_reform = falanghism
-			}
+			has_global_flag = falanghist_flag
 		}
 		NOT = {
 			is_subject_of_type = personal_union
@@ -173,6 +170,7 @@ falanghism = {
 	}
 	effect = {
 		change_religion = catholic
+		set_global_flag = falanghist_flag
 	}
 }
 
@@ -201,7 +199,7 @@ national_socialism = {
 	potential = {
 		OR = {
 			culture_group = germanic
-			
+			has_global_flag = nazi_flag
 			culture_group = scandinavian
 		}
 		NOT = {
@@ -219,6 +217,9 @@ national_socialism = {
 		land_forcelimit_modifier = 0.5
 		global_manpower_modifier = 0.2
 	}
+	effect = {
+		set_global_flag = nazi_flag
+	}
 }
 
 strasserist_fascism = {
@@ -227,7 +228,7 @@ strasserist_fascism = {
 	potential = {
 		OR = {
 			culture_group = germanic
-			
+			has_global_flag = strasserist_flag
 			culture_group = scandinavian
 			any_country = {
 				has_reform = strasserist_fascism
@@ -249,6 +250,9 @@ strasserist_fascism = {
 		global_manpower_modifier = 0.4
 		global_tax_modifier = 0.2
 	}
+	effect = {
+		set_global_flag = strasserist_flag
+	}
 }
 
 italian_fascism = {
@@ -257,7 +261,7 @@ italian_fascism = {
 	potential = {
 		OR = {
 			culture_group = latin
-			
+			has_global_flag = fascist_flag
 		}
 		NOT = {
 			is_subject_of_type = personal_union
@@ -271,5 +275,8 @@ italian_fascism = {
 		land_forcelimit_modifier = 0.3
 		global_manpower_modifier = 0.05
 		governing_capacity = 400
+	}
+	effect = {
+		set_global_flag = fascist_flag
 	}
 }

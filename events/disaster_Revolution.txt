@@ -201,6 +201,12 @@ country_event = {
 		}
 		if = {
 			limit = {
+				revolution_target_exists = no
+			}
+			add_revolutionary_zeal = 100
+		}
+		if = {
+			limit = {
 				OR = {
 					tag = PAP
 					tag = NTI
@@ -211,7 +217,7 @@ country_event = {
 				add_core = ITA
 			}
 		}
-		end_disaster = revolution
+		#end_disaster = revolution
 		set_country_flag = revolution_disaster_revolutionary
 		set_country_flag = revolution_disaster_immediate_revolution
 		hidden_effect = { #The triggers for them mean only one will happen

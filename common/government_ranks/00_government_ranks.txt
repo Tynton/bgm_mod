@@ -1,14 +1,12 @@
 2 = {
-	diplomats = 1
-	prestige = 0.1
+	prestige_decay = -0.005
+	diplomatic_reputation = 1
 	#stability_cost_modifier = -0.25
-	diplomatic_annexation_cost = -0.125
 }
 
 3 = {
 	prestige = 0.5
-	max_absolutism = 5
-	diplomats = 2
-	diplomatic_annexation_cost = -0.25
+	prestige_decay = -0.01
+	diplomatic_reputation = 2
 	#stability_cost_modifier = -0.5
 }

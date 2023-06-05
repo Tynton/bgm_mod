@@ -197,22 +197,25 @@ country_event = {
 	title = "REVOLUTION_DIPLOMACY.n.6"
 	desc = "REVOLUTION_DIPLOMACY.d.6"
 	picture = MILITARY_CAMP_eventPicture
-	trigger = {
-		is_revolution_target = yes
-		current_age = age_of_revolutions
-		NOT = {
-			has_country_flag = rev_dip
-		}
-	}
 
-	mean_time_to_happen = {
-		days = 1
+	is_triggered_only = yes
 
-		modifier = {
-			factor = 0.001
-			is_revolution_target = yes
-		}
-	}
+	#trigger = {
+	#	is_revolution_target = yes
+	#	current_age = age_of_revolutions
+	#	NOT = {
+	#		has_country_flag = rev_dip
+	#	}
+	#}
+
+	#mean_time_to_happen = {
+	#	days = 15
+	#
+	#	modifier = {
+	#		factor = 0.001
+	#		is_revolution_target = yes
+	#	}
+	#}
 
 	option = {
 		name = "REVOLUTION_DIPLOMACY.6.a"
@@ -284,7 +287,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 1
+		days = 15
 
 		modifier = {
 			factor = 0.001

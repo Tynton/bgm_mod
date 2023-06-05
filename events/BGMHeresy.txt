@@ -127,6 +127,7 @@ country_event = {
 	
 	option = {
 		name = "BGMHeresy.1.a"
+		set_global_flag = unitarian_exists
 		enable_religion = unitarian
 		random_owned_province = {
 			change_religion = unitarian

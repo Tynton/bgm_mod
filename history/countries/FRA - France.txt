@@ -1,11 +1,12 @@
 government = monarchy
-add_government_reform = feudalism_reform
+add_government_reform = feudal_france_reform
 primary_culture = cosmopolitan_french
 add_accepted_culture = gascon
 add_accepted_culture = lengadocian
 add_accepted_culture = champenois
 add_accepted_culture = orleanais
 add_accepted_culture = poitevin
+add_accepted_culture = lyonnais
 religion = catholic
 technology_group = western
 capital = 183 # Paris
@@ -24,6 +25,11 @@ change_estate_land_share = {
 	estate = estate_burghers
 	share = -5
 }
+
+#add_country_modifier = {
+#	name = fra_feudalism
+#	duration = 10950
+#}
 
 set_country_flag = first_cadet_branch
 set_country_flag = second_cadet_branch

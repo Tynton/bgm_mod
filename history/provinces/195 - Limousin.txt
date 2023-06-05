@@ -1,17 +1,17 @@
 # 195 Limousin - Principal cities: Limoges
 
-owner = FRA
-controller = FRA
+owner = LIM
+controller = LIM
 capital = "Limoges"
 is_city = yes
 culture = limousin
 religion = catholic
 hre = no
-base_tax = 3
-base_production = 3
+base_tax = 2
+base_production = 2
 trade_goods = livestock
 base_manpower = 2
-add_core = FRA
+add_core = LIM
 add_core = GUY
 discovered_by = eastern
 discovered_by = western

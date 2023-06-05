@@ -11,7 +11,9 @@ socialist_mechanic = {
 	}
 	conditional = {
 		allow = { has_dlc = "Rights of Man" }
-		militarised_society = yes
+		government_abilities = {
+			mobilization_mechanic
+		}
 	}
 }
 

@@ -18,6 +18,33 @@
 4729 = "Padoa"
 111 = "Friul"
 
+#speculation starts
+1770 = "Trevis"
+1875 = "Cuni"
+4727 = "Salusa"
+102 = "Nissa"
+2978 = "Aresa"
+2977 = "Urbin"
+4731 = "Spulet"
+4733 = "Mulis"
+4734 = "Avelin"
+2983 = "Salern"
+125 = "Palerm"
+127 = "Sàsar"
+4737 = "Girgent"
+4736 = "Tràpan"
+1933 = "Bàr"
+4942 = "Lupi"
+4732 = "Teracina"
+1933 = "Salent"
+123 = "Calabra"
+2986 = "Caglar"
+2976 = "Perusa"
+4730 = "Bulogna"
+4946 = "La Spesia"
+4959 = "Monac"
+#Speculation ends
+
 5389 = "Avegvan"
 5390 = { "Monça" "Monscia" }
 5391 = "Büsti Grandi"

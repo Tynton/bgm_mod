@@ -49,6 +49,12 @@ country_decisions = {
 			}
 		}
 		allow = {
+			OR = {
+				is_emperor = yes
+				all_country = {
+					is_part_of_hre = no
+				}
+			}
 			is_at_war = no
 			is_free_or_tributary_trigger = yes
 			is_nomad = no			

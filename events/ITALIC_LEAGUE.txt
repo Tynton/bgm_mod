@@ -91,6 +91,21 @@ country_event = {
 		set_global_flag = italea_happened
 		
 		set_country_flag = italea_leader
+
+		hidden_effect = {
+			if = {
+				limit = { 
+					ai = yes
+				}
+				add_country_modifier = {
+					name = italea_ai
+					duration = -1
+				}
+				remove_advisor_by_category = adm
+				remove_advisor_by_category = dip
+				remove_advisor_by_category = mil
+			}
+		}
 		
 		every_country = {
 			limit = {
@@ -259,6 +274,15 @@ country_event = {
 	major = yes
 
 	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_country_modifier = italea_ai
+			}
+			remove_country_modifier = italea_ai
+		}
+	}
 	
 	option = {
 		name = "italic_league.5.a"
@@ -267,6 +291,7 @@ country_event = {
 		#	name = abadoned_religious_rebels
 		#	duration = 9125
 		#}
+
 		
 		every_subject_country = {
 			limit = {
@@ -296,70 +321,15 @@ country_event = {
 				days = 2
 			}
 		}
+
+		custom_tooltip = italea_coalesced
 		
-		add_prestige = 100
-		if = {
-			limit = {
-				NOT = {
-					primary_culture = venetian
-				}
-			}
-			change_tag = ITA
-			every_province = {
-				limit = {
-					OR = {
-						culture_group = latin
-						
-					}
-					continent = europe
-				}
-				add_permanent_claim = ITA
+		hidden_effect = {
+			country_event = {
+				id = italic_league.11
+				days = 1
 			}
 		}
-		if = {
-			limit = {
-				primary_culture = venetian
-			}
-			change_tag = VIY
-			every_province = {
-				limit = {
-					OR = {
-						culture_group = latin
-						
-					}
-					continent = europe
-				}
-				add_permanent_claim = VIY
-			}
-		}
-		if = {
-			limit = {
-				primary_culture = monegasque
-			}
-			change_tag = MIT
-			every_province = {
-				limit = {
-					OR = {
-						culture_group = latin
-						
-					}
-					continent = europe
-				}
-				add_permanent_claim = MIT
-			}
-		}
-		if = {
-			limit = {
-				is_core = 118
-			}
-			set_capital = 118
-		}
-		if = {
-			limit = { has_custom_ideas = no }
-			country_event = { id = ideagroups.1 } #Swap Ideas
-		}
-		swap_non_generic_missions = yes
-		set_country_flag = formed_italy_flag
 	}
 	
 	option = {
@@ -385,6 +355,16 @@ country_event = {
 	picture = HRE_eventPicture
 	
 	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_country_modifier = italea_ai
+			}
+			remove_country_modifier = italea_ai
+		}
+		set_country_flag = integrated_italea
+	}
 	
 	option = { #Join
 		name = "italic_league.6.a"
@@ -594,10 +574,11 @@ country_event = {
 			tag = ITA
 		}
 	}
+	is_triggered_only = yes
 	
-	mean_time_to_happen = {
-		days = 1
-	}
+	#mean_time_to_happen = {
+	#	days = 1
+	#}
 	
 	option = {
 		name = "italic_league.9.a"
@@ -628,5 +609,82 @@ country_event = {
 			who = FROM
 			modifier = generous_donation
 		}
+	}
+}
+
+country_event = {
+	id = italic_league.11
+	title = none
+	desc = none
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = none
+		
+		add_prestige = 100
+		if = {
+			limit = {
+				NOT = {
+					primary_culture = venetian
+				}
+			}
+			change_tag = ITA
+			every_province = {
+				limit = {
+					OR = {
+						culture_group = latin
+						
+					}
+					continent = europe
+				}
+				add_permanent_claim = ITA
+			}
+		}
+		if = {
+			limit = {
+				primary_culture = venetian
+			}
+			change_tag = VIY
+			every_province = {
+				limit = {
+					OR = {
+						culture_group = latin
+						
+					}
+					continent = europe
+				}
+				add_permanent_claim = VIY
+			}
+		}
+		if = {
+			limit = {
+				primary_culture = monegasque
+			}
+			change_tag = MIT
+			every_province = {
+				limit = {
+					OR = {
+						culture_group = latin
+						
+					}
+					continent = europe
+				}
+				add_permanent_claim = MIT
+			}
+		}
+		if = {
+			limit = {
+				is_core = 118
+			}
+			set_capital = 118
+		}
+		if = {
+			limit = { has_custom_ideas = no }
+			country_event = { id = ideagroups.1 } #Swap Ideas
+		}
+		swap_non_generic_missions = yes
+		set_country_flag = formed_italy_flag
 	}
 }

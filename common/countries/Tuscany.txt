@@ -2,7 +2,7 @@
 
 graphical_culture = italianategfx
 
-color = { 84  96  136 } 
+color = { 76 89 78 } 
 revolutionary_colors = { 14  0  14 }
 
 historical_score = 75

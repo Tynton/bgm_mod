@@ -19,12 +19,18 @@ country_decisions = {
 			NOT = { exists = BFR }
 			NOT = { exists = BUP }
 			NOT = { exists = BFE }
+			NOT = { exists = FRW }
 			NOT = { tag = FAN }
 			NOT = { tag = PAP }
 			NOT = { tag = SPA }		# Basque is a valid culture for both FRA and SPA
 			OR = {
 				ai = no
-				NOT = { exists = FRA }
+				NOT = {
+					OR = {
+						exists = FRA
+						exists = FRW
+					}
+				}
 			}
 			OR = {
 				culture_group = french
@@ -117,7 +123,12 @@ country_decisions = {
 				}
 				change_tag = BFR
 			}
-
+			every_province = {
+				limit = {
+					is_core = FRA
+				}
+				add_core = ROOT
+			}
 			if = {
 				limit = {
 					NOT = { culture_group = french }
@@ -161,4 +172,40 @@ country_decisions = {
 		}
 	}
 	
+	french_aesthetic = {
+		potential = {
+			tag = FRA
+			always = no
+		}
+		allow = {
+			tag = FRA
+		}
+		effect = {
+			custom_tooltip = fra_custom
+			hidden_effect = {
+				change_tag = FRW
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	revert_aesthetic = {
+		potential = {
+			tag = FRW
+			always = no
+		}
+		allow = {
+			tag = FRW
+		}
+		effect = {
+			custom_tooltip = fra_vanilla
+			hidden_effect = {
+				change_tag = FRA
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
 }

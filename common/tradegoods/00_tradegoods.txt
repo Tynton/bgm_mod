@@ -1923,13 +1923,13 @@ coal = {
 	trigger = {
 		OR = {
 			development_discounting_tribal = 20
-			owner = { innovativeness = 20 }
+			owner = { innovativeness = 25 }
+			owner = { has_institution = industrialization }
 		}
 		provincial_institution_progress = {
-			which = enlightenment
+			which = industrialization
 			value = 100
 		}
-		owner = { has_institution = enlightenment }
 	}
 	
 	modifier = {
@@ -1937,7 +1937,7 @@ coal = {
 	}
 	
 	province = {
-		local_state_maintenance_modifier = -0.2
+		local_development_cost_modifier = -0.1
 	}
 
 	chance = {

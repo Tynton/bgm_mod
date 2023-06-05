@@ -64,7 +64,7 @@
 4111 = "Mediolanum Santonum"  #Saintes (Santonum?)
 4112 = "Cadurcum"
 202 = "Avenio"
-4947 = { "Valentia" "Valentia Julia" }
+#4947 = { "Valentia" "Valentia Julia" }
 4944 = "Bonna"
 4950 = "Assindia"
 

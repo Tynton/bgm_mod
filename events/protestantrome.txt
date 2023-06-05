@@ -5,6 +5,8 @@ country_event = {
 	title = "protestantrome.n.1"
 	desc = "protestantrome.d.1"
 	picture = ANGRY_MOB_eventPicture
+
+	fire_only_once = yes
 	
 	hidden = yes
 

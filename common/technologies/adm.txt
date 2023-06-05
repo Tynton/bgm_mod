@@ -327,7 +327,7 @@ technology = { #Land Clearance
 	}
 	
 	#Land Clearance
-	production_efficiency 	=	0.01
+	production_efficiency 	=	0.02
 	furnace = yes
 }
 
@@ -399,7 +399,7 @@ technology = { #Improved Production
 	}
 	
 	#Improved Farm Animals
-	production_efficiency 	=	0.01
+	production_efficiency 	=	0.03
 }
 
 technology = { #Separation of Powers
@@ -455,7 +455,7 @@ technology = { #Rotherham Plough
 	}
 	
 	#Rotherham Plough
-	production_efficiency 	=	0.01
+	production_efficiency 	=	0.05
 }
 
 technology = { #Rights of Man
@@ -475,7 +475,7 @@ technology = { #Rights of Man
 	allowed_idea_groups = 8
 	enlightened_despotism = yes
 	bureaucratic_despotism = yes
-	development_cost_modifier = -0.02
+	development_cost_modifier = -0.05
 	tax_center = yes
 }
 
@@ -495,8 +495,8 @@ technology = { #Advanced Production
 	}
 	
 	#Improved Draft Animals
-	production_efficiency =	0.02
-	development_cost_modifier = -0.03
+	production_efficiency =	0.05
+	development_cost_modifier = -0.05
 	allowed_idea_groups = 9
 	factory_infrastructure = yes
 }
@@ -519,9 +519,10 @@ technology = { #Revolutionary Ideals
 	
 	revolutionary_republic = yes
 	revolutionary_empire = yes
+	administrative_efficiency = 0.05
 	governing_capacity = 200
 	#coal_plant = yes
-	development_cost_modifier = -0.02
+	#development_cost_modifier = -0.02
 }
 
 technology = { #Four Field Rotation
@@ -540,7 +541,7 @@ technology = { #Four Field Rotation
 		nationalism_institution = 0.0
 	}	
 	#Four field rotation
-	production_efficiency 	=	0.01
+	production_efficiency 	=	0.05
 }
 
 technology = {
@@ -561,7 +562,7 @@ technology = {
 
 	#Railroad
 	
-	production_efficiency  = 0.01
+	production_efficiency  = 0.05
 	#railroad = yes
 	allowed_idea_groups = 10
 }
@@ -583,7 +584,7 @@ technology = {
 	}
 
 	#Secularism
-	administrative_efficiency = 0.02
+	administrative_efficiency = 0.1
 	allowed_idea_groups = 11
 }
 
@@ -606,7 +607,7 @@ technology = {
 
 	#Universal Suffrage
 	governing_capacity = 250
-	development_cost_modifier = -0.03
+	development_cost_modifier = -0.1
 	#civil_factory = yes
 	allowed_idea_groups = 12
 }
@@ -629,7 +630,8 @@ technology = {
 	}
 
 	#phone
-	development_cost_modifier = -0.02
+	
+	administrative_efficiency = 0.1
 	allowed_idea_groups = 13
 	#mil_harbor = yes
 }
@@ -652,7 +654,8 @@ technology = {
 	}
 
 	#Assembly Line
-	production_efficiency = 0.01
+	production_efficiency = 0.1
+	development_cost_modifier = -0.1
 }
 
 technology = {
@@ -676,7 +679,8 @@ technology = {
 	#Progressivism
 	governing_capacity = 300
 	allowed_idea_groups = 14
-	administrative_efficiency = 0.03
+	administrative_efficiency = 0.1
+	production_efficiency = 0.15
 }
 
 technology = {
@@ -698,7 +702,8 @@ technology = {
 	}
 
 	#Electrification
-	development_cost_modifier = -0.02
+	production_efficiency = 0.15
+	development_cost_modifier = -0.1
 	#aluminium_smelter = yes
 	allowed_idea_groups = 15
 }
@@ -723,8 +728,8 @@ technology = {
 	}
 
 	#Fascism
-	development_cost_modifier = -0.03
-	#administrative_efficiency = 0.1
+	production_efficiency = 0.2
+	administrative_efficiency = 0.1
 }
 
 technology = {
@@ -747,6 +752,7 @@ technology = {
 	}
 
 	#Modern Administration
+	production_efficiency = 0.25
 	governing_capacity = 500
 	#administrative_efficiency = 0.1
 }
@@ -771,6 +777,7 @@ technology = {
 	}
 
 	#decolonization age
+	production_efficiency = 0.25
 }
 
 technology = {
@@ -793,6 +800,7 @@ technology = {
 	}
 
 	#nukes and stuff
+	development_cost_modifier = -0.1
 	governing_capacity = 500
 	#nuclear_reactor = yes
 	#uranium_mine = yes
@@ -820,7 +828,7 @@ technology = {
 	
 	#modern media
 	allowed_idea_groups = 16
-	development_cost_modifier = -0.02
+	#development_cost_modifier = -0.02
 	governing_capacity = 500
 }
 
@@ -845,8 +853,8 @@ technology = {
 	}
 	
 	#development of computing technology
-	production_efficiency = 0.01
-	development_cost_modifier = -0.03
+	production_efficiency = 0.3
+	#development_cost_modifier = -0.03
 	#administrative_efficiency = 0.1
 }
 
@@ -871,7 +879,7 @@ technology = {
 	}
 	
 	#development of computing technology
-	development_cost_modifier = -0.01
+	development_cost_modifier = -0.1
 	#administrative_efficiency = 0.2
 	governing_capacity = 1000
 }
@@ -946,7 +954,7 @@ technology = {
 	}
 	
 	#Mobile Devices
-	production_efficiency = 0.03
+	production_efficiency = 0.35
 }
 
 technology = {
@@ -970,6 +978,6 @@ technology = {
 	}
 	
 	#Commercialized Space Travel
-	development_cost_modifier = -0.02
-	production_efficiency = 0.03
+	development_cost_modifier = -0.1
+	production_efficiency = 0.4
 }

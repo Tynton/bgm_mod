@@ -1,5 +1,27 @@
 ﻿l_english:
 
+ ability_mobilization_mechanic:0 "National Mobilization"
+ 
+ monthly_mobilized_society:0 "Monthly National Mobilization Percentage"
+
+ mechanic_mobilized_society_yes:0 "Enables the §YMobilization§! Mechanic."
+ mechanic_mobilized_society_no:0 "Disables the §YMobilization§! Mechanic."
+ 
+ boost_mobilization:0 "Increase National Mobilization"
+ boost_mobilization_desc:0 "We will direct our administration toward expanding conscription for the military. Whether it be on the production front or frontlines is irrelevant to us."
+ 
+ mobilized_society:0 "National Mobilization"
+ mobilized_society_gain_modifier:0 "Increased Mobilization"
+ mobilized_society_desc:0 "Mobilization refers to the amount of human and capital our country has invested for wartime use."
+
+ populism_foreignpol:0 "Populist Foreign Policy"
+ populism_foreignpol_desc:0 "Populist Foreign Policy"
+ 
+ chauvinism:0 "Chauvinism"
+ chauvinism_desc:0 "Chauvinism"
+
+
+
  communist_govt_name:0 "Collectivist Government"
  communist_govt_desc:0 "Collectivist Government"
  fascist_government_name:0 "Reactionary Government"
@@ -8,21 +30,27 @@
  democracy_govt_desc:0 "Liberal Government"
  
  fascist_government_reform:0 "Reactionary Government"
+ fascist_government_reform_desc:0 "Reactionary Governments are a family of ideologies united under the purpose of destroying the current status quo in favor of returning to an old one."
  fascist_monarchism:0 "Reactionary Monarchy"
+ fascist_monarchism_desc:0 "Reactionary Monarchism seeks to unite around a monarchichal dynasty to operate at least as a figurehead but could also place the responsibility on the ruler operate as a functioning head of state unlike liberal monarchies."
  revolutionary_fascism:0 "Revolutionary Fascism"
  national_socialism:0 "National Socialist Government"
+ national_socialism_desc:0 "National Socialism's roots could be traced back to Pan-Germanist philosophers prior to the First World War. They operated in France mostly but upon defeat in the First World War the Germanic populace sought to rationalize their defeat and learn of what they perceive as a new way to govern themselves. By syncretizing traditions with new ideas a new ideology was born - National Socialism."
  strasserist_fascism:0 "Strasserist Government"
+ strasserist_fascism_desc:0 "A more hardline version of National Socialism in favor of left-wing economic policy. Strasserists seek to unite the Germanic peoples under socialism in earnest. Their philosophy may be likened to that of fascism in general: One people, One Ruler, One Realm."
  futurism:0 "Futurist Government"
  italian_fascism:0 "Italian Fascism"
- rexism:0 "Rexism (Catholic)"
- austrofascism:0 "Austrofascism (Catholic)"
- falanghism:0 "Falanghism (Catholic)"
+ italian_fascism:0 "Italian Fascism was brought into being slowly by rifts in the Communist movements in Italy. First an intermediary of the Futurist cultural movement was brought into being but Benito Mussolini elected to transform his beliefs - most likely to align better with the Italian public - to a form of totalitarian conservatism. Thus, Italian Fascism was brought into being."
+ rexism:0 "Rexism"
+ rexism_desc:0 "Rexism could be simplified into two things: Ardent support for Catholic traditionalism and Corporatism. They, like other fascists, despised both communism and capitalism. It was founded in Belgium as an ultranationalist unity party to maintain a marriage of sorts with the Flemish and Walloon populations."
+ austrofascism:0 "Austrofascism"
+ falanghism:0 "Falanghism"
  
- maintain_oligarchic_principle:0 "Maintain the Old Elite"
- maintain_oligarchic_principle_desc:0 "Maintain the Old Elite"
+ maintain_oligarchic_principle:0 "Syncretized Philosophies"
+ maintain_oligarchic_principle_desc:0 "The way forward is to unite the beliefs of the Enlightenment with the philosophies considered conservative to our republic."
  
  enlightened_republicanism_principle:0 "Enlightened Republicanism"
- enlightened_republicanism_principle_desc:0 "Enlightened Republicanism"
+ enlightened_republicanism_principle_desc:0 "Our ruling class will seek to espouse the ideals of the Enlightenment wherever possible."
  
  enlightened_monarchy_principles:0 "Liberalizing Monarchy"
  enlightened_monarchy_principles_desc:0 "In the olden days there were three forces in society struggling for dominion: Clergy, Nobility, and the Crown. Others may be tempted to fall into the trap of absolutism but we prove ourselves better. We can create a duality of parliament and king so our populace will be happy."
@@ -31,15 +59,21 @@
  traditionalist_principles_desc:0 "The Enlightenment has informed the basis of justifying absolutist monarchism with new, progressive rhetoric. Instead of relying purely on the old order for the regime's support, we can appeal to the public instead. The reigning monarchy will have no restraints like nobility or clerical orders hindering its convictions."
  
  revolutionary_hre_reform:0 "Revolutionary Holy Roman Empire"
- revolutionary_hre_reform_desc:0 "Revolutionary Holy Roman Empire"
+ revolutionary_hre_reform_desc:0 "To paint a façade of liberalism may be considered crucial to the success story of the Holy Roman Empire in our day. Though this may not be enough; some of the revolutionaries won't stop until it (the symbol of the old order as it is) is destroyed."
  
  dem_reform_monarchy:0 "Liberal Monarchism"
- dem_reform_monarchy_desc:0 "Liberal Monarchism"
+ dem_reform_monarchy_desc:0 "Monarchies under the Liberal ideology consign most of the Executive authority away from the monarch to a Prime Minister. In essence they may be considered functionally republics but are not always beholden to elections for the executive branch the same way actual republics are."
  dem_reform_republic:0 "Liberal Republicanism"
- dem_reform_republic_desc:0 "Liberal Republicanism"
+ dem_reform_republic_desc:0 "The logical conclusion to what was once the ideology of the Revolution but is now considered by most the axis of which the left and right wings orbit around. Liberal Republicanism is usually brought into being by malcontents with an old monarchy. This does not always need to be the case, however."
  
  dem_ideology:0 "Democratic Ideology"
  dem_ideology_desc:0 "Democratic Ideology" 
+ 
+ ex_revolutionary:0 "Legacy of the Revolution"
+ ex_revolutionary_desc:0 "Our country was once home to a revolution successful in permeating greater society with its ideals. As such any successive liberal regimes pay service to these traditions. The people made their voice heard; they take primacy in politics."
+ 
+ ex_revolutionary_target:0 "Legacy of the Revolution"
+ ex_revolutionary_target_desc:0 "Our country was once home to a revolution successful in permeating greater society with its ideals. As such any successive liberal regimes pay service to these traditions. The people made their voice heard; they take primacy in politics."
  
  suppress_nationalism:0 "Suppress Foreign Nationalism"
  suppress_nationalism_desc:0 "Suppress Foreign Nationalism"
@@ -92,8 +126,8 @@
  dem_soi_expansionism_reform:0 "Expansion of Democracy"
  dem_soi_expansionism_reform_desc:0 "Expansion of Democracy"
  
- parliamentary_republic_reform:0 "Parliamentary Republic"
- parliamentary_republic_reform_desc:0 "Parliamentary Republic"
+ parliamentary_republic_reform_bgm:0 "Parliamentary Republic"
+ parliamentary_republic_reform_bgm_desc:0 "Parliamentary Republic"
  parliamentary_monarchism:0 "Parliamentary Monarchy"
  parliamentary_monarchism_desc:0 "Parliamentary Monarchy"
  liberal_dictatorship:0 "Liberal Dictatorship"
@@ -181,11 +215,11 @@
  international_reputation:0 "Outward Reputations"
  
  commercial_nation:0 "Commercial Nation"
- commercial_nation_desc:0 "Commercial Nation"
+ commercial_nation_desc:0 "As a free society it stands to reason that we are most interested in enriching our realm. Trade competition is all well and good also but in trying times it is money that secures continued prosperity."
  vanguard_of_democracy:0 "Bastion of Liberalism"
- vanguard_of_democracy_desc:0 "Bastion of Liberalism"
+ vanguard_of_democracy_desc:0 "It is our duty to make certain the primacy of liberal ideology by spreading it elsewhere in the world. Dictators of the world will be threatened but also maintain awe at the superiority of free society."
  diplomatic_isolationism:0 "Diplomatic Isolationism"
- diplomatic_isolationism_desc:0 "Diplomatic Isolationism"
+ diplomatic_isolationism_desc:0 "We are not interested in the affairs of other states. We will instead endorse a policy of inward perfection and as liberals we will ensure our continued existence with extensive use of the common man's purpose in the militia to deter potential aggressors."
  
  
  
@@ -389,7 +423,7 @@
  
  socialist_expansionist_bureaucracy:0 "Socialist-Expansionist Bureaucracies"
  socialist_economic_bureau:0 "Socialist Economic Bureaucracies"
- colossal_bureaucracy:0 "Socialist Colossal Bureaucracies"
+ colossal_bureaucracy:0 "Expansive Bureaucracies"
  
  socialist_electorate:0 "Collectivist Electorate"
  

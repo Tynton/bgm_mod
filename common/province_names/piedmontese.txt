@@ -4,6 +4,8 @@
 103 = "Turin"
 4727 = "Salusse"
 
+5092 = { "Osta" "Val d'Osta" }
+
 116 = { "Firense" "Fiorensa" }
 104 = "Milan"
 112 = "Venessia"

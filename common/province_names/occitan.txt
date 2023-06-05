@@ -24,7 +24,7 @@
 
 195 = "Lemosin"
 200 = "Montpelhièr"
-4992 = "Dunquèrca"
+4951 = "Dunquèrca"
 203 = "Lyons" #Lió (Catalan)
 192 = "Dijon"
 184 = "Orléans"
@@ -216,7 +216,6 @@
 75 = { "Estrasborg" "Estrasburg" }
 85 = "Colonha"
 1878 = "Aquisgran"
-4992 = "Dunquèrca"
 186 = "Rems"
 4390 = "Tròias"
 189 = "Nancí"
@@ -315,7 +314,8 @@
 170 = "Brèst"
 89 = "Amians"
 177 = "Lo Mans"
-5102 = "Arcaishon"
+5084 = "Arcaishon"
+5085 = "Los Uèris"
 4389 = "Tors"
 1749 = "Cadis"
 207 = "Astúrias"
@@ -334,4 +334,6 @@
 
 4964 = "Frejús"
 
-4947 = "Valença"
+4947 = "Anecí"
+
+179 = "Barric"

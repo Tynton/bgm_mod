@@ -454,9 +454,8 @@ invite_dynasty = {
 			}
 		}
 		FROM = {
-			government = monarchy
-			regency_council = no
-			has_consort_regency = no
+			#government = monarchy #testing without this restriction for funzies
+			has_regency = no
 			marriage_with = ROOT
 			#NOT = {
 			#	prestige = ROOT
@@ -515,6 +514,14 @@ invite_dynasty = {
 
 		set_ruler_flag = invited_dynasty
 
+		hidden_effect = {
+			country_event = {
+				id = BGM_DYNASTIC.19
+				days = 27375 #75 years
+			}
+			set_country_flag = invited_dynasty_root
+		}
+
 		define_heir = {
 			dynasty = FROM
 			religion = FROM
@@ -555,8 +562,12 @@ invite_dynasty = {
 		add_truce_with = FROM
 	}
 	ai_will_do = {
+		dynasty_is_alone = yes
 		has_heir = no
-		ruler_age = 50
+		OR = {
+			ruler_age = 45 #50
+			ruler_has_personality = infertile_personality
+		}
 		OR = {
 			AND = {
 				is_great_power = yes
@@ -1527,6 +1538,7 @@ demand_integration = {
 				}	
 			}
 		}
+		NOT = { has_country_flag = demand_annex }
 		NOT = { FROM = { OR = { tag = PAP tag = NTI } } }
 		NOT = { has_country_modifier = demanded_integration }
 		is_subject = no
@@ -1548,14 +1560,17 @@ demand_integration = {
 					is_subject_of = ROOT
 				}
 			}
-			NOT = {
-				any_ally = {
-					army_strength = {
-						who = ROOT
-						value = 0.5
+			OR = {
+				NOT = {
+					any_ally = {
+						army_strength = {
+							who = ROOT
+							value = 0.5
+						}
+						total_development = ROOT
 					}
-					total_development = ROOT
 				}
+				NOT = { num_of_allies = 1 }
 			}
 		}
 	}
@@ -1845,6 +1860,13 @@ demand_integration = {
 	}
 	on_accept = {
 
+		hidden_effect = {
+			country_event = {
+				id = BGM_DIPLOMACY.26
+				days = 9125
+			}
+		}
+
 		if = {
 			limit = {
 				FROM = {
@@ -2111,8 +2133,8 @@ leave_gercon = {
 		NOT = {
 			any_neighbor_country = {
 				OR = {
-					has_subject_of_type = gercon_member
-					is_subject_of_type = gercon_member
+					has_subject_of_type = german_confederation_member
+					is_subject_of_type = german_confederation_member
 				}
 			}
 		}
@@ -2152,7 +2174,7 @@ join_zollverein = {
 		}
 		add_entry = {
 			name = DEFAULT_BGM
-			always = yes
+			ai = yes
 			export_to_variable = { which = ai_value value = 5 }
 		}
 		add_entry = {
@@ -2248,7 +2270,7 @@ join_gercon = {
 	on_accept = {
 		FROM = {
 			create_subject = {
-				subject_type = zollverein
+				subject_type = german_confederation_member
 				subject = ROOT
 			}
 		}
@@ -2385,11 +2407,9 @@ influence_ideology = {
 			}
 			FROM = {
 				add_country_modifier = {
-					add_country_modifier = { 
-						name = fascist_influence
-						duration = 1825
-						hidden = yes
-					}
+					name = fascist_influence
+					duration = 1825
+					hidden = yes
 				}
 			}
 		}
@@ -2401,12 +2421,10 @@ influence_ideology = {
 				}
 			}
 			FROM = {
-				add_country_modifier = {
-					add_country_modifier = { 
-						name = futurist_influence
-						duration = 1825
-						hidden = yes
-					}
+				add_country_modifier = { 
+					name = futurist_influence
+					duration = 1825
+					hidden = yes
 				}
 			}
 		}
@@ -2418,12 +2436,10 @@ influence_ideology = {
 				}
 			}
 			FROM = {
-				add_country_modifier = {
-					add_country_modifier = { 
-						name = communist_influence
-						duration = 1825
-						hidden = yes
-					}
+				add_country_modifier = { 
+					name = communist_influence
+					duration = 1825
+					hidden = yes
 				}
 			}
 		}

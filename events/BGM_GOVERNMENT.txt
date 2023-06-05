@@ -42,7 +42,7 @@ country_event = {
 		name = "BGM_GOV.2.b"
 		
 		change_government = democracy_govt
-		add_government_reform = parliamentary_republic_reform
+		add_government_reform = parliamentary_republic_reform_bgm
 
 		ai_chance = {
 			factor = 1

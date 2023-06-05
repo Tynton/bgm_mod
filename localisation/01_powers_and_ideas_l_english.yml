@@ -406,6 +406,11 @@
  napoleonic_tactics_desc:0 "Napoléon Bonaparte has been considered by many one of the greatest political leaders and military commanders of our era. With creative thinking and political power this type of individual can leverage great power in favor of the French people against their enemies around the continent."
  european_ambitions:0 "European Ambitions"
  european_ambitions_desc:0 "It is our duty to spread the values of the Revolution to all four corners of Europe. Vive la France."
+ 
+ BFR_ideas:0 "Gaulish Ideas"
+ BFR_ideas_start:0 "Gaulish Traditions"
+ BFR_ideas_bonus:0 "Gaulish Ambition"
+ 
 
  
  ANA_ideas:0 "---"

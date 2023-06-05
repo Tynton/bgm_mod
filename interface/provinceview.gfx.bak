@@ -998,7 +998,7 @@ spriteTypes = {
 		noOfFrames = 42
 		loadType = "INGAME"
 		
-		allwaystransparent = yes
+		alwaystransparent = yes
 	}
 
 	spriteType = {

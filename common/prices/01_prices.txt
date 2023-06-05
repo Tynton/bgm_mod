@@ -5,15 +5,15 @@
 # Base resources
 
 rubber = {
-	base_price = 4.5
+	base_price = 7.5
 }
 
 oil = {
-	base_price = 5
+	base_price = 7.5
 }
 
 uranium = {
-	base_price = 8
+	base_price = 10
 }
 
 tungsten = {
@@ -41,5 +41,5 @@ automobile = {
 }
 
 cinema = {
-	base_price = 8
+	base_price = 10
 }

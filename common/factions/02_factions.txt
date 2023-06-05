@@ -40,7 +40,7 @@ fr_national_socialists = {
 
 	modifier = 
 	{
-		culture_conversion_cost = -0.5
+		culture_conversion_cost = -0.1
 		manpower_recovery_speed = 0.3
 		discipline = 0.05
 		diplomatic_reputation = -1

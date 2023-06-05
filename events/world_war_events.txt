@@ -320,3 +320,169 @@ country_event = {
 		clr_global_flag = world_war_ongoing
 	}
 }
+
+####################PRE WORLD WAR DIPLOMACY####################
+
+#Concert of Europe
+
+country_event = {
+	id = world_war_events.7
+	title = "world_war_events.n.7"
+	desc = "world_war_events.d.7"
+	picture = DAWNING_ERA_eventPicture
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			every_country = {
+				limit = {
+					capital_scope = {
+						continent = ROOT
+					}
+				}
+				country_event = {
+					id = world_war_events.8
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "world_war_events.7.a"
+
+		set_global_flag = concert_continent
+		
+		country_event = {
+			id = world_war_events.8
+		}
+	}
+}
+
+country_event = {
+	id = world_war_events.8
+	title = "world_war_events.n.8"
+	desc = "world_war_events.d.8"
+	picture = DAWNING_ERA_eventPicture
+	
+	#major = yes #Everyone votes yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "world_war_events.8.a" #Join
+
+		set_country_flag = observing_peace
+
+		if = {
+			limit = { 
+				is_revolutionary = yes
+			}
+			add_country_modifier = {
+				name = revolutionary_peace
+				duration = -1
+			}
+		}
+
+		if = {
+			limit = { 
+				is_revolutionary = no
+			}
+			add_country_modifier = {
+				name = traditionalist_peace
+				duration = -1
+			}
+		}
+		
+		ai_chance = { factor = 1 }
+	}
+	
+	option = {
+		name = "world_war_events.8.b" #Don't
+
+		add_country_modifier = {
+			name = not_observing
+			duration = -1
+		}
+	
+		set_country_flag = no_lol
+
+		ai_chance = { factor = 0 }
+	}
+}
+
+country_event = {
+	id = world_war_events.9
+	title = "world_war_events.n.9"
+	desc = "world_war_events.d.9"
+	picture = DAWNING_ERA_eventPicture
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			every_country = {
+				limit = {
+					capital_scope = {
+						continent = ROOT
+					}
+					NOT = { tag = ROOT }
+				}
+				country_event = {
+					id = world_war_events.8
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "world_war_events.9.a"
+
+		set_global_flag = continental_sys
+		
+		add_country_modifier = {
+			name = ideological_primacy
+			duration = 45625
+		}
+	}
+}
+
+
+#Breakdown of the Peace
+country_event = {
+	id = world_war_events.10
+	title = "world_war_events.n.10"
+	desc = "world_war_events.d.10"
+	picture = MIL_ADVANCE_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		has_institution = electrification
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = {
+		name = "world_war_events.10.a"
+
+		clr_global_flag = concert_continent
+		clr_global_flag = continental_sys
+
+		hidden_effect = {
+			every_country = {
+				remove_country_modifier = not_observing
+				remove_country_modifier = revolutionary_peace
+				remove_country_modifier = traditionalist_peace
+			}
+		}
+		
+		ai_chance = { factor = 1 }
+	}
+}

@@ -24,12 +24,12 @@
 # It will still check whether it can afford a building before doing so though, but may save up to it.
 
 factory_infrastructure = {
-	cost = 800
+	cost = 2000
 	time = 24
 	
 	modifier = {
-		local_production_efficiency = 1.5
-		local_manpower_modifier = 0.5
+		local_production_efficiency = 1.25
+		local_manpower_modifier = 0.33
 	}
 
 	make_obsolete = counting_house
@@ -40,7 +40,7 @@ factory_infrastructure = {
 		add_development_from_building = {
 			building = factory_infrastructure
 			type = production
-			value = 4
+			value = 3
 		}
 		if = {
 			limit = {
@@ -62,7 +62,7 @@ factory_infrastructure = {
 		remove_development_from_building = {
 			building = factory_infrastructure
 			type = production
-			value = 4
+			value = 3
 		}
 		remove_province_modifier = factory_dev
 	}
@@ -70,24 +70,48 @@ factory_infrastructure = {
 	}
 
 	ai_will_do = {
-		factor = 50
-		
+		factor = 5
+
 		modifier = {
-			factor = 200
-			owner = {
-				tag = JAP
+			factor = 2
+			OR = {
+				trade_goods = iron
+				trade_goods = cloth
+				trade_goods = cloves
+				trade_goods = silk
+				trade_goods = dyes
+				trade_goods = paper
+				trade_goods = coal
+				trade_goods = cotton
+				trade_goods = cinema
+				trade_goods = fur
+				trade_goods = gems
+				trade_goods = ivory
+				trade_goods = oil
+				trade_goods = rubber
+				trade_goods = sugar
+				trade_goods = steel
+				trade_goods = tobacco
 			}
-			is_institution_enabled = industrialization
+		}
+
+		modifier = {
+			factor = 0.1
+			owner = {
+				NOT = {
+					production_income_percentage = 0.33
+				}
+			}
 		}
 	}
 }
 
 tax_center = {
-	cost = 500
+	cost = 1500
 	time = 12
 	modifier = {
 		local_tax_modifier = 1.0
-		local_governing_cost = -0.25
+		local_development_cost = -0.1
 	}
 
 	make_obsolete = cathedral
@@ -96,7 +120,7 @@ tax_center = {
 		add_development_from_building = {
 			building = tax_center
 			type = tax
-			value = 4
+			value = 3
 		}
 		if = {
 			limit = {
@@ -118,19 +142,30 @@ tax_center = {
 		remove_development_from_building = {
 			building = tax_center
 			type = tax
-			value = 4
+			value = 3
 		}
 		remove_province_modifier = tax_dev
 	}
 	
 	ai_will_do = {
-		factor = 50
-		
+		factor = 5
+
 		modifier = {
-			factor = 100
-			#owner = {
-			#	bgm_comgovt = yes
-			#}
+			factor = 0.25
+
+			owner = {
+				OR = {
+					production_income_percentage = 0.4
+					trade_income_percentage = 0.4
+				}
+			}
+		}
+
+		modifier = {
+			factor = 8
+			owner = {
+				tax_income_percentage = 0.33
+			}
 		}
 	}
 }

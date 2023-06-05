@@ -22,9 +22,7 @@ cb_conquer_natives = {
 				technology_group = aboriginal_tech
 				technology_group = polynesian_tech
 			}
-			any_neighbor_country = { 
-				tag = ROOT
-			} 
+			is_neighbor_of = ROOT
 		}
 	}
 

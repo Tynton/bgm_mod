@@ -103,7 +103,7 @@ trade_company_english_channel = {
 		90 1744 1865 #flanders_area
 		4769 4770 1742
 		
-		4948 4951 4962 4963 4964 4965
+		4948 4951 4962 4963 4964 4965 5086 5088
 	}
 	
 	# Specific
@@ -131,6 +131,7 @@ trade_company_bordeaux = {
 		4694 4697 4777 # new for 1.30
 		
 		4949 4957 5076
+		5084 5093
 	}
 	
 	# Specific
@@ -201,6 +202,7 @@ trade_company_champagne = {
 		203 204 205 4719 #savoy_dauphine_area
 		4720 4721 4764 4766 
 		4947 4961 5075
+		5081 5082 5083 5087 5089 5090 5091 5097
 	}
 	
 	# Specific
@@ -226,10 +228,11 @@ trade_company_genua = {
 		201 202 2991 #provence_area
 		4696  # new for 1.30
 		4727 4735 4736 4737 # also new for 1.30, but this time it's in Italy
-		118 2976 4731 4732 # lazio-umbria
+		
 		
 		104 1862 2979 4728 4740 # Lombardy
 		4946 4959
+		5085 5092
 	}
 	
 	# Specific
@@ -271,7 +274,7 @@ trade_company_rheinland = {
 		4714 4718 4715 4716 4717 71 69
 		4722 4765 4767 4768 4774 4775
 		
-		4944 4950 4956
+		4944 4950 4956 5094 5095
 	}
 	
 	# Specific
@@ -312,7 +315,7 @@ trade_company_wien = {
 		265 4237 4726 # Moravia
 		266 2967 2968 2970 4724 4725
 		267 1771
-		4955
+		4955 5096
 	}
 	
 	# Specific

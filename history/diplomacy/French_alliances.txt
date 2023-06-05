@@ -1,31 +1,17 @@
 ## Restored French vassals 1.30 ##
 
 # France-Orleans
-vassal = {
+dependency = {
+	subject_type = appanage
 	first = FRA
 	second = ORL
 	start_date = 1444.1.1
 	end_date = 1532.8.3
 }
 
-#France-Dauphine
-vassal = {
-	first = FRA
-	second = DAU
-	start_date = 1444.1.1
-	end_date = 1532.8.3
-}
-
-#France-Berry
-vassal = {
-	first = FRA
-	second = BER
-	start_date = 1444.1.1
-	end_date = 1532.8.3
-}
-
 # France-Armagnac
-vassal = {
+dependency = {
+	subject_type = appanage
 	first = FRA
 	second = AMG
 	start_date = 1444.1.1
@@ -33,7 +19,8 @@ vassal = {
 }
 
 # France-Auvergne
-vassal = {
+dependency = {
+	subject_type = appanage
 	first = FRA
 	second = AUV
 	start_date = 1444.1.1
@@ -41,7 +28,8 @@ vassal = {
 }
 
 # France-Foix
-vassal = {
+dependency = {
+	subject_type = appanage
 	first = FRA
 	second = FOI
 	start_date = 1444.1.1
@@ -49,9 +37,55 @@ vassal = {
 }
 
 # France-Bourbon
-vassal = {
+dependency = {
+	subject_type = appanage
 	first = FRA
 	second = BOU
+	start_date = 1444.1.1
+	end_date = 1532.8.3
+}
+
+# France-Berry
+dependency = {
+	subject_type = appanage
+	first = FRA
+	second = BER
+	start_date = 1444.1.1
+	end_date = 1532.8.3
+}
+
+# France-Vendome
+dependency = {
+	subject_type = appanage
+	first = FRA
+	second = VNE
+	start_date = 1444.1.1
+	end_date = 1532.8.3
+}
+
+# France-Nemours
+dependency = {
+	subject_type = appanage
+	first = FRA
+	second = NEM
+	start_date = 1444.1.1
+	end_date = 1532.8.3
+}
+
+# France-Limoges
+dependency = {
+	subject_type = appanage
+	first = FRA
+	second = LIM
+	start_date = 1444.1.1
+	end_date = 1532.8.3
+}
+
+# France-Sancerre
+dependency = {
+	subject_type = appanage
+	first = FRA
+	second = SNC
 	start_date = 1444.1.1
 	end_date = 1532.8.3
 }
@@ -61,10 +95,11 @@ vassal = {
 
 # France-Andorra (Co-Prince system)
 
-union = {
+dependency = {
+	subject_type = personal_union
 	first = FOI
 	second = ADO
-	start_date = 1396.1.1
+	start_date = 1444.1.1
 	end_date = 2044.1.1
 }
 
@@ -130,31 +165,37 @@ alliance = {
 }
 
 # Lorraine, a French vassal
-vassal = {
+dependency = {
+	subject_type = appanage
 	first = FRA
-	second = LOR
+	second = NRM
 	start_date = 1641.1.1
-	end_date = 1670.1.1
+	end_date = 1670.8.3
 }
 
 # Normandy, a French vassal
-vassal = {
+
+dependency = {
+	subject_type = appanage
 	first = FRA
 	second = NRM
-	start_date = 1465.8.15
-	end_date = 1466.3.6
+	start_date = 1465.1.1
+	end_date = 1532.8.3
 }
 
 # Nevers, a French vassal
-vassal = {
+dependency = {
+	subject_type = appanage
 	first = FRA
 	second = NEV
 	start_date = 1465.1.1
-	end_date = 1539.1.1
+	end_date = 1539.8.3
 }
 
 # The Batavian Republic & later the kingdom of Holland
-vassal = {
+
+dependency = {
+	subject_type = sister_republic
 	first = FRA
 	second = NED
 	start_date = 1795.1.19
@@ -250,15 +291,18 @@ alliance = {
 }
 
 # The Confederation of the Rhine
-vassal = {
+
+dependency = {
+	subject_type = sister_republic
 	first = FRA
 	second = BAV
 	start_date = 1806.7.25
 	end_date = 1813.1.1	# Bavaria switches side
 }
-
 # Confederation of the Rhine
-vassal = {
+
+dependency = {
+	subject_type = sister_republic
 	first = FRA
 	second = BAD
 	start_date = 1806.7.26
@@ -266,7 +310,8 @@ vassal = {
 }
 
 # Confederation of the Rhine
-vassal = {
+dependency = {
+	subject_type = sister_republic
 	first = FRA
 	second = HES
 	start_date = 1806.7.25
@@ -274,7 +319,8 @@ vassal = {
 }
 
 # Confederation of the Rhine
-vassal = {
+dependency = {
+	subject_type = sister_republic
 	first = FRA
 	second = ANH
 	start_date = 1806.7.25
@@ -282,7 +328,8 @@ vassal = {
 }
 
 # Confederation of the Rhine
-vassal = {
+dependency = {
+	subject_type = sister_republic
 	first = FRA
 	second = MAI
 	start_date = 1797.12.26
@@ -290,7 +337,8 @@ vassal = {
 }
 
 # Confederation of the Rhine
-vassal = {
+dependency = {
+	subject_type = sister_republic
 	first = FRA
 	second = FRN
 	start_date = 1810.1.1
@@ -298,7 +346,8 @@ vassal = {
 }
 
 # Confederation of the Rhine
-vassal = {
+dependency = {
+	subject_type = sister_republic
 	first = FRA
 	second = WUR
 	start_date = 1806.7.25
@@ -306,7 +355,8 @@ vassal = {
 }
 
 # Confederation of the Rhine
-vassal = {
+dependency = {
+	subject_type = sister_republic
 	first = FRA
 	second = WBG
 	start_date = 1806.9.15
@@ -314,7 +364,8 @@ vassal = {
 }
 
 # Confederation of the Rhine
-vassal = {
+dependency = {
+	subject_type = sister_republic
 	first = FRA
 	second = SAX
 	start_date = 1806.12.15
@@ -322,7 +373,8 @@ vassal = {
 }
 
 # Confederation of the Rhine
-vassal = {
+dependency = {
+	subject_type = sister_republic
 	first = FRA
 	second = MKL
 	start_date = 1806.12.15
@@ -330,7 +382,8 @@ vassal = {
 }
 
 # Confederation of the Rhine
-vassal = {
+dependency = {
+	subject_type = sister_republic
 	first = FRA
 	second = WES
 	start_date = 1807.7.9
@@ -338,7 +391,8 @@ vassal = {
 }
 
 # Confederation of the Rhine
-vassal = {
+dependency = {
+	subject_type = sister_republic
 	first = FRA
 	second = THU
 	start_date = 1806.10.14
@@ -594,7 +648,7 @@ alliance = {
 }
 
 # The Cispadane Rebublic
-vassal = {
+appanage = {
 	first = FRA
 	second = MOD
 	start_date = 1796.10.16
@@ -602,7 +656,8 @@ vassal = {
 }
 
 # The Transpadane Rebublic
-alliance = {
+dependency = {
+	subject_type = personal_union
 	first = FRA
 	second = MLO
 	start_date = 1796.10.16
@@ -610,7 +665,8 @@ alliance = {
 }
 
 # The Transpadane Rebublic
-vassal = {
+dependency = {
+	subject_type = sister_republic
 	first = FRA
 	second = MLO
 	start_date = 1796.11.15
@@ -618,7 +674,8 @@ vassal = {
 }
 
 # The Cisalpine Rebublic, later the Kingdom of Italy
-vassal = {
+dependency = {
+	subject_type = personal_union
 	first = FRA
 	second = ITA
 	start_date = 1797.6.29
@@ -642,7 +699,8 @@ union = {
 }
 
 # Etruria and France
-vassal = {
+dependency = {
+	subject_type = vassal
 	first = FRA
 	second = ETR
 	start_date = 1801.3.21
@@ -650,7 +708,8 @@ vassal = {
 }
 
 # Cleves and France
-vassal = {
+dependency = {
+	subject_type = vassal
 	first = FRA
 	second = KLE
 	start_date = 1806.7.12
@@ -658,7 +717,7 @@ vassal = {
 }
 
 # Poland and France
-#vassal = {
+#appanage = {
 #	first = FRA
 #	second = POL
 #	start_date = 1807.7.9
@@ -666,7 +725,7 @@ vassal = {
 #}
 
 # Danzig and France
-vassal = {
+sister_republic = {
 	first = FRA
 	second = DNZ
 	start_date = 1807.7.9
@@ -690,7 +749,8 @@ union = {
 }
 
 # Spain during Joseph Bonaparte's rule
-vassal = {
+dependency = {
+	subject_type = vassal
 	first = FRA
 	second = SPA
 	start_date = 1808.6.6
@@ -698,7 +758,8 @@ vassal = {
 }
 
 # Naples
-vassal = {
+dependency = {
+	subject_type = vassal
 	first = FRA
 	second = NAP
 	start_date = 1806.3.11

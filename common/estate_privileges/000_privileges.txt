@@ -40,12 +40,17 @@ estate_nobles_french_strong_duchies = {
 			vassal = 2
 		}
 	}
+	on_granted = {
+	}
 	penalties = {
 		reform_progress_growth = -0.25
+		stability_cost_modifier = 0.25
+		monthly_splendor = -1
 	}
 	benefits = {
-		diplomatic_upkeep = 4
 		reduced_liberty_desire_on_same_continent = 25
+		vassal_forcelimit_bonus = 0.25
+		vassal_income = 0.25
 	}
 	ai_will_do = {
 		factor = 2
