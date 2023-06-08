@@ -107,14 +107,83 @@
 
  emp_ger_hlr_three_emperors_title:0 "Three Emperors"
  emp_ger_hlr_three_emperors_desc:0 "The League of the Three Emperors was a tripartite alliance mediated by Germany between it, Austria and Russia. A competent statesman is needed to ensure its continued existence and diplomatic security for Germany to pursue its interests."
-
-#Italy
-
  emp_ger_hlr_italy_ally_title:0 "Alliance with Italy"
  emp_ger_hlr_italy_ally_desc:0 "We can consider the Italian nation as a viable opportunity for an alliance. A vast navy paired with excellent defensive terrain. Against our enemies they would prove invaluable."
+
+#Italy
  
+ bgm_proclaim_italy_title:0 "Proclaim Italian Nation"
+
+ bgm_roman_question_title:0 "The Roman Question"
+
+ bgm_ita_mil_strength_title:0 "Grande Armata"
  
+ bgm_ita_great_power_title:0 "Among the Great Powers"
  
+ ally_trust_ita:0 "Every ally of ours gets §G25§! trust toward us."
  
+ bgm_ita_consolidated_govt_title:0 "Consolidated Government"
+ 
+ bgm_ita_navy_title:0 "The Reggia Marina"
+ bgm_ita_navy_desc:0 "From Roman times our territory has known complete dominion over the Mediterranean in one form or another. If not for glory, then for security do we have a rationale to bring about a sizeable naval presence to guard our coastlines."
+ 
+ bgm_ita_quality_navy_title:0 "A Quality Navy"
+ bgm_ita_quality_navy_desc:0 "Our navy has been built up to an appropriate size. What we need now is experience in modern naval warfare and commerce protection so Italy is no longer threatened by maritime attack."
+ 
+ ita_mare_nostrum_tooltip:0 "We will gain access to the §TMare Nostrum§! Naval Doctrine."
+
+ bgm_ita_carniola_title:0 "Seize Trieste"
+ bgm_ita_carniola_desc:0 "Trieste, Istria and other parts of western Slovenia have maintained intimate histories with the Italian people. Now we have constructed a stable Italian state it's time to review the potentials to restore western Carniola to Italian control."
+ 
+ bgm_ita_language_title:0 "A National Language"
+ bgm_ita_language_desc:0 "Nationalism has been brewing throughout Europe and we are in a position to use this sentiment to further our national stability. Let us convene a council to decide which of our dialects we will use going forward in the national language curriculum."
+
+ 
+
+ ita_branch_mission_2_title:0 "Branching Mission"
+ ita_branch_mission_2_desc:0 ""
+ ita_branch_mission_4_title:0 "Branching Mission"
+ ita_branch_mission_4_desc:0 ""
+ 
+ ita_branch_mission_expansionism_title:0 "New Colonies"
+ ita_branch_mission_expansionism_desc:0 "A colonial empire must begin somewhere. Others may have America, but we don't need it. Our domain is the Mediterranean, and we will begin expanding into the most convenient locations. The controllers of Libya and Greece need to fear the new great Italian state."
+ 
+ ita_branch_mission_tall_title:0 "Italian Industry"
+ ita_branch_mission_tall_desc:0 "Other countries like the Netherlands and England have large textile industries. There is no reason Italy cannot follow in their wake or even better - surpass them. To this end our government has authorized the expansion of cities in the Italian mainland for the reason of economic prosperity."
+ 
+ bgm_ita_fight_austria_title:0 "Address Austria"
+ bgm_ita_fight_austria_desc:0 "Austria has been either a thorn in our side or a potential alliance opportunity. Whatever the case may be it's worth considering the value of the territories either in an amicable arrangement or by way of conquest."
+ 
+ ita_libya:0 "We may choose to expand our domain outward and gain claims on §YLibya§! and §YGreece§! and potentially branch outward into Africa."
+ ita_play_tall_navy:0 "Otherwise, we can choose to build our naval infrastructure up so we can exercise greater indirect influence over the §YMediterranean.§!"
+ fate_hab_mission:0 "Depending on our response to this mission we will receive a mission requiring control of §YCarniola§! or a mission to focus our efforts elsewhere."
+ ita_trieste:0 "If we complete the previous mission by fighting Austria we will gain claims on §YTrieste§! or (TODO)"
+ 
+
+
+
+
+ ita_new_nation:0 "Young Italy"
+
+ bgm_ita_rome_nation_rev:0 "Revolutionary Italy"
+ bgm_ita_rome_rev:0 "Rome in the Revolution"
+ bgm_ita_rome_nation_atheist:0 "Secular Italy"
+ bgm_ita_rome_atheist:0 "Secular Rome"
+ bgm_ita_rome_nation_pagan:0 "Pagan Italy"
+ bgm_ita_rome_pagan:0 "Pagan Rome"
+ bgm_ita_rome_nation_catholic:0 "Religious Italy"
+ bgm_ita_rome_catholic:0 "Rome: Seat of the Papacy"
+ bgm_ita_rome_nation_prot:0 "Reformist Italy"
+ bgm_ita_rome_prot:0 "Rome: Seat of the Reformation"
+ 
+ ita_liberalism:0 "Liberal Italy"
+ ita_revolutionary:0 "Revolutionary Italy"
+ ita_absolutism:0 "Absolutist Italy"
+ 
+ ita_play_tall:0 "Devotee to Industry"
+ 
+ bgm_ita_language:0 "Compulsory Linguistic Education"
+ 
+ bgm_ita_scary_navy:0 "Powerful Navy"
  
  

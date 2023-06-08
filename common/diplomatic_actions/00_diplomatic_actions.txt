@@ -555,6 +555,18 @@ allianceaction = {
 		}
 	}
 
+	condition = { #don't ally too weak countries
+		potential = {
+			ai = yes
+		}
+		allow = {
+			army_strength = {
+				who = ROOT
+				value = 0.4
+			}
+		}
+	}
+
 	condition = {
 		tooltip = PIRATE_DENIED_ALLIANCE
 		potential = {

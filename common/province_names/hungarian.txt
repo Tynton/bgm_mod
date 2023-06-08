@@ -179,7 +179,7 @@
 #5095 = "Kassa"
 #5096 = "Zsolna"
 #5097 = "Besztercebánya"
-5099 = "Toketerebes"
+#5099 = "Toketerebes"
 5100 = "Alsókubin"
 
 4752 = "Fiume"

@@ -2538,6 +2538,26 @@
  italic_league.10.a:0 "We are grateful for their gift."
  
  
+ 
+ 
+ 
+ 
+ BGM_ITA_missions.n.1:0 "The Italian Linguistic Question"
+ BGM_ITA_missions.d.1:0 "We have at long last agglomerated the once disparate states into an Italian nation-state. Celebrations occur throughout our great nation but a government council has convened to answer the question: What dialect of Italian should be used in the government apparatus?"
+ 
+ BGM_ITA_missions.1.a:0 "It is only logical to use that of our ancestors."
+ BGM_ITA_missions.1.b:0 "Dante's poetry in the Divine Comedy. The spirit of the early Renaissance."
+ BGM_ITA_missions.1.c:0 "The once great commercial state of Venice is owed our veneration."
+ BGM_ITA_missions.1.d:0 "The Lombards have shown us the way to the future. Their industrial potential is unmatched."
+ BGM_ITA_missions.1.e:0 "The Neapolitan history tells us the tale of once-oppressed peoples gaining liberty."
+
+ BGM_ITA_missions.n.2:0 "The Destiny of Italy"
+ BGM_ITA_missions.d.2:0 "A crucial moment has came in our nation's history. We are at liberty to decide whether we wish to direct our focus inward and develop our country's industry to contest the other great nations of Europe or will we expand our dominion south and east to strike back at the scourge of Europe?"
+ 
+ BGM_ITA_missions.2.a:0 "We will see Islam driven back from whence they came."
+ BGM_ITA_missions.2.b:0 "We will see our great nation contest the other forces of our continent."
+ 
+ 
  TEST_EVENTS.23.t:0 "Montjoie ! Saint Denis !"
  TEST_EVENTS.23.d:0 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
  

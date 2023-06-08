@@ -113,3 +113,12 @@ bgm_building_owner = {
 		years_of_income = 0.4
 	}
 }
+
+bgm_building_vat = {
+	variable_arithmetic_trigger = {
+		export_to_variable = {
+			value = modifier:local_build_cost
+			variable_name = localbuildcost
+		}
+	}
+}

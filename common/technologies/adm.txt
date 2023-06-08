@@ -46,6 +46,7 @@ technology = { #Feudal Monarchy
 
 	#Monarchies
 	governing_capacity = 100
+	
 	despotic_monarchy = yes	
 	feudal_monarchy = yes
 	oligarchic_republic = yes

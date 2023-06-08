@@ -70,6 +70,7 @@ italy_region = {
 		venetia_area
 		lombardy_area
 		piedmont_area
+		north_tuscan_area
 		tuscany_area
 		liguria_area
 		corsica_sardinia_area

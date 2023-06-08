@@ -5623,6 +5623,32 @@ on_gain_great_power_status = {
 		}
 		set_country_flag = became_great_power_flag
 	}
+
+	if = {
+		limit = {
+			any_ally = {
+				ai = yes
+				NOT = {
+					army_strength = {
+						who = ROOT
+						value = 0.4
+					}
+				}
+			}
+		}
+		every_ally = {
+			limit = {
+				ai = yes
+				NOT = {
+					army_strength = {
+						who = ROOT
+						value = 0.4
+					}
+				}
+			}
+			break_alliance = ROOT
+		}
+	}
 }
 
 # country
@@ -6002,7 +6028,7 @@ on_province_owner_change = {
 				has_global_flag = mod_ital
 			}
 		}
-		change_province_name = "Fiorenze"
+		change_province_name = "Firenze"
 	}
 
 	#French bugfixing
@@ -7742,7 +7768,15 @@ on_dip_tech_taken = { #ROOT - Country, executed after on_tech_taken!
 }
 
 on_mil_tech_taken = { #ROOT - Country, executed after on_tech_taken!
-
+	if = {
+		limit = {
+			mil_tech = 32
+			NOT = { mil_tech = 42 }
+		}
+		country_event = {
+			id = artillery_modernization.1
+		}
+	}
 } 
 
 on_barrage = { #ROOT - barraging country, FROM - barraged province 

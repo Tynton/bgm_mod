@@ -106,6 +106,7 @@ country_decisions = {
 						area = piedmont_area
 						area = lombardy_area
 						area = liguria_area
+						area = north_tuscan_area
 						area = tuscany_area
 						area = emilia_romagna_area
 						area = venetia_area

@@ -428,7 +428,7 @@
 #5095 = "Kaschau"
 #5096 = "Sillein"
 #5097 = "Altsohl"
-5099 = "Trebischau"
+#5099 = "Trebischau"
 5100 = "Unterkubin"
 
 5241 = "Laibach"

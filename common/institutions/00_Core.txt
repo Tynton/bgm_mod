@@ -454,6 +454,7 @@ renaissance = {
 			potential = {
 				OR = {
 					area = flanders_area
+					area = north_tuscan_area
 					area = tuscany_area
 					area = venetia_area
 				}
@@ -462,6 +463,7 @@ renaissance = {
 				tooltip = tooltip_flanders_tuscany_venetia
 				OR = {
 					area = flanders_area
+					area = north_tuscan_area
 					area = tuscany_area
 					area = venetia_area
 				}

@@ -1,2 +1,2 @@
-116 = { " Fiorenze" " Fiorenza" }
+116 = { "Fiorenza" "Firenze" }
 112 = "Vinegia"

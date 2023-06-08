@@ -15,6 +15,28 @@ country_event = {
 	option = {
 		name = "AI_GameStart.1.a"
 
+		if = { #build two extra heavies
+			ENG = { 
+				ai = yes 
+				any_owned_province = {
+					has_port = yes
+				}
+			}
+			add_treasury = -100
+			random_owned_province = {
+				limit = { has_port = yes }
+				ROOT = {
+					heavy_ship = PREV
+				}
+			}
+			random_owned_province = {
+				limit = { has_port = yes }
+				ROOT = {
+					heavy_ship = PREV
+				}
+			}
+		}
+
 		if = { #in 1.35 England appears to get rather powerful, Burgundy has no ambitions to conquer Castile in mission trees that I am aware of
 			limit = {
 				CAS = {

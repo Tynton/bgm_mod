@@ -1,0 +1,966 @@
+emp_ita_unification_branch = {
+	slot = 3
+	generic = no
+	ai = yes
+	
+	potential_on_load = {
+		
+	}
+	potential = {
+		
+		OR = {
+			tag = ITA
+			tag = VIY
+			tag = MIT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	
+	has_country_shield = yes
+
+	bgm_proclaim_italy = {
+		icon = invade_egypt
+		position = 1
+		required_missions = {  }
+		
+		provinces_to_highlight = {
+			owned_by = ROOT
+			unrest = 1
+		}
+		trigger = {
+			stability = 2
+			NOT = {
+				any_owned_province = {
+					unrest = 1
+				}
+			}
+		}
+		effect = {
+			add_prestige = 50
+			add_splendor = 200
+
+			add_country_modifier = {
+				name = ita_new_nation
+				duration = 12045
+			}
+		}
+	}
+	
+	bgm_roman_question = {
+		icon = mission_early_modern_university
+		position = 2
+		required_missions = { bgm_proclaim_italy }
+
+		provinces_to_highlight = {
+			province_id = 118
+			province_id = 4956
+		}
+		
+		trigger = {
+			owns = 118
+			owns = 4956
+
+			118 = {
+				NOT = { unrest = 1 }
+			}
+
+			OR = {
+				AND = {
+					is_revolutionary = yes
+					stability = 2
+					revolutionary_zeal = 75
+				}
+				AND = {
+					is_revolutionary = no
+					religion_group = atheist_group
+					stability = 2
+				}
+				AND = {
+					NOT = {
+						OR = {
+							religion_group = christian
+							religion_group = atheist_group
+						}
+					}
+					118 = {
+						religion = ROOT
+					}
+				}
+				AND = {
+					OR = {
+						religion = catholic
+						religion = fraticelli
+					}
+					OR = {
+						is_papal_controller = yes
+						papal_influence = 100
+					}
+				}
+				AND = {
+					religion_group = christian
+					NOT = {
+						OR = {
+							religion = catholic
+							religion = fraticelli
+						}
+					}
+					OR = {
+						estate_loyalty = {
+							estate = estate_church
+							loyalty = 75
+						}
+						fervor = 100
+						church_power = 100
+					}
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			if = {
+				limit = { 
+					is_revolutionary = yes
+					stability = 2
+					revolutionary_zeal = 75
+				}
+				add_country_modifier = {
+					name = bgm_ita_rome_nation_rev
+					duration = 12045
+				}
+				118 = {
+					add_province_modifier = {
+						name = bgm_ita_rome_rev
+						duration = -1
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					is_revolutionary = no
+					religion_group = atheist_group
+					stability = 2
+				}
+				add_country_modifier = {
+					name = bgm_ita_rome_nation_atheist
+					duration = 18250
+				}
+				118 = {
+					add_province_modifier = {
+						name = bgm_ita_rome_atheist
+						duration = -1
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							religion_group = christian
+							religion_group = atheist_group
+						}
+					}
+					118 = {
+						religion = ROOT
+					}
+				}
+				add_country_modifier = {
+					name = bgm_ita_rome_nation_pagan
+					duration = 9125
+				}
+				118 = {
+					add_province_modifier = {
+						name = bgm_ita_rome_pagan
+						duration = 9125
+					}
+				}
+			}
+
+			if = {
+				limit = { 
+					OR = {
+						religion = catholic
+						religion = fraticelli
+					}
+					is_papal_controller = yes
+				}
+				add_country_modifier = {
+					name = bgm_ita_rome_nation_catholic
+					duration = 12045
+				}
+				118 = {
+					add_province_modifier = {
+						name = bgm_ita_rome_catholic
+						duration = -1
+					}
+				}
+			}
+
+			if = {
+				limit = { 
+					religion_group = christian
+					NOT = {
+						OR = {
+							religion = catholic
+							religion = fraticelli
+						}
+					}
+					OR = {
+						estate_loyalty = {
+							estate = estate_church
+							loyalty = 75
+						}
+						fervor = 100
+						church_power = 100
+					}
+				}
+				add_country_modifier = {
+					name = bgm_ita_rome_nation_prot
+					duration = 12045
+				}
+				118 = {
+					add_province_modifier = {
+						name = bgm_ita_rome_prot
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+
+	emp_ita_complete_the_risorgimento = {
+		icon = complete_the_risorgimento
+		position = 3
+		required_missions = { bgm_roman_question bgm_ita_great_power bgm_ita_mil_strength }
+		
+		provinces_to_highlight = {
+			region = italy_region
+			NOT = { owned_by = ROOT }
+			NOT = { area = sicily_area }
+			NOT = { area = western_sicily_area }
+			NOT = { area = western_mediterrenean_area }
+		}
+		trigger = {
+			italy_region = {
+				type = all
+				culture_group = ROOT
+				owned_by = ROOT
+				NOT = { area = sicily_area }
+				NOT = { area = western_sicily_area }
+				NOT = { area = western_mediterrenean_area }
+			}
+		}
+		effect = {
+			add_stability_or_adm_power = yes
+			add_legitimacy_equivalent = yes
+
+			country_event = {
+				id = BGM_ITA_missions.2
+			}
+		}
+	}
+
+	bgm_ita_language = {
+		icon = claim_tirol
+		position = 4
+		required_missions = { emp_ita_complete_the_risorgimento }
+		
+		trigger = {
+			has_institution = compulsory_education
+			prestige = 0
+			stability = 1
+			legitimacy_equivalent = 75
+		}
+		effect = {
+			add_country_modifier = {
+				name = bgm_ita_language
+				duration = 9125
+			}
+			country_event = {
+				id = BGM_ITA_missions.1
+			}
+		}
+	}
+
+	#Government
+	bgm_ita_consolidated_govt = {
+		icon = give_him_back_his_legions
+		position = 8
+		required_missions = { }
+		
+		trigger = {
+			OR = {
+				has_parliament = yes
+				is_revolutionary = yes
+				absolutism = 90
+			}
+			reform_level = 10
+			stability = 0
+			NOT = { governing_capacity_percentage = 1 }
+		}
+		effect = {
+			if = {
+				limit = {
+					is_revolutionary = no
+					has_parliament = yes
+					NOT = { absolutism = 90 }
+				}
+				add_country_modifier = {
+					name = ita_liberalism
+					duration = 9125
+				}
+				set_country_flag = ita_lib
+			}
+			if = {
+				limit = {
+					is_revolutionary = yes
+				}
+				add_country_modifier = {
+					name = ita_revolutionary
+					duration = 9125
+				}
+				set_country_flag = ita_rev
+			}
+			if = {
+				limit = {
+					absolutism = 90
+				}
+				add_country_modifier = {
+					name = ita_absolutism
+					duration = 9125
+				}
+				set_country_flag = ita_abs
+			}
+			change_government_reform_progress = 100
+		}
+	}
+}
+
+bgm_ita_mil_branch = {
+	slot = 2
+	generic = no
+	ai = yes
+	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = ITA
+			tag = VIY
+			tag = MIT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	
+	has_country_shield = yes
+
+	bgm_ita_mil_strength = {
+		icon = mission_assemble_an_army
+		position = 2
+		required_missions = { bgm_proclaim_italy }
+		
+		trigger = {
+			OR = {
+				army_size_percentage = 0.8
+				AND = {
+					NOT = {
+						any_rival_country = {
+							army_strength = {
+								who = ROOT
+								value = 0.5
+							}
+						}
+					}
+					NOT = {
+						any_neighbor_country = {
+							army_strength = {
+								who = ROOT
+								value = 0.5
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { 
+					government = monarchy 
+					is_emperor_of_china = no
+				}
+				add_legitimacy = 10
+			}
+			else_if = {
+				limit = { 
+					is_emperor_of_china = yes
+				}
+				add_meritocracy = 10
+			}
+			else_if = {
+				limit = { government = republic }
+				add_republican_tradition = 10
+			}
+			else_if = {
+				limit = { 
+					government = theocracy 
+					has_dlc = "Common Sense"
+				}
+				add_devotion = 10
+			}
+			else = {
+				add_prestige = 10
+			}
+		}
+	}
+
+	bgm_ita_fight_austria = {
+		icon = humiliate_austria
+		position = 4
+		required_missions = { emp_ita_complete_the_risorgimento }
+		
+		trigger = {
+			OR = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = HAB
+					duration = 1095
+				}
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = AHU
+					duration = 1095
+				}
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = AUE
+					duration = 1095
+				}
+				alliance_with = HAB
+				alliance_with = AHU
+				alliance_with = AUE
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						alliance_with = HAB
+						alliance_with = AHU
+						alliance_with = AUE
+					}
+				}
+				set_country_flag = friendly_hab
+				add_dip_power = 100
+				add_country_modifier = {
+					name = ita_hab_ally
+					duration = 5475
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						is_in_war = {
+							attacker_leader = ROOT
+							defender_leader = HAB
+							duration = 1095
+						}
+						is_in_war = {
+							attacker_leader = ROOT
+							defender_leader = AHU
+							duration = 1095
+						}
+						is_in_war = {
+							attacker_leader = ROOT
+							defender_leader = AUE
+							duration = 1095
+						}
+					}
+				}
+				set_country_flag = enemy_hab
+				carinthia_area = {
+					add_permanent_claim = ROOT
+				}
+				add_country_modifier = {
+					name = ita_hab_kill
+					duration = 5475
+				}
+				add_mil_power = 100
+				power_projection = 25
+			}
+			add_prestige = 20
+
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = fate_hab_mission
+		}
+	}
+}
+
+bgm_ita_dip_branch = {
+	slot = 4
+	generic = no
+	ai = yes
+	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = ITA
+			tag = VIY
+			tag = MIT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	
+	has_country_shield = yes
+
+	bgm_ita_great_power = {
+		icon = a_place_among_the_great_powers
+		position = 2
+		required_missions = { bgm_proclaim_italy }
+		
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			owner = {
+				is_great_power = yes
+			}
+			is_capital = yes
+		}
+		
+		trigger = {
+			is_great_power = yes
+			OR = {
+				any_ally = { is_great_power = yes }
+				NOT = {
+					great_power_rank = 5
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = ally_trust_ita
+			hidden_effect = {
+				every_ally = {
+					add_trust = {
+						who = ROOT
+						value = 25
+					}
+				}
+			}
+			add_prestige = 25
+			add_splendor = 100
+		}
+	}
+}
+
+bgm_ita_hidden_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		OR = {
+			tag = ITA
+			tag = VIY
+			tag = MIT
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = {
+			OR = {
+				has_country_flag = friendly_hab
+				has_country_flag = enemy_hab
+			}
+		}
+	}
+
+	ita_branch_mission_2 = { #Trieste or ?
+		icon = mission_unknown_mission
+		required_missions = { bgm_ita_fight_austria }
+		
+		position = 5
+		trigger = { 
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = { 
+			custom_tooltip = ita_trieste
+		}
+	}
+}
+
+bgm_ita_fight_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		OR = {
+			tag = ITA
+			tag = VIY
+			tag = MIT
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = enemy_hab
+	}
+
+	bgm_ita_carniola = {
+		icon = take_the_littoral
+		position = 5
+		required_missions = { bgm_ita_fight_austria }
+
+		provinces_to_highlight = {
+			area = carinthia_area
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			calc_true_if = {
+				amount = 3
+				all_province = {
+					area = carinthia_area
+					owned_by = ROOT
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			east_adriatic_coast_area = {
+				add_permanent_claim = ROOT
+			}
+			1826 = { add_permanent_claim = ROOT }
+			4752 = { add_permanent_claim = ROOT }
+		}
+	}
+}
+
+bgm_ita_friend_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		OR = {
+			tag = ITA
+			tag = VIY
+			tag = MIT
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = friendly_hab
+	}
+
+	bgm_ita_friend_hab = {
+		icon = join_the_empire
+		position = 5
+		required_missions = { bgm_ita_fight_austria }
+
+		provinces_to_highlight = {
+			area = carinthia_area
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			
+		}
+		effect = {
+			
+		}
+	}
+}
+
+bgm_ita_hidden_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		OR = {
+			tag = ITA
+			tag = VIY
+			tag = MIT
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = {
+			OR = {
+				has_country_flag = bgm_ita_colonial
+				has_country_flag = bgm_ita_tall
+			}
+		}
+	}
+
+	ita_branch_mission_4 = { #Libya or play tall
+		icon = mission_unknown_mission
+		required_missions = { emp_ita_complete_the_risorgimento bgm_ita_quality_navy }
+		
+		position = 4
+		trigger = { 
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = { 
+			custom_tooltip = ita_libya
+			custom_tooltip = ita_play_tall_navy
+		}
+	}
+}
+
+bgm_ita_expansion_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		OR = {
+			tag = ITA
+			tag = VIY
+			tag = MIT
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = bgm_ita_colonial
+	}
+
+	ita_branch_mission_expansionism = { #Libya & Greece
+		icon = cross_the_pindus
+		required_missions = { emp_ita_complete_the_risorgimento bgm_ita_quality_navy }
+		position = 4
+
+		trigger = { 
+			
+		}
+		effect = {
+
+		}
+	}
+}
+
+bgm_ita_tall_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		OR = {
+			tag = ITA
+			tag = VIY
+			tag = MIT
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = bgm_ita_tall
+	}
+
+	ita_branch_mission_tall = {
+		icon = mission_found_havana
+		required_missions = { emp_ita_complete_the_risorgimento bgm_ita_quality_navy }
+		position = 4
+
+		trigger = { 
+			
+		}
+		effect = {
+
+		}
+	}
+}
+
+emp_ita_development_branch = {
+	slot = 1
+	generic = no
+	ai = yes
+	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = ITA
+			tag = VIY
+			tag = MIT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	
+	has_country_shield = yes
+
+	bgm_ita_big_cities = {
+		icon = prosperity_for_all
+		position = 1
+		required_missions = {  }
+
+		provinces_to_highlight = {
+			owned_by = ROOT
+			province_has_center_of_trade_of_level = 1
+		}
+		
+		trigger = {
+			calc_true_if = {
+				amount = 5
+				all_owned_province = {
+					province_has_center_of_trade_of_level = 3
+					num_of_buildings_in_province = 5
+					NOT = { devastation = 15 }
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ita_italian_prosperity
+				duration = 7300
+			}
+		}
+	}
+
+	bgm_ita_defensive = {
+		icon = alpine_defenses
+		position = 3
+		required_missions = { bgm_ita_big_cities }
+
+		provinces_to_highlight = {
+			owned_by = ROOT
+			OR = {
+				area = venetia_area
+				area = tirol_area
+				area = lombardy_area
+				area = piedmont_area
+				area = po_valley_area
+				area = liguria_area
+			}
+			NOT = { fort_level = 2 }
+		}
+		
+		trigger = {
+			calc_true_if = {
+				amount = 5
+				all_owned_province = {
+					OR = {
+						area = venetia_area
+						area = tirol_area
+						area = lombardy_area
+						area = piedmont_area
+						area = po_valley_area
+						area = liguria_area
+					}
+					fort_level = 2
+				}
+			}
+		}
+		effect = {
+			add_stability = 1
+		}
+	}
+
+	bgm_ita_savoy = {
+		icon = spagna_tarraconense
+		position = 5
+		required_missions = { bgm_ita_defensive bgm_ita_fight_austria }
+
+		provinces_to_highlight = {
+			owned_by = ROOT
+			OR = {
+				area = provence_area
+				province_id = 204
+				province_id = 205
+				province_id = 4719
+				province_id = 4720
+			}
+		}
+		
+		trigger = {
+			calc_true_if = {
+				amount = 8
+				all_owned_province = {
+					OR = {
+						area = provence_area
+						province_id = 204
+						province_id = 205
+						province_id = 4719
+					}
+				}
+			}
+			provence_area = { owned_by = ROOT }
+			204 = { owned_by = ROOT }
+			205 = { owned_by = ROOT }
+			4719 = { owned_by = ROOT }
+		}
+		effect = {
+			
+		}
+	}
+}
+
+emp_ita_naval_branch = {
+	slot = 5
+	generic = no
+	ai = yes
+	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = ITA
+			tag = VIY
+			tag = MIT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	
+	has_country_shield = yes
+
+	bgm_ita_navy = {
+		icon = a_worthy_navy
+		position = 1
+		required_missions = {  }
+		
+		trigger = {
+			navy_size_percentage = 0.9
+		}
+		effect = {
+			set_country_flag = mare_nostrum
+			custom_tooltip = ita_mare_nostrum_tooltip
+		}
+	}
+
+	bgm_ita_quality_navy = {
+		icon = imperial_navy
+		position = 3
+		required_missions = { bgm_ita_navy }
+		
+		trigger = {
+			OR = {
+				navy_tradition = 50
+				has_leader_with = {
+					admiral = yes
+					total_pips = 14
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = bgm_ita_scary_navy
+				duration = -1
+			}
+		}
+	}
+}

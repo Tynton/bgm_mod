@@ -1,0 +1,127 @@
+namespace = BGM_ITA_missions
+
+
+#Completed Risorgimento, linguistic question
+
+country_event = {
+	id = BGM_ITA_missions.1
+	title = "BGM_ITA_missions.n.1"
+	desc = "BGM_ITA_missions.d.1"
+	picture = ST_PETERS_CHURCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_ITA_missions.1.a"
+	}
+
+	option = {
+		name = "BGM_ITA_missions.1.b"
+
+		trigger = {
+			NOT = { primary_culture = tuscan }
+		}
+		
+		change_primary_culture = tuscan
+
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = "BGM_ITA_missions.1.c"
+
+		trigger = {
+			NOT = { primary_culture = venetian }
+		}
+		
+		change_primary_culture = venetian
+
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = "BGM_ITA_missions.1.d"
+		
+		trigger = {
+			NOT = { primary_culture = lombard }
+		}
+
+		change_primary_culture = lombard
+
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = "BGM_ITA_missions.1.e"
+
+		trigger = {
+			NOT = { primary_culture = neapolitan }
+		}
+		
+		change_primary_culture = neapolitan
+
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = BGM_ITA_missions.2
+	title = "BGM_ITA_missions.n.2"
+	desc = "BGM_ITA_missions.d.2"
+	picture = ST_PETERS_CHURCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_ITA_missions.2.a"
+		set_country_flag = bgm_ita_colonial
+		northern_greece_area = {
+			add_permanent_claim = ROOT
+		}
+		morea_area = {
+			add_permanent_claim = ROOT
+		}
+		tripolitania_area = {
+			add_permanent_claim = ROOT
+		}
+		djerba_area = {
+			add_permanent_claim = ROOT
+		}
+		320 = { add_permanent_claim = ROOT }
+		321 = { add_permanent_claim = ROOT }
+	}
+
+	option = {
+		name = "BGM_ITA_missions.2.b"
+		set_country_flag = bgm_ita_tall
+		add_country_modifier = {
+			name = ita_play_tall
+			duration = 9125
+		}
+
+		if = {
+			limit = { 
+				owns = 116 #Florence
+			}
+			116 = { change_trade_goods = cloth }
+		}
+		if = {
+			limit = { 
+				owns = 112 #Venice
+			}
+			112 = { change_trade_goods = cloth }
+		}
+	}
+
+	after = {
+		swap_non_generic_missions = yes
+	}
+}

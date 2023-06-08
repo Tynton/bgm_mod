@@ -6,116 +6,111 @@ namespace = artillery_modernization
 		desc = "artillery_modernization.d.1"
 		picture = MIL_ADVANCE_eventPicture
 
-		trigger = {
-			mil_tech = 32
-			NOT = { has_country_modifier = artillery_one }
-		}	
-
-		mean_time_to_happen = {
-			months = 4
-		}
+		is_triggered_only = yes
 	
 		option = {
 			name = "artillery_modernization.1.a"
-			add_country_modifier = {
-				name = "artillery_one"
-				duration = -1
+
+			if = {
+				limit = {
+					mil_tech = 32
+					NOT = { has_country_modifier = m1 }
+				}
+				add_country_modifier = {
+					name = "m1"
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					mil_tech = 33
+					NOT = { has_country_modifier = m2 }
+				}
+				add_country_modifier = {
+					name = "m2"
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					mil_tech = 34
+					NOT = { has_country_modifier = m3 }
+				}
+				add_country_modifier = {
+					name = "m3"
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					mil_tech = 35
+					NOT = { has_country_modifier = m4 }
+				}
+				add_country_modifier = {
+					name = "m4"
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					mil_tech = 36
+					NOT = { has_country_modifier = m5 }
+				}
+				add_country_modifier = {
+					name = "m5"
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					mil_tech = 37
+					NOT = { has_country_modifier = m6 }
+				}
+				add_country_modifier = {
+					name = "m6"
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					mil_tech = 38
+					NOT = { has_country_modifier = m7 }
+				}
+				add_country_modifier = {
+					name = "m7"
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					mil_tech = 39
+					NOT = { has_country_modifier = m8 }
+				}
+				add_country_modifier = {
+					name = "m8"
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					mil_tech = 40
+					NOT = { has_country_modifier = m9 }
+				}
+				add_country_modifier = {
+					name = "m9"
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					mil_tech = 41
+					NOT = { has_country_modifier = m10 }
+				}
+				add_country_modifier = {
+					name = "m10"
+					duration = -1
+				}
 			}
 		}
 	}
 
-	country_event = {
-		id = artillery_modernization.2
-		title = "artillery_modernization.t.2"
-		desc = "artillery_modernization.d.2"
-		picture = MIL_ADVANCE_eventPicture
-
-		trigger = {
-			mil_tech = 33
-			NOT = { has_country_modifier = artillery_two }
-		}	
-
-		mean_time_to_happen = {
-			months = 4
-		}
-	
-		option = {
-			name = "artillery_modernization.2.a"
-			add_country_modifier = {
-				name = "artillery_two"
-				duration = -1
-			}
-		}
-	}
-
-	country_event = {
-		id = artillery_modernization.3
-		title = "artillery_modernization.t.3"
-		desc = "artillery_modernization.d.3"
-		picture = MIL_ADVANCE_eventPicture
-
-		trigger = {
-			mil_tech = 35
-			NOT = { has_country_modifier = artillery_three }
-		}	
-
-		mean_time_to_happen = {
-			months = 4
-		}
-	
-		option = {
-			name = "artillery_modernization.3.a"
-			add_country_modifier = {
-				name = "artillery_three"
-				duration = -1
-			}
-		}
-	}
-
-	country_event = {
-		id = artillery_modernization.4
-		title = "artillery_modernization.t.4"
-		desc = "artillery_modernization.d.4"
-		picture = MIL_ADVANCE_eventPicture
-
-		trigger = {
-			mil_tech = 37
-			NOT = { has_country_modifier = artillery_four }
-		}	
-
-		mean_time_to_happen = {
-			months = 4
-		}
-		
-		option = {
-			name = "artillery_modernization.4.a"
-			add_country_modifier = {
-				name = "artillery_four"
-				duration = -1
-			}
-		}
-	}
-
-	country_event = {
-		id = artillery_modernization.5
-		title = "artillery_modernization.t.5"
-		desc = "artillery_modernization.d.5"
-		picture = MIL_ADVANCE_eventPicture
-
-		trigger = {
-			mil_tech = 38
-			NOT = { has_country_modifier = artillery_five }
-		}	
-
-		mean_time_to_happen = {
-			months = 4
-		}
-	
-		option = {
-			name = "artillery_modernization.5.a"
-			add_country_modifier = {
-				name = "artillery_five"
-				duration = -1
-			}
-		}
-	}

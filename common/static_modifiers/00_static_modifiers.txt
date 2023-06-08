@@ -97,7 +97,7 @@ difficulty_very_hard_ai = {
 ##########################################################################
 
 city = {
-	local_tax_modifier = 0.25
+	#local_tax_modifier = 0.25
 	allowed_num_of_buildings = 2
 	local_sailors_modifier = 0.25
 	garrison_growth = 0.05
@@ -277,7 +277,7 @@ province_razed = {
 }
 
 development = {
-	local_tax_modifier = 0.03
+	local_tax_modifier = 0.05
 	allowed_num_of_buildings = 0.1
 	supply_limit_modifier = 0.025
 	local_missionary_strength = -0.001
@@ -298,9 +298,9 @@ development_scaled = {
 
 capital_city = {
 	fort_level = 1
-	local_tax_modifier = 0.25
-	local_production_efficiency = 0.25
-	local_manpower_modifier = 0.25
+	local_tax_modifier = 0.33
+	local_production_efficiency = 0.33
+	local_manpower_modifier = 0.33
 }
 
 
@@ -344,9 +344,9 @@ native_aggressiveness = {
 }
 
 core = {
-	local_tax_modifier = 1				#90% more in a core
-	local_manpower_modifier = 0.75			#75% more in a core
-	local_sailors_modifier = 0.75
+	local_tax_modifier = 0.75				#90% more in a core
+	local_manpower_modifier = 0.5			#75% more in a core
+	local_sailors_modifier = 0.5
 }
 
 non_core = {
@@ -363,7 +363,7 @@ colonial_core = {
 }
 
 territory_core = {
-	local_tax_modifier = 0.25				#90% more in a core
+	local_tax_modifier = -0.25				#90% more in a core
 	local_manpower_modifier = 0.75			#75% more in a core
 	local_sailors_modifier = 0.75
 	local_missionary_strength = -0.02
@@ -478,6 +478,8 @@ devastation = {
 prosperity = {
 	local_unrest = -2
 	local_development_cost = -0.1
+	province_trade_power_modifier = 0.1
+	local_institution_spread = 0.25
 	trade_goods_size_modifier = 0.1
 	local_tax_modifier = 0.1
 	local_autonomy = -0.05
@@ -490,7 +492,7 @@ slaves_raided = {
 
 # Multiplied with positive religious tolerance
 tolerance = {
-	local_unrest = -2
+	local_unrest = -1
 }
 
 # Multiplied with negative religious tolerance
@@ -562,6 +564,9 @@ active_missionary = {
 # Core province of the owner's culture group, while fighting a defensive war
 national_defense = {
 	local_unrest = -5
+	local_defensiveness = 0.1
+	local_manpower_modifier = 0.1
+	local_tax_modifier = 0.1
 }
 
 
@@ -2372,8 +2377,9 @@ revolutionary_guard_regiment = {
 innovativeness = {
 	max_revolutionary_zeal = 25
 	max_absolutism = 10
-	technology_cost = -0.033
-	idea_cost = -0.066
+	technology_cost = -0.05
+	idea_cost = -0.1
+	advisor_cost = -0.2
 
 	pl_social_liberal_influence = 0.1
 	dm_social_liberal_influence = 0.1

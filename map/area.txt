@@ -484,7 +484,11 @@ piedmont_area = { #4
 }
 
 tuscany_area = { #5
-	115 116 117 2978 2980
+	116 117 2978
+}
+
+north_tuscan_area = {
+	115 2980 5099
 }
 
 liguria_area = { #3
