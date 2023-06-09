@@ -351,6 +351,12 @@
  
  ita_play_tall:0 "Devotee to Industry"
  
+ bgm_ita_occitania:0 "Occitanian Trade"
+ bgm_ita_constantinople:0 "Byzantine Trade"
+ bgm_ita_alexandria:0 "Egyptian Trade"
+ bgm_apulia_dev:0 "Apulia Ascendant"
+ bgm_liguria_dev:0 "Ligurian Development"
+ 
  bgm_ita_language:0 "Compulsory Linguistic Education"
  
  bgm_ita_scary_navy:0 "Powerful Navy"

@@ -504,6 +504,13 @@ bgm_ita_mil_branch = {
 				alliance_with = HAB
 				alliance_with = AHU
 				alliance_with = AUE
+				NOT = {
+					OR = {
+						exists = HAB
+						exists = AHU
+						exists = AUE
+					}
+				}
 			}
 		}
 		effect = {
@@ -539,6 +546,13 @@ bgm_ita_mil_branch = {
 							attacker_leader = ROOT
 							defender_leader = AUE
 							duration = 1095
+						}
+						NOT = {
+							OR = {
+								exists = HAB
+								exists = AHU
+								exists = AUE
+							}
 						}
 					}
 				}
@@ -1265,17 +1279,16 @@ bgm_ita_tall_slot3_1 = {
 				area = liguria_area
 			}
 			liguria_area = {
-				all_province = {
-					owned_by = ROOT
-					AND = {
-						OR = {
-							has_building = shipyard
-							has_building = grand_shipyard
-						}
-						OR = {
-							has_building = dock
-							has_building = drydock
-						}
+				type = all
+				owned_by = ROOT
+				AND = {
+					OR = {
+						has_building = shipyard
+						has_building = grand_shipyard
+					}
+					OR = {
+						has_building = dock
+						has_building = drydock
 					}
 				}
 			}
@@ -1286,6 +1299,12 @@ bgm_ita_tall_slot3_1 = {
 			}
 		}
 		effect = {
+			liguria_area = {
+				add_province_modifier = {
+					name = bgm_liguria_dev
+					duration = -1
+				}
+			}
 			add_mercantilism = 2
 		}
 	}
@@ -1303,6 +1322,10 @@ bgm_ita_tall_slot3_1 = {
 			}
 		}
 		effect = {
+			add_country_modifier = {
+				name = bgm_ita_occitania
+				duration = -1
+			}
 			add_mercantilism = 5
 		}
 	}
@@ -1374,6 +1397,10 @@ bgm_ita_tall_slot5_1 = {
 			}
 		}
 		effect = {
+			add_country_modifier = {
+				name = bgm_ita_constantinople
+				duration = -1
+			}
 			add_mercantilism = 5
 		}
 	}
@@ -1557,22 +1584,26 @@ bgm_ita_tall_slot4 = {
 				}
 			}
 			apulia_area = {
-				all_province = {
-					owned_by = ROOT
-					AND = {
-						OR = {
-							has_building = shipyard
-							has_building = grand_shipyard
-						}
-						OR = {
-							has_building = dock
-							has_building = drydock
-						}
+				owned_by = ROOT
+				AND = {
+					OR = {
+						has_building = shipyard
+						has_building = grand_shipyard
+					}
+					OR = {
+						has_building = dock
+						has_building = drydock
 					}
 				}
 			}
 		}
 		effect = {
+			apulia_area = {
+				add_province_modifier = {
+					name = bgm_apulia_dev
+					duration = 14600
+				}
+			}
 			add_mercantilism = 2
 		}
 	}
@@ -1620,6 +1651,10 @@ bgm_ita_tall_slot4 = {
 			adm_tech = 22
 		}
 		effect = {
+			add_country_modifier = {
+				name = bgm_ita_alexandria
+				duration = -1
+			}
 			add_mercantilism = 5
 		}
 	}
@@ -2079,6 +2114,7 @@ bgm_ita_govt_slot3 = {
 				advisor = natural_scientist
 				advisor = artist
 			}
+			has_mil_advisor = yes
 		}
 		effect = {
 			add_country_modifier = {
