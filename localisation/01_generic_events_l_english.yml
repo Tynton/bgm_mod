@@ -2557,6 +2557,11 @@
  BGM_ITA_missions.2.a:0 "We will see Islam driven back from whence they came."
  BGM_ITA_missions.2.b:0 "We will see our great nation contest the other forces of our continent."
  
+ BGM_ITA_missions.n.3:0 "The Fate of the Italian Revolution"
+ BGM_ITA_missions.d.3:0 "As it stands the Italian nation lies at a crossroads. The Girondists and Revolutionary Nationalists seek to bring about a sort of restoration of the Roman Republic but the Jacobins and more pragmatically minded would prefer we avoid such ambitions. The fate of Italy and by extension the rest of Europe lies in the balance."
+ BGM_ITA_missions.3.a:0 "Italy's heart lies in restoring the prestige of our ancestors."
+ BGM_ITA_missions.3.b:0 "We are best to carve out a new destiny in a dawning age."
+ 
  
  TEST_EVENTS.23.t:0 "Montjoie ! Saint Denis !"
  TEST_EVENTS.23.d:0 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
