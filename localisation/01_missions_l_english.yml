@@ -113,16 +113,42 @@
 #Italy
  
  bgm_proclaim_italy_title:0 "Proclaim Italian Nation"
+ bgm_proclaim_italy_desc:0 "Though we have created an Italian national government, foreign powers do not take us very seriously. Italy has been seen as a potential battleground between the French and Austrian crowns. But this will soon no longer be the case. Show the world Italy is a stable country and not up for grabs."
 
  bgm_roman_question_title:0 "The Roman Question"
+ bgm_roman_question_desc:0 "Rome has been tricky to say the least. Either that the Papacy wills control over it again or the general conservatism in the air among some, we must prove Rome is no longer the seat of some foreign office but the capital of Italy and Italy alone."
 
  bgm_ita_mil_strength_title:0 "Grande Armata"
+ bgm_ita_mil_strength_desc:0 "Italy needs a large army to guarantee its will is final in affairs both within and without. To this end our ministers preach to us to follow in the footsteps of our neighbors and build a new large army to ward off predatorial powers."
  
  bgm_ita_great_power_title:0 "Among the Great Powers"
+ bgm_ita_great_power_desc:0 "It's infuriating knowing at one point we were the greatest force on Earth. Even though we must start again at least now, given the context, we are still in a position to exert authority."
  
  ally_trust_ita:0 "Every ally of ours gets §G25§! trust toward us."
  
+ bgm_ita_renaissance_politics_title:0 "Political Renaissance"
+ bgm_ita_renaissance_politics_desc:0 "The Renaissance has been in full swing in Italy. Now we're all one, it's time to bring the great minds of our age into the court to reconcile and create a new doctrine of political ideology."
+ 
+ bgm_ita_model_economy_title:0 "The Model Economy"
+ bgm_ita_model_economy_desc:0 "Italy is a part of the junction of trade between Europe and Asia. While that does offer us some benefit it'd also do us well to ensure we have a good baseline to work from first. To this end our administration must work to ensure full honesty in the bureaucracies around the realm."
+ 
+ bgm_ita_renaissance_rulership_title:0 "Renaissance Governance"
+ bgm_ita_renaissance_rulership_desc:0 "To stay ahead of the competition we have to pair a talented ruler with talented advisors. We must oversee the creation of a great cabinet of the greatest advisors of our age."
+ 
+ bgm_ita_developed_admin_title:0 "Developed Administration"
+ bgm_ita_developed_admin_desc:0 "Italy is home to a great many prestigious cities. To wrangle the talents found within each the Italian State must see to it that a great bureaucracy is designed. A streamlined administration yields us great benefits in the long run."
+ 
+ bgm_ita_universities_title:0 "Italian Universities"
+ bgm_ita_universities_desc:0 "We can and should branch out of just being a cultural center for Europe. We can rival the educational institutions of countries like France and build new prestigious institutions for the great denizens of Europe to learn."
+ 
  bgm_ita_consolidated_govt_title:0 "Consolidated Government"
+ bgm_ita_consolidated_govt_desc:0 "Italy has been in previous years a disparate mess of republics and dukedoms. The administration will be made into the final jurisdiction throughout the lands controlled by the State."
+ 
+ bgm_ita_enlightened_rulership_title:0 "Enlightened Government"
+ bgm_ita_enlightened_rulership_desc:0 "New moral philosophies has reached us. The Enlightenment philosophers preach breaks from tradition. The influence of the clerical and noble institutions will fade and will make way for either an absolutist regime or a constitutional republic. The fate of the enlightenment in Italy is ours to decide."
+ 
+ bgm_ita_modern_administration_title:0 "Modernized Administration"
+ bgm_ita_modern_administration_desc:0 "Our government now has the tools needed to conduct accurate censuses of the population. This among other things will help realize a revolutionary overhaul of the manner in which Italy conducts its administrative practices."
  
  bgm_ita_navy_title:0 "The Reggia Marina"
  bgm_ita_navy_desc:0 "From Roman times our territory has known complete dominion over the Mediterranean in one form or another. If not for glory, then for security do we have a rationale to bring about a sizeable naval presence to guard our coastlines."
@@ -131,9 +157,6 @@
  bgm_ita_quality_navy_desc:0 "Our navy has been built up to an appropriate size. What we need now is experience in modern naval warfare and commerce protection so Italy is no longer threatened by maritime attack."
  
  ita_mare_nostrum_tooltip:0 "We will gain access to the §TMare Nostrum§! Naval Doctrine."
-
- bgm_ita_carniola_title:0 "Seize Trieste"
- bgm_ita_carniola_desc:0 "Trieste, Istria and other parts of western Slovenia have maintained intimate histories with the Italian people. Now we have constructed a stable Italian state it's time to review the potentials to restore western Carniola to Italian control."
  
  bgm_ita_language_title:0 "A National Language"
  bgm_ita_language_desc:0 "Nationalism has been brewing throughout Europe and we are in a position to use this sentiment to further our national stability. Let us convene a council to decide which of our dialects we will use going forward in the national language curriculum."
@@ -142,22 +165,156 @@
 
  ita_branch_mission_2_title:0 "Branching Mission"
  ita_branch_mission_2_desc:0 ""
+ ita_branch_mission_2_2_title:0 "Branching Mission"
+ ita_branch_mission_2_2_desc:0 ""
  ita_branch_mission_4_title:0 "Branching Mission"
  ita_branch_mission_4_desc:0 ""
- 
+ ita_branch_mission_4_5_title:0 "Branching Mission"
+ ita_branch_mission_4_5_desc:0 ""
+ ita_branch_mission_4_6_title:0 "Branching Mission"
+ ita_branch_mission_4_6_desc:0 ""
+ ita_branch_mission_4_8_title:0 "Branching Mission"
+ ita_branch_mission_4_8_desc:0 ""
+ ita_branch_mission_3_1_title:0 "Branching Mission"
+ ita_branch_mission_3_1_desc:0 ""
+ ita_branch_mission_3_2_title:0 "Branching Mission"
+ ita_branch_mission_3_2_desc:0 ""
+ ita_branch_mission_5_1_title:0 "Branching Mission"
+ ita_branch_mission_5_1_desc:0 ""
+ ita_branch_mission_5_2_title:0 "Branching Mission"
+ ita_branch_mission_5_2_desc:0 ""
+
+
  ita_branch_mission_expansionism_title:0 "New Colonies"
  ita_branch_mission_expansionism_desc:0 "A colonial empire must begin somewhere. Others may have America, but we don't need it. Our domain is the Mediterranean, and we will begin expanding into the most convenient locations. The controllers of Libya and Greece need to fear the new great Italian state."
  
+ ita_branch_mission_egypt_title:0 "Italian Egypt"
+ ita_branch_mission_egypt_desc:0 "Alexandria, Cairo and the lands between and around them have been coveted by our merchants for ages. Only now are they within our grasp. Italy can full well control one of the major routes of commerce between Europe and Asia. It's an opportunity we must take."
+ ita_branch_mission_judea_title:0 "Judea"
+ ita_branch_mission_judea_desc:0 "We've been inspired by recent developments in Africa to consider a reconquest of Jerusalem. Rome was but one seat of Christian religion. Why not take its centerpiece as well?"
+ ita_capture_jerusalem_title:0 "Conquest of Jerusalem"
+ ita_capture_jerusalem_desc:0 "Where many crusades have failed, the Italian government alone has succeeded. For glory of God and Christendom around the world, let Jerusalem believe in the greatest martyr of all time: Jesus of Nazareth!"
+ 
+ ita_tall_mission_3_1_title:0 "Ligurian Development"
+ ita_tall_mission_3_1_desc:0 "We have made the development of Italy proper our prime imperative. To this end the maritime and commercial sectors of Italian society would benefit drastically from development in the Ligurian area."
+ ita_tall_mission_3_2_title:0 "Occitan Control"
+ ita_tall_mission_3_2_desc:0 "Occitania is but one part of the valuable trade coming from Iberia. Establishing a sphere of influence with our fleet may prove invaluable."
+
+
+ ita_tall_mission_4_5_title:0 "Apulian Development"
+ ita_tall_mission_4_5_desc:0 "We have made the development of Italy proper our prime imperative. To this end the maritime and commercial sectors of Italian society would benefit drastically from development in the Apulian area."
+ ita_tall_mission_4_6_title:0 "Alexandrian Control"
+ ita_tall_mission_4_6_desc:0 "Alexandria is a critical junction in the commerce between Europe and Asia. Establishing a sphere of influence with our fleet may prove invaluable."
+ ita_tall_mission_4_8_title:0 "The Suez"
+ ita_tall_mission_4_8_desc:0 "The Suez region has been forwarded to us as a region of critical importance in establishing a commercial empire. Let us control the area needed to build the canal so we can realize convenient naval travel for us and our allies."
+ 
+ ita_tall_mission_5_5_title:0 "Venetian Development"
+ ita_tall_mission_5_5_desc:0 "We have made the development of Italy proper our prime imperative. To this end the maritime and commercial sectors of Italian society would benefit drastically from development in the Venetian area."
+ ita_tall_mission_5_6_title:0 "Control of Constantinople"
+ ita_tall_mission_5_6_desc:0 "Constantinople is another critical junction in the commerce between Europe and Asia. Establishing a sphere of influence with our fleet may prove invaluable."
+ 
+ ita_expansionism_mission_3_1_title:0 "The Beleares"
+ ita_expansionism_mission_3_1_desc:0 "The Belearic Islands lie west of Sardinia. What would Mare Nostrum amount to if we don't seize the Beleares?"
+ ita_expansionism_mission_3_2_title:0 "Plvs Vltra"
+ ita_expansionism_mission_3_2_desc:0 "We have now established a foothold in the Belearic Islands. Now sentiment turns toward a potential restoration of control over Iberia. First though we will need to assert dominion over certain key areas to cripple the locals' naval potential."
+ 
+ ita_expansionism_mission_5_1_title:0 "Grecia Italiana"
+ ita_expansionism_mission_5_1_desc:0 "The Italians may not literally recall dominion over Greece. But in our hearts we constantly remind ourselves of the love lost to time. It's time to rekindle the mutual respect and affection the Latins once had with the Greeks."
+ ita_expansionism_mission_5_2_title:0 "The Balkan Wars"
+ ita_expansionism_mission_5_2_desc:0 "To establish a physical connection to the Greek territories we must ensure either we, a subject, or a trusted ally offers logistical access to the area from Rome. No longer would we need to worry if in the tragic instance the Navy were compromised."
+
  ita_branch_mission_tall_title:0 "Italian Industry"
  ita_branch_mission_tall_desc:0 "Other countries like the Netherlands and England have large textile industries. There is no reason Italy cannot follow in their wake or even better - surpass them. To this end our government has authorized the expansion of cities in the Italian mainland for the reason of economic prosperity."
  
  bgm_ita_fight_austria_title:0 "Address Austria"
  bgm_ita_fight_austria_desc:0 "Austria has been either a thorn in our side or a potential alliance opportunity. Whatever the case may be it's worth considering the value of the territories either in an amicable arrangement or by way of conquest."
+
+ bgm_ita_carniola_title:0 "Seize Trieste"
+ bgm_ita_carniola_desc:0 "Trieste, Istria and other parts of western Slovenia have maintained intimate histories with the Italian people. Now we have constructed a stable Italian state it's time to review the potentials to restore western Carniola to Italian control."
+ bgm_ita_adriatic_title:0 "Control the Littoral"
+ bgm_ita_adriatic_desc:0 "Outside of our care for far too long, the Adriatic East Coast has seen the local Italian population under the oppressive thumb of foreign regimes. At least now we have restored the grace of Italian governance to the region and the locals no longer fear tyranny."
+ 
+ bgm_ita_friend_hab_title:0 "Befriend Austria"
+ bgm_ita_friend_hab_desc:0 "Against the odds we have secured an alliance with our northeastern neighbor. Our shared bond will be of great use to guarantee Italy's long term survival."
+ 
+ bgm_ita_dip_primacy_title:0 "Diplomatic Primacy"
+ bgm_ita_dip_primacy_desc:0 "Sometimes the greatest weapon is not a gun but a pen. But why use one weapon when you can use two? Let's pair our army with a talented diplomatic corps. No one can challenge our great bloc any longer."
+ 
+ bgm_ita_big_cities_title:0 "Great Italian Cities"
+ bgm_ita_big_cities_desc:0 "The Italian Renaissance has brought about an era of great development for Italian culture, but also architecture. Throughout the years the Italian cities have undergone extensive renovations as new urban centers were constructed. Perhaps now we are one and can now bring this effort to its logical conclusion."
+ 
+ bgm_ita_defensive_title:0 "Alpine Fortresses"
+ bgm_ita_defensive_desc:0 "Italy is in a very unique position among the great powers in that its terrain is near perfect for defense. We are surrounded by the Alps wherever there is a land connection and by the Mediterranean sea where naval threats may arise. The Navy can handle the sea, but let's focus on building impenetrable defenses for our military."
+ 
+ bgm_ita_savoy_title:0 "Savoia Italiana"
+ bgm_ita_savoy_desc:0 "Irredentists have sought the return of Italian governance to Savoy. Once there was a great ducal realm there and it's time we see another amicable administration in the area."
+
+ bgm_ita_address_hre_title:0 "Address the HRE"
+ bgm_ita_address_hre_desc:0 "The Holy Roman Empire can be either a tool for expansion or a hindrance in our diplomatic objectives. We will have to concern ourselves with it if we are to consider affairs with the German people."
+ 
+ bgm_ita_defend_hre_title:0 "Imperial Military"
+ bgm_ita_defend_hre_desc:0 "Continuing from our previous endeavor the rulership of the HRE must always carry with them a powerful military. We may consider destroying it if we are to usurp the right to govern the areas north of the Italian homeland."
+ 
+ bgm_ita_reform_hre_title:0 "Reform the Empire"
+ bgm_ita_reform_hre_desc:0 "We got this far. From this point we have to pose ourselves one of two possibilites. Do we reform the Empire, or do we reform the map so it no longer exists?"
+ 
+ 
+ bgm_ita_electors_title:0 "The Electors"
+ bgm_ita_electors_desc:0 "The Empire is in a way controlled by seven key princes known as the Electors. Their favor is necessitated if we are to either destroy or usurp the Empire."
+ 
+ bgm_ita_princes_title:0 "Numerous Princes"
+ bgm_ita_princes_desc:0 "Germany is ripe for the taking. There were at one point even more minor states found throughout the great land of Germany. Why don't we consider that again..."
+ 
+ bgm_ita_hre_territory_title:0 "Imperial Territory"
+ bgm_ita_hre_territory_desc:0 "Countries like France and Poland tend to pick on the imperial border a bit. We have two possibilities: Join on the fun, or kick them out."
+ 
+ bgm_ita_hre_religion_title:0 "Imperial Religion"
+ bgm_ita_hre_religion_desc:0 "Imperial legitimacy may be called into question if there are dissident moral philosophies within the Empire. Religions unlike that of Italy have no place in the Empire."
+
+ bgm_ita_revolution_title:0 "The Revolution"
+ bgm_ita_revolution_desc:0 "The Revolution is sweeping across Europe. We need to see to it that the issue is addressed within our borders. It's time to bring the liberals to heel."
+ bgm_ita_antirev_adm_title:0 "Conservative Administration"
+ bgm_ita_antirev_adm_desc:0 "We have adapted what we need from the Revolution. Now it's time to take what we've learned and use it against revolutionaries seeking to proselytize their poison on our soil."
+ bgm_ita_antirev_logistics_title:0 "New Army Logistics"
+ bgm_ita_antirev_logistics_desc:0 "We can certainly claim the revolutionaries have brought innovation to management of the armies. But this is not an ideological issue here; but a pragmatic one. Italy will adapt their tactics against them."
+ bgm_ita_antirev_strongarm_diplomacy_title:0 "Strongarm Diplomacy"
+ bgm_ita_antirev_strongarm_diplomacy_desc:0 "To defeat the Revolution we must first halt its spread. Italy is a safe haven for conservative nobles around the world. Let's pair this realization with our military and instruct our diplomats to use these as bargaining points with other countries."
+ bgm_ita_antirev_dip_title:0 "Conservative Diplomacy"
+ bgm_ita_antirev_dip_desc:0 "Sometimes strength is invaluable in diplomacy. But other times just making allies out of goodwill is enough. With the world fracturing between Revolution and Reaction we'd do ourselves best to forge our own alliance bloc and bring the fight to the revolutionaries."
+ bgm_ita_antirev_mil_title:0 "Reactionary Military"
+ bgm_ita_antirev_mil_desc:0 "The Revolution has been purged throughout the ranks and country as a whole. Italian Revolutionaries have fled to safe havens in other countries but this won't matter much to us. What's important now is building a colossal army with great talent to bring about great change in the geopolitical landscape of Europe."
+ bgm_ita_destroy_revolution_title:0 "Destroy the Revolution"
+ bgm_ita_destroy_revolution_desc:0 "The Revolutionaries have been brought before the awesome might of the European conservative bloc and were not a chance. The flames of moral purity have swept the lands of the world and the snakes of the Revolution are no longer."
+ 
+ bgm_ita_pro_revolution_title:0 "Secure the Revolution"
+ bgm_ita_pro_revolution_desc:0 "We have weathered a tumultuous period where the fate of the Revolutionary Government was uncertain. Nevertheless we have pulled through and are seeing the dawning new age of history unfolding. Guarantee the everlasting prosperity of Revolutionary Regimes and the Morning of Man has arisen."
+ bgm_ita_subjugate_gaul_title:0 "Subjugate Gaul"
+ bgm_ita_subjugate_gaul_desc:0 "France has been a thorn in our side for too long. The people yearn for the glory of Rome again. Let's put these two things together and see the result."
+ bgm_ita_subjugate_hispania_title:0 "Subjugate Iberia"
+ bgm_ita_subjugate_hispania_desc:0 "The Iberian nations may share a bit with Italy. Not enough, though. We will teach them the ways of proper governance and they will appreciate us as their masters."
+ bgm_ita_subjugate_maghreb_title:0 "Adventure into Maghreb"
+ bgm_ita_subjugate_maghreb_desc:0 "These areas were once known as Mauretania and Proconsularis in Latin. They were once the great producers of grain that fed the people of Rome all that time ago. Now though there is still merit in owning these lands. No matter the reason ownership of the lands may complete the glory of a united Western Roman Empire."
+ bgm_ita_subjugate_anatolia_title:0 "Subjugate Anatolia"
+ bgm_ita_subjugate_anatolia_desc:0 "The Byzantines once controlled all of Anatolia but their legacy is lost to time. We should see to it that we aid in this journey of reconstructing the greatness of Rome once again. Turcia delenda est."
+ bgm_ita_roman_glory_title:0 "Roman Glory"
+ bgm_ita_roman_glory_desc:0 "The Roman Imperium was once lost but it was never forgotten. No longer is Rome neither forgotten but it is now no longer lost. Long Live Rome!"
+ 
+ bgm_ita_cuck_britain_title:0 "Cuck the Brits"
+ bgm_ita_cuck_britain_desc:0 "The British Island has been home a government that uses a large navy to protect themselves. Only the old order needs fear the great Italian fleet."
+ bgm_ita_hegemon_of_britain_title:0 "Hegemon of Britain"
+ bgm_ita_hegemon_of_britain_desc:0 "Why would we just stop at establishing a foothold in the Isles? Let's take the whole thing and the natives will most certainly appreciate the great Roman Liberty."
+ bgm_ita_subjugate_egypt_title:0 "Subjugate Egypt"
+ bgm_ita_subjugate_egypt_desc:0 "To blockade the powers of Europe from the vital Indian Trade the junction of Egypt must be closed off. The Reactionaries now have to fear their own soldiers as much as they have to fear the Revolution."
+ bgm_ita_subjugate_levant_title:0 "Subjugate the Levant"
+ bgm_ita_subjugate_levant_desc:0 "Egypt must be linked to Italy proper and one part of the way there is to conquer the Levantine region as a contingency."
+
+
+
  
  ita_libya:0 "We may choose to expand our domain outward and gain claims on §YLibya§! and §YGreece§! and potentially branch outward into Africa."
  ita_play_tall_navy:0 "Otherwise, we can choose to build our naval infrastructure up so we can exercise greater indirect influence over the §YMediterranean.§!"
  fate_hab_mission:0 "Depending on our response to this mission we will receive a mission requiring control of §YCarniola§! or a mission to focus our efforts elsewhere."
- ita_trieste:0 "If we complete the previous mission by fighting Austria we will gain claims on §YTrieste§! or (TODO)"
+ ita_trieste:0 "If we complete the previous mission by fighting Austria we will gain claims on §YTrieste§! and the §YLittoral§! or receive diplomatic benefits."
  
 
 
@@ -175,6 +332,18 @@
  bgm_ita_rome_catholic:0 "Rome: Seat of the Papacy"
  bgm_ita_rome_nation_prot:0 "Reformist Italy"
  bgm_ita_rome_prot:0 "Rome: Seat of the Reformation"
+ bgm_ita_tall:0 "Italian Development"
+ bgm_ita_rev_legacy:0 "Revolutionary Legacy"
+ bgm_ita_dip_zeal:0 "Revolutionary Zeal"
+ bgm_ita_rev_triumph:0 "Triumph of the Revolution"
+ ita_adm:0 "Developed the Administration"
+ ita_enlightenment:0 "Enlightenment in Italy"
+ ita_trade:0 "Economic Stability"
+ ita_renaissance:0 "The Renaissance"
+ ita_hre_1:0 "Carolingian Aspiration"
+ ita_hre_2:0 "Defense of the Empire"
+ ita_hre_3:0 "Imperial Authority"
+ ita_hre_4:0 "Rein in the Electors"
  
  ita_liberalism:0 "Liberal Italy"
  ita_revolutionary:0 "Revolutionary Italy"
@@ -186,4 +355,14 @@
  
  bgm_ita_scary_navy:0 "Powerful Navy"
  
+ bgm_ita_rallied:0 "Rallied Armies/Navies"
+ 
+ ita_greece:0 "Triumph in Greece"
+ 
+ bgm_ita_conservatism:0 "Italian Conservatism"
+ bgm_ita_conservatism_triumphant:0 "Triumphant Italian Conservatism"
+ bgm_ita_antirev_adm:0 "Reactionary Administration"
+ bgm_ita_antirev_dip:0 "Reactionary Diplomacy"
+ bgm_ita_antirev_log:0 "New Logistics"
+ bgm_ita_antirev_strongarm:0 "Strongarm Diplomacy"
  

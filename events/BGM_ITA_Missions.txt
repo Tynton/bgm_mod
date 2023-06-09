@@ -95,6 +95,9 @@ country_event = {
 		djerba_area = {
 			add_permanent_claim = ROOT
 		}
+		baleares_area = {
+			add_permanent_claim = ROOT
+		}
 		320 = { add_permanent_claim = ROOT }
 		321 = { add_permanent_claim = ROOT }
 	}

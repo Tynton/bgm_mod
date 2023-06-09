@@ -1,0 +1,6 @@
+ita_greece = {
+	max = 15
+	min = 15
+	power = 1
+	decay = no
+}
