@@ -1127,6 +1127,27 @@ bgm_ita_expansion_slot4_1 = {
 			}
 		}
 		effect = {
+			add_prestige = 100
+			add_stability = 3
+			if = {
+				limit = { 
+					government = monarchy
+				}
+				add_legitimacy = 25
+			}
+			if = {
+				limit = { 
+					government = theocracy
+				}
+				add_devotion = 25
+			}
+			if = {
+				limit = { 
+					government = republic
+				}
+				add_republican_tradition = 25
+			}
+
 			if = {
 				limit = {
 					any_subject_country = {
@@ -2703,6 +2724,7 @@ bgm_ita_prorev_start = {
 			has_any_disaster = no
 		}
 		effect = {
+			custom_tooltip = rome_or_tall_missions
 			add_adm_power = 100
 			add_dip_power = 100
 			add_mil_power = 100
@@ -2750,6 +2772,28 @@ bgm_ita_prorev_start = {
 			}
 		}
 	}
+}
+
+bgm_ita_prorev_slot3_rome = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		has_country_flag = had_revolution
+		has_country_flag = bgm_ita_rev_rome
+		is_revolutionary = yes
+		OR = {
+			tag = ITA
+			tag = VIY
+			tag = MIT
+		}
+		NOT = { map_setup = map_setup_random }
+
+	}
 	bgm_ita_roman_glory = {
 		icon = a_place_among_the_great_powers
 		position = 18
@@ -2783,6 +2827,7 @@ bgm_ita_prorev_start = {
 		}
 	}
 }
+
 bgm_ita_prorev_slot1 = {
 	slot = 1
 	generic = no
@@ -2793,6 +2838,7 @@ bgm_ita_prorev_slot1 = {
 	}
 	potential = {
 		has_country_flag = had_revolution
+		has_country_flag = bgm_ita_rev_rome
 		is_revolutionary = yes
 		OR = {
 			tag = ITA
@@ -2825,6 +2871,45 @@ bgm_ita_prorev_slot1 = {
 	}
 }
 
+bgm_ita_prorev_slot1_tall = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		has_country_flag = had_revolution
+		has_country_flag = bgm_ita_rev_tall
+		is_revolutionary = yes
+		OR = {
+			tag = ITA
+			tag = VIY
+			tag = MIT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+
+	bgm_ita_centralized_economy = {
+		icon = claim_the_borderlands
+		position = 17
+		required_missions = { bgm_ita_pro_revolution }
+		
+		trigger = {
+			full_idea_group = economic_ideas
+			full_idea_group = infrastructure_ideas
+		}
+		effect = {
+			add_adm_power = 150
+			add_country_modifier = {
+				name = bgm_ita_centralized_eco
+				duration = -1
+			}
+		}
+	}
+}
+
 bgm_ita_prorev_slot2 = {
 	slot = 2
 	generic = no
@@ -2835,6 +2920,7 @@ bgm_ita_prorev_slot2 = {
 	}
 	potential = {
 		has_country_flag = had_revolution
+		has_country_flag = bgm_ita_rev_rome
 		is_revolutionary = yes
 		OR = {
 			tag = ITA
@@ -2937,6 +3023,70 @@ bgm_ita_prorev_slot2 = {
 	}
 }
 
+bgm_ita_prorev_slot2_tall = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		has_country_flag = had_revolution
+		has_country_flag = bgm_ita_rev_tall
+		is_revolutionary = yes
+		OR = {
+			tag = ITA
+			tag = VIY
+			tag = MIT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+
+	bgm_ita_secular_constitutionalism = {
+		icon = spread_piety
+		position = 17
+		required_missions = { bgm_ita_pro_revolution }
+		
+		trigger = {
+			has_global_modifier_value = {
+				which = tolerance_heretic
+				value = 1
+			}
+			stability = 2
+			has_any_disaster = no
+		}
+		effect = {
+			add_country_modifier = {
+				name = secular_constitution
+				duration = -1
+			}
+		}
+	}
+	bgm_ita_attract_foreign_talent = {
+		icon = fra_military_reform
+		position = 18
+		required_missions = { bgm_ita_secular_constitutionalism }
+		
+		trigger = {
+			NOT = {
+				any_owned_province = {
+					unrest = 1
+				}
+			}
+			stability = 2
+			has_any_disaster = no
+		}
+		effect = {
+			change_innovativeness = 5
+			add_yearly_manpower = 0.5
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+		}
+	}
+}
+
 bgm_ita_prorev_slot4 = {
 	slot = 4
 	generic = no
@@ -2947,6 +3097,7 @@ bgm_ita_prorev_slot4 = {
 	}
 	potential = {
 		has_country_flag = had_revolution
+		has_country_flag = bgm_ita_rev_rome
 		is_revolutionary = yes
 		OR = {
 			tag = ITA
@@ -3035,6 +3186,93 @@ bgm_ita_prorev_slot4 = {
 	}
 }
 
+bgm_ita_prorev_slot4_tall = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		has_country_flag = had_revolution
+		has_country_flag = bgm_ita_rev_tall
+		is_revolutionary = yes
+		OR = {
+			tag = ITA
+			tag = VIY
+			tag = MIT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+
+	bgm_ita_education_for_all = {
+		icon = standardize_relazioni
+		position = 17
+		required_missions = { bgm_ita_pro_revolution }
+		
+		trigger = {
+			calc_true_if = {
+				amount = 35
+				all_owned_province = {
+					has_building = university
+					has_building = town_hall
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = early_national_ed
+				duration = -1
+			}
+		}
+	}
+
+	bgm_ita_bologna = {
+		icon = the_london_steelyard
+		position = 18
+		required_missions = { bgm_ita_education_for_all }
+		
+		trigger = {
+			any_owned_province = {
+				has_great_project = {
+					type = university_bologna
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { 
+					4730 = {
+						NOT = {
+							has_great_project = {
+								type = university_bologna
+								tier = 3
+							}
+						}
+					}
+				}
+				4730 = {
+					add_great_project_tier = {
+						type = university_bologna
+						tier = 1
+					}
+				}
+			}
+			else = {
+				4730 = {
+					add_base_tax = 3
+					add_base_production = 3
+					add_base_manpower = 3
+					center_of_trade = 1
+				}
+			}
+			add_prestige = 25
+			change_innovativeness = 5
+		}
+	}
+}
+
 bgm_ita_prorev_slot5 = {
 	slot = 5
 	generic = no
@@ -3045,6 +3283,7 @@ bgm_ita_prorev_slot5 = {
 	}
 	potential = {
 		has_country_flag = had_revolution
+		has_country_flag = bgm_ita_rev_rome
 		is_revolutionary = yes
 		OR = {
 			tag = ITA
@@ -3075,6 +3314,48 @@ bgm_ita_prorev_slot5 = {
 			add_dip_power = 100
 			add_navy_tradition = 15
 			add_army_tradition = 15
+		}
+	}
+}
+
+bgm_ita_prorev_slot5_tall = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		has_country_flag = had_revolution
+		has_country_flag = bgm_ita_rev_tall
+		is_revolutionary = yes
+		OR = {
+			tag = ITA
+			tag = VIY
+			tag = MIT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+
+	bgm_ita_military_engineering = {
+		icon = fra_napoleonic_navy
+		position = 17
+		required_missions = { bgm_ita_pro_revolution }
+		
+		trigger = {
+			OR = {
+				full_idea_group = defensive_ideas
+				full_idea_group = offensive_ideas
+			}
+			full_idea_group = quantity_ideas
+			innovativeness = 33
+		}
+		effect = {
+			add_country_modifier = {
+				name = bgm_ita_mil_engineering
+				duration = -1
+			}
 		}
 	}
 }

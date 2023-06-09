@@ -1534,6 +1534,8 @@
  OLD_PARTY_MEMBER:0 "Party Old Guard"
  STRIKES:0 "Workers' Strikes"
  
+ secular_constitution:0 "Secular Constitution"
+ 
  mil_corrupt:0 "Corrupt Military"
  mil_purges:0 "Military Purges"
  

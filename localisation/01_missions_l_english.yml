@@ -307,6 +307,20 @@
  bgm_ita_subjugate_egypt_desc:0 "To blockade the powers of Europe from the vital Indian Trade the junction of Egypt must be closed off. The Reactionaries now have to fear their own soldiers as much as they have to fear the Revolution."
  bgm_ita_subjugate_levant_title:0 "Subjugate the Levant"
  bgm_ita_subjugate_levant_desc:0 "Egypt must be linked to Italy proper and one part of the way there is to conquer the Levantine region as a contingency."
+ 
+ bgm_ita_centralized_economy_title:0 "Centralize The Economy"
+ bgm_ita_centralized_economy_desc:0 "In order to ensure the continued success of the Revolution at home we must oversee the construction of a centralized economic bureau and institution to document transfers of currency within our borders."
+ bgm_ita_secular_constitutionalism_title:0 "Secular Constitutionalism"
+ bgm_ita_secular_constitutionalism_desc:0 "As part of maintaining order within our realm we can rid ourselves of the responsibility of enforcing a religious dogma within our country. Let's throw aside the church and focus on politics alone."
+ bgm_ita_attract_foreign_talent_title:0 "Attract Foreign Talent"
+ bgm_ita_attract_foreign_talent_desc:0 "Dissidents from around the world are but a great source of talent we've yet to invest in. Let's open our borders to those who embrace the cause and some day even their homelands may be brought the light of Revolutionary wisdom."
+
+ bgm_ita_education_for_all_title:0 "Education For All"
+ bgm_ita_education_for_all_desc:0 "It's a fundamental directive for governments who pledge loyalty to liberal ideas to establish an education system for its citizens. To this end we can make certain our citizens are equipped with the knowledge to face all hardships life may bring."
+ bgm_ita_bologna_title:0 "Renovate Bologna"
+ bgm_ita_bologna_desc:0 "The University of Bologna is potentially the oldest university in all of Europe. Now religion is no longer holding us back on the social level it's time to bring about the full might of the human mind to bear."
+ bgm_ita_military_engineering_title:0 "Military Engineering"
+ bgm_ita_military_engineering_desc:0 "With all the chaos in the world we'd be doing ourselves justice by instituting a new Bureau of Military Engineering so Italy can best use its minds in matters of technology. We wish to oversee the construction of a vast governmental institution whose duty is to innovate in all areas of war."
 
 
 
@@ -315,6 +329,7 @@
  ita_play_tall_navy:0 "Otherwise, we can choose to build our naval infrastructure up so we can exercise greater indirect influence over the §YMediterranean.§!"
  fate_hab_mission:0 "Depending on our response to this mission we will receive a mission requiring control of §YCarniola§! or a mission to focus our efforts elsewhere."
  ita_trieste:0 "If we complete the previous mission by fighting Austria we will gain claims on §YTrieste§! and the §YLittoral§! or receive diplomatic benefits."
+ rome_or_tall_missions:0 "We can retain our current §YRoman Ambition§! missions or decide to focus our efforts internally by §YModernizing Governmental Institutions§! with a §YNew Economic Bureau, Constitution, establishing Freedom of Religion and §!"
  
 
 
@@ -345,6 +360,8 @@
  ita_hre_3:0 "Imperial Authority"
  ita_hre_4:0 "Rein in the Electors"
  
+ ita_hab_kill:0 "Contest Austria"
+ 
  ita_liberalism:0 "Liberal Italy"
  ita_revolutionary:0 "Revolutionary Italy"
  ita_absolutism:0 "Absolutist Italy"
@@ -371,4 +388,6 @@
  bgm_ita_antirev_dip:0 "Reactionary Diplomacy"
  bgm_ita_antirev_log:0 "New Logistics"
  bgm_ita_antirev_strongarm:0 "Strongarm Diplomacy"
+ early_national_ed:0 "Early National Education"
+ bgm_ita_mil_engineering:0 "Military Engineering Divisions"
  

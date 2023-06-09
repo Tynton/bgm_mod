@@ -1980,6 +1980,39 @@ bgm_ita_rev_triumph = {
 	dm_communist_influence = 0.025
 }
 
+#revolution, tall
+bgm_ita_centralized_eco = {
+	global_tax_modifier = 0.15
+	inflation_action_cost = -0.25
+}
+
+early_national_ed = {
+	technology_cost = -0.05
+	idea_cost = -0.05
+	yearly_innovativeness = 0.25
+	advisor_cost = -0.05
+}
+
+bgm_ita_mil_engineering = {
+	mil_tech_cost_modifier = -0.1
+	infantry_power = 0.05
+	cavalry_power = 0.05
+	artillery_power = 0.05
+	army_tradition_from_battle = 0.33
+	naval_tradition_from_battle = 0.33
+	siege_ability = 0.1
+	reinforce_speed = 0.10
+	global_regiment_cost = -0.1
+}
+
+#############UNIVERSAL#############
+
+secular_constitution = {
+	global_tax_modifier = 0.05
+	global_unrest = -2
+	no_religion_penalty = yes
+}
+
 #############AI#############
 
 stop_tech = {

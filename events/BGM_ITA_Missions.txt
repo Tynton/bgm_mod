@@ -128,3 +128,26 @@ country_event = {
 		swap_non_generic_missions = yes
 	}
 }
+
+country_event = {
+	id = BGM_ITA_missions.3
+	title = "BGM_ITA_missions.n.3"
+	desc = "BGM_ITA_missions.d.3"
+	picture = ST_PETERS_CHURCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_ITA_missions.3.a" #Roman Ambition
+		set_country_flag = bgm_ita_rev_rome
+	}
+
+	option = {
+		name = "BGM_ITA_missions.3.b" #Tall
+		set_country_flag = bgm_ita_rev_tall
+	}
+
+	after = {
+		swap_non_generic_missions = yes
+	}
+}
