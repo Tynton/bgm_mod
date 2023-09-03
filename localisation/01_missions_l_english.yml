@@ -100,10 +100,37 @@
 
  eng_era_prosperity_title:0 "Era of Prosperity"
  eng_era_prosperity_desc:0 "The 19th century in Britain spelled an era of prosperity as Britain expanded its colonial holdings in India and controlled trade to and from much of the asian continent. This resulted in an unprecedented expansion of development within England most notably but has benefitted Scotland as well. Let's use our geographical predisposition to focus not on war and expansionism but to channel our energy within."
+ 
+ ave_integrate_clerics_title:0 "Integrate the Clergies"
+ ave_integrate_clerics_desc:0 "The clergies of England and France have remained independent from each other by virtue of answering to two crowns. Now the Angevin Union has been brought into being it's time to integrate tax collection and general administration into states whose final authority is the new singular Crown."
+ aev_administration_title:0 "The Administrations"
+ aev_administration_desc:0 "Our realm is at a crossroad. We can consider slowly secularizing the administration over time or work with the existing clerical institutions to govern the country. Secularization proves even countries founded on royal principles can modernize but remaining with the Clergy is of relative ease."
+ aev_new_seneschals_title:0 "New Seneschals"
+ aev_new_seneschals_desc:0 "Seneschals are supervisory officials appointed by a royal court. They may at times take the role of a steward in the monarch's stead. France has used a minister with Seneschalty throughout the royal period. Now France is governed by Anjou in one way or another and so it's time to review the potential of revising the duties of the Seneschalty to fit the needs of the Crown."
+ aev_propagate_internal_dynasty_title:0 "Propagate the $DYNASTY$s"
+ aev_propagate_internal_dynasty_desc:0 "The many ducal realms of France are still governed by their own dynasties. In an effort to see a complete transformation of French society to integration with the Angevine we should further centralize the realm's legislation and enact dynastic appointments wherever possible."
+ aev_new_stable_realm_title:0 "The New Stable Realm"
+ aev_new_stable_realm_desc:0 "The Angevin Realm has at long last stood the test of time. The lands of England have been completely integrated with that of France and vice versa. A marriage of crowns born of the fires of war has manifested after a century of unnecessitated bloodshed. Now we can look forward to a new era of everlasting prosperity to be had by all."
+ aev_military_reform_title:0 "Reform the Armies"
+ aev_military_reform_desc:0 "The armies of the Angevin states have answered only indirectly to the King. Now that the Kingdom of England has joined the French ducal realm our great government would do itself well in the long run to finalize a military reform that answers the problem."
+ aev_naval_reform_title:0 "Naval Reform"
+ aev_naval_reform_desc:0 "While we have a foothold on mainland Europe in the form of France it's still very much important to make extensive use of the Royal Navy in that its purposes are many and varied. If they cannot protect colonies then they safeguard England. If they can do both then it can project power over the seas."
+ aev_proud_military_title:0 "Pride in the Military"
+ aev_proud_military_desc:0 "We have conducted military reforms for our army and navy. Paired with the economic development of the realms held by Anjou it's an inevitability that all who oppose us will not last forever."
+ 
+ aev_integrated_clergies:0 "Integrated Clerical Institutions"
+ aev_seneschals:0 "Angevin Seneschalty"
+ aev_secular:0 "Secularizing Government"
+ aev_con:0 "Conservative Government"
+ aev_mil_reform:0 "Military Reform"
+ aev_navy_reform:0 "Naval Reform"
+ aev_everlasting_glory:0 "Everlasting Prosperity"
 
 #Germany
 
- monarchies_with_rank_3: " §Yallies§! of §YEmpire§! rank and §YMonarchy§! government"
+ bra_ansbach_succ:0 "Ansbach Succession"
+
+ monarchies_with_rank_3:0 "§Yallies§! of §YEmpire§! rank and §YMonarchy§! Government."
 
  emp_ger_hlr_three_emperors_title:0 "Three Emperors"
  emp_ger_hlr_three_emperors_desc:0 "The League of the Three Emperors was a tripartite alliance mediated by Germany between it, Austria and Russia. A competent statesman is needed to ensure its continued existence and diplomatic security for Germany to pursue its interests."
@@ -310,7 +337,7 @@
  
  bgm_ita_centralized_economy_title:0 "Centralize The Economy"
  bgm_ita_centralized_economy_desc:0 "In order to ensure the continued success of the Revolution at home we must oversee the construction of a centralized economic bureau and institution to document transfers of currency within our borders."
- bgm_ita_secular_constitutionalism_title:0 "Secular Constitutionalism"
+ bgm_ita_secular_constitutionalism_title:0 "Secular Constitution"
  bgm_ita_secular_constitutionalism_desc:0 "As part of maintaining order within our realm we can rid ourselves of the responsibility of enforcing a religious dogma within our country. Let's throw aside the church and focus on politics alone."
  bgm_ita_attract_foreign_talent_title:0 "Attract Foreign Talent"
  bgm_ita_attract_foreign_talent_desc:0 "Dissidents from around the world are but a great source of talent we've yet to invest in. Let's open our borders to those who embrace the cause and some day even their homelands may be brought the light of Revolutionary wisdom."
@@ -321,6 +348,9 @@
  bgm_ita_bologna_desc:0 "The University of Bologna is potentially the oldest university in all of Europe. Now religion is no longer holding us back on the social level it's time to bring about the full might of the human mind to bear."
  bgm_ita_military_engineering_title:0 "Military Engineering"
  bgm_ita_military_engineering_desc:0 "With all the chaos in the world we'd be doing ourselves justice by instituting a new Bureau of Military Engineering so Italy can best use its minds in matters of technology. We wish to oversee the construction of a vast governmental institution whose duty is to innovate in all areas of war."
+ 
+ bgm_ita_future_title:0 "Into the Future"
+ bgm_ita_future_desc:0 "We've accomplished something few can: a completed Revolution in society. Vast bureaus give the government a tight grasp on economic regulations, a secular constitution, free education and a devotion to the sciences. Liberalism is triumphant in Italy. Vivi la Rivoluzione, amici miei." #Long Live The Revolution, Friends of Mine.
 
 
 
@@ -329,7 +359,7 @@
  ita_play_tall_navy:0 "Otherwise, we can choose to build our naval infrastructure up so we can exercise greater indirect influence over the §YMediterranean.§!"
  fate_hab_mission:0 "Depending on our response to this mission we will receive a mission requiring control of §YCarniola§! or a mission to focus our efforts elsewhere."
  ita_trieste:0 "If we complete the previous mission by fighting Austria we will gain claims on §YTrieste§! and the §YLittoral§! or receive diplomatic benefits."
- rome_or_tall_missions:0 "We can retain our current §YRoman Ambition§! missions or decide to focus our efforts internally by §YModernizing Governmental Institutions§! with a §YNew Economic Bureau, Constitution, establishing Freedom of Religion and §!"
+ rome_or_tall_missions:0 "We can retain our current §YRoman Ambition§! missions or decide to focus our efforts internally by §YModernizing Governmental Institutions§! with a §YNew Economic Bureau, Constitution, establishing Freedom of Religion and a Military Engineering Division.§!"
  
 
 
@@ -359,6 +389,8 @@
  ita_hre_2:0 "Defense of the Empire"
  ita_hre_3:0 "Imperial Authority"
  ita_hre_4:0 "Rein in the Electors"
+ bgm_ita_centralized_eco:0 "Centralized Economy"
+ bgm_ita_tall_final:0 "Into the Future"
  
  ita_hab_kill:0 "Contest Austria"
  
@@ -391,3 +423,131 @@
  early_national_ed:0 "Early National Education"
  bgm_ita_mil_engineering:0 "Military Engineering Divisions"
  
+
+#USA
+ 
+ the_constitution:0 "The Constitution"
+ 
+ 
+ adopt_articles_confederation:0 "Articles of Confederation"
+ adopt_constitution:0 "Adopt the Constitution"
+ emancipate_slaves:0 "Emancipate the Slaves"
+ investigate_corruption_issue:0 "Investigate Political Corruption"
+ found_fbi:0 "Found the Federal Bureau of Investigation"
+ found_cia:0 "Found the Central Intelligence Agency"
+ found_dod:0 "Found the Department of Defense"
+ new_deal:0 "New Deal Economic Programs"
+
+ strengthen_presidency_i:0 "Strengthen the Presidency I"
+ strengthen_presidency_ii:0 "Strengthen the Presidency II"
+ strengthen_presidency_iii:0 "Strengthen the Presidency III"
+ strengthen_presidency_iv:0 "Strengthen the Presidency IV"
+ strengthen_presidency_v:0 "Strengthen the Presidency V"
+ usa_pres_i:0 "Strengthen the Presidency I"
+ usa_pres_ii:0 "Strengthen the Presidency II"
+ usa_pres_iii:0 "Strengthen the Presidency III"
+ usa_pres_iv:0 "Strengthen the Presidency IV"
+ usa_pres_v:0 "Strengthen the Presidency V"
+ 
+ usa_fbi:0 "Federal Bureau of Investigation"
+ usa_cia:0 "Central Intelligence Agency"
+ usa_dod:0 "Department of Defense"
+ usa_new_deal:0 "New Deal Programs"
+
+ usa_humanism:0 "American Humanism"
+ usa_articles_confederation:0 "The Articles of Confederation"
+ usa_militia:0 "The Regulated Militia"
+ usa_constitution:0 "The Constitution"
+ usa_emancipated_slaves:0 "Emancipated the Slaves"
+ usa_reconstruction:0 "Reconstruction Period"
+ usa_gilded_age:0 "The Gilded Age"
+ usa_corruption:0 "Political Corruption"
+ usa_expanded_markets:0 "Expanded Markets"
+ usa_building_navy:0 "Naval Expansionism"
+ usa_mil_pioneer:0 "Military Pioneers"
+ usa_hegemon:0 "Hegemonic Aspiration"
+ usa_naval_science:0 "Naval Entrepreneurs"
+ usa_mil_science:0 "Military Entrepreneurs"
+
+ art_confed:0 "We will unlock a parliament issue to enact the §YArticles of Confederation.§!"
+ con_tooltip:0 "We will unlock a parliament issue to draft the §YConstitution.§!"
+ imm_event:0 "We will receive §GDevelopment§! pertaining to §Yimmigration.§! over time."
+ progressive_tooltip:0 "We will unlock a parliament issue to §YInvestigate Corruption.§!"
+ ema_tooltip:0 "We will unlock a parliament issue to §YEmancipate the Slaves.§! This has a high chance of causing the §RCivil War.§!"
+ immigrant_labor:0 "Immigrant Labor"
+ usa_culture_tooltip:0 "Culture in the target region will change to that of the @[Root.GetTag] [Root.GetName]."
+
+ usa_assert_sovereignty_title:0 "Assert Sovereignty"
+ usa_assert_sovereignty_desc:0 "For too long we found ourselves under the thumb of foreign rulers from other continents. No longer, our country is independent and answers to no one."
+ usa_humanist_philosophy_title:0 "Humanism"
+ usa_humanist_philosophy_desc:0 "The United States was founded on Enlightenment ideals. That is to say that people are the ultimate masters of their own fate and also that humans are the final authority in the Universe. Let this philosophy guide our political discourses as we find our way through the world."
+ usa_the_militia_title:0 "The Militia"
+ usa_the_militia_desc:0 "To disallow potential colonialists from annexing our people we must embark on an unorthodox militaristic philosophy of guerrilla warfare. This is best exemplified with use of an expansive militia composed of young patriots throughout the country."
+ usa_articles_confederation_title:0 "Articles of Confederation"
+ usa_articles_confederation_desc:0 "Our country was made by men who desired to be free. We must see this through to its logical endpoint. No tyrant nor domestic nor abroad will come to rule our people."
+ usa_constitution_title:0 "Draft the Constitution"
+ usa_constitution_desc:0 "The Articles of Confederation proved to be an overzealous step in the direction of liberal ideology. The fledgling United States found itself already in crisis since the Articles did not authorize the Federal Government enough. The Constitution was drafted to function as a middleground between full freedom and federalism."
+ usa_debate_emancipation_title:0 "Debate Emancipation"
+ usa_debate_emancipation_desc:0 "The Declaration of Independence asserts that all men are created equal. If this is to be the case, slave ownership becomes a moral dilemma. It's high time to consider its abolition if we are to remain ethically consistent with our founding philosophy."
+ usa_northern_conquest_title:0 "New England"
+ usa_northern_conquest_desc:0 "New England would admittedly be of little use to the early United States. However, Industrialization is on the horizon and the Northeastern USA would prove the urban and economic centerpiece of the country. So for now let's see through the conquest of this area and let the riches flow."
+ usa_southern_conquest_title:0 "Florida"
+ usa_southern_conquest_desc:0 "The area of Florida has been home to the Seminole tribe who have been harassing our borders for some time. We should send a talented general to take the land for ourselves and become the final jurisdiction of what would soon become a new State in the Union."
+ usa_louisiana_purchase_title:0 "Louisiana Purchase"
+ usa_louisiana_purchase_desc:0 "The land known as Louisiana is a territory, vast in agrarian potential but has little infrastructure. This situation should be rectified with a decision to either request the land's transfer with a sum of cash or keep to ourselves."
+ usa_canada_title:0 "Canada"
+ usa_canada_desc:0 "The land north in Canada had at one point been home to some revolutionary activities. The patriots in Canada should rest assured they don't have to come to America as America is coming to them."
+ usa_canada_complete_title:0 "American Canada"
+ usa_canada_complete_desc:0 "The people north of the original territory of the United States can now enjoy the prosperity brought to them. We can't stop here, let's look beyond to further assert sovereignty."
+ usa_oregon_title:0 "The Oregon Territory"
+ usa_oregon_desc:0 "The Oregon Territory was a point of contention between the United States and the British Empire. Eventually a compromise was made and the land would be divided between American Oregon and British Columbia, the borders marked to this day."
+ usa_texas_title:0 "The Lone Star State"
+ usa_texas_desc:0 "The Mexicans approached us with a deal. The area of Northern Mexico needs population. Their leader has requested American settlers to come to Texas on the condition they assimilate and convert to the faith guiding Mexico."
+ usa_manifest_destiny_title:0 "Manifest Destiny"
+ usa_manifest_destiny_desc:0 "A nationalist concept has appeared in American politics. Manifest Destiny describes the United States as willed by God to control not just a sizeable east coast but a contiguous land connection to the West Coast. We already control Oregon, so why not California as well?"
+ usa_west_coast_title:0 "The West Coast"
+ usa_west_coast_desc:0 "We've secured a future for ourselves in that we own valuable territory and the potential for a colossal, diverse economy which can operate independently of the rest of the world. It's time to celebrate and settle down for a bit. Sometime soon we may consider admitting some new states to the Union, some that aren't connected to the Capital."
+ usa_end_civil_war_title:0 "End the Civil War"
+ usa_end_civil_war_desc:0 "It's lamentable such a simple idea could cause us so much violence. Let's take some time to heal the wounds created by the Civil War and some time we can hold hands again and march into the future as one."
+ usa_hawaii_title:0 "Hawaii"
+ usa_hawaii_desc:0 "Hawaii is roughly halfway between the Far East and the American West Coast. This area is valuable to control for strategic reasons and other powers have already laid claim to the land. Let's beat them to it."
+ usa_cuba_title:0 "Cuba"
+ usa_cuba_desc:0 "The island of Cuba is mismanaged by foreign authorities. We should aid them in their struggle for true freedom."
+ usa_philippines_title:0 "The Philippines"
+ usa_philippines_desc:0 "The Philippines have been eyed up by American colonialists for a while. Now that we have an outward-facing presidency we can look forward to these lands being one with $CAPITAL$."
+ usa_industrial_title:0 "Industrialization"
+ usa_industrial_desc:0 "A friendly Englishman has settled in America and brought the ways of the Industrial Revolution to the Northeast. We should study his work and apply it on a national scale."
+ usa_gilded_age_title:0 "The Gilded Age"
+ usa_gilded_age_desc:0 "Shortly after the Civil War ended the United States was found with a booming economy. Industrialization was in full swing by this point and several powerful business magnates came to dominate the scene. Rockefeller Corp. and Standard Oil to name a few, these businesses would have dominant influence in society on many levels. In fact they could hire private militaries stronger than that owned by the Federal Government."
+ usa_grain_title:0 "Food Exports"
+ usa_grain_desc:0 "The United States has a large market for foodstuffs. Not only do we possess a large industrial economy but we can also pair it with a large agrarian economic scene to ensure the dominance of domestic markets and, perhaps, export our trade items to the world."
+ usa_early_industry_title:0 "Early Industry"
+ usa_early_industry_desc:0 "We should make haste to compete with our adversaries in the Old World in the creation of a powerful industrialized economy."
+ usa_early_coal_title:0 "Coal Mining"
+ usa_early_coal_desc:0 "The United States is home to a number of largely unexploited coal mines. This material is the engine on which an industrialized state runs."
+ usa_export_market_title:0 "Export Markets"
+ usa_export_market_desc:0 "As quickly as possible we need to begin exporting to the world. The government should facilitate the creation of several large ports and immigration centers for the Europeans to stop by and review."
+ usa_military_hardware_title:0 "Military Inventors"
+ usa_military_hardware_desc:0 "The Land of the Free is home to talented entrepreneurs and inventors seeking to commercialize their craft. The likes of John Browning and Richard Jordan Gatling are but two examples of firearms manufacturers who were based in America."
+ usa_attract_immigrants_title:0 "Attract Immigrants"
+ usa_attract_immigrants_desc:0 "The United States markets itself as the Land of Opportunity. People who were disenfranchised in their home realms may find refuge here. Tolerance will be our strength."
+ usa_naval_expansionism_title:0 "Naval Expansionism"
+ usa_naval_expansionism_desc:0 "We have a large coastline and yet it isn't used. Let the government be lobbied into allowing the use of ports as naval bases or facilitate the creation of new maritime infrastructure by big business."
+ usa_progressive_era_title:0 "The Progressive Era"
+ usa_progressive_era_desc:0 "For too damn long monopolies and Big Business have taken a toll on the conditions of aspiring businessmen and workers alike. It's time for a new age of politicians to listen to the will of the masses and bring Big Corp to justice."
+ usa_overseas_influence_title:0 "Overseas Influence"
+ usa_overseas_influence_desc:0 "As the situation at home becomes more certain the American Government can afford to look abroad to shut down all potential adversaries to Democracy. Let's align with like-minded governments and aid in their ambition against the tyrannies of the world."
+ usa_spheres_of_influence_title:0 "Sphere of Influence"
+ usa_spheres_of_influence_desc:0 "Through thick and thin we've maintained not only our sovereignty but our dignity. Our people are lucky to not have to fear for their lives. The middle class burgeons, prosperity is at an all time high, and the world now has a great policeman to watch for destroyers of the peace and sovereignty of people around the globe."
+
+
+ americangovt.12.t:0 "Factory Construction by Business"
+ americangovt.12.d:0 "A businessman in $PROVINCENAME$ has expanded his industrial firm with an investment in factory infrastructure. This will expand our GDP a bit and this is but one part of the greater whole in our economic development."
+ americangovt.12.a:0 "Acknowledged.."
+
+
+ 
+ cb_confederate_independence:0 "Independence"
+ cb_confederate_independence_desc:0 "The tyrants in the Union cannot take our sovereignty!"
+ PEACE_po_assert_dominion:0 "Reassert Dominion"
+ po_assert_dominion_desc:0 "The Confederate States will be dissolved and absorbed into the Union again."

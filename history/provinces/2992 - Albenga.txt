@@ -1,15 +1,15 @@
 # - Albenga
 
-owner = FNE
-controller = FNE
-add_core = FNE
+owner = GEN
+controller = GEN
+add_core = GEN
 culture = ligurian
 religion = catholic
 hre = yes
-base_tax = 8
-base_production = 5
+base_tax = 3
+base_production = 1
 trade_goods = naval_supplies
-base_manpower = 7
+base_manpower = 2
 capital = "Albenga"
 is_city = yes # Estimated
 

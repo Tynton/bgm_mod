@@ -66,6 +66,16 @@ chauvinism = {
 	}
 }
 
+bgm_religion_ethic = {
+	icon = "religious_leader"
+	allow_normal_conversion = yes
+	modifiers = {
+		tolerance_own = 1
+		legitimacy = 1
+		republican_tradition = 0.5
+	}
+}
+
 #####################################foreign_policy#####################################
 
 radicalism_reform = {
@@ -419,7 +429,7 @@ popular_electorate = {
 no_electorate = {
 	icon = "king"
 	potential = {
-		bgm_mon = no
+		#bgm_mon = no
 		NOT = {
 			has_reform = anarchy
 		}

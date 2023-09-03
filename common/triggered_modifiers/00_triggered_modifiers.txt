@@ -304,7 +304,7 @@ catholic_rome = {
 	trigger = {	
 		NOT = { overlord_of = PAP }
 		owns_or_vassal_of = 118 # Roma		
-		NOT = { OR = { tag = ITA tag = VIY tag = MIT tag = UMB } }
+		NOT = { OR = { tag = ITA tag = VIY tag = MIT tag = UMB has_country_flag = fra_king_italy_flag } }
 		NOT = { tag = HLR }
 		NOT = { tag = ROM }
 		NOT = { full_idea_group = religious_ideas }

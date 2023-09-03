@@ -102,8 +102,11 @@
 60 = "Bautzn"
 133 = "Ob da Enns"
 #4953 = "Kudnberch"
-128 = "Untakärnten"
-4759 = "Owerkärnten"
+132 = { "Steiameaz" "Judnbuag" }
+135 = "Odnbuag"
+1770 = "Manhartsbuag"
+128 = "Untakärntn"
+4759 = "Owerkärntn"
 2964 = "Oidmark"
 #5162 = "Uelzn"
 #5068 = "Eupn"

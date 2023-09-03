@@ -140,11 +140,43 @@ country_event = {
 	option = {
 		name = "BGM_ITA_missions.3.a" #Roman Ambition
 		set_country_flag = bgm_ita_rev_rome
+
+		france_region = {
+			add_permanent_claim = ROOT
+		}
+		iberia_region = {
+			add_permanent_claim = ROOT
+		}
+		anatolia_region = {
+			add_permanent_claim = ROOT
+		}
+		maghreb_region = {
+			add_permanent_claim = ROOT
+		}
+		balkan_region = {
+			add_permanent_claim = ROOT
+		}
+		mashriq_region = {
+			add_permanent_claim = ROOT
+		}
+		egypt_region = {
+			add_permanent_claim = ROOT
+		}
+		carinthia_area = {
+			add_permanent_claim = ROOT
+		}
+		home_counties_area = {
+			add_permanent_claim = ROOT
+		}
 	}
 
 	option = {
 		name = "BGM_ITA_missions.3.b" #Tall
 		set_country_flag = bgm_ita_rev_tall
+
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
 	}
 
 	after = {

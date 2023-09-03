@@ -7,10 +7,10 @@ is_city = yes
 culture = lorrain
 religion = catholic
 hre = yes
-base_tax = 2
-base_production = 3
+base_tax = 4
+base_production = 5
 trade_goods = iron
-base_manpower = 2
+base_manpower = 4
 add_core = LOR
 
 

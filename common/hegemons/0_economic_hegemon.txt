@@ -11,8 +11,9 @@ economic_hegemon = {
 	
 	base = {
 		advisor_pool = 1 
-		ae_impact = 0.25
-		all_power_cost = -0.05
+		ae_impact = 0.15
+		core_creation = -0.2
+		#all_power_cost = -0.05
 
 		global_trade_power = 0.25
 		global_trade_goods_size_modifier = 0.2
@@ -29,13 +30,16 @@ economic_hegemon = {
 	
 	# At max 100% tickup.
 	scale = {
-		build_cost = -0.25
-		development_cost = -0.25
+		global_prosperity_growth = 0.1
+		build_time = -0.25
+		great_project_upgrade_time = -0.25
 		governing_capacity_modifier = 0.25
 		diplomatic_reputation = 2
 	}
 	
 	max = {
+		idea_cost = -0.1
+		adm_tech_cost_modifier = -0.1
 		stability_cost_modifier = -0.1
 		prestige = 1
 		diplomatic_reputation = 2

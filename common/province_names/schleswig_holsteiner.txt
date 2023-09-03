@@ -11,7 +11,8 @@
 52 = "Meideborg"
 82 = "Westfalen"
 4773 = "Chöttingen"
-5162 = "Ülz’n"
+5096 = "Traunsteen"
+#5162 = "Ülz’n"
 
 4382 = { "Grunnen" "Grunneng" }
 100 = { "Ljouwert" "Liwwadden" }
@@ -27,7 +28,7 @@
 
 #rhenish/palatine
 
-1761 = "Palz"
+#1761 = "Palz"
 4767 = "Tweebrügge"
 80 = "Trier"
 1878 = { "Aken" "Oche" }

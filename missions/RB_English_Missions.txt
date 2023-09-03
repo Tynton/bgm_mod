@@ -921,6 +921,13 @@ eng_rb_conquest_europe = {
 				}
 				add_permanent_claim = ROOT
 			}
+			west_orleans_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 			199 = {
 				add_permanent_claim = ROOT
 			}

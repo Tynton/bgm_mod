@@ -1,0 +1,569 @@
+namespace = bgm_social_upheaval
+
+# Coup
+country_event = {
+	id = bgm_social_upheaval.1
+	title = "bgm_social_upheaval.1.t"
+	desc = "bgm_social_upheaval.1.d"
+	picture = NATIONAL_INSTITUTION_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+	
+	immediate = {
+		set_country_flag = had_social_upheaval
+		if = {
+			limit = { 
+				NOT = {
+					OR = {
+						has_global_flag = communist_manifesto_written
+						has_global_flag = futurist_manifesto_written
+					}
+				}
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					size = 1
+					type = revolutionary_rebels
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				has_global_flag = futurist_manifesto_written
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					size = 1
+					type = futurist_rebels
+				}
+			}
+		}
+		else = {
+			random_owned_province = {
+				spawn_rebels = {
+					size = 1
+					type = socialist_rebels
+				}
+			}
+		}
+		add_stability = -1
+	}
+	
+	option = {
+		name = "bgm_social_upheaval.1.a" #fight
+
+		set_country_flag = fights_upheaval
+
+		ai_chance = {
+			factor = 10
+
+			modifier = {
+				factor = 25
+				adm_power = 400
+				army_size_percentage = 0.5
+			}
+		}
+	}
+	
+	option = {
+		name = "bgm_social_upheaval.1.b" #concessions
+
+		set_country_flag = concedes_upheaval
+		
+		ai_chance = {
+			factor = 1
+
+			modifier = {
+				factor = 1000
+				is_bankrupt = yes
+			}
+		}
+	}
+}
+
+
+#disallow serfdom
+country_event = {
+	id = bgm_social_upheaval.2
+	title = "bgm_social_upheaval.2.t"
+	desc = "bgm_social_upheaval.2.d"
+	picture = MODERN_UNREST_eventPicture
+
+	trigger = {
+		has_disaster = social_upheaval
+		has_parliament = no
+		capital_scope = {
+			superregion = eastern_europe_superregion
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 80
+	}
+	
+	
+	option = {
+		name = "bgm_social_upheaval.2.a" #no
+
+		add_stability = -1
+
+		add_country_modifier = {
+			name = allows_serfdom
+			duration = -1
+		}
+
+		custom_tooltip = bgm_serf_unrest
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					superregion = eastern_europe_superregion
+					OR = {
+						trade_goods = grain
+						trade_goods = livestock
+					}
+				}
+				add_unrest = 25
+			}
+		}
+		
+		if = {
+			limit = { 
+				NOT = {
+					OR = {
+						has_global_flag = communist_manifesto_written
+						has_global_flag = futurist_manifesto_written
+					}
+				}
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					size = 3
+					type = revolutionary_rebels
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				has_global_flag = futurist_manifesto_written
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					size = 3
+					type = futurist_rebels
+				}
+			}
+		}
+		else = {
+			random_owned_province = {
+				spawn_rebels = {
+					size = 3
+					type = socialist_rebels
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "bgm_social_upheaval.2.b" #yes
+		add_country_modifier = {
+			name = abolished_serfdom
+			duration = -1
+		}
+	}
+}
+
+#nationalist rebellion
+country_event = {
+	id = bgm_social_upheaval.3
+	title = "bgm_social_upheaval.3.t"
+	desc = "bgm_social_upheaval.3.d"
+	picture = MIL_ADVANCE_eventPicture
+
+	trigger = {
+		has_disaster = social_upheaval
+		has_parliament = no
+		OR = {
+			num_of_rebel_controlled_provinces = 1
+			any_owned_province = {
+				NOT = { devastation = 5 }
+			}
+		}
+		any_owned_province = {
+			NOT = { culture_group = ROOT }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 40
+	}
+	
+	immediate = {
+		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_group = ROOT
+				}
+			}
+			add_devastation = 10
+			spawn_rebels = {
+				size = 1
+				type = nationalist_rebels
+			}
+		}
+	}
+	
+	option = {
+		name = "bgm_social_upheaval.3.a" #no
+		
+	}
+}
+
+#land reform
+country_event = {
+	id = bgm_social_upheaval.4
+	title = "bgm_social_upheaval.4.t"
+	desc = "bgm_social_upheaval.4.d"
+	picture = MODERN_ARCHITECTURE_eventPicture
+
+	trigger = {
+		has_disaster = social_upheaval
+		has_parliament = yes
+		NOT = { has_country_flag = no_land_reform }
+	}
+
+	mean_time_to_happen = {
+		months = 80
+	}
+	
+	
+	option = {
+		name = "bgm_social_upheaval.4.a"
+
+		add_stability = 1
+
+		add_country_modifier = {
+			name = liberal_land_reform
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = "bgm_social_upheaval.4.b"
+		set_country_flag = no_land_reform
+	}
+}
+
+#Demand representation
+country_event = {
+	id = bgm_social_upheaval.5
+	title = "bgm_social_upheaval.5.t"
+	desc = "bgm_social_upheaval.5.d"
+	picture = MODERN_UNREST_eventPicture
+
+	trigger = {
+		has_disaster = social_upheaval
+		has_parliament = no
+		NOT = { has_country_flag = no_land_reform }
+	}
+
+	mean_time_to_happen = {
+		months = 170
+	}
+	
+	
+	option = {
+		name = "bgm_social_upheaval.5.a"
+		if = {
+			limit = {
+				government = monarchy
+			}
+			add_government_reform = parliamentary_reform
+			add_government_reform = enlightened_monarchy_principles
+		}
+		if = {
+			limit = {
+				government = republic
+			}
+			add_government_reform = parliamentary_reform
+			add_government_reform = enlightened_republicanism_principle
+		}
+
+	}
+	
+	option = {
+		name = "bgm_social_upheaval.5.b"
+		add_stability = -1
+		if = {
+			limit = { 
+				NOT = {
+					OR = {
+						has_global_flag = communist_manifesto_written
+						has_global_flag = futurist_manifesto_written
+					}
+				}
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					size = 3
+					type = revolutionary_rebels
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				has_global_flag = futurist_manifesto_written
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					size = 3
+					type = futurist_rebels
+				}
+			}
+		}
+		else = {
+			random_owned_province = {
+				spawn_rebels = {
+					size = 3
+					type = socialist_rebels
+				}
+			}
+		}
+	}
+}
+
+#ban dialects?
+country_event = {
+	id = bgm_social_upheaval.6
+	title = "bgm_social_upheaval.6.t"
+	desc = "bgm_social_upheaval.6.d"
+	picture = BUREAU_eventPicture
+
+	trigger = {
+		has_disaster = social_upheaval
+		#has_parliament = yes
+		NOT = { has_country_flag = no_banning_dialect }
+		calc_true_if = {
+			amount = 25
+			all_owned_province = {
+				NOT = {
+					culture_group = ROOT
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 80
+	}
+	
+	
+	option = {
+		name = "bgm_social_upheaval.6.a"
+
+		every_owned_province = {
+			limit = {
+				NOT = {
+					culture_group = ROOT
+				}
+			}
+			add_province_modifier = {
+				name = banned_dialect
+				duration = 9125
+			}
+		}
+	}
+	
+	option = {
+		name = "bgm_social_upheaval.6.b"
+		set_country_flag = no_banning_dialect
+	}
+}
+
+
+#Famine
+country_event = {
+	id = bgm_social_upheaval.7
+	title = "bgm_social_upheaval.7.t"
+	desc = "bgm_social_upheaval.7.d"
+	picture = GULAG_eventPicture
+
+	trigger = {
+		has_disaster = social_upheaval
+		#has_parliament = yes
+		NOT = { has_country_flag = no_banning_dialect }
+		calc_true_if = {
+			amount = 25
+			all_owned_province = {
+				NOT = {
+					culture_group = ROOT
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 80
+	}
+	
+	
+	option = {
+		name = "bgm_social_upheaval.7.a"
+		add_yearly_manpower = -0.33
+		add_country_modifier = {
+			name = bgm_famine
+			duration = 1825
+		}
+	}
+}
+
+#Revolutionaries seize the government
+country_event = {
+	id = bgm_social_upheaval.8
+	title = "bgm_social_upheaval.8.t"
+	desc = "bgm_social_upheaval.8.d"
+	picture = EMBASSYBG_eventPicture
+
+	is_triggered_only = yes
+	
+	major = yes
+
+	immediate = {
+		random_owned_province = {
+			spawn_rebels = {
+				size = 1
+				type = pretender_rebels
+			}
+		}
+	}
+	
+	option = {
+		name = "bgm_social_upheaval.7.a"
+
+		if = {
+			limit = { 
+				NOT = {
+					OR = {
+						has_global_flag = communist_manifesto_written
+						has_global_flag = futurist_manifesto_written
+					}
+				}
+			}
+			change_government = republic
+			add_government_reform = revolutionary_republic_reform
+		}
+		else_if = {
+			limit = { 
+				has_global_flag = futurist_manifesto_written
+			}
+			change_government = futurist_government
+			add_government_reform = futurist_reform
+		}
+		else_if = {
+			limit = { 
+				has_global_flag = communist_manifesto_written
+				stability = -1
+			}
+			change_government = futurist_government
+			add_government_reform = socialist_republic
+		}
+		else = {
+			change_government = futurist_government
+			add_government_reform = anarchy
+		}
+	}
+}
+
+#Famine
+country_event = {
+	id = bgm_social_upheaval.9
+	title = "bgm_social_upheaval.9.t"
+	desc = "bgm_social_upheaval.9.d"
+	picture = GULAG_eventPicture
+
+	trigger = {
+		has_disaster = social_upheaval
+		OR = {
+			is_revolutionary = yes
+			has_reform = futurist_mechanic
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 80
+	}
+	
+	
+	option = {
+		name = "bgm_social_upheaval.9.a"
+
+		random_owned_province = {
+			spawn_rebels = {
+				size = 3
+				type = pretender_rebels
+			}
+		}
+		if = {
+			limit = { 
+				num_of_cities = 15
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					size = 1
+					type = pretender_rebels
+				}
+			}
+		}
+		if = {
+			limit = { 
+				num_of_cities = 25
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					size = 2
+					type = pretender_rebels
+				}
+			}
+		}
+		if = {
+			limit = { 
+				num_of_cities = 35
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					size = 1
+					type = pretender_rebels
+				}
+			}
+		}
+		if = {
+			limit = { 
+				num_of_cities = 40
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					size = 2
+					type = pretender_rebels
+				}
+			}
+		}
+	}
+}
+
+#end
+country_event = {
+	id = bgm_social_upheaval.10
+	title = "bgm_social_upheaval.10.t"
+	desc = "bgm_social_upheaval.10.d"
+	picture = DAWNING_ERA_eventPicture
+
+	is_triggered_only = yes
+	
+	major = yes
+	
+	option = {
+		name = "bgm_social_upheaval.10.a" #end
+		add_prestige = 15
+	}
+}

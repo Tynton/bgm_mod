@@ -170,3 +170,10 @@
  integrate_colonial_tooltip:0 "Integrate this country into our colonial subject."
  integrate_colonial_dialog:0 "Colonial Integration"
  integrate_colonial_tooltip:0 "This country is a princely state that we can leave to a colonial administration."
+ 
+ order_execution:0 "Order Execution"
+ order_execution_title:0 "Order Execution"
+ order_execution_desc:0 "They've proven themselves rather reckless lately. Perhaps we should demonstrate to them again who is in charge. We will lose §R1 stability§! and §R25 prestige§!, and §R20§! loyalty from the Nobility, but will gain §G50§! of each monarch power."
+ order_execution_tooltip:0 "Execute the ruler of this ducal realm."
+ order_execution_dialog:0 "A ducal execution was ordered.."
+ order_execution_tooltip:0 "They've proven themselves rather reckless lately. Perhaps we should demonstrate to them again who is in charge. We will lose §R1 stability§! and §R25 prestige§!, and §R20§! loyalty from the Nobility, but will gain §G50§! of each monarch power."

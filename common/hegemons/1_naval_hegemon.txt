@@ -11,8 +11,9 @@ naval_hegemon = {
 	
 	base = {
 		advisor_pool = 1 
-		ae_impact = 0.25
-		all_power_cost = -0.05
+		ae_impact = 0.15
+		core_creation = -0.2
+		#all_power_cost = -0.05
 
 		global_trade_power = 0.25
 		global_trade_goods_size_modifier = 0.2
@@ -27,12 +28,15 @@ naval_hegemon = {
 	
 	# At max 100% tickup.
 	scale = {
-		naval_maintenance_modifier = -0.5
+		reduced_liberty_desire = 10
+		sailor_maintenance_modifer = -0.3
 		governing_capacity_modifier = 0.25
 		diplomatic_reputation = 2
 	}
 	
 	max = {
+		idea_cost = -0.1
+		dip_tech_cost_modifier = -0.1
 		stability_cost_modifier = -0.1
 		prestige = 1
 		diplomatic_reputation = 2

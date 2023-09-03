@@ -215,6 +215,16 @@ country_event = {
 			personality = ai_capitalist
 			locked = no
 		}
+		if = {
+			limit = {
+				ai = yes
+				NOT = { has_country_modifier = lower_maintenance }
+			}
+			add_country_modifier = {
+				name = lower_maintenance
+				duration = -1
+			}
+		}
 	}
 }
 
@@ -235,6 +245,9 @@ country_event = {
 		is_emperor = no
 		NOT = {
 			religion = anabaptist
+		}
+		NOT = {
+			ruler_has_personality = architectural_visionary_personality
 		}
 		OR = {
 			religion_group = muslim
@@ -285,6 +298,12 @@ country_event = {
 			personality = ai_militarist
 			locked = no
 		}
+		if = {
+			limit = {
+				has_country_modifier = lower_maintenance
+			}
+			remove_country_modifier = lower_maintenance
+		}
 	}
 }
 
@@ -302,6 +321,9 @@ country_event = {
 		ai = yes
 		is_subject = no
 		is_emperor_of_china = no
+		NOT = {
+			ruler_has_personality = architectural_visionary_personality
+		}
 		OR = {
 			has_idea_group = expansion_ideas
 			has_idea_group = exploration_ideas
@@ -357,6 +379,12 @@ country_event = {
 		set_ai_personality = {
 			personality = ai_colonialist
 			locked = no
+		}
+		if = {
+			limit = {
+				has_country_modifier = lower_maintenance
+			}
+			remove_country_modifier = lower_maintenance
 		}
 	}
 }
@@ -525,6 +553,7 @@ province_event = {
 		OR = {
 			region = italy_region
 			area = languedoc_area
+			area = east_languedoc_area
 			area = provence_area
 			region = iberia_region
 		}
@@ -581,6 +610,8 @@ country_event = {
 		MAM = {
 			every_owned_province = {
 				add_core = TUR
+				add_local_autonomy = 100
+				add_devastation = 10
 			}
 		}
 		TUR = {
@@ -1014,6 +1045,9 @@ country_event = {
 	hidden = yes
 
 	trigger = {
+		NOT = {
+			has_global_flag = had_peace_bgm
+		}
 		any_country = {
 			ai = yes
 			OR = {
@@ -1131,6 +1165,8 @@ country_event = {
 	}
 }
 
+#Break alliance if has nationalist CB
+
 country_event = {
 	id = general_ai.40
 	title = none
@@ -1142,6 +1178,9 @@ country_event = {
 	trigger = {
 		ai = yes
 		any_country = {
+			alliance_with = ROOT
+			culture_group = ROOT
+			ai = yes
 			has_casus_belli = {
 				type = cb_nationalist
 				target = ROOT
@@ -1178,47 +1217,8 @@ country_event = {
 		every_country = {
 			limit = {
 				alliance_with = ROOT
-				has_casus_belli = {
-					type = cb_nationalist
-					target = ROOT
-				}
-			}
-			break_alliance = ROOT
-		}
-	}
-}
-
-#Break alliance if has nationalist CB
-
-country_event = {
-	id = general_ai.45
-	title = none
-	desc = none
-	picture = none
-	
-	hidden = yes
-	
-	trigger = {
-		any_country = {
-			has_casus_belli = {
-				type = cb_nationalist
-				target = ROOT
-			}
-		}
-		ROOT = {
-			ai = yes
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 3
-	}
-	
-	option = {
-		name = "none"
-		
-		random_country = {
-			limit = {
+				culture_group = ROOT
+				ai = yes
 				has_casus_belli = {
 					type = cb_nationalist
 					target = ROOT
@@ -1970,14 +1970,16 @@ country_event = { #shitty monarch? get rid of him
 				dip = 3
 				mil = 3
 				NOT = {
-					ruler_age = 35
+					ruler_age = 20
 				}
 				adm_tech = 20
 			}
 		}
-		OR = {
-			has_reform_on_level = 6
-		}
+		is_great_power = no
+		NOT = { heir_adm = 2 }
+		NOT = { heir_dip = 2 }
+		NOT = { heir_mil = 2 }
+		has_reform_on_level = 6
 	}
 
 	mean_time_to_happen = {
@@ -1990,5 +1992,64 @@ country_event = { #shitty monarch? get rid of him
 		set_country_flag = populists_in_government
 		add_stability = -3
 		change_government = republic
+	}
+}
+
+country_event = { #adhoc infinite money bug fix
+	id = general_ai.58
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		ai = yes
+		treasury = 30000
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "none"
+		
+		while = {
+			limit = {
+				treasury = 1
+			}
+			add_treasury = -1
+		}
+	}
+}
+
+country_event = { #adhoc infinite money bug fix
+	id = general_ai.59
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		ai = yes
+		treasury = 900000
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "none"
+		
+		add_treasury = -900000
+		while = {
+			limit = {
+				treasury = 1
+			}
+			add_treasury = -1
+		}
 	}
 }

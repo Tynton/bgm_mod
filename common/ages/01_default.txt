@@ -35,14 +35,22 @@ age_of_industrialization = {
 		obj_factories = {
 			factory_infrastructure = 10
 		}
-		obj_railroads = {
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 10
-				has_province_modifier = provincial_railroad
-			}
+		obj_adm = {
+			tax_center = 10
+			NOT = { governing_capacity_percentage = 1 }
 		}
 		obj_secularism = {
-			religion = secular
+			OR = {
+				religion = secular
+				has_country_modifier = secular_constitution
+				has_idea = ger_german_confederation
+				has_idea = hungarian_estates_general
+				has_idea = freedom_of_religion
+				has_idea = ROT_zarfat_registry
+				has_idea = NZL_maori_seats
+				tag = TEX
+				tag = VRM
+			}
 		}
 		obj_pro_or_anti_enlightenment = {
 			OR = {
@@ -50,6 +58,11 @@ age_of_industrialization = {
 				has_reform = enlightened_monarchy_principles
 				has_reform = traditionalist_principles
 				has_reform = maintain_oligarchic_principle
+				has_reform = authoritarian_mechanic
+				has_reform = democratic_mechanic
+				has_reform = futurist_mechanic
+				has_reform = fascist_mechanic
+				has_reform = communist_mechanic
 			}
 		}
 		obj_urbanization = {
@@ -64,7 +77,7 @@ age_of_industrialization = {
 
 		ab_construction = {
 			modifier = {
-				build_cost = -0.15
+				build_cost = -0.1
 			}
 			ai_will_do = {
 				factor = 1
@@ -73,7 +86,7 @@ age_of_industrialization = {
 
 		ab_industrialization = {
 			modifier = {
-				development_cost = -0.15
+				development_cost = -0.1
 			}
 			ai_will_do = {
 				factor = 2
@@ -91,8 +104,8 @@ age_of_industrialization = {
 		}
 		ab_production_efficiency = {
 			modifier = {
-				production_efficiency = 0.15
-				global_trade_goods_size_modifier = 0.15
+				production_efficiency = 0.1
+				global_trade_goods_size_modifier = 0.1
 			}
 			ai_will_do = {
 				factor = 2
@@ -108,7 +121,7 @@ age_of_industrialization = {
 		}
 		ab_tax_new_institutions = {
 			modifier = {
-				global_tax_modifier = 0.15
+				global_tax_modifier = 0.1
 			}
 			ai_will_do = {
 				factor = 1
@@ -140,6 +153,7 @@ age_of_industrialization = {
 				OR = {
 					has_reform = enlightened_republicanism_principle
 					has_reform = enlightened_monarchy_principles
+					has_reform = democratic_mechanic
 				}
 			}
 			modifier = {
@@ -159,8 +173,7 @@ age_of_industrialization = {
 				}
 			}
 			modifier = {
-				development_cost = -0.3
-				production_efficiency = 0.1
+				development_cost_modifier = -0.25
 			}
 			ai_will_do = {
 				factor = 100
@@ -171,6 +184,7 @@ age_of_industrialization = {
 				OR = {
 					has_reform = maintain_oligarchic_principle
 					has_reform = traditionalist_principles
+					has_reform = authoritarian_mechanic
 				}
 			}
 			modifier = {

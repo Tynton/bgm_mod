@@ -351,6 +351,13 @@ spriteTypes = {
 		noOfFrames = 3
 		loadType = "INGAME"
 	}
+
+	spriteType = {
+		name = "GFX_disaster_social_upheaval"
+		texturefile = "gfx//interface//disasters//social_upheaval.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
 	
 	progressbartype = {
 		name = "GFX_disaster_progress_bar"

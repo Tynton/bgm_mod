@@ -111,9 +111,47 @@
  REF_ADJ:0 "Russian"
  FRF:0 "French Empire"
  FRF_ADJ:0 "French"
+ DUN:0 "Dunois"
+ DUN_ADJ:0 "Dunoise"
+ SCH:0 "Schaunberg"
+ SCH_ADJ:0 "Schaunberger"
+ KEM:0 "Kempten"
+ KEM_ADJ:0 "Kemptener"
+ WOR:0 "Worms"
+ WOR_ADJ:0 "Wormser"
+ BUD:0 "Büdingen"
+ BUD_ADJ:0 "Büdinger"
   
  NME:0 "Nemecko"
  NME_ADJ:0 "Czecho-German"
+
+ IDF:0 "Île-de-France"
+ IDF_ADJ:0 "Francilien"
+ MRN:0 "Merano"
+ MRN_ADJ:0 "Meranese"
+ 
+ MLA:0 "Rimini" #Malatesta
+ MLA_ADJ:0 "Riminese"
+ PES:0 "Pesaro"
+ PES_ADJ:0 "Pesaresi"
+ MSS:0 "Massa"
+ MSS_ADJ:0 "Massesi"
+ 
+ LIC:0 "Vaduz" #Liechtenstein
+ LIC_ADJ:0 "Vaduzisch" #Liechtensteiner
+ 
+ COU:0 "Couto Misto"
+ COU_ADJ:0 "Couto Mistan"
+ 
+ CMM:0 "Comminges"
+ CMM_ADJ:0 "Commingois"
+ MNE:0 "Maine"
+ MNE_ADJ:0 "Mainoise"
+ ABR:0 "Albret"
+ ABR_ADJ:0 "Albretien"
+ 
+ AGT:0 "Angleterre"
+ AGT_ADJ:0 "Anglois"
  
  SPD:0 "Spain"
  SPD_ADJ:0 "Spanish"
@@ -149,6 +187,12 @@
 
  AEV:0 "The Angevin Realm"
  AEV_ADJ:0 "Angevin"
+ AEVFRA:0 "Fraunce"
+ AEVFRA_ADJ:0 "Frenche"
+ AER:0 "Républyique de Fraunce" #Fraunce
+ AER_ADJ:0 "Frenche"
+ AEE:0 "Empire de Fraunce"
+ AEE_ADJ:0 "Frenche"
  VIY:0 "Italy"
  VIY_ADJ:0 "Italian"
  MIT:0 "Italy"
@@ -156,6 +200,12 @@
  
  OCC:0 "Occitania"
  OCC_ADJ:0 "Occitanian"
+ OCF:0 "França"
+ OCF_ADJ:0 "Francés"
+ OCR:0 "Republica de França"
+ OCR_ADJ:0 "Francés"
+ OCE:0 "Empèri de França"
+ OCE_ADJ:0 "Francés"
  WLO:0 "Wallonia"
  WLO_ADJ:0 "Wallonian"
  ASE:0 "Alsace"

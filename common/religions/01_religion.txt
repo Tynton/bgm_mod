@@ -24,7 +24,7 @@ atheist_group = {
 		}
 		country = {
 			no_religion_penalty = yes
-			stability_cost_modifier = -0.1
+			can_not_build_missionaries = yes
 		}
 		country_as_secondary = {
 			global_unrest = 0

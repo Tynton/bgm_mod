@@ -1,0 +1,431 @@
+#BGM, USA custom missions
+adopt_articles_confederation = {
+	category = 4
+
+	allow = {
+		has_country_flag = articles_confederation
+		NOT = { has_country_modifier = usa_articles_confederation }
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = usa_articles_confederation
+			duration = -1
+		}
+		add_stability = 1
+		add_republican_tradition = 25
+	}
+	
+	modifier = {
+		state_governing_cost = -0.2
+	}
+	backing_percentage = 33
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1000
+	}
+}
+
+adopt_constitution = {
+	category = 4
+
+	allow = {
+		has_country_flag = the_constitution
+		NOT = { has_country_modifier = usa_constitution }
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = usa_constitution
+			duration = -1
+		}
+	}
+	
+	modifier = {
+		global_autonomy = -0.05
+		republican_tradition = 1
+	}
+	backing_percentage = 25
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1000
+	}
+}
+
+emancipate_slaves = {
+	category = 4
+
+	allow = {
+		has_country_flag = will_emancipate
+		NOT = { has_country_flag = freed_slaves }
+	}
+	
+	effect = {
+		set_country_flag = freed_slaves
+		random_list = {
+			75 = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = southeast_america_region
+							region = rio_grande_region
+							area = west_florida_area
+							area = lower_louisiana_area
+							area = upper_louisiana_area
+							area = ozarks_area
+							area = choctaw_area
+						}
+					}
+					set_province_flag = csa
+					cede_province = CSA
+					add_core = CSA
+				}
+				CSA = {
+					add_years_of_income = 1
+					add_yearly_manpower = 1
+					add_army_tradition = 50
+					create_general = { tradition = 100 }
+					country_event = {
+						id = americangovt.8
+						days = 270
+					}
+				}
+			}
+			25 = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = southeast_america_region
+							region = mississippi_region
+							region = rio_grande_region
+						}
+						OR = {
+							trade_goods = tobacco
+							trade_goods = cotton
+						}
+					}
+					spawn_rebels = {
+						size = 3
+						type = particularist_rebels
+					}
+				}
+			}
+		}
+		
+	}
+	
+	modifier = {
+		global_autonomy = -0.05
+		republican_tradition = 1
+	}
+	backing_percentage = 25
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1000
+	}
+}
+
+investigate_corruption_issue = {
+	category = 4
+
+	allow = {
+		has_country_flag = investigate_corruption
+		NOT = { has_country_flag = freed_slaves }
+	}
+	
+	effect = {
+		remove_country_modifier = usa_corruption
+	}
+	
+	modifier = {
+		yearly_corruption = -0.2
+		dm_social_liberal_influence = 0.1
+		dm_social_democrat_influence = -0.05
+	}
+	backing_percentage = 25
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1000
+	}
+}
+
+found_fbi = {
+	category = 4
+
+	allow = {
+		mission_completed = usa_progressive_era
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = usa_fbi
+			duration = -1
+		}
+		add_absolutism = 10
+	}
+	
+	modifier = {
+		global_unrest = -2
+		country_admin_power = 1 
+	}
+	backing_percentage = 33
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1000
+	}
+}
+
+found_cia = {
+	category = 4
+
+	allow = {
+		mission_completed = usa_progressive_era
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = usa_cia
+			duration = -1
+		}
+		add_absolutism = 10
+	}
+	
+	modifier = {
+		global_unrest = -2
+		country_diplomatic_power = 1
+	}
+	backing_percentage = 33
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1000
+	}
+}
+
+found_dod = {
+	category = 4
+
+	allow = {
+		mission_completed = usa_progressive_era
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = usa_dod
+			duration = -1
+		}
+		add_absolutism = 10
+	}
+	
+	modifier = {
+		global_unrest = -2
+		country_military_power = 1
+	}
+	backing_percentage = 33
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1000
+	}
+}
+
+new_deal = {
+	category = 4
+
+	allow = {
+		mission_completed = usa_progressive_era
+		has_global_flag = global_stock_crash
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = usa_new_deal
+			duration = 2920
+		}
+	}
+	
+	modifier = {
+		build_cost = -0.33
+		great_project_upgrade_cost = -0.33
+	}
+	backing_percentage = 33
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1000
+	}
+}
+
+strengthen_presidency_i = {
+	category = 4
+
+	allow = {
+		has_country_modifier = usa_constitution
+		adm_tech = 32
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = usa_pres_i
+			duration = -1
+		}
+	}
+	
+	modifier = {
+		yearly_absolutism = 0.33
+	}
+	backing_percentage = 10
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1000
+	}
+}
+
+strengthen_presidency_ii = {
+	category = 4
+
+	allow = {
+		has_country_modifier = usa_constitution
+		adm_tech = 35
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = usa_pres_ii
+			duration = -1
+		}
+	}
+	
+	modifier = {
+		yearly_absolutism = 0.33
+	}
+	backing_percentage = 10
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1000
+	}
+}
+
+strengthen_presidency_iii = {
+	category = 4
+
+	allow = {
+		has_country_modifier = usa_constitution
+		adm_tech = 38
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = usa_pres_iii
+			duration = -1
+		}
+	}
+	
+	modifier = {
+		yearly_absolutism = 0.33
+	}
+	backing_percentage = 10
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1000
+	}
+}
+
+strengthen_presidency_iv = {
+	category = 4
+
+	allow = {
+		has_country_modifier = usa_constitution
+		adm_tech = 41
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = usa_pres_iv
+			duration = -1
+		}
+	}
+	
+	modifier = {
+		yearly_absolutism = 0.33
+	}
+	backing_percentage = 10
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1000
+	}
+}
+
+strengthen_presidency_v = {
+	category = 4
+
+	allow = {
+		has_country_modifier = usa_constitution
+		adm_tech = 44
+	}
+	
+	effect = {
+		add_country_modifier = {
+			name = usa_pres_v
+			duration = -1
+		}
+	}
+	
+	modifier = {
+		yearly_absolutism = 0.33
+	}
+	backing_percentage = 10
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1000
+	}
+}

@@ -37,12 +37,12 @@
 5279 = "Nagybecskerek"
 
 
-5128 = "Kolozsvár"
+#5128 = "Kolozsvár"
 5129 = "Dés"
 5130 = "Brassó"
-5108 = "Losonc"
-5110 = "Munkács"
-5109 = "Ungvár"
+#5108 = "Losonc"
+#5110 = "Munkács"
+#5109 = "Ungvár"
 
 61 = "Drezda"
 62 = "Lipcse"
@@ -180,7 +180,7 @@
 #5096 = "Zsolna"
 #5097 = "Besztercebánya"
 #5099 = "Toketerebes"
-5100 = "Alsókubin"
+#5100 = "Alsókubin"
 
 4752 = "Fiume"
 

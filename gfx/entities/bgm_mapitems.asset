@@ -1,0 +1,17 @@
+entity = {
+	name = "bgm_cloudmap_entity"
+	pdxmesh = "bgm_cloudmap"
+	scale = 4.3
+}
+
+entity = {
+	name = "bgm_cloudmap_l_entity"
+	pdxmesh = "bgm_cloudmap_l"
+	scale = 4.3
+}
+
+entity = {
+	name = "bgm_cloudmap_r_entity"
+	pdxmesh = "bgm_cloudmap_r"
+	scale = 4.3
+}

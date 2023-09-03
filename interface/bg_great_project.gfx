@@ -626,4 +626,29 @@ spriteTypes = {
 		texturefile = "gfx//interface//great_projects//great_project_sorbonne.dds"
 	}
 
+	spriteType = {
+		name = "GFX_great_project_bastille"
+		texturefile = "gfx//interface//great_projects//great_project_bastille.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_chateau_chenonceau"
+		texturefile = "gfx//interface//great_projects//great_project_chateau_chenonceau.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_chateau_valencay"
+		texturefile = "gfx//interface//great_projects//great_project_chateau_valencay.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_chateau_foix"
+		texturefile = "gfx//interface//great_projects//great_project_chateau_foix.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_grand_canal"
+		texturefile = "gfx//interface//great_projects//great_project_grand_canal.dds"
+	}
+
 }

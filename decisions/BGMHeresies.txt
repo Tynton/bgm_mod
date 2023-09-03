@@ -414,10 +414,6 @@ country_decisions = {
 				OR = {
 					is_elector = yes
 					is_emperor = yes
-					AND = {
-						religion = catholic
-						is_excommunicated = no
-					}
 					NOT = { dominant_religion = fraticelli }
 				}
 			}

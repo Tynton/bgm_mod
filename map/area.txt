@@ -24,7 +24,7 @@ kattegat_area = { #Kattegat, Skagerrak, Sound and Belts
 }
 
 north_sea_area = {
-	1266 1268 1269 1270 1279 1280 1281 1282 1975
+	1266 1268 1269 1270 1279 1280 1281 1282 1975 5130
 }
 
 norwegian_sea_area = { #Norwegian Sea
@@ -305,11 +305,15 @@ guyenne_area = { #4
 }
 
 pyrenees_area = { #4
-	175 173 176 4694 4957
+	175 173 176 5125 5126
+}
+
+east_languedoc_area = {
+	200 4391 5112 5113 5114
 }
 
 languedoc_area = { #5
-	200 2753 4391 4695 196
+	2753 4695 196 4694 4957
 }
 
 bourgogne_area = { #3
@@ -339,15 +343,15 @@ picardy_area = { #4
 }
 
 ile_de_france_area = { #4
-	182 183 185 4388 5075
+	182 183 4388 5075 5103
 }
 
 north_champagne_area = {
-	181 4953 5097
+	181 186 4952 4953 5097
 }
 
 champagne_area = { #3
-	186 4390 4952
+	185 4390 5102 5104
 }
 
 loire_area = { #5
@@ -356,7 +360,11 @@ loire_area = { #5
 }
 
 orleans_area = {
-	184 179 4776 5089 5091
+	184 179 5091
+}
+
+west_orleans_area = {
+	4776 5089 5127
 }
 
 ########################################
@@ -364,7 +372,7 @@ orleans_area = {
 ########################################
 
 wallonia_area = { #4
-	91 93 94 1866 4954
+	91 93 1866 5100 5101
 }
 
 luxemburg_area = {
@@ -372,11 +380,15 @@ luxemburg_area = {
 }
 
 holland_area = { #4
-	96 97 98 4383
+	96 97 98 4383 5129
 }
 
 flanders_area = { #3
-	90 1865 4769 4948 4951
+	90 1865 4948 5132
+}
+
+south_flanders_area = {
+	4769 4951 5128
 }
 
 frisia_area = { #5
@@ -389,7 +401,7 @@ brabant_area = { #3
 }
 
 north_brabant_area = { #3
-	95 4770 1742
+	95 4770 1742 5131
 }
 
 ########################################
@@ -467,32 +479,48 @@ macaronesia_area = { #3
 ########################################
 
 venetia_area = { #5
-	108 111 112 1774 4729
+	111 112 1774 5110
+}
+
+west_venetia_area = {
+	108 4729 5109
 }
 
 lombardy_area = { #5
-	104 1862 4728 4740 2979
+	104 4740 2979
+}
+
+south_lombardy_area = {
+	1862 4728 5119
 }
 
 po_valley_area = { #3
 	color = { 205 190 47 }
-	109 4739 107
+	109 4739 107 5120
+}
+
+north_piedmont_area = {
+	103 5092 5105
 }
 
 piedmont_area = { #4
-	103 1875 2981 4727 5092
+	1875 2981 4727
 }
 
 tuscany_area = { #5
-	116 117 2978
+	116 117 2978 5111 5118
 }
 
 north_tuscan_area = {
-	115 2980 5099
+	115 2980 5099 5117
 }
 
 liguria_area = { #3
-	101 102 2992 4946 4959
+	101 4946 5121
+}
+
+west_liguria_area = {
+	102 2992 4959
 }
 
 corsica_sardinia_area = { #4
@@ -500,7 +528,7 @@ corsica_sardinia_area = { #4
 }
 
 sicily_area = { #3 # now Eastern Sicily
-	124 126 2982
+	124 126 2982 5123
 }
 
 western_sicily_area = { #3
@@ -508,7 +536,7 @@ western_sicily_area = { #3
 }
 
 naples_area = { #3  #Campania
-	121 2983 4734
+	121 2983 4734 5116 5122
 }
 
 lazio_area = { #4 Lazio-Umbria
@@ -516,7 +544,7 @@ lazio_area = { #4 Lazio-Umbria
 }
 
 calabria_area = { #3 (+Lucania)
-	123 1934 2984
+	123 1934 2984 5115
 }
 
 apulia_area = { #4
@@ -528,8 +556,12 @@ emilia_romagna_area = { #5
 	105 106 113 114 4730
 }
 
+north_marche_area = {
+	2977 4960 5106 5107
+}
+
 central_italy_area = { #3
-	119 120 2977 4960
+	119 120 5108
 }
 
 ########################################
@@ -936,7 +968,7 @@ lower_bavaria_area = { #4
 }
 
 east_bavaria_area = { #3
-	76 4760 4709
+	76 4760 4709 5133
 } 
 
 lower_swabia_area = { #3 (West Swabia)
@@ -953,7 +985,7 @@ upper_franconia_area = { #4
 }
 
 upper_swabia_area = { #4 (East Swabia)
-	68 1868 4711 1872
+	68 1868 4711 1872 5134
 }
 
 northern_saxony_area = { #4 (Saxe-Altmark)
@@ -1001,7 +1033,11 @@ carinthia_area = { #4 # Carniola in-game
 }
 
 switzerland_area = { #4
-	166 1869 1870 1873 4722
+	166 1869 1870
+}
+
+grisons_area = {
+	1873 4722 5124
 }
 
 romandie_area = { #3
@@ -1017,7 +1053,7 @@ alsace_area = { #3
 }
 
 palatinate_area = { #3
-	77 1761 4767
+	77 1761 4767 5135 78
 }
 
 north_rhine_area = { #4
@@ -1037,11 +1073,11 @@ north_westphalia_area = { #4
 }
 
 hesse_area = { #5
-	81 1762 1876 4774 78
+	81 1762 1876 4774 5136
 }
 
 braunschweig_area = { #4
-	57 1758 2971 4773
+	57 1758 2971 4773 5137
 }
    
 weser_area = { #4

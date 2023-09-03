@@ -121,10 +121,10 @@
 5275 = "Carlostadio"
 5281 = "Santiquaranta"
 
-5105 = "Macarsca"
-5104 = "Sebenico"
-5122 = "San Niccolò"
-5121 = "La Canea"
+#5105 = "Macarsca"
+#5104 = "Sebenico"
+#5122 = "San Niccolò"
+#5121 = "La Canea"
 163 = "Candia"
 
 4994 = "Lucerna"
@@ -234,7 +234,7 @@
 
 4949 = { "La Roccella" "La Roccelle" }
 4947 = { "Valenza" "Valenza nel Delfinato" }
-5102 = "Arcassone"
+#5102 = "Arcassone"
 4776 = "Blesa"
 
 5241 = "Lubiana"

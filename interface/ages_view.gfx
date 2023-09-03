@@ -458,10 +458,15 @@ spriteTypes = {
 		name = "GFX_obj_factories"
 		texturefile = "gfx/interface/ages/obj_factories.dds"
 	}
+
+	spriteType = {
+		name = "GFX_obj_nationalism"
+		texturefile = "gfx/interface/ages/obj_nation_state.dds"
+	}
 	
 	spriteType = {
-		name = "GFX_obj_railroads"
-		texturefile = "gfx/interface/ages/obj_railroads.dds"
+		name = "GFX_obj_adm"
+		texturefile = "gfx/interface/ages/obj_adm.dds"
 	}
 	
 	spriteType = {

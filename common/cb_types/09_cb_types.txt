@@ -1,0 +1,36 @@
+cb_fra_strongarm_hre = {
+
+	prerequisites = {
+		is_emperor = yes
+		has_country_flag = fra_strongarm_hre
+		NOT = { 
+			had_country_flag = {
+				flag = fra_strongarm_hre
+				days = 18250
+			} 
+		}
+		NOT = { truce_with = FROM }
+		NOT = { alliance_with = FROM }
+		NOT = { marriage_with = FROM }
+		OR = {
+			NOT = { religion = FROM }
+			has_opinion_modifier = {
+				who = FROM
+				modifier = insulted
+			}
+			NOT = {
+				has_opinion = {
+					who = FROM
+					value = -100
+				}
+			}
+		}
+		FROM = {
+			is_part_of_hre = yes
+			NOT = { has_reform = free_city }
+			is_great_power = no
+		}
+	}
+
+	war_goal = superiority_insult_mutual
+}

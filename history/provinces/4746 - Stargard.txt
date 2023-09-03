@@ -6,10 +6,10 @@ add_core = STE
 culture = east_pomeranian
 religion = catholic
 hre = yes
-base_tax = 3
-base_production = 3
+base_tax = 2
+base_production = 1
 trade_goods = naval_supplies
-base_manpower = 3
+base_manpower = 2
 capital = "Stargard"
 is_city = yes
 

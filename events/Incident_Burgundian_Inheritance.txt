@@ -159,19 +159,19 @@ country_event = {
 		ai_chance = {
 			factor = 30
 			modifier = {
-				factor = 10
-				is_great_power = yes
-				NOT = {
-					any_ally = {
-						is_great_power = yes
+				factor = 5
+				any_ally = {
+					army_strength = {
+						who = ROOT
+						value = 0.75
 					}
 				}
 			}
 			modifier = {
-				factor = 2
+				factor = 10
 				army_strength = {
 					who = emperor
-					value = 1
+					value = 0.75
 				}
 			}
 			modifier = {
@@ -192,10 +192,10 @@ country_event = {
 				emperor = { is_rival = ROOT }
 			}
 			modifier = {
-				factor = 2
+				factor = 5
 				army_strength = {
 					who = FRA
-					value = 1
+					value = 0.75
 				}
 			}
 			modifier = {
@@ -341,7 +341,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 50
+			factor = 10
 			modifier = {
 				factor = 2
 				has_opinion = {
@@ -508,11 +508,14 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 40
+			factor = 10
 			modifier = {
 				factor = 10
 				any_ally = {
-					is_great_power = yes
+					military_strength = {
+						who = ROOT
+						value = 2
+					}
 				}
 			}
 			modifier = {
@@ -570,7 +573,29 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 45
+			factor = 5
+			modifier = {
+				factor = 10
+				alliance_with = FRA
+			}
+			modifier = {
+				factor = 0.75
+				NOT = {
+					has_opinion = {
+						who = FRA
+						value = -50
+					}
+				}
+			}
+			modifier = {
+				factor = 0.1
+				NOT = {
+					has_opinion = {
+						who = FRA
+						value = -100
+					}
+				}
+			}
 			modifier = {
 				factor = 2
 				NOT = {
@@ -590,11 +615,7 @@ country_event = {
 				}
 			}
 			modifier = {
-				factor = 0.5 # Burgundy and France just simply don't get along 
-				always = yes 
-			}
-			modifier = {
-				factor = 2
+				factor = 5
 				has_opinion = {
 					who = FRA
 					value = 100
@@ -621,9 +642,6 @@ country_event = {
 				government = monarchy
 			}
 		}
-		ai_chance = {
-			factor = 10
-		}
 		custom_tooltip = marry_french_tt
 		#Absorb subjects
 		every_subject_country = {
@@ -633,9 +651,7 @@ country_event = {
 					OR = {
 						region = france_region 
 						culture_group = french
-						culture = dutch
-						culture = flemish
-						culture = frisian
+						culture_group = benelux
 						is_part_of_hre = yes
 					}
 				}
@@ -1764,14 +1780,382 @@ country_event = {
 	picture = DEATH_OF_HEIR_eventPicture
 	
 	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { 
+				FLA = {
+					is_subject_of = BUR
+				}
+			}
+			inherit = FLA
+		}
+		if = {
+			limit = { 
+				BRB = {
+					is_subject_of = BUR
+				}
+			}
+			inherit = BRB
+		}
+		if = {
+			limit = { 
+				HOL = {
+					is_subject_of = BUR
+				}
+			}
+			inherit = HOL
+		}
+		if = {
+			limit = { 
+				NED = {
+					is_subject_of = BUR
+				}
+			}
+			inherit = HOL
+		}
+		inherit = BUR
+	}
 	
 	option = { #integrate Burgundy
 		name = "incidents_bur_inheritance.501.a"
 		ai_chance = { 
-			factor = 100
+			factor = 1
+			modifier = {
+				factor = 100
+				NOT = {
+					OR = {
+						dip = 5
+						statesman = 3
+					}
+				}
+			}
 		}
-		inherit = BUR
 	}
+
+	option = { #Release Burgundy as an appanage
+		name = "incidents_bur_inheritance.501.b"
+		ai_chance = { 
+			factor = 0
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					area = west_burgundy_area
+					area = bourgogne_area
+				}
+			}
+			cede_province = BUR
+		}
+		FRA = {
+			create_subject = {
+				subject_type = appanage
+				subject = BUR
+			}
+		}
+		BUR = {
+			every_core_province = {
+				limit = {
+					NOT = {
+						OR = {
+							area = west_burgundy_area
+							area = bourgogne_area
+						}
+					}
+				}
+				remove_core = BUR
+			}
+			change_primary_culture = cosmopolitan_french
+			define_ruler = {
+				claim = 66
+			}
+			hidden_effect = {
+				set_dynasty = FRA
+			}
+			change_country_color = { 
+				color = { 52 91 235 }
+			}
+		}
+	}
+
+	option = { #Release all former Burgundian territories as appanages
+		name = "incidents_bur_inheritance.501.c"
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 100
+				OR = {
+					dip = 6
+					statesman = 3
+				}
+			}
+		}
+
+		add_adm_power = -100
+		add_dip_power = -100
+		add_mil_power = -100
+
+		if = {
+			limit = {
+				NOT = {
+					exists = PIC
+				}
+			}
+			every_owned_province = {
+				limit = {
+					is_core = PIC
+					NOT = { is_core = ORL }
+				}
+				cede_province = PIC
+			}
+			FRA = {
+				create_subject = {
+					subject_type = appanage
+					subject = PIC
+				}
+			}
+			PIC = {
+				change_country_color = { 
+					color = { 25 32 161 }
+				}
+				define_ruler = {
+					claim = 66
+				}
+				hidden_effect = {
+					set_dynasty = FRA
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				NOT = {
+					exists = HAI
+				}
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						is_core = HAI
+						AND = {
+							culture = wallonian
+							is_core = BUR
+						}
+					}
+					NOT = { is_core = LUX }
+				}
+				cede_province = HAI
+			}
+			FRA = {
+				create_subject = {
+					subject_type = appanage
+					subject = HAI
+				}
+			}
+			HAI = {
+				change_country_color = { 
+					color = { 60 60 153 }
+				}
+				define_ruler = {
+					claim = 66
+				}
+				hidden_effect = {
+					set_dynasty = FRA
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				NOT = {
+					exists = FLA
+				}
+			}
+			every_owned_province = {
+				limit = {
+					is_core = FLA
+				}
+				cede_province = FLA
+			}
+			FRA = {
+				create_subject = {
+					subject_type = appanage
+					subject = FLA
+				}
+			}
+			FLA = {
+				define_ruler = {
+					claim = 66
+				}
+				hidden_effect = {
+					set_dynasty = FRA
+				}
+				change_country_color = { 
+					color = { 43 91 172 }
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				NOT = {
+					exists = LUX
+				}
+			}
+			every_owned_province = {
+				limit = {
+					is_core = LUX
+				}
+				cede_province = LUX
+			}
+			FRA = {
+				create_subject = {
+					subject_type = appanage
+					subject = LUX
+				}
+			}
+			LUX = {
+				change_country_color = { 
+					color = { 60 60 153 }
+				}
+				define_ruler = {
+					claim = 66
+				}
+				hidden_effect = {
+					set_dynasty = FRA
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				OR = {
+					NOT = {
+						exists = NEV
+					}
+					NEV = {
+						NOT = {
+							is_subject_of_type = appanage
+						}
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					is_core = NEV
+				}
+				cede_province = NEV
+			}
+			hidden_effect = {
+				grant_independence = NEV
+			}
+			FRA = {
+				create_subject = {
+					subject_type = appanage
+					subject = NEV
+				}
+			}
+			NEV = {
+				change_country_color = { 
+					color = { 60 90 253 }
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				NOT = {
+					exists = BRB
+				}
+			}
+			every_owned_province = {
+				limit = {
+					is_core = BRB
+				}
+				cede_province = BRB
+			}
+			FRA = {
+				create_union = BRB
+			}
+			BRB = {
+				change_country_color = { 
+					color = { 43 91 172 }
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				NOT = {
+					exists = HOL
+				}
+			}
+			every_owned_province = {
+				limit = {
+					is_core = HOL
+				}
+				cede_province = HOL
+			}
+			FRA = {
+				create_union = HOL
+			}
+			HOL = {
+				change_country_color = { 
+					color = { 96 100 156 }
+				}
+			}
+		}
+
+		every_owned_province = {
+			limit = {
+				OR = {
+					area = west_burgundy_area
+					area = bourgogne_area
+				}
+			}
+			cede_province = BUR
+		}
+		FRA = {
+			create_subject = {
+				subject_type = appanage
+				subject = BUR
+			}
+		}
+		BUR = {
+			every_core_province = {
+				limit = {
+					NOT = {
+						OR = {
+							area = west_burgundy_area
+							area = bourgogne_area
+						}
+					}
+				}
+				remove_core = BUR
+			}
+			change_primary_culture = cosmopolitan_french
+			define_ruler = {
+				claim = 66
+			}
+			hidden_effect = {
+				set_dynasty = FRA
+			}
+			change_country_color = { 
+				color = { 52 91 235 }
+			}
+		}
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					same_continent = ROOT
+				}
+				every_owned_province = {
+					remove_core = ROOT
+				}
+			}
+		}
+	}
+	
 }
 
 # Overlord fights Burgundy

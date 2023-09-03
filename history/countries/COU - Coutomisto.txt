@@ -1,0 +1,22 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = galician
+religion = catholic
+technology_group = western
+capital = 5079	# Dijon
+
+#add_country_modifier = {
+#	name = burgundian_succession_crisis
+#	duration = -1
+#}
+
+1444.1.1 = {
+	monarch = {
+		name = "Popular Assembly"
+		adm = 2
+		dip = 2
+		mil = 2
+		regent = yes
+	}
+}

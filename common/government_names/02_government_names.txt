@@ -1626,10 +1626,10 @@ middle_english_monarchy = {
 			has_country_flag = evolved_english
 		}
 		
-		OR = {
-			has_country_flag = middle_english
-			NOT = { adm_tech = 10 }
-		}
+		#OR = {
+		#	has_country_flag = middle_english
+		#	NOT = { adm_tech = 10 }
+		#}
 	}
 }
 
@@ -1685,8 +1685,6 @@ anglosphere_monarchy = {
 		}
 		has_country_flag = evolved_english
 		culture_group = british
-		adm_tech = 10
-		NOT = { has_country_flag = middle_english }
 	}
 }
 
@@ -2176,7 +2174,7 @@ middle_low_german_monarchy = {
 	}
 
 	trigger = {
-		low_german = yes
+		bgm_low_german = yes
 		NOT = { has_country_flag = evolved_low_german }
 		OR = {
 			has_reform = fascist_monarchism
@@ -2231,7 +2229,7 @@ low_german_monarchy = {
 	}
 
 	trigger = {
-		low_german = yes
+		bgm_low_german = yes
 		has_country_flag = evolved_low_german
 		OR = {
 			has_reform = fascist_monarchism

@@ -1,0 +1,177 @@
+namespace = BGM_FRA_missions
+
+# Fate of the Revolution
+country_event = {
+	id = BGM_FRA_missions.1
+	title = "BGM_FRA_missions.1.t"
+	desc = "BGM_FRA_missions.1.d"
+	picture =  GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_FRA_missions.1.a" #HRE
+		set_country_flag = pro_hre
+
+		custom_tooltip = fra_appanage_dev_tt
+		hidden_effect = {
+			every_subject_country = {
+				limit = { 
+					is_subject_of_type = appanage
+				}
+				capital_scope = {
+					random_list = {
+						10 = { add_base_tax = 1 } 
+						10 = { add_base_production = 1 } 
+						10 = { add_base_manpower = 1 } 
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "BGM_FRA_missions.1.b" #consolidate ourselves
+		set_country_flag = pro_absolutism
+	}
+}
+
+# Decide foreign policy
+country_event = {
+	id = BGM_FRA_missions.2
+	title = "BGM_FRA_missions.2.t"
+	desc = "BGM_FRA_missions.2.d"
+	picture =  RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_FRA_missions.2.a" #kill england
+		set_country_flag = fra_kill_england
+	}
+	
+	option = {
+		name = "BGM_FRA_missions.2.b" #take on the HRE
+		set_country_flag = fra_takeon_hre
+	}
+
+	option = {
+		name = "BGM_FRA_missions.2.c" #take out the spanish
+		set_country_flag = fra_kill_spain
+	}
+
+	#option = {
+	#	name = "BGM_FRA_missions.2.dd" #develop
+	#	set_country_flag = fra_develop_self
+	#}
+
+	after = {
+		swap_non_generic_missions = yes
+	}
+}
+
+country_event = {
+	id = BGM_FRA_missions.3
+	title = "BGM_FRA_missions.3.t"
+	desc = {
+		trigger = {
+			NOT = {
+				mission_completed = fra_secure_lyonnais_prosperity
+			}
+		}
+		desc = "BGM_FRA_missions.3.da"
+	}
+	desc = {
+		trigger = {
+			mission_completed = fra_secure_lyonnais_prosperity
+		}
+		desc = "BGM_FRA_missions.3.db"
+	}
+	picture =  CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_FRA_missions.3.a" #we failed
+		trigger = {
+			NOT = {
+				mission_completed = fra_secure_lyonnais_prosperity
+			}
+		}
+		203 = {
+			add_base_tax = -3
+			add_base_production = -3
+			add_base_manpower = -3
+		}
+	}
+	
+	option = {
+		name = "BGM_FRA_missions.3.b" #we won
+		trigger = {
+			mission_completed = fra_secure_lyonnais_prosperity
+		}
+		add_country_modifier = {
+			name = fra_lyons_national_modifier
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = BGM_FRA_missions.4
+	title = "BGM_FRA_missions.4.t"
+	desc = "BGM_FRA_missions.4.d"
+	picture =  RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = "BGM_FRA_missions.4.a"
+		kill_ruler = yes
+		change_government = republic
+		add_government_reform = noble_elite_reform
+		add_stability = -3
+		add_prestige = -100
+		change_government_reform_progress = -100
+
+		set_country_flag = fra_rep_missions
+
+		add_estate_influence_modifier = {
+			estate = estate_nobles
+			influence = 25
+			duration = 18250
+		}
+	}
+	
+	after = {
+		swap_non_generic_missions = yes
+	}
+}
+
+country_event = {
+	id = BGM_FRA_missions.5
+	title = "BGM_FRA_missions.5.t"
+	desc = "BGM_FRA_missions.5.d"
+	picture =  RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = "BGM_FRA_missions.5.a"
+		set_country_flag = fra_occ_missions
+	}
+
+	option = {
+		name = "BGM_FRA_missions.5.b"
+		add_country_modifier = {
+			name = fra_savoyard_conquest
+			duration = 5475
+		}
+	}
+	
+	after = {
+		swap_non_generic_missions = yes
+	}
+}

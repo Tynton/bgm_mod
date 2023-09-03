@@ -1,4 +1,4 @@
-# 4769 - Lille, meant to represent Waals Vlaanderen. Principal cities: Lille, Douai, Orchies
+# 4769 - Kortrijk, meant to represent Waals Vlaanderen. Principal cities: Lille, Douai, Orchies
 
 owner = FLA
 controller = FLA
@@ -8,8 +8,8 @@ capital = "Kortryk"
 culture = flemish
 religion = catholic
 hre = no
-base_tax = 3
-base_production = 5
+base_tax = 2
+base_production = 3
 trade_goods = cloth
 base_manpower = 1
 discovered_by = eastern

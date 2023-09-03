@@ -1022,13 +1022,14 @@ age_of_revolutions = {
 				factor = 100
 			}
 		}
-		ab_lib_desire = {
+		ab_lib_desire = { #revolutionary aspiration
 			allow = {
 				is_revolution_target = yes
 			}
 			modifier = {
-				liberty_desire_from_subject_development = -0.75
-				global_unrest = -5
+				province_warscore_cost = -0.75
+				improve_relation_modifier = 0.75
+				overextension_impact_modifier = -0.75
 			}
 			ai_will_do = {
 				factor = 15

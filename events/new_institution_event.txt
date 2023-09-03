@@ -304,307 +304,308 @@ country_event = {
 		}
 		
 		hidden_effect = {
+			set_global_flag = rev_year
+		}
+		
+		hidden_effect = {
 
-		every_country_including_inactive = {
-			set_country_flag = rev_year
-		}
+			###########################GERMANY
 
-		###########################GERMANY
-		
-		every_province = {
-			limit = {
-				continent = europe
-				culture = hannoverian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = hannoverian
+				}
+				add_core = WES
 			}
-			add_core = WES
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = alsatian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = alsatian
+				}
+				add_core = ASE
 			}
-			add_core = ASE
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = hessian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = hessian
+				}
+				add_core = HES
 			}
-			add_core = HES
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = saxon
+			every_province = {
+				limit = {
+					continent = europe
+					culture = saxon
+				}
+				add_core = SAX
 			}
-			add_core = SAX
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = prussian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = prussian
+				}
+				add_core = PRU
 			}
-			add_core = PRU
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = lower_saxon
+			every_province = {
+				limit = {
+					continent = europe
+					culture = lower_saxon
+				}
+				add_core = HAN
 			}
-			add_core = HAN
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = franconian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = franconian
+				}
+				add_core = FKN
 			}
-			add_core = FKN
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = swabian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = swabian
+				}
+				add_core = SWA
 			}
-			add_core = SWA
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = bavarian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = bavarian
+				}
+				add_core = BAV
 			}
-			add_core = BAV
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = austrian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = austrian
+				}
+				add_core = HAB
 			}
-			add_core = HAB
-		}
-		
-		###########################FRANCE
-		
-		every_province = {
-			limit = {
-				continent = europe
-				culture = normand
+			
+			###########################FRANCE
+			
+			every_province = {
+				limit = {
+					continent = europe
+					culture = normand
+				}
+				add_core = NRM
 			}
-			add_core = NRM
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = wallonian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = wallonian
+				}
+				add_core = WLO
 			}
-			add_core = WLO
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = gascon
+			every_province = {
+				limit = {
+					continent = europe
+					culture = gascon
+				}
+				add_core = GUY
+				add_core = PRO
 			}
-			add_core = GUY
-			add_core = PRO
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = occitain
+			every_province = {
+				limit = {
+					continent = europe
+					culture = occitain
+				}
+				add_core = PRO
 			}
-			add_core = PRO
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = breton
+			every_province = {
+				limit = {
+					continent = europe
+					culture = breton
+				}
+				add_core = BRI
 			}
-			add_core = BRI
-		}
-		every_province = {
-			limit = {
-				region = france_region
-				culture_group = occitan
+			every_province = {
+				limit = {
+					region = france_region
+					culture_group = occitan
+				}
+				add_core = OCC
 			}
-			add_core = OCC
-		}
-		
-		###########################ITALY
-		
-		every_province = {
-			limit = {
-				continent = europe
-				culture = lombard
+			
+			###########################ITALY
+			
+			every_province = {
+				limit = {
+					continent = europe
+					culture = lombard
+				}
+				add_core = MLO
 			}
-			add_core = MLO
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = tuscan
+			every_province = {
+				limit = {
+					continent = europe
+					culture = tuscan
+				}
+				add_core = TUS
 			}
-			add_core = TUS
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = sardinian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = sardinian
+				}
+				add_core = SAR
 			}
-			add_core = SAR
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = romagnan
+			every_province = {
+				limit = {
+					continent = europe
+					culture = romagnan
+				}
+				add_core = FER
 			}
-			add_core = FER
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = ligurian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = ligurian
+				}
+				add_core = GEN
 			}
-			add_core = GEN
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = venetian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = venetian
+				}
+				add_core = VEN
 			}
-			add_core = VEN
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = dalmatian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = dalmatian
+				}
+				add_core = DAL
 			}
-			add_core = DAL
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = piedmontese
+			every_province = {
+				limit = {
+					continent = europe
+					culture = piedmontese
+				}
+				add_core = SAV
 			}
-			add_core = SAV
-		}
-		
-		#most of the other ones already seem to exist by this point so moving on
-		###########################SPAIN
-		
-		every_province = {
-			limit = {
-				continent = europe
-				culture = castillian
+			
+			#most of the other ones already seem to exist by this point so moving on
+			###########################SPAIN
+			
+			every_province = {
+				limit = {
+					continent = europe
+					culture = castillian
+				}
+				add_core = CAS
 			}
-			add_core = CAS
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = leonese
+			every_province = {
+				limit = {
+					continent = europe
+					culture = leonese
+				}
+				add_core = LON
 			}
-			add_core = LON
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = aragonese
+			every_province = {
+				limit = {
+					continent = europe
+					culture = aragonese
+				}
+				add_core = ARA
 			}
-			add_core = ARA
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = galician
+			every_province = {
+				limit = {
+					continent = europe
+					culture = galician
+				}
+				add_core = GAL
 			}
-			add_core = GAL
-		}
-		
-		###########################CENTRAL EASTERN EUROPE
-		
-		every_province = {
-			limit = {
-				continent = europe
-				culture = czech
+			
+			###########################CENTRAL EASTERN EUROPE
+			
+			every_province = {
+				limit = {
+					continent = europe
+					culture = czech
+				}
+				add_core = CZE
 			}
-			add_core = CZE
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = byelorussian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = byelorussian
+				}
+				add_core = BLR
 			}
-			add_core = BLR
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = polish
+			every_province = {
+				limit = {
+					continent = europe
+					culture = polish
+				}
+				add_core = POL
 			}
-			add_core = POL
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = schlesian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = schlesian
+				}
+				add_core = SIL
 			}
-			add_core = SIL
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = schlesian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = schlesian
+				}
+				add_core = SIL
 			}
-			add_core = SIL
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = slovak
+			every_province = {
+				limit = {
+					continent = europe
+					culture = slovak
+				}
+				add_core = SLV
 			}
-			add_core = SLV
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = hungarian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = hungarian
+				}
+				add_core = HUN
 			}
-			add_core = HUN
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = romanian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = romanian
+				}
+				add_core = WAL
 			}
-			add_core = WAL
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = transylvanian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = transylvanian
+				}
+				add_core = TRA
 			}
-			add_core = TRA
-		}
-		
-		every_province = {
-			limit = {
-				continent = europe
-				culture = lithuanian
+			
+			every_province = {
+				limit = {
+					continent = europe
+					culture = lithuanian
+				}
+				add_core = LIT
 			}
-			add_core = LIT
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = latvian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = latvian
+				}
+				add_core = LVA
 			}
-			add_core = LVA
-		}
-		every_province = {
-			limit = {
-				continent = europe
-				culture = estonian
+			every_province = {
+				limit = {
+					continent = europe
+					culture = estonian
+				}
+				add_core = EST
 			}
-			add_core = EST
 		}
 		
 		###########################

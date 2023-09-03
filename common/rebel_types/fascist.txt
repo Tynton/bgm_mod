@@ -46,6 +46,10 @@ fascist_rebels = {
 			}
 		}
 		modifier = {
+			factor = 0.1
+			has_owner_accepted_culture = no
+		}
+		modifier = {
 			factor = 50
 			owner = {
 				OR = {

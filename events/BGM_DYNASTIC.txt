@@ -139,8 +139,23 @@ country_event = {
 	#Accept Support
 	option = {
 		name = "BGM_DYNASTIC.3.a"
-		add_years_of_income = 0.075
-		add_yearly_manpower = 0.075
+		if = {
+			limit = { 
+				NOT = {
+					years_of_income = 5
+				}
+			}
+			add_years_of_income = 0.075
+		}
+
+		if = {
+			limit = { 
+				NOT = {
+					manpower_percentage = 0.75
+				}
+			}
+			add_yearly_manpower = 0.075
+		}
 		
 		custom_tooltip = power_struggle_tooltip
 	}
@@ -964,6 +979,8 @@ country_event = {
 	title = none
 	desc = none
 	picture = none
+
+	hidden = yes
 	
 	is_triggered_only = yes
 	

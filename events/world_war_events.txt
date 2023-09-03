@@ -336,6 +336,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
+		set_country_flag = same_continent_peace
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -367,9 +368,13 @@ country_event = {
 	desc = "world_war_events.d.8"
 	picture = DAWNING_ERA_eventPicture
 	
-	#major = yes #Everyone votes yes
+	#major = yes
 	
 	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = same_continent_peace
+	}
 	
 	option = {
 		name = "world_war_events.8.a" #Join
@@ -424,6 +429,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
+		set_country_flag = same_continent_peace
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -474,6 +480,13 @@ country_event = {
 
 		clr_global_flag = concert_continent
 		clr_global_flag = continental_sys
+
+		every_country = {
+			limit = {
+				has_country_flag = same_continent_peace
+			}
+			clr_country_flag = same_continent_peace
+		}
 
 		hidden_effect = {
 			every_country = {

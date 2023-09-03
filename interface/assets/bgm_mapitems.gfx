@@ -1,0 +1,23 @@
+objectTypes = {
+
+	pdxmesh = {
+		name = "bgm_cloudmap"
+		file = "gfx/models/ambientObjs/cloudMap.mesh"		
+		scale = 265.0
+		cull_distance = 99999999.0f #99999999.0f
+	}
+
+	pdxmesh = {
+		name = "bgm_cloudmap_l"
+		file = "gfx/models/ambientObjs/cloudMap_l.mesh"		
+		scale = 265.0
+		cull_distance = 99999999.0f #99999999.0f
+	}
+
+	pdxmesh = {
+		name = "bgm_cloudmap_r"
+		file = "gfx/models/ambientObjs/cloudMap_r.mesh"		
+		scale = 265.0
+		cull_distance = 99999999.0f #99999999.0f
+	}
+}

@@ -7,6 +7,7 @@ revolution = {
 		#NOT = { tag = FRA }
 		#NOT = { tag = USA }
 		#NOT = { has_reform = celestial_empire }
+		bgm_france = no
 		is_free_or_tributary_trigger = yes
 		uses_doom = no
 		#capital_scope = { continent = europe }

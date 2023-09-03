@@ -201,9 +201,7 @@ feudal_france_reform = {
 	potential = {
 		has_dlc = "Domination" 
 		OR = {
-			tag = FRA
-			tag = FRW
-			tag = BFR
+			bgm_france = yes
 			AND = {
 				is_playing_custom_nation = yes
 				have_had_reform = feudal_france_reform
@@ -215,7 +213,7 @@ feudal_france_reform = {
 
 	modifiers = {
 		nobles_influence_modifier = 0.1
-		vassal_income = 0.2
+		vassal_income = -0.2
 		max_absolutism = -50
 	}
 
@@ -291,7 +289,7 @@ absolutist_france_reform = {
 				is_playing_custom_nation = yes
 				have_had_reform = absolutist_france_reform
 			}
-			mission_completed = fra_movement_centralization
+			mission_completed = FRA_court_and_country
 		}
 	}
 	trigger = {
@@ -1387,6 +1385,77 @@ revolutionary_empire_reform = {
 		governing_capacity = 150
 		max_revolutionary_zeal = 50
 		papal_influence = -100
+	}
+
+	custom_attributes = {
+		locked_government_type = yes
+	}
+	
+	conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		government_abilities = {
+			militarization_mechanic
+		}
+		factions = {
+			rr_jacobins
+			rr_royalists
+			rr_girondists
+		}
+	}
+
+	removed_effect = {
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = is_revolutionary_china_flag
+					bgm_rev = no
+				}
+				clr_country_flag = is_revolutionary_china_flag
+				restore_country_name = yes
+				override_country_name = CHINA_STRING
+				set_country_flag = is_china_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = is_revolutionary_turkey_flag
+					bgm_rev = no
+				}
+				clr_country_flag = is_revolutionary_turkey_flag
+				restore_country_name = yes
+				override_country_name = TURKEY_STRING
+				set_country_flag = is_turkey_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = is_revolutionary_gurkani_flag
+					bgm_rev = no
+				}
+				clr_country_flag = is_revolutionary_gurkani_flag
+				restore_country_name = yes
+				override_country_name = GURKANI_EMPIRE_STRING
+				set_country_flag = is_gurkani_flag
+			}
+		}
+	}
+}
+
+revolutionary_compromise_reform = {
+	lock_level_when_selected = yes
+	icon = "rioting_burning_2"
+	allow_normal_conversion = no
+	potential = {
+		has_reform = revolutionary_compromise_reform
+	}
+	#legacy_equivalent = revolutionary_empire
+	valid_for_new_country = no
+	uses_revolutionary_zeal = yes
+	revolutionary = yes
+	#fixed_rank = 3
+	modifiers = {
+		legitimacy = 1
+		land_morale = 0.10
+		state_maintenance_modifier = -0.1
+		all_estate_influence_modifier = -0.1
 	}
 
 	custom_attributes = {
@@ -5388,6 +5457,7 @@ provincial_governments_reform = {
 	icon = "landscape"
 	allow_normal_conversion = yes
 	potential = {
+		is_revolutionary = no
 		bgm_rev = no
 	}
 	modifiers = {
@@ -5403,6 +5473,7 @@ administrative_divisions_reform = {
 	icon = "map"
 	allow_normal_conversion = yes
 	potential = {
+		is_revolutionary = no
 		bgm_rev = no
 	}
 	modifiers = {
@@ -5444,6 +5515,7 @@ union_of_states_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_government_attribute = is_pirate_republic_reform }
+		is_revolutionary = no
 		bgm_rev = no
 	}
 	modifiers = {
@@ -5489,6 +5561,7 @@ estate_council_reform = {
 		max_absolutism = -25
 	}
 	potential = {
+		is_revolutionary = no
 		bgm_rev = no
 		NOT = { has_government_attribute = is_pirate_republic_reform }
 	}

@@ -1,0 +1,59 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = austrian
+religion = catholic
+capital = 5133	# Hartkirchen
+
+1355.1.1 = {
+	monarch = {
+		name = "Heinrich VII"
+		dynasty = "von Schaunberg"
+		adm = 4
+		dip = 5
+		mil = 2
+	}
+}
+
+1390.1.1 = {
+	monarch = {
+		name = "Ulrich II"
+		dynasty = "von Schaunberg"
+		adm = 4
+		dip = 5
+		mil = 2
+	}
+}
+
+1413.1.1 = { #unknown
+	monarch = {
+		birth_date = 1404.1.1
+		name = "Johann I"
+		dynasty = "von Schaunberg"
+		adm = 3
+		dip = 3
+		mil = 5
+	}
+}
+
+1413.1.1 = {
+	queen = {
+		name = "Anna"
+		dynasty = "von Pettau"
+		birth_date = 1416.1.1
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+
+1421.1.1 = {
+	heir = { #the wikipedia page for this is a mess to me
+		name = "Friedrich V"
+		birth_date = 1437.1.1
+		adm = 4
+		dip = 3
+		mil = 2
+	}
+}

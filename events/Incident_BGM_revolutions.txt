@@ -18,6 +18,9 @@ country_event = {
 				bgm_rev = yes
 			}
 		}
+		any_country = {
+			is_part_of_hre = yes
+		}
 		is_emperor = yes
 		has_institution = enlightenment
 		OR = {

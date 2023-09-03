@@ -1,5 +1,62 @@
 country_decisions = {
 
+	dismantle_hre = {
+		color = { 255 210 0 }
+		major = yes
+	
+		potential = {
+			any_country = {
+				is_part_of_hre = yes
+			}
+		}
+		allow = {
+			is_emperor = no
+			NOT = {
+				OR = {
+					government = theocracy
+					government = tribal
+				}
+			}
+			OR = {
+				is_revolutionary = yes
+				has_reform = communist_mechanic
+				has_reform = fascist_mechanic
+				has_reform = democratic_mechanic
+				has_reform = futurist_mechanic
+				AND = {
+					adm = 5
+					dip = 5
+					mil = 5
+				}
+			}
+			NOT = {
+				any_country = {
+					OR = {
+						is_elector = yes
+						is_emperor = yes
+					}
+					OR = {
+						capital_scope = {
+							NOT = { controlled_by = ROOT }
+						}
+						NOT = { is_subject_of = ROOT }
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = hre_event.15
+			}
+			hidden_effect = {
+				dismantle_hre = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	gercon_constitution_dec = {
 	
 		major = yes

@@ -21,3 +21,4 @@ reset_scores = {
 		value = 0
 	}
 }
+

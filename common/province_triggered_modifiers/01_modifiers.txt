@@ -149,3 +149,39 @@ standardized_language_spanish = {
 		add_unrest = 15
 	}
 }
+
+india_imperial = {
+	potential = {
+		always = yes
+	}
+
+	trigger = {
+		owner = {
+			OR = {
+				capital_scope = {
+					NOT = { continent = asia }
+				}
+				AND = {
+					is_subject = yes
+					overlord = {
+						capital_scope = {
+							NOT = { continent = asia }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	local_core_creation = -0.5
+	local_autonomy = -0.05
+	
+	#Province scope
+	on_activation = {
+		
+	}
+	
+	on_deactivation = {
+		
+	}
+}

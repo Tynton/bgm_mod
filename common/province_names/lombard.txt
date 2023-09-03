@@ -43,6 +43,9 @@
 4730 = "Bulogna"
 4946 = "La Spesia"
 4959 = "Monac"
+5115 = "Catansar"
+5116 = "Bónevent"
+5119 = "Piasëinsa"
 #Speculation ends
 
 5389 = "Avegvan"

@@ -13,7 +13,7 @@ revolutionary_rebels = {
 	gfx_type = culture_province	
 	will_relocate = yes	
 	
-	resilient = no
+	resilient = yes
 	reinforcing = yes
 	general = yes
 	smart = yes
@@ -23,7 +23,7 @@ revolutionary_rebels = {
 	infantry = 0.6
 	cavalry = 0.3
 	
-	morale = 1.0
+	morale = 1.1
 	
 	# Possible handle actions
 	handle_action_negotiate = no
@@ -54,9 +54,7 @@ revolutionary_rebels = {
 		}
 		modifier = {
 			factor = 0.1
-			owner = {
-				has_country_flag = rev_year
-			}
+			has_global_flag = rev_year
 		}
 		modifier = {
 			factor = 0.1
@@ -163,6 +161,20 @@ revolutionary_rebels = {
  	siege_won_trigger = {
  	}
 	siege_won_effect = {
+		if = {
+			limit = { 
+				owner = {
+					has_disaster = social_upheaval
+					has_country_flag = fights_upheaval
+				}
+				is_capital = yes
+			}
+			owner = {
+				country_event = {
+					id = bgm_social_upheaval.8
+				}
+			}
+		}
 	}
 	
 	# Country scope

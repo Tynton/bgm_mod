@@ -107,11 +107,11 @@ nationalist_rebels = {
 			nationalism = 1
 		}
 		modifier = {
-			factor = 1000
+			factor = 10000
 			has_province_modifier = nationalism_unrest_bgm
 		}
 		modifier = {
-			factor = 1000
+			factor = 10000
 			owner = { has_disaster = intranational_cultural_tension }
 		}
 		modifier = {

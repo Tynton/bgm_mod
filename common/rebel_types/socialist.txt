@@ -76,16 +76,8 @@ socialist_rebels = {
 			}
 		}
 		modifier = {
-			factor = 2
-			is_year = 1850
-		}
-		modifier = {
-			factor = 2
-			is_year = 1880
-		}
-		modifier = {
-			factor = 2
-			is_year = 1910
+			factor = 0.1
+			has_owner_accepted_culture = no
 		}
 		modifier = {
 			factor = 6
@@ -154,6 +146,20 @@ socialist_rebels = {
  	siege_won_trigger = {
  	}
 	siege_won_effect = {
+		if = {
+			limit = { 
+				owner = {
+					has_disaster = social_upheaval
+					has_country_flag = fights_upheaval
+				}
+				is_capital = yes
+			}
+			owner = {
+				country_event = {
+					id = bgm_social_upheaval.8
+				}
+			}
+		}
 	}
 	
 	# Country scope

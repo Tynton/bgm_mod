@@ -13,6 +13,16 @@
 # TRIGGERED - Triggered from within the code or by event effects
 # --------------------------------------------------------------
 
+cb_confederate_independence = {
+	valid_for_subject = no
+	
+	ai_peace_desire = -75
+
+	is_triggered_only = yes
+
+	war_goal = defend_capital_independence
+}
+
 cb_war_on_empire = {
 	valid_for_subject = no
 
@@ -62,6 +72,8 @@ cb_restore_personal_union = {
 cb_hundred_years_war = {
 	valid_for_subject = no
 
+	ai_peace_desire = -75
+
 	is_triggered_only = yes
 	months = 240
 
@@ -87,6 +99,8 @@ cb_hundred_years_war = {
 
 cb_bgm_hundred_years_war = {
 	valid_for_subject = no
+
+	ai_peace_desire = -75
 
 	prerequisites = {
 		has_country_flag = eng_claim_fra

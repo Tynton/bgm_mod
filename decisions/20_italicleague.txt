@@ -11,11 +11,15 @@ country_decisions = {
 			}
 		}
 		allow = {
-			all_subject_country = {
-				is_subject_of_type = italic_league_member
-				has_opinion = {
-					who = ROOT
-					value = 0
+			NOT = {
+				any_subject_country = {
+					is_subject_of_type = italic_league_member
+					NOT = {
+						has_opinion = {
+							who = ROOT
+							value = 0
+						}
+					}
 				}
 			}
 			adm_power = 100
@@ -60,11 +64,15 @@ country_decisions = {
 			}
 		}
 		allow = {
-			all_subject_country = {
-				is_subject_of_type = italic_league_member
-				has_opinion = {
-					who = ROOT
-					value = 0
+			NOT = {
+				any_subject_country = {
+					is_subject_of_type = italic_league_member
+					NOT = {
+						has_opinion = {
+							who = ROOT
+							value = 0
+						}
+					}
 				}
 			}
 			adm_power = 200
@@ -110,12 +118,15 @@ country_decisions = {
 			}
 		}
 		allow = {
-			all_subject_country = {
-				is_subject_of = ROOT
-				is_subject_of_type = italic_league_member
-				has_opinion = {
-					who = ROOT
-					value = 0
+			NOT = {
+				any_subject_country = {
+					is_subject_of_type = italic_league_member
+					NOT = {
+						has_opinion = {
+							who = ROOT
+							value = 0
+						}
+					}
 				}
 			}
 			adm_power = 400
@@ -143,7 +154,7 @@ country_decisions = {
 			country_event = {
 				id = italic_league.5
 			}
-			every_country = {
+			every_subject_country = {
 				limit = {
 					is_subject_of_type = italic_league_member
 					is_subject_of = ROOT

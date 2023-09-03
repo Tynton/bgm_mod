@@ -1,0 +1,108 @@
+government = republic
+add_government_reform = signoria_reform
+government_rank = 1
+mercantilism = 10
+technology_group = western
+religion = catholic
+primary_culture = romagnan
+capital = 5106
+fixed_capital = 5106 # Cannot move capital away from this province & no power cost to move to it
+
+1212.1.1 = {
+	monarch = {
+		name = "Malatesta I"
+		dynasty = "da Verucchio"
+		adm = 5
+		dip = 6
+		mil = 5
+	}
+}
+
+1312.1.1 = {
+	monarch = {
+		name = "Malatestino"
+		dynasty = "Malatesta"
+		adm = 3
+		dip = 1
+		mil = 5
+	}
+}
+
+1317.1.1 = {
+	monarch = {
+		name = "Pandolfo I"
+		dynasty = "Malatesta"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+
+1326.1.1 = { #abdication, died in 1353
+	monarch = {
+		name = "Ferrantino I"
+		dynasty = "Malatesta"
+		adm = 4
+		dip = 4
+		mil = 3
+	}
+}
+
+1335.1.1 = {
+	monarch = {
+		name = "Malatesta II"
+		dynasty = "Malatesta"
+		adm = 1
+		dip = 2
+		mil = 3
+	}
+}
+
+1335.1.1 = {
+	monarch = {
+		name = "Galeotto I"
+		dynasty = "Malatesta"
+		adm = 3
+		dip = 1
+		mil = 1
+	}
+}
+
+1385.1.1 = {
+	monarch = {
+		name = "Carlo I"
+		dynasty = "Malatesta"
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+}
+
+1432.1.1 = {
+	monarch = {
+		name = "Sigismondo Pandolfo"
+		dynasty = "Malatesta"
+		birth_date = 1417.6.19
+		adm = 4
+		dip = 5
+		mil = 6
+		leader = { name = "Sigismondo Pandolfo"   	type = general	fire = 3	shock = 6	manuever = 4	siege = 1 }
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = bold_fighter_personality
+	add_ruler_personality = patron_of_arts_personality
+}
+
+1442.1.1 = {
+	queen = {
+		country_of_origin = MLO
+		name = "Polissena"
+		dynasty = "Sforza"
+		birth_date = 1428.1.1
+		death_date = 1449.6.1
+		female = yes
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}

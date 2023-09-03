@@ -1,4 +1,4 @@
-low_german = { # self-explanatory
+bgm_low_german = { # self-explanatory
 	OR = {
 		primary_culture = hannoverian
 		primary_culture = eastphalian

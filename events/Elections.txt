@@ -415,7 +415,20 @@ country_event = {
 	}
 	option = {
 		name = "EVTOPTC700"	# A diplomat
-		ai_chance = { factor = 30 }
+		ai_chance = { 
+			factor = 30 
+			modifier = {
+				factor = 1000
+				has_country_flag = italea_leader
+				NOT = {
+					OR = {
+						tag = VIY
+						tag = ITA
+						tag = MIT
+					}
+				}
+			}
+		}
 		if = {
 			limit = { republic_with_female_rulers_trigger = yes }
 			define_ruler = {

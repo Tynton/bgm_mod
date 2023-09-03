@@ -8,6 +8,8 @@
 4733 = "Mulise"
 120 = { "Pescàrë" "Abbrùzze" }
 
+1934 = "Putenza"
+
 116 = "Sciorenza"
 118 = { "Romma" "Rómma" }
 103 = "Turino"
@@ -20,6 +22,8 @@
 
 257 = "Varsavia"
 266 = "Praga"
+
+5115 = "Cathanzario"
 
 #an assumption
 4752 = "Ciume"

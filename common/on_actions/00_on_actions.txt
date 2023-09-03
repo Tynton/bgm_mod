@@ -709,6 +709,61 @@ on_war_won = {
 # root = winning country, from = loser country
 on_main_war_won = {
 	on_main_war_won_effect = yes
+
+	if = {
+		limit = {
+			is_subject = no
+			NOT = { has_global_flag = appanage_victory }
+			OR = {
+				mission_completed = fra_min_branch_mission_5_d
+				mission_completed = fra_min_branch_mission_5_m
+			}
+			FROM = {
+				bgm_france = yes
+				NOT = {
+					army_strength = {
+						who = ROOT
+						value = 0.1
+					}
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = BGM_FRA_minor_missions.2
+			}
+		}
+		set_global_flag = appanage_victory
+	}
+
+	if = {
+		limit = {
+			tag = HOL
+			is_subject = no
+		}
+		change_country_color = { 
+			color = { 96 100 255 }
+		}
+	}
+	if = {
+		limit = {
+			tag = BRB
+			is_subject = no
+		}
+		change_country_color = { 
+			color = { 118 193 153 }
+		}
+	}
+	if = {
+		limit = {
+			tag = FLA
+			is_subject = no
+		}
+		change_country_color = { 
+			color = { 118 153 193 }
+		}
+	}
+
 	if = {
 		limit = {
 			has_government_attribute = winning_wars_gives_rt
@@ -1606,6 +1661,30 @@ on_new_monarch = {
 	slesvig_question_effect = yes #Scripted effect
 
 	log = "on_new_monarch: [Root.Monarch.Dynasty.GetName]"
+
+	bgm_adm_assessment = yes
+	bgm_dip_assessment = yes
+	bgm_mil_assessment = yes
+
+	if = {
+		limit = {
+			ai = yes
+			ruler_has_personality = obsessive_perfectionist_personality
+		}
+		add_country_modifier = {
+			name = stop_build
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			ai = yes
+			has_country_modifier = stop_build
+			NOT = { ruler_has_personality = obsessive_perfectionist_personality }
+		}
+		remove_country_modifier = stop_build
+	}
+
 
 	if = {
 		limit = {
@@ -2611,6 +2690,41 @@ on_government_change = {
 	clr_country_flag = caretaker_revolutionary_government
 	if = {
 		limit = {
+			OR = {
+				has_any_disaster = yes
+				is_subject = yes
+			}
+		}
+		add_adm_power = -9000
+		add_dip_power = -9000
+		add_mil_power = -9000
+	}
+	if = {
+		limit = {
+			has_reform = democratic_mechanic
+		}
+		disband_rebels = democratic_rebels
+	}
+	if = {
+		limit = {
+			has_reform = fascist_mechanic
+		}
+		disband_rebels = fascist_rebels
+	}
+	if = {
+		limit = {
+			has_reform = communist_mechanic
+		}
+		disband_rebels = socialist_rebels
+	}
+	if = {
+		limit = {
+			has_reform = futurist_mechanic
+		}
+		disband_rebels = futurist_rebels
+	}
+	if = {
+		limit = {
 			any_subject_country = {
 				is_subject_of_type = sister_republic
 			}
@@ -3016,7 +3130,7 @@ on_dismantle_revolution = {
 	set_country_flag = last_revolutionary_country
 
 	if = {
-		limit = { OR = { tag = FRA tag = BFR } }
+		limit = { OR = { tag = FRA tag = BFR tag = GER } }
 		swap_free_idea_group = yes 
 	}
 }
@@ -5626,6 +5740,7 @@ on_gain_great_power_status = {
 
 	if = {
 		limit = {
+			ai = yes
 			any_ally = {
 				ai = yes
 				NOT = {
@@ -5789,7 +5904,7 @@ on_province_owner_change = {
 		limit = {
 			province_id = 45
 			owner = {
-				low_german = yes
+				bgm_low_german = yes
 			}
 			NOT = {
 				has_global_flag = evolved_low_german
@@ -5802,7 +5917,7 @@ on_province_owner_change = {
 		limit = {
 			province_id = 45
 			owner = {
-				low_german = yes
+				bgm_low_german = yes
 			}
 			has_global_flag = evolved_low_german
 		}
@@ -5813,7 +5928,7 @@ on_province_owner_change = {
 		limit = {
 			province_id = 45
 			owner = {
-				low_german = no
+				bgm_low_german = no
 				culture_group = germanic
 			}
 		}
@@ -5918,9 +6033,7 @@ on_province_owner_change = {
 	if = {
 		limit = {
 			province_id = 4769
-			NOT = {
-				has_global_flag = mod_dutch
-			}
+			has_global_flag = mod_dutch
 			owner = {
 				culture_group = french
 			}
@@ -5930,9 +6043,7 @@ on_province_owner_change = {
 	if = {
 		limit = {
 			province_id = 4769
-			NOT = {
-				has_global_flag = mod_dutch
-			}
+			has_global_flag = mod_dutch
 			owner = {
 				culture_group = iberian
 			}
@@ -5942,9 +6053,7 @@ on_province_owner_change = {
 	if = {
 		limit = {
 			province_id = 4769
-			NOT = {
-				has_global_flag = mod_dutch
-			}
+			has_global_flag = mod_dutch
 			owner = {
 				culture_group = latin
 			}
@@ -5954,9 +6063,7 @@ on_province_owner_change = {
 	if = {
 		limit = {
 			province_id = 4769
-			NOT = {
-				has_global_flag = mod_dutch
-			}
+			has_global_flag = mod_dutch
 			owner = {
 				culture_group = germanic
 			}
@@ -5981,9 +6088,7 @@ on_province_owner_change = {
 			owner = {
 				culture_group = french
 			}
-			NOT = {
-				has_global_flag = mod_dutch
-			}
+			has_global_flag = mod_dutch
 		}
 		change_province_name = "Zélande"
 	}
@@ -6024,9 +6129,7 @@ on_province_owner_change = {
 					culture = umbrian
 				}
 			}
-			NOT = {
-				has_global_flag = mod_ital
-			}
+			has_global_flag = mod_ital
 		}
 		change_province_name = "Firenze"
 	}
@@ -7517,6 +7620,15 @@ on_institution_embracement = {
 		add_dip_power = 100
 		add_mil_power = 100
 	}
+	if = {
+		limit = {
+			has_institution = nationalism_institution
+			NOT = { has_country_flag = note_bgm_nat }
+		}
+		country_event = {
+			id = nationalism_age_unrest.3
+		}
+	}
 }
 on_national_focus_change = {}
 on_capital_moved = {}
@@ -7760,11 +7872,63 @@ on_tech_taken = { #ROOT - Country
 }
 
 on_adm_tech_taken = { #ROOT - Country, executed after on_tech_taken!
-
+	if = {
+		limit = {
+			OR = {
+				adm_tech = 29
+				adm_tech = 31
+				adm_tech = 33
+			}
+		}
+		country_event = {
+			id = BGM_GOV.5
+		}
+	}
 }
 
 on_dip_tech_taken = { #ROOT - Country, executed after on_tech_taken!
-
+	if = {
+		limit = {
+			dip_tech = 18
+		}
+		add_country_modifier = {
+			name = dip_tech_one
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			dip_tech = 22
+		}
+		add_country_modifier = {
+			name = dip_tech_two
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			dip_tech = 26
+		}
+		add_country_modifier = {
+			name = dip_tech_three
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				dip_tech = 37
+				dip_tech = 39
+				dip_tech = 41
+				dip_tech = 43
+				dip_tech = 45
+				dip_tech = 47
+			}
+		}
+		country_event = {
+			id = BGM_GOV.6
+		}
+	}
 }
 
 on_mil_tech_taken = { #ROOT - Country, executed after on_tech_taken!
@@ -7792,7 +7956,15 @@ on_scorch_earth  = { #ROOT - scorching country, FROM - scorched province
 }
 
 on_war_ended = { #ROOT - Winer FROM - Loser
-	
+	if = {
+		limit = {
+			ai = yes
+		}
+		add_country_modifier = {
+			name = lower_maintenance
+			duration = -1
+		}
+	}
 }
 
 on_alliance_broken = { #ROOT - Original alliance creator, FROM - Alliance accepter

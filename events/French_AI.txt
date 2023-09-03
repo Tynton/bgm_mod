@@ -35,6 +35,7 @@ country_event = {
 			}
 		}
 		FRA = {
+			is_subject = no
 			manpower_percentage = 0.9
 			army_size_percentage = 0.9
 			NOT = { num_of_loans = 1 }
@@ -229,6 +230,7 @@ country_event = {
 		is_in_deficit = no
 		NOT = { num_of_loans = 1 }
 		OR = {
+			tag = USA
 			tag = ENG
 			tag = GBR
 			tag = UNK
@@ -265,6 +267,166 @@ country_event = {
 			ROOT = {
 				heavy_ship = PREV
 				add_treasury = -40
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French_AI.4
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		ai = yes
+		treasury = 20
+		is_in_deficit = no
+		NOT = { num_of_loans = 1 }
+		OR = {
+			capital_scope = {
+				superregion = europe_superregion
+			}
+			capital_scope = {
+				region = japan_region
+			}
+			capital_scope = {
+				region = north_china_region
+			}
+			capital_scope = {
+				region = south_china_region
+			}
+		}
+		NOT = {
+			navy_size_percentage = 1
+		}
+		NOT = {
+			transport_fraction = 0.6
+		}
+		#any_rival_country = {
+		#	num_of_heavy_ship = ROOT
+		#}
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	option = {
+		name = "none"
+		
+		random_owned_province = {
+			limit = { has_port = yes }
+			ROOT = {
+				transport = PREV
+				add_treasury = -10
+			}
+		}
+	}
+}
+
+country_event = {
+	id = French_AI.5
+	title = none
+	desc = none
+	picture = none
+	
+	hidden = yes
+	
+	trigger = {
+		is_subject = no
+		any_country = {
+			ai = yes
+			manpower_percentage = 0.5
+			OR = {
+				is_at_war = no
+				is_in_war = {
+					war_score = 85
+				}
+				#is_neighbor_of = ROOT
+			}
+			has_casus_belli = {
+				type = cb_indian_ambition
+				target = ROOT
+			}
+			NOT = {
+				OR = {
+					alliance_with = ROOT
+					overlord_of = ROOT
+					marriage_with = ROOT
+					is_subject_of = ROOT
+					truce_with = ROOT
+					war_with = ROOT
+				}
+			}
+			OR = {
+				army_strength = {
+					who = ROOT
+					value = 4
+				}
+				AND = {
+					army_strength = {
+						who = ROOT
+						value = 1.5
+					}
+					num_of_transport = 60
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 2
+	}
+	
+	#he decs
+	
+	option = {
+		name = none
+		
+		random_country = {
+			limit = {
+				ai = yes
+				manpower_percentage = 0.5
+				OR = {
+					is_at_war = no
+					is_in_war = {
+						war_score = 85
+					}
+				}
+				has_casus_belli = {
+					type = cb_indian_ambition
+					target = ROOT
+				}
+				NOT = {
+					OR = {
+						alliance_with = ROOT
+						overlord_of = ROOT
+						marriage_with = ROOT
+						is_subject_of = ROOT
+						truce_with = ROOT
+						war_with = ROOT
+					}
+				}
+				OR = {
+					army_strength = {
+						who = ROOT
+						value = 4
+					}
+					AND = {
+						army_strength = {
+							who = ROOT
+							value = 1.5
+						}
+						num_of_transport = 60
+					}
+				}
+			}
+			declare_war_with_cb = {
+				casus_belli = cb_indian_ambition
+				who = ROOT
 			}
 		}
 	}

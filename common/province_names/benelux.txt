@@ -10,6 +10,7 @@
 
 1742 = "Opper-Gelre"
 
+5128 = "Ieper"
 
 89 = "Amiëns"
 91 = "Bergen"
@@ -22,7 +23,7 @@
 4770 = "'s-Hertogenbosch"
 100 = "Leeuwarden"
 
-5087 = "Bonen"
+5132 = "Ostende"
 
 13 = "Sleeswijk"
 253 = "Buiten-Hebriden"

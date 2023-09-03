@@ -454,7 +454,7 @@ invite_dynasty = {
 			}
 		}
 		FROM = {
-			#government = monarchy #testing without this restriction for funzies
+			government = monarchy #testing without this restriction for funzies
 			has_regency = no
 			marriage_with = ROOT
 			#NOT = {
@@ -1134,32 +1134,55 @@ integrate_direct =  {
 	category = alliance
 	require_acceptance = no
 	is_visible = {
-		FROM = {
-			ai = yes
-			is_subject_of = ROOT
-			OR = {
-				is_subject_of_type = colony
-				is_subject_of_type = crown_colony
-				is_subject_of_type = self_governing_colony
-				is_subject_of_type = private_enterprise
+		is_subject = no
+		OR = {
+			AND = {
+				is_revolutionary = no
+				FROM = {
+					ai = yes
+					is_subject_of = ROOT
+					OR = {
+						is_subject_of_type = colony
+						is_subject_of_type = crown_colony
+						is_subject_of_type = self_governing_colony
+						is_subject_of_type = private_enterprise
+					}
+					is_overseas_subject = no
+				}
 			}
-			is_overseas_subject = no
+			AND = {
+				is_revolutionary = yes
+				FROM = {
+					ai = yes
+					is_overseas_subject = no 
+					is_subject_of = ROOT
+				}
+			}
 		}
 	}
 	is_allowed = {
-		FROM = {
-			is_subject_of = ROOT
-			OR = {
-				is_subject_of_type = colony
-				is_subject_of_type = crown_colony
-				is_subject_of_type = self_governing_colony
-				is_subject_of_type = private_enterprise
+		OR = {
+			FROM = {
+				is_subject_of = ROOT
+				OR = {
+					is_subject_of_type = colony
+					is_subject_of_type = crown_colony
+					is_subject_of_type = self_governing_colony
+					is_subject_of_type = private_enterprise
+				}
+				any_owned_province = {
+					is_in_capital_area = yes
+					any_neighbor_province = {
+						owned_by = ROOT
+						is_in_capital_area = ROOT
+					}
+				}
 			}
-			any_owned_province = {
-				is_in_capital_area = yes
-				any_neighbor_province = {
-					owned_by = ROOT
-					is_in_capital_area = ROOT
+			AND = {
+				is_revolutionary = yes
+				FROM = { 
+					is_overseas_subject = no 
+					is_subject_of = ROOT
 				}
 			}
 		}
@@ -1171,12 +1194,64 @@ integrate_direct =  {
 		
 	}
 	on_accept = {
-		ROOT = {
-			inherit = FROM
+
+		if = {
+			limit = {
+				FROM = {
+					NOT = {
+						OR = {
+							is_subject_of_type = colony
+							is_subject_of_type = crown_colony
+							is_subject_of_type = self_governing_colony
+							is_subject_of_type = private_enterprise
+						}
+					}
+				}
+			}
+			FROM = {
+				every_owned_province = {
+					cede_province = ROOT
+				}
+			}
+		}
+		else = {
+			ROOT = {
+				inherit = FROM
+			}
 		}
 	}
 	ai_will_do = {
-		always = yes
+		OR = {
+			AND = {
+				is_revolutionary = no
+				FROM = {
+					ai = yes
+					is_subject_of = ROOT
+					OR = {
+						is_subject_of_type = colony
+						is_subject_of_type = crown_colony
+						is_subject_of_type = self_governing_colony
+						is_subject_of_type = private_enterprise
+					}
+					is_overseas_subject = no
+				}
+			}
+			AND = {
+				is_revolutionary = yes
+				FROM = { 
+					ai = yes
+					culture_group = ROOT 
+				}
+			}
+			AND = {
+				any_subject_country = {
+					bgm_colonial = yes
+					capital_scope = {
+						colonial_region = FROM
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -1432,10 +1507,17 @@ demand_integration = {
 	is_visible = {
 		OR = {
 			AND = {
-				has_institution = nationalism_institution
+				has_institution = global_imperialism
 				FROM = {
 					capital_scope = {
-						bgm_colonial = no
+						bgm_colonial = yes
+						NOT = {
+							OR = {
+								continent = africa
+								continent = north_america
+								continent = south_america
+							}
+						}
 					}
 				}
 			}
@@ -1483,11 +1565,13 @@ demand_integration = {
 						OR = {
 							continent = north_america
 							continent = south_america
+							continent = oceania
 						}
 					}
 				}
 			}
 			has_reform = authoritarian_mechanic
+			has_reform = futurist_mechanic
 			has_reform = fascist_mechanic
 			has_reform = communist_mechanic
 			has_reform = socialist_mechanic
@@ -1507,7 +1591,7 @@ demand_integration = {
 			}
 		}
 		NOT = { FROM = { continent = ROOT } }
-		FROM = { is_great_power = no } 
+		#FROM = { is_great_power = no } #will influence the likelihood of annexations now
 		NOT = { FROM = { OR = { tag = PAP tag = NTI } } }
 		is_subject = no
 		OR = {
@@ -1554,10 +1638,20 @@ demand_integration = {
 				total_development = ROOT
 				truce_with = ROOT
 			}
-			any_neighbor_country = {
-				OR = {
-					tag = ROOT
-					is_subject_of = ROOT
+			OR = {
+				any_neighbor_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+				}
+				AND = {
+					has_institution = global_imperialism
+					FROM = {
+						any_owned_province = {
+							has_port = yes
+						}
+					}
 				}
 			}
 			OR = {
@@ -1588,7 +1682,7 @@ demand_integration = {
 				which = ai_value 
 				value = modifier:diplomatic_reputation
 			} 
-			multiply_variable = { which = ai_value value = 3 }
+			multiply_variable = { which = ai_value value = 5 } #3
 		}
 
 		add_entry = {
@@ -1597,7 +1691,17 @@ demand_integration = {
 				which = ai_value 
 				value = total_development
 			} 
-			multiply_variable = { which = ai_value value = 0.1 }
+			multiply_variable = { which = ai_value value = 0.015 }
+		}
+
+		add_entry = {
+			name = BORDER_DISTANCE
+			export_to_variable = { 
+				which = ai_value 
+				value = border_distance 
+				who = FROM
+			} 
+			multiply_variable = { which = ai_value value = -0.33 }
 		}
 
 		add_entry = {
@@ -1607,7 +1711,7 @@ demand_integration = {
 				value = total_development 
 				who = FROM
 			} 
-			multiply_variable = { which = ai_value value = -0.65 }
+			multiply_variable = { which = ai_value value = -0.015 }
 		}
 
 		
@@ -1653,7 +1757,7 @@ demand_integration = {
 				which = ai_value
 				value = 40
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = { which = ai_value value = -1.5 }
 		}
 		add_entry = {
 			name = ROOT_FROM_MILITARY_POWER_COMPARED
@@ -1783,6 +1887,26 @@ demand_integration = {
 		}
 
 		add_entry = {
+			name = GREAT_POWER_RANK_DEMAND
+			limit = {
+				ROOT = {
+					is_great_power = yes
+				}
+			}
+			export_to_variable = { which = ai_value value = 25 }
+		}
+
+		add_entry = {
+			name = FROM_GREAT_POWER_RANK_DEMAND
+			limit = {
+				FROM = {
+					is_great_power = yes
+				}
+			}
+			export_to_variable = { which = ai_value value = -50 }
+		}
+
+		add_entry = {
 			name = PART_HRE
 			limit = {
 				FROM = {
@@ -1860,10 +1984,23 @@ demand_integration = {
 	}
 	on_accept = {
 
-		hidden_effect = {
-			country_event = {
-				id = BGM_DIPLOMACY.26
-				days = 9125
+		if = {
+			limit = {
+				NOT = { has_institution = global_imperialism }
+			}
+			hidden_effect = {
+				country_event = {
+					id = BGM_DIPLOMACY.26
+					days = 9125
+				}
+			}
+		}
+		else = {
+			hidden_effect = {
+				country_event = {
+					id = BGM_DIPLOMACY.26
+					days = 3650
+				}
 			}
 		}
 
@@ -1919,6 +2056,11 @@ demand_integration = {
 				add_trust = {
 					who = ROOT
 					value = -5
+				}
+				add_aggressive_expansion = {
+					who = ROOT
+					value = 30
+					apply_calc = yes
 				}
 				add_opinion = {
 					who = ROOT
@@ -2174,7 +2316,9 @@ join_zollverein = {
 		}
 		add_entry = {
 			name = DEFAULT_BGM
-			ai = yes
+			limit = {
+				FROM = { ai = yes }
+			}
 			export_to_variable = { which = ai_value value = 5 }
 		}
 		add_entry = {
@@ -2230,10 +2374,17 @@ join_gercon = {
 		}
 		FROM = {
 			has_subject_of_type = german_confederation_member
+			OR = {
+				any_subject_country = { is_neighbor_of = ROOT }
+				is_neighbor_of = ROOT
+			}
 		}
 	}
 	is_allowed = {
 		always = yes
+		NOT = {
+			total_development = FROM
+		}
 	}
 	ai_acceptance = {
 		add_entry = {
@@ -2250,7 +2401,9 @@ join_gercon = {
 		}
 		add_entry = {
 			name = DEFAULT_BGM
-			always = yes
+			limit = {
+				FROM = { ai = yes }
+			}
 			export_to_variable = { which = ai_value value = 5 }
 		}
 		add_entry = {
@@ -2446,5 +2599,87 @@ influence_ideology = {
 	}
 	ai_will_do = {
 		always = yes
+	}
+}
+
+order_execution = {
+	category = influence
+	require_acceptance = no
+	is_visible = {
+		has_subject_of_type = appanage
+		FROM = {
+			is_subject_of = ROOT
+			OR = {
+				is_subject_of_type = appanage
+				is_subject_of_type = vassal
+				is_subject_of_type = march
+				is_subject_of_type = client_march
+			}
+		}
+	}
+	is_allowed = {
+		stability = 1
+		FROM = {
+			OR = {
+				NOT = {
+					has_country_flag = executed_monarch
+				}
+				had_country_flag = { flag = executed_monarch days = 14600 }
+			}
+		}
+		NOT = {
+			FROM = {
+				liberty_desire = 50
+			}
+		}
+	}
+	on_accept = {
+		add_stability = -1
+		add_prestige = -25
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -20
+		}
+		FROM = {
+			set_country_flag = executed_monarch
+			add_liberty_desire = -25
+			country_event = {
+				id = BGM_DIPLOMACY.27
+			}
+		}
+	}
+	ai_will_do = {
+		NOT = {
+			any_neighbor_country = {
+				tech_difference = 6
+				military_strength = {
+					who = ROOT
+					value = 1
+				}
+			}
+		}
+		OR = {
+			FROM = {
+				liberty_desire = 30
+			}
+			AND = {
+				FROM = {
+					ai = yes
+					has_heir = no
+				}
+				OR = {
+					adm_tech = 15
+					NOT = {
+						OR = {
+							current_age = age_of_discovery
+							current_age = age_of_reformation
+						}
+					}
+				}
+			}
+		}
 	}
 }

@@ -92,21 +92,31 @@ GER_ideas = {
 	start = {
 		legitimacy = 1
 		devotion = 1
-		republican_tradition = 0.3
 		infantry_power = 0.15
 	}
 	
 	bonus = {
-		diplomatic_upkeep = 1
+		max_absolutism_effect = 0.1
 	}	
 
 	trigger = {
 		tag = GER
+		OR = {
+			government = theocracy
+			government = monarchy
+			bgm_mon = yes
+		}
+		NOT = {
+			OR = {
+				has_reform = peasants_republic
+				bgm_rev = yes
+			}
+		}
 	}
 	free = yes
 	
 	ger_german_confederation = {
-		no_religion_penalty = yes
+		state_maintenance_modifier = -0.15
 	}
 	ger_german_universities = {
 		technology_cost = -0.1
@@ -114,17 +124,111 @@ GER_ideas = {
 	ger_reichsheer = {
 		discipline = 0.05
 	}
-	ger_new_hanseatics = {
-		trade_efficiency = 0.10
+	ger_land_of_scientists = {
+		adm_advisor_cost = -0.1
 	}
 	ger_junkers = {
 		army_tradition = 0.5
 	}
 	ger_reichstag = {
-		state_governing_cost = -0.25
+		global_autonomy = -0.05
 	}
 	ger_eisen_und_kohle = {
-		global_trade_goods_size_modifier = 0.2
+		global_trade_goods_size_modifier = 0.1
+	}
+}
+
+GER_ideas_2 = { #Republican, corporatist
+	start = {
+		republican_tradition = 0.5
+		global_manpower_modifier = 0.15
+	}
+	
+	bonus = {
+		monthly_reform_progress = 0.5
+	}	
+
+	trigger = {
+		tag = GER
+		bgm_mon = no
+		NOT = {
+			OR = {
+				has_reform = peasants_republic
+				bgm_rev = yes
+			}
+		}
+	}
+	free = yes
+	
+	ger_town_confederation = {
+		stability_cost_modifier = -0.1
+	}
+	ger_german_universities = {
+		technology_cost = -0.1
+	}
+	ger_great_liberty = {
+		global_prov_trade_power_modifier = 0.15
+	}
+	ger_new_hanseatics = {
+		trade_efficiency = 0.10
+	}
+	ger_burghers = {
+		parliament_backing_chance = 0.25
+		estate_burghers_loyalty_modifier = 0.1
+	}
+	ger_mercs = {
+		merc_maintenance_modifier = -0.1
+		merc_leader_army_tradition = 0.25
+	}
+	ger_land_of_business = {
+		build_cost = -0.1
+		development_cost_modifier = -0.1
+	}
+}
+
+GER_ideas_3 = { #Republican, populist
+	start = {
+		reelection_cost = -0.15
+		land_morale = 0.15
+	}
+	
+	bonus = {
+		army_tradition_from_battle = 0.5
+	}	
+
+	trigger = {
+		tag = GER
+		bgm_mon = no
+		OR = {
+			has_reform = peasants_republic
+			bgm_rev = yes
+		}
+	}
+	free = yes
+	
+	ger_peasant_culture = {
+		global_unrest = -2
+	}
+	ger_populist_politics = {
+		monthly_reform_progress_modifier = 0.15
+	}
+	ger_militarism = {
+		global_regiment_cost = -0.1
+		land_forcelimit_modifier = 0.1
+	}
+	ger_urbanization = {
+		development_cost = -0.2
+	}
+	ger_liberal_fervor = {
+		manpower_recovery_speed = 0.1
+	}
+	ger_local_bundestags = {
+		global_manpower_modifier = 0.15
+		state_governing_cost = -0.25
+	}
+	ger_the_coming_revolution = {
+		yearly_revolutionary_zeal = 0.5
+		shock_damage = 0.15
 	}
 }
 
@@ -268,12 +372,8 @@ NOR_ideas = {
 	}
 	free = yes
 	
-	call_of_our_forefathers = {
-		range = 0.33
-		may_explore = yes
-	}
-	pioneer_spirit = {
-		colonists = 1
+	nor_fishing = {
+		production_efficiency = 0.1
 	}
 	natural_seamanship = {
 		naval_morale = 0.20		
@@ -281,11 +381,15 @@ NOR_ideas = {
 	nor_shipbuilding = {
 		global_ship_cost = -0.1
 	}
+	call_of_our_forefathers = {
+		range = 0.33
+		may_explore = yes
+	}
+	pioneer_spirit = {
+		colonists = 1
+	}
 	seize_the_opportunity = {
  		global_trade_power = 0.1
-	}
-	nor_fishing = {
-		production_efficiency = 0.1
 	}
 	write_new_sagas = {
 		prestige = 1
@@ -2286,49 +2390,6 @@ AYU_ideas = {
 	}
 }
 
-
-NOR_ideas = {
-	start = {
-		global_sailors_modifier = 0.25
-		ship_durability = 0.10
-	}
-	
-	bonus = {
-		trade_steering = 0.20
-	}
-	
-	trigger = {
-		tag = NOR
-	}
-	free = yes
-	
-	natural_seamanship = {
-		naval_morale = 0.20
-		
-	}
-	call_of_our_forefathers = {
-		range = 0.33
-		may_explore = yes
-	}
-	pioneer_spirit = {
-		colonists = 1
-	}
-	nor_shipbuilding = {
-		global_ship_cost = -0.1
-	}
-	seize_the_opportunity = {
- 		global_trade_power = 0.1
-	}
-	nor_fishing = {
-		production_efficiency = 0.1
-	}
-	write_new_sagas = {
-		prestige = 1
-		discipline = 0.025
-	}
-}
-
-
 OMA_ideas = {
 	start = {
 		naval_morale = 0.15
@@ -3517,8 +3578,8 @@ TUS_ideas = {
 
 USA_ideas = {
 	start = {
-		merchants = 1
-		allowed_marine_fraction = 0.1
+		advisor_cost = -0.15
+		development_cost_modifier = -0.2
 	}
 	
 	bonus = {
@@ -3531,16 +3592,19 @@ USA_ideas = {
 	free = yes
 	
 	freedom_of_religion = {
-		tolerance_heretic = 5
+		no_religion_penalty = yes
 	}
 	usa_bill_of_rights = {
+		innovativeness_gain = 0.66
 		global_unrest = -2
 	}
 	manifest_destiny = {
-		colonists = 1
+		ae_impact = -0.1
+		province_warscore_cost = -0.25
 	}
 	lessons_of_valley_forge = {
-		land_morale = 0.10
+		army_tradition = 0.5
+		army_tradition_from_battle = 0.5
 	}
 	workshop_of_the_world = {
 		global_trade_goods_size_modifier = 0.15
@@ -15046,8 +15110,8 @@ EPI_ideas = {
 
 LOT_ideas = {
 	start = {
-		infantry_power = 0.1
-		global_manpower_modifier = 0.25
+		improve_relation_modifier = 0.15
+		diplomatic_reputation = 2.5
 	}
 	
 	bonus = {

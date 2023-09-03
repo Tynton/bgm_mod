@@ -107,3 +107,557 @@ province_event = {
 		}
 	}
 }
+
+#Italian/German province revolt
+
+province_event = {
+	id = BGM_provinces.2
+	title = "BGM_provinces.n.2"
+	desc = {
+		trigger = {
+			culture_group = latin
+		}
+		desc = "BGM_provinces.d.2a"
+	}
+	desc = {
+		trigger = {
+			culture_group = germanic
+		}
+		desc = "BGM_provinces.d.2b"
+	}
+	picture = MODERN_UNREST_eventPicture
+	
+	trigger = {
+		owner = {
+			has_institution = nationalism_institution
+			NOT = {
+				culture_group = ROOT
+			}
+		}
+		OR = {
+			AND = {
+				culture_group = germanic
+				owner = { NOT = { has_country_flag = had_ger_revolt } }
+				OR = {
+					exists = GER
+					NOT = {
+						any_country = {
+							has_subject_of_type = german_confederation_member
+						}
+					}
+				}
+			}
+			AND = {
+				culture_group = latin
+				owner = { NOT = { has_country_flag = had_ita_revolt } }
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 28
+
+		modifier = {
+			factor = 0.75
+			owner = {
+				NOT = { great_power_rank = 4 }
+			}
+		}
+	}
+	
+	option = {
+		name = "BGM_provinces.2.a"
+		if = {
+			limit = { 
+				any_country = {
+					culture_group = ROOT
+				}
+			}
+			every_country = {
+				limit = {
+					culture_group = ROOT
+				}
+				add_core = ROOT
+			}
+		}
+
+		if = {
+			limit = { 
+				is_in_capital_area = no
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					culture_group = ROOT
+					is_in_capital_area = no
+					likely_rebels = nationalist_rebels
+				}
+				change_controller = REB
+			}
+		}
+		if = {
+			limit = { 
+				owner = { NOT = { stability = 0 } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					likely_rebels = nationalist_rebels
+					OR = {
+						culture_group = ROOT
+						region = ROOT
+					}
+				}
+				change_controller = REB
+			}
+		}
+
+
+
+		if = {
+			limit = { 
+				owner = {
+					calc_true_if = {
+						amount = 10
+						all_owned_province = {
+							culture_group = germanic
+							unrest = 10
+						}
+					}
+				}
+				OR = {
+					exists = GER
+					NOT = {
+						any_country = {
+							has_subject_of_type = german_confederation_member
+						}
+					}
+				}
+			}
+			every_province = {
+				limit = {
+					OR = {
+						culture_group = ROOT
+						region = ROOT
+					}
+				}
+				cede_province = GER
+			}
+			owner = {
+				set_country_flag = had_ger_revolt
+				declare_war_with_cb = {
+					casus_belli = cb_imperial
+					who = GER
+				}
+				every_enemy_country = {
+					create_alliance = GER
+				}
+			}
+			every_subject_country = {
+				limit = {
+					OR = {
+						OR = {
+							liberty_desire = 50
+							NOT = {
+								has_opinion = {
+									who = ROOT
+									value = 0
+								}
+							}
+						}
+						NOT = {
+							has_opinion = {
+								who = ROOT
+								value = 0
+							}
+						}
+					}
+					capital_scope = {
+						continent = europe
+					}
+					culture_group = germanic
+				}
+				GER = {
+					inherit = PREV
+				}
+			}
+		}
+
+		if = {
+			limit = { 
+				owner = {
+					calc_true_if = {
+						amount = 10
+						all_owned_province = {
+							culture_group = latin
+							unrest = 10
+						}
+					}
+				}
+				NOT = {
+					OR = {
+						exists = VIY
+						exists = MIT
+					}
+				}
+			}
+			owner = {
+				set_country_flag = had_ita_revolt
+				every_owned_province = {
+					limit = {
+						OR = {
+							culture_group = latin
+							region = italy_region
+						}
+					}
+					cede_province = ITA
+				}
+				every_subject_country = {
+					limit = {
+						OR = {
+							liberty_desire = 50
+							NOT = {
+								has_opinion = {
+									who = ROOT
+									value = 0
+								}
+							}
+						}
+						capital_scope = {
+							continent = europe
+						}
+						culture_group = latin
+					}
+					ITA = {
+						inherit = PREV
+					}
+				}
+				declare_war_with_cb = {
+					casus_belli = cb_imperial
+					who = ITA
+				}
+				every_enemy_country = {
+					create_alliance = ITA
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				owner = {
+					calc_true_if = {
+						amount = 10
+						all_owned_province = {
+							culture_group = latin
+							unrest = 10
+						}
+					}
+				}
+				exists = VIY
+			}
+			owner = {
+				set_country_flag = had_ita_revolt
+				every_owned_province = {
+					limit = {
+						OR = {
+							culture_group = latin
+							region = italy_region
+						}
+					}
+					cede_province = VIY
+				}
+				every_subject_country = {
+					limit = {
+						OR = {
+							liberty_desire = 50
+							NOT = {
+								has_opinion = {
+									who = ROOT
+									value = 0
+								}
+							}
+						}
+						capital_scope = {
+							continent = europe
+						}
+						culture_group = latin
+					}
+					VIY = {
+						inherit = PREV
+					}
+				}
+				declare_war_with_cb = {
+					casus_belli = cb_imperial
+					who = VIY
+				}
+				every_enemy_country = {
+					create_alliance = VIY
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				owner = {
+					calc_true_if = {
+						amount = 10
+						all_owned_province = {
+							culture_group = latin
+							unrest = 10
+						}
+					}
+				}
+				exists = MIT
+			}
+			owner = {
+				set_country_flag = had_ita_revolt
+				every_owned_province = {
+					limit = {
+						OR = {
+							culture_group = latin
+							region = italy_region
+						}
+					}
+					cede_province = MIT
+				}
+				every_subject_country = {
+					limit = {
+						liberty_desire = 50
+						capital_scope = {
+							continent = europe
+						}
+						culture_group = latin
+					}
+					MIT = {
+						inherit = PREV
+					}
+				}
+				declare_war_with_cb = {
+					casus_belli = cb_imperial
+					who = MIT
+				}
+				every_enemy_country = {
+					create_alliance = MIT
+				}
+			}
+		}
+
+
+		
+		if = {
+			limit = {
+				culture_group = latin
+				exists = VIY
+			}
+			random_list = {
+				40 = {
+					spawn_rebels = {
+						type = nationalist_rebels
+						size = 1
+						win = yes
+						separatists_target = VIY
+					}
+				}
+				30 = {
+					spawn_rebels = {
+						type = nationalist_rebels
+						size = 2
+						win = yes
+						separatists_target = VIY
+					}
+				}
+				30 = {
+					spawn_rebels = {
+						type = nationalist_rebels
+						size = 3
+						win = yes
+						separatists_target = VIY
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				culture_group = latin
+				exists = MIT
+			}
+			random_list = {
+				40 = {
+					spawn_rebels = {
+						type = nationalist_rebels
+						size = 1
+						win = yes
+						separatists_target = MIT
+					}
+				}
+				30 = {
+					spawn_rebels = {
+						type = nationalist_rebels
+						size = 2
+						win = yes
+						separatists_target = MIT
+					}
+				}
+				30 = {
+					spawn_rebels = {
+						type = nationalist_rebels
+						size = 3
+						win = yes
+						separatists_target = MIT
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				culture_group = latin
+				NOT = {
+					OR = {
+						exists = VIY
+						exists = MIT
+					}
+				}
+			}
+			random_list = {
+				40 = {
+					spawn_rebels = {
+						type = nationalist_rebels
+						size = 1
+						win = yes
+						separatists_target = ITA
+					}
+				}
+				30 = {
+					spawn_rebels = {
+						type = nationalist_rebels
+						size = 2
+						win = yes
+						separatists_target = ITA
+					}
+				}
+				30 = {
+					spawn_rebels = {
+						type = nationalist_rebels
+						size = 3
+						win = yes
+						separatists_target = ITA
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				culture_group = germanic
+			}
+			random_list = {
+				40 = {
+					spawn_rebels = {
+						type = nationalist_rebels
+						size = 1
+						win = yes
+						separatists_target = GER
+					}
+				}
+				30 = {
+					spawn_rebels = {
+						type = nationalist_rebels
+						size = 2
+						win = yes
+						separatists_target = GER
+					}
+				}
+				30 = {
+					spawn_rebels = {
+						type = nationalist_rebels
+						size = 3
+						win = yes
+						separatists_target = GER
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 400
+
+			modifier = {
+				factor = 0
+				owner = {
+					calc_true_if = {
+						amount = 10
+						all_owned_province = {
+							OR = {
+								culture_group = germanic
+								culture_group = latin
+							}
+							unrest = 10
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "BGM_provinces.2.b"
+		owner = {
+			every_owned_province = {
+				limit = {
+					culture_group = PREV
+				}
+			}
+		}
+		if = {
+			limit = { 
+				exists = VIY
+			}
+			every_province = {
+				limit = {
+					owned_by = owner
+					culture_group = latin
+				}
+				cede_province = VIY
+			}
+		}
+		else_if = {
+			limit = { 
+				exists = MIT
+			}
+			every_province = {
+				limit = {
+					owned_by = owner
+					culture_group = latin
+				}
+				cede_province = MIT
+			}
+		}
+		else = {
+			every_province = {
+				limit = {
+					owned_by = owner
+					culture_group = latin
+				}
+				cede_province = ITA
+			}
+		}
+
+		if = {
+			limit = { 
+				OR = {
+					exists = GER
+					NOT = {
+						any_country = {
+							has_subject_of_type = german_confederation_member
+						}
+					}
+				}
+			}
+			every_province = {
+				limit = {
+					owned_by = owner
+					culture_group = germanic
+				}
+				cede_province = GER
+			}
+		}
+	}
+}

@@ -124,6 +124,8 @@
 4553 = "Samora"
 214 = "Saragoça"
 
+5079 = "Couto Misto"
+
 #japan
 
 1020 = "Quioto"

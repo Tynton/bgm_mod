@@ -1,6 +1,6 @@
 government = monarchy
 add_government_reform = feudalism_reform
-primary_culture = normand
+primary_culture = anglo_norman
 religion = catholic
 technology_group = western
 capital = 178 # Anjou

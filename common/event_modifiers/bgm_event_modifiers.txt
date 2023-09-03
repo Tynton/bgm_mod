@@ -761,6 +761,24 @@ federal_science = {
 	idea_cost = -0.2
 }
 
+dip_tech_one = {
+	diplomatic_upkeep = 1
+	spy_offence = 0.1
+	global_spy_defence = 0.1
+}
+
+dip_tech_two = {
+	diplomatic_upkeep = 1
+	spy_offence = 0.1
+	global_spy_defence = 0.1
+}
+
+dip_tech_three = {
+	diplomatic_upkeep = 1
+	spy_offence = 0.1
+	global_spy_defence = 0.1
+}
+
 #############fraticelli#############
 
 frat_tax = {
@@ -849,7 +867,7 @@ m1 = {
 	global_manpower_modifier = 0.1
 	land_forcelimit_modifier = 0.1
 	fire_damage_received = -0.05
-	land_maintenance_modifier = 0.05
+	global_regiment_cost = 0.05
 	naval_maintenance_modifier = 0.05
 	global_sailors_modifier = 0.1
 	sailors_recovery_speed = 0.1
@@ -862,7 +880,7 @@ m2 = {
 	global_manpower_modifier = 0.1
 	land_forcelimit_modifier = 0.1
 	fire_damage_received = -0.05
-	land_maintenance_modifier = 0.05
+	global_regiment_cost = 0.05
 	naval_maintenance_modifier = 0.05
 	global_sailors_modifier = 0.1
 	sailors_recovery_speed = 0.1
@@ -875,7 +893,7 @@ m3 = {
 	global_manpower_modifier = 0.1
 	land_forcelimit_modifier = 0.1
 	fire_damage_received = -0.05
-	land_maintenance_modifier = 0.05
+	global_regiment_cost = 0.05
 	naval_maintenance_modifier = 0.05
 	global_sailors_modifier = 0.1
 	sailors_recovery_speed = 0.1
@@ -888,7 +906,7 @@ m4 = {
 	global_manpower_modifier = 0.1
 	land_forcelimit_modifier = 0.1
 	fire_damage_received = -0.05
-	land_maintenance_modifier = 0.05
+	global_regiment_cost = 0.05
 	naval_maintenance_modifier = 0.05
 	global_sailors_modifier = 0.1
 	sailors_recovery_speed = 0.1
@@ -901,7 +919,7 @@ m5 = {
 	global_manpower_modifier = 0.1
 	land_forcelimit_modifier = 0.1
 	fire_damage_received = -0.05
-	land_maintenance_modifier = 0.05
+	global_regiment_cost = 0.05
 	naval_maintenance_modifier = 0.05
 	global_sailors_modifier = 0.1
 	sailors_recovery_speed = 0.1
@@ -914,7 +932,7 @@ m6 = {
 	global_manpower_modifier = 0.1
 	land_forcelimit_modifier = 0.1
 	fire_damage_received = -0.05
-	land_maintenance_modifier = 0.05
+	global_regiment_cost = 0.05
 	naval_maintenance_modifier = 0.05
 	global_sailors_modifier = 0.1
 	sailors_recovery_speed = 0.1
@@ -928,7 +946,7 @@ m7 = {
 	land_forcelimit_modifier = 0.1
 	fire_damage_received = -0.5
 	shock_damage_received = -0.5
-	land_maintenance_modifier = 0.05
+	global_regiment_cost = 0.05
 	naval_maintenance_modifier = 0.05
 	global_sailors_modifier = 0.1
 	sailors_recovery_speed = 0.1
@@ -942,7 +960,7 @@ m8 = {
 	land_forcelimit_modifier = 0.15
 	fire_damage = 0.25
 	shock_damage = 0.25
-	land_maintenance_modifier = 0.1
+	global_regiment_cost = 0.1
 	naval_maintenance_modifier = 0.1
 	global_sailors_modifier = 0.15
 	sailors_recovery_speed = 0.15
@@ -956,7 +974,7 @@ m9 = {
 	land_forcelimit_modifier = 0.15
 	fire_damage = 0.25
 	shock_damage = 0.25
-	land_maintenance_modifier = 0.1
+	global_regiment_cost = 0.1
 	naval_maintenance_modifier = 0.1
 	global_sailors_modifier = 0.15
 	sailors_recovery_speed = 0.15
@@ -970,10 +988,48 @@ m10 = {
 	land_forcelimit_modifier = 0.2
 	fire_damage = 0.25
 	shock_damage = 0.25
-	land_maintenance_modifier = 0.1
+	global_regiment_cost = 0.1
 	naval_maintenance_modifier = 0.1
 	global_sailors_modifier = 0.2
 	sailors_recovery_speed = 0.2
+}
+
+############# social upheaval #############
+
+abolished_serfdom = {
+	global_tax_modifier = -0.05
+	global_manpower_modifier = -0.05
+	production_efficiency = 0.05
+	trade_efficiency = 0.05
+}
+
+allows_serfdom = {
+	global_tax_modifier = 0.05
+	global_manpower_modifier = 0.05
+	production_efficiency = -0.05
+	trade_efficiency = -0.05
+	global_unrest = 2
+	stability_cost_modifier = 0.25
+}
+
+liberal_land_reform = {
+	development_cost = 0.1
+	trade_goods_size_modifier = 0.05
+	global_prosperity_growth = 0.1
+}
+
+banned_dialect = {
+	min_local_autonomy = 50
+	local_unrest = 5
+	culture_conversion_time = -0.33
+	culture_conversion_cost = -0.33
+}
+
+bgm_famine = {
+	global_unrest = 5
+	manpower_recovery_speed = -0.33
+	global_tax_modifier = -0.33
+	production_efficiency = -0.33
 }
 
 #############air force and nukes#############
@@ -1149,9 +1205,9 @@ illiberal_society = {
 
 nationalism_unrest_bgm = {
 	local_unrest = 15
-	local_autonomy = 0.1
+	local_autonomy = 1
 	#local_years_of_nationalism = 10
-	min_local_autonomy = 40
+	#min_local_autonomy = 50
 }
 
 #############military#############
@@ -1219,32 +1275,34 @@ meiji_politics = {
 #############ruler skills#############
 
 adm_one = {
-	yearly_corruption = 0.15
+	yearly_corruption = 0.1
+	monthly_reform_progress_modifier = -0.1
 }
 
 adm_five = {
-	yearly_corruption = -0.15
+	yearly_corruption = -0.1
+	monthly_reform_progress_modifier = 0.1
 }
 
 dip_five = {
-	spy_offence = 0.2
-	global_spy_defence = 0.2
-	prestige = 0.5
+	spy_offence = 0.1
+	global_spy_defence = 0.1
+	improve_relation_modifier = 0.1
 }
 
 dip_one = {
 	spy_offence = -0.1
 	global_spy_defence = -0.1
-	prestige = -0.5
 }
 
 mil_one = {
-	land_morale = -0.05
+	army_tradition = -0.5
+	army_tradition_from_battle = -0.33
 }
 
 mil_five = {
-	land_morale = 0.1
-	discipline = 0.025
+	army_tradition = 0.5
+	army_tradition_from_battle = 0.33
 }
 
 #############socialist state#############
@@ -1426,20 +1484,25 @@ enforced_demobilization = {
 
 demanded_integration = {
 	diplomatic_reputation = -2
-	improve_relation_modifier = -0.35
+	improve_relation_modifier = -0.2
 }
 
 dip_1 = {
 	diplomatic_upkeep = 1
+	improve_relation_modifier = 0.1
+	ae_impact = -0.05
 }
 
 dip_2 = {
 	diplomatic_upkeep = 1
+	improve_relation_modifier = 0.1
+	ae_impact = -0.05
 }
 
 dip_3 = {
 	diplomatic_upkeep = 1
-	improve_relation_modifier = 0.05
+	improve_relation_modifier = 0.1
+	ae_impact = -0.1
 }
 
 #############colonization#############
@@ -1557,6 +1620,66 @@ census_in_progress = {
 	all_power_cost = -0.025
 	
 	global_tax_modifier = -0.25
+}
+
+############# MODERNIZATION #############
+
+government_one = {
+	reform_progress_growth = 2.0
+	core_creation = -0.1
+	inflation_action_cost = -0.1 
+	state_maintenance_modifier = 0.25
+	advisor_cost = 0.15
+}
+government_two = {
+	reform_progress_growth = 6.0
+	core_creation = -0.1
+	inflation_action_cost = -0.1 
+	state_maintenance_modifier = 0.4
+	advisor_cost = 0.15
+}
+government_three = {
+	reform_progress_growth = 12.0
+	core_creation = -0.1
+	inflation_action_cost = -0.1 
+	state_maintenance_modifier = 0.6
+	advisor_cost = 0.15
+}
+
+industrial_medicine = {
+	monarch_lifespan = 0.05
+	manpower_recovery_speed = 0.05
+	global_manpower_modifier = 0.05
+}
+industrial_medicine_ii = {
+	monarch_lifespan = 0.05
+	production_efficiency = 0.05
+	manpower_recovery_speed = 0.05
+	global_manpower_modifier = 0.05
+}
+industrial_medicine_iii = {
+	monarch_lifespan = 0.05
+	production_efficiency = 0.05
+	manpower_recovery_speed = 0.05
+	global_manpower_modifier = 0.05
+}
+modern_medicine = { #43
+	monarch_lifespan = 0.05
+	production_efficiency = 0.05
+	manpower_recovery_speed = 0.05
+	global_manpower_modifier = 0.05
+}
+modern_medicine_ii = {
+	monarch_lifespan = 0.05
+	production_efficiency = 0.1
+	manpower_recovery_speed = 0.05
+	global_manpower_modifier = 0.05
+}
+modern_medicine_iii = {
+	monarch_lifespan = 0.1
+	production_efficiency = 0.05
+	manpower_recovery_speed = 0.05
+	global_manpower_modifier = 0.05
 }
 
 
@@ -1984,6 +2107,7 @@ bgm_ita_rev_triumph = {
 bgm_ita_centralized_eco = {
 	global_tax_modifier = 0.15
 	inflation_action_cost = -0.25
+	interest = -0.5
 }
 
 early_national_ed = {
@@ -2005,15 +2129,1023 @@ bgm_ita_mil_engineering = {
 	global_regiment_cost = -0.1
 }
 
+bgm_ita_tall_final = {
+	development_cost_modifier = -0.05
+	build_cost = -0.05
+	global_prosperity_growth = 0.5
+}
+
+#############BRANDENBURG#############
+
+bra_ansbach_succ = {
+	ae_impact = -0.33
+}
+
+#############USA#############
+
+usa_pres_i = {
+	possible_policy = 1
+	parliament_debate_duration = -1
+	max_absolutism = 10
+}
+
+usa_pres_ii = {
+	possible_policy = 1
+	parliament_debate_duration = -1
+	max_absolutism = 10
+}
+
+usa_pres_iii = {
+	possible_policy = 1
+	parliament_debate_duration = -1
+	max_absolutism = 10
+}
+
+usa_pres_iv = {
+	possible_policy = 1
+	parliament_debate_duration = -1
+	max_absolutism = 10
+}
+
+usa_pres_v = {
+	possible_policy = 1
+	parliament_debate_duration = -1
+	max_absolutism = 10
+}
+
+usa_fbi = {
+	stability_cost_modifier = -0.1
+	max_absolutism = 5
+	max_absolutism_effect = 0.1
+}
+
+usa_cia = {
+	global_spy_defence = 0.33
+	spy_offence = 0.33
+}
+
+usa_dod = {
+	possible_mil_policy = 1
+	free_mil_policy = 1 
+}
+
+usa_new_deal = {
+	development_cost_modifier = -0.4
+	global_tax_modifier = 0.4
+	production_efficiency = 0.4
+}
+
+usa_humanism = {
+	idea_cost = -0.15
+	technology_cost = -0.15
+	advisor_cost = -0.15
+}
+
+immigrant_labor = {
+	trade_goods_size_modifier = 0.15
+	development_cost_modifier = -0.1
+}
+
+usa_emancipated_slaves = {
+	republican_tradition = 0.25
+	global_tax_modifier = 0.1
+	development_cost_in_primary_culture = -0.2
+	parliament_backing_chance = 0.2
+}
+
+usa_reconstruction = {
+	global_monthly_devastation = -1
+}
+
+usa_gilded_age = {
+	trade_goods_size_modifier = 0.15
+	trade_efficiency = 0.15
+	development_cost_modifier = -0.2
+}
+
+usa_corruption = {
+	yearly_corruption = 0.25
+	parliament_backing_chance = -0.33
+	parliament_debate_duration = 5 
+	dm_social_liberal_influence = 0.05
+	dm_social_democrat_influence = 0.1
+}
+
+usa_hegemon = {
+	spy_action_cost_modifier = -0.25
+	spy_offence = 0.25
+}
+
+usa_expanded_markets = {
+	merchants = 2
+	global_foreign_trade_power = 0.2
+}
+
+usa_building_navy = {
+	naval_tradition_from_battle = 1
+	naval_maintenance_modifier = -0.25
+	global_ship_cost = -0.2
+}
+
+usa_naval_science = {
+	dip_tech_cost_modifier = -0.1
+	global_ship_cost = -0.15
+	naval_tradition_from_battle = 1
+	heavy_ship_power = 0.2
+	own_coast_naval_combat_bonus = 1
+}
+
+usa_mil_science = {
+	mil_tech_cost_modifier = -0.1
+	global_regiment_cost = -0.15
+	army_tradition_from_battle = 1
+	siege_ability = 0.1
+	own_territory_dice_roll_bonus = 1
+}
+
+usa_mil_pioneer = {
+	siege_ability = 0.1
+	land_morale = 0.15
+	infantry_power = 0.1
+	artillery_power = 0.1
+}
+
+usa_articles_confederation = {
+	state_governing_cost = -0.2
+	development_cost = -0.2
+	max_absolutism = -50
+}
+
+usa_constitution = {
+	governing_capacity_modifier = 0.25
+	prestige = 0.5
+	all_power_cost = -0.1
+	advisor_cost = -0.1
+	stability_cost_modifier = -0.15
+}
+
+usa_militia = {
+	global_manpower_modifier = 0.25
+	land_maintenance_modifier = -0.33
+}
+
+#############ANGEVIN#############
+
+aev_integrated_clergies = {
+	state_maintenance_modifier = -0.25
+	global_tax_modifier = 0.15
+}
+
+aev_secular = {
+	tolerance_of_heretics_capacity = 1
+	tolerance_heretic = 1
+	stability_cost_modifier = -0.05
+	pl_social_liberal_influence = 0.05
+	dm_social_liberal_influence = 0.05
+	dm_social_democrat_influence = 0.025
+}
+
+aev_con = {
+	tolerance_own = 1
+	tolerance_heretic = -1
+	tolerance_heathen = -2
+	stability_cost_modifier = -0.1
+	yearly_absolutism = 0.5
+	church_loyalty_modifier = 0.05
+	dm_monarchist_influence = 0.1
+	pl_social_conservative_influence = 0.05
+	dm_social_conservative_influence = 0.05
+	dm_fascist_influence = 0.025
+}
+
+aev_seneschals = {
+	advisor_cost = -0.33
+}
+
+aev_mil_reform = {
+	army_tradition = 0.33
+	army_tradition_from_battle = 0.5
+	nobles_loyalty_modifier = 0.1
+}
+
+aev_navy_reform = {
+	navy_tradition = 0.33
+	naval_tradition_from_battle = 0.5
+	burghers_loyalty_modifier = 0.1
+}
+
+aev_everlasting_glory = {
+	development_cost = -0.1
+	prestige_decay = -0.01
+	global_prosperity_growth = 0.25
+}
+
+#############GERMANY#############
+
+ger_economic_policy = {
+	global_tax_modifier = 0.1
+	inflation_reduction = 0.1
+	stability_cost_modifier = -0.1
+}
+
+ger_eco_urbanization = {
+	local_development_cost_modifier = -0.15
+	local_tax_modifier = 0.15
+	local_manpower_modifier = 0.15
+}
+
+ger_agriculture = {
+	global_tax_modifier = 0.025
+	global_manpower_modifier = 0.1
+	manpower_recovery_speed = 0.1
+}
+
+ger_proto_industrial_center = {
+	local_production_efficiency = 0.25
+	local_development_cost = -0.25
+}
+
+ger_pioneer_proto_ind = {
+	trade_goods_size_modifier = 0.05
+	development_cost = -0.1
+	build_cost = -0.1
+}
+
+ger_trade_dominance = {
+	trade_efficiency = 0.1
+	global_own_trade_power = 0.1
+	embargo_efficiency = 0.25 
+}
+
+ger_ship_primacy_one = {
+	ship_trade_power_modifier = 0.33
+	global_ship_cost = -0.2
+}
+
+ger_naval_inf_one = {
+	naval_forcelimit_modifier = 0.05
+	sailor_maintenance_modifer = -0.05
+}
+
+ger_international_trade = {
+	global_ship_trade_power = 0.25
+	trade_steering = 0.25
+}
+
+ger_naval_inf_two = {
+	naval_forcelimit_modifier = 0.05
+	sailor_maintenance_modifer = -0.05
+}
+
+
+ger_mil_ind_one = {
+	global_allowed_num_of_manufactories = 1
+	global_manpower_modifier = 0.1
+	global_regiment_cost = -0.05
+}
+
+ger_mil_surplus = {
+	global_regiment_cost = -0.1
+	manpower_recovery_speed = 0.2
+	sailors_recovery_speed = 0.2
+	recover_army_morale_speed = 0.25
+}
+
+ger_longterm_surplus = {
+	reinforce_speed = 0.1
+	reinforce_cost_modifier = -0.1
+	global_manpower_modifier = 0.1
+	global_sailors_modifier = 0.1
+}
+
+
+ger_arts = {
+	prestige = 1
+	prestige_decay = -0.02
+}
+
+ger_aristocratic_phil = {
+	advisor_pool = 1
+	advisor_cost = -0.1
+}
+
+ger_dichter_denker = {
+	advisor_cost = -0.05
+	same_culture_advisor_cost = -0.2
+	advisor_pool = 1
+}
+
+ger_diplomatic_bloc = {
+	dip_advisor_cost = -0.1
+	country_diplomatic_power = 1
+}
+
+ger_subordinated_preeminent_power = {
+	prestige_from_land = 1
+	prestige_decay = -0.03
+}
+
+ger_mil_theory = {
+	army_tradition_decay = -0.01
+	navy_tradition_decay = -0.01
+	army_tradition_from_battle = 0.5
+	naval_tradition_from_battle = 0.5
+}
+
+ger_eco_coop = {
+	local_development_cost = -0.33
+	local_build_cost = -0.33
+	local_great_project_upgrade_cost = -0.33
+	province_trade_power_value = 0.33
+}
+
+ger_peacemaker = {
+	improve_relation_modifier = 0.33
+	diplomatic_reputation = 2
+	diplomatic_upkeep = 1
+}
+
+ger_int_dyn = {
+	diplomatic_reputation = 1
+	accept_vassalization_reasons = 10
+	transfer_trade_power_reasons = 20
+	heir_chance = 0.25
+}
+
+ger_prestigious_peace = {
+	prestige_decay = -0.01
+	dip_advisor_cost = -0.1
+}
+
+
+ger_kulturkampf_conversion = {
+	culture_conversion_time = -0.75
+	culture_conversion_cost = -0.5
+	relation_with_other_culture = -50
+}
+
+ger_kultur_prot = {
+	tolerance_own = 1
+	technology_cost = -0.05
+	church_power_modifier = 0.25
+}
+
+ger_kultur_secular = {
+	tolerance_heathen = 1
+	tolerance_heretic = 1
+	tolerance_of_heathens_capacity = 1
+	tolerance_of_heretics_capacity = 1
+	global_tax_modifier = 0.05
+	idea_cost = -0.05
+}
+
+ger_kultur_catholic = {
+	tolerance_own = 1
+	manpower_in_true_faith_provinces = 0.1
+	papal_influence = 0.25
+}
+
+ger_kulturkampf_nat = {
+	tolerance_own = 1
+	manpower_in_culture_group_provinces = 0.1
+	tolerance_heretic = -1
+}
+
+ger_kulturkampf_lib = {
+	global_manpower_modifier = 0.05
+	tolerance_heretic = 1
+}
+
+ger_diplomat = {
+	improve_relation_modifier = 0.05
+	ae_impact = -0.05
+}
+
+ger_statesman = {
+	adm_advisor_cost = -0.05
+	stability_cost_modifier = -0.05
+}
+
+ger_prot_supremacy = {
+	global_missionary_strength = 0.01
+	tolerance_heretic = -0.5
+	monthly_fervor_increase = 0.25
+	monthly_church_power = 0.25
+	#estate_church_loyalty_modifier = 0.05
+}
+
+ger_catholic_supremacy = {
+	global_missionary_strength = 0.01
+	tolerance_heretic = -0.5
+	papal_influence = 0.5
+	#estate_church_loyalty_modifier = 0.05
+}
+
+ger_secular_supremacy = {
+	innovativeness_gain = 0.5
+	tolerance_heretic = 1
+	advisor_cost = -0.025
+}
+
+ger_secular_morality = {
+	global_missionary_strength = -0.01
+	global_tax_modifier = 0.05
+}
+
+ger_religious_morality = {
+	global_missionary_strength = 0.01
+	missionary_maintenance_cost = 0.05
+	#estate_church_loyalty_modifier = 0.05
+}
+
+ger_rel_society = {
+	tolerance_heretic = -1
+	tolerance_heathen = -1
+	manpower_in_true_faith_provinces = 0.1
+	#estate_church_loyalty_modifier = 0.05
+}
+
+ger_sec_society = {
+	production_efficiency = 0.1
+	tolerance_heathen = 1
+	tolerance_heretic = 1
+	tolerance_of_heretics_capacity = 1
+	tolerance_of_heathens_capacity = 1
+	#estate_church_loyalty_modifier = -0.05
+}
+
+ger_bal_society = {
+	reform_progress_growth = 0.1
+	max_absolutism_effect = 0.1
+	governing_capacity = 50
+}
+
+ger_german_century = {
+	prestige = 1
+	prestige_from_land = 1
+	prestige_from_naval = 1
+}
+
+ger_wel_constitution = {
+	global_tax_modifier = 0.1
+	production_efficiency = 0.1
+	global_unrest = -2
+}
+
+ger_cucked_estates = {
+	max_absolutism_effect = 0.1
+	all_estate_influence_modifier = -0.1
+}
+
+ger_reconstruction = {
+	development_cost = -0.2
+	build_cost = -0.2
+}
+
+ger_goodwill = {
+	global_unrest = -2
+	stability_cost_modifier = -0.2
+}
+
+ger_crushed_revolution = {
+	harsh_treatment_cost = -0.33
+}
+
+ger_monarchical_consoldiation = {
+	max_absolutism_effect = 0.1
+	max_absolutism = 10
+	harsh_treatment_cost = -0.15
+	all_estate_influence_modifier = -0.15
+}
+
+ger_final_estate = {
+	global_tax_modifier = 0.1
+	global_manpower_modifier = 0.1
+	all_estate_influence_modifier = -0.25
+}
+
+ger_reformed_admin = {
+	development_cost = -0.1
+	build_cost = -0.1
+	land_forcelimit_modifier = 0.1
+}
+
+ger_rev_culture = {
+	technology_cost = -0.1
+	idea_cost = -0.2
+	innovativeness_gain = 1
+	yearly_revolutionary_zeal = 1
+	dm_communist_influence = 0.1
+	dm_social_democrat_influence = 0.15
+	dm_social_liberal_influence = 0.1
+	dm_fascist_influence = -0.1
+	dm_monarchist_influence = -0.1
+	dm_social_conservative_influence = -0.05
+}
+
+ger_tribunals = {
+	yearly_revolutionary_zeal = 1
+	max_revolutionary_zeal = 15
+}
+
+ger_censuses = {
+	state_governing_cost = -0.1
+	state_maintenance_modifier = -0.25
+}
+
+ger_lib_constitution = {
+	advisor_pool = 1
+	female_advisor_chance = 0.1
+	advisor_cost = -0.05
+}
+
+ger_conservative_constitution = {
+	stability_cost_modifier = -0.1
+	tolerance_own = 1
+	prestige = 0.5
+}
+
+ger_gir_supremacy = {
+	prestige = 1
+	prestige_decay = -0.02
+}
+
+ger_gir_conscription = {
+	global_manpower_modifier = 0.1
+	land_forcelimit_modifier = 0.1
+}
+
+ger_gir_war_effort = {
+	global_regiment_cost = -0.2
+	production_efficiency = 0.2
+	manpower_recovery_speed = 0.2
+}
+
+ger_gir_all_citizens = {
+	advisor_cost = -0.15
+	mil_tech_cost_modifier = -0.15
+	female_advisor_chance = 0.15
+	global_manpower_modifier = 0.15
+	global_sailors_modifier = 0.15
+	production_efficiency = 0.1
+}
+
+ger_ind_sax = {
+	local_production_efficiency = 0.25
+	local_build_time = -0.25
+	local_great_project_upgrade_time = -0.25
+}
+
+ger_ruhr = {
+	local_manpower_modifier = 0.25
+	trade_goods_size_modifier = 0.25
+	local_development_cost_modifier = -0.25
+	local_build_cost = -0.25
+}
+
+ger_rhineland_periphery = {
+	local_manpower_modifier = 0.1
+	local_defensiveness = 0.1
+	land_forcelimit = 2
+}
+
+ger_heavy_industry = {
+	build_cost = -0.25
+	development_cost = -0.25
+}
+
+ger_imperial_city = {
+	local_tax_modifier = 0.33
+	local_development_cost = -0.33
+	local_build_cost = -0.33
+	local_governing_cost = -0.33
+}
+
+ger_city_hinterland = {
+	local_tax_modifier = 0.05
+	local_development_cost = -0.05
+	local_build_cost = -0.05
+}
+
+ger_farmland = {
+	local_manpower_modifier = 0.15
+	local_tax_modifier = 0.15
+}
+
+ger_center_trade = {
+	trade_steering = 0.25
+	global_foreign_trade_power = 0.25
+}
+
 #############UNIVERSAL#############
 
 secular_constitution = {
 	global_tax_modifier = 0.05
 	global_unrest = -2
 	no_religion_penalty = yes
+	can_not_build_missionaries = yes
+}
+
+#############FRENCH MINORS#############
+
+fra_min_feudal_development = {
+	development_cost = -0.1
+	global_tax_modifier = 0.1
+	global_manpower_modifier = 0.1
+}
+
+fra_min_dip = {
+	improve_relation_modifier = 0.33
+	diplomatic_reputation = 1
+	diplomatic_upkeep = 1
+}
+
+fra_min_mil = {
+	manpower_recovery_speed = 0.2
+	land_forcelimit_modifier = 0.2
+	army_tradition_from_battle = 0.5
+}
+
+fra_min_cap_fort = {
+	local_defensiveness = 0.5
+	local_hostile_attrition = 1
+	max_hostile_attrition = 1
+}
+
+fra_min_spread_morality = {
+	ae_impact = -0.2
+	land_morale = 0.1
+	shock_damage = 0.05
+}
+
+fra_min_feudal_taxes = {
+	prestige = 0.5
+	global_tax_modifier = 0.15
+	global_unrest = 1
+}
+
+fra_min_renaissance = {
+	innovativeness_gain = 0.5
+	idea_cost = -0.05
+	technology_cost = -0.05
+}
+
+fra_min_chateau = {
+	local_development_cost = -0.2
+	local_tax_modifier = 0.25
+	local_unrest = -2
+}
+
+fra_min_navy = {
+	naval_maintenance_modifier = -0.15
+}
+
+fra_min_explore = {
+	range = 0.5
+}
+
+fra_min_colonize = {
+	global_colonial_growth = 15
+}
+
+fra_min_colonize_africa = {
+	global_colonial_growth = 15
+}
+
+fra_min_trade = {
+	trade_steering = 0.25
+	trade_efficiency = 0.1
+}
+
+#############FRENCH MISSIONS#############
+
+fra_savoyard_conquest = {
+	ae_impact = -0.2
+	core_creation = -0.1
+}
+
+fra_italian_diplomacy = {
+	diplomatic_reputation = 2
+	improve_relation_modifier = 0.33
+	diplomatic_upkeep = 2
+}
+
+fra_dominion_italy = {
+	legitimacy = 0.5
+	devotion = 0.5
+	republican_tradition = 0.3
+	improve_relation_modifier = 0.5
+}
+
+fra_heartland_culture = {
+	local_development_cost_modifier = -0.1
+	local_tax_modifier = 0.33
+	trade_goods_size_modifier = 0.33
+}
+
+fra_league_cambrai = {
+	ae_impact = -0.2
+	core_creation = -0.1
+}
+
+fra_king_italy = {
+	legitimacy = 1
+	devotion = 1
+	horde_unity = 1
+	republican_tradition = 0.5
+	prestige_from_land = 1
+}
+
+fra_united_italy = {
+	prestige_decay = -0.02
+}
+
+fra_port_infrastructure = {
+	naval_maintenance_modifier = -0.15
+	sailor_maintenance_modifer = -0.15
+}
+
+fra_developed_trade = {
+	development_cost_modifier = -0.1
+	trade_efficiency = 0.1
+	production_efficiency = 0.1
+}
+
+fra_mercantilist_zeal = {
+	global_own_trade_power = 0.25
+	mercantilism_cost = -0.25
+}
+
+fra_killed_england = {
+	prestige_decay = -0.01
+}
+
+fra_influence_hre = {
+	reasons_to_elect = 10
+	diplomatic_reputation = 1
+}
+
+fra_mil_influence_hre = {
+	reasons_to_elect = 10
+	diplomatic_reputation = 1
+}
+
+fra_french_diplomacy = {
+	improve_relation_modifier = 0.15
+	dip_advisor_cost = -0.15
+}
+
+fra_imperial_favor = {
+	imperial_authority = 0.1
+}
+
+fra_glorious_emperor = {
+	imperial_authority_value = 0.15
+	global_tax_modifier = 0.15
+}
+
+fra_perpetual_emperor = {
+	imperial_authority_value = 0.15
+}
+
+fra_condottieri = {
+	mercenary_cost = -0.15
+	merc_maintenance_modifier = -0.15
+}
+
+fra_gendarmes = {
+	reduced_liberty_desire_on_same_continent = 10
+	global_unrest = -2
+}
+
+fra_gabelle = {
+	global_tax_modifier = 0.05
+	global_autonomy = -0.025 
+}
+
+fra_absolutism = {
+	harsh_treatment_cost = -0.25
+	yearly_absolutism = 0.5
+}
+
+fra_corvee = {
+	global_tax_modifier = 0.05
+	movement_speed = 0.1
+}
+
+fra_sun_king = {
+	max_absolutism = 25
+	max_absolutism_effect = 0.25
+}
+
+fra_subjugated_parlements = {
+	all_power_cost = -0.1
+	all_estate_influence_modifier = -0.1
+}
+
+fra_naval_infrastructure = {
+	global_sailors_modifier = 0.1
+	naval_forcelimit_modifier = 0.1
+}
+
+fra_naval_trade = {
+	ship_trade_power_modifier = 0.25
+	trade_steering = 0.25
+	mercantilism_cost = -0.25
+}
+
+fra_lyons_trade_center = {
+	local_development_cost_modifier = -0.25
+	trade_value = 25
+	trade_goods_size = 1
+}
+
+fra_lyons_national_modifier = {
+	prestige = 0.5
+	interest = -1
+	diplomatic_reputation = 1
+}
+
+fra_religious_unity = {
+	development_cost_modifier = -0.15
+	build_cost = -0.15
+}
+
+fra_secular_republic = {
+	improve_relation_modifier = 0.1
+	global_foreign_trade_power = 0.1
+}
+
+fra_supreme_lordship = {
+	republican_tradition = 0.5
+	stability_cost_modifier = -0.1
+}
+
+fra_ecu = {
+	interest = -2
+	inflation_reduction = 0.1
+}
+
+fra_maximilien = {
+	adm_tech_cost_modifier = -0.2
+	country_admin_power = 3
+	development_cost_modifier = -0.25
+}
+
+fra_colonial_enthusiasm_bgm = {
+	global_colonial_growth = 25
+	colonist_placement_chance = 0.05
+}
+
+fra_chart_new_seas = {
+	range = 0.5
+}
+
+fra_developed_roads = {
+	global_own_trade_power = 0.1
+	caravan_power = 0.1
+}
+
+fra_colonial_rush_modifier_bgm = {
+	global_colonial_growth = 25
+	colonist_placement_chance = 0.05
+}
+
+fra_new_france = {
+	reduced_liberty_desire_on_other_continent = 15
+}
+
+fra_larochelle_port = {
+	global_colonial_growth = 10
+	colonist_placement_chance = 0.05
+}
+
+fra_marseille_port = {
+	trade_value = 15
+	local_development_cost_modifier = -0.25
+}
+
+fra_arles = {
+	trade_value = 10
+}
+
+fra_indian_conquest = {
+	manpower_recovery_speed = 0.1
+	global_manpower_modifier = 0.1
+	reinforce_cost_modifier = -0.1
+}
+
+fra_indian_shock = {
+	shock_damage = 0.15
+	fire_damage = 0.15
+	shock_damage_received = -0.15
+}
+
+fra_colbert_qa = {
+	production_efficiency = 0.1
+	global_trade_power = 0.1
+	burghers_loyalty_modifier = -0.1
+	burghers_influence_modifier = -0.1
+}
+
+fra_mercure_galante = {
+	prestige = 0.5
+	power_projection_from_insults = 0.25
+}
+
+fra_everlasting_prestige = {
+	shock_damage = 0.1
+	global_trade_power = 0.1
+	prestige_decay = -0.01
+}
+
+fra_industrial_revolution = {
+	global_trade_goods_size_modifier = 0.05
+	development_cost_modifier = -0.05
+}
+
+fra_intellectual_golden_age = {
+	advisor_cost = -0.1
+	idea_cost = -0.1
+	advisor_pool = 1
+}
+
+fra_rev_extreme_spending = {
+	global_tax_modifier = 0.5
+	inflation_reduction = -0.5
+}
+
+fra_local_production = {
+	trade_goods_size_modifier = 0.25
+}
+
+fra_the_enlightenment = {
+	advisor_cost = -0.1
+	idea_cost = -0.1
+}
+
+fra_reforming_govt = {
+	stability_cost_modifier = -0.1
+	reform_progress_growth = 0.2
+}
+
+fra_education_policy = {
+	technology_cost = -0.1
+	innovativeness_gain = 0.5
+}
+
+fra_welfare = {
+	global_tax_modifier = 0.1
+	global_unrest = -2
+}
+
+fra_full_protectionism = {
+	global_own_trade_power = 0.1
+	mercantilism_cost = -0.1
+}
+
+fra_rev_dip = {
+	reduced_liberty_desire_on_same_continent = 15
+}
+
+fra_bgm_condorcet = {
+	innovativeness_gain = 1
+	country_admin_power = 1
+}
+
+fra_benevolent_occitania = {
+	global_manpower_modifier = 0.05
+	land_forcelimit_modifier = 0.05
+}
+
+fra_bordeaux_trade = {
+	trade_value = 20
+}
+
+fra_occitan_settlers = {
+	global_colonial_growth = 25
+}
+
+fra_local_fortresses = {
+	local_defensiveness = 0.5
+	local_manpower_modifier = 0.5
+}
+
+fra_two_navies = {
+	naval_forcelimit_modifier = 0.05
+	sailor_maintenance_modifer = -0.05
 }
 
 #############AI#############
+
+lower_maintenance = {
+	land_maintenance_modifier = -0.5
+	fort_maintenance_modifier = -0.5
+}
+
+stop_build = {
+	build_cost = 99999
+}
 
 stop_tech = {
 	technology_cost = 1000

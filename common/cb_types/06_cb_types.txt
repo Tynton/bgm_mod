@@ -64,3 +64,20 @@ cb_dynastic_enforcement = {
 
 	war_goal = take_capital_enforcedynasty
 }
+
+cb_bgm_rev_mon_enforce_government = {
+
+	prerequisites = {
+		FROM = {
+			bgm_rev = no
+		}
+		bgm_rev = yes
+		government = monarchy
+		OR = {
+			has_country_flag = bgm_rev_conmon
+			has_reform = revolutionary_empire_reform
+		}
+	}
+
+	war_goal = take_capital_rev_mon
+}

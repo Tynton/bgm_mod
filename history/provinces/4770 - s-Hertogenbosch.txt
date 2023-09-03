@@ -8,10 +8,10 @@ capital = "'s-Hertogenbosch"
 culture = brabantian
 religion = catholic
 hre = yes
-base_tax = 4
-base_production = 4
+base_tax = 2
+base_production = 3
 trade_goods = paper
-base_manpower = 2
+base_manpower = 1
 
 discovered_by = eastern
 discovered_by = western

@@ -139,6 +139,8 @@
 
 5081 = "Beaulne"
 
+5114 = "Gévaudan"
+
 5094 = "Bitbourg"
 
 5092 = { "Aoste" "Vallée d'Aoste" }
@@ -210,30 +212,25 @@
 117 = "Sienne"
 118 = "Rome"
 119 = "Ancône"
-120 = {"Pescara" "Abruzzes"}
 121 = { "Napples" "Naples" }
 123 = "Calabre"
 124 = "Messine"
 125 = "Palerme"
-127 = "Sardaigne"
 1247 = "Corse"
 1774 = "Trévise"
 1862 = "Crémone"
 1875 = "Coni"
-1934 = "Lucanie"
 
 197 = "Roussillon"
 207 = { "Asturies" "Oviede" }
-208 = "Leén"
+208 = "Leon"
 211 = "Pyrénées"
 212 = "Gironne"
 213 = "Barcelone"
 214 = "Aragon"
-215 = "Castille"
 216 = "Salamanque"
 219 = "Toléde"
 214 = "Saragosse"
-220 = "Annecy"
 221 = "Murcie"
 222 = "Almérie"
 223 = "Grenade"
@@ -392,9 +389,7 @@
 117 = "Sienne"
 118 = "Rome"
 119 = "Ancône"
-120 = "Abruzzes"
-121 = "Naples"
-122 = "Salente"
+122 = "Tarente"
 123 = "Calabre"
 124 = "Messine"
 125 = "Palerme"
@@ -423,6 +418,8 @@
 4738 = "Trieste"
 4739 = "Bergame"
 4740 = "Côme"
+5122 = "Caserte"
+5123 = "Catane"
 
 4382 = "Groningue"
 
@@ -530,13 +527,16 @@
 
 107 = "Bresce"
 
-4948 = "Courtrai"
-5086 = "Louvain"
-5088 = "Grammont"
-4974 = "Vieux-Turnhout"
+5131 = "Nimègue"
 
-4976 = "Ajaccio"
-4977 = "Bastia"
+5128 = "Ypres"
+4948 = "Courtrai"
+5086 = "Malines" #Louvain
+5088 = "Grammont"
+#4974 = "Vieux-Turnhout"
+
+#4976 = "Ajaccio"
+#4977 = "Bastia"
 1247 = "La Corse"
 
 1866 = { "Namur" "Charleroi" }
@@ -547,13 +547,14 @@
 
 167 = "Rouen"
 
-4988 = "Maestricht"
-4975 = "Roterdam"
+#4988 = "Maestricht"
+5129 = "Roterdam"
+5132 = "Ostende"
 1742 = { "Haute-Gueldre" "Ruremonde" }
 
 
 
-5020 = "Pignerol"
+#5020 = "Pignerol"
 4960 = "Saint-Marin"
 2977 = "Urbin"
 
@@ -619,6 +620,15 @@
 186 = "Rémois"
 4948 = "Courtrai"
 
+5105 = {"Ivrée" "Yvrée" }
+5109 = "Vicence"
+5110 = "Bellune"
+5112 = "Nîmes"
+
+5116 = "Bénévent"
+5118 = "Livourne"
+5119 = "Plaisance"
+
 #middle english for england
 
 237 = { "Oxneford" "Oxenford" }
@@ -631,3 +641,64 @@
 4375 = "Chestre"
 234 = { "Hampshire" "Sarisberie" }
 
+
+#norman government in Naples
+
+5115 = "Cathacem"
+
+
+#speculative, iberia
+
+4554 = "Lugou"
+2989 = { "Rioue" "Logrogne" }
+1746 = "Bourgoux"
+4557 = "Calataié"
+2990 = "Teroul"
+4550 = "Castellon"
+220 = "Valencie"
+4549 = "Jative"
+1750 = "Alicanté"
+2755 = "Sorie"
+2751 = "Couenque"
+4546 = "Malegue"
+226 = "Gibralter"
+4548 = "Ouelve"
+4551 = "Avile"
+217 = "Megrite"
+218 = "Badegoçe"
+215 = "Valledolite"
+4788 = "Plasencie"
+4552 = "Palencie"
+5077 = "Saldegne"
+5078 = "Barbatre"
+4553 = "Xamore"
+5080 = "Astorgue"
+229 = "Beje"
+4150 = "Évore"
+228 = "Beire"
+231 = "Porte"
+4787 = "Rivateje"
+1851 = "Coimbre"
+4556 = "Aveire"
+4560 = "Ivice"
+4555 = "Pontevetre"
+#5079 = "Saint-Jacques"
+
+#Speculative, mediterranean
+
+2986 = "Calleres"
+4735 = "Arborée"
+4737 = "Girgêntes"
+127 = "Sassares"
+
+4956 = "Cioutévieulx"
+4946 = "La Spessie"
+2978 = "Aresse"
+5107 = "Pesare"
+5108 = "Yessy"
+5099 = { "Prate" "Pistoie" }
+120 = { "Pescare" "Abruzzes"}
+1934 = "Potence"
+5117 = "Masse"
+
+5120 = "Soussare"

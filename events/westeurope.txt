@@ -59,10 +59,6 @@ country_event = {
 	
 	option = {
 		name = "westeurope.2.a"
-		
-		trigger = {
-			is_revolutionary = no
-		}
 
 		add_stability = -1
 		
@@ -97,7 +93,13 @@ country_event = {
 		
 		set_country_flag = responded_rev
 		
-		ai_chance = { factor = 10 }
+		ai_chance = { 
+			factor = 10 
+			modifier = {
+				factor = 0.01
+				bgm_rev = yes
+			}
+		}
 	}
 	
 	option = {
@@ -614,32 +616,7 @@ country_event = {
 
 			set_global_flag = a_manifesto_written
 		}
-		if = {
-			limit = {
-				OR = {
-					any_owned_province = {
-						is_center_of_revolution = yes
-					}
-					is_revolution_target = yes
-				}
-				NOT = {
-					OR = {
-						religion = unitarian
-						religion_group = pagan
-						religion_group = muslim
-						dominant_religion = unitarian
-						dominant_religion = catholic
-						dominant_religion = orthodox
-						dominant_religion = shinto
-					}
-				}
-				NOT = {
-					any_country = { has_country_flag = responded_rev }
-				}
-				NOT = {
-					has_global_flag = a_manifesto_written
-				}
-			}
+		else = {
 			country_event = {
 				id = westeurope.6 #Communism
 			}

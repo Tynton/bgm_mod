@@ -18,6 +18,12 @@ country_decisions = {
 			NOT = { exists = FRF }
 			NOT = { exists = BFR }
 			NOT = { exists = BUP }
+			NOT = { exists = AEV }
+			NOT = { exists = AER }
+			NOT = { exists = AEE }
+			NOT = { exists = OCF }
+			NOT = { exists = OCR }
+			NOT = { exists = OCE }
 			NOT = { exists = BFE }
 			NOT = { exists = FRW }
 			NOT = { tag = FAN }
@@ -90,6 +96,7 @@ country_decisions = {
 					NOT = { primary_culture = swiss }
 					NOT = { primary_culture = burgundian }
 					NOT = { primary_culture = frainc_comtou }
+					NOT = { culture_group = occitan }
 				}
 				change_tag = FRA
 
@@ -98,6 +105,19 @@ country_decisions = {
 						NOT = { owned_by = ROOT }
 					}
 					add_permanent_claim = FRA
+				}
+			}
+			if = {
+				limit = {
+					culture_group = occitan
+				}
+				change_tag = OCF
+
+				france_region = {
+					limit = {
+						NOT = { owned_by = ROOT }
+					}
+					add_permanent_claim = OCF
 				}
 			}
 			if = {
@@ -113,7 +133,6 @@ country_decisions = {
 					add_permanent_claim = SFR
 				}
 			}
-
 			if = {
 				limit = {
 					OR = {
@@ -122,6 +141,13 @@ country_decisions = {
 					}
 				}
 				change_tag = BFR
+
+				france_region = {
+					limit = {
+						NOT = { owned_by = ROOT }
+					}
+					add_permanent_claim = BFR
+				}
 			}
 			every_province = {
 				limit = {

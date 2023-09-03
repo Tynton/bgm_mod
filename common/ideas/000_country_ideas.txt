@@ -1020,17 +1020,27 @@ FAN_ideas = {
 
 FRA_ideas = {
 	start = {
-		diplomatic_reputation = 1
-		global_manpower_modifier = 0.2
+		legitimacy = 1
+		devotion = 1
+		horde_unity = 1
+		republican_tradition = 0.5
+		prestige_from_land = 1
 	}
 	
 	bonus = {
-		development_cost = -0.1
+		yearly_absolutism = 1
+		#development_cost = -0.1
 		#discipline = 0.05
 	}	
 
 	trigger = {
-		tag = FRA
+		OR = {
+			tag = FRA
+			tag = BFR
+			tag = SFR
+			tag = FRW
+			tag = OCF
+		}
 		is_revolutionary = no
 	}
 	free = yes		#will be added at load.
@@ -1079,8 +1089,14 @@ FRA_ideas_2 = {
 			tag = BFR
 			tag = SFR
 			tag = FRW
+			tag = OCF
 		}
-		is_revolutionary = yes
+		NOT = {
+			OR = {
+				has_reform = peasants_republic
+				bgm_rev = yes
+			}
+		}
 	}
 	free = yes		#will be added at load.
 	
@@ -1108,5 +1124,50 @@ FRA_ideas_2 = {
 	}
 	european_ambitions = {
 		core_creation = -0.2
+	}
+}
+
+UNK_ideas = {
+	start = {
+		development_cost_modifier = -0.15
+		trade_goods_size_modifier = 0.1
+	}
+	bonus = {
+		ae_impact = -0.2
+	}
+	trigger = {
+		tag = UNK
+	}
+	treaty_of_union = {
+		legitimacy = 1
+		devotion = 1
+		horde_unity = 1
+		republican_tradition = 0.5
+	}
+	pax_britannica = {
+		build_cost = -0.1
+		global_unrest = -2
+	}
+	liberalizing_society = {
+		reform_progress_growth = 0.25
+		dm_social_conservative_influence = 0.15
+		dm_social_liberal_influence = 0.15
+		dm_social_democrat_influence = 0.15
+	}
+	naval_engineering_pioneer = {
+		heavy_ship_power = 0.2
+		naval_maintenance_modifier = -0.1
+	}
+	balance_of_power = {
+		diplomatic_reputation = 2
+		reduced_stab_impacts = yes
+	}
+	a_greater_empire = {
+		vassal_forcelimit_bonus = 0.25
+		vassal_manpower_bonus = 0.25
+	}
+	volunteer_army = {
+		discipline = 0.05
+		land_morale = 0.1
 	}
 }

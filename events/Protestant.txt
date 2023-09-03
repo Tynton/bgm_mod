@@ -31,7 +31,7 @@ country_event = {
 				is_defender_of_faith = no	
 				NOT = { has_reform = papacy_reform }
 				current_age = age_of_discovery
-				reform_desire = 0.55
+				reform_desire = 1 #0.55
 				any_owned_province = {
 					can_have_center_of_reformation_trigger = {
 						RELIGION = protestant
@@ -59,20 +59,22 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 4000
+		months = 10000 #4000
 		
 		modifier = {
 			factor = 2
 			PAP = { is_part_of_hre = yes }
+		}
+		modifier = {
+			factor = 5
 			OR = {
-				culture_group = germanic
-				culture_group = scandinavian
-				culture_group = british
-				culture_group = west_slavic
+				culture_group = iberian
+				culture_group = latin
+				culture_group = french
 			}
 		}
 		modifier = {
-			factor = 2
+			factor = 5
 			PAP = { is_part_of_hre = yes }
 			OR = {
 				has_global_flag = rome_converted_bgm
@@ -81,23 +83,23 @@ country_event = {
 		}
 		modifier = {
 			factor = 0.9
-			reform_desire = 0.65
+			reform_desire = 1.1
 		}
 		modifier = {
 			factor = 0.8
-			reform_desire = 0.7
+			reform_desire = 1.2
 		}
 		modifier = {
 			factor = 0.6
-			reform_desire = 0.75
+			reform_desire = 1.3
 		}
 		modifier = {
 			factor = 0.4
-			reform_desire = 0.8
+			reform_desire = 1.4
 		}
 		modifier = {
 			factor = 0.2
-			reform_desire = 0.85
+			reform_desire = 1.5
 		}
 		
 		modifier = {

@@ -46,6 +46,8 @@
 129 = "Cragno"
 1826 = "Segna"
 
+5107 = "Péxaro"
+
 173 = "Lapurdi"
 
 178 = "Anzier"
@@ -77,7 +79,7 @@
 5241 = "Lubiana"
 
 5393 = "Pordenon"
-5396 = "Vicensa"
+5109 = "Vicensa"
 
 227 = "Lisbóna"
 
@@ -88,6 +90,8 @@
 76 = { "Salisburghexe" "Salisburgo" }
 
 1749 = "Càdice"
+
+5110 = "Belùn"
 
 #fake ones
 

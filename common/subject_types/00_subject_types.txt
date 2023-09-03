@@ -622,6 +622,7 @@ colony = {
 	modifier_overlord = {
 		modifier = large_colonial_nation
 		trigger = {
+			total_development = overlord
 			num_of_cities = 10
 		}
 	}
@@ -655,13 +656,13 @@ crown_colony = {
 	count = colony
 
 	#forcelimit_bonus = 0.25
-	forcelimit_to_overlord = 0.1
+	#forcelimit_to_overlord = 0.1
 	#manpower_bonus = 0.15
-	manpower_to_overlord = 0.1
+	#manpower_to_overlord = 0.1
 	#naval_forcelimit_bonus = 1.25
-	naval_forcelimit_to_overlord = 0.05
+	#naval_forcelimit_to_overlord = 0.05
 	#sailors_bonus = 0.5
-	sailors_to_overlord = 0.05
+	#sailors_to_overlord = 0.05
 
 	# Subject Interactions:
 	embargo_rivals = yes
@@ -678,10 +679,14 @@ crown_colony = {
 	modifier_overlord = clear
 	modifier_overlord = {
 		modifier = crown_colony_overlord
+		trigger = {
+			total_development = overlord
+		}
 	}
 	modifier_overlord = {
 		modifier = large_colonial_nation
 		trigger = {
+			total_development = overlord
 			num_of_cities = 10
 		}
 	}
@@ -721,10 +726,14 @@ private_enterprise = {
 	modifier_overlord = clear
 	modifier_overlord = {
 		modifier = private_enterprise_overlord
+		trigger = {
+			total_development = overlord
+		}
 	}
 	modifier_overlord = {
 		modifier = large_colonial_nation
 		trigger = {
+			total_development = overlord
 			num_of_cities = 10
 		}
 	}
@@ -766,10 +775,14 @@ self_governing_colony = {
 	modifier_overlord = clear
 	modifier_overlord = {
 		modifier = self_governing_colony_overlord
+		trigger = {
+			total_development = overlord
+		}
 	}
 	modifier_overlord = {
 		modifier = large_colonial_nation
 		trigger = {
+			total_development = overlord
 			num_of_cities = 10
 		}
 	}

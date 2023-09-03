@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = austrian
+religion = catholic
+capital = 5136	# Budingen
+
+1444.1.1 = { #unknown birthdate
+	monarch = {
+		name = "Ludwig II"
+		birth_date = 1410.1.1
+		dynasty = "von Isenburg-Büdingen"
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}

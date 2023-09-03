@@ -37,6 +37,11 @@ no_zollverein = {
 	yearly_decay = 1
 }
 
+refused_heir_bgm_ger = {
+	opinion = -100
+	yearly_decay = 1
+}
+
 generous_donation = {
 	opinion = 50
 	yearly_decay = 2

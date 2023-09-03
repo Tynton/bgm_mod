@@ -423,7 +423,7 @@ westfalian_group_3 = {
 			num_of_owned_provinces_with = {
 				continent = europe
 				culture = hessian
-				value = 10
+				value = 4
 			}
 		}
 		

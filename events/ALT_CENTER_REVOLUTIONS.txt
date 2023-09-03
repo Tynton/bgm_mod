@@ -7,14 +7,17 @@ province_event = {
 	desc = "alt_center_rev.d.2"
 	picture = ANGRY_MOB_eventPicture
 	
-	fire_only_once = yes
+	#fire_only_once = yes
 	
 	hidden = yes
 
 	#major = yes
 
 	trigger = {
-		has_global_flag = revolutions_year_start
+		NOT = { current_age = age_of_revolutions } #is_institution_enabled = nationalism_institution
+		any_province = {
+			is_center_of_revolution = yes
+		}
 		#is_center_of_revolution = yes
 	}	
 

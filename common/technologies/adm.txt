@@ -476,7 +476,7 @@ technology = { #Rights of Man
 	allowed_idea_groups = 8
 	enlightened_despotism = yes
 	bureaucratic_despotism = yes
-	development_cost_modifier = -0.05
+	development_cost_modifier = -0.03
 	tax_center = yes
 }
 
@@ -497,7 +497,7 @@ technology = { #Advanced Production
 	
 	#Improved Draft Animals
 	production_efficiency =	0.05
-	development_cost_modifier = -0.05
+	development_cost_modifier = -0.02
 	allowed_idea_groups = 9
 	factory_infrastructure = yes
 }
@@ -608,7 +608,7 @@ technology = {
 
 	#Universal Suffrage
 	governing_capacity = 250
-	development_cost_modifier = -0.1
+	development_cost_modifier = -0.03
 	#civil_factory = yes
 	allowed_idea_groups = 12
 }
@@ -656,7 +656,7 @@ technology = {
 
 	#Assembly Line
 	production_efficiency = 0.1
-	development_cost_modifier = -0.1
+	development_cost_modifier = -0.02
 }
 
 technology = {
@@ -704,7 +704,7 @@ technology = {
 
 	#Electrification
 	production_efficiency = 0.15
-	development_cost_modifier = -0.1
+	development_cost_modifier = -0.03
 	#aluminium_smelter = yes
 	allowed_idea_groups = 15
 }
@@ -801,7 +801,7 @@ technology = {
 	}
 
 	#nukes and stuff
-	development_cost_modifier = -0.1
+	development_cost_modifier = -0.02
 	governing_capacity = 500
 	#nuclear_reactor = yes
 	#uranium_mine = yes
@@ -880,7 +880,7 @@ technology = {
 	}
 	
 	#development of computing technology
-	development_cost_modifier = -0.1
+	development_cost_modifier = -0.02
 	#administrative_efficiency = 0.2
 	governing_capacity = 1000
 }
@@ -979,6 +979,6 @@ technology = {
 	}
 	
 	#Commercialized Space Travel
-	development_cost_modifier = -0.1
+	development_cost_modifier = -0.07
 	production_efficiency = 0.4
 }

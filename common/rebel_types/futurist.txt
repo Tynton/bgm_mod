@@ -64,6 +64,10 @@ futurist_rebels = {
 		}
 		modifier = {
 			factor = 0.1
+			has_owner_accepted_culture = no
+		}
+		modifier = {
+			factor = 0.1
 			owner = {
 				NOT = {
 					OR = {
@@ -131,6 +135,20 @@ futurist_rebels = {
  	siege_won_trigger = {
  	}
 	siege_won_effect = {
+		if = {
+			limit = { 
+				owner = {
+					has_disaster = social_upheaval
+					has_country_flag = fights_upheaval
+				}
+				is_capital = yes
+			}
+			owner = {
+				country_event = {
+					id = bgm_social_upheaval.8
+				}
+			}
+		}
 	}
 	
 	# Country scope

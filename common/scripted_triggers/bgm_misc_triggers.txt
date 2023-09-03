@@ -108,9 +108,19 @@ bgm_industry_export = {
 bgm_building_owner = {
 	owner = {
 		ai = yes
-		is_at_war = no
+		is_in_deficit = no
+		OR = {
+			num_of_cities = 35
+			is_great_power = yes
+		}
+		OR = {
+			is_at_war = no
+			is_in_war = {
+				war_score = 50
+			}
+		}
 		NOT = { num_of_loans = 1 }
-		years_of_income = 0.4
+		years_of_income = 1.7
 	}
 }
 
@@ -121,4 +131,306 @@ bgm_building_vat = {
 			variable_name = localbuildcost
 		}
 	}
+}
+
+bgm_france = {
+	OR = {
+		tag = FRA
+		tag = FRR
+		tag = FRE
+		tag = FRW
+		tag = SFR
+		tag = BFR
+		tag = BUP
+		tag = BFE
+		tag = OCF
+		tag = OCR
+		tag = OCE
+		tag = FAN
+	}
+}
+
+bgm_france_exists = {
+	OR = {
+		exists = FRA
+		exists = FRR
+		exists = FRE
+		exists = FRW
+		exists = SFR
+		exists = BFR
+		exists = BUP
+		exists = BFE
+		exists = OCF
+		exists = OCR
+		exists = OCE
+		exists = FAN
+	}
+}
+
+bgm_allied_france = {
+	OR = {
+		alliance_with = FRA
+		alliance_with = FRR
+		alliance_with = FRE
+		alliance_with = FRW
+		alliance_with = SFR
+		alliance_with = BFR
+		alliance_with = BUP
+		alliance_with = BFE
+		alliance_with = OCF
+		alliance_with = OCR
+		alliance_with = OCE
+		alliance_with = FAN
+	}
+}
+
+bgm_fra_ally_mon_rev = {
+	OR = {
+		AND = {
+			bgm_rev = yes
+			FRA = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			FRA = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			FRR = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			FRR = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			FRE = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			FRE = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			FRW = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			FRW = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			SFR = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			SFR = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			BFR = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			BFR = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			BUP = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			BUP = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			BFE = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			BFE = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			OCF = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			OCF = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			OCE = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			OCE = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			OCR = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			OCR = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			FAN = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			FAN = {
+				bgm_rev = no
+			}
+		}
+	}
+}
+
+bgm_trusted_france = {
+	OR = {
+		FRA = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		FRR = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		FRE = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		FRW = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		SFR = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		BFR = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		BUP = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		BFE = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		OCF = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		OCR = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		OCE = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		FAN = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+	}
+}
+
+bgm_fra_minor_missions = {
+	capital_scope = { continent = europe }
+	OR = {
+		culture_group = occitan
+		culture_group = franco_provencal
+		culture_group = french
+	}
+	NOT = {
+		OR = {
+			tag = AEV
+			tag = AEE
+			tag = AER
+		}
+	}
+	NOT = { tag = LOR }
+	NOT = { tag = PRO }
+	NOT = { tag = FRA }
+	NOT = { tag = BUR }
+	NOT = { tag = BFR }
+	NOT = { tag = FAN }
+	NOT = { tag = LOT }
+	NOT = { tag = FRW }
+	NOT = { map_setup = map_setup_random }
 }

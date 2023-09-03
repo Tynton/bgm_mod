@@ -135,10 +135,10 @@ aluminium = {
 steel = {
 	color = { 0.8 0.4 0.1 } #0.3 0.05 0.0 #0.8 0.7 0.55
 	modifier = {
-		development_cost = -0.25
+		development_cost = -0.15
 	}
 	province = {
-		local_development_cost = -0.5
+		local_development_cost = -0.15
 	}
 	chance = {
 		factor = 0
@@ -191,7 +191,7 @@ cinema = {
 		all_power_cost = -0.1
 	}
 	province = {
-		local_development_cost = -0.33
+		local_development_cost_modifier = -0.33
 	}
 	chance = {
 		factor = 0

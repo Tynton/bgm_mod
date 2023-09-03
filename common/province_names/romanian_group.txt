@@ -80,7 +80,7 @@
 
 
 283 = "Zaporojia"
-5110 = "Muncaciu"
+#5110 = "Muncaciu"
 2961 = "Liov"
 282 = "Odesa"
 

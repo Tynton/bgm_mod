@@ -413,6 +413,8 @@ country_event = {
 		NOT = {
 			has_country_flag = no_gercon
 		}
+
+		is_at_war = no
 		
 		NOT = {
 			OR = {

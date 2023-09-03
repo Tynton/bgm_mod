@@ -172,6 +172,13 @@ swabian_group_1 = {
 				}
 				add_permanent_claim = root
 			}
+			grisons_area = {
+				limit = {
+					NOT = { owned_by = root }
+					NOT = { is_permanent_claim = root }
+				}
+				add_permanent_claim = root
+			}
 			romandie_area = {
 				limit = {
 					NOT = { owned_by = root }
@@ -204,6 +211,7 @@ swabian_group_1 = {
 				AND = {
 					OR = {
 						area = switzerland_area
+						area = grisons_area
 						area = romandie_area
 						province_id = 4710
 					}
@@ -213,6 +221,7 @@ swabian_group_1 = {
 								value = 8 #of 11
 								OR = {
 									area = switzerland_area
+									area = grisons_area
 									area = romandie_area
 									province_id = 4710
 								}
@@ -245,6 +254,7 @@ swabian_group_1 = {
 				value = 8 #of 11
 				OR = {
 					area = switzerland_area
+					area = grisons_area
 					area = romandie_area
 					province_id = 4710
 				}
@@ -346,6 +356,13 @@ swabian_group_2 = {
 				}
 				add_permanent_claim = root
 			}
+			south_lombardy_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 			po_valley_area = {
 				limit = {
 					NOT = { owned_by = root }
@@ -354,6 +371,13 @@ swabian_group_2 = {
 				add_permanent_claim = root
 			}
 			venetia_area = {
+				limit = {
+					NOT = { owned_by = root }
+					NOT = { is_permanent_claim = root }
+				}
+				add_permanent_claim = root
+			}
+			west_venetia_area = {
 				limit = {
 					NOT = { owned_by = root }
 					NOT = { is_permanent_claim = root }
@@ -370,8 +394,10 @@ swabian_group_2 = {
 		provinces_to_highlight = {
 			OR = {
 				area = lombardy_area
+				area = south_lombardy_area
 				area = po_valley_area
 				area = venetia_area
+				area = west_venetia_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = root }
 			NOT = {
@@ -380,8 +406,10 @@ swabian_group_2 = {
 						value = 6
 						OR = {
 							area = lombardy_area
+				area = south_lombardy_area
 							area = po_valley_area
 							area = venetia_area
+							area = west_venetia_area
 						}
 					}
 				}
@@ -393,8 +421,10 @@ swabian_group_2 = {
 				value = 6
 				OR = {
 					area = lombardy_area
+				area = south_lombardy_area
 					area = po_valley_area
 					area = venetia_area
+					area = west_venetia_area
 				}
 			}
 		}
@@ -407,7 +437,21 @@ swabian_group_2 = {
 				}
 				add_permanent_claim = root
 			}
+			north_piedmont_area = {
+				limit = {
+					NOT = { owned_by = root }
+					NOT = { is_permanent_claim = root }
+				}
+				add_permanent_claim = root
+			}
 			liguria_area = {
+				limit = {
+					NOT = { owned_by = root }
+					NOT = { is_permanent_claim = root }
+				}
+				add_permanent_claim = root
+			}
+			west_liguria_area = {
 				limit = {
 					NOT = { owned_by = root }
 					NOT = { is_permanent_claim = root }
@@ -431,10 +475,14 @@ swabian_group_2 = {
 		provinces_to_highlight = {
 			OR = {
 				area = lombardy_area
+				area = south_lombardy_area
 				area = venetia_area
+				area = west_venetia_area
 				area = po_valley_area
 				area = piedmont_area
+				area = north_piedmont_area
 				area = liguria_area
+				area = west_liguria_area
 				area = emilia_romagna_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = root }
@@ -444,10 +492,14 @@ swabian_group_2 = {
 						value = 18 #(out of 24)
 						OR = {
 							area = lombardy_area
+							area = south_lombardy_area
 							area = venetia_area
+							area = west_venetia_area
 							area = po_valley_area
 							area = piedmont_area
+							area = north_piedmont_area
 							area = liguria_area
+							area = west_liguria_area
 							area = emilia_romagna_area
 						}
 					}
@@ -460,10 +512,14 @@ swabian_group_2 = {
 				value = 18 #(out of 24)
 				OR = {
 					area = lombardy_area
+					area = south_lombardy_area
 					area = venetia_area
+					area = west_venetia_area
 					area = po_valley_area
 					area = piedmont_area
+					area = north_piedmont_area
 					area = liguria_area
+					area = west_liguria_area
 					area = emilia_romagna_area
 				}
 			}

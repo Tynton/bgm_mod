@@ -462,7 +462,7 @@ country_event = {
 	}
 }
 
-#Spanish
+#Low German
 
 country_event = {
 	id = language_modernization.6
@@ -476,7 +476,7 @@ country_event = {
 
 	trigger = {
 		is_year = 1600
-		low_german = yes
+		bgm_low_german = yes
 		OR = {
 			ai = no
 			AND = {
@@ -484,7 +484,7 @@ country_event = {
 				NOT = {
 					any_country = {
 						ai = no
-						low_german = yes
+						bgm_low_german = yes
 					}
 				}
 			}
@@ -501,15 +501,15 @@ country_event = {
 			if = {	
 				limit = {
 					owner = {
-						low_german = yes
+						bgm_low_german = yes
 					}
 				}
-				change_province_name = "LÃ¼beek" #Lubeke
+				change_province_name = "Lübeek" #Lubeke
 			}
 		}
 		every_country = {
 			limit = {
-				low_german = yes
+				bgm_low_german = yes
 			}
 			set_country_flag = evolved_low_german
 		}

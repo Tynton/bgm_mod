@@ -278,28 +278,53 @@ country_decisions = {
 	}
 
 	continental_peace = {
+		color = { 255 210 0 }
 		potential = {
 			NOT = { has_global_flag = had_peace_bgm }
 			has_first_revolution_started = yes
+			OR = {
+				any_country = {
+					same_continent = ROOT
+					has_country_flag = first_rev
+				}
+				has_country_flag = first_rev
+			}
 		}
 		allow = {
+			is_at_war = no
+			is_great_power = yes
 			dip_tech = 32
 			OR = {
 				AND = {
-					is_revolutionary = no
-					NOT = {
-						any_great_power = {
-							same_continent = ROOT
-							is_revolutionary = yes
+					is_revolution_target = yes
+					custom_trigger_tooltip = {
+						tooltip = bgm_rev_great_powers_tooltip
+						NOT = {
+							calc_true_if = {
+								all_country = {
+									is_great_power = yes
+									capital_scope = { continent = ROOT }
+									is_revolutionary = no
+									NOT = { total_development = 500 }
+								}
+								amount = 2
+							}
 						}
 					}
 				}
 				AND = {
-					is_revolutionary = yes
-					NOT = {
+					is_revolution_target = no
+					OR = {
 						any_great_power = {
 							same_continent = ROOT
-							is_revolutionary = no
+							is_at_war = no
+							NOT = { had_recent_war = 10 }
+							is_revolution_target = yes
+						}
+						NOT = {
+							any_great_power = {
+								is_revolution_target = yes
+							}
 						}
 					}
 				}

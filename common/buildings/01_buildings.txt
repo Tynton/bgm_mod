@@ -70,7 +70,22 @@ factory_infrastructure = {
 	}
 
 	ai_will_do = {
-		factor = 5
+		factor = 8
+
+		modifier = {
+			factor = 10
+			has_building = counting_house
+		}
+
+		modifier = {
+			factor = 10
+			owner = { adm_tech = 33 }
+		}
+
+		modifier = {
+			factor = 10
+			owner = { adm_tech = 36 }
+		}
 
 		modifier = {
 			factor = 2
@@ -94,15 +109,6 @@ factory_infrastructure = {
 				trade_goods = tobacco
 			}
 		}
-
-		modifier = {
-			factor = 0.1
-			owner = {
-				NOT = {
-					production_income_percentage = 0.33
-				}
-			}
-		}
 	}
 }
 
@@ -111,7 +117,7 @@ tax_center = {
 	time = 12
 	modifier = {
 		local_tax_modifier = 1.0
-		local_development_cost = -0.1
+		local_development_cost = -0.05
 	}
 
 	make_obsolete = cathedral
@@ -159,6 +165,11 @@ tax_center = {
 					trade_income_percentage = 0.4
 				}
 			}
+		}
+
+		modifier = {
+			factor = 10
+			has_building = cathedral
 		}
 
 		modifier = {

@@ -72,10 +72,10 @@
 180 = "Alto-Poitú"
 183 = { "París" "Isla de Francia" }
 184 = "Orleanesado"
-186 = "Champaña"
-189 = "Lorena"
+186 = { "Reims" "Champaña" }
+189 = "Nancy"
 190 = "Borbonés"
-192 = "Borgoña"
+192 = { "Dijon" "Borgoña" }
 193 = "Franco Condado"
 195 = "Lemosín"
 196 = { "Tolosa" "Tolosa" }

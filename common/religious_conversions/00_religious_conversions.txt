@@ -97,7 +97,7 @@ hussite_center_of_reformation = {
 	map_icon = GFX_religious_conversion_center_protestant
 
 	max_distance = 200.0 # From Center of Reformation center province (default is NDefines::NReligion::MAX_RELIGIOUS_CENTER_SPREAD_DISTANCE).
-	base_conversion_speed = 3
+	base_conversion_speed = 1
 
 	target_province_weights = {
 		factor = 2
@@ -297,7 +297,7 @@ waldensian_center_of_reformation = {
 	map_icon = GFX_religious_conversion_center_protestant
 
 	max_distance = 150.0 # From Center of Reformation center province (default is NDefines::NReligion::MAX_RELIGIOUS_CENTER_SPREAD_DISTANCE).
-	base_conversion_speed = 3
+	base_conversion_speed = 1
 
 	target_province_weights = {
 		factor = 2
@@ -486,7 +486,7 @@ cathar_center_of_reformation = {
 	map_icon = GFX_religious_conversion_center_protestant
 
 	max_distance = 300.0 # From Center of Reformation center province (default is NDefines::NReligion::MAX_RELIGIOUS_CENTER_SPREAD_DISTANCE).
-	base_conversion_speed = 3
+	base_conversion_speed = 1
 
 	target_province_weights = {
 		factor = 2
@@ -674,7 +674,7 @@ anglican_center_of_reformation = {
 	map_icon = GFX_religious_conversion_center_protestant
 
 	max_distance = 150.0 # From Center of Reformation center province (default is NDefines::NReligion::MAX_RELIGIOUS_CENTER_SPREAD_DISTANCE).
-	base_conversion_speed = 2
+	base_conversion_speed = 1
 
 	target_province_weights = {
 		factor = 2
@@ -843,7 +843,7 @@ protestant_center_of_reformation = {
 	map_icon = GFX_religious_conversion_center_protestant
 
 	max_distance = 280.0 # From Center of Reformation center province (default is NDefines::NReligion::MAX_RELIGIOUS_CENTER_SPREAD_DISTANCE).
-	base_conversion_speed = 2
+	base_conversion_speed = 1
 
 	target_province_weights = {
 		factor = 3
@@ -1049,7 +1049,7 @@ reformed_center_of_reformation = {
 	map_icon = GFX_religious_conversion_center_protestant
 
 	max_distance = 280.0 # From Center of Reformation center province (default is NDefines::NReligion::MAX_RELIGIOUS_CENTER_SPREAD_DISTANCE).
-	base_conversion_speed = 3
+	base_conversion_speed = 1
 
 	target_province_weights = {
 		factor = 2
@@ -1271,7 +1271,7 @@ unitarian_center_of_reformation = {
 	map_icon = GFX_religious_conversion_center_protestant
 
 	max_distance = 280.0 # From Center of Reformation center province (default is NDefines::NReligion::MAX_RELIGIOUS_CENTER_SPREAD_DISTANCE).
-	base_conversion_speed = 6
+	base_conversion_speed = 3
 
 	target_province_weights = {
 		factor = 2
@@ -1489,7 +1489,7 @@ anabaptist_center_of_reformation = {
 	map_icon = GFX_religious_conversion_center_protestant
 
 	max_distance = 280.0 # From Center of Reformation center province (default is NDefines::NReligion::MAX_RELIGIOUS_CENTER_SPREAD_DISTANCE).
-	base_conversion_speed = 2
+	base_conversion_speed = 1
 
 	target_province_weights = {
 		factor = 2
@@ -1709,7 +1709,7 @@ fraticelli_center_of_reformation = {
 	map_icon = GFX_religious_conversion_center_protestant
 
 	max_distance = 280.0 # From Center of Reformation center province (default is NDefines::NReligion::MAX_RELIGIOUS_CENTER_SPREAD_DISTANCE).
-	base_conversion_speed = 1
+	base_conversion_speed = 3
 
 	target_province_weights = {
 		factor = 2
@@ -1910,7 +1910,7 @@ lollard_center_of_reformation = {
 	map_icon = GFX_religious_conversion_center_protestant
 
 	max_distance = 280.0 # From Center of Reformation center province (default is NDefines::NReligion::MAX_RELIGIOUS_CENTER_SPREAD_DISTANCE).
-	base_conversion_speed = 3
+	base_conversion_speed = 1
 
 	target_province_weights = {
 		factor = 2

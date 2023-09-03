@@ -19,6 +19,13 @@ vassal = {
 	end_date = 1526.8.29
 }
 
+vassal = {
+	first = HAB
+	second = SCH
+	start_date = 1444.1.1
+	end_date = 1559.1.1
+}
+
 # Habsburg - Silesia
 vassal = {
 	first = HAB

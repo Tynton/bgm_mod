@@ -6,7 +6,7 @@
 4737 = { "Giurgenti" "Girgenti" }
 4736 = "Tràpani"
 
-
+5115 = "Catanzaru"
 
 #assumption
 
@@ -14,6 +14,7 @@
 122 = "Tarde"
 2985 = "Fògge"
 4733 = "Mulise"
-2983 = "Salierno"
+2983 = "Saliernu"
 1933 = { "Baàr" "Bare" }
-120 = { "Abbrùzze" "Abbrùzzu" }
+120 = { "Pescara" "Abbrùzzu" }
+5116 = "Beneventu"

@@ -99,6 +99,7 @@ emp_burgundy_1 = {
 				}
 				add_permanent_claim = ROOT
 			}
+			5113 = { add_permanent_claim = ROOT }
 			102 = {
 				add_permanent_claim = ROOT
 			}
@@ -114,6 +115,7 @@ emp_burgundy_1 = {
 				area = provence_area
 				area = savoy_dauphine_area
 				province_id = 102
+				province_id = 5113
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			NOT = {
@@ -124,6 +126,7 @@ emp_burgundy_1 = {
 							area = provence_area
 							area = savoy_dauphine_area
 							province_id = 102
+							province_id = 5113
 						}
 					}
 				}
@@ -137,6 +140,7 @@ emp_burgundy_1 = {
 					area = provence_area
 					area = savoy_dauphine_area
 					province_id = 102
+					province_id = 5113
 				}
 			}
 		}
@@ -162,7 +166,21 @@ emp_burgundy_1 = {
 				}
 				add_permanent_claim = ROOT
 			}
+			north_piedmont_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 			lombardy_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			south_lombardy_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
@@ -186,7 +204,9 @@ emp_burgundy_1 = {
 				AND = {
 					OR = {
 						area = piedmont_area
+						area = north_piedmont_area
 						area = lombardy_area
+						area = south_lombardy_area
 						area = po_valley_area
 					}
 					NOT = {
@@ -195,7 +215,9 @@ emp_burgundy_1 = {
 								value = 10 #out of 12
 								OR = {
 									area = piedmont_area
+									area = north_piedmont_area
 									area = lombardy_area
+									area = south_lombardy_area
 									area = po_valley_area
 								}
 							}
@@ -213,7 +235,9 @@ emp_burgundy_1 = {
 				value = 10 #out of 12
 				OR = {
 					area = piedmont_area
+					area = north_piedmont_area
 					area = lombardy_area
+					area = south_lombardy_area
 					area = po_valley_area
 				}
 			}
@@ -227,7 +251,21 @@ emp_burgundy_1 = {
 				}
 				add_permanent_claim = ROOT
 			}
+			west_liguria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 			venetia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_venetia_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
@@ -282,6 +320,8 @@ emp_lotharingia_1 = {
 				AND = {
 					OR = {
 						area = liguria_area
+						area = west_liguria_area
+						area = west_venetia_area
 						area = venetia_area
 						area = emilia_romagna_area
 						area = north_tuscan_area
@@ -293,6 +333,8 @@ emp_lotharingia_1 = {
 								value = 15 #out of 18
 								OR = {
 									area = liguria_area
+									area = west_liguria_area
+									area = west_venetia_area
 									area = venetia_area
 									area = emilia_romagna_area
 									area = north_tuscan_area
@@ -316,7 +358,9 @@ emp_lotharingia_1 = {
 				value = 15 #out of 18
 				OR = {
 					area = liguria_area
+					area = west_liguria_area
 					area = venetia_area
+					area = west_venetia_area
 					area = emilia_romagna_area
 					area = north_tuscan_area
 					area = tuscany_area
@@ -362,6 +406,7 @@ emp_burgundy_2 = {
 				AND = {
 					OR = {
 						area = flanders_area
+						area = south_flanders_area
 						area = brabant_area
 						area = north_brabant_area
 						area = holland_area
@@ -373,6 +418,7 @@ emp_burgundy_2 = {
 								value = 10
 								OR = {
 									area = flanders_area
+									area = south_flanders_area
 									area = brabant_area
 									area = north_brabant_area
 									area = holland_area
@@ -391,6 +437,7 @@ emp_burgundy_2 = {
 				value = 10 #the number owned by BRB, FLA and HOL at start
 				OR = {
 					area = flanders_area
+					area = south_flanders_area
 					area = brabant_area
 					area = north_brabant_area
 					area = holland_area
@@ -1232,6 +1279,13 @@ emp_burgundy_4 = {
 					}
 					add_permanent_claim = root
 				}
+				west_orleans_area = {
+					limit = {
+						NOT = { is_core = root }
+						NOT = { is_permanent_claim = root }
+					}
+					add_permanent_claim = root
+				}
 				FRA = {
 					country_event = { id = new_flavour_bur.6 }
 					every_subject_country = {
@@ -1256,6 +1310,13 @@ emp_burgundy_4 = {
 					add_permanent_claim = root
 				}
 				orleans_area = {
+					limit = {
+						NOT = { is_core = root }
+						NOT = { is_permanent_claim = root }
+					}
+					add_permanent_claim = root
+				}
+				west_orleans_area = {
 					limit = {
 						NOT = { is_core = root }
 						NOT = { is_permanent_claim = root }
@@ -1361,6 +1422,98 @@ emp_burgundy_4 = {
 							who = PREV
 						}
 					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						exists = ORL
+						ORL = {
+							is_subject_of_type = appanage
+						}
+					}
+					ORL = { change_country_color = { color = { 216 121 139 } } }
+				}
+				if = {
+					limit = {
+						exists = AMG
+						AMG = {
+							is_subject_of_type = appanage
+						}
+					}
+					AMG = { change_country_color = { color = { 247 187 206 } } }
+				}
+				if = {
+					limit = {
+						exists = SNC
+						SNC = {
+							is_subject_of_type = appanage
+						}
+					}
+					SNC = { change_country_color = { color = { 115 70 85 } } }
+				}
+				if = {
+					limit = {
+						exists = BOU
+						BOU = {
+							is_subject_of_type = appanage
+						}
+					}
+					BOU = { change_country_color = { color = { 165 0 140 } } }
+				}
+				if = {
+					limit = {
+						exists = VNE
+						VNE = {
+							is_subject_of_type = appanage
+						}
+					}
+					VNE = { change_country_color = { color = { 155 100 135 } } }
+				}
+				if = {
+					limit = {
+						exists = FOI
+						FOI = {
+							is_subject_of_type = appanage
+						}
+					}
+					FOI = { change_country_color = { color = { 182 105 106 } } }
+				}
+				if = {
+					limit = {
+						exists = NEM
+						NEM = {
+							is_subject_of_type = appanage
+						}
+					}
+					NEM = { change_country_color = { color = { 125 75 100 } } }
+				}
+				if = {
+					limit = {
+						exists = AUV
+						AUV = {
+							is_subject_of_type = appanage
+						}
+					}
+					AUV = { change_country_color = { color = { 218 75 155 } } }
+				}
+				if = {
+					limit = {
+						exists = LIM
+						LIM = {
+							is_subject_of_type = appanage
+						}
+					}
+					LIM = { change_country_color = { color = { 141 70 78 } } }
+				}
+				if = {
+					limit = {
+						exists = BER
+						BER = {
+							is_subject_of_type = appanage
+						}
+					}
+					BER = { change_country_color = { color = { 215 65 85 } } }
 				}
 			}
 		}

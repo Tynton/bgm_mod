@@ -12,7 +12,7 @@ pretender_rebels = {
 	unit_transfer = yes
 	gfx_type = culture_province	
 	
-	resilient = yes					# Will not disband on defeat.
+	resilient = no					# Will not disband on defeat.
 	reinforcing = yes				# Will reinforce (double rate in rebel controlled provinces)
 	general = yes					# Does use generals. The 'define_ruler' effect with 'rebel' argument will pick the rebel leader as new King.
 	smart = yes
@@ -25,7 +25,7 @@ pretender_rebels = {
 	infantry = 0.5
 	cavalry = 0.4
 	
-	morale = 1.25
+	morale = 1.0
 	
 	# Possible handle actions
 	handle_action_negotiate = no
@@ -299,6 +299,10 @@ pretender_rebels = {
 			clr_country_flag = has_power_struggle
 		}
 		if = {
+			limit = { is_subject_of_type = sister_republic }
+			grant_independence = yes
+		}
+		if = {
 			limit = { has_disaster = civil_war }
 			add_prestige = -200
 			add_legitimacy = 25
@@ -377,6 +381,12 @@ pretender_rebels = {
 		if = {
 			limit = { is_revolution_target = yes }
 			set_revolution_target = ---
+		}
+		if = {
+			limit = {
+				has_global_flag = revolutions_year_start
+			}
+			change_government = authoritarian_government
 		}
 	}
 }

@@ -120,6 +120,8 @@
 4689 = "Omsk"
 4691 = "Ob"
 
+4383 = "Gaaga"
+
 183 = "Parizh"
 102 = "Nitstsa"
 
@@ -127,3 +129,37 @@
 
 188 = "Mec"
 189 = "Nansí"
+
+101 = "Genuya"
+116 = "Florentsiya"
+118 = "Rim"
+121 = "Neapol"
+
+4247 = "Ovruch"
+4540 = "Vinnytsia"
+4537 = "Novogrudok"
+2962 = "Rovno"
+2961 = "Lvov"
+4541 = "Drohobych"
+261 = "Galich"
+281 = "Podolye"
+284 = "Krym"
+770 = "Braslav"
+4535 = "Vilkmerge"
+1935 = "Yelgava" #soviet era
+2959 = "Tarnov"
+257 = "Varshava"
+260 = "Lyublin"
+262 = "Krakov"
+
+2960 = "Noviy Sants"
+4533 = "Vyelun"
+258 = "Shyerats"
+4525 = "Rava"
+1938 = "Vizhna"
+4524 = "Dobryn"
+4528 = "Kuyaviy"
+255 = "Kalish"
+
+
+4529 = "Yassy"

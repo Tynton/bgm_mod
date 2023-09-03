@@ -17,7 +17,8 @@ country_event = {
 			#dynasty = "Enríquez"
 			dynasty = "de la Cerda"
 		}
-		culture_group = iberian
+		#culture_group = iberian
+		dynasty_is_alone = yes
 		OR = {
 			is_great_power = yes
 			ai = no
@@ -127,7 +128,7 @@ country_event = {
 	
 	trigger = {
 		dynasty = "de Valois"
-		culture_group = french
+		dynasty_is_alone = yes
 		OR = {
 			is_great_power = yes
 			ai = no
@@ -166,6 +167,42 @@ country_event = {
 
 		ai_chance = {
 			factor = 1
+
+			modifier = {
+				factor = 0
+				stability = 1
+			}
+		}
+	}
+}
+
+# Reclaim the Legacy of the Plantagenêts
+country_event = {
+	id = easter_egg.4
+	title = easter_egg.4.t
+	desc = easter_egg.4.d
+	picture = RELIGIOUS_WARS_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = easter_egg.4.a
+		set_dynasty = "Plantagenêt"
+		set_ruler_culture = anglo_norman
+
+		add_legitimacy = 25
+	}
+
+	option = {
+		name = easter_egg.4.b
+		custom_tooltip = "DIVREE_ONCE"
+
+		ai_chance = {
+			factor = 0
 
 			modifier = {
 				factor = 0

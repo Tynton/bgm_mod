@@ -399,7 +399,7 @@ country_event = {
 	title = "flavor_brapru.EVTNAME3"
 	desc = "flavor_brapru.EVTDESC3"
 	picture = UNIVERSITY_eventPicture
-	
+	goto = 41
 	fire_only_once = yes
 	
 	trigger = {
@@ -1872,7 +1872,11 @@ country_event = {
 		add_army_professionalism = 0.05
 		if = {
 			limit = { has_dlc = "Rights of Man" }
-			add_militarised_society = 40
+			add_government_power = {
+				mechanic_type = militarization_mechanic
+				power_type = militarized_society
+				value = 40
+			}
 		}
 		if = {
 			limit = {

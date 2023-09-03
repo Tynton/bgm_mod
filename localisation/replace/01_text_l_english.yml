@@ -31,3 +31,5 @@
  rheinland:0 "Rhineland"
  sevilla:0 "Seville"
  valencia:0 "Occitania"
+ 
+ fra_develop_urban_centers:0 "Every province with at least §Y15§! development which is owned by us or a non-tributary subject in the §YFrench§! region will gain the following reward:"

@@ -27,6 +27,17 @@
  POPULAR_REPUBLIC:0 "Popular Republic"
  POPULAR_REPUBLIC_ITA:0 "Repubblica Popolare"
  
+ SEIGNEURIE:0 "Seigneurie"
+ SEIGNEURIE_GRANDE:0 "Seigneurie Grande"
+ SEIGNEUR:0 "Seigneur"
+ SEIGNEUR_GRAND:0 "Seigneur Grand"
+ SEIGNEURESSE:0 "Seigneuresse"
+ SEIGNEURESSE_GRANDE:0 "Seigneuresse Grande"
+ 
+ SIGNORIA:0 "Signoria"
+ SIGNORE:0 "Signore"
+ SIGNORA:0 "Signora"
+ 
  COMTE:0 "Comté"
  COMTE_RULER:0 "Comte"
  COMTESSE:0 "Comtesse"

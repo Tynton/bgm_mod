@@ -149,3 +149,129 @@ clear_advisors = {
     remove_advisor_by_category = DIP
     remove_advisor_by_category = MIL
 }
+
+set_monarch_power = { #thanks Seelöwe
+    if = {
+        limit = {
+            $type$_power = $value$
+        }
+        custom_tooltip = reset_powers
+        hidden_effect = {
+            add_$type$_power = -2000000
+            add_$type$_power = $debt_limit$
+            add_$type$_power = $value$
+        }
+    }
+}
+
+bgm_adm_assessment = {
+    if = {
+		limit = {
+			NOT = {
+				adm = 2
+			}
+		}
+		add_country_modifier = {
+			name = adm_one
+			duration = -1
+		}
+		remove_country_modifier = adm_five
+	}
+	else_if = {
+		limit = {
+			adm = 2
+			NOT = {
+				adm = 5
+			}
+		}
+		remove_country_modifier = adm_one
+		remove_country_modifier = adm_five
+	}
+	else = {
+		limit = {
+			adm = 5
+		}
+		add_country_modifier = {
+			name = adm_five
+			duration = -1
+		}
+		remove_country_modifier = adm_one
+	}
+}
+bgm_dip_assessment = {
+    if = {
+		limit = {
+			NOT = {
+				dip = 2
+			}
+		}
+		add_country_modifier = {
+			name = dip_one
+			duration = -1
+		}
+		remove_country_modifier = dip_five
+	}
+	else_if = {
+		limit = {
+			dip = 2
+			NOT = {
+				dip = 5
+			}
+		}
+		remove_country_modifier = dip_one
+		remove_country_modifier = dip_five
+	}
+	else = {
+		limit = {
+			dip = 5
+		}
+		add_country_modifier = {
+			name = dip_five
+			duration = -1
+		}
+		remove_country_modifier = dip_one
+	}
+}  
+bgm_mil_assessment = {
+    if = {
+		limit = {
+			NOT = {
+				mil = 2
+			}
+		}
+		add_country_modifier = {
+			name = mil_one
+			duration = -1
+		}
+		remove_country_modifier = mil_five
+	}
+	else_if = {
+		limit = {
+			mil = 2
+			NOT = {
+				mil = 5
+			}
+		}
+		remove_country_modifier = mil_one
+		remove_country_modifier = mil_five
+	}
+	else = {
+		limit = {
+			mil = 5
+		}
+		add_country_modifier = {
+			name = mil_five
+			duration = -1
+		}
+		remove_country_modifier = mil_one
+	}
+}
+
+bgm_get_fra = {
+    random_country = {
+        limit = {
+            bgm_france = yes
+        }
+        save_event_target_as = bgm_fra_target
+    }
+}

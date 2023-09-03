@@ -224,44 +224,27 @@ peasants_republic_ita = {
 	}
 }
 
-italian_republics = {
+signorias = {
 	rank = {
-		1 = REPUBBLICA
-		2 = REPUBBLICA
-		3 = REPUBBLICA
+		1 = SIGNORIA
+		2 = SIGNORIA
+		3 = SIGNORIA
 	}
 	
 	ruler_male = {
-		1 = CONSOLE
-		2 = CONSOLE
-		3 = CONSOLE
+		1 = SIGNORE
+		2 = SIGNORE
+		3 = SIGNORE
 	}
 
 	ruler_female = {
-		1 = CONSULESS
-		2 = CONSULESS
-		3 = CONSULESS
+		1 = SIGNORA
+		2 = SIGNORA
+		3 = SIGNORA
 	}
 
 	trigger = {
-		culture_group = latin
-		NOT  = {
-			OR = {
-				has_reform = democratic_mechanic
-				has_reform = authoritarian_mechanic
-				has_reform = futurist_mechanic
-				has_reform = fascist_mechanic
-				bgm_comgovt = yes
-				has_reform = peasants_republic
-			}
-		}
-		government = republic
-		NOT = {
-			OR = {
-				primary_culture = neapolitan
-				primary_culture = venetian
-			}
-		}
+		has_reform = signoria_reform
 	}
 }
 
@@ -293,6 +276,7 @@ neapolitan_republics = {
 				has_reform = authoritarian_mechanic
 				has_reform = futurist_mechanic
 				has_reform = fascist_mechanic
+				has_reform = signoria_reform
 				bgm_comgovt = yes
 			}
 		}
@@ -337,6 +321,7 @@ gallo_italian_republic = {
 				has_reform = authoritarian_mechanic
 				has_reform = futurist_mechanic
 				has_reform = fascist_mechanic
+				has_reform = signoria_reform
 				bgm_comgovt = yes
 				has_reform = peasants_republic
 			}
@@ -397,6 +382,9 @@ french_republics = {
 	}
 
 	trigger = {
+		NOT = {
+			has_reform = noble_elite_reform
+		}
 		government = republic
 		culture_group = french
 		NOT = {
@@ -869,6 +857,37 @@ noble_republic = {
 	}
 	
 	trigger = {
+		NOT = {
+			has_country_flag = fra_rep_missions
+		}
+		OR = {
+			has_reform = noble_elite_reform
+			has_reform = noble_republic
+		}
+	}
+}
+
+noble_republic_fra = {
+	rank = {
+		1 = SEIGNEURIE
+		2 = SEIGNEURIE
+		3 = SEIGNEURIE_GRANDE
+	}
+	
+	ruler_male = {
+		1 = SEIGNEUR
+		2 = SEIGNEUR
+		3 = SEIGNEUR_GRAND
+	}
+	
+	ruler_female = {
+		1 = SEIGNEURESSE
+		2 = SEIGNEURESSE
+		3 = SEIGNEURESSE_GRANDE
+	}
+	
+	trigger = {
+		has_country_flag = fra_rep_missions
 		OR = {
 			has_reform = noble_elite_reform
 			has_reform = noble_republic
@@ -1217,6 +1236,7 @@ gov_constitutional_republic = {
 	}
 	
 	trigger = {
+		NOT = { has_reform = noble_elite_reform }
 		government = republic
 		OR = {
 			has_reform = constitutional_republic

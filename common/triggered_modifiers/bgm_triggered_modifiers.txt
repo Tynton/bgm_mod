@@ -50,6 +50,7 @@ hre_threatened = {
 
 	improve_relation_modifier = 0.05
 	ae_impact = 0.05
+	imperial_authority_value = 0.1
 }
 
 rev_trad_m = {
@@ -139,6 +140,7 @@ coalition_continent_hegemon_rival = {
 
 ai_get_tech = {
 	potential = {
+		always = no #TEST
 		ai = yes
 		OR = {
 			any_neighbor_country = {
@@ -157,6 +159,7 @@ ai_get_tech = {
 		}
 	}
 	trigger = {
+		always = no #TEST
 		ai = yes
 		OR = {
 			any_neighbor_country = {
@@ -284,11 +287,30 @@ national_prosperity = {
 	
 	stability_cost_modifier = -0.05
 	idea_cost = -0.05
-	development_cost = -0.1
+	development_cost = -0.05
 	technology_cost = -0.05
 	global_trade_power = 0.1
 	innovativeness_gain = 0.25
-	global_trade_goods_size_modifier = 0.1
+	global_trade_goods_size_modifier = 0.05
+}
+
+chinese_empire = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			is_emperor_of_china = yes
+		}
+		government_rank = 3
+	}
+	trigger = {
+		OR = {
+			culture_group = east_asian
+			is_emperor_of_china = yes
+		}
+		government_rank = 3
+	}
+	governing_capacity = 3500
+	development_cost_modifier = -0.33
 }
 
 ww1_right = {
@@ -455,95 +477,34 @@ no_fascism = {
 	dm_nationalist_influence = -0.75
 }
 
-industrial_medicine = {
-	potential = {
-		adm_tech = 37
-	}
-	trigger = {
-		adm_tech = 37
-	}
-	
-	monarch_lifespan = 0.05
-	manpower_recovery_speed = 0.05
-	global_manpower_modifier = 0.05
-}
-
-industrial_medicine_ii = {
-	potential = {
-		adm_tech = 39
-	}
-	trigger = {
-		adm_tech = 39
-	}
-	
-	monarch_lifespan = 0.05
-	production_efficiency = 0.05
-	manpower_recovery_speed = 0.05
-	global_manpower_modifier = 0.05
-}
-
-industrial_medicine_iii = {
-	potential = {
-		adm_tech = 41
-	}
-	trigger = {
-		adm_tech = 41
-	}
-	
-	monarch_lifespan = 0.05
-	production_efficiency = 0.05
-	manpower_recovery_speed = 0.05
-	global_manpower_modifier = 0.05
-}
-
-modern_medicine = {
-	potential = {
-		adm_tech = 43
-	}
-	trigger = {
-		adm_tech = 43
-	}
-	
-	monarch_lifespan = 0.05
-	production_efficiency = 0.05
-	manpower_recovery_speed = 0.05
-	global_manpower_modifier = 0.05
-}
-
-modern_medicine_ii = {
-	potential = {
-		adm_tech = 45
-	}
-	trigger = {
-		adm_tech = 45
-	}
-	
-	monarch_lifespan = 0.05
-	production_efficiency = 0.1
-	manpower_recovery_speed = 0.05
-	global_manpower_modifier = 0.05
-}
-
-modern_medicine_iii = {
-	potential = {
-		adm_tech = 47
-	}
-	trigger = {
-		adm_tech = 47
-	}
-	
-	monarch_lifespan = 0.1
-	production_efficiency = 0.05
-	manpower_recovery_speed = 0.05
-	global_manpower_modifier = 0.05
-}
-
 cadet_branch_one = {
 	potential = {
-		has_country_flag = first_cadet_branch
+		calc_true_if = {
+			amount = 2
+			all_country = {
+				OR = {
+					dynasty = ROOT
+					AND = {
+						is_subject_of_type = appanage
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
 	}
 	trigger = {
-		has_country_flag = first_cadet_branch
+		calc_true_if = {
+			amount = 2
+			all_country = {
+				OR = {
+					dynasty = ROOT
+					AND = {
+						is_subject_of_type = appanage
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
 	}
 	prestige = 0.25
 	heir_chance = 0.1
@@ -554,10 +515,32 @@ cadet_branch_one = {
 
 cadet_branch_two = {
 	potential = {
-		has_country_flag = second_cadet_branch
+		calc_true_if = {
+			amount = 3
+			all_country = {
+				OR = {
+					dynasty = ROOT
+					AND = {
+						is_subject_of_type = appanage
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
 	}
 	trigger = {
-		has_country_flag = second_cadet_branch
+		calc_true_if = {
+			amount = 3
+			all_country = {
+				OR = {
+					dynasty = ROOT
+					AND = {
+						is_subject_of_type = appanage
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
 	}
 	leader_cost = -0.05
 	heir_chance = 0.05
@@ -587,51 +570,6 @@ non_catholic_rome = {
 	stability_cost_modifier = 0.25
 	global_unrest = 3
 	prestige = -1
-}
-
-government_one = {
-	potential = {
-		adm_tech = 29
-	}
-	trigger = {
-		adm_tech = 29
-	}
-	
-	reform_progress_growth = 2.0
-	core_creation = -0.1
-	inflation_action_cost = -0.1 
-	state_maintenance_modifier = 0.25
-	advisor_cost = 0.15
-}
-
-government_two = {
-	potential = {
-		adm_tech = 31
-	}
-	trigger = {
-		adm_tech = 31
-	}
-	
-	reform_progress_growth = 6.0
-	core_creation = -0.1
-	inflation_action_cost = -0.1 
-	state_maintenance_modifier = 0.4
-	advisor_cost = 0.15
-}
-
-government_three = {
-	potential = {
-		adm_tech = 33
-	}
-	trigger = {
-		adm_tech = 33
-	}
-	
-	reform_progress_growth = 12.0
-	core_creation = -0.1
-	inflation_action_cost = -0.1 
-	state_maintenance_modifier = 0.6
-	advisor_cost = 0.15
 }
 
 tanks_i = {

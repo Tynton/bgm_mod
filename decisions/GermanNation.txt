@@ -199,6 +199,56 @@ country_decisions = {
 			}
 			restore_country_name_effect = yes
 
+			if = {
+				limit = {
+					OR = {
+						primary_culture = austrian
+						primary_culture = south_tyrolean
+						primary_culture = konstanzer
+					}
+				}
+				change_country_color = {
+					color = { 250 217 237 } #250 237 217
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						primary_culture = hessian
+						primary_culture = ripuarian
+						primary_culture = moselle_franconian
+						primary_culture = palatine
+						primary_culture = hannoverian
+						primary_culture = swiss
+					}
+				}
+				change_country_color = {
+					color = { 135 87 31 }
+				}
+			}
+			if = {
+				limit = {
+					primary_culture = bavarian
+				}
+				change_country_color = {
+					color = { 55 47 117 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						primary_culture = eastphalian
+						primary_culture = lower_saxon
+						primary_culture = schleswig_holsteiner
+						primary_culture = pommeranian
+						primary_culture = east_pomeranian
+					}
+				}
+				change_country_color = {
+					color = { 157 162 171 }
+				}
+			}
+
 			#namechange = yes
 
 			emperor = {

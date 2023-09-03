@@ -11,5 +11,8 @@
 98 = "Trèke"
 4770 = { "Barrois" "Boé-el-Duc" }
 4951 = { "Dunkèque" "Dunkèke" }
+94 = "Lussimbourg"
 
 5087 = { "Boulonne" "Boulonne-su-Mér" }
+
+5103 = "Bieuvais"

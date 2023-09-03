@@ -8,14 +8,15 @@
 63 = "Turingia"
 65 = "Monaco"
 67 = "Norimberga"
-75 = "Alsazia"
+75 = "Strasburgo"
 78 = "Magonza"
 80 = "Treviri"
 85 = "Colonia"
 87 = "Calesse"
 88 = "Artesia"
 89 = "Piccardia"
-90 = "Fiandre"
+90 = "Bruggia"
+91 = "Monno"
 92 = "Borsella"
 93 = "Liegi"
 94 = "Lussemburgo"
@@ -24,7 +25,7 @@
 128 = "Villaco"
 136 = "Spalato"
 143 = "Valona"
-167 = "Calchese"
+167 = "Roano" #Calchese
 168 = "Cadomo"
 170 = "Bresta"
 171 = "Vanna"
@@ -33,13 +34,13 @@
 174 = "Bordea"
 175 = "Armagnaco"
 176 = "Bearnia"
-177 = "Cenomano"
+177 = { "Maini" "Mania" }
 178 = "Angio"
 179 = "Borge"
 180 = "Basso-Potieri"
-182 = "Compigno"
+182 = { "Valese" "Compigno" }
 183 = "Parigi"
-184 = "Orleano"
+184 = { "Orleanese" "Orleano" }
 185 = "Nemosio"
 186 = "Remi"
 187 = "Bario"
@@ -109,13 +110,14 @@
 4390 = "Tresetto"
 4391 = "Vivarese"
 4392 = "Ausserra"
-4546 = "Granata"
 165 = "Berna"
 1869 = "Zurigo"
 1870 = "San Gallo"
 1873 = "Coira"
 1871 = "Vallese"
 151 = "Costantinopoli"
+5086 = "Mechelen" #Lovanio
+4767 = "Due Ponti"
 
 4112 = "Limosino"
 4385 = "Caroborgo"
@@ -149,10 +151,9 @@
 5275 = "Carlostadio"
 5281 = "Santiquaranta"
 
-5105 = "Macarsca"
-5104 = "Sebenico"
-5122 = "San Niccolò"
-5121 = "La Canea"
+#5105 = "Macarsca"
+#5104 = "Sebenico"
+#5122 = "San Niccolò"
 163 = "Candia"
 
 4994 = "Lucerna"
@@ -265,7 +266,7 @@
 
 4949 = { "La Roccella" "La Roccelle" }
 4947 = { "Anneci" "Anessi" }
-5102 = "Arcassone"
+#5102 = "Arcassone"
 4776 = "Blesa"
 
 5241 = "Lubiana"
@@ -277,3 +278,32 @@
 5093 = "Coleto"
 
 5398 = { "Gape" "Gapo" }
+
+#speculative, iberia
+217 = "Magerito"
+218 = "Badaiozza"
+4548 = "Elva"
+1749 = "Cadizzi"
+1747 = "Caceressi"
+1748 = "Aien"
+1547 = "Alvacete"
+4549 = "Cativa"
+4551 = "Avila"
+215 = "Vagliadoli"
+229 = "Beia"
+4787 = "Ribatio"
+1851 = "Coimverra"
+208 = "Leone"
+4553 = "Samorra"
+5080 = "Astorca"
+4554 = "Luco"
+4546 = "Malaca"
+221 = "Morccia"
+222 = "Almeria"
+4557 = "Calataia"
+4550 = "Castellone"
+1746 = "Borgi"
+2990 = "Teruelle"
+4788 = "Placenza"
+
+#5079 = "San Giacomo"

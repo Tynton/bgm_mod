@@ -15,11 +15,19 @@ country_event = {
 	option = {
 		name = "AI_GameStart.1.a"
 
+		every_country = {
+			bgm_adm_assessment = yes
+			bgm_dip_assessment = yes
+			bgm_mil_assessment = yes
+		}
+
 		if = { #build two extra heavies
-			ENG = { 
-				ai = yes 
-				any_owned_province = {
-					has_port = yes
+			limit = {
+				ENG = { 
+					ai = yes 
+					any_owned_province = {
+						has_port = yes
+					}
 				}
 			}
 			add_treasury = -100
@@ -74,6 +82,31 @@ country_event = {
 					}
 					25 = {}
 				}
+			}
+		}
+
+		if = {
+			limit = { #Player England
+				ENG = {
+					ai = no
+				}
+				AND = {
+					FRA = {
+						ai = yes
+						NOT = {
+							is_rival = CAS
+						}
+					}
+					CAS = {
+						ai = yes
+						NOT = {
+							is_rival = FRA
+						}
+					}
+				}
+			}
+			FRA = {
+				create_marriage = CAS
 			}
 		}
 
@@ -480,6 +513,9 @@ country_event = {
 		languedoc_area = {
 			set_local_autonomy = 35
 		}
+		east_languedoc_area = {
+			set_local_autonomy = 35
+		}
 		guyenne_area = {
 			set_local_autonomy = 35
 		}
@@ -487,6 +523,9 @@ country_event = {
 			set_local_autonomy = 25
 		}
 		orleans_area = {
+			set_local_autonomy = 25
+		}
+		west_orleans_area = {
 			set_local_autonomy = 25
 		}
 		

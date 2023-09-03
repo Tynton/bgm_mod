@@ -1,0 +1,5 @@
+government = monarchy
+primary_culture = anglo_norman
+religion = catholic
+technology_group = western
+capital = 178 # Anjou

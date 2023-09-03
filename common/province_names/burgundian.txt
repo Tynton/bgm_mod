@@ -3,6 +3,7 @@
 191 = { "Niévreu" "Niévrou" }
 
 #CONJECTURE BEGINS
+5113 = "Arle"
 4392 = "Auxerroi"
 1877 = "Charoloi"
 186 = "Rémoi"
@@ -53,7 +54,7 @@
 1247 = "Ilai-Corse"
 484 = "Ilai-Havane"
 4948 = "Côrtrai"
-5086 = "Lôvain"
+5086 = "Maline" #Lôvain
 173 = "Labôrd"
 
 5081 = "Beaune"
@@ -78,7 +79,7 @@
 
 #CONJECTURE ENDS
 
-5103 = "Leingres"
+5103 = "Beauvaisi" #Leingres
 190 = { "Barbonnais" "Borbounâ" }
 118 = "Rôme"
 

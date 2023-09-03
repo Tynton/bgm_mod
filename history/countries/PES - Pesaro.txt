@@ -1,0 +1,28 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+mercantilism = 10
+technology_group = western
+religion = catholic
+primary_culture = umbrian
+capital = 5107
+fixed_capital = 5106 # Cannot move capital away from this province & no power cost to move to it
+
+1444.1.1 = {
+	monarch = {
+		name = "Malatesta Dynasty"
+		adm = 2
+		dip = 1
+		mil = 4
+		regent = yes
+	}
+}
+1445.1.1 = {
+	monarch = {
+		name = "Sforza Dynasty"
+		adm = 2
+		dip = 1
+		mil = 4
+		regent = yes
+	}
+}

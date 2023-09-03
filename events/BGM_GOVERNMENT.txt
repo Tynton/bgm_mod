@@ -159,6 +159,7 @@ country_event = {
 			}
 			if = {
 				limit = {
+					NOT = { overlord = { culture_group = germanic } }
 					culture_group = germanic
 					NOT = { exists = GER }
 				}
@@ -166,6 +167,7 @@ country_event = {
 			}
 			else_if = {
 				limit = {
+					NOT = { overlord = { culture_group = latin } }
 					culture_group = latin
 					NOT = { exists = ITA }
 				}
@@ -173,6 +175,7 @@ country_event = {
 			}
 			else_if = {
 				limit = {
+					NOT = { overlord = { culture_group = occitan } }
 					culture_group = occitan
 					NOT = { exists = OCC }
 				}
@@ -193,6 +196,133 @@ country_event = {
 					}
 					ROOT = { inherit = PREV }
 				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = BGM_GOV.4
+	title = "BGM_GOV.4.t"
+	desc = "BGM_GOV.4.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = "BGM_GOV.4.a" #secularize
+		add_country_modifier = {
+			name = aev_secular
+			duration = -1
+		}
+	}
+	option = {
+		name = "BGM_GOV.4.b" #religion
+		add_country_modifier = {
+			name = aev_con
+			duration = -1
+		}
+	}
+}
+
+#Administration
+
+country_event = {
+	id = BGM_GOV.5
+	title = "BGM_GOV.5.t"
+	desc = "BGM_GOV.5.d"
+	picture = BUREAU_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = "BGM_GOV.5.a"
+		if = {
+			limit = {
+				adm_tech = 29
+			}
+			add_country_modifier = {
+				name = government_one
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				adm_tech = 31
+			}
+			add_country_modifier = {
+				name = government_two
+				duration = -1
+			}
+		}
+		else = {
+			add_country_modifier = {
+				name = government_three
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = BGM_GOV.6
+	title = "BGM_GOV.6.t"
+	desc = "BGM_GOV.6.d"
+	picture = BUREAU_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = "BGM_GOV.6.a"
+		if = {
+			limit = {
+				dip_tech = 37
+			}
+			add_country_modifier = {
+				name = industrial_medicine
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				dip_tech = 39
+			}
+			add_country_modifier = {
+				name = industrial_medicine_ii
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				dip_tech = 41
+			}
+			add_country_modifier = {
+				name = industrial_medicine_iii
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				dip_tech = 43
+			}
+			add_country_modifier = {
+				name = modern_medicine
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				dip_tech = 45
+			}
+			add_country_modifier = {
+				name = modern_medicine_ii
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				dip_tech = 47
+			}
+			add_country_modifier = {
+				name = modern_medicine_iii
+				duration = -1
 			}
 		}
 	}

@@ -384,7 +384,7 @@ country_event = {
 		if = {
 			limit = {
 				ai = yes
-				NOT = { 
+				NOT = {
 					has_country_flag = bigger_than_italea
 				}
 			}
@@ -617,6 +617,8 @@ country_event = {
 	title = none
 	desc = none
 	picture = HRE_eventPicture
+
+	hidden = yes
 	
 	is_triggered_only = yes
 

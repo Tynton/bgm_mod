@@ -27,6 +27,13 @@
  north_champagne_area:0 "Champagne - North"
  luxemburg_area:0 "Luxemburg"
  north_tuscan_area:0 "Tuscany - North"
+ north_piedmont_area:0 "Piedmont - North"
+ north_marche_area:0 "Marche - North"
+ south_lombardy_area:0 "Lombardy - South"
+ west_liguria_area:0 "Liguria - West"
+ grisons_area:0 "Grisons"
+ west_orleans_area:0 "Orleans - West"
+ south_flanders_area:0 "Flanders - South"
 
 
 
@@ -132,5 +139,6 @@
  brussels_metro_area:0 "Brussels Metropolitan"
  west_lombard_area:0 "West Lombardy"
  udine_area:0 "Udine"
- west_venetia_area:0 "West Venetia"
+ west_venetia_area:0 "Veneto - West"
  rhone_area:0 "Rhône"
+ east_languedoc_area:0 "Languedoc - East"

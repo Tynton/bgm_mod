@@ -321,6 +321,13 @@ emp_ven_slot_3 = {
 				}
 				add_permanent_claim = ROOT
 			}
+			south_lombardy_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
 			po_valley_area = {
 				limit = {
 					NOT = { is_permanent_claim = ROOT }
@@ -346,6 +353,7 @@ emp_ven_slot_3 = {
 		provinces_to_highlight = {
 			OR = {
 				area = lombardy_area
+				area = south_lombardy_area
 				area = po_valley_area
 				area = emilia_romagna_area
 			}
@@ -353,6 +361,10 @@ emp_ven_slot_3 = {
 		}
 		trigger = {
 			lombardy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			south_lombardy_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}

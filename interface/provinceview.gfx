@@ -309,12 +309,8 @@ spriteTypes = {
 		transparencecheck = yes
 	}
 
-	spriteType = {
-		name = "GFX_province_view_religion"
-		texturefile = "gfx//interface//province_view_religion.dds"
-		noOfFrames = 45
-		loadType = "INGAME"
-	}
+	######################
+	
 	spriteType = {
 		name = "GFX_tradegood_info_bg"
 		texturefile = "gfx/interface/tradegood_info_bg.dds"

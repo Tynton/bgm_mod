@@ -20,21 +20,22 @@
 2990 = "Teròl"
 211 = { "Pirenèus" "Òsca" }
 
-4951 = "Dunquèrca"
+5113 = "Arle"
 
 195 = "Lemosin"
 200 = "Montpelhièr"
 4951 = "Dunquèrca"
-203 = "Lyons" #Lió (Catalan)
-192 = "Dijon"
-184 = "Orléans"
-1877 = "Charolles"
+184 = { "Orleanas" "Orléans" }
 189 = "Nancy"
 172 = "Nantas"
-171 = "Vannes"
-4384 = "Rennes"
-191 = "Nevers"
+171 = { "Vanetas" "Vannes"}
+4384 = { "Renas" "Rennes"}
+191 = { "Nivernas" "Nevers" }
 1874 = "Brèma"
+
+5125 = { "Comenge" "Sent-Gaudenç" }
+
+5114 = "Gavaudan"
 
 107 = "Breissa"
 4739 = "Bergam"
@@ -231,10 +232,10 @@
 167 = "Roan"
 88 = "Arràs"
 195 = "Limòtges"
-203 = "Lion"
+203 = "Lion" #Lió (Catalan)
 194 = { "Peiregòrd" "Brageirac" }
 4387 = { "Engolmés" "Engoleime" }
-180 = "Peitieus"
+180 = { "Naut-Peitau" "Peitieus" }
 5313 = "Belfòrt"
 4720 = "Genèva"
 183 = "París"
@@ -337,3 +338,32 @@
 4947 = "Anecí"
 
 179 = "Barric"
+
+#Speculation here
+87 = "Calés"
+91 = "Torna"
+179 = "Blés"
+181 = "Rethelas"
+182 = "Valas"
+187 = "Baras"
+192 = "Dijonés"
+205 = "Cambèri"
+1742 = "Nauta-Guèldres"
+1760 = "Coblença"
+1877 = "Carolés"
+4386 = "Bas-Peitau"
+4388 = "Cartras"
+4392 = "Auxerés"
+4767 = "Dos-Pònts"
+4765 = "Milhusa"
+4768 = "Julièrs"
+4770 = "Bòsc-lo-Duc"
+4948 = "Cortra"
+4952 = "Sòsons"
+4953 = "Calons"
+5075 = "Dreus"
+5081 = "Belna"
+5086 = "Mechelen" #Louvan
+5087 = "Bolonha"
+5094 = "Bitborg"
+5098 = "Tionvillà"

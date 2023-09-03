@@ -97,6 +97,35 @@ country_event = {
 		name = "BGM_DIPLOMACY.2.a"
 		set_country_flag = second_heir
 
+		if = {
+			limit = {
+				tag = FRA
+				BER = {
+					is_subject_of_type = personal_union
+					is_subject_of = ROOT
+					NOT = {
+						has_country_flag = ber_made_appanage
+					}
+				}
+			}
+			BER = {
+				hidden_effect = {
+					grant_independence = yes
+				}
+				define_ruler = {
+					claim = 75
+				}
+				hidden_effect = {
+					set_dynasty = ROOT
+				}
+			}
+			create_subject = {
+				subject_type = appanage
+				subject = BER
+			}
+			BER = { add_government_reform = appanage_reform }
+		}
+
 		ai_chance = {
 			factor = 1
 		}
@@ -159,6 +188,43 @@ country_event = {
 	option = {
 		name = "BGM_DIPLOMACY.3.a"
 		set_country_flag = tertiary_heir
+
+		if = {
+			limit = {
+				is_variable_equal = {
+					which = comminges_appanage_progress
+					value = 2
+				}
+				tag = FRA
+				CMM = {
+					is_subject_of_type = personal_union
+					is_subject_of = ROOT
+					NOT = {
+						has_country_flag = comminges_appanage
+					}
+				}
+			}
+			CMM = {
+				hidden_effect = {
+					grant_independence = yes
+				}
+				define_ruler = {
+					claim = 90
+				}
+			}
+			create_subject = {
+				subject_type = appanage
+				subject = CMM
+			}
+			CMM = { add_government_reform = appanage_reform }
+		}
+
+		hidden_effect = {
+			change_variable = {
+				which = comminges_appanage_progress
+				value = 1
+			}
+		}
 	}
 }
 
@@ -1424,6 +1490,7 @@ country_event = {
 	hidden = yes
 	
 	trigger = {
+		always = no
 		dip_tech = 12
 		NOT = {
 			has_country_flag = dip1
@@ -1454,6 +1521,7 @@ country_event = {
 	hidden = yes
 	
 	trigger = {
+		always = no
 		dip_tech = 20
 		NOT = {
 			has_country_flag = dip2
@@ -1518,5 +1586,30 @@ country_event = { #flag for demand annexation
 	option = {
 		name = none
 		clr_country_flag = demand_annex
+	}
+}
+
+country_event = { #Overlord ordered execution
+	id = BGM_DIPLOMACY.27
+	title = "BGM_DIPLOMACY.27.t"
+	desc = "BGM_DIPLOMACY.27.d"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "BGM_DIPLOMACY.27.a"
+		if = {
+			limit = { 
+				ai = yes
+				has_heir = no
+			}
+			FROM = {
+				inherit = ROOT
+			}
+		}
+		kill_ruler = yes
+		clr_country_flag = executed_monarch
+		set_country_flag = executed_monarch #this resets the time for the flag in the conditions for the action
 	}
 }

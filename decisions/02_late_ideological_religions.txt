@@ -146,6 +146,7 @@ country_decisions = {
 				OR = {
 					religion = secular 
 					government = theocracy
+					has_country_modifier = secular_constitution
 				}
 			}
 			OR = {
@@ -164,12 +165,7 @@ country_decisions = {
 					religion = secular
 				}
 			}
-			NOT = {
-				AND = {
-					hre_religion_locked = yes
-					is_part_of_hre = yes
-				}
-			}
+			is_part_of_hre = no
 		}
 		allow = {
 			stability = 1
@@ -187,7 +183,10 @@ country_decisions = {
 				has_reform = democratic_mechanic
 				is_revolutionary = yes
 				overlord = {
-					religion = secular
+					OR = {
+						religion = secular
+						has_country_modifier = secular_constitution
+					}
 				}
 				AND = {
 					bgm_rev = no
@@ -197,16 +196,41 @@ country_decisions = {
 					}
 				}
 			}
-			
 		}
 		effect = {
-			hidden_effect = {
-				export_to_variable = {
-					variable_name = prevReligion
-					value = religion
+
+			if = {
+				limit = {
+					OR = {
+						religion = protestant
+						religion = anglican
+						religion = unitarian
+						religion = shinto
+						religion = hussite
+						religion = lollard
+						religion = cathar
+					}
+					OR = {
+						government = monarchy
+						has_reform = parliamentary_monarchism
+						has_reform = auth_monarchism
+						has_reform = fascist_monarchism
+					}
+				}
+				add_country_modifier = {
+					name = secular_constitution
+					duration = -1
 				}
 			}
-			change_religion = secular
+			else = {
+				hidden_effect = {
+					export_to_variable = {
+						variable_name = prevReligion
+						value = religion
+					}
+				}
+				change_religion = secular
+			}
 			add_stability = 1
 			add_adm_power = 100
 			add_dip_power = 100

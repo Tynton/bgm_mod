@@ -57,6 +57,14 @@ aristocracy_ideas = {
 			mil = 5
 		}
 		modifier = {
+			factor = 1000
+			NOT = { mission_completed = GER_culture_3_1 }
+			OR = {
+				tag = GER
+				tag = HLR
+			}
+		}
+		modifier = {
 			factor = 2
 			has_global_modifier_value = {
 				which = global_manpower_modifier
@@ -387,6 +395,12 @@ innovativeness_ideas = {
 		}
 
 		modifier = {
+			factor = 1000
+			mission_completed = GER_talented_statesman
+			NOT = { mission_completed = GER_idealism }
+		}
+
+		modifier = {
 			factor = 2
 			has_global_modifier_value = {
 				which = innovativeness_gain
@@ -433,6 +447,13 @@ innovativeness_ideas = {
 					which = advisor_cost
 					value = -0.6
 				}
+			}
+		}
+
+		modifier = {
+			factor = 1000
+			capital_scope = {
+				colonial_region = colonial_eastern_america
 			}
 		}
 
@@ -528,6 +549,11 @@ religious_ideas = {
 		modifier = {
 			factor = 1.5
 			adm = 5
+		}
+		modifier = {
+			factor = 1000
+			mission_completed = GER_talented_statesman
+			NOT = { mission_completed = GER_idealism }
 		}
 		modifier = {
 			factor = 0
@@ -680,7 +706,11 @@ diplomatic_ideas = {
 
 	ai_will_do = {
 		factor = 1
-
+		modifier = {
+			factor = 100
+			has_country_flag = dip_strat
+		}
+		
 		modifier = {
 			factor = 1.66
 			has_strong_mil_national_ideas = yes
@@ -937,6 +967,10 @@ defensive_ideas = {
 	ai_will_do = {
 		factor = 1
 		modifier = {
+			factor = 100
+			has_country_flag = mil_strat
+		}
+		modifier = {
 			factor = 1.5
 			mil = 5
 		}
@@ -1057,6 +1091,11 @@ trade_ideas = {
 		}
 
 		modifier = {
+			factor = 1000
+			has_country_flag = corporatist_state
+		}
+
+		modifier = {
 			factor = 3
 			highest_value_trade_node = yes
 		}
@@ -1132,6 +1171,14 @@ economic_ideas = {
 		modifier = {
 			factor = 2
 			adm = 5
+		}
+
+		modifier = {
+			factor = 1000
+			OR = {
+				has_country_flag = welfare_state
+				has_country_flag = corporatist_state
+			}
 		}
 
 		modifier = {
@@ -1451,6 +1498,11 @@ maritime_ideas = {
 		}
 
 		modifier = {
+			factor = 7
+			full_idea_group = exploration_ideas
+		}
+
+		modifier = {
 			factor = 0
 			is_tribal = yes
 		}
@@ -1695,6 +1747,10 @@ quantity_ideas = {
 	ai_will_do = {
 		factor = 1
 		modifier = {
+			factor = 100
+			has_country_flag = mil_strat
+		}
+		modifier = {
 			factor = 15
 			mil = 5
 		}
@@ -1807,7 +1863,8 @@ expansion_ideas = {
 	important = yes
 
 	bonus = {
-		reduced_liberty_desire_on_other_continent = 5
+		#reduced_liberty_desire_on_other_continent = 5
+		core_creation = -0.15
 	}
 
 	additional_colonists = {
@@ -1821,7 +1878,8 @@ expansion_ideas = {
 	}
 	vice_roys  = {
 		global_tariffs = 0.10
- 		envoy_travel_time = -0.20
+		reduced_liberty_desire_on_other_continent = 10
+ 		#envoy_travel_time = -0.20
  	}
 	additional_diplomats = {
 		diplomats = 1
@@ -1838,9 +1896,21 @@ expansion_ideas = {
 	ai_will_do = {
 		factor = 1
 		modifier = {
-			factor = 10
+			factor = 5
 			adm = 5
+		}
+		modifier = {
+			factor = 10
 			has_idea_group = exploration_ideas
+		}
+		modifier = {
+			factor = 100
+			has_idea_group = exploration_ideas
+			NOT = { 
+				any_country = {
+					full_idea_group = expansion_ideas
+				} 
+			}
 		}
 		modifier = {
 			factor = 10
@@ -1996,6 +2066,11 @@ humanist_ideas = {
 			adm = 5
 		}
 		modifier = {
+			factor = 1000
+			mission_completed = GER_talented_statesman
+			NOT = { mission_completed = GER_idealism }
+		}
+		modifier = {
 			factor = 2
 			full_idea_group = diplomatic_ideas
 		}
@@ -2068,8 +2143,34 @@ influence_ideas = {
 	ai_will_do = {
 		factor = 1
 		modifier = {
+			factor = 100
+			has_country_flag = dip_strat
+		}
+		modifier = {
 			factor = 1.35
 			dip = 5
+		}
+		modifier = {
+			factor = 100
+			tag = POL
+		}
+		modifier = {
+			factor = 3
+			any_subject_country = {
+				liberty_desire = 25
+			}
+		}
+		modifier = {
+			factor = 3
+			any_subject_country = {
+				liberty_desire = 30
+			}
+		}
+		modifier = {
+			factor = 3
+			any_subject_country = {
+				liberty_desire = 35
+			}
 		}
 		modifier = {
 			factor = 1.5
@@ -2082,11 +2183,11 @@ influence_ideas = {
 			}
 		}
 		modifier = {
-			factor = 1.5
+			factor = 4
 			num_of_subjects = 2
 		}
 		modifier = {
-			factor = 1.5
+			factor = 4
 			num_of_subjects = 3
 		}
 		modifier = {
@@ -2160,6 +2261,10 @@ naval_ideas = {
 		modifier = {
 			factor = 2
 			full_idea_group = maritime_ideas
+		}
+		modifier = {
+			factor = 7
+			full_idea_group = exploration_ideas
 		}
 		modifier = {
 			factor = 2
@@ -2341,6 +2446,15 @@ infrastructure_ideas = {
 			factor = 3
 			adm = 5
 		}
+
+		modifier = {
+			factor = 1000
+			OR = {
+				has_country_flag = welfare_state
+				has_country_flag = corporatist_state
+			}
+		}
+
 		modifier = {
 			factor = 3
 			OR = {

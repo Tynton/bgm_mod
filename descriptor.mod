@@ -1,6 +1,6 @@
-version="1.0"
+version="0.1"
 tags={
 	"Gameplay"
 }
-name="bgm_mod"
-supported_version="1.33.3"
+name="bgm"
+supported_version="1.35.6"

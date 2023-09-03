@@ -111,6 +111,32 @@ parliamentary_reform = {
 	}
 }
 
+ger_parliament_reform = {
+	icon = "prussian_monarchy"
+	modifiers = {
+		estate_burghers_loyalty_modifier = 0.1
+		stability_cost_modifier = -0.1
+		production_efficiency = 0.1
+	}
+	potential = {
+		has_country_flag = ger_parliament
+	}
+	
+	trigger = {		
+		has_country_flag = ger_parliament
+	}
+
+	conditional = {
+		allow = {
+			OR = {
+				has_dlc = "Common Sense"
+				has_dlc = "Domination"
+			}
+		}
+		has_parliament = yes
+	}
+}
+
 # Upgraded Indian estate reforms
 
 permanent_marathas_council_reform = {
@@ -1775,7 +1801,7 @@ amphibious_specialization_reform = {
 			NOT = { has_dlc = "Domination" }
 			AND = { 
 				NOT = { primary_culture = english }
-				NOT = { primary_culture =  anglois }
+				NOT = { primary_culture = anglo_norman }
 			}
 		}
 	}
@@ -3098,7 +3124,7 @@ royal_marines_reform = {
 		has_dlc = "Domination"
 		OR = {
 			primary_culture = english
-			primary_culture =  anglois
+			primary_culture = anglo_norman
 		}
 	}
 	trigger = {
@@ -3886,7 +3912,7 @@ jap_gokaido_reform = {
 	icon = "jap_gokaido_reform"
 	allow_normal_conversion = no
 	potential = {
-		culture_group = japanese 
+		culture_group = japanese_g
 	}
 	trigger = {
 		OR = {
@@ -3930,7 +3956,7 @@ reform_the_samurai_reform = {
 	icon = "reform_the_samurai_reform"
 	allow_normal_conversion = yes
 	potential = {
-		culture_group = japanese 
+		culture_group = japanese_g 
 		tag = JAP 
 		OR = {
 			have_had_reform = reform_the_samurai_reform

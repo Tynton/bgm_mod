@@ -252,64 +252,64 @@ emp_ita_unification_branch = {
 			NOT = { area = corsica_sardinia_area }
 		}
 		trigger = {
+			north_piedmont_area = {
+				type = all
+				owned_by = ROOT
+			}
 			piedmont_area = {
 				type = all
-				culture_group = ROOT
 				owned_by = ROOT
 			}
 			liguria_area = {
 				type = all
-				culture_group = ROOT
 				owned_by = ROOT
 			}
 			lombardy_area = {
 				type = all
-				culture_group = ROOT
+				owned_by = ROOT
+			}
+			south_lombardy_area = {
+				type = all
 				owned_by = ROOT
 			}
 			po_valley_area = {
 				type = all
-				culture_group = ROOT
 				owned_by = ROOT
 			}
 			venetia_area = {
 				type = all
-				culture_group = ROOT
 				owned_by = ROOT
 			}
 			north_tuscan_area = {
 				type = all
-				culture_group = ROOT
 				owned_by = ROOT
 			}
 			tuscany_area = {
 				type = all
-				culture_group = ROOT
 				owned_by = ROOT
 			}
 			lazio_area = {
 				type = all
-				culture_group = ROOT
+				owned_by = ROOT
+			}
+			north_marche_area = {
+				type = all
 				owned_by = ROOT
 			}
 			central_italy_area = {
 				type = all
-				culture_group = ROOT
 				owned_by = ROOT
 			}
 			apulia_area = {
 				type = all
-				culture_group = ROOT
 				owned_by = ROOT
 			}
 			naples_area = {
 				type = all
-				culture_group = ROOT
 				owned_by = ROOT
 			}
 			calabria_area = {
 				type = all
-				culture_group = ROOT
 				owned_by = ROOT
 			}
 		}
@@ -565,7 +565,7 @@ bgm_ita_mil_branch = {
 					duration = 5475
 				}
 				add_mil_power = 100
-				power_projection = 25
+				
 			}
 			add_prestige = 20
 
@@ -1290,16 +1290,36 @@ bgm_ita_tall_slot3_1 = {
 		required_missions = { ita_branch_mission_tall }
 
 		provinces_to_highlight = {
-			area = liguria_area
+			OR = {
+				area = liguria_area
+				area = west_liguria_area
+			}
 		}
 		
 		position = 5
 		trigger = { 
 			development_in_provinces = {
 				value = 50
-				area = liguria_area
+				OR = {
+					area = liguria_area
+					area = west_liguria_area
+				}
 			}
 			liguria_area = {
+				type = all
+				owned_by = ROOT
+				AND = {
+					OR = {
+						has_building = shipyard
+						has_building = grand_shipyard
+					}
+					OR = {
+						has_building = dock
+						has_building = drydock
+					}
+				}
+			}
+			west_liguria_area = {
 				type = all
 				owned_by = ROOT
 				AND = {
@@ -1321,6 +1341,12 @@ bgm_ita_tall_slot3_1 = {
 		}
 		effect = {
 			liguria_area = {
+				add_province_modifier = {
+					name = bgm_liguria_dev
+					duration = -1
+				}
+			}
+			west_liguria_area = {
 				add_province_modifier = {
 					name = bgm_liguria_dev
 					duration = -1
@@ -1375,14 +1401,20 @@ bgm_ita_tall_slot5_1 = {
 		required_missions = { ita_branch_mission_tall }
 
 		provinces_to_highlight = {
-			area = venetia_area
+			OR = {
+				area = west_venetia_area
+				area = venetia_area
+			}
 		}
 		
 		position = 5
 		trigger = { 
 			development_in_provinces = {
 				value = 100
-				area = venetia_area
+				OR = {
+					area = west_venetia_area
+					area = venetia_area
+				}
 			}
 			112 = { 
 				owned_by = ROOT
@@ -1735,12 +1767,15 @@ emp_ita_development_branch = {
 		provinces_to_highlight = {
 			owned_by = ROOT
 			OR = {
+				area = west_venetia_area
 				area = venetia_area
 				area = tirol_area
 				area = lombardy_area
 				area = piedmont_area
+				area = south_lombardy_area
 				area = po_valley_area
 				area = liguria_area
+				area = west_liguria_area
 			}
 			NOT = { fort_level = 2 }
 		}
@@ -1750,12 +1785,15 @@ emp_ita_development_branch = {
 				amount = 5
 				all_owned_province = {
 					OR = {
+						area = west_venetia_area
 						area = venetia_area
 						area = tirol_area
 						area = lombardy_area
+						area = south_lombardy_area
 						area = piedmont_area
 						area = po_valley_area
 						area = liguria_area
+						area = west_liguria_area
 					}
 					fort_level = 2
 				}
@@ -2185,6 +2223,7 @@ bgm_ita_govt_slot3 = {
 			}
 			if = {
 				limit = {
+					is_revolutionary = no
 					absolutism = 90
 				}
 				add_country_modifier = {
@@ -2359,7 +2398,7 @@ bgm_ita_govt_slot4 = {
 				NOT = {
 					has_global_modifier_value = {
 						which = governing_cost
-						value = -0.2
+						value = 0.8
 					}
 				}
 			}
@@ -2724,6 +2763,9 @@ bgm_ita_prorev_start = {
 			has_any_disaster = no
 		}
 		effect = {
+			country_event = {
+				id = BGM_ITA_missions.3
+			}
 			custom_tooltip = rome_or_tall_missions
 			add_adm_power = 100
 			add_dip_power = 100
@@ -2742,40 +2784,12 @@ bgm_ita_prorev_start = {
 					duration = -1
 				}
 			}
-
-			france_Region = {
-				add_permanent_claim = ROOT
-			}
-			iberia_region = {
-				add_permanent_claim = ROOT
-			}
-			anatolia_region = {
-				add_permanent_claim = ROOT
-			}
-			maghreb_region = {
-				add_permanent_claim = ROOT
-			}
-			balkan_region = {
-				add_permanent_claim = ROOT
-			}
-			mashriq_region = {
-				add_permanent_claim = ROOT
-			}
-			egypt_region = {
-				add_permanent_claim = ROOT
-			}
-			carinthia_area = {
-				add_permanent_claim = ROOT
-			}
-			home_counties_area = {
-				add_permanent_claim = ROOT
-			}
 		}
 	}
 }
 
 bgm_ita_prorev_slot3_rome = {
-	slot = 1
+	slot = 3
 	generic = no
 	ai = yes
 	has_country_shield = yes
@@ -2784,7 +2798,7 @@ bgm_ita_prorev_slot3_rome = {
 	}
 	potential = {
 		has_country_flag = had_revolution
-		has_country_flag = bgm_ita_rev_rome
+		NOT = { has_country_flag = bgm_ita_rev_tall }
 		is_revolutionary = yes
 		OR = {
 			tag = ITA
@@ -2838,7 +2852,7 @@ bgm_ita_prorev_slot1 = {
 	}
 	potential = {
 		has_country_flag = had_revolution
-		has_country_flag = bgm_ita_rev_rome
+		NOT = { has_country_flag = bgm_ita_rev_tall }
 		is_revolutionary = yes
 		OR = {
 			tag = ITA
@@ -2920,7 +2934,7 @@ bgm_ita_prorev_slot2 = {
 	}
 	potential = {
 		has_country_flag = had_revolution
-		has_country_flag = bgm_ita_rev_rome
+		NOT = { has_country_flag = bgm_ita_rev_tall }
 		is_revolutionary = yes
 		OR = {
 			tag = ITA
@@ -3049,9 +3063,14 @@ bgm_ita_prorev_slot2_tall = {
 		required_missions = { bgm_ita_pro_revolution }
 		
 		trigger = {
-			has_global_modifier_value = {
-				which = tolerance_heretic
-				value = 1
+			OR = {
+				NOT = { has_estate = estate_church }
+				NOT = {
+					estate_influence = {
+						estate = estate_church
+						influence = 25
+					}
+				}
 			}
 			stability = 2
 			has_any_disaster = no
@@ -3097,7 +3116,7 @@ bgm_ita_prorev_slot4 = {
 	}
 	potential = {
 		has_country_flag = had_revolution
-		has_country_flag = bgm_ita_rev_rome
+		NOT = { has_country_flag = bgm_ita_rev_tall }
 		is_revolutionary = yes
 		OR = {
 			tag = ITA
@@ -3186,6 +3205,75 @@ bgm_ita_prorev_slot4 = {
 	}
 }
 
+bgm_ita_prorev_slot3_tall = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		has_country_flag = had_revolution
+		has_country_flag = bgm_ita_rev_tall
+		is_revolutionary = yes
+		OR = {
+			tag = ITA
+			tag = VIY
+			tag = MIT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+
+	bgm_ita_future = {
+		icon = mission_early_modern_university
+		position = 18
+		required_missions = { bgm_ita_pro_revolution bgm_ita_education_for_all bgm_ita_secular_constitutionalism bgm_ita_centralized_economy bgm_ita_military_engineering }
+
+		provinces_to_highlight = {
+			NOT = { has_building = university }
+			NOT = { has_building = town_hall }
+			NOT = { has_building = factory_infrastructure }
+			NOT = { has_building = tax_center }
+			owned_by = ROOT
+		}
+		
+		trigger = {
+			calc_true_if = {
+				amount = 40
+				all_owned_province = {
+					has_building = university
+					has_building = town_hall
+					has_building = factory_infrastructure
+					has_building = tax_center
+				}
+			}
+			innovativeness = 75
+			has_adm_advisor_3 = yes
+			has_dip_advisor_3 = yes
+			has_mil_advisor_3 = yes
+			NOT = {
+				any_owned_province = {
+					devastation = 1
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_country_modifier = {
+				name = bgm_ita_rev_triumph
+				duration = -1
+			}
+			add_country_modifier = {
+				name = bgm_ita_tall_final
+				duration = -1
+			}
+		}
+	}
+}
+
 bgm_ita_prorev_slot4_tall = {
 	slot = 4
 	generic = no
@@ -3210,6 +3298,12 @@ bgm_ita_prorev_slot4_tall = {
 		icon = standardize_relazioni
 		position = 17
 		required_missions = { bgm_ita_pro_revolution }
+
+		provinces_to_highlight = {
+			NOT = { has_building = university }
+			NOT = { has_building = town_hall }
+			owned_by = ROOT
+		}
 		
 		trigger = {
 			calc_true_if = {
@@ -3237,6 +3331,17 @@ bgm_ita_prorev_slot4_tall = {
 			any_owned_province = {
 				has_great_project = {
 					type = university_bologna
+				}
+			}
+			OR = {
+				innovativeness = 50
+				employed_advisor = {
+					skill = 5
+					type = philosopher
+				}
+				employed_advisor = {
+					skill = 5
+					type = natural_scientist
 				}
 			}
 		}
@@ -3283,7 +3388,7 @@ bgm_ita_prorev_slot5 = {
 	}
 	potential = {
 		has_country_flag = had_revolution
-		has_country_flag = bgm_ita_rev_rome
+		NOT = { has_country_flag = bgm_ita_rev_tall }
 		is_revolutionary = yes
 		OR = {
 			tag = ITA

@@ -12,10 +12,78 @@
  americanindependence.d.4:0 "-AWAITING LOCALIZATION-"
  americanindependence.n.5:0 "The American Revolution!"
  americanindependence.d.5:0 "-AWAITING LOCALIZATION-"
+ 
+ incidents_bur_inheritance.501.b:0 "Turn only Burgundy into an appanage."
+ incidents_bur_inheritance.501.c:0 "All of the former Burgundian lands and Flanders will become Appanages."
+ 
+ BGM_provinces.n.2:0 "Flaring Nationalist Sentiment"
+ BGM_provinces.d.2a:0 "Since the advent of nationalist ideologies and movements our empire has been put under threat by radicalized movements for an Italian nation-state. Revolutionaries in $PROVINCE$ have taken to arms in grievance for self-determination. Now they're seeking support from abroad as well as from other lands of their own culture."
+ BGM_provinces.d.2b:0 "Since the advent of nationalist ideologies and movements our empire has been put under threat by radicalized movements for an German nation-state. Revolutionaries in $PROVINCE$ have taken to arms in grievance for self-determination. Now they're seeking support from abroad as well as from other lands of their own culture."
+ BGM_provinces.2.a:0 "Destroy them."
+ BGM_provinces.2.b:0 "It's not worth the risks.."
+ 
+ nationalism_age_unrest.n.3:0 "Alert: Nationalism"
+ nationalism_age_unrest.d.3:0 "If we possess ten provinces with ten or more unrest that is of the culture groups German or Italian, they may secede in a nationalist movement."
+ nationalism_age_unrest.3.a:0 "Acknowledged."
+ 
+ BGM_GOV.5.t:0 "Administrative Modernization"
+ BGM_GOV.5.d:0 "As a result of increasing technological sophistication our country's administration has grown in scale. Though this means more expenses, it also means increased efficiency on the national level."
+ BGM_GOV.5.a:0 "Acknowledged."
+ 
+ BGM_GOV.6.t:0 "Medicinal Technology"
+ BGM_GOV.6.d:0 "As we move through the ages the institution of medicine has advanced. Now tangible industrial-era therapies have came alongside those which have stuck with us through history."
+ BGM_GOV.6.a:0 "Acknowledged."
 
  AI_Gamestart.t.3:0 "Alert"
  AI_Gamestart.d.3:0 "Warning: Feudal Liberty Desire (Feudal Institutions) modifier will expire in 30 years' time."
  AI_Gamestart.3.a:0 "Acknowledged"
+ 
+ bgm_social_upheaval.1.t:0 "Social Upheaval in $COUNTRY$"
+ bgm_social_upheaval.1.d:0 "Modern technology, changing political attitudes and introduction of new philosophies and interpretations thereof have culminated in the masses seeking widespread reform in our country. Some are taking to arms in a bid to force revolution while others petition and march in $COUNTRY$'s great cities in protest."
+ bgm_social_upheaval.1.a:0 "We do not bow to the commoners."
+ bgm_social_upheaval.1.b:0 "The state will hear the masses."
+
+ bgm_social_upheaval.2.t:0 "Demands for Abolition of Serfdom"
+ bgm_social_upheaval.2.d:0 "Serfdom had been abolished in occidental Europe for centuries yet it remained commonplace in Eastern Europe. Now technology is changing society, the common men of our country are quite upset with the opportunities being disallowed to them."
+ bgm_social_upheaval.2.a:0 "Technology may change, but $COUNTRY$ will not."
+ bgm_social_upheaval.2.b:0 "Their demands will be granted.."
+ 
+ bgm_social_upheaval.3.t:0 "Nationalist Rebellion"
+ bgm_social_upheaval.3.d:0 "Citing the general outrage in $COUNTRY$, some nationalists have arisen in hopes they will receive independence amidst the chaos."
+ bgm_social_upheaval.3.a:0 "Destroy them."
+ 
+ bgm_social_upheaval.4.t:0 "Demands for Land Reform"
+ bgm_social_upheaval.4.d:0 "Land ownership in our society largely falls under the purview of the upper classes. Now the ideals of the Revolution have spread from academic institutions to greater society calls for liberalized land reform laws have grown more common."
+ bgm_social_upheaval.4.a:0 "Their demands will be granted."
+ bgm_social_upheaval.4.b:0 "We can't commit to such promises."
+
+ bgm_social_upheaval.5.t:0 "Demands for Representative Institutions"
+ bgm_social_upheaval.5.d:0 "Dissatisfaction with the present order of things has boiled over into resentment for the state by members of the general public. Now they demand representative institutions in which their grievances can be aired without fear of persecution."
+ bgm_social_upheaval.5.a:0 "Their demands will be granted."
+ bgm_social_upheaval.5.b:0 "We can't commit to such promises."
+
+ bgm_social_upheaval.6.t:0 "Disallow Foreign Dialects?"
+ bgm_social_upheaval.6.d:0 "Some of our ministers have proposed the illegalization of dialects and languages considered 'patois' in $COUNTRY$. While such things may add pressure it's worth considering for long form stability."
+ bgm_social_upheaval.6.a:0 "We can't commit to such promises."
+ bgm_social_upheaval.6.b:0 "Their demands will be granted."
+ 
+ bgm_social_upheaval.7.t:0 "Famine in $COUNTRY$"
+ bgm_social_upheaval.7.d:0 "Rising populations have strained the agrarian infrastructure such that it is difficult to feed the entirety of our population. Widespread hunger unfortunately means for us less recruitable manpower and less general productivity."
+ bgm_social_upheaval.7.a:0 "Oh no.."
+
+ bgm_social_upheaval.8.t:0 "Revolutionaries Take Control of $COUNTRY$"
+ bgm_social_upheaval.8.d:0 "The old order has failed to assert control over its lands and now its capital has been taken. The old government has been exiled and a new revolutionary society rules. May the new reign last forever - or at least it's what's favored by proponents of the Revolution."
+ bgm_social_upheaval.8.a:0 "Oh dear.."
+ 
+ bgm_social_upheaval.9.t:0 "Reactionaries' Revolt"
+ bgm_social_upheaval.9.d:0 "Monarchists have arisen in various locations to 'restore order' to a country governed without morals consistent with conservatism. They hope to erase the new Revolutionary regime which it will not tolerate."
+ bgm_social_upheaval.9.a:0 "Oh dear.."
+ 
+ bgm_social_upheaval.10.t:0 "Order Restored in $COUNTRY$"
+ bgm_social_upheaval.10.d:0 "The previous decades, marred by infighting and revolt, have finally concluded. Stability has once again been restored in our great nation and the present order is not likely to be contested for quite some time. $COUNTRY$ will remain everlasting."
+ bgm_social_upheaval.10.a:0 "Finally peace has been restored."
+ 
+ bgm_serf_unrest:0 "§REvery province we own in Eastern Europe that produces Grain or Livestock gains 25 unrest.§!"
  
  incidents_german_con.1.t:0 "Secularization of the HRE"
  incidents_german_con.1.d:0 "Recent turbulence in the political landscape of our continent have forced our hand. The Holy Roman Empire may come under threat of prominent German states and it is time for us to take action. We are forced to convene the Imperial Diet for an address and deliberation."
@@ -99,8 +167,17 @@
  easter_egg.2.a:0 "Let's do so!"
  easter_egg.2.b:0 "Let's not destabilize the country."
 
- easter_egg.3.t:0 "Restore the house of Capet?"
+ easter_egg.3.t:0 "Restore the House of Capet?"
  easter_egg.3.d:0 "$MONARCH$ has suggested to the court that the ruling house of $COUNTRY$ is an illegitimate cadet branch of the house of Capet and seeks to rectify the situation. By claiming lineage to the old house we can claim legitimation to the other countries being ruled by its cadet branches of de Valois. This move may be considered controversial as it does not comport to succession law and the house of Capet has been extinct for a century already by organic means."
+ 
+ easter_egg.4.t:0 "Restore the house of Plantagenêt?"
+ easter_egg.4.d:0 "With the unity of the Anglo-French people under the cadet branch of $DYNASTY$ it's time to consider reclaiming the Plantagenêt legacy as Anglo-Norman rulers of England. They originated in Anjou, France in the 12th century. The Plantagenêts originally came to power in England as a result of the civil war referred to as 'The Anarchy' in 1154 AD. Eventually the $DYNASTY$s would come to power through relatively recent events in the grand scheme of things. Now we have finally concluded the Hundred Years' War for once and all. For all eternity, long live the Couronne Anglaise."
+ easter_egg.4.a:0 "Long live the love of Plantagenêt."
+ easter_egg.4.b:0 "We refuse to allow our identity to be sullied by the mainlander."
+
+ BGM_DIPLOMACY.27.t:0 "[From.Monarch] orders execution of $MONARCH$"
+ BGM_DIPLOMACY.27.d:0 "For some perceived disloyalty the overlordship of $COUNTRY$ has seen it fit to arrest $MONARCH$ on suspicion of sedition. This is most certainly an act of tyranny against us. But who would we be if we weren't at least partly flattered we managed to force [From.Monarch]'s hand?"
+ BGM_DIPLOMACY.27.a:0 "We will have our revenge someday."
  
  
  
@@ -2502,6 +2579,8 @@
  BGM_DIPLOMACY.22.a:0 "Yes."
  BGM_DIPLOMACY.22.b:0 "No."
  
+ BGM_GOV.4.t:0 "The Question of Clerical Administration"
+ BGM_GOV.4.d:0 "The clergy have throughout medieval history extracted taxation from the public and took administrative duties. However with the (albeit slowly) changing times a potential for a secularizing administration has been forwarded to us."
  
  
  

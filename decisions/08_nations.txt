@@ -25,6 +25,8 @@ country_decisions = {
 			owns_core_province = 234		# Wessex
 			owns_core_province = 248		# Lothian
 			owns_core_province = 251		# Aberdeen
+			owns_core_province = 313
+			owns_core_province = 4118
 			has_parliament = yes
 			government = monarchy 
 			#is_subject = no
@@ -33,6 +35,9 @@ country_decisions = {
 			change_tag = UNK
 			country_event = {
 				id = westeurope.5
+			}
+			country_event = {
+				id = ideagroups.1
 			}
 
 			#if = {
@@ -353,7 +358,29 @@ country_decisions = {
 			culture_group = occitan
 			##is_subject = no
 			NOT = {
-				exists = OCC
+				OR = {
+					exists = OCC
+					exists = OCF
+					exists = OCE
+					exists = OCR
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 174
+				province_id = 201
+				area = provence_area
+				area = guyenne_area
+				area = languedoc_area
+				area = east_languedoc_area
+				area = catalonia_area
+				area = pyrenees_area
+				area = massif_central_area
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
 			}
 		}
 		allow = {
@@ -365,6 +392,7 @@ country_decisions = {
 					area = provence_area
 					area = guyenne_area
 					area = languedoc_area
+					area = east_languedoc_area
 					area = catalonia_area
 					area = pyrenees_area
 					area = massif_central_area
@@ -383,6 +411,9 @@ country_decisions = {
 				add_permanent_claim = ROOT
 			}
 			languedoc_area = {
+				add_permanent_claim = ROOT
+			}
+			east_languedoc_area = {
 				add_permanent_claim = ROOT
 			}
 			catalonia_area = {
@@ -1198,16 +1229,11 @@ country_decisions = {
 				tag = FRE
 				tag = FRC
 				tag = FRF
-				AND = {
-					tag = AEV
-					NOT = {
-						any_owned_province = {
-							region = british_isles_region
-						}
-					}
-				}
+				tag = AEV
+				tag = AEE
 			}
 			NOT = { exists = FRR }
+			NOT = { exists = AER }
 			NOT = { exists = BUP }
 		}
 		allow = {
@@ -1220,10 +1246,26 @@ country_decisions = {
 						OR = {
 							primary_culture = burgundian
 							primary_culture = frainc_comtou
+							primary_culture = anglo_norman
+							culture_group = occitan
 						}
 					}
 				}
 				change_tag = FRR
+			}
+
+			if = {
+				limit = {
+					primary_culture = anglo_norman
+				}
+				change_tag = AER
+			}
+
+			if = {
+				limit = {
+					culture_group = occitan
+				}
+				change_tag = OCR
 			}
 
 			if = {
@@ -1298,17 +1340,14 @@ country_decisions = {
 				tag = FRF
 				tag = BFR
 				tag = BUP
-				AND = {
-					tag = AEV
-					NOT = {
-						any_owned_province = {
-							region = british_isles_region
-						}
-					}
-				}
+				tag = AEV
+				tag = AER
+				tag = OCR
 			}
 			NOT = { exists = FRE }
 			NOT = { exists = BFE }
+			NOT = { exists = AEE }
+			NOT = { exists = OCE }
 		}
 		allow = {
 			#is_subject = no
@@ -1321,6 +1360,8 @@ country_decisions = {
 						OR = {
 							primary_culture = burgundian
 							primary_culture = frainc_comtou
+							primary_culture = anglo_norman
+							culture_group = occitan
 						}
 					}
 				}
@@ -1329,7 +1370,21 @@ country_decisions = {
 
 			if = {
 				limit = {
-					NOT = {
+					primary_culture = anglo_norman
+				}
+				change_tag = AEE
+			}
+
+			if = {
+				limit = {
+					culture_group = occitan
+				}
+				change_tag = OCE
+			}
+
+			if = {
+				limit = {
+					OR = {
 						primary_culture = burgundian
 						primary_culture = frainc_comtou
 					}
@@ -1892,6 +1947,7 @@ country_decisions = {
 					}
 				}
 			}
+			is_at_war = no
 			is_subject = no
 		}
 		effect = {
@@ -1927,6 +1983,7 @@ country_decisions = {
 					culture_group = maghrebi
 				}
 			}
+			is_at_war = no
 			is_subject = no
 		}
 		effect = {
@@ -1956,6 +2013,7 @@ country_decisions = {
 				}
 			}
 			NOT = { tag = CDI }
+			is_at_war = no
 			is_subject = no
 		}
 		effect = {
@@ -1985,6 +2043,7 @@ country_decisions = {
 				}
 			}
 			NOT = { tag = TNS }
+			is_at_war = no
 			is_subject = no
 		}
 		effect = {
@@ -2014,6 +2073,7 @@ country_decisions = {
 				}
 			}
 			NOT = { tag = MRO }
+			is_at_war = no
 			is_subject = no
 		}
 		effect = {
@@ -2042,6 +2102,7 @@ country_decisions = {
 					culture_group = african
 				}
 			}
+			is_at_war = no
 			is_subject = no
 		}
 		effect = {
@@ -2070,6 +2131,7 @@ country_decisions = {
 					culture_group = southern_african
 				}
 			}
+			is_at_war = no
 			is_subject = no
 		}
 		effect = {
@@ -2103,6 +2165,7 @@ country_decisions = {
 					culture_group = kongo_group
 				}
 			}
+			is_at_war = no
 			is_subject = no
 		}
 		effect = {
@@ -2130,6 +2193,7 @@ country_decisions = {
 					culture_group = cushitic
 				}
 			}
+			is_at_war = no
 			is_subject = no
 		}
 		effect = {
@@ -2161,6 +2225,7 @@ country_decisions = {
 					primary_culture = al_misr_arabic
 				}
 			}
+			is_at_war = no
 			is_subject = no
 		}
 		effect = {
@@ -2192,6 +2257,7 @@ country_decisions = {
 					culture_group = turko_semitic
 				}
 			}
+			is_at_war = no
 			is_subject = no
 		}
 		effect = {
@@ -2223,6 +2289,7 @@ country_decisions = {
 					culture_group = iranian
 				}
 			}
+			is_at_war = no
 			is_subject = no
 		}
 		effect = {
@@ -2254,6 +2321,7 @@ country_decisions = {
 					culture_group = burman
 				}
 			}
+			is_at_war = no
 			is_subject = no
 		}
 		effect = {
@@ -2285,6 +2353,7 @@ country_decisions = {
 					culture_group = southeastasian_group
 				}
 			}
+			is_at_war = no
 			is_subject = no
 		}
 		effect = {
@@ -2322,6 +2391,7 @@ country_decisions = {
 					}
 				}
 			}
+			is_at_war = no
 			is_subject = no
 		}
 		effect = {
@@ -2378,6 +2448,7 @@ country_decisions = {
 					culture_group = malay
 				}
 			}
+			is_at_war = no
 			is_subject = no
 		}
 		effect = {
@@ -2430,6 +2501,7 @@ country_decisions = {
 					culture_group = kongo_group
 				}
 			}
+			is_at_war = no
 			is_subject = no
 		}
 		effect = {
@@ -2464,6 +2536,7 @@ country_decisions = {
 					culture_group = southern_african
 				}
 			}
+			is_at_war = no
 			is_subject = no
 		}
 		effect = {

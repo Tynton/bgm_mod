@@ -1031,8 +1031,8 @@ ave_row_slot_2 = {
 		}
 	}
 
-	ave_conquer_iberia = {
-		icon = mission_intervene_in_castile
+	ave_integrate_clerics = {
+		icon = mission_rb_invade_england
 		required_missions = { ave_the_angevin_empire }
 		position = 5
 		provinces_to_highlight = {
@@ -1040,22 +1040,28 @@ ave_row_slot_2 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}		
 		trigger = { 
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				region = iberia_region
-				value = 15
+			has_any_disaster = no
+			religious_unity = 0.5
+			OR = {
+				NOT = { exists = FRA }
+				AND = {
+					exists = FRA
+					
+					FRA = {
+						religious_unity = 0.5
+						has_any_disaster = no
+						religion = ROOT
+						is_subject_of = ROOT
+					}
+				}
 			}
 		}	
 		effect = {
-			iberia_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
+			add_country_modifier = {
+				name = aev_integrated_clergies
+				duration = 10950
 			}
-			unlock_issue = {
-				issue = crown_of_iberia_act
-			}
+			add_stability_or_adm_power = yes
 			add_prestige_or_monarch_power = {
 				amount = 25
 			}
@@ -1065,37 +1071,20 @@ ave_row_slot_2 = {
 		}
 	}
 
-	ave_angevin_iberia = {
+	aev_administration = {
 		icon = the_spanish_succession
-		required_missions = { ave_conquer_iberia }
-		position = 6
-		provinces_to_highlight = {
-			region = iberia_region
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}		
+		required_missions = { ave_integrate_clerics }
+		position = 6		
 		trigger = {
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				region = iberia_region
-				value = 55
+			religious_unity = 1.0
+			has_global_modifier_value = {
+				which = tolerance_own
+				value = 0.04
 			}
 		}	
 		effect = {
-			add_power_projection = {
-				type = mission_rewards_power_projection
-				amount = 50
-			}
-			add_country_modifier = {
-				name = ave_iberian_conquest
-				duration = 7300
-			}
-			capital_scope = {
-				tercio_infantry = ROOT
-				tercio_infantry = ROOT
-				tercio_infantry = ROOT
-				tercio_infantry = ROOT
-				tercio_infantry = ROOT
-				tercio_infantry = ROOT
-				tercio_infantry = ROOT
+			country_event = {
+				id = BGM_GOV.4
 			}
 		}
 		ai_weight = {
@@ -1270,13 +1259,16 @@ ave_row_slot_2_continuation = {
 						culture = cosmopolitan_french
 					}
 					employed_advisor = {
+						culture = anglo_norman
+					}
+					employed_advisor = {
 						culture = normand
 					}
 					employed_advisor = {
-						culture = breton
+						culture = champenois
 					}
 					employed_advisor = {
-						culture = gascon
+						culture = picard
 					}
 					employed_advisor = {
 						culture = wallonian
@@ -1285,18 +1277,45 @@ ave_row_slot_2_continuation = {
 						culture = burgundian
 					}
 					employed_advisor = {
-						culture = occitain
+						culture = angevin
+					}
+					employed_advisor = {
+						culture = orleanais
+					}
+					employed_advisor = {
+						culture = bourbonnais_culture
+					}
+					employed_advisor = {
+						culture = poitevin
+					}
+					employed_advisor = {
+						culture = frainc_comtou
+					}
+					employed_advisor = {
+						culture = lorrain
 					}
 				}
 			}
 			stability = 2
-			num_of_owned_provinces_with = {
-				OR = {
-					culture_group = british
-					culture_group = french
+			OR = {
+				num_of_owned_provinces_with = {
+					value = 50
+					OR = {
+						culture_group = british
+						culture_group = french
+					}
+					is_overseas = no
 				}
-				NOT = { local_autonomy_above_min = 10 }
-				value = 50
+				any_subject_country = {
+					num_of_owned_provinces_with = {
+						value = 50
+						OR = {
+							culture_group = british
+							culture_group = french
+						}
+						is_overseas = no
+					}
+				}
 			}
 			OR = {
 				FRA = { is_subject_of = ROOT }
@@ -1991,21 +2010,14 @@ ave_row_3 = {
 				}
 			}
 		}		
-		trigger = { 
-			france_region = {
-				custom_trigger_tooltip = {
-					tooltip = ave_the_angevin_empire_at
-					owner = {
-						OR = {
-							tag = ROOT
-							is_subject_of = ROOT
-							overlord = {
-								is_subject_of = ROOT
-							}
-						}
-					}
+		trigger = {
+			stability = 1
+			OR = {
+				FRA = {
+					is_subject_of = ROOT
+					NOT = { liberty_desire = 10 }
 				}
-				type = all
+				FRA = { exists = no }
 			}
 			if = {
 				limit = {
@@ -2019,10 +2031,25 @@ ave_row_3 = {
 			diplomatic_reputation = 2
 		}	
 		effect = {
+			if = {
+				limit = { 
+					OR = {
+						dynasty = "Lancaster"
+						dynasty = "York"
+					}
+					FRA = {
+						is_subject_of = ROOT
+						is_subject_of_type = personal_union
+					}
+				}
+				country_event = {
+					id = easter_egg.4
+				}
+			}
 			178 = {
-				add_base_tax = 3
-				add_base_production = 3
-				add_base_manpower = 3
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
 				add_permanent_province_modifier = {
 					name = "eng_rb_angers_summer_court"
 					duration = -1
@@ -2032,6 +2059,12 @@ ave_row_3 = {
 				limit = { has_government_attribute = english_parliament }
 				unlock_issue = {
 					issue = english_french_act_of_union
+				}
+				unlock_issue = {
+					issue = crown_of_italy_act
+				}
+				unlock_issue = {
+					issue = crown_of_iberia_act
 				}
 			}
 			else = {
@@ -2064,139 +2097,35 @@ ave_row_3 = {
 				}
 				add_prestige = 25
 			}
-			custom_tooltip = english_french_act_of_union_bt	#claim tooltip
-			hidden_effect = {
-				catalonia_area = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
+			catalonia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
 				}
-				basque_country = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-				aragon_area = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-				valencia_area = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-				piedmont_area = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-				liguria_area = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-				lombardy_area = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-				emilia_romagna_area = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-				po_valley_area = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-				venetia_area = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-				wallonia_area = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-				flanders_area = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-				alsace_area = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
+				add_permanent_claim = ROOT
 			}
-		}
-		ai_weight = {
-			factor = 250
-		}
-	}
-
-	ave_invade_italy = {
-		icon = the_alpine_wall
-		required_missions = { ave_the_angevin_empire }
-		position = 5
-		provinces_to_highlight = {
-			OR = {
-				area = piedmont_area
-				area = liguria_area
-				area = lombardy_area
-				area = emilia_romagna_area
-				area = po_valley_area
-				area = venetia_area
-			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
-		trigger = { 
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				OR = {
-					area = piedmont_area
-					area = liguria_area
-					area = lombardy_area
-					area = emilia_romagna_area
-					area = po_valley_area
-					area = venetia_area
+			wallonia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
 				}
-				value = 15
+				add_permanent_claim = ROOT
 			}
-		}	
-		effect = {
-			unlock_issue = {
-				issue = crown_of_italy_act
+			flanders_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
 			}
-			italy_region = {
+			south_flanders_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			alsace_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
@@ -2209,24 +2138,59 @@ ave_row_3 = {
 		}
 	}
 
-	ave_italian_domination = {
-		icon = union_with_naples
-		required_missions = { ave_invade_italy }
-		position = 6
-		provinces_to_highlight = {
-			region = italy_region
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}		
+	aev_new_seneschals = {
+		icon = mission_intervene_in_castile
+		required_missions = { ave_the_angevin_empire }
+		position = 5
 		trigger = { 
+			NOT = { exists = FRA }
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				region = italy_region
-				value = 35
+				value = 50
+				region = france_region
 			}
 		}	
 		effect = {
-			add_permanent_power_projection = {
-				type = 10_permanent_power_projection
-				amount = 10
+			add_country_modifier = {
+				name = aev_seneschals
+				duration = 12045
+			}
+			define_advisor = {
+				type = statesman
+				skill = 3
+				cost_multiplier = 0.25
+			}
+		}
+		ai_weight = {
+			factor = 250
+		}
+	}
+
+	aev_propagate_internal_dynasty = {
+		icon = king_of_france
+		required_missions = { aev_new_seneschals }
+		position = 6	
+		trigger = { 
+			OR = {
+				crown_land_share = 75
+				calc_true_if = {
+					amount = 5
+					is_subject_of = ROOT
+					dynasty = ROOT
+				}
+			}
+		}	
+		effect = {
+			every_subject_country = {
+				limit = {
+					marriage_with = ROOT
+					has_heir = no
+				}
+				define_heir = {
+					dynasty = ROOT
+					culture = ROOT
+					claim = 33
+					no_consort_with_heir = yes
+				}
 			}
 			add_prestige_or_monarch_power = {
 				amount = 100
@@ -2237,29 +2201,31 @@ ave_row_3 = {
 		}
 	}
 
-	ave_dominate_europe = {
-		icon = mission_european_politics
+	aev_new_stable_realm = {
+		icon = spread_piety
 		required_missions = {
-			ave_angevin_iberia
-			ave_italian_domination
-			ave_double_emperorship
+			aev_administration
+			aev_propagate_internal_dynasty
+			aev_proud_military
 		}
 		position = 7
-		provinces_to_highlight = {
-			has_discovered = ROOT
-			continent = europe
-			NOT = { owned_by = ROOT }
-		}
 		trigger = {
-			num_of_owned_provinces_with = {
-				continent = europe
-				value = 250
-			}
-		}	
+			tag = AEV
+			stability = 2
+			legitimacy = 75
+			prestige = 75
+			power_projection = 75
+			in_golden_age = no
+		}
 		effect = {
-			add_country_modifier = {
-				name = ave_west_european_empire
-				duration = -1
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 50
+			}
+			reset_golden_age = yes
+			2313 = { add_permanent_claim = ROOT }
+			palestine_area = {
+				add_permanent_claim = ROOT
 			}
 		}
 		ai_weight = {
@@ -2987,8 +2953,8 @@ ave_row_4 = {
 		}
 	}
 
-	ave_deal_with_the_hre = {
-		icon = mission_rb_control_electors
+	aev_military_reform = {
+		icon = fra_military_reform
 		required_missions = { ave_the_angevin_empire }
 		position = 5
 		provinces_to_highlight = {
@@ -3001,101 +2967,19 @@ ave_row_4 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}		
 		trigger = { 
-			OR = {
-				if = {
-					limit = {
-						num_of_electors = 3
-					}
-					OR = {
-						calc_true_if = {
-							amount = 3
-							all_elector = {
-								preferred_emperor = ROOT
-							}
-						}
-						calc_true_if = {
-							amount = 3
-							all_elector = {
-								is_subject_of = ROOT
-							}
-						}
-					}
-				}
-				else = {
-					NOT = { hre_size = 1 }
-					NOT = { exists = HLR }
-				}
-				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					OR = {
-						area = alsace_area
-						area = palatinate_area
-						area = lower_rhineland_area
-						area = north_rhine_area
-					}
-					value = 10
-				}
+			army_size_percentage = 0.9
+			innovativeness = 25
+			calc_true_if = {
+				amount = 2
+				full_idea_group = offensive_ideas
+				full_idea_group = quality_ideas
+				full_idea_group = defensive_ideas
 			}
 		}
 		effect = {
-			if = {
-				limit = { hre_size = 1 }
-				simple_dynamic_effect_without_alternative = {
-					first_custom_tooltip = ave_deal_with_the_hre_at
-					first_limit = "
-					OR = {
-						calc_true_if = {
-							amount = 3
-							all_elector = {
-								preferred_emperor = ROOT
-							}
-						}
-						calc_true_if = {
-							amount = 3
-							all_elector = {
-								is_subject_of = ROOT
-							}
-						}
-					}"
-					first_effect = "
-					add_country_modifier = {
-						name = ave_imperial_favoritism
-						duration = 7300	
-					}"
-					second_custom_tooltip = ave_deal_with_the_hre_bt
-					second_limit = "
-					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-						OR = {
-							region = north_german_region
-							region = south_german_region
-						}
-						value = 10
-					}"
-					second_effect = "
-					custom_tooltip = ave_deal_with_the_hre_ct
-					hidden_effect = {
-						every_known_country = {
-							limit = {
-								is_part_of_hre = yes
-								has_opinion_modifier = {
-									who = ROOT
-									modifier = aggressive_expansion
-								}
-							}
-							add_aggressive_expansion = {
-								who = ROOT
-								value = -5
-							}
-						}
-					}
-					add_adm_power = 200
-					"
-				}
-			}
-			else = {
-				add_country_modifier = {
-					name = ave_expnansionist_path
-					duration = 7300
-				}
+			add_country_modifier = {
+				name = aev_mil_reform
+				duration = -1
 			}
 		}
 		ai_weight = {
@@ -3103,48 +2987,52 @@ ave_row_4 = {
 		}
 	}
 
-	ave_double_emperorship = {
-		icon = mission_rb_ascendant
+	aev_proud_military = {
+		icon = fra_napoleonic_navy
 		required_missions = {
-			ave_invade_italy
-			ave_deal_with_the_hre
-			ave_conquer_lowlands
+			aev_military_reform
+			aev_naval_reform
 		}
 		position = 6
 		provinces_to_highlight = {
 		}		
 		trigger = { 
+			army_tradition = 50
+			navy_tradition = 50
 			OR = {
-				is_emperor = yes
-				AND = {
-					NOT = { hre_size = 1 }
-					NOT = { exists = HLR }
-				}
+				prestige = 66
+				power_projection = 66
 			}
-			total_development = 1500
 		}	
 		effect = {
-			simple_dynamic_effect = {
-				first_custom_tooltip = ave_double_emperorship_at
-				first_limit = "
-				is_emperor = yes"
-				first_effect = "
-				unlock_issue = {
-					issue = crown_of_the_empire_act
-				}
-				add_country_modifier = {
-					name = ave_imperial_parliament
-					duration = -1
-				}"
-				second_limit = "
-				NOT = { hre_size = 1 }
-				NOT = { exists = HLR }"
-				second_effect = "
-				add_country_modifier = {
-					name = ave_end_of_the_empire
-					duration = -1	
-				}"
+			add_permanent_power_projection = {
+				type = 10_permanent_power_projection
+				amount = 10
 			}
+			add_prestige = 50
+
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+
+			add_legitimacy = 15
+
+			naples_area = {
+				add_permanent_claim = ROOT
+			}
+			calabria_area = {
+				add_permanent_claim = ROOT
+			}
+			apulia_area = {
+				add_permanent_claim = ROOT
+			}
+			sicily_area = {
+				add_permanent_claim = ROOT
+			}
+			western_sicily_area = {
+				add_permanent_claim = ROOT
+			}
+			120 = { add_permanent_claim = ROOT }
 		}
 		ai_weight = {
 			factor = 250
@@ -3944,77 +3832,22 @@ ave_row_5 = {
 		}
 	}
 
-	ave_conquer_lowlands = {
-		icon = new_pilings
+	aev_naval_reform = {
+		icon = imperial_navy
 		required_missions = { ave_the_angevin_empire }
 		position = 5
-		provinces_to_highlight = {
-			region = low_countries_region
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}		
 		trigger = { 
+			innovativeness = 25
 			OR = {
-				any_ally = {
-					custom_trigger_tooltip = {
-						tooltip = ave_conquer_lowlands_at
-						capital_scope = {
-							region = low_countries_region
-						}
-						OR = {
-							primary_culture = dutch
-							primary_culture = flemish
-							primary_culture = frisian
-							primary_culture = wallonian
-						}
-						num_of_owned_provinces_with = {
-							region = low_countries_region
-							value = 15
-						}
-					}
-				}
-				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					region = low_countries_region
-					value = 15
-				}
+				full_idea_group = maritime_ideas
+				full_idea_group = naval_ideas
 			}
+			navy_size_percentage = 0.9
 		}	
 		effect = {
-			simple_dynamic_effect = {
-				first_custom_tooltip = gbr_take_over_the_lowlands_at
-				first_limit = "
-				any_ally = {
-					capital_scope = {
-						region = low_countries_region
-					}
-					OR = {
-						primary_culture = dutch
-						primary_culture = flemish
-						primary_culture = frisian
-						primary_culture = wallonian
-					}
-					num_of_owned_provinces_with = {
-						region = low_countries_region
-						value = 15
-					}
-				}"
-				first_effect = "
-				custom_tooltip = gbr_take_over_the_lowlands_ct
-				gbr_take_over_the_lowlands_effect_a = yes"
-				second_limit = "
-				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					region = low_countries_region
-					value = 15
-				}"
-				second_effect = "
-				add_accepted_culture = dutch
-				add_accepted_culture = flemish
-				add_country_modifier = {
-					name = gbr_accepted_lowlands
-					duration = -1
-					desc = gbr_accepted_lowlands_tt
-					hidden = yes
-				}
-				"
+			add_country_modifier = {
+				name = aev_navy_reform
+				duration = -1
 			}
 		}
 		ai_weight = {
@@ -4165,12 +3998,12 @@ gbr_ave_row_1 = {
 				limit = { is_random_new_world = no }
 				OR = {
 					province_id = 1500
-					province_id = 1269
+					province_id = 245
 				}
 				has_discovered = ROOT
 			}
 			else = {
-				province_id = 1269
+				province_id = 245
 			}
 		}		
 		trigger = {
@@ -4191,7 +4024,7 @@ gbr_ave_row_1 = {
 				}
 			}
 			else = {
-				1269 = {
+				245 = {
 					highest_value_trade_node = yes
 					trade_share = {
 						country = ROOT
@@ -4220,16 +4053,16 @@ gbr_ave_row_1 = {
 		}
 		position = 12
 		provinces_to_highlight = {
-			province_id = 1269
+			province_id = 245
 		}		
 		trigger = { 
-			1269 = {
+			245 = {
 				is_strongest_trade_power = ROOT
 			}
-			1269 = {
+			245 = {
 				highest_value_trade_node = yes
 			}
-			1269 = {
+			245 = {
 				trade_node_value = 500
 			}
 			reform_level = 8

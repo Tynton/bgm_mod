@@ -1,8 +1,7 @@
 french_revolution = {
 	potential = {
-		always = no
 		NOT = { has_country_flag = had_revolution }
-		tag = FRA
+		bgm_france = yes
 		#is_free_or_tributary_trigger = yes
 		uses_doom = no
 		NOT = { revolution_target_exists = yes }
@@ -14,53 +13,110 @@ french_revolution = {
 	
 	
 	can_start = {
-		current_age = age_of_revolutions
-		num_of_cities = 30
-		has_any_disaster = no
-		is_institution_enabled = global_imperialism
 		OR = {
-			NOT = { stability =	1 }
-			num_of_loans = 1
-			inflation = 3
-			NOT = { years_of_income = 0.25 }
-			war_exhaustion = 5
-			NOT = { prestige = 5 }
+			AND = {
+				OR = {
+					current_age = age_of_revolutions
+					num_of_loans = 3
+					inflation = 5
+				}
+				OR = {
+					war_exhaustion = 3
+					NOT = { prestige = -10 }
+				}
+				OR = {
+					NOT = { stability = 0 }
+					corruption = 3.0
+				}
+				has_any_disaster = no
+			}
+			revolution_spread = 0.5
+			war_exhaustion = 10
 		}
+		revolution_spread = 0.01
+		current_age = age_of_revolutions
+		NOT = { has_country_flag = had_revolution }
 	}
 	
 	can_stop = {
 		OR = {
 			has_any_disaster = yes
-			stability = 3
+			AND = {
+				stability = 3
+				NOT = {
+					revolution_spread = 0.5
+				}
+			}
 		}
 	}
 	
 	
 	progress = {
 		modifier = {
-			factor = 4
-			NOT = { prestige = 5 }
+			factor = 1
+			NOT = { prestige = 0 }
 		}
 		modifier = {
-			factor = 8
+			factor = 2
 			war_exhaustion = 5
 		} 
 		modifier = {
-			factor = 6
+			factor = 2
 			num_of_loans = 1
-			NOT = { num_of_loans = 2 }
+			NOT = { num_of_loans = 4 }
 		}	
 		modifier = {
-			factor = 12
-			num_of_loans = 2
-		}	
+			factor = 1
+			absolutism = 70
+		}
 		modifier = {
-			factor = 24
+			factor = 2
+			absolutism = 80
+		}
+		modifier = {
+			factor = 3
+			num_of_loans = 4
+		}
+		modifier = {
+			factor = 4
 			is_bankrupt = yes
-		}		
+		}
 		modifier = {
-			factor = 12
-			NOT = { stability = -1 }
+			factor = -100
+			NOT = {
+				current_age = age_of_revolutions
+			}
+		}
+		##############################
+		modifier = {
+			factor = 0.5
+			revolution_spread = 0.5
+			NOT = { revolution_spread = 0.65 }
+		}
+		modifier = {
+			factor = 0.75
+			revolution_spread = 0.65
+			NOT = { revolution_spread = 0.8 }
+		}
+		modifier = {
+			factor = 1
+			revolution_spread = 0.8
+		}
+		modifier = {
+			factor = 0.5
+			custom_trigger_tooltip = {
+				tooltip = root_is_most_powerful_in_europe_2
+				capital_scope = { continent = europe }
+				NOT = {
+					any_country = {
+						capital_scope = { continent = europe }
+						OR = {
+							army_size = root
+							total_own_and_non_tributary_subject_development = root
+						}
+					}
+				}
+			}
 		}
 	}
 	

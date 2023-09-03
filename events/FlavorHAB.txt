@@ -1305,6 +1305,9 @@ country_event = {
 	}
 	option = {		# The Habsburg dynasty must return!
 		name = "flavor_hab.EVTOPTB7"
+		ai_chance = {
+			factor = 0
+		}
 		add_legitimacy = -50
 		# Male heir
 		if = {

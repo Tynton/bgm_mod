@@ -1,0 +1,256 @@
+namespace = BGM_GER_mission
+
+# Fate of the Revolution
+country_event = {
+	id = BGM_GER_mission.1
+	title = "BGM_GER_mission.1.t"
+	desc = {
+		trigger = {
+			bgm_rev = no
+		}
+		desc = "BGM_GER_mission.1.da"
+	}
+	desc = {
+		trigger = {
+			bgm_rev = yes
+		}
+		desc = "BGM_GER_mission.1.db"
+	}
+	picture = {
+		trigger = {
+			bgm_rev = no
+		}
+		picture = RELIGIOUS_WARS_eventPicture
+	}
+	picture = {
+		trigger = {
+			bgm_rev = yes
+		}
+		picture = REVOLUTION_eventPicture
+	}
+
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = "BGM_GER_mission.1.a" #We will respond in the long run by moderating
+		trigger = {
+			bgm_rev = no
+		}
+		set_country_flag = con_mod
+	}
+	
+	option = {
+		name = "BGM_GER_mission.1.b" #Take a hardline approach
+		trigger = {
+			bgm_rev = no
+		}
+		set_country_flag = con_hard
+	}
+
+	option = {
+		name = "BGM_GER_mission.1.c" #Focus the Revolution in Germany
+		trigger = {
+			bgm_rev = yes
+		}
+		set_country_flag = ger_jacobin
+	}
+	
+	option = {
+		name = "BGM_GER_mission.1.d" #Strike outward
+		trigger = {
+			bgm_rev = yes
+		}
+		set_country_flag = ger_girondist
+	}
+
+	after = {
+		swap_non_generic_missions = yes
+	}
+}
+
+
+
+country_event = {
+	id = BGM_GER_mission.2
+	title = "BGM_GER_mission.2.t"
+	desc = "BGM_GER_mission.2.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_GER_mission.2.a" #We will use the East for diplomatic opportunities
+		
+		set_country_flag = friendly_eastern
+	}
+	
+	option = {
+		name = "BGM_GER_mission.2.b" #Eastern Europe needs new management
+		
+		set_country_flag = hostile_eastern
+
+		every_province = {
+			limit = {
+				culture_group = germanic
+				OR = {
+					region = poland_region
+					region = baltic_region
+					superregion = eastern_europe_superregion
+				}
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+
+	after = {
+		swap_non_generic_missions = yes
+	}
+}
+
+country_event = { #to France
+	id = BGM_GER_mission.3
+	title = "BGM_GER_mission.3.t"
+	desc = "BGM_GER_mission.3.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_GER_mission.3.a" #Yes
+		
+		define_heir = {
+			adm = 3
+			dip = 3
+			mil = 3
+			block_disinherit = yes
+			dynasty = FROM
+		}
+	}
+	
+	option = {
+		name = "BGM_GER_mission.3.b" #No
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = refused_heir_bgm_ger
+			}
+		}
+	}
+}
+
+country_event = { #eastern ally, cooperation
+	id = BGM_GER_mission.4
+	title = "BGM_GER_mission.4.t"
+	desc = "BGM_GER_mission.4.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_GER_mission.4.a" #Excellent
+		
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+	}
+}
+
+country_event = { #eastern ally, cooperation
+	id = BGM_GER_mission.5
+	title = "BGM_GER_mission.4.t"
+	desc = "BGM_GER_mission.4.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_GER_mission.4.a" #Excellent
+
+		add_prestige = 25
+
+		add_legitimacy_equivalent = 10
+
+		add_mercantilism = 10
+		
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+	}
+}
+
+country_event = { #eastern ally, cooperation
+	id = BGM_GER_mission.6
+	title = "BGM_GER_mission.4.t"
+	desc = "BGM_GER_mission.4.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_GER_mission.4.a" #Excellent
+
+		capital_scope = {
+			add_province_modifier = {
+				name = ger_eco_coop
+				duration = -1
+			}
+			add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+		}
+
+		if = {
+			limit = { 
+				any_owned_province = {
+					is_capital = no
+					province_has_center_of_trade_of_level = 1
+				}
+			}
+			random_owned_province = {
+				limit = { 
+					is_capital = no
+					province_has_center_of_trade_of_level = 1
+				}
+				add_province_modifier = {
+					name = ger_eco_coop
+					duration = -1
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+		}
+	}
+}
+
+country_event = { #Creating a Constitution
+	id = BGM_GER_mission.7
+	title = "BGM_GER_mission.7.t"
+	desc = "BGM_GER_mission.7.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_GER_mission.7.a" #A constitution with extensive welfare clauses to appease the revolutionaries
+		add_country_modifier = {
+			name = ger_wel_constitution
+			duration = -1
+		}
+	}
+	option = {
+		name = "BGM_GER_mission.7.b" #A constitution in support of social egalitarianism
+		add_country_modifier = {
+			name = ger_lib_constitution
+			duration = -1
+		}
+	}
+	option = {
+		name = "BGM_GER_mission.7.c" #A constitution to uphold conservative morality
+		add_country_modifier = {
+			name = ger_conservative_constitution
+			duration = -1
+		}
+	}
+}

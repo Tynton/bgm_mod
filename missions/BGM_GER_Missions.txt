@@ -1,0 +1,4394 @@
+##BranchStart 0
+BGM_GER_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	##Mission Start
+	GER_economy = {
+		icon = mission_early_game_buildings
+		required_missions = {
+			
+		}
+		position = 1
+		provinces_to_highlight = {
+			##PROVINCESHIGHLIGHTCODE
+		}
+		trigger = {
+			stability = 0
+			OR = {
+				full_idea_group = infrastructure_ideas
+				full_idea_group = economic_ideas
+				full_idea_group = trade_ideas
+			}
+		}
+		effect = {
+			custom_tooltip = GER_eco_policy_tooltip
+
+			add_adm_power = 100
+
+			add_country_modifier = {
+				name = ger_economic_policy
+				duration = 10950
+			}
+
+			if = {
+				limit = {
+					government = republic
+					OR = {
+						bgm_rev = yes
+						bgm_comgovt = yes
+						has_reform = peasants_republic
+					}
+				}
+				set_country_flag = welfare_state
+			}
+			else_if = {
+				limit = { 
+					government = republic
+					NOT = {
+						OR = {
+							bgm_rev = yes
+							bgm_comgovt = yes
+							has_reform = peasants_republic
+						}
+					}
+				}
+				set_country_flag = corporatist_state
+			}
+			else = {
+				set_country_flag = militarist_state
+			}
+
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+################################################
+################################################
+################################################
+
+BGM_GER_1_eco_locked = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = {
+			OR = {
+				has_country_flag = welfare_state
+				has_country_flag = corporatist_state
+				has_country_flag = militarist_state
+			}
+		}
+	}
+	has_country_shield = yes
+
+	GER_eco_1_2 = { #Colonialism vs tall
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_economy
+		}
+		position = 2
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+	GER_eco_1_3 = {
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_eco_1_2
+		}
+		position = 3
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+}
+
+BGM_GER_2_eco_locked = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = {
+			OR = {
+				has_country_flag = welfare_state
+				has_country_flag = corporatist_state
+				has_country_flag = militarist_state
+			}
+		}
+	}
+	has_country_shield = yes
+
+	GER_eco_2_2 = { #Sponsor corporations, welfare state
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_economy
+		}
+		position = 2
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+	GER_eco_2_3 = {
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_eco_2_2
+		}
+		position = 3
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+}
+
+
+
+
+
+BGM_GER_1_eco_welfare = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = welfare_state
+	}
+	has_country_shield = yes
+
+	GER_eco_1_2_w = { #increase government spending in development
+		icon = mission_early_game_buildings
+		required_missions = {
+			GER_economy
+		}
+		position = 2
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = {
+				development = 12
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 50
+				all_owned_province = {
+					development = 12
+				}
+			}
+		}
+		effect = {
+			add_stability = 1
+			custom_tooltip = bgm_ger_eco_prov_tooltip
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						development = 12
+						culture_group = germanic
+					}
+					add_province_modifier = {
+						name = ger_eco_urbanization
+						duration = 18250
+					}
+				}
+			}
+		}
+	}
+	GER_eco_1_3_w = { #developed agriculture
+		icon = dalmatian_conquest
+		required_missions = {
+			GER_eco_1_2_w
+		}
+		position = 3
+		trigger = {
+			manpower = 150
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_agriculture
+				duration = -1
+			}
+		}
+	}
+}
+
+BGM_GER_2_eco_welfare = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = welfare_state
+	}
+	has_country_shield = yes
+
+	GER_eco_2_2_w = { #develop industrial impetus
+		icon = mission_rb_prospect_for_coal
+		required_missions = {
+			GER_economy
+		}
+		position = 2
+		trigger = {
+			OR = {
+				has_global_modifier_value = {
+					which = production_efficiency
+					value = 0.2
+				}
+				trade_income_percentage = 0.35
+			}
+		}
+		effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						province_has_center_of_trade_of_level = 1
+						province_trade_power = 10
+					}
+					OR = {
+						trade_goods = wine
+						trade_goods = fish
+						trade_goods = grain
+						trade_goods = livestock
+					}
+				}
+				change_trade_goods = cloth
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+
+			custom_tooltip = bgm_ger_cloth_prov
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = cloth
+						development = 10
+					}
+					add_province_modifier = {
+						name = ger_proto_industrial_center
+						duration = 18250
+					}
+				}
+			}
+		}
+	}
+	GER_eco_2_3_w = { #reap the rewards
+		icon = industrialized_rhineland
+		required_missions = {
+			GER_eco_2_2_w
+		}
+		position = 3
+		provinces_to_highlight = {
+			owned_by = ROOT
+			unrest = 1
+		}
+		trigger = {
+			stability = 1
+			all_owned_province = {
+				NOT = {
+					unrest = 1
+				}
+			}
+			OR = {
+				full_idea_group = infrastructure_ideas
+				full_idea_group = economic_ideas
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_pioneer_proto_ind
+				duration = -1
+			}
+		}
+	}
+}
+
+
+
+
+
+BGM_GER_1_eco_corp = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = corporatist_state
+	}
+	has_country_shield = yes
+
+	GER_eco_1_2_c = { #increase mercantilism
+		icon = construct_the_kiel_canal
+		required_missions = {
+			GER_economy
+		}
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 45
+				province_id = 1876
+				province_id = 61
+				province_id = 134
+			}
+			NOT = { has_most_province_trade_power = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 3
+				45 = { has_most_province_trade_power = ROOT }
+				1876 = { has_most_province_trade_power = ROOT }
+				61 = { has_most_province_trade_power = ROOT }
+				134 = { has_most_province_trade_power = ROOT }
+			}
+		}
+		effect = {
+			add_mercantilism = 10
+		}
+	}
+	GER_eco_1_3_c = { #trade dominance at home
+		icon = conquer_malacca
+		required_missions = {
+			GER_eco_1_2_c
+		}
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 45
+				province_id = 1876
+				province_id = 61
+				province_id = 134
+			}
+			NOT = { has_most_province_trade_power = ROOT }
+		}
+		trigger = {
+			45 = { has_most_province_trade_power = ROOT }
+			1876 = { has_most_province_trade_power = ROOT }
+			61 = { has_most_province_trade_power = ROOT }
+			134 = { has_most_province_trade_power = ROOT }
+			full_idea_group = trade_ideas
+		}
+		effect = {
+			add_mercantilism = 10
+			add_country_modifier = {
+				name = ger_trade_dominance
+				duration = -1
+			}
+		}
+	}
+}
+
+BGM_GER_2_eco_corp = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = corporatist_state
+	}
+	has_country_shield = yes
+
+	GER_eco_2_2_c = { #commercial navy
+		icon = danubian_power
+		required_missions = {
+			GER_economy
+		}
+		position = 2
+		trigger = {
+			navy_size_percentage = 0.95
+			light_ship_fraction = 0.35
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_ship_primacy_one
+				duration = 10950
+			}
+			add_country_modifier = {
+				name = ger_naval_inf_one
+				duration = -1
+			}
+		}
+	}
+	GER_eco_2_3_c = { #contest western trade
+		icon = Burn_Wooden_Wall
+		required_missions = {
+			GER_eco_2_2_c
+		}
+		position = 3
+		provinces_to_highlight = {
+			1269 = { NOT = { has_most_province_trade_power = ROOT } }
+			186 = { NOT = { has_most_province_trade_power = ROOT } }
+			1975 = { NOT = { has_most_province_trade_power = ROOT } }
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 2
+				1269 = { has_most_province_trade_power = ROOT }
+				186 = { has_most_province_trade_power = ROOT }
+				1975 = { has_most_province_trade_power = ROOT }
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_country_modifier = {
+				name = ger_naval_inf_two
+				duration = -1
+			}
+			add_country_modifier = {
+				name = ger_international_trade
+				duration = -1
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+BGM_GER_1_eco_mil = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = militarist_state
+	}
+	has_country_shield = yes
+
+	GER_eco_1_2_m = { #Military Industry
+		icon = secure_the_republic
+		required_missions = {
+			GER_economy
+		}
+		position = 2
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = {
+				OR = {
+					has_building = weapons
+					has_building = soldier_households
+				}
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 15
+				all_owned_province = {
+					OR = {
+						has_building = weapons
+						has_building = soldier_households
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_mil_ind_one
+				duration = -1
+			}
+		}
+	}
+	GER_eco_1_3_m = { #State Foundries
+		icon = ger_kaiserreich
+		required_missions = {
+			GER_eco_1_2_m
+		}
+		position = 3
+		provinces_to_highlight = {
+			owned_by = ROOT
+			OR = {
+				trade_goods = cloth
+				trade_goods = iron
+				trade_goods = copper
+				trade_goods = coal
+				trade_goods = dyes
+			}
+			NOT = {
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+					has_building = factory_infrastructure
+					has_manufactory_trigger = yes
+				}
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 25
+				all_owned_province = {
+					OR = {
+						trade_goods = cloth
+						trade_goods = iron
+						trade_goods = copper
+						trade_goods = coal
+						trade_goods = dyes
+					}
+					OR = {
+						has_building = workshop
+						has_building = counting_house
+						has_building = factory_infrastructure
+						has_manufactory_trigger = yes
+					}
+				}
+			}
+		}
+		effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						trade_goods = cloth
+						trade_goods = iron
+						trade_goods = copper
+						trade_goods = coal
+						trade_goods = dyes
+					}
+					OR = {
+						has_building = workshop
+						has_building = counting_house
+						has_building = factory_infrastructure
+						has_manufactory_trigger = yes
+					}
+					development = 10
+					base_manpower = 4
+					base_production = 4
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+		}
+	}
+}
+
+BGM_GER_2_eco_mil = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = militarist_state
+	}
+	has_country_shield = yes
+
+	GER_eco_2_2_m = { #Raise Population
+		icon = develop_the_po_valley
+		required_missions = {
+			GER_economy
+		}
+		position = 2
+		trigger = {
+			manpower = 125
+			manpower_percentage = 0.9
+			total_development = 1000
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_mil_surplus
+				duration = 10950
+			}
+		}
+	}
+	GER_eco_2_3_m = { #Vast Farms
+		icon = end_genoese_competition
+		required_missions = {
+			GER_eco_2_2_m
+		}
+		position = 3
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = {
+				OR = {
+					has_building = farm_estate
+					has_building = soldier_households
+					has_building = plantations
+				}
+			}
+			NOT = {
+				OR = {
+					has_building = barracks
+					has_building = training_fields
+				}
+			}
+			NOT = {
+				OR = {
+					has_building = regimental_camp
+					has_building = conscription_center
+				}
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 15
+				all_owned_province = {
+					OR = {
+						has_building = farm_estate
+						has_building = soldier_households
+						has_building = plantations
+					}
+				}
+			}
+			calc_true_if = {
+				amount = 35
+				all_owned_province = {
+					OR = {
+						has_building = barracks
+						has_building = training_fields
+					}
+					OR = {
+						has_building = regimental_camp
+						has_building = conscription_center
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_longterm_surplus
+				duration = -1
+			}
+		}
+	}
+}
+
+
+
+
+
+################################################
+################################################
+################################################
+
+BGM_GER_3_culture = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	GER_culture_3_1 = { #Sponsor the arts
+		icon = expand_the_confederacy
+		required_missions = {
+			
+		}
+		position = 1
+		trigger = {
+			stability = 1
+			prestige = 25
+			has_institution = renaissance
+			OR = {
+				full_idea_group = aristocracy_ideas
+				AND = {
+					NOT = { current_age = age_of_discovery }
+					NOT = { current_age = age_of_reformation }
+				}
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_stability = 1
+			add_country_modifier = {
+				name = ger_arts
+				duration = 27375
+			}
+		}
+	}
+	GER_culture_3_2 = { #the enlightenment
+		icon = enlightened_absolutism
+		required_missions = {
+			GER_culture_3_1
+		}
+		position = 2
+		trigger = {
+			has_institution = enlightenment
+			OR = {
+				absolutism = 75
+				has_parliament = yes
+				government = republic
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_aristocratic_phil
+				duration = 18250
+			}
+		}
+	}
+	GER_culture_3_3 = { #land der dichter und denker
+		icon = bibliotheca_corviana
+		required_missions = {
+			GER_culture_3_2
+		}
+		position = 4
+		trigger = {
+			stability = 1
+			prestige = 50
+			adm_tech = 25
+			dip_tech = 25
+			mil_tech = 25
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_dichter_denker
+				duration = -1
+			}
+			reset_golden_age = yes
+		}
+	}
+
+	GER_talented_statesman = { #receive talented Statesman
+		icon = establish_the_chancellorship
+		required_missions = {
+			GER_idealism
+			GER_mil_theory
+		}
+		position = 6
+		trigger = {
+			is_great_power = yes
+			stability = 0
+			diplomatic_reputation = 5
+		}
+		effect = {
+			define_advisor = {
+				type = statesman
+				skill = 3
+				cost_multiplier = 0.1
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+BGM_GER_2_culture = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	GER_idealism = { #receive a philosopher, 50% off
+		icon = mission_rb_college_of_justice
+		required_missions = {
+			GER_culture_3_3
+		}
+		position = 5
+		trigger = {
+			has_institution = enlightenment
+			OR = {
+				full_idea_group = humanist_ideas
+				full_idea_group = religious_ideas
+				full_idea_group = innovativeness_ideas
+			}
+		}
+		effect = {
+			define_advisor = {
+				type = philosopher
+				skill = 3
+				cost_multiplier = 0.5
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+BGM_GER_1_france_policy = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	GER_fra = {
+		icon = king_of_france
+		required_missions = {
+			
+		}
+		position = 5
+		provinces_to_highlight = {
+			region = france_region
+		}
+		trigger = {
+			always = yes
+		}
+		effect = {
+			custom_tooltip = ger_fra_policy
+			if = {
+				limit = {
+					OR = {
+						has_opinion = {
+							who = FRA
+							value = 0
+						}
+						hidden_trigger = {
+							bgm_france_exists = yes
+						}
+					}
+				}
+				set_country_flag = friendly_france
+			}
+			else = {
+				set_country_flag = hostile_france
+				luxemburg_area = {
+					add_permanent_claim = ROOT
+				}
+			}
+
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+
+
+
+
+
+BGM_GER_1_fra_locked = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = {
+			OR = {
+				has_country_flag = friendly_france
+				has_country_flag = hostile_france
+			}
+		}
+	}
+	has_country_shield = yes
+
+	GER_fra_1_2 = { #ally or claims
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_fra
+		}
+		position = 6
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+	GER_fra_1_3 = { #100 trust or conquest of lorraine
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_fra_1_2
+		}
+		position = 7
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+	GER_fra_1_4 = { #event for france to have our dynasty or PU
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_fra_1_3
+		}
+		position = 8
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+}
+
+BGM_GER_2_fra_locked = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = {
+			OR = {
+				has_country_flag = friendly_france
+				has_country_flag = hostile_france
+			}
+		}
+	}
+	has_country_shield = yes
+
+	GER_fra_2_2 = { #claim Luxemburg
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_fra
+		}
+		position = 6
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+	GER_fra_2_3 = { #conquer Belgium
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_fra_2_2
+		}
+		position = 7
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+}
+
+
+
+
+
+BGM_GER_1_fra_nice = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = friendly_france
+	}
+	has_country_shield = yes
+
+	GER_fra_1_2_f = { #ally
+		icon = indian_dominance
+		required_missions = {
+			GER_fra
+		}
+		position = 6
+		trigger = {
+			bgm_allied_france = yes
+		}
+		effect = {
+			if = {
+				limit = { 
+					has_country_flag = had_revolution
+					bgm_allied_france = yes
+					OR = {
+						government = monarchy
+						
+					}
+					bgm_fra_ally_mon_rev = yes
+				}
+				add_stability = 1
+			}
+			hidden_effect = {
+				random_country = {
+					limit = {
+						bgm_france = yes
+					}
+				}
+				set_country_flag = bgm_fra_allied_ger
+			}
+			add_dip_power = 100
+		}
+	}
+	GER_fra_1_3_f = { #100 trust 
+		icon = levantine_missions
+		required_missions = {
+			GER_fra_1_2_f
+		}
+		position = 7
+		trigger = {
+			bgm_trusted_france = yes
+		}
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_stability = 1
+		}
+	}
+	GER_fra_1_4_f = { #event for france to have our dynasty
+		icon = glory_to_von_habsburg
+		required_missions = {
+			GER_fra_1_3_f
+		}
+		position = 8
+		trigger = {
+			any_country = {
+				has_country_flag = bgm_fra_allied_ger
+				alliance_with = ROOT
+				has_opinion = {
+					who = ROOT
+					value = 200
+				}
+				trust = {
+					who = ROOT
+					value = 100
+				}
+				NOT = {
+					military_strength = {
+						who = ROOT
+						value = 1
+					}
+				}
+				OR = {
+					AND = {
+						has_heir = no
+						OR = {
+							bgm_mon = yes
+							government = monarchy
+						}
+					}
+					bgm_mon = no
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					any_country = {
+						has_country_flag = bgm_fra_allied_ger
+						alliance_with = ROOT
+						has_opinion = {
+							who = ROOT
+							value = 200
+						}
+						trust = {
+							who = ROOT
+							value = 100
+						}
+						NOT = {
+							military_strength = {
+								who = ROOT
+								value = 1
+							}
+						}
+						has_heir = no
+						OR = {
+							bgm_mon = yes
+							government = monarchy
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						has_country_flag = bgm_fra_allied_ger
+					}
+					country_event = {
+						id = BGM_GER_mission.3
+					}
+				}
+			}
+			else = {
+				add_dip_power = 250
+			}
+		}
+	}
+}
+
+BGM_GER_2_fra_nice = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = friendly_france
+	}
+	has_country_shield = yes
+
+	GER_fra_2_2_f = { #we are both top of the world
+		icon = la_marseillaise
+		required_missions = {
+			GER_fra
+		}
+		position = 6
+		trigger = {
+			NOT = {
+				great_power_rank = 3
+			}
+			any_country = {
+				has_country_flag = bgm_fra_allied_ger
+				alliance_with = ROOT
+				NOT = {
+					great_power_rank = 3
+				}
+			}
+		}
+		effect = {
+			random_country = {
+				limit = {
+					has_country_flag = bgm_fra_allied_ger
+					alliance_with = ROOT
+					NOT = {
+						great_power_rank = 3
+					}
+				}
+				add_prestige = 50
+				add_stability = 1
+			}
+			add_prestige = 50
+			add_stability = 1
+		}
+	}
+	GER_fra_2_3_f = { #one of us is hegemon
+		icon = promote_the_carnevale
+		required_missions = {
+			GER_fra_2_2_f
+		}
+		position = 7
+		trigger = {
+			OR = {
+				is_hegemon = yes
+				any_country = {
+					has_country_flag = bgm_fra_allied_ger
+					alliance_with = ROOT
+					is_hegemon = yes
+				}
+			}
+		}
+		effect = {
+			add_prestige = 200
+			add_country_modifier = {
+				name = ger_diplomatic_bloc
+				duration = -1
+			}
+		}
+	}
+}
+
+
+
+
+BGM_GER_1_fra_mad = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = hostile_france
+	}
+	has_country_shield = yes
+
+	GER_fra_1_2_m = { #rivalry
+		icon = an_army_with_a_state
+		required_missions = {
+			GER_fra
+		}
+		position = 6
+		trigger = {
+			OR = {
+				any_country = {
+					bgm_france = yes
+					OR = {
+						is_rival = ROOT
+						is_enemy = ROOT
+					}
+					NOT = {
+						military_strength = {
+							who = ROOT
+							value = 1
+						}
+					}
+				}
+				NOT = {
+					any_country = {
+						bgm_france = yes
+					}
+				}
+			}
+		}
+		effect = {
+			add_mil_power = 100
+			lorraine_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	GER_fra_1_3_m = { #conquer Metz
+		icon = integrate_lorraine
+		required_missions = {
+			GER_fra_1_2_m
+		}
+		position = 7
+		trigger = {
+			188 = { owned_by = ROOT }
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						any_country = {
+							bgm_france = yes
+							OR = {
+								bgm_mon = yes
+								government = monarchy
+							}
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						bgm_france = yes
+					}
+					every_owned_province = {
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+			else = {
+				random_country = {
+					limit = {
+						bgm_france = yes
+					}
+					ROOT = {
+						add_casus_belli = {
+							type = cb_restore_personal_union
+							target = PREV
+							months = 600
+						}
+					}
+				}
+			}
+		}
+	}
+	GER_fra_1_4_m = { #PU them
+		icon = centralize_france
+		required_missions = {
+			GER_fra_1_3_m
+		}
+		position = 8
+		trigger = {
+			OR = {
+				NOT = {
+					any_country = {
+						bgm_france = yes
+					}
+				}
+				all_country = {
+					bgm_france = yes
+					is_subject_of = ROOT
+					is_subject_of_type = personal_union
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 250
+			add_dip_power = 250
+			add_mil_power = 250
+
+			add_country_modifier = {
+				name = ger_subordinated_preeminent_power
+				duration = -1
+			}
+		}
+	}
+}
+
+BGM_GER_2_fra_mad = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = hostile_france
+	}
+	has_country_shield = yes
+
+	GER_fra_2_2_m = { #conquest of Luxemburg
+		icon = sway_cologne
+		required_missions = {
+			GER_fra
+		}
+		position = 6
+		trigger = {
+			any_owned_province = {
+				any_neighbor_province = {
+					area = luxemburg_area
+				}
+			}
+			any_country = {
+				bgm_france = yes
+				OR = {
+					is_rival = ROOT
+					is_enemy = ROOT
+				}
+				NOT = {
+					military_strength = {
+						who = ROOT
+						value = 0.75
+					}
+				}
+			}
+		}
+		effect = {
+			bgm_get_fra = yes
+			wallonia_area = {
+				add_permanent_claim = ROOT
+			}
+			brabant_area = {
+				add_permanent_claim = ROOT
+			}
+			flanders_area = {
+				add_permanent_claim = ROOT
+			}
+			south_flanders_area = {
+				add_permanent_claim = ROOT
+			}
+			picardy_area = {
+				add_claim = ROOT
+			}
+		}
+	}
+	GER_fra_2_3_m = { #take Belgium
+		icon = the_gallic_wars
+		required_missions = {
+			GER_fra_2_2_m
+		}
+		position = 7
+		trigger = {
+			calc_true_if = {
+				amount = 6
+				all_owned_province = {
+					OR = {
+						area = wallonia_area
+						area = luxemburg_area
+						area = lorraine_area
+						area = brabant_area
+						area = flanders_area
+						area = south_flanders_area
+					}
+					any_neighbor_province = {
+						owned_by = event_target:bgm_fra_target
+					}
+				}
+			}
+		}
+		effect = {
+			add_mil_power = 100
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BGM_GER_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	##Mission Start
+	GER_proklamation = {
+		icon = Control_Junkers
+		required_missions = {
+			
+		}
+		position = 1
+		provinces_to_highlight = {
+			owned_by = ROOT
+		}
+		trigger = {
+			is_great_power = yes
+			stability = 0
+			NOT = { num_of_loans = 1 }
+		}
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+
+			add_prestige = 50
+		}
+	}
+
+	GER_defense = {
+		icon = establish_a_standing_army
+		required_missions = {
+			GER_proklamation
+		}
+		position = 2
+		provinces_to_highlight = {
+			##PROVINCESHIGHLIGHTCODE
+		}
+		trigger = {
+			manpower_percentage = 0.5
+			army_size_percentage = 0.95
+		}
+		effect = {
+			add_mil_power = 50
+			add_stability = 1
+		}
+	}
+
+	GER_navy = {
+		icon = control_coromandel
+		required_missions = {
+			GER_defense
+		}
+		position = 3
+		provinces_to_highlight = {
+			##PROVINCESHIGHLIGHTCODE
+		}
+		trigger = {
+			navy_size_percentage = 0.95
+		}
+		effect = {
+			add_dip_power = 50
+		}
+	}
+}
+
+
+
+BGM_GER_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	GER_diplomatic_security = { #either we're one of the big guys or we create an alliance bloc
+		icon = lead_the_empire
+		required_missions = {
+			GER_proklamation
+		}
+		position = 2
+		trigger = {
+			OR = {
+				any_ally = {
+					military_strength = {
+						who = ROOT
+						value = 1
+					}
+				}
+				NOT = {
+					great_power_rank = 4
+				}
+			}
+		}
+		effect = {
+			add_dip_power = 100
+		}
+	}
+
+	GER_longform_prosperity = {
+		icon = concert_of_europe
+		required_missions = {
+			GER_diplomatic_security
+			GER_navy
+		}
+		position = 4
+		trigger = {
+			OR = {
+				in_golden_age = yes
+				AND = {
+					stability = 3
+					prestige = 75
+					NOT = { num_of_loans = 1 }
+					NOT = {
+						any_owned_province = {
+							devastation = 33
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_splendor = 100
+		}
+	}
+
+	GER_mil_theory = { #either we're one of the big guys or we create an alliance bloc
+		icon = professional_army
+		required_missions = {
+			GER_longform_prosperity
+			GER_culture_3_3
+		}
+		position = 5
+		trigger = {
+			army_tradition = 66
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_mil_theory
+				duration = -1
+			}
+		}
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+BGM_GER_fp_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	##Mission End
+	##Mission Start
+	GER_east = {
+		icon = eastern_catholicization
+		required_missions = {
+			
+		}
+		position = 5
+		trigger = {
+			stability = 0
+		}
+		effect = {
+			custom_tooltip = ger_east_policy
+			hidden_effect = {
+				country_event = {
+					id = BGM_GER_mission.2
+				}
+			}
+		}
+	}
+	##Mission End
+	##
+	
+}
+
+
+
+
+
+
+BGM_GER_5_fp_locked = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = {
+			OR = {
+				has_country_flag = hostile_eastern
+				has_country_flag = friendly_eastern
+			}
+		}
+	}
+	has_country_shield = yes
+
+	GER_fp_5_2 = { #conquer the Prussian germans or eastern alliance
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_east
+		}
+		position = 6
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+	GER_fp_5_3 = { #recover the Baltics 
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_fp_5_2
+		}
+		position = 7
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+	GER_fp_5_4 = { #belarus & ukraine
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_fp_5_3
+		}
+		position = 8
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+
+	GER_fp_5_5 = { #PU on russia/claims on russia or mutual development
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_fp_4_4
+			GER_fp_5_4
+		}
+		position = 8
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+}
+
+BGM_GER_4_fp_locked = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = {
+			OR = {
+				has_country_flag = hostile_eastern
+				has_country_flag = friendly_eastern
+			}
+		}
+	}
+	has_country_shield = yes
+
+	GER_fp_4_2 = { #conquest of Bohemia or soft power influence
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_east
+		}
+		position = 6
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+	GER_fp_4_3 = { #conquest of Hungary or influence
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_fp_4_2
+		}
+		position = 7
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+	GER_fp_4_4 = { #the Balkans or influence
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_fp_4_3
+		}
+		position = 8
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+}
+
+
+
+
+BGM_GER_5_fp_f = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = friendly_eastern
+	}
+	has_country_shield = yes
+
+	GER_fp_5_2_f = { #eastern alliance
+		icon = polish_diplomacy
+		required_missions = {
+			GER_east
+		}
+		position = 6
+		trigger = {
+			OR = {
+				NOT = {
+					any_country = {
+						capital_scope = {
+							superregion = eastern_europe_superregion
+						}
+						is_great_power = yes
+					}
+				}
+				any_country = {
+					capital_scope = {
+						superregion = eastern_europe_superregion
+					}
+					is_great_power = yes
+					alliance_with = ROOT
+				}
+			}
+		}
+		effect = {
+			add_dip_power = 100
+			random_country = {
+				limit = {
+					capital_scope = {
+						superregion = eastern_europe_superregion
+					}
+					is_great_power = yes
+					alliance_with = ROOT
+				}
+				save_event_target_as = bgm_ger_east_ally_target
+			}
+		}
+	}
+	GER_fp_5_3_f = { #100 trust 
+		icon = peace_in_europe
+		required_missions = {
+			GER_fp_5_2_f
+		}
+		position = 7
+		trigger = {
+			event_target:bgm_ger_east_ally_target = {
+				capital_scope = {
+					superregion = eastern_europe_superregion
+				}
+				is_great_power = yes
+				alliance_with = ROOT
+				trust = {
+					who = ROOT
+					value = 100
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			event_target:bgm_ger_east_ally_target = {
+				country_event = {
+					id = BGM_GER_mission.4
+				}
+			}
+		}
+	}
+	GER_fp_5_4_f = { #two great powers
+		icon = encroach_on_the_germans
+		required_missions = {
+			GER_fp_5_3_f
+		}
+		position = 8
+		trigger = {
+			is_great_power = yes
+			event_target:bgm_ger_east_ally_target = {
+				is_great_power = yes
+			}
+		}
+		effect = {
+			event_target:bgm_ger_east_ally_target = {
+				country_event = {
+					id = BGM_GER_mission.5
+				}
+			}
+
+			add_prestige = 25
+
+			add_legitimacy_equivalent = yes
+
+			add_mercantilism = 10
+			
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+		}
+	}
+
+	GER_fp_5_5_f = { #mutual development
+		icon = fortress_of_belgrade
+		required_missions = {
+			GER_fp_4_4_f
+			GER_fp_5_4_f
+		}
+		position = 8
+		trigger = {
+
+		}
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = ger_eco_coop
+					duration = -1
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			random_owned_province = {
+				limit = {
+					OR = {
+						region = north_german_region
+						region = south_german_region
+						region = baltic_region
+					}
+					culture_group = germanic
+					is_capital = no
+					province_has_center_of_trade_of_level = 1
+				}
+				add_province_modifier = {
+					name = ger_eco_coop
+					duration = -1
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+
+			event_target:bgm_ger_east_ally_target = {
+				country_event = {
+					id = BGM_GER_mission.6
+				}
+			}
+		}
+	}
+}
+
+BGM_GER_4_fp_f = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = friendly_eastern
+	}
+	has_country_shield = yes
+
+	GER_fp_4_2_f = { #soft power influence
+		icon = edict_of_potsdam
+		required_missions = {
+			GER_east
+		}
+		position = 6
+		trigger = {
+			all_neighbor_country = {
+				OR = {
+					is_rival = ROOT
+					has_opinion = {
+						who = ROOT
+						value = 50
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_peacemaker
+				duration = 18250
+			}
+		}
+	}
+	GER_fp_4_3_f = { #international dynasty
+		icon = spread_the_von_wettins
+		required_missions = {
+			GER_fp_4_2_f
+		}
+		position = 7
+		trigger = {
+			calc_true_if = {
+				amount = 3
+				all_country = {
+					dynasty = ROOT
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_int_dyn
+				duration = -1
+			}
+		}
+	}
+	GER_fp_4_4_f = { #prestigious peacemaker
+		icon = the_great_school
+		required_missions = {
+			GER_fp_4_3_f
+		}
+		position = 8
+		trigger = {
+			all_neighbor_country = {
+				NOT = {
+					any_owned_province = {
+						devastation = 10
+					}
+				}
+			}
+		}
+		effect = {
+			add_stability = 1
+			add_dip_power = 250
+			add_country_modifier = {
+				name = ger_prestigious_peace
+				duration = -1
+			}
+		}
+	}
+}
+
+
+
+BGM_GER_5_fp_h = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = hostile_eastern
+	}
+	has_country_shield = yes
+
+	GER_fp_5_2_h = { #conquer the Prussian germans
+		icon = the_imperial_border
+		required_missions = {
+			GER_east
+		}
+		position = 6
+		trigger = {
+			army_size_percentage = 0.95
+			manpower_percentage = 0.75
+			west_prussia_area = {
+				type = all
+				owned_by = ROOT
+			}
+			east_prussia_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			poland_region = {
+				add_permanent_claim = ROOT
+			}
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+		}
+	}
+	GER_fp_5_3_h = { #recover the Baltics 
+		icon = the_hundred_years_war
+		required_missions = {
+			GER_fp_5_2_h
+		}
+		position = 7
+		trigger = {
+			all_province = {
+				culture_group = germanic
+				region = baltic_region
+				owned_by = ROOT
+			}
+			calc_true_if = {
+				amount = 20
+				all_owned_province = {
+					region = baltic_region
+				}
+			}
+		}
+		effect = {
+			add_prestige = 25
+			every_owned_province = {
+				limit = {
+					region = baltic_region
+				}
+				change_culture = baltic_german
+			}
+			crimea_region = {
+				add_permanent_claim = ROOT
+			}
+			ruthenia_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	GER_fp_5_4_h = { #belarus & ukraine
+		icon = les_invalides
+		required_missions = {
+			GER_fp_5_3_h
+		}
+		position = 8
+		trigger = {
+			calc_true_if = {
+				amount = 30
+				all_owned_province = {
+					region = poland_region
+				}
+			}
+			calc_true_if = {
+				amount = 25
+				all_owned_province = {
+					region = ruthenia_region
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { 
+					OR = {
+						exists = MOS
+						exists = RUS
+					}
+					RUS = { 
+						NOT = { alliance_with = ROOT } 
+						OR = {
+							government = monarchy
+							bgm_mon = yes
+						}
+					}
+					MOS = { 
+						NOT = { alliance_with = ROOT } 
+						OR = {
+							government = monarchy
+							bgm_mon = yes
+						}
+					}
+				}
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					target = RUS
+					months = 600
+				}
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					target = MOS
+					months = 600
+				}
+			}
+			else = {
+				MOS = {
+					every_owned_province = {
+						add_permanent_claim = ROOT
+					}
+				}
+				RUS = {
+					every_owned_province = {
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = { has_reform = intolerance_reform }
+					accepted_culture = ruthenian
+				}
+				add_dip_power = 100
+			}
+			else_if = {
+				limit = {
+					NOT = { has_reform = intolerance_reform }
+				}
+				add_accepted_culture = ruthenian
+			}
+			else = {
+				add_mil_power = 100
+			}
+		}
+	}
+
+	GER_fp_5_5_h = { #PU on russia/claims on russia or mutual development
+		icon = mission_war_for_the_crown
+		required_missions = {
+			GER_fp_4_4_h
+			GER_fp_5_4_h
+		}
+		position = 8
+		trigger = {
+			OR = {
+				NOT = {
+					OR = {
+						exists = MOS
+						exists = RUS
+					}
+				}
+				RUS = {
+					is_subject_of = ROOT
+					is_subject_of_type = personal_union
+				}
+				MOS = {
+					is_subject_of = ROOT
+					is_subject_of_type = personal_union
+				}
+			}
+		}
+		effect = {
+
+			if = {
+				limit = { 
+					RUS = { NOT = { religion = ROOT } exists = yes }
+					MOS = { NOT = { religion = ROOT } exists = yes }
+				}
+				RUS = { change_religion = ROOT }
+				MOS = { change_religion = ROOT }
+			}
+
+			add_adm_power = 300
+			add_dip_power = 300
+			add_mil_power = 300
+			add_prestige = 200
+		}
+	}
+}
+
+BGM_GER_4_fp_h = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = hostile_eastern
+	}
+	has_country_shield = yes
+
+	GER_fp_4_2_h = { #conquest of Bohemia or soft power influence
+		icon = centralized_empire
+		required_missions = {
+			GER_east
+		}
+		position = 6
+		trigger = {
+			army_size_percentage = 0.75
+			manpower_percentage = 0.5
+		}
+		effect = {
+			erzgebirge_area = {
+				add_permanent_claim = ROOT
+			}
+			bohemia_area = {
+				add_permanent_claim = ROOT
+			}
+			moravia_area = {
+				add_permanent_claim = ROOT
+			}
+			silesia_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	GER_fp_4_3_h = { #conquest of Hungary or influence
+		icon = the_hungarian_question
+		required_missions = {
+			GER_fp_4_2_h
+		}
+		position = 7
+		trigger = {
+			calc_true_if = {
+				amount = 10
+				all_owned_province = {
+					OR = {
+						area = erzgebirge_area
+						area = bohemia_area
+						area = moravia_area
+						area = silesia_area
+					}
+				}
+			}
+			any_owned_province = {
+				any_neighbor_province = {
+					region = carpathia_region
+				}
+			}
+		}
+		effect = {
+			add_mil_power = 50
+			carpathia_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	GER_fp_4_4_h = { #the Balkans or influence
+		icon = patronize_the_scuole_grandi
+		required_missions = {
+			GER_fp_4_3_h
+		}
+		position = 8
+		trigger = {
+			calc_true_if = {
+				amount = 25
+				all_owned_province = {
+					region = carpathia_region
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+BGM_GER_3_soc = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	##Mission Start
+	GER_begin_kulturkampf = {
+		icon = mission_rb_control_state_religion
+		required_missions = {
+			GER_talented_statesman
+		}
+		position = 9
+		provinces_to_highlight = {
+			owned_by = ROOT
+			OR = {
+				NOT = { religion = ROOT }
+				has_owner_accepted_culture = no
+			}
+		}
+		trigger = {
+			OR = {
+				calc_true_if = {
+					amount = 50
+					all_owned_province = {
+						unrest = 4
+					}
+				}
+				has_institution = nationalism_institution
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_kulturkampf_conversion
+				duration = 10950
+			}
+		}
+	}
+	##Mission End
+	##
+}
+
+BGM_GER_2_soc = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	##Mission Start
+	GER_foreign_debate = { #foreign languages in the Empire
+		icon = bavarian_netherlands
+		required_missions = {
+			GER_begin_kulturkampf
+		}
+		position = 10
+		provinces_to_highlight = {
+			owned_by = ROOT
+			OR = {
+				NOT = { religion = ROOT }
+				has_owner_accepted_culture = no
+			}
+		}
+		trigger = {
+			OR = {
+				has_global_modifier_value = {
+					which = tolerance_heretic
+					value = 3
+				}
+				NOT = {
+					has_global_modifier_value = {
+						which = tolerance_heretic
+						value = -3
+					}
+				}
+				AND = {
+					stability = 3
+					NOT = {
+						any_owned_province = {
+							unrest = 1
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					has_global_modifier_value = {
+						which = tolerance_heretic
+						value = 3
+					}
+				}
+				add_country_modifier = {
+					name = ger_kulturkampf_lib
+					duration = -1
+				}
+				set_country_flag = civic_nationalism
+			}
+			else = {
+				add_country_modifier = {
+					name = ger_kulturkampf_nat
+					duration = -1
+				}
+				set_country_flag = cultural_nationalism
+			}
+		}
+	}
+	GER_reich_chancellery = { #Found the office of Kanzler
+		icon = found_batavia
+		required_missions = {
+			GER_resolve_kulturkampf
+		}
+		position = 12
+		trigger = {
+			has_adm_advisor = yes
+			OR = {
+				statesman = 1
+				diplomat = 1
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					has_advisor = statesman
+				}
+				add_country_modifier = {
+					name = ger_statesman
+					duration = -1
+				}
+				add_adm_power = 100
+			}
+			else = {
+				add_country_modifier = {
+					name = ger_diplomat
+					duration = -1
+				}
+				add_dip_power = 100
+			}
+		}
+	}
+}
+
+BGM_GER_3_soc_2 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	##Mission Start
+	GER_education_debate = {
+		icon = wittenberg_university
+		required_missions = {
+			GER_begin_kulturkampf
+		}
+		position = 10
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = {
+				religion = ROOT
+			}
+		}
+		trigger = {
+			OR = {
+				adm_tech = 30
+				NOT = {
+					any_neighbor_country = {
+						tech_difference = 0
+					}
+				}
+			}
+			religious_unity = 0.66
+		}
+		effect = {
+			set_country_flag = ger_compulsory_ed
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							religion = fraticelli
+							religion = catholic
+						}
+					}
+					NOT = {
+						has_global_modifier_value = {
+							which = tolerance_heretic
+							value = -2
+						}
+					}
+				}
+				add_country_modifier = {
+					name = ger_prot_supremacy
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = { 
+					OR = {
+						religion = fraticelli
+						religion = catholic
+					}
+					NOT = {
+						has_global_modifier_value = {
+							which = tolerance_heretic
+							value = -2
+						}
+					}
+				}
+				add_country_modifier = {
+					name = ger_catholic_supremacy
+					duration = -1
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = ger_secular_supremacy
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	GER_resolve_kulturkampf = {
+		icon = spread_piety
+		required_missions = {
+			GER_foreign_debate
+			GER_education_debate
+			GER_religious_debate
+		}
+		position = 11
+		provinces_to_highlight = {
+			owned_by = ROOT
+			unrest = 1
+		}
+		trigger = {
+			stability = 1
+			has_any_disaster = no
+			all_owned_province = {
+				NOT = {
+					unrest = 1
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					calc_true_if = {
+						amount = 2
+						has_country_modifier = ger_catholic_supremacy
+						has_country_modifier = ger_prot_supremacy
+						has_country_flag = religious_character
+						has_country_flag = cultural_nationalism
+					}
+				}
+				add_country_modifier = {
+					name = ger_rel_society
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						amount = 2
+						has_country_flag = ger_secular_morality
+						has_country_flag = secular_character
+					}
+				}
+				add_country_modifier = {
+					name = ger_sec_society
+					duration = -1
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = ger_bal_society
+					duration = -1
+				}
+			}
+		}
+	}
+
+	GER_modernizing_society = {
+		icon = austria_prospers
+		required_missions = {
+			GER_resolve_kulturkampf
+		}
+		position = 13
+		provinces_to_highlight = {
+			owned_by = ROOT
+			is_capital_of = ROOT
+			is_prosperous = no
+		}
+		trigger = {
+			stability = 1
+			capital_scope = {
+				is_prosperous = yes
+			}
+			has_institution = compulsory_education
+			has_institution = industrialization
+		}
+		effect = {
+			add_prestige = 25
+		}
+	}
+
+	GER_everlasting_culture = {
+		icon = mission_early_modern_university
+		required_missions = {
+			GER_fate_revolution
+			GER_modernizing_society
+		}
+		position = 13
+		provinces_to_highlight = {
+			owned_by = ROOT
+			is_prosperous = no
+		}
+		trigger = {
+			NOT = {
+				great_power_rank = 4
+			}
+			religious_unity = 0.75
+			NOT = {
+				any_owned_province = {
+					unrest = 1
+				}
+			}
+			calc_true_if = {
+				amount = 50
+				all_owned_province = {
+					is_prosperous = yes
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_german_century
+				duration = -1
+			}
+			add_prestige = 100
+			add_stability = 1
+		}
+	}
+}
+
+BGM_GER_4_soc = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	##Mission Start
+	GER_religious_debate = { #Fate of Religions
+		icon = show_piety
+		required_missions = {
+			GER_begin_kulturkampf
+		}
+		position = 10
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = { religion = owner }
+		}
+		trigger = {
+			religious_unity = 0.75
+		}
+		effect = {
+			if = {
+				limit = {
+					full_idea_group = humanist_ideas
+				}
+				add_country_modifier = {
+					name = ger_secular_morality
+					duration = 18250
+				}
+				set_country_flag = secular_character
+			}
+			else = {
+				add_country_modifier = {
+					name = ger_religious_morality
+					duration = 18250
+				}
+				set_country_flag = religious_character
+			}
+		}
+	}
+
+	GER_humboldt = { #Renovation of the Humboldt University
+		icon = Compulsory_Education
+		required_missions = {
+			GER_resolve_kulturkampf
+		}
+		position = 12
+		provinces_to_highlight = {
+			##PROVINCESHIGHLIGHTCODE
+		}
+		trigger = {
+			owns = 50
+			OR = {
+				innovativeness = 33
+				AND = {
+					full_idea_group = innovativeness_ideas
+					has_institution = enlightenment
+					capital_scope = {
+						is_prosperous = yes
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						50 = {
+							has_great_project = {
+								type = humboldt_university
+								tier = 3
+							}
+						}
+					}
+				}
+				50 = {
+					add_great_project_tier = {
+						type = humboldt_university
+						tier = 1
+					}
+				}
+			}
+			else = {
+				add_adm_tech = 1
+				add_dip_tech = 1
+				add_mil_tech = 1
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BGM_GER_1_rev = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	##Mission Start
+	GER_fate_revolution = { #Event: Establish a Parliament, begin Revolutionary persecutions, declare Jacobin State, declare war against the old order
+		icon = crush_the_revolution
+		required_missions = {
+			
+		}
+		position = 13
+		provinces_to_highlight = {
+			##PROVINCESHIGHLIGHTCODE
+		}
+		trigger = {
+			has_country_flag = had_revolution
+			has_any_disaster = no
+		}
+		effect = {
+			country_event = {
+				id = BGM_GER_mission.1
+			}
+		}
+	}
+	##Mission End
+	##
+}
+
+
+
+
+
+
+BGM_GER_1_rev_locked = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = {
+			OR = {
+				has_country_flag = con_mod
+				has_country_flag = con_hard
+				has_country_flag = ger_jacobin
+				has_country_flag = ger_girondist
+			}
+		}
+	}
+	has_country_shield = yes
+
+	GER_rev_1_1_l = { #Consolidate the Parliament//Crack down on the Revolutionaries//Encourage Revolutionary Fervor
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_fate_revolution
+		}
+		position = 14
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+	GER_rev_1_2_l = { #Constitution//Monarchical Consolidation//Reform the Administration//Neighboring Revolutionary States
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_rev_1_1_l
+		}
+		position = 15
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+	GER_rev_1_3_l = {
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_rev_1_2_l
+		}
+		position = 15
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+	GER_rev_1_4_l = {
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_rev_1_3_l
+			GER_rev_3_2_l
+		}
+		position = 15
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+}
+
+BGM_GER_2_rev_locked = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = {
+			OR = {
+				has_country_flag = con_mod
+				has_country_flag = con_hard
+				has_country_flag = ger_jacobin
+				has_country_flag = ger_girondist
+			}
+		}
+	}
+	has_country_shield = yes
+
+	GER_rev_2_1_l = { #Universal Suffrage//Enlightenment Absolutism//Establish Tribunes//Enact Conscription
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_rev_1_1_l
+		}
+		position = 15
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+	
+}
+
+BGM_GER_3_rev_locked = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = {
+			OR = {
+				has_country_flag = con_mod
+				has_country_flag = con_hard
+				has_country_flag = ger_jacobin
+				has_country_flag = ger_girondist
+			}
+		}
+	}
+	has_country_shield = yes
+
+	GER_rev_2_2_l = { #Stabilize the Society//Conservative or Revolutionary Alliances/Subjects
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_rev_1_1_l
+		}
+		position = 15
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+	GER_rev_3_2_l = { #Stabilize the Society//Conservative or Revolutionary Alliances/Subjects
+		icon = mission_unknown_mission
+		required_missions = {
+			GER_rev_2_2_l
+		}
+		position = 16
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = {
+			##MISSIONEFFECT
+		}
+	}
+}
+
+####################
+
+BGM_GER_1_rev_cm = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = con_mod
+	}
+	has_country_shield = yes
+
+	GER_rev_1_1_cm = { #Consolidate the Parliament
+		icon = interfere_in_germany
+		required_missions = {
+			GER_fate_revolution
+		}
+		position = 14
+		trigger = {
+			stability = 1
+			NOT = {
+				estate_influence = {
+					estate = all
+					influence = 50
+				}
+			}
+			estate_loyalty = {
+				estate = all
+				loyalty = 50
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					has_parliament = no
+				}
+				set_country_flag = ger_parliament
+				add_government_reform = ger_parliament_reform
+				add_stability = 1
+			}
+			else = {
+				add_adm_power = 100
+			}
+		}
+	}
+	GER_rev_1_2_cm = { #Constitution
+		icon = standardize_relazioni
+		required_missions = {
+			GER_rev_1_1_cm
+		}
+		position = 15
+		trigger = {
+			has_parliament = yes
+		}
+		effect = {
+			country_event = {
+				id = BGM_GER_mission.7
+			}
+		}
+	}
+
+	GER_rev_1_3_cm = { #enforce the new order
+		icon = a_strong_government
+		required_missions = {
+			GER_rev_1_2_cm
+		}
+		position = 16
+		trigger = {
+			stability = 1
+			NOT = {
+				any_owned_province = {
+					unrest = 1
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+		}
+	}
+	GER_rev_1_4_cm = { #amend the constitution so the estates are weak
+		icon = a_center_of_religion
+		required_missions = {
+			GER_rev_1_3_cm
+			GER_rev_3_2_cm
+		}
+		position = 17
+		trigger = {
+			NOT = {
+				estate_influence = {
+					estate = all
+					influence = 40
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_cucked_estates
+				duration = -1
+			}
+		}
+	}
+}
+
+BGM_GER_2_rev_cm = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = con_mod
+	}
+	has_country_shield = yes
+
+	GER_rev_2_1_cm = { #Universal Suffrage
+		icon = republican_yearnings
+		required_missions = {
+			GER_rev_1_1_cm
+		}
+		position = 15
+		trigger = {
+			has_adm_advisor = yes
+			OR = {
+				full_idea_group = humanist_ideas
+				all_owned_province = {
+					has_owner_accepted_culture = yes
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_stability = 1
+			add_splendor = 100
+		}
+	}
+}
+
+BGM_GER_3_rev_cm = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = con_mod
+	}
+	has_country_shield = yes
+
+	GER_rev_2_2_cm = { #Stabilize the Society
+		icon = sources_of_trade
+		required_missions = {
+			GER_rev_1_1_cm
+		}
+		position = 15
+		trigger = {
+			stability = 1
+			NOT = {
+				any_owned_province = {
+					devastation = 20
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_reconstruction
+				duration = 10950
+			}
+		}
+	}
+
+	GER_rev_3_2_cm = { #show goodwill to the people
+		icon = establish_oktoberfest
+		required_missions = {
+			GER_rev_2_2_cm
+		}
+		position = 15
+		trigger = {
+			years_of_income = 0.25
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_goodwill
+				duration = 10950
+			}
+			add_years_of_income = -0.25
+			if = {
+				limit = { 
+					NOT = {
+						stability = 3
+					}
+				}
+				add_stability = 1
+			}
+			else = {
+				add_adm_power = 100
+			}
+		}
+	}
+}
+
+
+
+
+BGM_GER_1_rev_ch = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = con_hard
+	}
+	has_country_shield = yes
+
+	GER_rev_1_1_ch = { #Crack down on the Revolutionaries
+		icon = protect_against_austria
+		required_missions = {
+			GER_fate_revolution
+		}
+		position = 14
+		trigger = {
+			absolutism = 75
+
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_crushed_revolution
+				duration = 18250
+			}
+		}
+	}
+	GER_rev_1_2_ch = { #Monarchical Consolidation
+		icon = Blood_Iron
+		required_missions = {
+			GER_rev_1_1_ch
+		}
+		position = 15
+		trigger = {
+			absolutism = 100
+			NOT = {
+				estate_influence = {
+					estate = all
+					influence = 40
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_monarchical_consoldiation
+				duration = -1
+			}
+		}
+	}
+
+	GER_rev_1_3_ch = { #a royalist constitution
+		icon = dreams_of_grandeur
+		required_missions = {
+			GER_rev_1_2_ch
+		}
+		position = 16
+		trigger = {
+			army_size_percentage = 0.9
+			army_tradition = 75
+		}
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+		}
+	}
+	GER_rev_1_4_ch = { #no more estates
+		icon = counter_reformation
+		required_missions = {
+			GER_rev_1_3_ch
+			GER_rev_3_2_ch
+		}
+		position = 17
+		trigger = {
+			NOT = {
+				estate_influence = {
+					estate = all
+					influence = 25
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_final_estate
+				duration = -1
+			}
+		}
+	}
+}
+
+BGM_GER_2_rev_ch = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = con_hard
+	}
+	has_country_shield = yes
+
+	GER_rev_2_1_ch = { #Enlightenment Absolutism
+		icon = issue_general_reglement
+		required_missions = {
+			GER_rev_1_1_ch
+		}
+		position = 15
+		trigger = {
+			OR = {
+				philosopher = 1
+				statesman = 1
+			}
+		}
+		effect = {
+			add_prestige = 30
+
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+		}
+	}
+}
+
+BGM_GER_3_rev_ch = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = con_hard
+	}
+	has_country_shield = yes
+	GER_rev_2_2_ch = { #Conservative Alliances
+		icon = a.e.i.o.u.
+		required_missions = {
+			GER_rev_1_1_ch
+		}
+		position = 15
+		trigger = {
+			OR = {
+				AND = {
+					is_hegemon = yes
+					NOT = {
+						any_country = {
+							capital_scope = {
+								continent = ROOT
+							}
+							is_great_power = yes
+						}
+					}
+				}
+				num_of_allies = 2
+			}
+		}
+		effect = {
+			add_dip_power = 200
+		}
+	}
+	GER_rev_3_2_ch = { #fight back the revolution
+		icon = Burn_Wooden_Wall
+		required_missions = {
+			GER_rev_2_2_ch
+		}
+		position = 16
+		trigger = {
+			adm_tech = 33
+			NOT = {
+				any_country = {
+					capital_scope = {
+						continent = ROOT
+					}
+					is_great_power = yes
+					bgm_rev = yes
+				}
+			}
+		}
+		effect = {
+			add_yearly_manpower = 0.25
+		}
+	}
+}
+
+BGM_GER_1_rev_j = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = ger_jacobin
+	}
+	has_country_shield = yes
+
+	GER_rev_1_1_j = { #Encourage Revolutionary Fervor
+		icon = boh_humiliate_austria
+		required_missions = {
+			GER_fate_revolution
+		}
+		position = 14
+		trigger = {
+			revolutionary_zeal = 33
+		}
+		effect = {
+			add_revolutionary_zeal = 100
+			every_owned_province = {
+				set_revolution_in_province = yes
+			}
+		}
+	}
+	GER_rev_1_2_j = { #Reform the Administration
+		icon = geneva_conventions
+		required_missions = {
+			GER_rev_1_1_j
+		}
+		position = 15
+		trigger = {
+			has_global_modifier_value = {
+				which = governing_capacity_modifier
+				value = 0.15
+			}
+			OR = {
+				full_idea_group = administrative_ideas
+				full_idea_group = infrastructure_ideas
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_reformed_admin
+				duration = -1
+			}
+		}
+	}
+	GER_rev_1_3_j = { #extensive bureaucracy
+		icon = the_emden_company
+		required_missions = {
+			GER_rev_1_2_j
+		}
+		position = 16
+		trigger = {
+			has_global_modifier_value = {
+				which = global_tax_modifier
+				value = 0.25
+			}
+		}
+		effect = { #we can use our bureaucracy to get added tax and manpower
+			add_years_of_income = 0.33
+			add_yearly_manpower = 0.33
+
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+		}
+	}
+	GER_rev_1_4_j = { #revolutionary culture
+		icon = the_london_steelyard
+		required_missions = {
+			GER_rev_1_3_j
+			GER_rev_3_2_j
+		}
+		position = 17
+		trigger = {
+			stability = 3
+			prestige = 75
+			NOT = {
+				great_power_rank = 3
+			}
+			OR = {
+				is_hegemon = yes
+				is_revolution_target = yes
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_rev_culture
+				duration = -1
+			}
+		}
+	}
+}
+
+
+
+BGM_GER_2_rev_j = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = ger_jacobin
+	}
+	has_country_shield = yes
+
+	GER_rev_2_1_j = { #Establish Tribunes
+		icon = balance_of_power
+		required_missions = {
+			GER_rev_1_1_j
+		}
+		position = 15
+		trigger = {
+			is_revolution_target = yes
+			revolutionary_zeal = 66
+		}
+		effect = {
+			if = {
+				limit = {
+					government = republic
+				}
+				add_country_modifier = {
+					name = ger_tribunals
+					duration = 10950
+				}
+			}
+			else = {
+				add_adm_power = 100
+			}
+		}
+	}
+}
+
+BGM_GER_3_rev_j = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = ger_jacobin
+	}
+	has_country_shield = yes
+	GER_rev_2_2_j = { #Begin Internal Censuses
+		icon = french_revolution
+		required_missions = {
+			GER_rev_1_1_j
+		}
+		position = 15
+		trigger = {
+			stability = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_censuses
+				duration = -1
+			}
+		}
+	}
+	GER_rev_3_2_j = { #Development & Internal Management
+		icon = expand_the_arsenal
+		required_missions = {
+			GER_rev_2_2_j
+		}
+		position = 16
+		trigger = {
+			OR = {
+				calc_true_if = {
+					amount = 50
+					all_owned_province = {
+						has_building = courthouse
+					}
+				}
+				calc_true_if = {
+					amount = 50
+					all_owned_province = {
+						has_building = town_hall
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { 
+					calc_true_if = {
+						amount = 50
+						all_owned_province = {
+							has_building = town_hall
+						}
+					}
+				}
+				add_adm_power = 200
+				add_years_of_income = 0.25
+				add_yearly_manpower = 0.25
+			}
+			else = {
+				add_adm_power = 100
+				add_years_of_income = 0.125
+				add_yearly_manpower = 0.125
+			}
+		}
+	}
+}
+
+
+
+BGM_GER_1_rev_g = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = ger_girondist
+	}
+	has_country_shield = yes
+
+	GER_rev_1_1_g = { #Encourage Revolutionary Fervor
+		icon = boh_humiliate_austria
+		required_missions = {
+			GER_fate_revolution
+		}
+		position = 14
+		trigger = {
+			revolutionary_zeal = 33
+		}
+		effect = {
+			add_revolutionary_zeal = 100
+			every_owned_province = {
+				set_revolution_in_province = yes
+			}
+		}
+	}
+	GER_rev_1_2_g = { #Neighboring Revolutionary States
+		icon = control_swabia
+		required_missions = {
+			GER_rev_1_1_g
+		}
+		position = 15
+		trigger = {
+			all_neighbor_country = {
+				bgm_rev = yes
+			}
+		}
+		effect = {
+			add_stability = 1
+			add_dip_power = 100
+		}
+	}
+	GER_rev_1_3_g = { #pan germanism
+		icon = deal_with_the_illuminati
+		required_missions = {
+			GER_rev_1_2_g
+		}
+		position = 16
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 1
+				region = low_countries_region
+			}
+		}
+		effect = {
+			if = {
+				limit = { 
+					any_subject_country = {
+						capital_scope = {
+							region = low_countries_region
+						}
+					}
+				}
+				ROOT = {
+					every_subject_country = {
+						limit = {
+							capital_scope = {
+								region = low_countries_region
+							}
+						}
+						ROOT = {
+							inherit = PREV
+						}
+					}
+				}
+			}
+
+
+			add_dip_power = 100
+			add_revolutionary_zeal = 100
+			change_innovativeness = 1
+		}
+	}
+	GER_rev_1_4_g = { #revolutionary europe
+		icon = give_him_back_his_legions
+		required_missions = {
+			GER_rev_1_3_g
+			GER_rev_3_2_g
+		}
+		position = 17
+		trigger = {
+			NOT = {
+				any_country = {
+					capital_scope = {
+						continent = europe
+					}
+					bgm_rev = no
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_gir_supremacy
+				duration = -1
+			}
+			add_adm_power = 250
+			add_dip_power = 250
+			add_mil_power = 250
+		}
+	}
+}
+
+
+
+BGM_GER_2_rev_g = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = ger_girondist
+	}
+	has_country_shield = yes
+
+	GER_rev_2_1_g = { #Enact Conscription
+		icon = army_reforms
+		required_missions = {
+			GER_rev_1_1_g
+		}
+		position = 15
+		trigger = {
+			revolutionary_zeal = 50
+			calc_true_if = {
+				amount = 50
+				all_owned_province = {
+					OR = {
+						has_building = regimental_camp
+						has_building = conscription_center
+					}
+				}
+			}
+		}
+		effect = {
+			add_yearly_manpower = 0.1
+			add_country_modifier = {
+				name = ger_gir_conscription
+				duration = 18250
+			}
+		}
+	}
+}
+
+BGM_GER_3_rev_g = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = ger_girondist
+	}
+	has_country_shield = yes
+	GER_rev_2_2_g = { #Expand Military Industry
+		icon = a_question_of_spain
+		required_missions = {
+			GER_rev_1_1_g
+		}
+		position = 15
+		trigger = {
+			calc_true_if = {
+				amount = 25
+				all_owned_province = {
+					has_manufactory_trigger = yes
+					OR = {
+						trade_goods = iron
+						trade_goods = copper
+						trade_goods = livestock
+						trade_goods = grain
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_gir_war_effort
+				duration = 7300
+			}
+		}
+	}
+
+	GER_rev_3_2_g = { #call to all citizens
+		icon = mission_have_manufactories
+		required_missions = {
+			GER_rev_2_2_g
+		}
+		position = 16
+		trigger = {
+			is_at_war = yes
+			revolutionary_zeal = 90
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_gir_war_effort
+				duration = 10950
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BGM_GER_4_ind = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	##Mission Start
+	GER_ind_4_1 = {
+		icon = claim_tirol
+		required_missions = {
+			GER_ind_1
+		}
+		position = 14
+		provinces_to_highlight = {
+			owned_by = ROOT
+			area = south_saxony_area
+		}
+		trigger = {
+			south_saxony_area = {
+				type = all
+				owned_by = ROOT
+			}
+			south_saxony_area = {
+				all_province = {
+					development = 15
+					has_manufactory_trigger = yes
+					num_of_buildings_in_province = 4
+				}
+			}
+		}
+		effect = {
+			south_saxony_area = {
+				every_province = {
+					add_province_modifier = {
+						name = ger_gir_war_effort
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	GER_ind_4_2 = {
+		icon = appease_the_estates
+		required_missions = {
+			GER_ind_4_1
+		}
+		position = 15
+		provinces_to_highlight = {
+			owned_by = ROOT
+			
+		}
+		trigger = {
+			capital_scope = {
+				has_manufactory_trigger = yes
+				has_building = factory_infrastructure
+				all_neighbor_province = {
+					OR = {
+						NOT = {
+							owned_by = ROOT
+						}
+						AND = {
+							owned_by = ROOT
+							has_manufactory_trigger = yes
+						}
+					}
+				}
+				development = 30
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_prosperity = 100
+				add_base_production = 2
+				every_neighbor_province = {
+					limit = {
+						owned_by = ROOT
+					}
+					add_prosperity = 100
+					add_base_production = 1
+				}
+			}
+		}
+	}
+	GER_ind_4_3 = {
+		icon = mission_colonial
+		required_missions = {
+			GER_ind_4_2
+		}
+		position = 16
+		provinces_to_highlight = {
+			owned_by = ROOT
+			OR = {
+				area = north_westphalia_area
+				area = westphalia_area
+				area = north_rhine_area
+				area = lower_rhineland_area
+				area = upper_rhineland_area
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 15
+				all_owned_province = {
+					OR = {
+						AND = {
+							OR = {
+								trade_goods = cloth
+								trade_goods = iron
+								trade_goods = copper
+								trade_goods = paper
+								trade_goods = coal
+							}
+							base_production = 6
+						}
+						AND = {
+							OR = {
+								trade_goods = grain
+								trade_goods = livestock
+								trade_goods = wine
+								trade_goods = fish
+							}
+							base_manpower = 6
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = north_rhine_area
+						area = north_westphalia_area
+						area = westphalia_area
+					}
+					development = 15
+				}
+				add_province_modifier = {
+					name = ger_ruhr
+					duration = -1
+				}
+				add_base_production = 1
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = lower_rhineland_area
+						area = upper_rhineland_area
+					}
+				}
+				add_province_modifier = {
+					name = ger_rhineland_periphery
+					duration = -1
+				}
+				add_base_manpower = 1
+			}
+		}
+	}
+}
+
+BGM_GER_5_ind = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	##Mission Start
+	GER_ind_1 = {
+		icon = italian_riches
+		required_missions = {
+			
+		}
+		position = 13
+		provinces_to_highlight = {
+			##PROVINCESHIGHLIGHTCODE
+		}
+		trigger = {
+			has_institution = industrialization
+			NOT = {
+				any_owned_province = {
+					devastation = 50
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_heavy_industry
+				duration = 14600
+			}
+		}
+	}
+
+	GER_ind_2 = {
+		icon = develop_our_capital
+		required_missions = {
+			GER_ind_1
+		}
+		position = 14
+		provinces_to_highlight = {
+			owned_by = ROOT
+			province_has_center_of_trade_of_level = 1
+			NOT = {
+				development = 20
+			}
+			num_of_buildings_in_province = 4
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 8
+				all_owned_province = {
+					province_has_center_of_trade_of_level = 1
+					development = 20
+					num_of_buildings_in_province = 4
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = bgm_ger_industrial_center
+			custom_tooltip = bgm_ger_industrial_hinterland
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						province_has_center_of_trade_of_level = 1
+						development = 20
+						num_of_buildings_in_province = 4
+					}
+					add_province_modifier = {
+						name = ger_imperial_city
+						duration = -1
+					}
+					every_neighbor_province = {
+						limit = {
+							owned_by = ROOT
+						}
+						add_province_modifier = {
+							name = ger_city_hinterland
+							duration = -1
+						}
+					}
+				}
+			}
+		}
+	}
+
+	GER_ind_3 = {
+		icon = reclaim_the_ducal_lands
+		required_missions = {
+			GER_ind_2
+		}
+		position = 15
+		provinces_to_highlight = {
+			owned_by = ROOT
+			OR = {
+				trade_goods = fish
+				trade_goods = livestock
+				trade_goods = grain
+				trade_goods = wine
+			}
+			NOT = {
+				base_manpower = 6
+			}
+			NOT = {
+				OR = {
+					has_building = barracks
+					has_building = training_fields
+					has_building = soldier_households
+				}
+			}
+			NOT = {
+				OR = {
+					has_building = regimental_camp
+					has_building = conscription_center
+				}
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 20
+				all_owned_province = {
+					OR = {
+						trade_goods = fish
+						trade_goods = livestock
+						trade_goods = grain
+						trade_goods = wine
+					}
+					base_manpower = 6
+					OR = {
+						has_building = barracks
+						has_building = training_fields
+						has_building = soldier_households
+					}
+					OR = {
+						has_building = regimental_camp
+						has_building = conscription_center
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = bgm_ger_farmland_prov
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							trade_goods = fish
+							trade_goods = livestock
+							trade_goods = grain
+							trade_goods = wine
+						}
+						base_manpower = 6
+						OR = {
+							has_building = barracks
+							has_building = training_fields
+							has_building = soldier_households
+						}
+						OR = {
+							has_building = regimental_camp
+							has_building = conscription_center
+						}
+					}
+					add_province_modifier = {
+						name = ger_farmland
+						duration = -1
+					}
+					add_prosperity = 25
+				}
+			}
+		}
+	}
+
+	GER_ind_4 = {
+		icon = imperial_capitals
+		required_missions = {
+			GER_ind_4_3
+			GER_ind_3
+		}
+		position = 17
+		provinces_to_highlight = {
+			OR = {
+				province_id = 262
+				province_id = 1926
+				province_id = 186
+				province_id = 1269
+			}
+			NOT = { has_most_province_trade_power = ROOT }
+		}
+		trigger = {
+			262 = { has_most_province_trade_power = ROOT }
+			1926 = { has_most_province_trade_power = ROOT }
+			186 = { has_most_province_trade_power = ROOT }
+			1269 = { has_most_province_trade_power = ROOT }
+		}
+		effect = {
+			add_country_modifier = {
+				name = ger_center_trade
+				duration = -1
+			}
+		}
+	}
+	##Mission End
+	##
+}

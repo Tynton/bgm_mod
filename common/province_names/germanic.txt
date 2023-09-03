@@ -22,10 +22,10 @@
 5275 = { "Karlstadt" "Carlstadt" }
 5276 = "Kopreinitz"
 
-5105 = "Macharscha"
-5128 = "Klausenburg"
-5129 = { "Desch" "Burglos" }
-5130 = "Kronstadt"
+#5105 = "Macharscha"
+5128 = "Ypern"
+
+5132 = "Ostende"
 
 4999 = "Raab"
 5000 = "Mischkolz"
@@ -39,14 +39,16 @@
 5010 = "Egersee"
 5011 = "Körösch"
 
+1931 = "Emden"
+
 5090 = "Tull"
 
-5092 = { "Ougstalland" "Augshtalann" }
+#5092 = { "Ougstalland" "Augshtalann" }
 
-5110 = "Munkács"
-5109 = "Ungwar"
+#5110 = "Munkács"
+#5109 = "Ungwar"
 #5095 = "Kaschau"
-5108 = "Lizenz"
+#5108 = "Lizenz"
 
 89 = "Amiens"
 
@@ -429,7 +431,8 @@
 #5096 = "Sillein"
 #5097 = "Altsohl"
 #5099 = "Trebischau"
-5100 = "Unterkubin"
+#5100 = "Unterkubin"
+5101 = "Velwisch"
 
 5241 = "Laibach"
 5242 = "Gottschee"

@@ -1,0 +1,1434 @@
+namespace = building_ai
+
+province_event = { #University
+	id = building_ai.1
+	title = none
+	desc = none
+	picture = none
+
+	
+	
+	trigger = {
+		owner = {
+			ai = yes
+			OR = {
+				num_of_cities = 35
+				is_great_power = yes
+			}
+			is_in_deficit = no
+			OR = {
+				is_at_war = no
+				is_in_war = {
+					war_score = 50
+				}
+			}
+			bgm_building_owner = yes
+			treasury = 450
+			adm_tech = 23
+		}
+		num_free_building_slots = 0
+		NOT = {
+			OR = {
+				has_construction = core
+				has_construction = building
+				has_construction = culture
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+		
+		modifier = {
+			factor = 0.5
+			has_terrain = farmlands
+		}
+	}
+	
+	option = {
+		name = none
+		add_building_construction = {
+			building = university
+			speed = 1.0
+			cost = 0.85
+		}
+	}
+}
+
+#MANUFACTORY
+province_event = {
+	id = building_ai.2
+	title = none
+	desc = none
+	picture = none
+
+	trigger = {
+		always = no #Borrowed from other file
+		owner = {
+			ai = yes
+			OR = {
+				num_of_cities = 35
+				is_great_power = yes
+			}
+			OR = {
+				is_at_war = no
+				is_in_war = {
+					war_score = 50
+				}
+			}
+			treasury = 750
+			NOT = { num_of_loans = 1 }
+			adm_tech = 16
+			dip_tech = 16
+			mil_tech = 16
+		}
+		NOT = {
+			OR = {
+				has_building = wharf
+				has_building = soldier_households
+				has_building = impressment_offices
+				has_building = mills
+				has_building = furnace
+				has_building = tradecompany
+				has_building = plantations
+				has_building = textile
+				has_building = weapons
+				has_building = ramparts
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+	option = {
+		if = {
+			limit = {
+				trade_goods = salt
+			}
+			add_building_construction = {
+				building = wharf
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					trade_goods = wine
+					trade_goods = grain
+					trade_goods = livestock
+					AND = {
+						trade_goods = fish
+						base_manpower = 5
+					}
+				}
+			}
+			add_building_construction = {
+				building = soldier_households
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+		if = {
+			limit = {
+				trade_goods = fish
+				NOT = {
+					base_manpower = 5
+				}
+			}
+			add_building_construction = {
+				building = impressment_offices
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					trade_goods = paper
+					trade_goods = gems
+					trade_goods = tropical_wood
+					trade_goods = chinaware
+					trade_goods = glass
+				}
+			}
+			add_building_construction = {
+				building = mills
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					trade_goods = coal
+					trade_goods = steel
+				}
+			}
+			add_building_construction = {
+				building = furnace
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					trade_goods = ivory
+					trade_goods = slaves
+					trade_goods = spices
+					trade_goods = cloves
+					trade_goods = fur
+					trade_goods = incense
+				}
+			}
+			add_building_construction = {
+				building = tradecompany
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					trade_goods = coffee
+					trade_goods = cotton
+					trade_goods = sugar
+					trade_goods = tobacco
+					trade_goods = tea
+					trade_goods = cocoa
+				}
+			}
+			add_building_construction = {
+				building = plantations
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					trade_goods = wool
+					trade_goods = cloth
+					trade_goods = silk
+					trade_goods = dyes
+				}
+			}
+			add_building_construction = {
+				building = textile
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					trade_goods = iron
+					trade_goods = copper
+				}
+			}
+			add_building_construction = {
+				building = weapons
+				speed = 1.0
+				cost = 0.9
+			}
+		}
+	}
+}
+
+province_event = {
+	id = building_ai.3
+	title = none
+	desc = none
+	picture = none
+
+	trigger = {
+		num_free_building_slots = 1
+		OR = {
+			trade_goods = grain
+			trade_goods = livestock
+			trade_goods = wine
+		}
+		base_production = 5
+		has_building = workshop
+		owner = {
+			ai = yes
+			OR = {
+				num_of_cities = 35
+				is_great_power = yes
+			}
+			bgm_building_owner = yes
+			OR = {
+				is_at_war = no
+				is_in_war = {
+					war_score = 50
+				}
+			}
+			treasury = 750
+			adm_tech = 6
+		}
+		NOT = {
+			OR = {
+				has_building = wharf
+				has_building = soldier_households
+				has_building = impressment_offices
+				has_building = mills
+				has_building = furnace
+				has_building = tradecompany
+				has_building = plantations
+				has_building = textile
+				has_building = weapons
+				has_building = ramparts
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+	option = {
+		add_building_construction = {
+			building = farm_estate
+			speed = 1.0
+			cost = 0.95
+		}
+	}
+}
+
+province_event = {
+	id = building_ai.4
+	title = none
+	desc = none
+	picture = none
+
+	trigger = {
+		num_free_building_slots = 1
+		fort_level = 2
+		OR = {
+			has_terrain = mountain
+			has_terrain = woods
+			has_terrain = hills
+			has_terrain = highlands
+			has_terrain = jungle
+			has_terrain = marsh
+		}
+		owner = {
+			ai = yes
+			OR = {
+				num_of_cities = 35
+				is_great_power = yes
+			}
+			bgm_building_owner = yes
+			treasury = 750
+			adm_tech = 6
+		}
+		NOT = {
+			OR = {
+				has_building = wharf
+				has_building = soldier_households
+				has_building = impressment_offices
+				has_building = mills
+				has_building = furnace
+				has_building = tradecompany
+				has_building = plantations
+				has_building = textile
+				has_building = weapons
+				has_building = ramparts
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+	option = {
+		add_building_construction = {
+			building = ramparts
+			speed = 1.0
+			cost = 0.95
+		}
+	}
+}
+
+province_event = {
+	id = building_ai.5
+	title = none
+	desc = none
+	picture = none
+
+	trigger = {
+		num_free_building_slots = 1
+		OR = {
+			trade_goods = cloth
+			trade_goods = silk
+			trade_goods = wool
+			trade_goods = dyes
+		}
+		owner = {
+			bgm_building_owner = yes
+			OR = {
+				num_of_cities = 35
+				is_great_power = yes
+			}
+			OR = {
+				is_at_war = no
+				is_in_war = {
+					war_score = 50
+				}
+			}
+			treasury = 750
+			adm_tech = 11
+		}
+		NOT = {
+			OR = {
+				has_building = wharf
+				has_building = soldier_households
+				has_building = impressment_offices
+				has_building = mills
+				has_building = furnace
+				has_building = tradecompany
+				has_building = plantations
+				has_building = textile
+				has_building = weapons
+				has_building = ramparts
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+	option = {
+		add_building_construction = {
+			building = textile
+			speed = 1.0
+			cost = 0.95
+		}
+	}
+}
+
+province_event = {
+	id = building_ai.6
+	title = none
+	desc = none
+	picture = none
+
+	trigger = {
+		num_free_building_slots = 1
+		OR = {
+			trade_goods = coffee
+			trade_goods = cotton
+			trade_goods = sugar
+			trade_goods = tobacco
+			trade_goods = tea
+			trade_goods = cocoa
+		}
+		owner = {
+			bgm_building_owner = yes
+			OR = {
+				is_at_war = no
+				is_in_war = {
+					war_score = 50
+				}
+			}
+			treasury = 750
+			adm_tech = 14
+		}
+		NOT = {
+			OR = {
+				has_building = wharf
+				has_building = soldier_households
+				has_building = impressment_offices
+				has_building = mills
+				has_building = furnace
+				has_building = tradecompany
+				has_building = plantations
+				has_building = textile
+				has_building = weapons
+				has_building = ramparts
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+	option = {
+		add_building_construction = {
+			building = plantations
+			speed = 1.0
+			cost = 0.85
+		}
+	}
+}
+
+province_event = {
+	id = building_ai.7
+	title = none
+	desc = none
+	picture = none
+
+	trigger = {
+		num_free_building_slots = 1
+		OR = {
+			trade_goods = grain
+			trade_goods = livestock
+			trade_goods = wine
+			trade_goods = fish
+		}
+		owner = {
+			bgm_building_owner = yes
+			OR = {
+				is_at_war = no
+				is_in_war = {
+					war_score = 50
+				}
+			}
+			treasury = 750
+			adm_tech = 15
+		}
+		NOT = {
+			OR = {
+				has_building = wharf
+				has_building = soldier_households
+				has_building = impressment_offices
+				has_building = mills
+				has_building = furnace
+				has_building = tradecompany
+				has_building = plantations
+				has_building = textile
+				has_building = weapons
+				has_building = ramparts
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+	option = {
+		add_building_construction = {
+			building = soldier_households
+			speed = 1.0
+			cost = 0.85
+		}
+	}
+}
+
+province_event = {
+	id = building_ai.8
+	title = none
+	desc = none
+	picture = none
+
+	trigger = {
+		num_free_building_slots = 1
+		OR = {
+			trade_goods = paper
+			trade_goods = gems
+			trade_goods = tropical_wood
+			trade_goods = glass
+			trade_goods = chinaware
+		}
+		owner = {
+			bgm_building_owner = yes
+			OR = {
+				is_at_war = no
+				is_in_war = {
+					war_score = 50
+				}
+			}
+			treasury = 750
+			adm_tech = 16
+		}
+		NOT = {
+			OR = {
+				has_building = wharf
+				has_building = soldier_households
+				has_building = impressment_offices
+				has_building = mills
+				has_building = furnace
+				has_building = tradecompany
+				has_building = plantations
+				has_building = textile
+				has_building = weapons
+				has_building = ramparts
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+	option = {
+		add_building_construction = {
+			building = mills
+			speed = 1.0
+			cost = 0.85
+		}
+	}
+}
+
+province_event = {
+	id = building_ai.9
+	title = none
+	desc = none
+	picture = none
+
+	trigger = {
+		num_free_building_slots = 1
+		OR = {
+			trade_goods = coal
+			trade_goods = steel
+		}
+		owner = {
+			ai = yes
+			OR = {
+				is_at_war = no
+				is_in_war = {
+					war_score = 50
+				}
+			}
+			treasury = 750
+			NOT = { num_of_loans = 1 }
+			has_institution = enlightenment
+			adm_tech = 21
+		}
+		NOT = {
+			OR = {
+				has_building = wharf
+				has_building = soldier_households
+				has_building = impressment_offices
+				has_building = mills
+				has_building = furnace
+				has_building = tradecompany
+				has_building = plantations
+				has_building = textile
+				has_building = weapons
+				has_building = ramparts
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+	option = {
+		add_building_construction = {
+			building = furnace
+			speed = 1.0
+			cost = 0.85
+		}
+	}
+}
+
+################## END OF MANUFACTORY ##################
+
+#church/cathedral/tax center
+province_event = {
+	id = building_ai.10
+	title = none
+	desc = none
+	picture = none
+
+	trigger = {
+		NOT = { has_building = tax_center }
+		OR = {
+			num_free_building_slots = 1
+			AND = {
+				has_building = temple
+				NOT = { has_building = cathedral }
+			}
+			AND = {
+				has_building = cathedral
+				NOT = { has_building = tax_center }
+			}
+		}
+		owner = {
+			OR = {
+				is_at_war = no
+				is_in_war = {
+					war_score = 50
+				}
+			}
+			bgm_building_owner = yes
+			adm_tech = 4
+		}
+		OR = {
+			AND = {
+				owner = {
+					NOT = { adm_tech = 19 }
+					treasury = 150
+				}
+				NOT = { has_building = temple }
+			}
+			AND = {
+				owner = {
+					adm_tech = 19
+					NOT = { adm_tech = 29 }
+					treasury = 450
+				}
+				NOT = { has_building = cathedral }
+			}
+			owner = {
+				adm_tech = 29
+				treasury = 750
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+	option = {
+		if = {
+			limit = {
+				owner = {
+					NOT = { adm_tech = 19 }
+				}
+			}
+			add_building_construction = {
+				building = temple
+				speed = 1.0
+				cost = 0.95
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					adm_tech = 19
+					NOT = { adm_tech = 29 }
+				}
+			}
+			add_building_construction = {
+				building = cathedral
+				speed = 1.0
+				cost = 0.5
+			}
+		}
+		else = {
+			add_building_construction = {
+				building = tax_center
+				speed = 1.0
+				cost = 0.33
+			}
+		}
+	}
+}
+
+#workshop/counting house/factories
+province_event = {
+	id = building_ai.11
+	title = none
+	desc = none
+	picture = none
+
+	trigger = {
+		NOT = { has_building = factory_infrastructure }
+		OR = {
+			num_free_building_slots = 1
+			AND = {
+				has_building = workshop
+				NOT = { has_building = counting_house }
+			}
+			AND = {
+				has_building = counting_house
+				NOT = { has_building = factory_infrastructure }
+			}
+		}
+		owner = {
+			OR = {
+				is_at_war = no
+				is_in_war = {
+					war_score = 50
+				}
+			}
+			bgm_building_owner = yes
+			adm_tech = 6
+		}
+		OR = {
+			AND = {
+				owner = {
+					
+					NOT = { adm_tech = 24 }
+					treasury = 150
+				}
+				NOT = { has_building = workshop }
+			}
+			AND = {
+				owner = {
+					adm_tech = 24
+					NOT = { adm_tech = 30 }
+					treasury = 600
+				}
+				NOT = { has_building = counting_house }
+			}
+			owner = {
+				adm_tech = 30
+				treasury = 1000
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+	option = {
+		if = {
+			limit = {
+				owner = {
+					NOT = { adm_tech = 24 }
+				}
+			}
+			add_building_construction = {
+				building = workshop
+				speed = 1.0
+				cost = 0.95
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					adm_tech = 24
+					NOT = { adm_tech = 30 }
+				}
+			}
+			add_building_construction = {
+				building = counting_house
+				speed = 1.0
+				cost = 0.66
+			}
+		}
+		else = {
+			add_building_construction = {
+				building = factory_infrastructure
+				speed = 1.0
+				cost = 0.66
+			}
+		}
+	}
+}
+
+#barracks/training fields
+province_event = {
+	id = building_ai.12
+	title = none
+	desc = none
+	picture = none
+
+	trigger = {
+		NOT = { has_building = training_fields }
+		OR = {
+			num_free_building_slots = 1
+			AND = {
+				has_building = barracks
+				NOT = { has_building = training_fields }
+			}
+		}
+		owner = {
+			OR = {
+				is_at_war = no
+				is_in_war = {
+					war_score = 50
+				}
+			}
+			bgm_building_owner = yes
+			mil_tech = 6
+		}
+		OR = {
+			AND = {
+				owner = {
+					
+					NOT = { mil_tech = 16 }
+					treasury = 150
+				}
+				NOT = { has_building = barracks }
+			}
+			owner = {
+				mil_tech = 16
+				treasury = 450
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+
+		modifier = {
+			factor = 2
+			owner = {
+				NOT = {
+					current_income_balance = 5
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				NOT = {
+					current_income_balance = 10
+				}
+			}
+		}
+	}
+	option = {
+		if = {
+			limit = {
+				owner = {
+					NOT = { mil_tech = 16 }
+				}
+			}
+			add_building_construction = {
+				building = barracks
+				speed = 1.0
+				cost = 0.95
+			}
+		}
+		else = {
+			add_building_construction = {
+				building = training_fields
+				speed = 1.0
+				cost = 0.66
+			}
+		}
+	}
+}
+
+#regimental camp/conscription center
+province_event = {
+	id = building_ai.13
+	title = none
+	desc = none
+	picture = none
+
+	trigger = {
+		NOT = { has_building = factory_infrastructure }
+		OR = {
+			num_free_building_slots = 1
+			AND = {
+				has_building = regimental_camp
+				NOT = { has_building = conscription_center }
+			}
+		}
+		owner = {
+			OR = {
+				is_at_war = no
+				is_in_war = {
+					war_score = 50
+				}
+			}
+			bgm_building_owner = yes
+			mil_tech = 8
+		}
+		OR = {
+			AND = {
+				owner = {
+					
+					NOT = { mil_tech = 22 }
+					treasury = 300
+				}
+				NOT = { has_building = regimental_camp }
+			}
+			owner = {
+				mil_tech = 22
+				treasury = 600
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+
+		modifier = {
+			factor = 6
+			NOT = { has_building = temple }
+		}
+
+		modifier = {
+			factor = 2
+			owner = {
+				NOT = {
+					current_income_balance = 5
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				NOT = {
+					current_income_balance = 10
+				}
+			}
+		}
+	}
+	option = {
+		if = {
+			limit = {
+				owner = {
+					#mil_tech = 8
+					NOT = { mil_tech = 22 }
+				}
+			}
+			add_building_construction = {
+				building = regimental_camp
+				speed = 1.0
+				cost = 0.95
+			}
+		}
+		else = {
+			add_building_construction = {
+				building = conscription_center
+				speed = 1.0
+				cost = 0.5
+			}
+		}
+	}
+}
+
+#courthouse/town hall
+province_event = {
+	id = building_ai.14
+	title = none
+	desc = none
+	picture = none
+
+	trigger = {
+		NOT = { has_building = town_hall }
+		num_free_building_slots = 0
+		owner = {
+			OR = {
+				is_at_war = no
+				is_in_war = {
+					war_score = 50
+				}
+			}
+			governing_capacity_percentage = 0.75
+			bgm_building_owner = yes
+			adm_tech = 8
+		}
+		OR = {
+			AND = {
+				owner = {
+					
+					NOT = { adm_tech = 22 }
+					treasury = 150
+				}
+				NOT = { has_building = town_hall }
+			}
+			owner = {
+				adm_tech = 22
+				treasury = 300
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+	option = {
+		if = {
+			limit = {
+				owner = {
+					#adm_tech = 8
+					NOT = { adm_tech = 22 }
+				}
+			}
+			add_building_construction = {
+				building = courthouse
+				speed = 1.0
+				cost = 0.95
+			}
+		}
+		else = {
+			add_building_construction = {
+				building = town_hall
+				speed = 1.0
+				cost = 0.5
+			}
+		}
+	}
+}
+
+#shipyard/grand shipyard
+province_event = {
+	id = building_ai.15
+	title = none
+	desc = none
+	picture = none
+
+	trigger = {
+		NOT = { has_building = grand_shipyard }
+		OR = {
+			num_free_building_slots = 1
+			AND = {
+				has_building = shipyard
+				NOT = { has_building = grand_shipyard }
+			}
+		}
+		owner = {
+			OR = {
+				is_at_war = no
+				is_in_war = {
+					war_score = 50
+				}
+			}
+			bgm_building_owner = yes
+			dip_tech = 8
+		}
+		OR = {
+			AND = {
+				owner = {
+					
+					NOT = { dip_tech = 24 }
+					treasury = 150
+				}
+				NOT = { has_building = grand_shipyard }
+			}
+			owner = {
+				adm_tech = 22
+				treasury = 450
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+
+		modifier = {
+			factor = 1.5
+			owner = {
+				NOT = {
+					current_income_balance = 5
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			owner = {
+				NOT = {
+					current_income_balance = 10
+				}
+			}
+		}
+	}
+	option = {
+		if = {
+			limit = {
+				owner = {
+					#dip_tech = 8
+					NOT = { dip_tech = 24 }
+				}
+			}
+			add_building_construction = {
+				building = shipyard
+				speed = 1.0
+				cost = 0.95
+			}
+		}
+		else = {
+			add_building_construction = {
+				building = grand_shipyard
+				speed = 1.0
+				cost = 0.5
+			}
+		}
+	}
+}
+
+#marketplace/trade depot/stock exchange
+province_event = {
+	id = building_ai.16
+	title = none
+	desc = none
+	picture = none
+
+	trigger = {
+		OR = {
+			province_has_center_of_trade_of_level = 1
+			province_trade_power = 10
+		}
+		NOT = { has_building = stock_exchange }
+		OR = {
+			num_free_building_slots = 1
+			AND = {
+				has_building = marketplace
+				NOT = { has_building = trade_depot }
+			}
+			AND = {
+				has_building = trade_depot
+				NOT = { has_building = stock_exchange }
+			}
+		}
+
+		owner = {
+			OR = {
+				is_at_war = no
+				is_in_war = {
+					war_score = 50
+				}
+			}
+			bgm_building_owner = yes
+			dip_tech = 4
+		}
+		OR = {
+			AND = {
+				owner = {
+					
+					NOT = { dip_tech = 17 }
+					treasury = 150
+				}
+				NOT = { has_building = marketplace }
+			}
+			AND = {
+				owner = {
+					dip_tech = 17
+					NOT = { dip_tech = 22 }
+					treasury = 450
+				}
+				NOT = { has_building = trade_depot }
+			}
+			owner = {
+				dip_tech = 22
+				treasury = 600
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+	}
+	option = {
+		if = {
+			limit = {
+				owner = {
+					dip_tech = 4
+					NOT = { dip_tech = 17 }
+				}
+			}
+			add_building_construction = {
+				building = marketplace
+				speed = 1.0
+				cost = 0.95
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					dip_tech = 17
+					NOT = { dip_tech = 22 }
+				}
+			}
+			add_building_construction = {
+				building = trade_depot
+				speed = 1.0
+				cost = 0.66
+			}
+		}
+		else = {
+			add_building_construction = {
+				building = stock_exchange
+				speed = 1.0
+				cost = 0.25
+			}
+		}
+	}
+}
+
+#fortresses
+province_event = {
+	id = building_ai.17
+	title = none
+	desc = none
+	picture = none
+
+	trigger = {
+		#always = no #testing without this
+		num_free_building_slots = 1
+		owner = {
+			ai = yes
+			OR = {
+				is_at_war = no
+				is_in_war = {
+					war_score = 50
+				}
+			}
+			NOT = { num_of_loans = 1 }
+			current_income_balance = 4
+			years_of_income = 0.4
+		}
+		NOT = {
+			OR = {
+				has_construction = great_project
+				has_construction = culture
+				has_construction = core
+				has_construction = missionary
+				has_construction = building
+			}
+		}
+		OR = {
+			any_neighbor_province = {
+				NOT = {
+					owner = {
+						tag = ROOT
+					}
+				}
+			}
+			has_terrain = mountain
+			has_terrain = highlands
+			has_terrain = hills
+			has_terrain = woods
+		}
+		OR = {
+			AND = {
+				owner = { 
+					NOT = { mil_tech = 14 }
+					treasury = 300
+				}
+				NOT = {  
+					OR = {
+						has_building = fort_15th
+						has_construction = fort_15th
+					}
+				}
+			}
+			AND = {
+				owner = { 
+					mil_tech = 14
+					NOT = { mil_tech = 19 }
+					treasury = 600
+					current_income_balance = 4
+				}
+				NOT = { 
+					OR = {
+						has_building = fort_16th
+						has_construction = fort_16th
+					}
+				}
+			}
+			AND = {
+				owner = { 
+					mil_tech = 19
+					NOT = { mil_tech = 24 }
+					treasury = 750
+					current_income_balance = 6
+				}
+				NOT = {
+					OR = {
+						has_building = fort_17th
+						has_construction = fort_17th
+					}
+				}
+			}
+			AND = {
+				owner = { 
+					mil_tech = 24
+					treasury = 1000
+					current_income_balance = 8
+				}
+				NOT = {
+					OR = {
+						has_building = fort_18th
+						has_construction = fort_18th
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 8
+
+		modifier = {
+			factor = 0.01
+			OR = {
+				has_terrain = hills
+				has_terrain = woods
+				has_terrain = highlands
+				has_terrain = marsh
+				has_terrain = mountain
+			}
+		}
+
+		modifier = {
+			factor = 0.1
+			any_neighbor_province = {
+				owner = {
+					OR = { 
+						is_rival = ROOT 
+						is_enemy = ROOT 
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		if = {
+			limit = { 
+				AND = {
+					owner = { 
+						NOT = { mil_tech = 14 }
+						treasury = 300
+						current_income_balance = 2
+					}
+					NOT = { has_building = fort_15th }
+				}
+			}
+			add_building_construction = {
+				building = fort_15th
+				cost = 0.95
+			}
+		}
+		if = {
+			limit = { 
+				AND = {
+					owner = { 
+						mil_tech = 14
+						NOT = { mil_tech = 19 }
+						treasury = 600
+						current_income_balance = 4
+					}
+					NOT = { has_building = fort_16th }
+				}
+			}
+			add_building_construction = {
+				building = fort_16th
+				cost = 0.75
+			}
+		}
+		if = {
+			limit = { 
+				AND = {
+					owner = { 
+						mil_tech = 19
+						NOT = { mil_tech = 24 }
+						treasury = 1200
+						current_income_balance = 6
+					}
+					NOT = { has_building = fort_17th }
+				}
+			}
+			add_building_construction = {
+				building = fort_17th
+				cost = 0.5
+			}
+		}
+		if = {
+			limit = { 
+				AND = {
+					owner = { 
+						mil_tech = 24
+						treasury = 1600
+						current_income_balance = 8
+					}
+					NOT = { has_building = fort_18th }
+				}
+			}
+			add_building_construction = {
+				building = fort_18th
+				cost = 0.25
+			}
+		}
+	}
+}

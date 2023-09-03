@@ -62,6 +62,7 @@
 			OR = {
 				has_building = university
 				development = 50
+				is_prosperous = yes
 			}
 			OR = {
 				AND = {
@@ -341,7 +342,7 @@
 	industrialization = {
 
 		bonus = {
-			development_cost = -0.15
+			development_cost = -0.1
 			global_manpower_modifier = 0.25
 		}
 
@@ -819,13 +820,19 @@
 		}
 		
 		can_start = {
+			owner = {
+				is_subject = no
+			}
 			is_in_capital_area = yes
 			OR = {
 				is_capital = yes
 				province_has_center_of_trade_of_level = 1
 			}
 			has_building = university
-			current_age = age_of_revolutions
+			OR = {
+				current_age = age_of_revolutions
+				current_age = age_of_industrialization
+			}
 			OR = {
 				calc_true_if = {
 					amount = 5
@@ -858,20 +865,23 @@
 					has_first_revolution_started = yes
 					revolution_target_exists = no
 				}
-				#revolution_target = {
-				#	is_at_war = no
-				#}
+				revolution_target = {
+					is_at_war = no
+					NOT = {
+						had_recent_war = 10
+					}
+				}
 				has_global_flag = continental_sys
 				has_global_flag = concert_continent
 			}
-			has_global_flag = revolutions_year_start
+			NOT = { has_global_flag = revolutions_year_start }
 			owner = {
 				capital_scope = {
 					continent = europe
 				}
 			}
 		}
-		start_chance = 50		#in 100 for when a province can_start
+		start_chance = 100		#in 100 for when a province can_start
 		
 		
 		on_start = new_institution_events.4
@@ -1112,26 +1122,43 @@
 			enlightenment = 100
 
 			OR = {
-				is_capital = yes
-				development = 45
-				province_trade_power = 25
-			}
-			has_building = university
-			OR = {
-				calc_true_if = {
-					amount = 5
-					all_country = {
-						adm_tech = 35
-						dip_tech = 35
-						mil_tech = 35
+				AND = {
+					OR = {
+						is_capital = yes
+						development = 45
+						province_trade_power = 25
+					}
+					has_building = university
+					OR = {
+						calc_true_if = {
+							amount = 5
+							all_country = {
+								adm_tech = 35
+								dip_tech = 35
+								mil_tech = 35
+							}
+						}
+						is_year = 1865
+					}
+					owner = {
+						adm_tech = 36
+						dip_tech = 36
+						mil_tech = 36
 					}
 				}
-				is_year = 1865
-			}
-			owner = {
-				adm_tech = 36
-				dip_tech = 36
-				mil_tech = 36
+				owner = {
+					has_country_flag = ger_compulsory_ed
+					OR = {
+						AND = {
+							has_institution = industrialization
+							innovativeness = 33
+						}
+						AND = {
+							has_institution = enlightenment
+							innovativeness = 66
+						}
+					}
+				}
 			}
 		}
 		start_chance = 50		#in 100 for when a province can_start

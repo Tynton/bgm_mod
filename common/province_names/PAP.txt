@@ -146,7 +146,7 @@
 2986 = "Caralis"
 2992 = "Albingaunum"
 4727 = "Salutiae"
-4728 = "Ticinum"
+#4728 = "Ticinum"
 4729 = "Patavium"
 4730 = "Bononia"
 4731 = "Spoletum"
@@ -159,7 +159,17 @@
 4739 = "Bergomum"
 4740 = "Comum"
 4942 = "Lupiae"
-4946 = "Luna"
+4946 = "Spetia"
+5105 = "Eporedia"
+5111 = "Grossetum"
+5106 = { "Ariminum" "Caesena" }
+5107 = "Pisaurum"
+5115 = "Chatacium"
+5116 = "Beneventum"
+5118 = "Liburnum"
+5119 = "Placentia"
+5121 = "Finarium"
+1934 = "Potentia"
 
 #Illyria/Balcania
 131 = "Zagrabia"

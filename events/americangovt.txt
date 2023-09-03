@@ -3,9 +3,9 @@ namespace = americangovt
 #arbitrary USA picking
 country_event = {
 	id = americangovt.1
-	title = "americangovt.n.1"
-	desc = "americangovt.d.1"
-	picture = ANGRY_MOB_eventPicture
+	title = none
+	desc = none
+	picture = none
 	
 	hidden = yes
 
@@ -26,11 +26,11 @@ country_event = {
 	}	
 
 	mean_time_to_happen = {
-		months = 1
+		days = 1
 	}
 	
 	option = {
-		name = "americangovt.1.a"
+		name = none
 		change_government = republic
 		add_government_reform = american_republic
 		add_government_reform = parliamentary_reform
@@ -137,6 +137,7 @@ country_event = {
 			}
 			add_core = USA
 			cede_province = USA
+			change_culture = USA
 			add_local_autonomy = 10
 		}
 		USA = {
@@ -252,6 +253,7 @@ country_event = {
 			}
 			add_core = USA
 			cede_province = USA
+			change_culture = USA
 			add_local_autonomy = 10
 		}
 		USA = {
@@ -277,6 +279,7 @@ country_event = {
 	major = yes
 	
 	trigger = {
+		always = no
 		tag = USA
 		current_age = age_of_industrialization
 		
@@ -335,35 +338,11 @@ country_event = {
 	
 	major = yes
 	
-	trigger = {
-		tag = USA
-		current_age = age_of_industrialization
-		
-		NOT = {
-			stability = 1
-		}
-		average_unrest = 0
-		
-		NOT = {
-			has_global_flag = confed_exist
-		}
-	}
-	
-	mean_time_to_happen = {
-		months = 6
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = "americangovt.8.a"
-		every_owned_province = {
-			limit = {
-				is_core = CSA
-			}
-			cede_province = CSA
-		}
 		CSA = {
-			change_government = republic
-			add_government_reform = oligarchy_reform
 			declare_war_with_cb = {
 				who = ROOT
 				casus_belli = cb_independence_war
@@ -390,14 +369,23 @@ province_event = {
 		NOT = {
 			development = 12
 		}
+		
 		owner = {
-			tag = USA
-			stability = 0
+			has_country_modifier = immigrant_labor
+			OR = {
+				tag = USA
+				bgm_colonial_subject = yes
+			}
+			is_at_war = no
+			stability = 1
 		}
 		OR = {
 			region = northeast_america_region
 			owner = {
-				mission_completed = attract_immigrants
+				OR = {
+					mission_completed = usa_attract_immigrants
+					bgm_colonial_subject = yes
+				}
 			}
 		}
 	}
@@ -415,6 +403,13 @@ province_event = {
 		}
 
 		modifier = {
+			factor = 7.5
+			owner = {
+				bgm_colonial_subject = yes
+			}
+		}
+
+		modifier = {
 			factor = 2
 			owner = {
 				NOT = {
@@ -426,9 +421,17 @@ province_event = {
 	
 	option = {
 		name = "americangovt.9.a"
-		add_base_tax = 1
-		add_base_production = 1
-		add_base_manpower = 1
+		random_list = {
+			30 = {
+				add_base_tax = 1
+			}
+			40 = {
+				add_base_production = 1
+			}
+			30 = {
+				add_base_manpower = 1
+			}
+		}
 	}
 }
 
@@ -559,5 +562,38 @@ country_event = {
 		}
 		
 		add_mercantilism = 5
+	}
+}
+
+province_event = {
+	id = americangovt.12
+	title = americangovt.12.t
+	desc = americangovt.12.d
+	picture = INDUSTRY_eventPicture
+	
+	trigger = {
+		owner = { 
+			adm_tech = 30
+			tag = USA
+		}
+		is_prosperous = yes
+		is_in_capital_area = yes
+		num_free_building_slots = 1
+		NOT = { has_building = factory_infrastructure }
+		OR = {
+			trade_goods = iron
+			trade_goods = cloth
+			trade_goods = paper
+			trade_goods = coal
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 70
+	}
+	
+	option = {
+		name = "americangovt.12.a"
+		add_building = factory_infrastructure
 	}
 }

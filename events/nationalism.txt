@@ -6,7 +6,6 @@ province_event = {
 	desc = "nationalism_age_unrest.d.1"
 	picture = ANGRY_MOB_eventPicture
 	
-	
 	hidden = yes
 
 	trigger = {
@@ -17,7 +16,7 @@ province_event = {
 			}
 		}
 		#is_overseas = no
-		has_owner_accepted_culture = no
+		#has_owner_accepted_culture = no
 		NOT = { culture_group = owner }
 		
 		NOT = {
@@ -109,5 +108,20 @@ province_event = {
 		name = "nationalism_age_unrest.2.a"
 		
 		remove_province_modifier = nationalism_unrest_bgm
+	}
+}
+
+province_event = {
+	id = nationalism_age_unrest.3
+	title = "nationalism_age_unrest.n.3"
+	desc = "nationalism_age_unrest.d.3"
+	picture = MODERN_UNREST_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "nationalism_age_unrest.3.a"
+		
+		set_country_flag = note_bgm_nat
 	}
 }

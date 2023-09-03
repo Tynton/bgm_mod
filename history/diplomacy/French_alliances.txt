@@ -36,6 +36,15 @@ dependency = {
 	end_date = 1532.8.3
 }
 
+# France-Foix
+dependency = {
+	subject_type = appanage
+	first = FRA
+	second = DUN
+	start_date = 1444.1.1
+	end_date = 1532.8.3
+}
+
 # France-Bourbon
 dependency = {
 	subject_type = appanage
@@ -45,13 +54,48 @@ dependency = {
 	end_date = 1532.8.3
 }
 
+# France-Albret
+dependency = {
+	subject_type = appanage
+	first = FRA
+	second = ABR
+	start_date = 1444.1.1
+	end_date = 1532.8.3
+}
+
 # France-Berry
+dependency = {
+	subject_type = personal_union
+	first = FRA
+	second = BER
+	start_date = 1444.1.1
+	end_date = 1461.1.1
+}
+
 dependency = {
 	subject_type = appanage
 	first = FRA
 	second = BER
+	start_date = 1461.1.1
+	end_date = 1472.1.1
+}
+
+# France-Comminges
+
+dependency = {
+	subject_type = personal_union
+	first = FRA
+	second = CMM
 	start_date = 1444.1.1
-	end_date = 1532.8.3
+	end_date = 1461.1.1
+}
+
+dependency = {
+	subject_type = appanage
+	first = FRA
+	second = CMM
+	start_date = 1462.1.1
+	end_date = 1498.1.1
 }
 
 # France-Vendome

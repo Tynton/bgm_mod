@@ -131,8 +131,6 @@ set_country_flag = second_cadet_branch
 
 #1425.1.1 = { leader = {	name = "Arthur de Richemont"	type = general	fire = 3	shock = 3	manuever = 4	siege = 1	death_date = 1457.9.23 } }
 
-1427.1.1 = { leader = {	name = "Jean de Dunois"		type = general	fire = 4	shock = 3	manuever = 3	siege = 1	death_date = 1468.11.24 } }
-
 1429.1.1 = { leader = {	name = "Gilles de Rais"		type = general	fire = 2	shock = 2	manuever = 3	siege = 0	death_date = 1435.1.1 } }
 
 1429.4.29 = { leader = { name = "Jeanne d'Arc"		type = general	fire = 3	shock = 6	manuever = 4	siege = 0	female = yes	death_date = 1430.5.23 } }

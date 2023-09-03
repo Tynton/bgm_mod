@@ -1034,6 +1034,13 @@ country_event = {
 				}
 				add_permanent_claim = from
 			}
+			west_orleans_area = {
+				limit = {
+					NOT = { is_core = from }
+					NOT = { is_permanent_claim = from }
+				}
+				add_permanent_claim = from
+			}
 			every_subject_country = {
 				limit = { capital_scope = { region = france_region } }
 				add_liberty_desire = 50

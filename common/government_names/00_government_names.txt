@@ -4139,9 +4139,9 @@ south_slavic_republic = {
 
 florentine_republic = {
 	rank = {
-		1 = REPUBBLICA
-		2 = REPUBBLICA
-		3 = REPUBBLICA
+		1 = SIGNORIA
+		2 = SIGNORIA
+		3 = SIGNORIA
 	}
 
 	ruler_male = {
@@ -4285,6 +4285,9 @@ italian_republic = {
 				has_reform = futurist_mechanic
 				has_reform = fascist_mechanic
 				has_reform = peasants_republic
+				has_reform = merchant_republic
+                has_reform = venetian_merchant_republic
+                has_reform = signoria_reform
 			}
 		}
 	}
@@ -4345,20 +4348,22 @@ buddhist_noble_republic = {
 	}
 
 	trigger = {
+		NOT = {
+			has_country_flag = fra_rep_missions
+		}
 		has_reform = noble_elite_reform
 		OR = {
 			religion = buddhism #Theravada
 			religion = vajrayana
 			religion = mahayana
-			
-			NOT = {
+		}
+		NOT = {
 			OR = {
 				bgm_comgovt = yes
 				has_reform = democratic_mechanic
 				has_reform = futurist_mechanic
 				has_reform = fascist_mechanic
 			}
-		}
 		}
 	}
 }

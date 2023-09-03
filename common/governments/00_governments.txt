@@ -34,6 +34,7 @@ monarchy = {
 				mandala_reform
 				revolutionary_empire_reform
 				revolutionary_hre_reform
+				revolutionary_compromise_reform
 				holy_state_reform
 				austrian_archduchy_reform
 				siamese_absolutism
@@ -277,6 +278,7 @@ monarchy = {
 		}
 		deliberative_assembly = {
 			reforms = {
+				ger_parliament_reform
 				parliamentary_reform
 				royal_decree_reform
 				aristocratic_court_reform
@@ -764,6 +766,7 @@ republic = {
 		}
 		parliamentary_vs_presidential = {
 			reforms = {
+				ger_parliament_reform
 				parliamentary_reform
 				presidential_reform
 				estate_council_reform
@@ -976,6 +979,7 @@ fascist_government = {
 				populism
 				bgm_nationalism
 				chauvinism
+				bgm_religion_ethic
 			}
 		}
 		fascist_foreign_policy = {
@@ -1168,6 +1172,7 @@ authoritarian_government = {
 			reforms = {
 				populism
 				bgm_nationalism
+				bgm_religion_ethic
 			}
 		}
 		foreign_policy = {

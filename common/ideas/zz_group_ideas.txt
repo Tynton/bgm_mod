@@ -882,7 +882,7 @@ swabian_ideas = {
 		merc_maintenance_modifier = -0.15
 	}
 	bonus = {
-		improve_relation_modifier = 0.25
+		improve_relation_modifier = 0.1
 	}
 	trigger = {
 		OR = {
@@ -893,7 +893,7 @@ swabian_ideas = {
 	free = yes
 
 	swabian_mercenaries = {
-		mercenary_manpower = 0.4
+		mercenary_manpower = 0.2
 	}
 	swabian_river_iller = {
 		defensiveness = 0.2

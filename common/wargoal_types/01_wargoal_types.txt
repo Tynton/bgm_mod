@@ -318,3 +318,75 @@ take_capital_enforcedynasty = {
 
 	war_name = UNION_WAR_NAME
 }
+
+take_capital_rev_mon = {
+	type = take_capital
+	
+	attacker = {
+		badboy_factor = 0.5
+		prestige_factor = 2.5
+		peace_cost_factor = 1
+		
+		peace_options = {
+			po_enforce_dynasty_rev
+		}
+	}
+	
+	defender = {
+		badboy_factor = 0.33
+		prestige_factor = 1.5
+		peace_cost_factor = 0.1
+		
+		allowed_provinces = {
+			culture_group = FROM
+		}
+		
+		peace_options = {
+			po_demand_provinces
+		}
+	}
+	
+	war_name = REVOLUTIONARY_WAR_NAME	
+}
+
+take_capital_india_imperial = {
+	type = take_capital
+	
+	attacker = {
+		badboy_factor = 0.15
+		prestige_factor = 1.5
+		peace_cost_factor = 0.1
+		
+		
+		allowed_provinces = {
+			always = yes
+		}
+		
+		peace_options = {
+			po_demand_provinces
+		}
+		
+		country_desc = INDIA_COUNTRIES
+		prov_desc = INDIA_PROVS
+	}
+	
+	defender = {
+		badboy_factor = 0.75
+		prestige_factor = 1
+		peace_cost_factor = 0.5
+		
+		
+		allowed_provinces = {
+			always = yes
+		}
+		
+		peace_options = {
+			po_demand_provinces
+		}
+		
+		country_desc = ALL_COUNTRIES
+		prov_desc = ALL_PROVS
+	}	
+	
+	war_name = IMPERIAL_WAR_NAME
+}

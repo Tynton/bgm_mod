@@ -6,3 +6,12 @@
 1862 = "Carmona"
 
 5395 = "Ruig"
+
+4960 = "San Maréin"
+
+5106 = { "Rémin" "Cisêna" }
+5107 = "Pés're"
+
+5117 = "Masa"
+5119 = "Piasëinsa"
+5120 = "Süsèra"

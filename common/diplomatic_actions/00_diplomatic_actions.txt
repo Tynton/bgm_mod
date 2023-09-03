@@ -121,6 +121,20 @@ support_independence_action = {
 
 declarewar = {
 
+	condition = { #concert of europe
+		tooltip = PEACE_INDUSTRIAL
+		potential = { 
+			OR = {
+				has_global_flag = concert_continent
+				has_global_flag = continental_sys
+			}
+		}
+		allow = {
+			has_country_flag = same_continent_peace
+			FROM = { has_country_flag = same_continent_peace }
+		}
+	}
+
 	condition = { #to address a pet peeve
 		potential = { ai = yes }
 		allow = {
@@ -325,6 +339,15 @@ declarewar = {
 	#		}
 	#	}
 	#}
+
+	effect = {
+		if = {
+			limit = {
+				ai = yes
+			}
+			remove_country_modifier = lower_maintenance
+		}
+	}
 
 	effect = {
 		if = {
@@ -560,9 +583,78 @@ allianceaction = {
 			ai = yes
 		}
 		allow = {
-			army_strength = {
-				who = ROOT
-				value = 0.4
+			FROM = {
+				army_strength = {
+					who = ROOT
+					value = 0.33
+				}
+				NOT = {
+					army_strength = {
+						who = ROOT
+						value = 3.0
+					}
+				}
+			}
+		}
+	}
+
+	condition = { #don't ally too weak countries, great powers
+		potential = {
+			ai = yes
+		}
+		allow = {
+			OR = {
+				ROOT = {
+					is_great_power = yes
+				}
+				FROM = {
+					OR = {
+						is_great_power = yes
+						army_strength = {
+							who = ROOT
+							value = 0.35
+						}
+						calc_true_if = {
+							amount = 1
+							all_ally = {
+								is_great_power = yes
+							}
+						}
+						AND = {
+							is_neighbor_of = ROOT
+							NOT = {
+								total_development = 30
+							}
+							NOT = {
+								any_neighbor_country = {
+									ai = no
+								}
+							}
+						}
+					}
+				}
+
+				ROOT = {
+					OR = {
+						any_neighbor_country = {
+							army_strength = {
+								who = ROOT
+								value = 2.3
+							}
+						}
+						any_rival_country = {
+							army_strength = {
+								who = ROOT
+								value = 2.0
+							}
+						}
+						has_opinion = {
+							who = FROM
+							value = 150
+						}
+					}
+				}
+
 			}
 		}
 	}
@@ -718,11 +810,22 @@ annexationaction = {
 			}
 		}
 		allow = {
-			
 			FROM = { 
 				is_subject_of_type = sister_republic
 				is_subject_of = ROOT
 				culture_group = ROOT 
+			}
+		}
+	}
+
+	condition = { #FRANCE MAINTAINS APPANAGES
+		potential = {
+			ai = yes
+		}
+		allow = {
+			OR = {
+				adm_tech = 14
+				FROM = { liberty_desire = 30 }
 			}
 		}
 	}
