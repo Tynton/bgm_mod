@@ -19,6 +19,6 @@
 5153 = { "Landach" "Landau in der Pfalz" }
 
 1761 = "Wormbs"
-5135 = "Lautre"
+5102 = "Lautre"
 4767 = { "Zweebrigge" "Saarbrigge" }
 80 = "Drir"

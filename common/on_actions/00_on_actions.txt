@@ -738,6 +738,18 @@ on_main_war_won = {
 
 	if = {
 		limit = {
+			NOT = {
+				is_in_war = {
+					defender_leader = ROOT
+				}
+			}
+		}
+		remove_country_modifier = minor_defensive_buff
+		remove_country_modifier = med_defensive_buff
+		remove_country_modifier = strong_defensive_buff
+	}
+	if = {
+		limit = {
 			tag = HOL
 			is_subject = no
 		}
@@ -958,6 +970,18 @@ on_main_war_lost = {
 	events = {
 		flavor_kor.15
 		flavor_tur.300 #Defeat of the Ottomans
+	}
+	if = {
+		limit = {
+			NOT = {
+				is_in_war = {
+					defender_leader = ROOT
+				}
+			}
+		}
+		remove_country_modifier = minor_defensive_buff
+		remove_country_modifier = med_defensive_buff
+		remove_country_modifier = strong_defensive_buff
 	}
 	if = {
 		limit = {
@@ -2690,14 +2714,36 @@ on_government_change = {
 	clr_country_flag = caretaker_revolutionary_government
 	if = {
 		limit = {
-			OR = {
-				has_any_disaster = yes
-				is_subject = yes
-			}
+			has_any_disaster = yes
 		}
 		add_adm_power = -9000
 		add_dip_power = -9000
 		add_mil_power = -9000
+	}
+	if = {
+		limit = {
+			has_global_flag = revolutions_year_start
+		}
+		every_province = {
+			limit = {
+				has_revolution_in_province = yes
+			}
+			remove_revolution_from_province_effect = yes
+		}
+	}
+	if = {
+		limit = {
+			is_revolution_target = yes
+		}
+		set_revolution_target = ---
+	}
+	if = {
+		limit = {
+			any_owned_province = {
+				is_center_of_revolution = yes
+			}
+		}
+		remove_center_of_revolution = yes
 	}
 	if = {
 		limit = {

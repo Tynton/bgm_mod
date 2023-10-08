@@ -226,3 +226,64 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = BGM_FRA_minor_missions.3
+	title = "BGM_FRA_minor_missions.3.t"
+	desc = "BGM_FRA_minor_missions.3.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	fire_only_once = yes
+	major = yes
+
+	trigger = {
+		any_subject_country = {
+			ai = yes
+			OR = {
+				mission_completed = fra_min_branch_mission_5_d
+				mission_completed = fra_min_branch_mission_5_m
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "BGM_FRA_minor_missions.3.a" #get fucked
+		random_subject_country = {
+			limit = {
+				is_subject_of_type = appanage
+			}
+			hidden_effect = {
+				every_country = {
+					limit = {
+						capital_scope = {
+							continent = ROOT
+						}
+						liberty_desire = 50
+						is_subject_of = ROOT
+					}
+					create_alliance = PREV
+				}
+			}
+			declare_war_with_cb = {
+				casus_belli = cb_independence_war
+				who = ROOT
+			}
+			hidden_effect = {
+				every_country = {
+					limit = {
+						capital_scope = {
+							continent = ROOT
+						}
+						liberty_desire = 50
+						is_subject_of = ROOT
+					}
+					break_alliance = PREV
+				}
+			}
+		}
+	}
+}

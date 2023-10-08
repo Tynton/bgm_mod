@@ -2,4 +2,4 @@
 4948 = { "Kortryk" "Kortrik" }
 90 = "Brugge"
 4951 = "Duunkerke"
-5128 = "Yper"
+#5128 = "Yper"

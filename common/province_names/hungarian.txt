@@ -38,8 +38,8 @@
 
 
 #5128 = "Kolozsvár"
-5129 = "Dés"
-5130 = "Brassó"
+#5129 = "Dés"
+#5130 = "Brassó"
 #5108 = "Losonc"
 #5110 = "Munkács"
 #5109 = "Ungvár"

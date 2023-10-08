@@ -1144,7 +1144,7 @@ economic_ideas = {
 	}
 
 	bureaucracy = { 
-		global_tax_modifier = 0.1
+		global_tax_modifier = 0.05
 	}
 	national_bank = {
 		inflation_reduction = 0.1

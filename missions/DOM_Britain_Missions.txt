@@ -2118,13 +2118,13 @@ ave_row_3 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			south_flanders_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
+			#south_flanders_area = {
+			#	limit = {
+			#		NOT = { is_core = ROOT }
+			#		NOT = { is_permanent_claim = ROOT }
+			#	}
+			#	add_permanent_claim = ROOT
+			#}
 			alsace_area = {
 				limit = {
 					NOT = { is_core = ROOT }

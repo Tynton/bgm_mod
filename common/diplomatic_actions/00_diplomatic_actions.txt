@@ -343,9 +343,73 @@ declarewar = {
 	effect = {
 		if = {
 			limit = {
+				has_country_modifier = fra_min_developing_army
+			}
+			remove_country_modifier = fra_min_developing_army
+		}
+	}
+
+	effect = {
+		if = {
+			limit = {
 				ai = yes
 			}
 			remove_country_modifier = lower_maintenance
+		}
+	}
+
+	effect = {
+		if = {
+			limit = {
+				FROM = {
+					NOT = {
+						army_strength = {
+							who = ROOT
+							value = 1
+						}
+					}
+					army_strength = {
+						who = ROOT
+						value = 0.66
+					}
+				}
+			}
+			FROM = {
+				add_country_modifier = {
+					name = minor_defensive_buff
+					duration = -1
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				FROM = {
+					NOT = {
+						army_strength = {
+							who = ROOT
+							value = 0.66
+						}
+					}
+					army_strength = {
+						who = ROOT
+						value = 0.33
+					}
+				}
+			}
+			FROM = {
+				add_country_modifier = {
+					name = med_defensive_buff
+					duration = -1
+				}
+			}
+		}
+		else = {
+			FROM = {
+				add_country_modifier = {
+					name = strong_defensive_buff
+					duration = -1
+				}
+			}
 		}
 	}
 

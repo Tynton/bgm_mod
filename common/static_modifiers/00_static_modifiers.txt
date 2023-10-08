@@ -1743,10 +1743,9 @@ daimyo_subject = {
 }
 
 appanage_subject = {
-	land_morale = 0.05
+	land_morale = -0.1
 	legitimacy = 0.5
-	global_regiment_cost = -0.1
-	land_forcelimit_modifier = -0.5
+	land_forcelimit_modifier = -0.66
 	diplomatic_upkeep = -3
 }
 
@@ -2403,11 +2402,10 @@ revolutionary_guard_regiment = {
 
 #Values are at 100% Innovativeness, but in this mod it caps at 200%
 innovativeness = {
-	max_revolutionary_zeal = 25
-	max_absolutism = 10
-	technology_cost = -0.05
-	idea_cost = -0.1
-	advisor_cost = -0.2
+	advisor_cost = -0.1
+	production_efficiency = 0.2
+	trade_efficiency = 0.2
+	development_cost_modifier = -0.25
 
 	pl_social_liberal_influence = 0.1
 	dm_social_liberal_influence = 0.1

@@ -321,4 +321,10 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/BGM_PROSPERITY_eventPicture.dds"
 		allwaystransparent = yes
 	}
+	
+	spriteType = {
+		name = "BGM_REFUSES_ELABORATE_eventPicture"
+		texturefile = "gfx/event_pictures/REFUSES_ELABORATE_eventPicture.dds"
+		allwaystransparent = yes
+	}
 }

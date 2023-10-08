@@ -1147,7 +1147,7 @@
 					}
 				}
 				owner = {
-					has_country_flag = ger_compulsory_ed
+					has_country_flag = compulsory_ed_flag
 					OR = {
 						AND = {
 							has_institution = industrialization

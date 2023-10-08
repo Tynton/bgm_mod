@@ -24,7 +24,7 @@ kattegat_area = { #Kattegat, Skagerrak, Sound and Belts
 }
 
 north_sea_area = {
-	1266 1268 1269 1270 1279 1280 1281 1282 1975 5130
+	1266 1268 1269 1270 1279 1280 1281 1282 1975 5097
 }
 
 norwegian_sea_area = { #Norwegian Sea
@@ -293,7 +293,7 @@ normandy_area = { #4
 }
 
 provence_area = { #3
-	201 202 2991 4696 5085
+	201 202 2991 4696 5113 #5085
 }
 
 poitou_area = { #4
@@ -309,7 +309,7 @@ pyrenees_area = { #4
 }
 
 east_languedoc_area = {
-	200 4391 5112 5113 5114
+	200 4391 5112 #5114
 }
 
 languedoc_area = { #5
@@ -318,7 +318,7 @@ languedoc_area = { #5
 
 bourgogne_area = { #3
 	color = { 144 0 32 }
-	193 4764 5082 5083
+	193 4764 5082 #5083
 }
 
 west_burgundy_area = { #3
@@ -343,15 +343,15 @@ picardy_area = { #4
 }
 
 ile_de_france_area = { #4
-	182 183 4388 5075 5103
+	182 183 4388 5103
 }
 
 north_champagne_area = {
-	181 186 4952 4953 5097
+	181 186 4952 #5097
 }
 
 champagne_area = { #3
-	185 4390 5102 5104
+	185 4390 4953
 }
 
 loire_area = { #5
@@ -364,7 +364,7 @@ orleans_area = {
 }
 
 west_orleans_area = {
-	4776 5089 5127
+	4776 5089 5075
 }
 
 ########################################
@@ -380,16 +380,16 @@ luxemburg_area = {
 }
 
 holland_area = { #4
-	96 97 98 4383 5129
+	96 97 98 4383 5111
 }
 
 flanders_area = { #3
-	90 1865 4948 5132
+	90 1865 4948 4769 4951 #5132
 }
 
-south_flanders_area = {
-	4769 4951 5128
-}
+#south_flanders_area = {
+#	4769 4951 #5128
+#}
 
 frisia_area = { #5
 	99 100 1931 4381 4382
@@ -401,7 +401,7 @@ brabant_area = { #3
 }
 
 north_brabant_area = { #3
-	95 4770 1742 5131
+	95 4770 1742 5114
 }
 
 ########################################
@@ -508,7 +508,7 @@ piedmont_area = { #4
 }
 
 tuscany_area = { #5
-	116 117 2978 5111 5118
+	116 117 2978 5118
 }
 
 north_tuscan_area = {
@@ -968,7 +968,7 @@ lower_bavaria_area = { #4
 }
 
 east_bavaria_area = { #3
-	76 4760 4709 5133
+	76 4760 4709 5085
 } 
 
 lower_swabia_area = { #3 (West Swabia)
@@ -985,7 +985,7 @@ upper_franconia_area = { #4
 }
 
 upper_swabia_area = { #4 (East Swabia)
-	68 1868 4711 1872 5134
+	68 1868 4711 1872 5083
 }
 
 northern_saxony_area = { #4 (Saxe-Altmark)
@@ -1053,7 +1053,7 @@ alsace_area = { #3
 }
 
 palatinate_area = { #3
-	77 1761 4767 5135 78
+	77 1761 4767 5102 78
 }
 
 north_rhine_area = { #4
@@ -1073,11 +1073,11 @@ north_westphalia_area = { #4
 }
 
 hesse_area = { #5
-	81 1762 1876 4774 5136
+	81 1762 1876 4774 5088
 }
 
 braunschweig_area = { #4
-	57 1758 2971 4773 5137
+	57 1758 2971 4773 5104
 }
    
 weser_area = { #4

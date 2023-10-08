@@ -31,6 +31,11 @@ change_estate_land_share = {
 #	duration = 10950
 #}
 
+add_country_modifier = {
+	name = fra_feudal_debuff
+	duration = -1
+}
+
 set_country_flag = first_cadet_branch
 set_country_flag = second_cadet_branch
 

@@ -139,7 +139,7 @@
 
 5081 = "Beaulne"
 
-5114 = "Gévaudan"
+#5114 = "Gévaudan"
 
 5094 = "Bitbourg"
 
@@ -527,9 +527,9 @@
 
 107 = "Bresce"
 
-5131 = "Nimègue"
+5114 = "Nimègue"
 
-5128 = "Ypres"
+#5128 = "Ypres"
 4948 = "Courtrai"
 5086 = "Malines" #Louvain
 5088 = "Grammont"
@@ -548,8 +548,8 @@
 167 = "Rouen"
 
 #4988 = "Maestricht"
-5129 = "Roterdam"
-5132 = "Ostende"
+5111 = "Roterdam"
+#5132 = "Ostende"
 1742 = { "Haute-Gueldre" "Ruremonde" }
 
 

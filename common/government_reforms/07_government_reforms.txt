@@ -115,6 +115,11 @@ fascist_reform = {
 	trigger = {
 		NOT = { has_reform = pro_enlightenment_reform }
 		has_global_flag = futurist_manifesto_written
+		OR = {
+			current_age = age_of_industrialization
+			current_age = age_of_great_wars
+			current_age = modern_age
+		}
 	}
 	conditional = {
 		allow = { has_dlc = "Rights of Man" }
@@ -132,9 +137,9 @@ fascist_reform = {
 		monthly_militarized_society = 0.1
 	}
 	effect = {
-		country_event = {
-			id = ideagroups.1
-		}
+		#country_event = {
+#			id = ideagroups.1
+		#}
 	}
 	#custom_attributes = {
 	#	election_on_death = yes
@@ -148,27 +153,20 @@ authoritarian_reform = {
 	trigger = {
 		has_institution = nationalism_institution
 		OR = {
-			is_year = 1860
-			has_country_flag = responded_rev
+			current_age = age_of_industrialization
+			current_age = age_of_great_wars
+			current_age = modern_age
 		}
 		NOT = {
 			has_reform = pro_enlightenment_reform
-		}
-		if = {
-			limit = {
-				capital_scope = {
-					continent = europe
-				}
-			}
-			has_country_flag = responded_rev
 		}
 	}
 	effect = {
 		change_government = authoritarian_government
 		add_government_reform = auth_monarchism
-		country_event = {
-			id = ideagroups.1
-		}
+		#country_event = {
+#			id = ideagroups.1
+		#}
 	}
 	
 }
@@ -182,42 +180,34 @@ futurism_reform = {
 			has_global_flag = futurist_manifesto_written
 		}
 		OR = {
+			current_age = age_of_industrialization
+			current_age = age_of_great_wars
+			current_age = modern_age
+		}
+		OR = {
 			innovativeness = 30
 			religion = secular
 			religion = atheism
 		}
-		if = {
-			limit = {
-				capital_scope = {
-					continent = europe
-				}
-			}
-			has_country_flag = responded_rev
-		}
 	}
 	effect = {
 		change_government = futurist_government
-		country_event = {
-			id = ideagroups.1
-		}
+		#country_event = {
+#			id = ideagroups.1
+		#}
 	}
-	
 }
 
 democratic_reform = {
 	icon = "democratic_reform"
 	trigger = {
 		NOT = { has_reform = anti_enlightenment_reform }
-		current_age = age_of_great_wars
-		has_parliament = yes 
-		if = {
-			limit = {
-				capital_scope = {
-					continent = europe
-				}
-			}
-			has_country_flag = responded_rev
+		OR = {
+			current_age = age_of_industrialization
+			current_age = age_of_great_wars
+			current_age = modern_age
 		}
+		has_parliament = yes
 	}
 	conditional = {
 		allow = { has_dlc = "Rights of Man" }

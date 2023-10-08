@@ -2,7 +2,7 @@
 
 owner = FRA
 controller = FRA
-capital = "Saintes"
+capital = "Xaintes"
 is_city = yes
 culture = poitevin
 religion = catholic 
@@ -10,7 +10,7 @@ hre = no
 base_tax = 2
 base_production = 2
 trade_goods = grain
-base_manpower = 4
+base_manpower = 3
 add_core = FRA
 add_core = POI
 discovered_by = eastern

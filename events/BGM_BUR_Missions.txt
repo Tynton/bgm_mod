@@ -1,0 +1,277 @@
+namespace = BGM_BUR_missions
+
+# choose your strat
+country_event = {
+	id = BGM_BUR_missions.1
+	title = "BGM_BUR_missions.1.t"
+	desc = "BGM_BUR_missions.1.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_BUR_missions.1.a" #Ambition to Lotharingia
+		set_country_flag = bur_lot_ambition
+	}
+
+	option = {
+		name = "BGM_BUR_missions.1.c" #Take the Old Burgundian Lands
+		set_country_flag = bur_bur_ambition
+		romandie_area = {
+			add_permanent_claim = ROOT
+		}
+		lorraine_area = {
+			add_permanent_claim = ROOT
+		}
+		savoy_dauphine_area = {
+			add_permanent_claim = ROOT
+		}
+	}
+
+	option = {
+		name = "BGM_BUR_missions.1.d" #French Ambition
+		set_country_flag = bur_fra_ambition
+	}
+
+	after = {
+		bgm_get_fra = yes
+		swap_non_generic_missions = yes
+	}
+}
+
+# choose your strat, Liège
+country_event = {
+	id = BGM_BUR_missions.2
+	title = "BGM_BUR_missions.2.t"
+	desc = "BGM_BUR_missions.2.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_BUR_missions.2.a" #Politicking
+		trigger = {
+			exists = LIE
+		}
+		LIE = {
+			country_event = {
+				id = BGM_BUR_missions.3
+				days = 1800
+				random = 500
+			}
+		}
+	}
+	
+	option = {
+		name = "BGM_BUR_missions.2.b" #Buy it
+		trigger = {
+			exists = LIE
+			BUR = {
+				treasury = 750
+			}
+		}
+		LIE = {
+			country_event = {
+				id = BGM_BUR_missions.4
+				days = 15
+			}
+		}
+	}
+
+	option = {
+		name = "BGM_BUR_missions.2.c" #Force them to attack
+		if = {
+			limit = { 
+				exists = LIE
+			}
+			LIE = {
+				every_owned_province = {
+					add_permanent_claim = BUR
+				}
+			}
+		}
+		else = {
+			wallonia_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+#Politicking in Liege
+country_event = {
+	id = BGM_BUR_missions.3
+	title = "BGM_BUR_missions.3.t"
+	desc = "BGM_BUR_missions.3.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	major = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		kill_ruler = yes
+	}
+	
+	option = {
+		name = "BGM_BUR_missions.3.a" #Elect the Burgundian Candidate
+		BUR = {
+			create_subject = {
+				subject_type = vassal
+				subject = LIE
+			}
+		}
+		define_ruler = {
+			culture = burgundian
+		}
+		add_liberty_desire = -50
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = -25
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "BGM_BUR_missions.3.b" #Resist their advances
+		BUR = {
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				target = LIE
+			}
+		}
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_opinion = {
+					who = BUR
+					value = -25
+				}
+			}
+		}
+	}
+}
+
+#Purchase Liege
+country_event = {
+	id = BGM_BUR_missions.4
+	title = "BGM_BUR_missions.4.t"
+	desc = "BGM_BUR_missions.4.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	major = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_BUR_missions.4.a" #Acknowledge the Burgundian Government
+		BUR = {
+			add_treasury = -750
+			create_subject = {
+				subject_type = vassal
+				subject = LIE
+			}
+		}
+		add_treasury = 750
+		add_liberty_desire = -50
+
+		hidden_effect = {
+			random_list = {
+				90 = {
+
+				}
+				10 = {
+					BUR = {
+						country_event = {
+							id = BGM_BUR_missions.5
+							days = 30
+						}
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = -25
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "BGM_BUR_missions.4.b" #No
+		BUR = {
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				target = LIE
+			}
+		}
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_opinion = {
+					who = BUR
+					value = -25
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = BGM_BUR_missions.5
+	title = "BGM_BUR_missions.5.t"
+	desc = "BGM_BUR_missions.5.d"
+	picture = BGM_REFUSES_ELABORATE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_BUR_missions.5.a" #Acknowledge the Burgundian Government
+		
+	}
+}
+
+country_event = {
+	id = BGM_BUR_missions.6
+	title = "BGM_BUR_missions.6.t"
+	desc = "BGM_BUR_missions.6.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_BUR_missions.6.a" #old
+		add_country_modifier = {
+			name = bur_parlements
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = "BGM_BUR_missions.6.b" #new
+		add_country_modifier = {
+			name = bur_legalism
+			duration = -1
+		}
+	}
+}

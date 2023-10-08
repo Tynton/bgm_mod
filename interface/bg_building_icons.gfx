@@ -10,6 +10,36 @@ spriteTypes = {
 		texturefile = "gfx//interface//buildings//factory_infrastructure.dds"
 		loadType = "INGAME"
 	}
+
+	spriteType = {
+		name = "GFX_polytechnic"
+		texturefile = "gfx//interface//buildings//civil_factory.dds"
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_fabricator"
+		texturefile = "gfx//interface//buildings//civil_factory.dds"
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_bureau_offices"
+		texturefile = "gfx//interface//buildings//civil_factory.dds"
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_railroad"
+		texturefile = "gfx//interface//buildings//railroad.dds"
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_public_transport"
+		texturefile = "gfx//interface//buildings//civil_factory.dds"
+		loadType = "INGAME"
+	}
 	
 	spriteType = {
 		name = "GFX_civil_factory"
@@ -56,12 +86,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_tungsten_mine"
 		texturefile = "gfx//interface//buildings//tungsten_mine.dds"
-		loadType = "INGAME"
-	}
-
-	spriteType = {
-		name = "GFX_railroad"
-		texturefile = "gfx//interface//buildings//railroad.dds"
 		loadType = "INGAME"
 	}
 	

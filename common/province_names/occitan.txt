@@ -35,7 +35,7 @@
 
 5125 = { "Comenge" "Sent-Gaudenç" }
 
-5114 = "Gavaudan"
+#5114 = "Gavaudan"
 
 107 = "Breissa"
 4739 = "Bergam"
@@ -316,7 +316,7 @@
 89 = "Amians"
 177 = "Lo Mans"
 5084 = "Arcaishon"
-5085 = "Los Uèris"
+#5085 = "Los Uèris"
 4389 = "Tors"
 1749 = "Cadis"
 207 = "Astúrias"
@@ -361,7 +361,7 @@
 4948 = "Cortra"
 4952 = "Sòsons"
 4953 = "Calons"
-5075 = "Dreus"
+#5075 = "Dreus"
 5081 = "Belna"
 5086 = "Mechelen" #Louvan
 5087 = "Bolonha"

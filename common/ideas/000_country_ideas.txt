@@ -1050,7 +1050,7 @@ FRA_ideas = {
 		land_morale = 0.15
 	}
 	fra_taille = {
-		global_tax_modifier = 0.1
+		global_tax_modifier = 0.05
 		war_taxes_cost_modifier = -0.5
 	}
 	estates_general = {

@@ -1,4 +1,4 @@
 4951 = { "Duinkerken" "Duinkerke" }
 4963 = "Aarlen"
 
-5132 = "Oostende"
+#5132 = "Oostende"

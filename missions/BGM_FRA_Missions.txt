@@ -191,7 +191,13 @@ BGM_FRA_DIP_1_1 = {
 			}
 		}
 		effect = {
-
+			custom_tooltip = fra_enable_kill_appanage
+			set_country_flag = fra_consolidate_estates
+			remove_country_modifier = fra_feudal_debuff
+			add_country_modifier = {
+				name = fra_min_feudal_debuff
+				duration = -1
+			}
 			if = {
 				limit = {
 					estate_loyalty = {
@@ -396,6 +402,7 @@ BGM_FRA_DIP_1_1 = {
 			}
 		}
 		effect = {
+			remove_country_modifier = fra_min_feudal_debuff
 			country_event = {
 				id = BGM_FRA_missions.1
 			}
@@ -457,7 +464,7 @@ BGM_FRA_DIP_4_1 = {
 		provinces_to_highlight = {
 			OR = {
 				area = flanders_area
-				area = south_flanders_area
+				#area = south_flanders_area
 			}
 		}
 		trigger = {
@@ -508,9 +515,9 @@ BGM_FRA_DIP_4_1 = {
 				flanders_area = {
 					add_core = ROOT
 				}
-				south_flanders_area = {
-					add_core = ROOT
-				}
+				#south_flanders_area = {
+				#	add_core = ROOT
+				#}
 			}
 		}
 	}
@@ -1982,7 +1989,7 @@ BGM_FRA_DIP_4_2_ENG = {
 				all_owned_province = {
 					OR = {
 						area = flanders_area
-						area = south_flanders_area
+						#area = south_flanders_area
 						area = wallonia_area
 						area = brabant_area
 					}
@@ -1991,7 +1998,7 @@ BGM_FRA_DIP_4_2_ENG = {
 			any_owned_province = {
 				OR = {
 					area = flanders_area
-					area = south_flanders_area
+					#area = south_flanders_area
 					area = wallonia_area
 					area = brabant_area
 				}
@@ -2213,14 +2220,13 @@ BGM_FRA_DIP_ITA_5_1 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
+			owns_or_non_sovereign_subject_of = 104
 			calc_true_if = {
-				amount = 8
+				amount = 4
 				all_owned_province = {
 					OR = {
-						area = piedmont_area
-						area = north_piedmont_area
-						area = west_liguria_area
-						area = liguria_area
+						area = lombardy_area
+						area = south_lombardy_area
 					}
 				}
 			}
@@ -2417,7 +2423,6 @@ BGM_FRA_DIP_ITA_5_1_OCC = {
 			OR = {
 				area = pyrenees_area
 				area = languedoc_area
-				area = east_languedoc_area
 			}
 			NOT = {
 				fort_level = 2
@@ -2430,7 +2435,6 @@ BGM_FRA_DIP_ITA_5_1_OCC = {
 					OR = {
 						area = pyrenees_area
 						area = languedoc_area
-						area = east_languedoc_area
 					}
 					fort_level = 2
 				}
@@ -2442,7 +2446,6 @@ BGM_FRA_DIP_ITA_5_1_OCC = {
 					OR = {
 						area = pyrenees_area
 						area = languedoc_area
-						area = east_languedoc_area
 					}
 					fort_level = 2
 				}
@@ -3260,7 +3263,7 @@ BGM_FRA_ADM_4_2 = {
 		effect = {
 			add_country_modifier = {
 				name = fra_gabelle
-				duration = -1
+				duration = 36500
 			}
 		}
 	}
@@ -3277,7 +3280,10 @@ BGM_FRA_ADM_4_2 = {
 				monthly_adm = 14
 			}
 			num_of_owned_provinces_with = {
-				has_state_edict = french_infrastructure_network
+				OR = {
+					development = 15
+					is_prosperous = yes
+				}
 				value = 25
 			}
 		}
@@ -5192,7 +5198,7 @@ BGM_FRA_REV_S4_CONMON = {
 		}
 		effect = {
 			flanders_area = { add_permanent_claim = ROOT }
-			south_flanders_area = { add_permanent_claim = ROOT }
+			#south_flanders_area = { add_permanent_claim = ROOT }
 			brabant_area = { add_permanent_claim = ROOT }
 			north_brabant_area = { add_permanent_claim = ROOT }
 			add_power_projection = {
@@ -5210,7 +5216,7 @@ BGM_FRA_REV_S4_CONMON = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			OR = {
 				area = flanders_area
-				area = south_flanders_area
+				#area = south_flanders_area
 				area = brabant_area
 				area = north_brabant_area
 			}
@@ -5223,7 +5229,7 @@ BGM_FRA_REV_S4_CONMON = {
 		}
 		effect = {
 			flanders_area = { add_permanent_claim = ROOT }
-			south_flanders_area = { add_permanent_claim = ROOT }
+			#south_flanders_area = { add_permanent_claim = ROOT }
 			brabant_area = { add_permanent_claim = ROOT }
 			north_brabant_area = { add_permanent_claim = ROOT }
 			add_power_projection = {
@@ -5244,7 +5250,7 @@ BGM_FRA_REV_S4_CONMON = {
 			statesman = 3
 		}
 		effect = {
-			set_country_flag = ger_compulsory_ed #coopting this
+			set_country_flag = compulsory_ed_flag #coopting this
 			add_country_modifier = {
 				name = fra_education_policy
 				duration = -1
@@ -5673,7 +5679,7 @@ BGM_FRA_REV_S4_REV = {
 		}
 		effect = {
 			flanders_area = { add_permanent_claim = ROOT }
-			south_flanders_area = { add_permanent_claim = ROOT }
+			#south_flanders_area = { add_permanent_claim = ROOT }
 			brabant_area = { add_permanent_claim = ROOT }
 			north_brabant_area = { add_permanent_claim = ROOT }
 			add_power_projection = {
@@ -5691,7 +5697,7 @@ BGM_FRA_REV_S4_REV = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			OR = {
 				area = flanders_area
-				area = south_flanders_area
+				#area = south_flanders_area
 				area = brabant_area
 				area = north_brabant_area
 			}
@@ -5704,7 +5710,7 @@ BGM_FRA_REV_S4_REV = {
 		}
 		effect = {
 			flanders_area = { add_permanent_claim = ROOT }
-			south_flanders_area = { add_permanent_claim = ROOT }
+			#south_flanders_area = { add_permanent_claim = ROOT }
 			brabant_area = { add_permanent_claim = ROOT }
 			north_brabant_area = { add_permanent_claim = ROOT }
 			add_power_projection = {

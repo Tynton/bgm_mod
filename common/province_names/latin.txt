@@ -128,8 +128,8 @@
 5092 = { "Aosta" "Valle d'Aosta" }
 
 4952 = { "Soassone" "Suassone" }
-5075 = { "Droco" "Durocassio" }
-5083 = { "Vesula" "Vesulo" }
+#5075 = { "Droco" "Durocassio" }
+#5083 = { "Vesula" "Vesulo" }
 5084 = "Arcassone"
 5087 = { "Bulogna" "Bologna di mare" }
 5089 = { "Vendomo" "Vindocino" }

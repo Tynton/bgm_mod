@@ -7,7 +7,7 @@
 72 = "Brisgau"
 74 = "Baade"
 
-5134 = "Kempte"
+5083 = "Kempte"
 
 #fictional here
 
@@ -19,7 +19,7 @@
 4759 = { "Oberkärnte" "Villa" }
 128 = "Unterkärnte"
 132 = "Schdiermark"
-5133 = "Hardkirche"
+#5133 = "Hardkirche"
 5096 = "Draunschdoi"
 4708 = "Frising"
 2957 = "Regschburg"
@@ -27,7 +27,7 @@
 4765 = "Mülhause"
 75 = "Schdrasburg"
 4767 = "Zwoibrücke"
-5135 = "Laudre"
+5102 = "Laudre"
 80 = "Drir"
 4738 = "Trischd"
 130 = "Ischdrie"
@@ -38,7 +38,7 @@
 1762 = "Niderhesse"
 62 = "Lipzig"
 57 = "Brunswick"
-5136 = "Büdinge"
+5088 = "Büdinge"
 1878 = "Oche"
 85 = "Köle"
 4950 = "Esse"

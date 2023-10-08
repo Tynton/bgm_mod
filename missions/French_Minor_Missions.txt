@@ -1328,7 +1328,10 @@ bgm_fra_min_slot3_cont1_dip = {
 			liberty_desire = 50
 		}
 		effect = { 
-			
+			add_country_modifier = {
+				name = fra_min_developing_army
+				duration = -1
+			}
 		}
 	}
 
@@ -1423,7 +1426,10 @@ bgm_fra_min_slot3_cont1_mil = {
 			liberty_desire = 50
 		}
 		effect = { 
-			
+			add_country_modifier = {
+				name = fra_min_developing_army
+				duration = -1
+			}
 		}
 	}
 

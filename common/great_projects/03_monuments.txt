@@ -3359,7 +3359,7 @@ university_bologna = {
 
 chateau_sedan = {
 	# province it starts in
-	start = 5097
+	start = 181
 	
 	date = 1444.01.01
 	time = {

@@ -180,3 +180,86 @@ tax_center = {
 		}
 	}
 }
+
+polytechnic = {
+	cost = 1800
+	time = 36
+	modifier = {
+		allowed_num_of_buildings = 1
+		institution_growth = 1
+		local_development_cost = -0.1
+		culture_conversion_cost = -0.1
+		culture_conversion_time = -0.25
+	}
+
+	make_obsolete = university
+
+	build_trigger = {
+		development = 40
+		OR = {
+			province_has_center_of_trade_of_level = 3
+			AND = {
+				base_tax = 10
+				has_building = town_hall
+			}
+		}
+	}
+
+	on_built = {
+		add_development_from_building = {
+			building = polytechnic
+			type = tax
+			value = 3
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = polytechnic
+			type = tax
+			value = 3
+		}
+	}
+	
+	ai_will_do = {
+		factor = 25
+	}
+}
+
+bureau_offices = {
+	cost = 1800
+	time = 36
+	modifier = {
+		local_state_maintenance_modifier = -0.66
+		local_autonomy = -0.25
+		local_governing_cost = -0.5
+		local_tax_modifier = 0.1
+		local_centralize_state_cost = -0.33
+		allowed_num_of_buildings = 1
+	}
+
+	make_obsolete = town_hall
+
+	build_trigger = {
+		development = 40
+		has_building = tax_center
+	}
+
+	on_built = {
+		add_development_from_building = {
+			building = bureau_offices
+			type = tax
+			value = 3
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = bureau_offices
+			type = tax
+			value = 3
+		}
+	}
+	
+	ai_will_do = {
+		factor = 25
+	}
+}

@@ -564,7 +564,7 @@ technology = {
 	#Railroad
 	
 	production_efficiency  = 0.05
-	#railroad = yes
+	railroad = yes
 	allowed_idea_groups = 10
 }
 

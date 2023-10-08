@@ -1,5 +1,7 @@
 ﻿l_english:
  
+ EDUCATION:0 "Education"
+ 
  modernistgfx:0 "Modernist"
  neoclacissistgfx:0 "Neo-Clacissist"
  brutalistgfx:0 "Brutalist"
@@ -9,6 +11,10 @@
  
  cb_balance_power:0 "Balance of Power"
  cb_balance_power_desc:0 "Balance of Power"
+ 
+ minor_defensive_buff:0 "Minor Defensive Rhetoric"
+ med_defensive_buff:0 "Moderate Defensive Rhetoric"
+ strong_defensive_buff:0 "Strong Defensive Rhetoric"
  
  ww1_right:0 "World War 1: Reactionary Aggressor"
  ww1_left:0 "World War 1: Revolutionary Aggressor"
@@ -77,6 +83,9 @@
  
  form_umb_title:0 "Form Umbria"
  form_umb_desc:0 "Form Umbria"
+ 
+ deflation_title:0 "Economic Deflation"
+ deflation_desc:0 "We have amassed enough value from the economy to destroy or stow away the treasury currency to reduce the inflation."
  
  
  recent_conversion:0 "Recent Conversion"
@@ -1436,8 +1445,12 @@
  
  building_tax_center:0 "Tax Center"
  building_railroad:0 "Provincial Railroad"
+ building_public_transport:0 "Public Transit"
  building_early_factory:0 "Early Factory"
  building_factory_infrastructure:0 "Industrial Factories"
+ building_polytechnic:0 "Polytechnic University"
+ building_bureau_offices:0 "Bureaucratic Office"
+ building_fabricator:0 "Fabricator"
  building_civil_factory:0 "Civil Factory"
  building_military_factory:0 "Military Factory"
  building_coal_plant:0 "Coal Plant"

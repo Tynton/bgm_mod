@@ -2340,6 +2340,122 @@ aev_everlasting_glory = {
 	global_prosperity_growth = 0.25
 }
 
+#############BURGUNDY#############
+
+bur_court_dijon = {
+	global_tax_modifier = 0.15
+	prestige = 1
+	land_morale = 0.1
+}
+
+bur_piety = {
+	tolerance_own = 1
+	stability_cost_modifier = -0.1
+}
+
+bur_imperial_diplomacy = {
+	reasons_to_elect = 15
+	diplomatic_reputation = 2
+}
+
+bur_chancellery = {
+	advisor_cost = -0.1
+	administrative_efficiency = 0.025
+}
+
+bur_mechelen = {
+	reduced_liberty_desire_on_same_continent = 10
+	diplomatic_reputation = 1
+}
+
+bur_colonial_enthusiasm = {
+	global_colonial_growth = 25
+}
+
+bur_eco_exploitation = {
+	global_trade_goods_size_modifier = 0.25
+	production_efficiency = 0.25
+}
+
+bur_auth_culture = {
+	max_absolutism_effect = 0.05
+	max_absolutism = 5
+}
+
+bur_conscription = {
+	manpower_recovery_speed = 0.25
+	global_manpower_modifier = 0.25
+	army_tradition_from_battle = 1
+}
+
+bur_military_institution = {
+	innovativeness_gain = 0.25
+	idea_cost = -0.05
+	mil_tech_cost_modifier = -0.025
+	technology_cost = -0.025
+}
+
+bur_secular_con = {
+	global_tax_modifier = 0.05
+	global_manpower_modifier = 0.05
+	production_efficiency = 0.05
+}
+
+bur_religious_vestiges = {
+	stability_cost_modifier = -0.05
+	manpower_in_true_faith_provinces = 0.1
+	manpower_in_culture_group_provinces = 0.1
+}
+
+bur_parlements = {
+	stability_cost_modifier = -0.1
+	development_cost = -0.1
+}
+
+bur_legalism = {
+	yearly_revolutionary_zeal = 1
+	max_revolutionary_zeal = 10
+	max_absolutism = 10
+}
+
+bur_assignats = {
+	war_taxes_cost_modifier = -0.5
+	global_regiment_cost = -0.05
+	global_tax_modifier = 0.1
+}
+
+bur_fiat = {
+	inflation_action_cost = -0.15
+	monthly_gold_inflation_modifier = -1
+	centralize_state_cost = -0.15
+}
+
+bur_protectionist_trade = {
+	global_own_trade_power = 0.15
+	mercantilism_cost = -0.25
+}
+
+bur_treason_acts = {
+	stability_cost_modifier = -0.1
+	yearly_revolutionary_zeal = 1
+	yearly_absolutism = 1
+}
+
+bur_envy_world = {
+	prestige_decay = -0.02
+}
+
+bur_colonial_enthusiasm_ii = {
+	global_colonial_growth = 25
+}
+
+bur_lords_corps = {
+	discipline = 0.025
+	land_morale = 0.05
+	stability_cost_modifier = -0.05
+	diplomats = 1
+}
+
 #############GERMANY#############
 
 ger_economic_policy = {
@@ -2746,7 +2862,61 @@ secular_constitution = {
 	can_not_build_missionaries = yes
 }
 
+#############FRANCE#############
+
+fra_feudal_debuff = {
+	global_manpower_modifier = -0.5
+	army_tradition = -1
+	military_tactics = -0.2
+}
+
+fra_min_feudal_debuff = {
+	global_manpower_modifier = -0.33
+	army_tradition = -0.5
+	military_tactics = -0.1
+}
+
+#############WARTIME#############
+
+minor_defensive_buff = {
+	land_morale = 0.05
+	naval_morale = 0.05
+	shock_damage = 0.05
+	shock_damage_received = -0.05
+	global_manpower_modifier = 0.05
+	prestige_from_naval = 0.25
+	prestige_from_land = 0.25
+	war_exhaustion = -0.05
+}
+
+med_defensive_buff = {
+	land_morale = 0.1
+	naval_morale = 0.1
+	shock_damage = 0.1
+	shock_damage_received = -0.1
+	global_manpower_modifier = 0.1
+	prestige_from_naval = 0.5
+	prestige_from_land = 0.5
+	war_exhaustion = -0.1
+}
+
+strong_defensive_buff = {
+	land_morale = 0.2
+	naval_morale = 0.2
+	shock_damage = 0.2
+	shock_damage_received = -0.2
+	global_manpower_modifier = 0.2
+	prestige_from_naval = 1
+	prestige_from_land = 1
+	war_exhaustion = -0.2
+}
+
 #############FRENCH MINORS#############
+
+fra_min_developing_army = {
+	liberty_desire = 25
+	land_forcelimit_modifier = 0.66
+}
 
 fra_min_feudal_development = {
 	development_cost = -0.1

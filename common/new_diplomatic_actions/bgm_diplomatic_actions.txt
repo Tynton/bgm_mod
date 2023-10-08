@@ -2606,6 +2606,7 @@ order_execution = {
 	category = influence
 	require_acceptance = no
 	is_visible = {
+		has_country_flag = fra_consolidate_estates
 		has_subject_of_type = appanage
 		FROM = {
 			is_subject_of = ROOT

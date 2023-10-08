@@ -4,7 +4,7 @@ government_rank = 1
 technology_group = western
 primary_culture = austrian
 religion = catholic
-capital = 5133	# Hartkirchen
+capital = 5085	# Hartkirchen
 
 1355.1.1 = {
 	monarch = {

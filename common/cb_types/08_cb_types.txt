@@ -1,0 +1,29 @@
+cb_indian_ambition = {
+
+	prerequisites = {
+		OR = {
+			mission_completed = gbr_establish_first_indian_trade_post
+			mission_completed = bgm_bur_old_world_colony
+			mission_completed = fra_indian_beachhead
+			mission_completed = gc_portugal_discovers_india
+			mission_completed = emp_ned_charter_the_voc
+			has_country_flag = claim_india
+		}
+		FROM = {
+			OR = {
+				capital_scope = {
+					superregion = india_superregion
+				}
+				AND = {
+					development_in_provinces = {
+						value = 100
+						superregion = india_superregion
+					}
+					is_great_power = no
+				}
+			}
+		}
+	}
+
+	war_goal = take_capital_india_imperial
+}

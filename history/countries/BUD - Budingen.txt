@@ -4,7 +4,7 @@ government_rank = 1
 technology_group = western
 primary_culture = austrian
 religion = catholic
-capital = 5136	# Budingen
+capital = 5088	# Budingen
 
 1444.1.1 = { #unknown birthdate
 	monarch = {

@@ -23,9 +23,9 @@
 5276 = "Kopreinitz"
 
 #5105 = "Macharscha"
-5128 = "Ypern"
+#5128 = "Ypern"
 
-5132 = "Ostende"
+#5132 = "Ostende"
 
 4999 = "Raab"
 5000 = "Mischkolz"
@@ -403,7 +403,7 @@
 4977 = "Bastia"
 1247 = "Corsica"
 
-5088 = "Gerhardsbergen"
+#5088 = "Gerhardsbergen"
 
 167 = "Rudaburg"
 

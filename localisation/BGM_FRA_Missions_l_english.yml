@@ -290,6 +290,7 @@
  fra_noble_coup_tooltip:0 "§YIf the Nobility are unhappy and have enough influence, they will§! §Roverthrow§! §Ythe government and establish a Noble Republic.§!"
  fra_louisiana_tooltip:0 "A colonial subject in §YLouisiana§! will receive §Gfree development§! in their §Ycapital.§!"
  bgm_rev_enforce_rev_dynasty:0 "§YWe will gain a dynastic casus belli against every country who doesn't have a revolutionary government.§!"
+ fra_enable_kill_appanage:0 "§MWe will be able to enforce loyalty in the appanages through executions.§!"
  
  fra_savoyard_conquest:0 "French Entry into the Italian Wars"
  fra_italian_diplomacy:0 "Italianate Diplomacy"
@@ -351,3 +352,5 @@
  fra_occitan_settlers:0 "Southern French Colonists"
  fra_local_fortresses:0 "Local Fortresses"
  fra_two_navies:0 "Deux Marines"
+ fra_feudal_debuff:0 "Feudal Institutions"
+ fra_min_feudal_debuff:0 "Modernization Directive"

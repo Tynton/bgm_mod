@@ -611,7 +611,7 @@ country_event = {
 		###########################
 		}
 	}
-}
+
 country_event = {
 	id = new_institution_events.400
 	title = new_institution_events.4.t

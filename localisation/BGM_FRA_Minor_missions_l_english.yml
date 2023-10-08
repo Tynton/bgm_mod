@@ -99,6 +99,10 @@
  BGM_FRA_minor_missions.2.a:0 "..."
  fra_breakup_tooltip:0 "§RAll existing subjects of $COUNTRY$ will gain independence. Territories in the French region will also become independent states.§!"
  
+ BGM_FRA_minor_missions.3.t:0 "The Crazy War"
+ BGM_FRA_minor_missions.3.d:0 "A general noble uprising has taken place in the Appanages of $COUNTRY$. The power base of the subjects has grown sufficient that they have seen it fit to declare their independence. The fate of France lies in the balance."
+ BGM_FRA_minor_missions.3.a:0 "They will all die for treason!"
+ 
  feudal_economy_title:0 "Feudal Economy"
  feudal_economy_desc:0 "Feudal economics largely boils down to ensuring the common masses produce taxable foodstuffs in the countryside for not only their sustenance but for the realm at large. This trend should be followed to its logical conclusion for the moment."
  
@@ -116,3 +120,4 @@
  fra_min_colonize:0 "Colonial Ambition"
  fra_min_colonize_africa:0 "Colonial Ambition"
  fra_min_trade:0 "Overseas Markets"
+ fra_min_developing_army:0 "Developing Our Army"

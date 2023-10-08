@@ -58,10 +58,10 @@
 173 = "Labôrd"
 
 5081 = "Beaune"
-5083 = "Vesôl"
+#5083 = "Vesôl"
 5090 = "Tôl"
 1742 = "Aute-Gueldre"
-5085 = "Las Orres"
+#5085 = "Las Orres"
 
 4719 = "Braisse"
 

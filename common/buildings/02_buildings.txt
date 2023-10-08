@@ -1,0 +1,142 @@
+
+fabricator = {
+	cost = 4000
+	time = 24
+	
+	modifier = {
+		local_production_efficiency = 2
+		local_manpower_modifier = 0.5
+	}
+
+	make_obsolete = factory_infrastructure
+	
+	allow_in_gold_provinces = no
+
+	on_built = {
+		add_development_from_building = {
+			building = fabricator
+			type = production
+			value = 3
+		}
+		if = {
+			limit = {
+				OR = {
+					has_terrain = woods
+					has_terrain = hills
+					has_terrain = forest
+					has_terrain = highlands
+					has_terrain = mountain
+				}
+			}
+			add_province_modifier = {
+				name = factory_dev
+				duration = -1
+			}
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = fabricator
+			type = production
+			value = 3
+		}
+		remove_province_modifier = factory_dev
+	}
+	on_obsolete = {
+	}
+
+	ai_will_do = {
+		factor = 8
+
+		modifier = {
+			factor = 10
+			has_building = counting_house
+		}
+
+		modifier = {
+			factor = 10
+			owner = { adm_tech = 33 }
+		}
+
+		modifier = {
+			factor = 10
+			owner = { adm_tech = 36 }
+		}
+
+		modifier = {
+			factor = 2
+			OR = {
+				trade_goods = iron
+				trade_goods = cloth
+				trade_goods = cloves
+				trade_goods = silk
+				trade_goods = dyes
+				trade_goods = paper
+				trade_goods = coal
+				trade_goods = cotton
+				trade_goods = cinema
+				trade_goods = fur
+				trade_goods = gems
+				trade_goods = ivory
+				trade_goods = oil
+				trade_goods = rubber
+				trade_goods = sugar
+				trade_goods = steel
+				trade_goods = tobacco
+			}
+		}
+	}
+}
+
+railroad = {
+	cost = 175
+	time = 6
+	
+	modifier = {
+		local_friendly_movement_speed = 0.25
+		local_development_cost = -0.05
+		local_tax_modifier = 0.05
+	}
+
+	build_trigger = {
+		development = 3
+	}
+
+	on_built = {
+		add_development_from_building = {
+			building = railroad
+			type = production
+			value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = railroad
+			type = production
+			value = 1
+		}
+	}
+
+	ai_will_do = {
+		factor = 25
+	}
+}
+
+public_transport = {
+	cost = 350
+	time = 18
+	
+	modifier = {
+		local_friendly_movement_speed = 0.25
+		local_development_cost = -0.05
+		local_tax_modifier = 0.05
+	}
+
+	build_trigger = {
+		development = 3
+	}
+
+	ai_will_do = {
+		factor = 25
+	}
+}

@@ -1466,9 +1466,9 @@ BGM_GER_2_fra_mad = {
 			flanders_area = {
 				add_permanent_claim = ROOT
 			}
-			south_flanders_area = {
-				add_permanent_claim = ROOT
-			}
+			#south_flanders_area = {
+			#	add_permanent_claim = ROOT
+			#}
 			picardy_area = {
 				add_claim = ROOT
 			}
@@ -1490,7 +1490,7 @@ BGM_GER_2_fra_mad = {
 						area = lorraine_area
 						area = brabant_area
 						area = flanders_area
-						area = south_flanders_area
+						#area = south_flanders_area
 					}
 					any_neighbor_province = {
 						owned_by = event_target:bgm_fra_target
@@ -2643,7 +2643,7 @@ BGM_GER_3_soc_2 = {
 			religious_unity = 0.66
 		}
 		effect = {
-			set_country_flag = ger_compulsory_ed
+			set_country_flag = compulsory_ed_flag
 			if = {
 				limit = {
 					NOT = {
